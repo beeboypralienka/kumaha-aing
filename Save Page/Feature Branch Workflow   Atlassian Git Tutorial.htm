@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://www.atlassian.com/git/workflows#!workflow-feature-branch -->
+<html itemscope="" itemtype="https://schema.org/Organization" lang="en" class="wf-kulturistaweb-n4-active wf-kulturistaweb-i1-active wf-kulturistaweb-i3-active wf-kulturistaweb-i4-active wf-kulturistaweb-i6-active wf-kulturistaweb-i7-active wf-kulturistaweb-n1-active wf-kulturistaweb-n3-active wf-kulturistaweb-n6-active wf-kulturistaweb-n7-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Feature Branch Workflow | Atlassian Git Tutorial</title>
+<meta name="description" content="Learn the basics of common Git workflows used by enterprise teams and assess their ability to fit your individual needs in this Atlassian Git tutorial.">
+<meta name="keywords" content="Git Tutorial, git workflows, Git Training, Git">
+
+<meta name="msvalidate.01" content="3BC1DA51CBC3C49088F3C36D5E1636DC">
+<meta name="fragment" content="!">
+<!-- g+ --><link href="https://plus.google.com/b/104459306872500508400/?rel=author" rel="publisher">
+<link rel="icon" type="image/ico" href="https://www.atlassian.com/dms/wac/favicon_wac.ico">
+<link rel="stylesheet" type="text/css" href="./Feature Branch Workflow   Atlassian Git Tutorial_files/yui-reset-fonts.css">
+<link rel="stylesheet" href="./Feature Branch Workflow   Atlassian Git Tutorial_files/jquery-ui.css" type="text/css" media="all">
+<link rel="stylesheet" href="./Feature Branch Workflow   Atlassian Git Tutorial_files/main20140218.css" type="text/css" media="all">
+<link rel="stylesheet" href="./Feature Branch Workflow   Atlassian Git Tutorial_files/colorbox.css" type="text/css" media="all">
+<link rel="stylesheet" href="./Feature Branch Workflow   Atlassian Git Tutorial_files/campaign.css" type="text/css" media="all">
+<!-- Typekit workaround for the weird span they put in to compare sizing -->
+<style type="text/css">
+body > span {
+visibility: hidden;
+position: absolute;
+}
+</style>
+<script src="./Feature Branch Workflow   Atlassian Git Tutorial_files/cb=gapi.loaded_1" async=""></script><script src="./Feature Branch Workflow   Atlassian Git Tutorial_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/plusone.js" gapi_processed="true"></script><script id="twitter-wjs" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/widgets.js"></script><script type="text/javascript" async="" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/ga.js"></script><script type="text/javascript" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/znn3vrw.js"></script>
+<style type="text/css">.tk-kulturista-web{font-family:"kulturista-web",serif;}</style><link rel="stylesheet" href="https://use.typekit.com/c/18fca2/kulturista-web:i1:i3:i4:i6:i7:n1:n3:n4:n6:n7.ZPQ:N:2,ZPS:N:2,ZPV:N:2,ZPX:N:2,ZPZ:N:2,ZPP:N:2,ZPR:N:2,ZvW:N:2,ZPW:N:2,ZPY:N:2/d?3bb2a6e53c9684ffdc9a98f11b5b2a62a68aa48eeef682652ee742d2b0fcffae1aac9da1d626b228c5bd6e7f1569002ece4fd5f7866a6a8ac9c06b41baebbd9a6b6bb3875748327791fd1b68d18aaed58e4c2671955bd9636fbd40e56f04e0dcdb503bd5a19291d962ee26d8144642c8f9000cac19dbb357cdbb8e34efe4a84647f4248ab07a052877777eaaefc2bbe58c7271b164612a2bfc64fe38a213e6f226c2413052e43bee3d9e3c7eab11a357d9f69d4b7f75f1c52128f4cefdbd2715e1963b0e7fd650e14f4341e4683ed304b5ae46b54c0813f1b2414c322a3edfc1c64881b9dfc36a344b68efcff514116d69c6763e767eeee3a4445278b3acbf3ced89fb9b5ddb010819ef329790afdc"><script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script src="./Feature Branch Workflow   Atlassian Git Tutorial_files/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="./Feature Branch Workflow   Atlassian Git Tutorial_files/git.css" type="text/css" media="all">
+<script src="./Feature Branch Workflow   Atlassian Git Tutorial_files/swfobject.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/scripts.js"></script>
+<script type="text/javascript" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/blogPostImage.js"></script>
+<meta property="og:title" content="Git Tutorials and Training">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://atlassian.com/git">
+<meta property="og:description" content="Learn the basics of Git through this comprehensive Git training. Branching, pull requests, merging and more are covered in the Atlassian Git tutorial.">
+<meta property="og:site_name" content="Atlassian">
+<meta property="og:image" content="http://www.atlassian.com/git/pageSections/0/contentColumnTwo/0/imageBinary/git_home.png">
+<meta property="fb:admins" content="827383507,13300229">
+<!-- google analytics -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+// The order of these _setAccount calls is important. The last account set will be where
+// all event tracking, virtual pageviews, and custom variables will be set.
+_gaq.push(['_setAccount', 'UA-6032469-1']);
+_gaq.push(['_setDomainName', '.atlassian.com']);
+_gaq.push(['_setAllowAnchor', true]);
+_gaq.push(['_trackPageview']);
+_gaq.push(['_setAccount', 'UA-6032469-39']);
+_gaq.push(['_setDomainName', '.atlassian.com']);
+_gaq.push(['_setAllowAnchor', true]);
+_gaq.push(['_trackPageview']);
+_gaq.push(['_setAccount', 'UA-6032469-23']);
+_gaq.push(['_setDomainName', '.atlassian.com']);
+_gaq.push(['_setAllowAnchor', true]);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+function recordOutboundLink(link, category) {
+try {
+_gaq.push(['_trackEvent', category , 'outbound', link ]);
+setTimeout('document.location = "' + link + '"', 100); }catch(err){}
+}
+</script>
+<script src="./Feature Branch Workflow   Atlassian Git Tutorial_files/secureAnonymousFramework"></script><style type="text/css">* html #li_ui_li_gen_1396389469960_0 a#li_ui_li_gen_1396389469960_0-link{height:1% !important;}#li_ui_li_gen_1396389469960_0{position:relative !important;overflow:visible !important;display:block !important;}#li_ui_li_gen_1396389469960_0 a#li_ui_li_gen_1396389469960_0-link{border:0 !important;height:20px !important;text-decoration:none !important;padding:0 !important;margin:0 !important;display:inline-block !important;}#li_ui_li_gen_1396389469960_0 a#li_ui_li_gen_1396389469960_0-link:link, #li_ui_li_gen_1396389469960_0 a#li_ui_li_gen_1396389469960_0-link:visited, #li_ui_li_gen_1396389469960_0 a#li_ui_li_gen_1396389469960_0-link:hover, #li_ui_li_gen_1396389469960_0 a#li_ui_li_gen_1396389469960_0-link:active{border:0 !important;text-decoration:none !important;}#li_ui_li_gen_1396389469960_0 a#li_ui_li_gen_1396389469960_0-link:after{content:"." !important;display:block !important;clear:both !important;visibility:hidden !important;line-height:0 !important;height:0 !important;}#li_ui_li_gen_1396389469960_0 #li_ui_li_gen_1396389469960_0-logo{background-image:url(https://www.linkedin.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-position:0px -276px !important;background-repeat:no-repeat !important;background-size:initial !important;cursor:pointer !important;border:0 !important;text-indent:-9999em !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:absolute !important;left:0px !important;top:0px !important;display:block !important;width:20px !important;height:20px !important;float:right !important;border-radius:0 !important;-webkit-border-radius:0 !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;}#li_ui_li_gen_1396389469960_0.hovered #li_ui_li_gen_1396389469960_0-logo{background-position:-20px -276px !important;}#li_ui_li_gen_1396389469960_0.clicked #li_ui_li_gen_1396389469960_0-logo, #li_ui_li_gen_1396389469960_0.down #li_ui_li_gen_1396389469960_0-logo{background-position:-40px -276px !important;}.IN-shadowed #li_ui_li_gen_1396389469960_0 #li_ui_li_gen_1396389469960_0-logo{}#li_ui_li_gen_1396389469960_0 #li_ui_li_gen_1396389469960_0-title{color:#333 !important;cursor:pointer !important;display:block !important;white-space:nowrap !important;float:left !important;margin-left:1px !important;vertical-align:top !important;overflow:hidden !important;text-align:center !important;height:18px !important;padding:0 4px 0 23px !important;border:1px solid #000 !important;border-top-color:#E2E2E2 !important;border-right-color:#BFBFBF !important;border-bottom-color:#B9B9B9 !important;border-left-color:#E2E2E2 !important;border-left:0 !important;text-shadow:#FFFFFF -1px 1px 0 !important;line-height:20px !important;border-radius:0 !important;-webkit-border-radius:0 !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;background-color:#ECECEC !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#FEFEFE), color-stop(100%,#ECECEC)) !important; background-image: -webkit-linear-gradient(top, #FEFEFE 0%, #ECECEC 100%) !important;}#li_ui_li_gen_1396389469960_0.hovered #li_ui_li_gen_1396389469960_0-title{border:1px solid #000 !important;border-top-color:#ABABAB !important;border-right-color:#9A9A9A !important;border-bottom-color:#787878 !important;border-left-color:#04568B !important;border-left:0 !important;background-color:#EDEDED !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#EDEDED), color-stop(100%,#DEDEDE)) !important; background-image: -webkit-linear-gradient(top, #EDEDED 0%, #DEDEDE 100%) !important;}#li_ui_li_gen_1396389469960_0.clicked #li_ui_li_gen_1396389469960_0-title, #li_ui_li_gen_1396389469960_0.down #li_ui_li_gen_1396389469960_0-title{color:#666 !important;border:1px solid #000 !important;border-top-color:#B6B6B6 !important;border-right-color:#B3B3B3 !important;border-bottom-color:#9D9D9D !important;border-left-color:#49627B !important;border-left:0 !important;background-color:#DEDEDE !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#E3E3E3), color-stop(100%,#EDEDED)) !important; background-image: -webkit-linear-gradient(top, #E3E3E3 0%, #EDEDED 100%) !important;}.IN-shadowed #li_ui_li_gen_1396389469960_0 #li_ui_li_gen_1396389469960_0-title{}.IN-shadowed #li_ui_li_gen_1396389469960_0.hovered #li_ui_li_gen_1396389469960_0-title{}.IN-shadowed #li_ui_li_gen_1396389469960_0.clicked #li_ui_li_gen_1396389469960_0-title, .IN-shadowed #li_ui_li_gen_1396389469960_0.down #li_ui_li_gen_1396389469960_0-title{}#li_ui_li_gen_1396389469960_0 #li_ui_li_gen_1396389469960_0-title-text, #li_ui_li_gen_1396389469960_0 #li_ui_li_gen_1396389469960_0-title-text *{color:#333 !important;font-size:11px !important;font-family:Arial, sans-serif !important;font-weight:bold !important;font-style:normal !important;-webkit-font-smoothing:antialiased !important;display:inline-block !important;background:transparent none !important;vertical-align:top !important;height:18px !important;line-height:20px !important;float:none !important;}#li_ui_li_gen_1396389469960_0 #li_ui_li_gen_1396389469960_0-title-text strong{font-weight:bold !important;}#li_ui_li_gen_1396389469960_0 #li_ui_li_gen_1396389469960_0-title-text em{font-style:italic !important;}#li_ui_li_gen_1396389469960_0.hovered #li_ui_li_gen_1396389469960_0-title-text, #li_ui_li_gen_1396389469960_0.hovered #li_ui_li_gen_1396389469960_0-title-text *{color:#000 !important;}#li_ui_li_gen_1396389469960_0.clicked #li_ui_li_gen_1396389469960_0-title-text, #li_ui_li_gen_1396389469960_0.down #li_ui_li_gen_1396389469960_0-title-text, #li_ui_li_gen_1396389469960_0.clicked #li_ui_li_gen_1396389469960_0-title-text *, #li_ui_li_gen_1396389469960_0.down #li_ui_li_gen_1396389469960_0-title-text *{color:#666 !important;}#li_ui_li_gen_1396389469960_0 #li_ui_li_gen_1396389469960_0-title #li_ui_li_gen_1396389469960_0-mark{display:inline-block !important;width:0px !important;overflow:hidden !important;}.success #li_ui_li_gen_1396389469960_0 #li_ui_li_gen_1396389469960_0-title{color:#333 !important;border-top-color:#E2E2E2 !important;border-right-color:#BFBFBF !important;border-bottom-color:#B9B9B9 !important;border-left-color:#E2E2E2 !important;background-color:#ECECEC !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#FEFEFE), color-stop(100%,#ECECEC)) !important; background-image: -webkit-linear-gradient(top, #FEFEFE 0%, #ECECEC 100%) !important;}.success #li_ui_li_gen_1396389469960_0 #li_ui_li_gen_1396389469960_0-title-text, .success #li_ui_li_gen_1396389469960_0 #li_ui_li_gen_1396389469960_0-title-text *{color:#333 !important;}.IN-shadowed .success #li_ui_li_gen_1396389469960_0 #li_ui_li_gen_1396389469960_0-title{}.success #li_ui_li_gen_1396389469960_0.hovered #li_ui_li_gen_1396389469960_0-title{color:#000 !important;border-top-color:#ABABAB !important;border-right-color:#9A9A9A !important;border-bottom-color:#787878 !important;border-left-color:#04568B !important;background-color:#EDEDED !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#EDEDED), color-stop(100%,#DEDEDE)) !important; background-image: -webkit-linear-gradient(top, #EDEDED 0%, #DEDEDE 100%) !important;}.success #li_ui_li_gen_1396389469960_0.hovered #li_ui_li_gen_1396389469960_0-title-text, .success #li_ui_li_gen_1396389469960_0.hovered #li_ui_li_gen_1396389469960_0-title-text *{color:#000 !important;}.success #li_ui_li_gen_1396389469960_0.clicked #li_ui_li_gen_1396389469960_0-title, .success #li_ui_li_gen_1396389469960_0.down #li_ui_li_gen_1396389469960_0-title{color:#666 !important;border-top-color:#B6B6B6 !important;border-right-color:#B3B3B3 !important;border-bottom-color:#9D9D9D !important;border-left-color:#49627B !important;background-color:#DEDEDE !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#E3E3E3), color-stop(100%,#EDEDED)) !important; background-image: -webkit-linear-gradient(top, #E3E3E3 0%, #EDEDED 100%) !important;}.success #li_ui_li_gen_1396389469960_0.clicked #li_ui_li_gen_1396389469960_0-title-text, .success #li_ui_li_gen_1396389469960_0.down #li_ui_li_gen_1396389469960_0-title-text, .success #li_ui_li_gen_1396389469960_0.clicked #li_ui_li_gen_1396389469960_0-title-text *, .success #li_ui_li_gen_1396389469960_0.down #li_ui_li_gen_1396389469960_0-title-text *{color:#666 !important;}.IN-shadowed .success #li_ui_li_gen_1396389469960_0.clicked #li_ui_li_gen_1396389469960_0-title, .IN-shadowed .success #li_ui_li_gen_1396389469960_0.down #li_ui_li_gen_1396389469960_0-title{}#li_ui_li_gen_1396389469975_1-container.IN-right {display:inline-block !important;float:left !important;overflow:visible !important;position:relative !important;height:18px !important;padding-left:2px !important;line-height:1px !important;cursor:pointer !important;}#li_ui_li_gen_1396389469975_1.IN-right {display:block !important;float:left !important;height:18px !important;margin-right:4px !important;padding-right:4px !important;background-image:url(https://www.linkedin.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:right -100px !important;}#li_ui_li_gen_1396389469975_1-inner.IN-right {display:block !important;float:left !important;padding-left:8px !important;text-align:center !important;background-image:url(https://www.linkedin.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:0px -60px !important;}#li_ui_li_gen_1396389469975_1-content.IN-right {display:inline !important;font-size:11px !important;color:#04558B !important;font-weight:bold !important;font-family:Arial, sans-serif !important;line-height:18px !important;padding:0 5px 0 5px !important;}#li_ui_li_gen_1396389469975_1-container.IN-empty {display:none !important;}#li_ui_li_gen_1396389469975_1-container.IN-hidden #li_ui_li_gen_1396389469975_1 {display:none !important;}</style><script type="text/javascript" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/Default.aspx"></script><style type="text/css">.atlwdg-blanket {background: black;height: 100%;left: 0;opacity: .5;position: fixed;top: 0;width: 100%;z-index: 1000000;}.atlwdg-popup {background: white;border: 1px solid #666;position: fixed;top: 50%;left: 50%;z-index: 10000011;}.atlwdg-popup.atlwdg-box-shadow {-moz-box-shadow: 10px 10px 20px rgba(0,0,0,0.5);-webkit-box-shadow: 10px 10px 20px rgba(0,0,0,0.5);box-shadow: 10px 10px 20px rgba(0,0,0,0.5);background-color: white;}.atlwdg-hidden {display: none;}.atlwdg-trigger {position: fixed;background: #013466;padding: 5px;border: 2px solid white;border-top: none;font-weight: bold;color: white !important;display: block;white-space: nowrap;text-decoration: none !important;font-family: arial, FreeSans, Helvetica, sans-serif;font-size: 12px;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);-webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);-moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);border-radius: 0 0 5px 5px;-moz-border-radius: 0 0 5px 5px;}.atlwdg-trigger.atlwdg-TOP {left: 45%;top: 0;}.atlwdg-trigger.atlwdg-RIGHT {left: 100%;top: 40%;-webkit-transform-origin: top left;-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-moz-transform-origin: top left;-ms-transform: rotate(90deg);-ms-transform-origin: top left;}.atlwdg-trigger.atlwdg-SUBTLE {right: 0;bottom: 0;border: 1px solid #ccc;border-bottom: none;border-right: none;background-color: #f5f5f5;color: #444 !important;font-size: 11px;padding: 6px;box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.5);border-radius: 2px 0 0 0;}.atlwdg-loading {position: absolute;top: 220px;left: 295px;}@media print {.atlwdg-trigger { display: none; }}</style><script async="true" type="text/javascript" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/roundtrip.js"></script><script async="true" type="text/javascript" src="https://d.adroll.com/pixel/32VY3BYAQRHLDDVMBEAGU2/7Q44S6SDXNA4NE4TSAUFGF?pv=82205884018.91292&cookie=&keyw="></script><div style="width: 1px; height: 1px; display: inline;"><img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/f/out">
+<img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/w/out">
+<img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/x/out">
+<img height="1" width="1" alt="" style="display:none" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/tr"><img height="1" width="1" style="border-style:none;" alt="" src="https://www.googleadservices.com/pagead/conversion/1032613984/?label=B6nBCIrQ2wYQ4OCx7AM&guid=ON&script=0&ord=5005785210523754">
+<img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/g/out?google_nid=adroll">
+<!-- rmx placeholder -->
+<img src="https://secure.adnxs.com/seg?add=622818&t=2" width="1" height="1">
+</div></head>
+<body id="customNav" class="campaign workflows git en" data-twttr-rendered="true"><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" style="padding-bottom: 8px; padding-right: 8px; display: none;"><div id="cboxWrapper" style=""><div style=""><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxLoadedContent" class="" style="width: 0px; height: 0px; overflow: hidden;"></div><div id="cboxLoadingOverlay" class="" style=""></div><div id="cboxLoadingGraphic" class="" style=""></div><div id="cboxTitle" class="" style=""></div><div id="cboxCurrent" class="" style=""></div><div id="cboxNext" class="" style=""></div><div id="cboxPrevious" class="" style=""></div><div id="cboxSlideshow" class="" style=""></div><div id="cboxClose" class="" style=""></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div>
+<div id="container">
+<div id="header" class="noNav">
+<div class="box">
+<div id="logo"><a href="https://www.atlassian.com/">ATLASSIAN</a></div>
+<div class="socialButtons">
+<div class="socialButtonWrapper">
+<div class="facebook socialButton">
+<iframe src="./Feature Branch Workflow   Atlassian Git Tutorial_files/like.htm" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowtransparency="true"></iframe>
+</div><!--/button-->
+<div class="twitter socialButton">
+<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/tweet_button.1395870373.htm" class="twitter-share-button twitter-tweet-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 110px; height: 20px;"></iframe>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div><!--/button-->
+<div class="google socialButton">
+<!-- Place this tag where you want the +1 button to render. -->
+<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background-position: initial initial; background-repeat: initial initial;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1396389469158" name="I0_1396389469158" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/fastbutton.htm" data-gapiattached="true" title="+1"></iframe></div>
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+</div><!--/button-->
+<div class="linkedIn socialButton">
+<script src="./Feature Branch Workflow   Atlassian Git Tutorial_files/in.js" type="text/javascript"></script>
+<span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1396389469960_0"><a id="li_ui_li_gen_1396389469960_0-link" href="javascript:void(0);"><span id="li_ui_li_gen_1396389469960_0-logo">in</span><span id="li_ui_li_gen_1396389469960_0-title"><span id="li_ui_li_gen_1396389469960_0-mark"></span><span id="li_ui_li_gen_1396389469960_0-title-text">Share</span></span></a></span></span><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1396389469975_1-container" class="IN-right"><span id="li_ui_li_gen_1396389469975_1" class="IN-right"><span id="li_ui_li_gen_1396389469975_1-inner" class="IN-right"><span id="li_ui_li_gen_1396389469975_1-content" class="IN-right">311</span></span></span></span></span></span><script type="IN/Share+init" data-counter="right"></script>
+</div><!--/button-->
+</div><!--/socialButtonsWrapper-->
+</div><!--/socialButtons-->
+<!--Feedback Collector-->
+<script type="text/javascript" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin-issuecollector.js"></script>
+</div>
+</div>
+<div id="content">
+<div id="companyHeader" class="wrapper sectionNavCustom" style="margin-top:40px;">
+<div class="box">
+<div id="companyLogo">
+<a href="https://www.atlassian.com/git">Git Tutorials</a>
+</div>
+<div id="companyNav">
+<ul>
+<li class="">
+<a href="https://www.atlassian.com/git/">
+Overview
+</a>
+</li>
+<li class="">
+<a href="https://www.atlassian.com/git/tutorial">
+Git Tutorials
+</a>
+</li>
+<li class="selected">
+<a href="https://www.atlassian.com/git/workflows">
+Git Workflows
+</a>
+</li>
+<li class="">
+<a href="https://www.atlassian.com/git/migration">
+Migration
+</a>
+</li>
+<li class="">
+<a href="https://www.atlassian.com/git/resources">
+Git Resources
+</a>
+</li>
+</ul>
+</div>
+<div id="subNav" style="margin-bottom:0;">
+<ul>
+<li class="">
+<a href="https://www.atlassian.com/git/tutorial/git-basics">1. Git Basics</a>
+</li>
+<li class="">
+<a href="https://www.atlassian.com/git/tutorial/undoing-changes">2. Undoing Changes</a>
+</li>
+<li class="">
+<a href="https://www.atlassian.com/git/tutorial/git-branches">3. Git Branches</a>
+</li>
+<li class="">
+<a href="https://www.atlassian.com/git/tutorial/rewriting-git-history">4. Rewriting Git History</a>
+</li>
+<li class="">
+<a href="https://www.atlassian.com/git/tutorial/remote-repositories">5. Remote Repositories</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 2 - column template: -->
+<div id="introsection" class="wrapper">
+<div class="box">
+<div class="twoCol">
+<div class="col">
+<h1>Git Workflows</h1>
+<div class="fancyIntro">
+<p><span class="highlite ltr-t">T</span>he array of possible workflows can make it hard to know where to begin when implementing Git in the workplace. This page provides a starting point by surveying the most common Git workflows for enterprise teams.</p> <p>As you read through, remember that these workflows are designed to be guidelines rather than concrete rules. We want to show you what’s possible, so you can mix and match aspects from different workflows to suit your individual needs.</p>
+</div>
+</div>
+<div class="col last">
+<!--using cdnBaseURL-->
+<img src="./Feature Branch Workflow   Atlassian Git Tutorial_files/git_workflow.png" alt="Git Workflows" class="" style="margin-top:0px;">
+</div>
+</div>
+</div>
+</div>
+<div id="tabsection" class="wrapper">
+<div class="box">
+<div id="tabsDef" class="clearfix vertical">
+<ul id="tabsNav">
+<!-- if any tabs in this are seoTabs, they should all behave as SEO tabs, so first test if any tabs are seo tabs -->
+<li name="workflow-overview" id="workflow-overview-tab"><a href="https://www.atlassian.com/git/workflows#!workflow-overview" onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/git/workflows.html#!workflow-overview&#39;]);" title="Git Workflows and Tutorials | Atlassian" keywords="Git Tutorial, Git Training, Git" description="Learn the basics of common Git workflows. Training in SVN-style, feature branch, and release cycle workflows in this Atlassian Git tutorial.">Overview</a>
+</li>
+<li name="workflow-centralized" id="workflow-centralized-tab" class=""><a href="https://www.atlassian.com/git/workflows#!workflow-centralized" onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/git/workflows.html#!workflow-centralized&#39;]);" title="Centralized Workflow | Atlassian Git Tutorial" keywords="git, git tutorial, git workflow" description="If you&#39;re already comfortable with Subversion, the Centralized Workflow lets you experience the benefits of Git without having to adapt to an entirely new process. ">Centralized Workflow</a>
+</li>
+<li name="workflow-feature-branch" id="workflow-feature-branch-tab" class="selected"><a href="./Feature Branch Workflow   Atlassian Git Tutorial_files/Feature Branch Workflow   Atlassian Git Tutorial.htm" onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/git/workflows.html#!workflow-feature-branch&#39;]);" title="Feature Branch Workflow | Atlassian Git Tutorial" keywords="git, git workflows, feature branching" description="The Feature Branch Workflow isolates new features into branches, using pull requests as a means to discuss changes before they’re integrated into a project.">Feature Branch Workflow</a>
+</li>
+<li name="workflow-gitflow" id="workflow-gitflow-tab"><a href="https://www.atlassian.com/git/workflows#!workflow-gitflow" onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/git/workflows.html#!workflow-gitflow&#39;]);" title="Gitflow Workflow | Atlassian Git Tutorial" keywords="Git Tutorial, Git Training, Git" description="The Gitflow Workflow streamlines the release cycle by using isolated branches for feature development, release preparation, and maintenance.">Gitflow Workflow</a>
+</li>
+<li name="workflow-forking" id="workflow-forking-tab"><a href="https://www.atlassian.com/git/workflows#!workflow-forking" onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/git/workflows.html#!workflow-forking&#39;]);" title="Forking Workflow | Atlassian Git Tutorial" keywords="Git Workflows, Git Tutorial, Git Training, Git" description="The Forking Workflow is a way for teams to collaborate securely by allowing commits from any developer without giving them access to the official codebase.">Forking Workflow</a>
+</li>
+<li name="pull-request" id="pull-request-tab"><a href="https://www.atlassian.com/git/workflows#!pull-request" onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/git/workflows.html#!pull-request&#39;]);" title="Pull Requests | Atlassian Git Tutorial" keywords="git, pull requests, git workflows" description="Pull requests make it easier for developers to collaborate. They provide a user-friendly interface for discussing changes before integrating them into a project.">Pull Requests</a>
+</li>
+</ul>
+<div id="workflow-feature-branch" name="workflow-feature-branch" class="tabsContent done">
+<div class="outer">
+<div class="inner">
+<div class="wrapper">
+<div class="box">
+<!-- image -->
+<!-- heading -->
+<!-- fancy font paragraph -->
+<!-- normal font paragraph -->
+<h2>Feature Branch Workflow</h2> <p><img src="./Feature Branch Workflow   Atlassian Git Tutorial_files/git-workflow-feature-branch-1.png" width="614" height="537" alt=""></p> <p>Once you've got the hang of the <a href="https://www.atlassian.com/git/workflows#!workflow-centralized">Centralized Workflow</a>, adding feature branches to your development process is an easy way to encourage collaboration and streamline communication between developers.</p> <p>The core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the <span class="code">master</span> branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the <span class="code">master</span> branch will never contain broken code, which is a huge advantage for continuous integration environments.</p> <p>Encapsulating feature development also makes it possible to leverage <a href="https://www.atlassian.com/git/workflows#!pull-request">pull requests</a>, which are a way to initiate discussions around a branch. They give other developers the opportunity to sign off on a feature before it gets integrated into the official project. Or, if you get stuck in the middle of a feature, you can open a pull request asking for suggestions from your colleagues. The point is, pull requests make it incredibly easy for your team to comment on each other’s work.</p>
+</div>
+</div>
+<div class="wrapper">
+<div class="box">
+<!-- image -->
+<!-- heading -->
+<!-- fancy font paragraph -->
+<!-- normal font paragraph -->
+<h2>How It Works</h2> <p>The Feature Branch Workflow still uses a central repository, and <span class="code">master</span> still represents the official project history. But, instead of committing directly on their local <span class="code">master</span> branch, developers create a new branch every time they start work on a new feature. Feature branches should have descriptive names, like <span class="code">animated-menu-items</span> or <span class="code">issue-#1061</span>. The idea is to give a clear, highly-focused purpose to each branch.</p> <p>Git makes no technical distinction between the <span class="code">master</span> branch and feature branches, so developers can edit, stage, and commit changes to a feature branch just as they did in the Centralized Workflow.</p> <p>In addition, feature branches can (and should) be pushed to the central repository. This makes it possible to share a feature with other developers without touching any official code. Since <span class="code">master</span> is the only “special” branch, storing several feature branches on the central repository doesn’t pose any problems. Of course, this is also a convenient way to back up everybody’s local commits.</p> <h3>Pull Requests</h3> <p>Aside from isolating feature development, branches make it possible to discuss changes via <a href="https://www.atlassian.com/git/workflows#!pull-request">pull requests</a>. Once someone completes a feature, they don’t immediately merge it into <span class="code">master</span>. Instead, they push the feature branch to the central server and file a pull request asking to merge their additions into <span class="code">master</span>. This gives other developers an opportunity to review the changes before they become a part of the main codebase.</p> <p>Code review is a major benefit of pull requests, but they’re actually designed to be a generic way to talk about code. You can think of pull requests as a discussion dedicated to a particular branch. This means that they can also be used much earlier in the development process. For example, if a developer needs help with a particular feature, all they have to do is file a pull request. Interested parties will be notified automatically, and they’ll be able to see the question right next to the relevant commits.</p> <p>Once a pull request is accepted, the actual act of publishing a feature is much the same as in the Centralized Workflow. First, you need to make sure your local <span class="code">master</span> is synchronized with the upstream <span class="code">master</span>. Then, you merge the feature branch into <span class="code">master</span> and push the updated <span class="code">master</span> back to the central repository.</p> <p>Pull requests can be facilitated by product repository management solutions like <a href="http://bitbucket.org/">Bitbucket</a> or <a href="http://www.atlassian.com/stash">Stash</a>. View the Stash <a href="https://confluence.atlassian.com/display/STASH/Using+pull+requests+in+Stash">pull requests documentation</a> for an example.</p>
+</div>
+</div>
+<div class="wrapper">
+<div class="box">
+<!-- image -->
+<!-- heading -->
+<!-- fancy font paragraph -->
+<!-- normal font paragraph -->
+<h2>Example</h2> <p>The example included below demonstrates a pull request as a form of code review, but remember that they can serve many other purposes.</p> <h3>Mary begins a new feature</h3> <p><img src="./Feature Branch Workflow   Atlassian Git Tutorial_files/git-workflow-feature-branch-2.png" width="236" height="105" alt=""></p> <p>Before she starts developing a feature, Mary needs an isolated branch to work on. She can <a href="https://www.atlassian.com/git/tutorial/git-branches#!checkout">request a new branch</a> with the following command:</p> <p><code>git checkout -b marys-feature master</code></p> <p>This checks out a branch called <span class="code">marys-feature</span> based on <span class="code">master</span>, and the <span class="code">-b</span> flag tells Git to create the branch if it doesn’t already exist. On this branch, Mary edits, stages, and commits changes in the usual fashion, building up her feature with as many commits as necessary:</p> <p><code>git status<br> git add &lt;some-file&gt;<br> git commit</code></p>
+</div>
+</div>
+<div class="wrapper">
+<div class="box">
+<!-- image -->
+<!-- heading -->
+<!-- fancy font paragraph -->
+<!-- normal font paragraph -->
+<h3>Mary goes to lunch</h3> <p><img src="./Feature Branch Workflow   Atlassian Git Tutorial_files/git-workflow-feature-branch-3.png" alt="Git Workflows: Feature Commits" width="236" height="273"></p> <p>Mary <a href="https://www.atlassian.com/git/tutorial/git-basics#!commit">adds a few commits to her feature</a> over the course of the morning. Before she leaves for lunch, it’s a good idea to <a href="https://www.atlassian.com/git/tutorial/remote-repositories#!push">push her feature branch up to the central repository</a>. This serves as a convenient backup, but if Mary was collaborating with other developers, this would also give them access to her initial commits.</p> <p><code>git push -u origin marys-feature</code></p> <p>This command pushes <span class="code">marys-feature</span> to the central repository (<span class="code">origin</span>), and the <span class="code">-u</span> flag adds it as a remote tracking branch. After setting up the tracking branch, Mary can call <span class="code">git push</span> without any parameters to push her feature.</p>
+</div>
+</div>
+<div class="wrapper">
+<div class="box">
+<!-- image -->
+<!-- heading -->
+<!-- fancy font paragraph -->
+<!-- normal font paragraph -->
+<h3>Mary finishes her feature</h3> <p><img src="./Feature Branch Workflow   Atlassian Git Tutorial_files/git-workflow-feature-branch-4.png" alt="Git Workflows: Pull Request" width="236" height="273"></p> <p>When Mary gets back from lunch, she completes her feature. <a href="https://www.atlassian.com/git/tutorial/git-branches#!merge">Before merging it into <span class="code">master</span></a>, she needs to file a pull request letting the rest of the team know she's done. But first, she should make sure the central repository has her most recent commits:</p> <p><code>git push</code></p> <p>Then, she files the pull request in her Git GUI asking to merge <span class="code">marys-feature</span> into <span class="code">master</span>, and team members will be notified automatically. The great thing about pull requests is that they show comments right next to their related commits, so it's easy to ask questions about specific changesets.</p>
+</div>
+</div>
+<div class="wrapper">
+<div class="box">
+<!-- image -->
+<!-- heading -->
+<!-- fancy font paragraph -->
+<!-- normal font paragraph -->
+<h3>Bill receives the pull request</h3> <p><img src="./Feature Branch Workflow   Atlassian Git Tutorial_files/git-workflow-feature-branch-5.png" alt="Git Workflows: Feature Pull Requests" width="236" height="273"></p> <p>Bill gets the pull request and takes a look at <span class="code">marys-feature</span>. He decides he wants to make a few changes before integrating it into the official project, and he and Mary have some back-and-forth via the pull request.</p>
+</div>
+</div>
+<div class="wrapper">
+<div class="box">
+<!-- image -->
+<!-- heading -->
+<!-- fancy font paragraph -->
+<!-- normal font paragraph -->
+<h3>Mary makes the changes</h3> <p><img src="./Feature Branch Workflow   Atlassian Git Tutorial_files/git-workflow-feature-branch-6.png" alt="Git Workflows: Central Repository Push" width="236" height="273"></p> <p>To make the changes, Mary uses the exact same process as she did to create the first iteration of her feature. She edits, stages, commits, and pushes updates to the central repository. All her activity shows up in the pull request, and Bill can still make comments along the way.</p> <p>If he wanted, Bill could pull <span class="code">marys-feature</span> into his local repository and work on it on his own. Any commits he added would also show up in the pull request.</p>
+</div>
+</div>
+<div class="wrapper">
+<div class="box">
+<!-- image -->
+<!-- heading -->
+<!-- fancy font paragraph -->
+<!-- normal font paragraph -->
+<h3>Mary publishes her feature</h3> <p><img src="./Feature Branch Workflow   Atlassian Git Tutorial_files/git-workflow-feature-branch-7.png" width="236" height="102" alt=""></p> <p>Once Bill is ready to accept the pull request, someone needs to merge the feature into the stable project (this can be done by either Bill or Mary):</p> <p><code>git checkout master<br> git pull<br> git pull origin marys-feature<br> git push</code></p> <p>First, whoever’s performing the merge needs to check out their <span class="code">master</span> branch and make sure it’s up to date. Then, <span class="code">git pull origin marys-feature</span> merges the central repository’s copy of <span class="code">marys-feature</span>. You could also use a simple <span class="code">git merge marys-feature</span>, but the command shown above makes sure you’re always pulling the most up-to-date version of the feature branch. Finally, the updated <span class="code">master</span> needs to get pushed back to <span class="code">origin</span>.</p> <p>This process often results in a merge commit. Some developers like this because it’s like a symbolic joining of the feature with the rest of the code base. But, if you’re partial to a linear history, it’s possible to rebase the feature onto the tip of <span class="code">master</span> before executing the merge, resulting in a fast-forward merge.</p> <p>Some GUI’s will automate the pull request acceptance process by running all of these commands just by clicking an “Accept” button. If yours doesn’t, it should at least be able to automatically close the pull request when the feature branch gets merged into <span class="code">master</span></p>
+</div>
+</div>
+<div class="wrapper">
+<div class="box">
+<!-- image -->
+<!-- heading -->
+<!-- fancy font paragraph -->
+<!-- normal font paragraph -->
+<h3>Meanwhile, John is doing the exact same thing</h3> <p>While Mary and Bill are working on <span class="code">marys-feature</span> and discussing it in her pull request, John is doing the exact same thing with his own feature branch. By isolating features into separate branches, everybody can work independently, yet it’s still trivial to share changes with other developers when necessary.</p>
+</div>
+</div>
+<div class="wrapper">
+<div class="box">
+<!-- image -->
+<!-- heading -->
+<!-- fancy font paragraph -->
+<!-- normal font paragraph -->
+<h2>Where To Go From Here</h2> <p>By now, you can hopefully see how feature branches are a way to quite literally multiply the functionality of the single <span class="code">master</span> branch used in the <a href="https://www.atlassian.com/git/workflows#!workflow-centralized">Centralized Workflow</a>. In addition, feature branches also facilitate pull requests, which makes it possible to discuss specific commits right inside of your version control GUI.</p> <p>The Feature Branch Workflow is an incredibly flexible way to develop a project. The problem is, sometimes it’s too flexible. For larger teams, it’s often beneficial to assign more specific roles to different branches. The Gitflow Workflow is a common pattern for managing feature development, release preparation, and maintenance.</p>
+</div>
+</div>
+<div class="wrapper">
+<div class="box">
+<div class="pageNav">
+<ul>
+<li style="display: list-item;" class="previous"><em>PREVIOUS</em>
+<a class="prevText" href="https://www.atlassian.com/git/workflows#!workflow-centralized">Centralized Workflow</a></li>
+<li class="next"><em>NEXT</em>
+<a class="nextText" href="https://www.atlassian.com/git/workflows#!workflow-gitflow">Gitflow Workflow</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+$(function(){
+searchableTabNavigation({
+listItem: "#tabsNav li",
+contentItem: ".tabsContent"
+});
+});
+</script>
+</div>
+</div>
+<div class="lastSection">
+<div id="callfooter" class="wrapper">
+<div class="box">
+<!-- 2 - column template: -->
+<div id="sectionfooter" class="wrapper">
+<div class="box">
+<div class="twoCol">
+<div class="col">
+<h2>Sign up for more Git articles &amp; resources:</h2>
+<form action="https://www.atlassian.com/git/workflows#" method="POST" id="ss-form" onsubmit="submitSpreadsheetForm();" novalidate="novalidate">
+<label></label>
+<input type="text" name="emailAddress" value="Your Email Address" onblur="this.value = this.value || this.defaultValue;" onfocus="this.value = &#39;&#39;" class="ss-q-short userEmail" id="emailAddress">
+<input type="hidden" name="pageNumber" value="0">
+<input type="hidden" name="backupCache" value="">
+<button class="button" name="submit" value="Submit" id="ss-submit"><span class="buttonTxt">Sign Up</span></button>
+<span class="formError" style="display:none">Please enter a valid email address</span>
+</form>
+<div class="formSubmit" style="display:none">
+<p>&nbsp;Thank you for subscribing!</p>
+</div>
+<script src="./Feature Branch Workflow   Atlassian Git Tutorial_files/jquery-validate.js"></script>
+<script>
+$(function(){
+$("#ss-form").validate({
+rules: {
+emailAddress: {
+required: true,
+email: true
+}
+}
+});
+$('a[href*="#!"]').live('click',function(){
+$(window).scrollTo('.tabsContent:visible');
+});
+});
+function submitSpreadsheetForm() {
+if($('#ss-form').valid()){
+// see if there is a #ss-form on the page. There can only be one.
+if ($('#ss-form').length === 1) {
+// don't let them submit feedback more than once
+if ($('#spreadsheet-iframe').length === 0) {
+// so the user experience isn't disturbed, create a hidden iframe to submit the form in.
+var spreadsheet_iframe = $('<iframe></iframe>').attr('id', 'spreadsheet-iframe');
+spreadsheet_iframe.attr('name', 'spreadsheet-iframe');
+spreadsheet_iframe.attr('style', 'display:none;');
+// add the hidden iframe
+$('body').append(spreadsheet_iframe);
+// set the target for the form the id/name of the hidden iframe
+$('#ss-form').attr('target', 'spreadsheet-iframe');
+// hide the form and
+$('#ss-form').fadeOut('fast', function() {
+$('.formSubmit').show();
+});
+// do a virtual page view to indicate they took an action
+_gaq.push(['_setAccount', 'UA-6032469-1']);
+_gaq.push(['_setDomainName', 'none']);
+_gaq.push(['_setAllowLinker', true]);
+_gaq.push(['_trackPageview', 'spreadsheet=true']);
+}
+}
+return false;
+}else{
+return false;
+}
+}
+</script>
+<!-- image -->
+<!-- heading -->
+<!-- fancy font paragraph -->
+<!-- normal font paragraph -->
+<h2>Our latest Git blog posts</h2>
+<!--<img src="/magnoliaAuthor/en/dms/wac/images/tnKen.jpg" alt="Ken" class="left">-->
+<!-- Gravatar start -->
+<p class="blog-author" style="float: left; margin-right: 7px;"><img src="./Feature Branch Workflow   Atlassian Git Tutorial_files/eb25ae1d4c77dd23dcb45c60c9dc1953" alt="Andrea Villa" style="width: 50px; height: 50px; border: 1px solid rgb(76, 154, 201);"></p>
+<!-- Gravatar end -->
+<h4 id="blogDate-1396364414000" class="blogDate" style="color: rgb(64, 64, 64);">April 1, 2014</h4>
+<h3 id="blogTitle" style="font-weight: bold;"><a href="http://blogs.atlassian.com/2014/04/tear-apart-repository-git-way/">How to tear apart a repository: the Git way</a></h3>
+<p style="clear:both;">
+How do you divide a Git repo without squashing the history and breaking the original repo? I’ll show you how to do it with as little pain as possible, by splitting the main repository, thus mak ...
+</p>
+<!-- image -->
+<!-- heading -->
+<!-- fancy font paragraph -->
+<!-- normal font paragraph -->
+<p><a href="http://blogs.atlassian.com/tag/git">Read more at the Git blog</a></p>
+</div>
+<div class="col last">
+<!-- image -->
+<!-- heading -->
+<h2 id="git-products-by-atlassian">Git products by Atlassian</h2>
+<!-- fancy font paragraph -->
+<!-- normal font paragraph -->
+<ul> <li><a onclick="merlinTrack(&#39;git-product-footer&#39;,&#39;link&#39;, &#39;stash&#39;);_gaq.push([&#39;_trackEvent&#39;, &#39;git-product-footer&#39;,&#39;link&#39;, &#39;stash&#39;]);" href="https://www.atlassian.com/software/stash/overview"><img width="86" height="30" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/stash_logo_30pxtall.png" alt=""><br> Git repo management – Behind your firewall and enterprise ready.</a></li> <li><a onclick="merlinTrack(&#39;git-product-footer&#39;,&#39;link&#39;, &#39;bitbucket&#39;);_gaq.push([&#39;_trackEvent&#39;, &#39;git-product-footer&#39;,&#39;link&#39;, &#39;bitbucket&#39;]);" href="https://www.atlassian.com/software/bitbucket/overview"><img width="127" height="30" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/bitbucket_logo_30pxtall.png" alt=""><br> Git repo management – In the cloud, with free unlimited private repos.</a></li> <li><a onclick="merlinTrack(&#39;git-product-footer&#39;,&#39;link&#39;, &#39;bamboo&#39;);_gaq.push([&#39;_trackEvent&#39;, &#39;git-product-footer&#39;,&#39;link&#39;, &#39;bamboo&#39;]);" href="https://www.atlassian.com/software/bamboo/overview"><img width="117" height="30" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/logoLandingBamboo.png" alt=""><br> Continuous integration and deployment, and release management.</a></li> <li><a onclick="merlinTrack(&#39;git-product-footer&#39;,&#39;link&#39;, &#39;source tree&#39;);_gaq.push([&#39;_trackEvent&#39;, &#39;git-product-footer&#39;,&#39;link&#39;, &#39;source tree&#39;]);" href="https://www.atlassian.com/software/sourcetree/overview"><img width="144" height="30" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/logoLandingSourceTree.png" alt=""><br> A free Git and Mercurial desktop client for Mac or Windows.</a></li> </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+$(function() {
+// if ((window.navigator.userLanguage || window.navigator.language).slice(0,2) !== "fr") {
+if ($.cookie('keep--banner-closed') !== "closed") {
+$('<img/>').attr('src', '/en//wac/meerkatContainer/03/git/0/imageBinary/meerkat_brandamp_bg.png').load(function() {
+$(this).remove();
+$('#meerkat-king-wrap').show();
+$('#meerkat').css('background', 'url(/en//wac/meerkatContainer/03/git/0/imageBinary/meerkat_brandamp_bg.png) no-repeat center 100%');
+var mkHeight = parseInt($('#meerkat').outerHeight(true), 10);
+mkHeight = (-mkHeight) - 22;
+$('#meerkat-king-wrap').css({'width' : $('#meerkat').css('width'), 'margin-top' : mkHeight});
+});
+$('.close-footerpop').click(function(e){
+$('#meerkat').hide();
+$.cookie('keep--banner-closed', 'closed');
+});
+}
+// }
+});
+</script>
+<div id="meerkat-king-wrap" style="width: 696px; margin-top: -110px;"><div id="meerkat-wrap" style="position: fixed; height: auto; bottom: 0px;">
+<div id="meerkat" class="" style="background-image: url(https://www.atlassian.com/en//wac/meerkatContainer/03/git/0/imageBinary/meerkat_brandamp_bg.png); background-position: 50% 100%; background-repeat: no-repeat no-repeat;">
+<div id="promotion">
+<a class="mkLink" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;&#39;,&#39;meerkat&#39;, &#39;/git/workflows&#39;]);" href="https://cc.readytalk.com/r/v7p32tb85gfn&eom">
+<span class="bannerWrap">
+<span class="bannerTitle">Git Essentials: See it live!</span>
+<span class="bannerContent"><p>A webinar with an Atlassian product advocate.</p></span>
+</span>
+</a>
+<span class="close-footerpop" href="#" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;&#39;,&#39;close&#39;, &#39;/git/workflows&#39;]);">Close</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>if ( typeof window.JSON === 'undefined' ) { document.write('<script src="/en/templating-kit-resources/wac/js/json2.js"><\/script>'); }</script>
+<script src="./Feature Branch Workflow   Atlassian Git Tutorial_files/jquery-plugins-min.js"></script>
+<script src="./Feature Branch Workflow   Atlassian Git Tutorial_files/scripts(1).js"></script>
+<script src="./Feature Branch Workflow   Atlassian Git Tutorial_files/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+var deviceAgent = navigator.userAgent.toLowerCase();
+is_iOS = deviceAgent.match(/(iphone|ipod|ipad)/);
+$("#newsletterSubscribe").attr('value', "Enter your email").css('color','#036');
+$("#newsletterSubscribe").focus(function(){
+$("#newsletterSubscribe").attr('value', "").css('color','#fff');
+});
+$('#subscribeForm').submit(function(e){
+var emailInput = $("#newsletterSubscribe").attr('value');
+var filter = /^\S+@\S+\.\S+$/;
+if(filter.test(emailInput) && emailInput.indexOf("|") == -1){
+return true;
+} else {
+e.preventDefault();
+$('.emailError').show();
+return false;
+}
+});
+$('.expandable tr.hasDescription').click(function(){
+if (!$(this).hasClass('open')) {
+$('.description').hide();
+$('.expandable tr').removeClass('open');
+$(this).addClass('open').next('.description').slideDown('fast');
+} else {
+$(this).removeClass('open').next('.description').slideUp('fast');
+}
+});
+$('.accordionBox li.hasDescription').click(function(){
+if (!$(this).hasClass('open')) {
+$('.description').slideUp('fast');
+$('.accordionBox li').removeClass('open');
+$(this).addClass('open').find('.description').stop().slideDown('fast');
+} else {
+$(this).removeClass('open').find('.description').slideUp('fast');
+}
+});
+screenshotTour();
+removeRoundTop();
+function removeRoundTop(){
+if ($('#featureNav li:first,.vertical #tabsNav li:first').hasClass('selected')) {
+$('.tourContent').addClass('navTop');
+$('.campaign #tabsDef.vertical').addClass('navTop');
+} else {
+$('.tourContent').removeClass('navTop');
+$('.campaign #tabsDef.vertical').removeClass('navTop');
+}
+}
+$('#featureNav ul,.vertical #tabsNav').click(function(){removeRoundTop();});
+initVideos();
+$(function() {
+dismissDialog();
+});
+});
+</script>
+<!-- tracking pixel -->
+<script type="text/javascript">
+adroll_adv_id = "32VY3BYAQRHLDDVMBEAGU2";
+adroll_pix_id = "7Q44S6SDXNA4NE4TSAUFGF";
+(function () {
+var oldonload = window.onload;
+window.onload = function(){
+__adroll_loaded=true;
+var scr = document.createElement("script");
+var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+scr.setAttribute('async', 'true');
+scr.type = "text/javascript";
+scr.src = host + "/j/roundtrip.js";
+((document.getElementsByTagName('head') || [null])[0] ||
+document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+if(oldonload){oldonload()}};
+}());
+</script>
+<!-- clickdensity -->
+<script type="text/javascript">
+var cdJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+document.write(unescape("%3Cscript src='" + cdJsHost + "j.clickdensity.com/cr.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Feature Branch Workflow   Atlassian Git Tutorial_files/cr.js" type="text/javascript"></script><iframe name="oauth2relay720728500" id="oauth2relay720728500" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/postmessageRelay.htm" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe>
+<script type="text/javascript">
+//<![CDATA[
+var clickdensity_siteID = 12001;
+var clickdensity_keyElement = 'header';
+//]]>
+</script>
+<!-- twitter ads -->
+<script src="./Feature Branch Workflow   Atlassian Git Tutorial_files/oct.js" type="text/javascript"></script>
+<script type="text/javascript">
+twttr.conversion.trackPid('l48rc');
+</script>
+<noscript>
+&lt;img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l48rc&amp;p_id=Twitter" /&gt;
+</noscript>
+<!-- Google Code for Other Product Page Viewed Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 956977744;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "666666";
+var google_conversion_label = "dWQeCPjtpQMQ0KSpyAM";
+var google_conversion_value = 0;
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Feature Branch Workflow   Atlassian Git Tutorial_files/conversion.js">
+</script><img height="1" width="1" border="0" alt="" src="https://www.googleadservices.com/pagead/conversion/956977744/?random=1396389471323&cv=7&fst=1396389471323&num=1&fmt=3&value=0&label=dWQeCPjtpQMQ0KSpyAM&bg=666666&hl=en&guid=ON&u_h=768&u_w=1366&u_ah=728&u_aw=1366&u_cd=24&u_his=1&u_tz=420&u_java=true&u_nplug=11&u_nmime=52&frm=0&url=https%3A//www.atlassian.com/git/workflows%23%21workflow-centralized&ref=https%3A//www.google.com/">
+<noscript>
+&lt;div style="display:inline;"&gt;
+&lt;img height="1" width="1" style="border-style:none;" alt="" src="https://www.googleadservices.com/pagead/conversion/956977744/?label=dWQeCPjtpQMQ0KSpyAM&amp;guid=ON&amp;script=0"/&gt;
+&lt;/div&gt;
+</noscript>
+
+<a href="https://www.atlassian.com/git/workflows#" id="atlwdg-trigger" class="atlwdg-trigger atlwdg-SUBTLE">Got Feedback?</a><div id="atlwdg-blanket" class="atlwdg-blanket" style="display: none;"></div><div id="atlwdg-container" class="atlwdg-popup atlwdg-box-shadow atlwdg-hidden"></div></body></html>

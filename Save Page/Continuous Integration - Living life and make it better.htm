@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)http://software.endy.muhardin.com/manajemen/continuous-integration/ -->
+<html class=" js video maskImage placeholder" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Continuous Integration - Living life and make it better</title>
+  <meta name="author" content="Endy Muhardin">
+
+  
+  <meta name="description" content="Tools untuk Continuous Integration sudah sering dibahas di sini. Ada CruiseControl, Luntbuild, dan Hudson. Apa yang begitu pentingnya dari proses ini …">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+  
+  <link rel="canonical" href="./Continuous Integration - Living life and make it better_files/Continuous Integration - Living life and make it better.htm">
+  <link href="http://software.endy.muhardin.com/favicon.png" rel="icon">
+  <link href="./Continuous Integration - Living life and make it better_files/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="./Continuous Integration - Living life and make it better_files/cb=gapi.loaded_1" async=""></script><script src="./Continuous Integration - Living life and make it better_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" src="./Continuous Integration - Living life and make it better_files/jXHR.js"></script><script type="text/javascript" async="" src="./Continuous Integration - Living life and make it better_files/plusone.js" gapi_processed="true"></script><script id="facebook-jssdk" src="./Continuous Integration - Living life and make it better_files/all.js"></script><script type="text/javascript" async="" src="./Continuous Integration - Living life and make it better_files/ga.js"></script><script src="./Continuous Integration - Living life and make it better_files/modernizr-2.0.js"></script>
+  <script src="./Continuous Integration - Living life and make it better_files/ender.js"></script>
+  <script src="./Continuous Integration - Living life and make it better_files/octopress.js" type="text/javascript"></script>
+  <link href="http://software.endy.muhardin.com/atom.xml" rel="alternate" title="Living life and make it better" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="./Continuous Integration - Living life and make it better_files/css" rel="stylesheet" type="text/css">
+<link href="./Continuous Integration - Living life and make it better_files/css(1)" rel="stylesheet" type="text/css">
+<link href="./Continuous Integration - Living life and make it better_files/css(2)" rel="stylesheet" type="text/css">
+<link href="./Continuous Integration - Living life and make it better_files/css(3)" rel="stylesheet" type="text/css">
+
+<meta property="fb:app_id" content="269506799827290">
+
+
+
+  <link href="./Continuous Integration - Living life and make it better_files/data-table.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="./Continuous Integration - Living life and make it better_files/font-awesome.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36102948-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+<script type="text/javascript" async="" src="./Continuous Integration - Living life and make it better_files/widgets.js"></script><script type="text/javascript" src="https://api.twitter.com/1/statuses/user_timeline/endymuhardin.json?trim_user=true&count=24&include_entities=1&exclude_replies=1&callback=reqwest_1396282202005" async=""></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,.fb_connect_bar_container span,.fb_connect_bar_container a,.fb_connect_bar_container img,.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}.fb_connect_bar a:hover{color:#fff}.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}.fb_connect_bar div a,.fb_connect_bar span,.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head>
+
+<body data-twttr-rendered="true">
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://software.endy.muhardin.com/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:software.endy.muhardin.com">
+    <input class="search" type="text" name="q" results="0" placeholder="Search">
+  </fieldset><fieldset class="mobile-nav"><select><option value="">Navigate…</option><option value="http://software.endy.muhardin.com/">» Living life and make it better life, learn, contribute</option><option value="http://software.endy.muhardin.com/">» Blog</option><option value="http://software.endy.muhardin.com/archives">» Archives</option><option value="http://software.endy.muhardin.com/calendar">» Calendar</option><option value="http://software.endy.muhardin.com/about">» About</option><option value="http://software.endy.muhardin.com/atom.xml">» RSS</option></select></fieldset>
+</form>
+  
+<ul class="main-navigation">
+    <li><a href="http://software.endy.muhardin.com/">
+        <span class="my_site_title">
+            Living life and make it better
+        </span>
+       
+           <span class="my_site_subtitle">
+             life, learn, contribute
+           </span>
+       
+    </a></li>
+  <li><a href="http://software.endy.muhardin.com/">Blog</a></li>
+  <li><a href="http://software.endy.muhardin.com/archives">Archives</a></li>
+  <li><a href="http://software.endy.muhardin.com/calendar">Calendar</a></li>
+  <li><a href="http://software.endy.muhardin.com/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Continuous Integration</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-01-16T22:37:23+07:00" pubdate="" data-updated="true">Jan 16<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Tools untuk Continuous Integration sudah sering dibahas di sini. Ada <a href="http://endy.artivisi.com/blog/java/cruise-control/">CruiseControl</a>, <a href="http://endy.artivisi.com/blog/java/luntbuild/">Luntbuild</a>, dan <a href="http://endy.artivisi.com/blog/java/hudson/">Hudson</a>. Apa yang begitu pentingnya dari proses ini sehingga saya meluangkan waktu untuk melihat setiap tools yang ada?</p>
+
+<p>Continuous Integration, <a href="http://martinfowler.com/articles/continuousIntegration.html">menurut Martin Fowler</a>, begini:</p>
+
+<blockquote><p>Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily - leading to multiple integrations per day.</p></blockquote>
+
+<p>Each integration is verified by an automated build (including test) to detect integration errors as quickly as possible.</p>
+
+<p>Many teams find that this approach leads to significantly reduced integration problems and allows a team to develop cohesive software more rapidly.</p>
+
+<p>Ada beberapa keyword di sini:</p>
+
+<ul>
+<li>integrate their work</li>
+<li>frequently</li>
+<li>verified by automated build (including test)</li>
+<li>detect errors as quickly as possible</li>
+<li>significant reduced problems</li>
+<li>develop .. rapidly</li>
+</ul>
+
+
+<p>Mari kita bahas lebih jauh.</p>
+
+<p>Sebagai contoh, kita membuat aplikasi dengan bahasa pemrograman Java. Langkah-langkah yang harus dilakukan sampai suatu kode program bisa digunakan antara lain:</p>
+
+<ol>
+<li>tulis source code</li>
+<li>kompilasi</li>
+<li>coba dijalankan sendiri (unit-test)</li>
+<li>coba gabungkan dengan kode lain (integration-test)</li>
+<li>deploy / install</li>
+<li>coba fitur-fiturnya</li>
+<li>kalau semua OK, cepat-cepat diarsip</li>
+</ol>
+
+
+<p>Cukup banyak kegiatan yang harus dilakukan untuk menambah satu fitur. Penggunaan bahasa dinamik (seperti PHP atau Ruby) hanya mengurangi langkah kedua. Sisanya sama.</p>
+
+<p>Kegiatan yang banyak ini akan sangat membosankan kalau dikerjakan secara manual. Bukan cuma boring, tapi juga rawan error. Di tengah tekanan deadline, sangat mungkin kita akan melewatkan test yang sudah pernah dijalankan sebelumnya.</p>
+
+<blockquote><p>Hei, dulu saja jalan .. kenapa sekarang tidak?</p></blockquote>
+
+<p>Ya belum tentu. Membangun aplikasi mirip seperti membangun rumah-rumahan dari kartu. Sedikit penambahan bisa merobohkan seluruh bangunan. Jadi sangat penting kita untuk sering-sering melakukan integrasi. Dan yang juga penting, test yang sudah ada harus dijalankan semuanya.</p>
+
+<p>Sekarang sudah ada tools yang membantu kita melakukannya. Cukup investasi waktu 10 menit untuk melakukan instalasi dan konfigurasi. Investasi 10 menit ini akan menghasilkan:</p>
+
+<ul>
+<li>build scheduler</li>
+<li>laporan kemajuan project setiap saat</li>
+<li>notifikasi setiap ada error</li>
+<li>arsip build</li>
+</ul>
+
+
+<p>Lalu apa manfaat dari fitur-fitur ini?</p>
+
+<p>Banyak, mari kita bahas satu persatu.</p>
+
+<h3>Build Scheduler</h3>
+
+<p>Semua kegiatan build kita tadi, mulai dari checkout dari version control sampai membuat installer aplikasi bisa dilakukan secara terjadwal. Misalnya satu jam sekali, satu hari tiga kali, dan sebagainya.</p>
+
+<p>Kita juga bisa mengkonfigurasi macam-macam jadwal. Misalnya untuk test dengan data sedikit bisa dijalankan sering-sering. Test yang melibatkan data banyak –seperti test End Of Day process atau simulasi performance aplikasi dengan satu tahun data– bisa dijalankan di malam hari, waktu semua orang sedang tidur.</p>
+
+<h3>Laporan Kemajuan Project</h3>
+
+<p>Pernahkah Anda, sedang asyik coding, puluhan variabel beterbangan di dalam otak, tiba-tiba dipanggil oleh Project Manager.</p>
+
+<blockquote><p>Fitur XX sudah selesai?</p></blockquote>
+
+<p>Kita jawab, “Sudah”. Kemudian balik lagi ke kode program, hanya untuk menyadari bahwa seluruh konsentrasi sudah buyar, sehingga butuh waktu 10 menit untuk mengingat-ingat apa yang tadi sedang dikerjakan.</p>
+
+<p>Dengan adanya tools Continuous Integration, Project Manager bisa langsung melihat kemajuan project di websitenya. Sehingga dia tidak perlu mengganggu konsentrasi orang lain.</p>
+
+<h3>Notifikasi Error</h3>
+
+<p>Misalnya kita mengubah nama kolom di database, ternyata menyebabkan fungsi-fungsi lain jadi error. Akan lebih cepat untuk memperbaiki hal ini jika antara kita mengubah nama kolom dan saat error ketahuan selisihnya singkat. Bagaimana cara supaya error cepat ketahuan? Ada dua cara:</p>
+
+<ol>
+<li>test suite harus lengkap, sehingga mencakup seluruh bagian kode.</li>
+<li>test suite harus sering-sering dijalankan.</li>
+</ol>
+
+
+<p>Tools CI membantu kita di item #2. Tetapi test suite tetap harus kita yang membuatnya.</p>
+
+<h3>Arsip Build</h3>
+
+<p>Project Manager lagi-lagi mengganggu konsentrasi kita. Kali ini dia mau presentasi ke customer dan mau menunjukkan aplikasi terbaru. Sialnya, tadi pagi kita baru saja mulai mengganti framework, tadinya pakai <a href="http://www.icefaces.org/main/home/index.jsp">IceFaces</a> mau diganti jadi <a href="http://labs.jboss.com/jbossrichfaces/">RichFaces</a>. Wow, kenapa harus diganti?? Hmm .. sayangnya itu diluar pembahasan artikel ini.</p>
+
+<p>Karena ada perombakan arsitektur besar-besaran, maka aplikasi saat ini sedang berantakan. Tidak mungkin kita memberikan aplikasi terbaru ini untuk dibawa presentasi. Bisa-bisa Project Manager kita mendapat malu karena bukannya mendemokan aplikasi, malah mendemokan stack trace.</p>
+
+<p>Untuk mengambil versi sebelum dirombak juga belum tentu pekerjaan mudah. Tergantung apakah Anda menggunakan Subversion atau tidak. Dan apakah kita rajin membuat tag untuk menandai titik-titik penting.</p>
+
+<p>Continuous Integration Tools to the rescue ….</p>
+
+<p>Langsung saja buka arsip build. Cari build terakhir yang sukses, dan berikan pada bos. Jangan lupa diberi pesan, “Kapan-kapan kalau butuh yang seperti ini lagi, langsung saja buka URL ini ya.”</p>
+
+<p>Bila proses CI ini berjalan lancar, hidup programmer jadi jauh lebih nyaman. Dia tinggal:</p>
+
+<ul>
+<li>coding</li>
+<li>buat unit test dan integration test</li>
+<li>jalankan dua-duanya</li>
+<li>kalau OK, commit</li>
+<li>balik lagi ke coding</li>
+</ul>
+
+
+<p>Sekarang kita kembali ke daftar keywordnya Martin Fowler di atas. Agar proses CI ini bisa berjalan baik, semua orang harus <em>integrate their work</em>. Setiap kode yang ditulis harus segera digabungkan dengan kode yang lainnya (yang ditulis anggota tim lainnya).</p>
+
+<p>Ini harus dilakukan <em>frequently</em>, sering-sering. Ini agar error yang muncul bisa segera terdeteksi.</p>
+
+<p>Seluruh kegiatan mulai dari kompilasi sampai <a href="http://endy.artivisi.com/blog/java/membuat-installer-dengan-izpack/">bikin installer</a> harus diotomasi. Kalau sudah otomatis, CI tools akan bisa mengeksekusinya dengan mudah.</p>
+
+<p>Kalau semua ini dilakukan, Martin Fowler berjanji bahwa kegiatan coding akan menjadi lebih <em>rapid</em> dan <em>significantly reduces problem</em>.</p>
+
+<p>Nah, investasinya cuma 5-10 menit instalasi dan konfigurasi, keuntungannya banyak sekali. Lalu kenapa tidak banyak yang mengimplementasikannya?</p>
+
+<p>Oh iya, saya lupa kasi tau. Implementasi CI sendiri mungkin 5-10 menit. Tapi proses ini punya ketergantungan terhadap tools dan praktek lain, yaitu:</p>
+
+<ul>
+<li>Automated Testing</li>
+<li>Version Control</li>
+</ul>
+
+
+<p>Dua praktek ini mengharuskan kita mengubah pola pikir dan kebiasaan, mirip seperti orang yang mau kurus atau berhenti merokok.</p>
+
+<p>So … Good Luck</p>
+
+<p>:D</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Endy Muhardin</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-01-16T22:37:23+07:00" pubdate="" data-updated="true">Jan 16<span>th</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class="category" href="http://software.endy.muhardin.com/categories/manajemen/">manajemen</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./Continuous Integration - Living life and make it better_files/tweet_button.1395870373.htm" class="twitter-share-button twitter-tweet-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 110px; height: 20px;"></iframe>
+  
+  
+  <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background-position: initial initial; background-repeat: initial initial;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1396282202153" name="I0_1396282202153" src="./Continuous Integration - Living life and make it better_files/fastbutton.htm" data-gapiattached="true" title="+1"></iframe></div>
+  
+  
+    <div class="fb-like fb_iframe_widget" data-send="true" data-width="450" data-show-faces="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=269506799827290&amp;href=http%3A%2F%2Fsoftware.endy.muhardin.com%2Fmanajemen%2Fcontinuous-integration%2F&amp;locale=en_US&amp;sdk=joey&amp;send=true&amp;show_faces=false&amp;width=450"><span style="vertical-align: bottom; width: 450px; height: 20px;"><iframe name="f32b44a298" width="450px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Continuous Integration - Living life and make it better_files/like.htm" class="" style="border: none; visibility: visible; width: 450px; height: 20px;"></iframe></span></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="http://software.endy.muhardin.com/aplikasi/linux/gutsy-shorewall/" title="Previous Post: Konfigurasi Shorewall di Ubuntu Gutsy">« Konfigurasi Shorewall di Ubuntu Gutsy</a>
+      
+      
+        <a class="basic-alignment right" href="http://software.endy.muhardin.com/java/aplikasi-web-spring25-4/" title="Next Post: Aplikasi Web dengan Spring 2.5 [bagian 4]">Aplikasi Web dengan Spring 2.5 [bagian 4] »</a>
+      
+    </p>
+  </footer>
+</article>
+
+
+<section>
+  <h1>Comments</h1>
+  <div id="facebook_comments" aria-live="polite">
+    <noscript>Please enable JavaScript to view the comments powered by facebook&lt;/a&gt;</noscript>
+<div class="fb-comments fb_iframe_widget" data-href="http://software.endy.muhardin.com/manajemen/continuous-integration/" data-num-posts="2" data-width="470" data-colorscheme="light" fb-xfbml-state="rendered"><span style="height: 160px; width: 470px;"><iframe id="fd03903fc" name="f343f67174" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./Continuous Integration - Living life and make it better_files/comments.htm" style="border: none; overflow: hidden; height: 160px; width: 470px;"></iframe></span></div>
+
+  </div>
+</section>
+
+
+
+</div>
+
+<aside class="sidebar thirds">
+  
+    <section class="first odd">
+<h1>Endy Muhardin</h1>
+
+<p>Software Developer berdomisili di Jabodetabek, berkutat di lingkungan open source, terutama Java dan Linux.</p>
+
+<p>
+    </p><ul>
+        <li>
+            <span class="icon-phone" style="text-align: left; width: 100%">&nbsp;
+            +62 812 98000 468
+            </span>
+        </li>
+        <li>
+            <span class="icon-envelope" style="text-align: left; width: 100%">&nbsp;
+                <a href="mailto:endy.muhardin@gmail.com">endy.muhardin@gmail.com</a>
+            </span>
+        </li>
+        <li>
+            <span class="icon-twitter" style="text-align: left; width: 100%">&nbsp;
+                <a href="http://twitter.com/endymuhardin">@endymuhardin</a>
+            </span>
+        </li>
+        <li>
+            <span class="icon-github" style="text-align: left; width: 100%">&nbsp;
+                <a href="https://github.com/endymuhardin">github.com/endymuhardin</a>
+            </span>
+        </li>
+        <li>
+            <span class="icon-facebook" style="text-align: left; width: 100%">&nbsp;
+                <a href="http://facebook.com/endy.muhardin">facebook.com/endy.muhardin</a>
+            </span>
+        </li>
+        <li>
+            <span class="icon-google-plus" style="text-align: left; width: 100%">&nbsp;
+                <a href="http://google.com/+EndyMuhardin">google.com/+EndyMuhardin</a>
+            </span>
+        </li>
+        <li>
+            <span class="icon-linkedin" style="text-align: left; width: 100%">&nbsp;
+                <a href="http://id.linkedin.com/pub/endy-muhardin/3/940/1bb">LinkedIn</a>
+            </span>
+        </li>
+    </ul>
+<p></p>
+</section>
+
+<section class="even">
+
+Bila artikel di website ini membantu meningkatkan penghasilan Anda, 
+jangan ragu untuk memberikan donasi :)
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+<input type="image" src="./Continuous Integration - Living life and make it better_files/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+</form>
+
+</section>
+<section class="odd">
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="http://software.endy.muhardin.com/life/menjadi-mahasiswa-hi-tech/">Menjadi Mahasiswa Hi-Tech</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://software.endy.muhardin.com/java/silabus-kuliah-pemrograman/">Silabus Kuliah Pemrograman</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://software.endy.muhardin.com/javascript/javascript-development-stack/">JavaScript Development Stack</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://software.endy.muhardin.com/javascript/persiapan-coding-nodejs/">Persiapan Coding NodeJS</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://software.endy.muhardin.com/life/ongoing-learning/">Ongoing Learning</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://software.endy.muhardin.com/java/development-stack-2014/">Development Stack 2014</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://software.endy.muhardin.com/java/dasar-dasar-aplikasi-web-java/">Dasar-dasar Aplikasi Web Java</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://software.endy.muhardin.com/life/source-code-milik-siapa/">Source Code Milik Siapa ?</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://software.endy.muhardin.com/java/prasyarat-integrasi-aplikasi/">Prasyarat Integrasi Aplikasi</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://software.endy.muhardin.com/java/meningkatkan-performance-android-emulator/">Meningkatkan performance Android Emulator</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section class="first even">
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("endymuhardin", 4, false);
+    });
+  </script>
+  <script src="./Continuous Integration - Living life and make it better_files/twitter.js" type="text/javascript"> </script>
+  
+    <iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" src="./Continuous Integration - Living life and make it better_files/follow_button.1395870373.htm" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 154px; height: 20px;"></iframe>
+  
+</section>
+
+
+<section class="odd">
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos"><li><a href="https://github.com/endymuhardin/materi-kuliah-java-2014-01">materi-kuliah-java-2014-01</a><p>Materi Kuliah Pemrograman 4 2014</p></li><li><a href="https://github.com/endymuhardin/materi-kuliah-java-2014-02">materi-kuliah-java-2014-02</a><p></p></li><li><a href="https://github.com/endymuhardin/endymuhardin.github.com">endymuhardin.github.com</a><p></p></li><li><a href="https://github.com/endymuhardin/rana.endy.muhardin.com">rana.endy.muhardin.com</a><p>Blog Fotografi</p></li><li><a href="https://github.com/endymuhardin/aplikasi-membership">aplikasi-membership</a><p>Aplikasi keanggotaan klub. Dibuat dalam rangka belajar NodeJS dan Redis</p></li><li><a href="https://github.com/endymuhardin/buku-git">buku-git</a><p>Version Control menggunakan Git</p></li><li><a href="https://github.com/endymuhardin/simple-webapp">simple-webapp</a><p>Template Aplikasi Web Sederhana untuk keperluan testing/explore</p></li><li><a href="https://github.com/endymuhardin/endy.muhardin.com">endy.muhardin.com</a><p></p></li><li><a href="https://github.com/endymuhardin/belajar-restful">belajar-restful</a><p>Template Project REST</p></li><li><a href="https://github.com/endymuhardin/pemrograman-2-2013">pemrograman-2-2013</a><p></p></li><li><a href="https://github.com/endymuhardin/pictag">pictag</a><p></p></li><li><a href="https://github.com/endymuhardin/belajar-io-java">belajar-io-java</a><p>Contoh kode I/O Stream di Java</p></li><li><a href="https://github.com/endymuhardin/playsms-android">playsms-android</a><p>Android Apps for PlaySMS</p></li><li><a href="https://github.com/endymuhardin/belajar-enkripsi">belajar-enkripsi</a><p></p></li><li><a href="https://github.com/endymuhardin/buku-pandoc">buku-pandoc</a><p></p></li><li><a href="https://github.com/endymuhardin/belajar-java-sysinfo">belajar-java-sysinfo</a><p>Mendapatkan informasi system menggunakan Java</p></li><li><a href="https://github.com/endymuhardin/pemrograman-1-2013">pemrograman-1-2013</a><p>Materi Kuliah Pemrograman 1 Univ. Pancasila tahun 2013 </p></li><li><a href="https://github.com/endymuhardin/materi-java-fundamental">materi-java-fundamental</a><p></p></li><li><a href="https://github.com/endymuhardin/belajar-smpp">belajar-smpp</a><p></p></li><li><a href="https://github.com/endymuhardin/belajar-sip">belajar-sip</a><p></p></li><li><a href="https://github.com/endymuhardin/smpp2http">smpp2http</a><p>Convert SMPP Request into HTTP Request</p></li><li><a href="https://github.com/endymuhardin/belajar-ssl">belajar-ssl</a><p></p></li><li><a href="https://github.com/endymuhardin/materi-kuliah-java-web">materi-kuliah-java-web</a><p></p></li><li><a href="https://github.com/endymuhardin/training-2013-01">training-2013-01</a><p></p></li><li><a href="https://github.com/endymuhardin/belajar-akses-database-java">belajar-akses-database-java</a><p>Berbagai metode akses database dengan Java</p></li><li><a href="https://github.com/endymuhardin/belajar-oop">belajar-oop</a><p>Contoh kode program Object Oriented Programming</p></li><li><a href="https://github.com/endymuhardin/materi-kuliah-java-fundamental-2011">materi-kuliah-java-fundamental-2011</a><p></p></li><li><a href="https://github.com/endymuhardin/belajar-spring-android">belajar-spring-android</a><p></p></li><li><a href="https://github.com/endymuhardin/buku-js">buku-js</a><p>Buku Pemrograman JavaScript</p></li></ul>
+  
+  <a href="https://github.com/endymuhardin">@endymuhardin</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'endymuhardin',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="./Continuous Integration - Living life and make it better_files/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+  
+</aside>
+
+
+    <span class="toggle-sidebar"></span></div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright © 2014 - Endy Muhardin -
+  <span class="credit">Powered by <a href="http://octopress.org/">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./Continuous Integration - Living life and make it better_files/wTH8U0osOYl.htm" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./Continuous Integration - Living life and make it better_files/wTH8U0osOYl(1).htm" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=269506799827290&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+
+
+<iframe name="oauth2relay797734611" id="oauth2relay797734611" src="./Continuous Integration - Living life and make it better_files/postmessageRelay.htm" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

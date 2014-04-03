@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/ -->
+<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Toyota Jidoka dan Continuous Integration | sedayane</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="./Toyota Jidoka dan Continuous Integration   sedayane_files/style.css">
+<link rel="pingback" href="http://sedayane.wordpress.com/xmlrpc.php">
+<link rel="alternate" type="application/rss+xml" title="sedayane » Feed" href="http://sedayane.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="sedayane » Comments Feed" href="http://sedayane.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="sedayane » Toyota Jidoka dan Continuous Integration Comments Feed" href="http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/feed/">
+<script type="text/javascript" async="" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/wl"></script><script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" id="all-css-0" href="./Toyota Jidoka dan Continuous Integration   sedayane_files/saved_resource" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Your subscription did not succeed, please try again with a valid email address."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/saved_resource(1)"></script>
+<link rel="stylesheet" id="all-css-0" href="./Toyota Jidoka dan Continuous Integration   sedayane_files/style(1).css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='http://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://sedayane.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://sedayane.wordpress.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="TPS : Membuat Toyota Sangat Membosankan part 2" href="http://sedayane.wordpress.com/2010/12/20/tps-membuat-toyota-sangat-membosankan-part-2/">
+<link rel="next" title="JIDOKA" href="http://sedayane.wordpress.com/2010/12/20/jidoka/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="./Toyota Jidoka dan Continuous Integration   sedayane_files/Toyota Jidoka dan Continuous Integration   sedayane.htm">
+<link rel="shortlink" href="http://wp.me/p1fsl7-R">
+<link rel="alternate" type="application/json+oembed" href="http://public-api.wordpress.com/oembed/1.0/?format=json&url=http%3A%2F%2Fsedayane.wordpress.com%2F2010%2F12%2F20%2Ftoyota-jidoka-dan-continuous-integration%2F&for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="http://public-api.wordpress.com/oembed/1.0/?format=xml&url=http%3A%2F%2Fsedayane.wordpress.com%2F2010%2F12%2F20%2Ftoyota-jidoka-dan-continuous-integration%2F&for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Toyota Jidoka dan Continuous Integration">
+<meta property="og:url" content="http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/">
+<meta property="og:description" content="“Quality is never an accident, it is always the result of intelligent effort.” – John Rushkin Sekarang ini gw sedang menjalani mata kuliah Operations Management. Salah satu hal yang paling menarik ...">
+<meta property="article:published_time" content="2010-12-20T02:24:03+00:00">
+<meta property="article:modified_time" content="2010-12-22T08:18:42+00:00">
+<meta property="article:author" content="http://sedayane.wordpress.com/author/327rudy/">
+<meta property="og:site_name" content="sedayane">
+<meta property="og:image" content="http://dhiku.files.wordpress.com/2008/11/jidoka.jpg?w=510&amp;h=219">
+<meta property="og:image" content="http://dhiku.files.wordpress.com/2008/11/andon.jpg?w=510&amp;h=172">
+<meta property="og:image" content="http://www.ibm.com/developerworks/rational/library/sep05/lee/fig3.jpg">
+<meta property="og:image" content="http://dhiku.files.wordpress.com/2008/11/lava-lamp.jpg?w=469&amp;h=276">
+<meta property="og:image" content="http://dhiku.files.wordpress.com/2008/11/traffic-light.jpg?w=436&amp;h=276">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:image" content="http://dhiku.files.wordpress.com/2008/11/jidoka.jpg?w=240">
+<meta name="twitter:card" content="summary">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+<link rel="shortcut icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1311975824g" sizes="16x16 24x24 32x32 48x48">
+<link rel="icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1311975824g" sizes="16x16 24x24 32x32 48x48">
+<link rel="apple-touch-icon-precomposed" href="http://s0.wp.com/i/webclip.png?m=1391188133g">
+<link rel="openid.server" href="http://sedayane.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="http://sedayane.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="http://sedayane.wordpress.com/osd.xml" title="sedayane">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com">
+<meta name="application-name" content="sedayane"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Just another WordPress.com site"><meta name="msapplication-task" content="name=Subscribe;action-uri=http://sedayane.wordpress.com/feed/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="title" content="Toyota Jidoka dan Continuous Integration | sedayane on WordPress.com">
+<meta name="description" content="“Quality is never an accident, it is always the result of intelligent effort.” – John Rushkin Sekarang ini gw sedang menjalani mata kuliah Operations Management. Salah satu hal yang paling menarik disini adalah rahasia di balik kesuksesan Toyota dalam hal produksinya. Toyota mempunyai apa yang disebut Toyota Production Systems. Ada dua hal yg penting dalam…">
+
+<script type="text/javascript" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/google_service.js">
+</script>
+<script type="text/javascript">
+if ( typeof GS_googleAddAdSenseService == 'function' ) { GS_googleAddAdSenseService("ca-pub-3443918307802676"); }
+if ( typeof GS_googleEnableAllServices == 'function' ) { GS_googleEnableAllServices() };
+</script><script src="./Toyota Jidoka dan Continuous Integration   sedayane_files/google_ads.js"></script>
+<script type="text/javascript" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/amzn_ads.js"></script>
+<script type="text/javascript">
+try { amznads.getAds("3033","300x250"); } catch(e) { /* ignore */ }
+</script><script type="text/javascript" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/bid"></script>
+<script type="text/javascript">
+var amznKeys = amznads.getKeys();
+if (typeof amznKeys != "undefined" && amznKeys != "") { for (var i =0; i < amznKeys.length; i++) { var key = amznKeys[i]; GA_googleAddAttr("amzn", key);} }
+document.close();
+</script>
+<script type="text/javascript">
+if ( typeof GA_googleAddSlot == 'function' ) { GA_googleAddSlot("ca-pub-3443918307802676", "wpcom_below_post"); }
+</script>
+<script type="text/javascript">
+if ( typeof GA_googleFetchAds == 'function' ) { GA_googleFetchAds(); }
+</script>
+
+<script type="text/javascript">
+var wpcom_ads = { bid: 18460197, pt: 'permalink', wa: 0, as: 0, domain: 'sedayane.wordpress.com', url: 'http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/', gid: '', };
+</script>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/ga.js"></script>
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./Toyota Jidoka dan Continuous Integration   sedayane_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./Toyota Jidoka dan Continuous Integration   sedayane_files/services.css"><script type="text/javascript" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/osd.js"></script><script type="text/javascript" async="" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/saved_resource(2)"></script></head>
+
+<body class="single single-post postid-53 single-format-standard mp6 single-author no-svg highlander-enabled highlander-light" style="">
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+			<div id="branding" role="banner">
+								<div id="site-title">
+					<span>
+						<a href="http://sedayane.wordpress.com/" title="sedayane" rel="home" sl-processed="1">sedayane</a>
+					</span>
+				</div>
+				<div id="site-description">Just another WordPress.com site</div>
+
+										<a class="home-link" href="http://sedayane.wordpress.com/" title="sedayane" rel="home" sl-processed="1">
+							<img src="./Toyota Jidoka dan Continuous Integration   sedayane_files/cherryblossoms.jpg" width="940" height="198" alt="">
+						</a>
+								</div><!-- #branding -->
+
+			<div id="access" role="navigation">
+			  				<div class="skip-link screen-reader-text"><a href="http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/#content" title="Skip to content" sl-processed="1">Skip to content</a></div>
+											</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+			
+
+				<div id="nav-above" class="navigation">
+					<div class="nav-previous"><a href="http://sedayane.wordpress.com/2010/12/20/tps-membuat-toyota-sangat-membosankan-part-2/" rel="prev" sl-processed="1"><span class="meta-nav">←</span> TPS : Membuat Toyota Sangat Membosankan part&nbsp;2</a></div>
+					<div class="nav-next"><a href="http://sedayane.wordpress.com/2010/12/20/jidoka/" rel="next" sl-processed="1">JIDOKA <span class="meta-nav">→</span></a></div>
+				</div><!-- #nav-above -->
+
+				<div id="post-53" class="post-53 post type-post status-publish format-standard hentry category-uncategorized">
+											<h2 class="entry-title"><a href="./Toyota Jidoka dan Continuous Integration   sedayane_files/Toyota Jidoka dan Continuous Integration   sedayane.htm" rel="bookmark" sl-processed="1">Toyota Jidoka dan Continuous&nbsp;Integration</a></h2>					
+					<div class="entry-meta">
+													<span class="meta-prep meta-prep-author">Posted on</span> <a href="./Toyota Jidoka dan Continuous Integration   sedayane_files/Toyota Jidoka dan Continuous Integration   sedayane.htm" title="2:24 am" rel="bookmark" sl-processed="1"><span class="entry-date">December 20, 2010</span></a>							<span class="by-author"><span class="sep">by</span> <span class="author vcard"><a class="url fn n" href="http://sedayane.wordpress.com/author/327rudy/" title="View all posts by 327rudy" rel="author" sl-processed="1">327rudy</a></span> </span>											</div><!-- .entry-meta -->
+
+					<div class="entry-content">
+						<p><em><strong><br>
+“Quality is never an accident, it is always the result of intelligent  effort.” – John Rushkin</strong></em></p>
+<p>Sekarang ini gw sedang menjalani mata kuliah Operations Management.  Salah satu hal yang paling menarik disini adalah rahasia di balik  kesuksesan <a href="http://www.toyota.com/" sl-processed="1">Toyota </a>dalam hal  produksinya. Toyota mempunyai apa yang disebut <a href="http://www.toyota.co.jp/en/vision/production_system/" sl-processed="1">Toyota  Production Systems</a>. Ada dua hal yg penting dalam TPS, yaitu JIT  (Just-In-Time) dan Jidoka. Just-in-time intinya adalah memproduksi  barang berdasarkan apa yang diinginkan, pada saat yang diinginkan, dan  dalam jumlah yang diinginkan juga (kata kuncinya adalah NEEDS).  Sedangkan Jidoka adalah proses produksi barang yang diselaraskan dengan  tingkat kualitas (kata kuncinya BUILT-IN-QUALITY). Jidoka memungkinkan  keadaaan dimana setiap ada masalah (mesin rusak atau keterlambatan atau  defect pada produk) dalam manufacturing, maka mesin akan berhenti dan  memberikan alert kepada team leader atau supervisor. Berikut  ilustrasinya,<br>
+<a href="http://dhiku.files.wordpress.com/2008/11/jidoka.jpg" sl-processed="1"><img title="jidoka" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/jidoka.jpg" alt="jidoka" width="510" height="219"></a></p>
+<p>Jidoka ini didukung dengan sebuah alat  untuk memvisualisasikan permasalahan yang ada pada pos2 tertentu dalam  manufacturing yaitu Andon. Lihat gambar di bawah,</p>
+<p><a href="http://dhiku.files.wordpress.com/2008/11/andon.jpg" sl-processed="1"><img title="andon" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/andon.jpg" alt="andon" width="510" height="172"></a></p>
+<p>Angka2 di atas menunjukkan pos2 dalam manufacturing, ada 3 warna  dalam dalam angka2 tersebut. Merah menunjukkan bahwa ada masalah di pos  tsb kemudian supervisor atau team lead akan mendatangi pos tersebut  untuk membantu menyelesaikan permasalahannya.</p>
+<p>Ternyata apa yang dipraktekan di Toyota tidak jauh berbeda dengan apa  yang terjadi di dalam software development, terutama di project2 open  source. Di dalam software development hal ini dikenal dengan nama <a href="http://en.wikipedia.org/wiki/Continuous_Integration" sl-processed="1">Continuous  Integration</a>. Continuous integration adalah praktek dalam software  development dimana team member diwajibkan untuk sesering mungkin  mengintegrasikan kerjaannya dengan developer yang lain. Biasanya  ritmenya per hari atau sering disebut daily build. Setiap proses  integrasi tsb akan dilakukan pengujian secara otomatis untuk mendapatkan  defect atau problem secepat mungkin dan selanjutnya diperbaiki. Bedanya  dengan Jidoka yang menghentikan proses produksi untuk sementara, dalam  continuous integration kita bisa lakukan paralel dengan kegiatan2  lainnya.</p>
+<p>Berikut adalah ilustrasi mengenai Continuous Integration (diambil  dari IBM.com).</p>
+<ul>
+<li> Developer check-in/memasukkan codenya ke dalam Software  Configuration Management (SCM) atau dikenal juga dengan nama <a href="http://betterexplained.com/articles/a-visual-guide-to-version-control/" sl-processed="1">Version  Control</a></li>
+<li> Integration Build Server akan memonitor perubahan2 pada SCM (setiap  kali developer melakukan [1] )</li>
+<li> Eksekusi build yang biasanya terdiri dari berbagai jenis testing,  unit testing, coverage testing, dan integration testing</li>
+<li> Kirimkan hasil build ke team member project</li>
+<li> Deploy aplikasi yang sukses di build ke development application  yang selanjutnya bisa digunakan untuk melakukan functional testing oleh  tester.</li>
+</ul>
+<div><img title="Continuous Integration" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/fig3.jpg" alt="Continuous Integration" width="491" height="256">Continuous Integration&nbsp;<p></p>
+</div>
+<p>Pentingnya hasil build membuat beberapa <a href="http://weblogs.java.net/blog/kohsuke/archive/2006/11/diyorb_my_own_e.html" sl-processed="1">developer</a> yang ekstrim mengintegrasikannya dengan orb, lavalamp, dan traffic  lamp. Sama seperti Andon di Toyota yang mempunyai tiga warna, continious  juga mempunyai tiga warna sebagai indikator hasil build. Berikut adalah  hasil karya mereka,</p>
+<ul>
+<li>Integrasi dengan Lavalamp<br>
+<em><strong><a href="http://dhiku.files.wordpress.com/2008/11/lava-lamp.jpg" sl-processed="1"><img title="lava-lamp" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/lava-lamp.jpg" alt="lava-lamp" width="469" height="276"></a></strong></em></li>
+<li>Integrasi dengan traffic lamp<em><strong><br>
+<a href="http://dhiku.files.wordpress.com/2008/11/traffic-light.jpg" sl-processed="1"><img title="traffic-light" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/traffic-light.jpg" alt="traffic-light" width="436" height="276"></a></strong></em><em><strong> </strong></em></li>
+</ul>
+<p>Sekarang pertanyaanya kenapa defect harus ditemukan secepatnya? apa  bedanya kalau defect ditemukan pada saat internal testing atau user  accepatance testing lalu kemudian diperbaiki? bukannya kalau benerin  defect pada saat production malah membuat waktu production semakin lama?  gimana korelasi antara ini cost dengan quality?</p>
+<p>Alasan yang pertama adalah kesan dari user. Kesan dari user pasti  berbeda jika mereka menemukan 1000 defect&nbsp; daripada 100 defect. Itulah  kenapa biasanya kita punya 2 fase testing, testing internal baru  kemudian testing oleh user. Yang kedua adalah effort, defect yang  ditemukan di akhir fase akan sangat lama untuk diselesaikan. Jika  codebase dari aplikasi yang dibuat sudah besar, menemukan penyebab  masalah sudah menjadi masalah tersendiri, belum lagi bagaimana solvenya,  kalaupun sudah solve apakah sudah yakin tidak akan myebabkan defect di  tempat lain?. Beda skenarionya jika defect ditemukan sedini mungkin,  effort untuk menemukan penyebab permasalahan berkurang dan defect bisa  langsung diperbaiki. Dan jika ternyata menimbulkan defect di tempat  lain, developer akan dapat alertnya sedini mungkin dan langsung  memperbaiknya.</p>
+<p>Apakah meningkatkan kualitas berarti meningkatkan cost? Sepintas kita  menjawab, YA. Tapi jika ditelusuri lebih mendalam, dengan kualitas yang  tinggi maka akan mengurangi jumlah defect yang ada, dengan minimnya  defect effort/cost untuk rework pun bisa diminimalisir. Sehingga dengan  pendekatan spt itu Toyota bisa memproduksi mobil dengan kualitas tinggi  dengan harga terjangkau, Itulah konsep yang diusung Toyota yaitu <strong>Better  Car at Better Price for More People.</strong></p>
+<p>Demikian sekilas info kemiripan antara Jidoka Toyota dengan  Continuous Integration.</p>
+
+<div class="wpa" style="position: relative; width:300px; text-align: center; padding: 0; margin: 10px auto; overflow: hidden; clear: both;">
+<a style="position: absolute; text-align: left; display: block; font: 9px/1 sans-serif; text-decoration: underline;" href="http://en.wordpress.com/about-these-ads/" rel="nofollow" sl-processed="1">About these ads</a>
+<script type="text/javascript">
+		var wpcom_adclk_hovering = false;
+		var wpcom_adclk_recorded = false;
+		var wpcom_adclk_theme = "Twenty Ten";
+		var wpcom_adclk_slot = "wpcom_below_post";
+		var wpcom_adclk_network = ( typeof wpcom_adclk_network === "undefined" ) ? "" : wpcom_adclk_network ;
+
+		jQuery(document).ready( function() {
+			function wpcom_adclk_hover_yes() { wpcom_adclk_hovering = true; }
+			function wpcom_adclk_hover_no() { wpcom_adclk_hovering = false; }
+			jQuery(".wpa").click(wpcom_adclk_click);
+			jQuery(".wpa iframe").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+			jQuery(".wpa object").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+
+			jQuery(window).blur( function() {
+				if ( wpcom_adclk_hovering ) { wpcom_adclk_click(); }
+			});
+		});
+
+		function wpcom_adclk_impression() {
+			var stat_gif = document.location.protocol + "//stats.wordpress.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_imp_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_imp_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_imp_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_imp_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			return true;
+		}
+
+		function wpcom_adclk_click() {
+			if (wpcom_adclk_recorded) { return true; } // no double counting
+			var stat_gif = document.location.protocol + "//stats.wordpress.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_click_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_click_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_click_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_click_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			wpcom_adclk_recorded = true;
+			var now=new Date(); var end=now.getTime()+250;
+			while(true){now=new Date();if(now.getTime()>end){break;}}
+			return true;
+		}
+	
+if ( typeof GA_googleAddAttr == 'function' ) {
+GA_googleAddAttr("AdOpt", "1");
+GA_googleAddAttr("Origin", "other");
+GA_googleAddAttr("LangId", "1");
+GA_googleAddAttr("Domain", "sedayane.wordpress.com");
+GA_googleAddAttr("BlogId", "18460197");
+GA_googleAddAttr("PageURL", "http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/");
+GA_googleAddAttr("Autotag", "technology");
+GA_googleAddAttr("Autotag", "cars");
+GA_googleAddAttr("theme_bg", "ffffff");
+GA_googleAddAttr("theme_text", "333333");
+GA_googleAddAttr("theme_link", "0066cc");
+GA_googleAddAttr("theme_border", "cccccc");
+GA_googleAddAttr("theme_url", "ff4b33");
+GA_googleAddAdSensePageAttr("google_page_url", "http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/");
+GA_googleFillSlot("wpcom_below_post");
+}
+</script><script src="./Toyota Jidoka dan Continuous Integration   sedayane_files/ads"></script><div id="google_ads_div_wpcom_below_post_ad_wrapper">
+<div id="google_ads_div_wpcom_below_post_ad_container" style="display:inline-block;"><div id="grv-personalization-16" style="display: block; width: 100%; opacity: 1; height: 250px;"><iframe frameborder="0" scrolling="no" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/w2.htm" style="overflow: hidden; width: 100%; height: 250px; opacity: 1;"></iframe></div>
+<script type="text/javascript">
+  //<![CDATA[
+ function _grc(k){return(document.cookie.match('(^|; )'+k+'=([^;]*)')||0)[2]}
+    (function(){
+    window.gravityInsightsParams = {
+      'type': 'content',
+      'site_guid': '361837bc83c4c2cba7b350dff56a564f',
+      'user_guid': _grc('grvinsights'),
+      'sourceUrl': 'sedayane.wordpress.com',
+    };
+    var b,c,d,e,f,g,h,i;f=(b=!0===gravityInsightsParams.useGravityUserGuid?1:0,e=b?"":gravityInsightsParams.user_guid||(null!=(g=/grvinsights=([^;]+)/.exec(document.cookie))?g[1]:void 0)||"",c=(null!=(h=window.jQuery)?null!=(i=h.fn)?i.jquery:void 0:void 0)||"","http://rma-api.gravity.com/v1/api/intelligence/wl?jq="+c+"&sg="+gravityInsightsParams.site_guid+"&ug="+e+"&ugug="+b+"&pl=16&id=grv-personalization-16&type=iframe");
+    window.grvMakeScript=function(j){var a;a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src=j;return a};d=document.getElementsByTagName("script")[0];f&&d.parentNode.insertBefore(window.grvMakeScript(f),d);})();
+  //]]>
+</script>
+
+</div>
+</div>
+
+</div>
+<style type="text/css">
+div.wpa>div { margin-top: 1em; } #google_ads_div_wpcom_below_post_adsafe_ad_container { display: block !important; }
+</style>
+<script type="text/javascript">
+jQuery( window ).load( function() {
+    if ( jQuery(".wpa script[src*='virool.com']").length > 0 || jQuery(".wpa script[src*='shareth.ru']").length > 0 || jQuery(".wpa iframe[src*='boomvideo.tv']").length > 0 || jQuery(".wpa iframe[src*='viewablemedia.net']").length > 0 || jQuery(".wpa .sharethrough-placement").length > 0 ) {
+        jQuery( '.wpa' ).css( 'width', '400px' );
+    }
+setTimeout(function(){if(typeof GS_googleAddAdSenseService !== 'function'){new Image().src=document.location.protocol+"//stats.wordpress.com/g.gif?v=wpcom-no-pv&x_noads=adblock&baba="+Math.random()}},100);
+} );
+</script>
+<div id="jp-post-flair" class="sharedaddy sd-like-enabled"><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-18460197-53-5339937a7b190" data-src="//widgets.wp.com/likes/#blog_id=18460197&amp;post_id=53&amp;origin=sedayane.wordpress.com&amp;obj_id=18460197-53-5339937a7b190" data-name="like-post-frame-18460197-53-5339937a7b190"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-18460197-53-5339937a7b190" height="55px" width="100%" frameborder="0" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/saved_resource.htm"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div></div>											</div><!-- .entry-content -->
+
+					<div id="entry-author-info">
+						<div id="author-avatar">
+							<img alt="" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/7a9b90de72f68174824b3fc5c7639da1" class="avatar avatar-60 grav-hashed grav-hijack" height="60" width="60" id="grav-7a9b90de72f68174824b3fc5c7639da1-0">						</div><!-- #author-avatar -->
+						<div id="author-description">
+							<h2>About 327rudy</h2>
+							young, talented, dynamic, creative, fight like a tiger, win like a champion							<div id="author-link">
+								<a href="http://sedayane.wordpress.com/author/327rudy/" rel="author" sl-processed="1">
+									View all posts by 327rudy <span class="meta-nav">→</span>								</a>
+							</div><!-- #author-link	-->
+						</div><!-- #author-description -->
+					</div><!-- #entry-author-info -->
+
+					<div class="entry-utility">
+												This entry was posted in <a href="http://sedayane.wordpress.com/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag" sl-processed="1">Uncategorized</a>. Bookmark the <a href="./Toyota Jidoka dan Continuous Integration   sedayane_files/Toyota Jidoka dan Continuous Integration   sedayane.htm" title="Permalink to Toyota Jidoka dan Continuous Integration" rel="bookmark" sl-processed="1">permalink</a>.											</div><!-- .entry-utility -->
+				</div><!-- #post-## -->
+
+				<div id="nav-below" class="navigation">
+					<div class="nav-previous"><a href="http://sedayane.wordpress.com/2010/12/20/tps-membuat-toyota-sangat-membosankan-part-2/" rel="prev" sl-processed="1"><span class="meta-nav">←</span> TPS : Membuat Toyota Sangat Membosankan part&nbsp;2</a></div>
+					<div class="nav-next"><a href="http://sedayane.wordpress.com/2010/12/20/jidoka/" rel="next" sl-processed="1">JIDOKA <span class="meta-nav">→</span></a></div>
+				</div><!-- #nav-below -->
+
+				
+			<div id="comments">
+
+
+
+								<div id="respond" class="comment-respond js">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/#respond" style="display:none;" sl-processed="1">Cancel reply</a></small></h3>
+									<form action="http://sedayane.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																										
+
+
+												<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="434b4f1a79"><input type="hidden" name="_wp_http_referer" value="/2010/12/20/toyota-jidoka-dan-continuous-integration/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; -webkit-transition: none; transition: none; height: 0px !important; min-height: 0px !important; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none; word-spacing: 0px; text-indent: 0px; line-height: 24px; width: 618px;" class="autosizejs "></textarea><textarea id="comment" name="comment" title="Enter your comment here..." placeholder="Enter your comment here..." style="height: 44px; overflow: hidden; word-wrap: break-word; resize: horizontal;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/#comment-form-guest" id="postas-guest" title="Guest" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/saved_resource(6).htm" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank" sl-processed="1">				<img src="./Toyota Jidoka dan Continuous Integration   sedayane_files/ad516503a11cd5ca435acc9bb6523536" alt="Gravatar" width="25" class="no-grav">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text" value=""></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Toyota Jidoka dan Continuous Integration   sedayane_files/wplogo.png" alt="WordPress.com Logo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="">
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your WordPress.com account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Toyota Jidoka dan Continuous Integration   sedayane_files/ad516503a11cd5ca435acc9bb6523536" alt="Twitter picture" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Toyota Jidoka dan Continuous Integration   sedayane_files/ad516503a11cd5ca435acc9bb6523536" alt="Facebook photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Toyota Jidoka dan Continuous Integration   sedayane_files/ad516503a11cd5ca435acc9bb6523536" alt="Google+ photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();" sl-processed="1">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+	
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of follow-up comments via email.</label></p></div>
+
+												<p class="form-submit" style="display: none;">
+							<input name="submit" type="submit" id="comment-submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="53" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						
+<input type="hidden" name="genseq" value="1396282234">
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="d423a44993"></p><script type="text/javascript" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/form.js"></script>
+<p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="1396282234433"></p>					</form>
+							</div><!-- #respond -->
+			<div style="clear: both"></div>
+</div><!-- #comments -->
+
+
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+						<ul class="xoxo">
+
+<li id="search-2" class="widget-container widget_search"><form role="search" method="get" id="searchform" class="searchform" action="http://sedayane.wordpress.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s">
+					<input type="submit" id="searchsubmit" value="Search">
+				</div>
+			</form></li>		<li id="recent-posts-2" class="widget-container widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="http://sedayane.wordpress.com/2010/12/20/pengetahuan-dasar-implementasi-5s/" sl-processed="1">PENGETAHUAN DASAR IMPLEMENTASI&nbsp;5S</a>
+						</li>
+					<li>
+				<a href="http://sedayane.wordpress.com/2010/12/20/manajemen-tempat-kerja-dengan-5s/" sl-processed="1">Manajemen tempat kerja dengan&nbsp;5S</a>
+						</li>
+					<li>
+				<a href="http://sedayane.wordpress.com/2010/12/20/jidoka/" sl-processed="1">JIDOKA</a>
+						</li>
+					<li>
+				<a href="./Toyota Jidoka dan Continuous Integration   sedayane_files/Toyota Jidoka dan Continuous Integration   sedayane.htm" sl-processed="1">Toyota Jidoka dan Continuous&nbsp;Integration</a>
+						</li>
+					<li>
+				<a href="http://sedayane.wordpress.com/2010/12/20/tps-membuat-toyota-sangat-membosankan-part-2/" sl-processed="1">TPS : Membuat Toyota Sangat Membosankan part&nbsp;2</a>
+						</li>
+				</ul>
+		</li><li id="archives-2" class="widget-container widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+	<li><a href="http://sedayane.wordpress.com/2010/12/" sl-processed="1">December 2010</a></li>
+		</ul>
+</li><li id="categories-2" class="widget-container widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-1"><a href="http://sedayane.wordpress.com/category/uncategorized/" title="View all posts filed under Uncategorized" sl-processed="1">Uncategorized</a>
+</li>
+		</ul>
+</li><li id="calendar-3" class="widget-container widget_calendar"><h3 class="widget-title">Calendar</h3><div id="calendar_wrap"><table id="wp-calendar">
+	<caption>December 2010</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev" class="pad">&nbsp;</td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="2" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+	</tr>
+	<tr>
+		<td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+	</tr>
+	<tr>
+		<td>13</td><td>14</td><td>15</td><td><a href="http://sedayane.wordpress.com/2010/12/16/" title="Hello world!, Toyota Way, Implementasi 5 S" sl-processed="1">16</a></td><td><a href="http://sedayane.wordpress.com/2010/12/17/" title="Production Levelling – Heijunka, HEIJUNKA" sl-processed="1">17</a></td><td>18</td><td><a href="http://sedayane.wordpress.com/2010/12/19/" title="KANBAN, What Is Kanban Scheduling?" sl-processed="1">19</a></td>
+	</tr>
+	<tr>
+		<td><a href="http://sedayane.wordpress.com/2010/12/20/" title="JUST IN TIME, SISTEM KANBAN, TPS: Membuat Toyota Sangat Membosankan part 1, TPS : Membuat Toyota Sangat Membosankan part 2, Toyota Jidoka dan Continuous Integration, JIDOKA, Manajemen tempat kerja dengan 5S, PENGETAHUAN DASAR IMPLEMENTASI 5S" sl-processed="1">20</a></td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+	</tr>
+	<tr>
+		<td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
+		<td class="pad" colspan="2">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></li><li id="meta-2" class="widget-container widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+			<li><a href="http://wordpress.com/signup/?ref=wplogin" sl-processed="1">Register</a></li>			<li><a href="http://sedayane.wordpress.com/wp-login.php" sl-processed="1">Log in</a></li>
+			<li><a href="http://sedayane.wordpress.com/feed/" title="Syndicate this site using RSS 2.0" sl-processed="1">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://sedayane.wordpress.com/comments/feed/" title="The latest comments to all posts in RSS" sl-processed="1">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+<li><a href="http://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform." sl-processed="1">WordPress.com</a></li>			</ul>
+</li>			</ul>
+		</div><!-- #primary .widget-area -->
+
+	</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+
+
+
+			<div id="site-info">
+				<a href="http://sedayane.wordpress.com/" title="sedayane" rel="home" sl-processed="1">
+					sedayane				</a>
+			</div><!-- #site-info -->
+
+			<div id="site-generator">
+				<a href="http://theme.wordpress.com/themes/twentyten/" title="Learn more about this theme" sl-processed="1">The Twenty Ten Theme</a>				<a href="http://wordpress.com/?ref=footer" sl-processed="1">Blog at WordPress.com</a>.
+			</div><!-- #site-generator -->
+
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+<script type="text/javascript" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/wpgroho.js"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-7a9b90de72f68174824b3fc5c7639da1">
+	</div>
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"http:\/\/sedayane.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"http:\/\/sedayane.wordpress.com\/wp-login.php?action=logout&_wpnonce=4b4020de9e","homeURL":"http:\/\/sedayane.wordpress.com\/","postID":"53","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"","isJetpack":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/saved_resource(3)"></script>
+
+	<div id="bit" class="loggedout-follow-normal" style="bottom: -214px;">
+		<a class="bsub" href="javascript:void(0)" sl-processed="1"><span id="bsub-text">Follow</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Follow “sedayane”</label></h3>
+
+			<form action="https://subscribe.wordpress.com/" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+			
+			<p><input type="email" name="email" value="Enter your email address" onfocus="this.value=(this.value==&quot;Enter your email address&quot;) ? &quot;&quot; : this.value;" onblur="this.value=(this.value==&quot;&quot;) ? &quot;Enter email address&quot; : this.value;" id="loggedout-follow-field"></p>
+
+			<input type="hidden" name="action" value="subscribe">
+			<input type="hidden" name="blog_id" value="18460197">
+			<input type="hidden" name="source" value="http://sedayane.wordpress.com/2010/12/20/toyota-jidoka-dan-continuous-integration/">
+			<input type="hidden" name="sub-type" value="loggedout-follow">
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="c2db50236b"><input type="hidden" name="_wp_http_referer" value="/2010/12/20/toyota-jidoka-dan-continuous-integration/">
+			<p id="bsub-subscribe-button"><input type="submit" value="Sign me up"></p>
+			</form>
+					<div id="bsub-credit"><a href="http://wordpress.com/signup/?ref=lof" sl-processed="1">Powered by WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+	<script type="text/javascript">
+	var skimlinks_pub_id = "725X584219"
+	var skimlinks_sitename = "sedayane.wordpress.com";
+	</script>
+	<script type="text/javascript" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/725X1342.skimlinks.js"></script>		<iframe src="./Toyota Jidoka dan Continuous Integration   sedayane_files/master.htm" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesWidgetBatch = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesBatchHandler() {
+				var requests = [];
+				jQuery( 'div.jetpack-likes-widget-unloaded' ).each( function( i ) {
+					if ( jetpackLikesWidgetBatch.indexOf( this.id ) > -1 )
+						return;
+					jetpackLikesWidgetBatch.push( this.id );
+					var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+					var match = regex.exec( this.id );
+					if ( ! match || match.length != 5 )
+						return;
+
+					var info = {
+						blog_id: match[2],
+						width:   this.width
+					};
+
+					if ( 'post' == match[1] ) {
+						info.post_id = match[3];
+					} else if ( 'comment' == match[1] ) {
+						info.comment_id = match[3];
+					}
+
+					info.obj_id = match[4];
+
+					requests.push( info );
+				});
+
+				if ( requests.length > 0 ) {
+					JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+				}
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' ),
+								isRtl: ( 'rtl' == jQuery( '#wpadminbar' ).css( 'direction' ) )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						JetpackLikesBatchHandler();
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'clickReblogFlair' == event.event ) {
+					wpcom_reblog.toggle_reblog_box_flair( event.obj_id );
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="' + liker.profile_URL + '" class="wpl-liker" rel="nofollow" target="_parent"><img src="' + liker.avatar_URL + '" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Grab any unloaded widgets for a batch request
+					JetpackLikesBatchHandler();
+
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				if ( 'undefined' === typeof wrapperID ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script type="text/javascript" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/saved_resource(4)"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="./Toyota Jidoka dan Continuous Integration   sedayane_files/w.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'18460197','v':'wpcom','tz':'0','user_id':'0','post':'53','subd':'sedayane'});
+ex_go({'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdTdvUG14Q2VDQTR4LlUsLi82dU1mai9BMm9Fb2hGVnRfN3NfeSxTOENvUD15YS1lM3RdS3ZXU2grLk1jQjFOW2h+JkJuS3Q0NWxkbFltdUdSTzM2YVh8ODhqS1RBQTZLQ0t+Q014TU02Z1hVSiVsT2hNJW55aVpZJVpVP3lpYjVwZ0MtZmJiNTl4bUhxeGRddW1+Uk0lbGctNSZkLXA2fDkvRkoyeUYuT2k0Qz11K0t3PUtKT0YlMTcvd2ROW09oakh4fjBtUk9BTXJCMD9Ma09hb2V5aV9meV0tZzAzeHY1dTNGSkhXVD9Sd1JtVm1PSFtUaTJBLTIxbn5yditlRl8ueUIvVyVRNERGelRLNl04alJpLSVEUkxd'});
+addLoadEvent(function(){linktracker_init('18460197',53);});
+	</script><img id="wpstats" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/g.gif" alt=""><img id="wpstats2" src="./Toyota Jidoka dan Continuous Integration   sedayane_files/g(1).gif" alt="" style="display:none">
+<noscript>&lt;img src="http://stats.wordpress.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /&gt;</noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//stats.wordpress.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+
+<iframe id="google_osd_static_frame_5553503192495" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>

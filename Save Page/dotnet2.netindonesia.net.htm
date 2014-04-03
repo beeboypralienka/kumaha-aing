@@ -1,0 +1,206 @@
+
+<!-- saved from url=(0047)http://dotnet2.netindonesia.net/?0::49200:get:1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></head><body>Mengapa saya memakai CI:<div>1. Saya punya project besar, yang saya bagi menjadi project kecil-kecil.</div><div>2. Project kecil2 ini kebanyakan bebas lepas. Beberapa saling tergantung lewat shared assembly [shared kernel dalam bahasa DDD]</div>
+<div>3. Saya tidak menggunakan VS profesional maupun VSTS.</div><div>4. Saya kompile dengan NAnt.</div><div>5. Akibatnya semuanya manual. [Kalau pakai VS kan semua dia yang mikir]</div><div>6. Karena itu sy juga punya kesulitan untuk menjaga versi masing-masing assembly [sering terjadi salah pakai assembly--dikiranya sama---pas digabungin ternyata beda]</div>
+<div>7. Saya ingin setiap kali developer submit sedikit pekerjaannya [saya pakai subversion (SVN) jadi perubahan harus cepat diupdate, kalau enggak bakal bentrok], pada saat itu juga CI mengompile ulang semuanya, dan menjalankan semua test.</div>
+<div>8. Setiap ada kegagalan CI akan melaporkan kegagalan itu ke developer, entah lewat email atau cc tray (hehe krn sy pakai CCNet).</div><div><br></div><div>Kalau pakai VS + VSTS kayaknya semua itu udah solve tanpa disadari.</div>
+<div><br></div><div>rgds</div><div>fatur<br><div class="gmail_quote">2009/7/16 Ari Yanto <span dir="ltr">&lt;<a href="mailto:neonerdy@...">neonerdy@...</a>&gt;</span><br><blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex;">
+sodara-sodara&nbsp; mohon dijelaskan lebih lanjut tentang CI (Continous Integration) ini<br>1. Apa pentingnya menggunakan CI<br>2. Kapan harus pakai CI<br>3. Apa hubungannya dengan KAIZEN atau dengan konsep "lean" manufacturing<br>
+
+4. Apakah CI serta merta meningkatkan software quality<br>thanks<br><div class="gmail_quote">2009/7/16 fatur rahman <span dir="ltr">&lt;<a href="mailto:mfathur@..." target="_blank">mfathur@...</a>&gt;</span><div>
+<div></div><div class="h5"><br>
+<blockquote class="gmail_quote" style="border-left:1px solid rgb(204, 204, 204);margin:0pt 0pt 0pt 0.8ex;padding-left:1ex">Mas Ronald,<div>NMock bisa kayak gitu ya....Kalau bisa kayak gitu kenapa gua kemarin pindah ke RhinoMock ya....duh...cepek deh...</div>
+
+<div>Pairing sama hendry? off-shore pairing gitu? Ini baru hebat. Berarti programmer gak perlu pergi ke kantor ya sebenarnya, cukup dari rumah :-D</div>
+<div><br></div><div>Thanks untuk penegasannya....tambah mantab menempuh jalur itu.</div><div><br></div><div>Untuk CI slow test, kalau ini berjam-jam, masih diperbolehkan tidak kira-kira?</div><div><div></div><div>
+<div><br></div><div>rgds</div>
+<div>fatur<br><div class="gmail_quote">2009/7/15 Ronald Widha <span dir="ltr">&lt;<a href="mailto:ronaldwidha@..." target="_blank">ronaldwidha@...</a>&gt;</span><br><blockquote class="gmail_quote" style="border-left:1px solid rgb(204, 204, 204);margin:0pt 0pt 0pt 0.8ex;padding-left:1ex">
+
+
+<div dir="ltr"><div>Fatur,</div>
+<div>&nbsp;</div>
+<div>tentang pergerakan itu sangat menarik sekali. Saya terus terang sempet 'pair programming' boongan lewat google docs sama Hendry untuk belajar lebih lanjut gimana ngerefactor Unit Test ke Unit Test bergaya BDD dengan AAA syntax. Intinya mengubah penggunaan fixture seperti yang aku jelasin di imel sebelumnya, sampe penggunaan mocking framework:</div>
+
+
+
+
+<div>&nbsp;</div>
+<div>Ala NMock Expect(mockedDependencies.method(null)).IgnoreArguments().Return(bla) (arrange&nbsp;dan assert bergabung).</div>
+<div>&nbsp;Ke arah AAA syntax: mockedDependencies.Stub(a =&gt; a.method(null) ditemani dengan mockedDependencies.AssertWasCalled( a =&gt; a.method(null)) (memisahkan arrange dengan assert).<br></div>
+<div>Lebih menarik lagi melihat kode yang bukan diimplementasi dengan test driven ke kode yang test driven (dependensi-nya diinjek dari luar, method yang pendek, class yang kecil-kecil, dsb). Mungkin kita bisa 'pairing' dan saling bertukar ilmu.</div>
+
+
+
+
+<div>&nbsp;</div>
+<div>Kalo kata Roy Osherove di interviewnya sama Hanselman di Hanselminutes, unit test musti dilakukan di sebuah unit di mana unit-nya bisa sepenuhnya dikontrol oleh kita. Begitu ada third party library (external dll), atau database (stored proc?)&nbsp;atau infrastructure spesifik (file io), test tersebut bukan unit test lagi walaupun dilakukan dengan unit test tooling. Itu sudah menjadi integration testing.</div>
+
+
+
+
+<div>&nbsp;</div>
+<div>CI (continuous INTEGRATION)&nbsp;akan menjalankan unit test (fast test) dan kita bisa memiliki stage kedua untuk integration testing (slow test). CI yang berjalan lama tidak akan efektif. Tapi pada saat&nbsp; yang bersamaan kita tetep mau nge-detect masalah secepat mungkin untuk 'stop the line' (Kaizen: continuous IMPROVEMENT).</div>
+
+
+
+
+<div>&nbsp;</div><font color="#888888"><br>-- <br></font><div>Ronald Widha<br>follow me on <a href="http://twitter.com/ronaldwidha" target="_blank">twitter.com/ronaldwidha</a><br>podcast tentang programming dan informatika <a href="http://www.temanmacet.com/" target="_blank">www.temanmacet.com</a><br>
+
+
+
+<a href="http://www.ronaldwidha.net/" target="_blank">www.ronaldwidha.net</a> 
+<div><br>&nbsp;</div>
+</div><div><div></div><div><div class="gmail_quote">2009/7/15 fatur rahman <span dir="ltr">&lt;<a href="mailto:mfathur@..." target="_blank">mfathur@...</a>&gt;</span><br>
+<blockquote style="border-left:1px solid rgb(204, 204, 204);margin:0px 0px 0px 0.8ex;padding-left:1ex" class="gmail_quote">Thank Mas Ronald, 
+<div><br></div>
+<div>Berarti "Context"==Story=="Situasi State suatu waktu dari beberapa object yang sedang berkolaborasi--meskipun dalam hal ini hanya satu yang real, karena yang lain di mock". Right?</div>
+<div><br></div>
+<div>Kalau sy melihat, apa yang kita baca dari hampir kebanyakan contoh, entah artikel, tulisan, ataupun komentar, entah TDD entah BDD, semua menyajikan hasil akhir dari sebuah proses. Akibatnya yang menonjol, lagi-lagi adalah test. Bahkan sudah berubah menjadi BDD pun, nuansa testnya juga masih ada. Kata Driven dari D, jarang sekali bisa kelihatan. Drive sepadan dengan kata menyetir, yang paling umum menyetir mobil. Jadi path dari pergerakan mobil tidak kelihatan, yang kelihatan cuma awal dan akhir. Padahal kekuatan sesungguhnya dari XDD itu terletak pada proses.&nbsp;</div>
+
+
+
+
+<div><br></div>
+<div>Maaf, saya lanjutkan ke Continuous Integration(CI)--OOT dikit. Apakah untuk CI yang di run adalah unit test ini atau mesti bikin integration test secara terpisah? Martin Fowler mengatakan, paling tidak mesti ada 2 stage, untuk compile dan run unit test dan kedua untuk end-to-end test. Tp, sy gak jelas benar unit test yang mana satu. Tambah binggung lagi kalau saya harus hit infrastucture.</div>
+
+
+
+
+<div><br></div>
+<div>Thanks in advance</div>
+<div><br></div>
+<div>rgds</div>
+<div>fatur<br>
+<div class="gmail_quote">2009/7/15 Ronald Widha <span dir="ltr">&lt;<a href="mailto:ronaldwidha@..." target="_blank">ronaldwidha@...</a>&gt;</span> 
+<div>
+<div></div>
+<div><br>
+<blockquote style="border-left:1px solid rgb(204, 204, 204);margin:0px 0px 0px 0.8ex;padding-left:1ex" class="gmail_quote">
+<div dir="ltr">
+<div>Ini yang aku belajar dari percakapan itu:</div>
+<div>Kalo sekedar TDD kita biasanya membuat seperti ini</div>
+<div>&nbsp;</div>
+<div>[TestFixture]</div>
+<div>public class StudentTest</div>
+<div>{</div>
+<div>&nbsp; [Test]</div>
+<div>&nbsp; public void EnrolBakalMasukinStudentKeClass()</div>
+<div>&nbsp; {</div>
+<div>&nbsp;&nbsp;&nbsp; //set semua dependensi sebagai mock</div>
+<div>&nbsp;&nbsp;&nbsp; ..</div>
+<div>&nbsp;&nbsp;&nbsp; //set expektasi di mock-nya sesuai dengan situasi (Context)</div>
+<div>&nbsp;&nbsp;&nbsp; ..</div>
+<div>&nbsp;&nbsp;&nbsp; //set system under testnya</div>
+<div>&nbsp;&nbsp;&nbsp; ..&nbsp;&nbsp;&nbsp; </div>
+<div>&nbsp;&nbsp;&nbsp; // run</div>
+<div>&nbsp;&nbsp;&nbsp; ..</div>
+<div>&nbsp; }</div>
+<div>&nbsp;</div>
+<div>&nbsp; [Test] 
+<div>&nbsp; public void JoinBakalNgirimImelKeKepsek()</div>
+<div>&nbsp; {</div>
+<div>&nbsp;&nbsp;&nbsp; //set semua dependensi sebagai <b>mock</b></div>
+<div>&nbsp;&nbsp;&nbsp; ..</div>
+<div>&nbsp;&nbsp;&nbsp; //set <b>expektasi </b>di mock-nya sesuai dengan situasi</div>
+<div>&nbsp;&nbsp;&nbsp; ..</div>
+<div>&nbsp;&nbsp;&nbsp; //set system under testnya</div>
+<div>&nbsp;&nbsp;&nbsp; ..&nbsp;&nbsp;&nbsp; </div>
+<div>&nbsp;&nbsp;&nbsp; // run</div>
+<div>&nbsp;&nbsp;&nbsp; ..</div>
+<div>&nbsp; }</div></div>
+<div>}<br>kalo bdd berubah jadi</div>
+<div>&nbsp;</div>
+<div>[TestFixture]</div>
+<div>public WhenEnrolStudent</div>
+<div>{</div>
+<div>&nbsp; [SetUp]</div>
+<div>&nbsp; public void Context</div>
+<div>&nbsp; {</div>
+<div>&nbsp;&nbsp;&nbsp; //set semua dependensi sebagai&nbsp;<b>mock</b> 
+<div>&nbsp;&nbsp;&nbsp; ..</div>
+<div>&nbsp;&nbsp;&nbsp; //set <b>return value</b> di <b>mock</b>-nya sesuai dengan situasi</div>
+<div>&nbsp;&nbsp;&nbsp; ..</div>
+<div>&nbsp;&nbsp;&nbsp; //set system under testnya</div>
+<div>&nbsp;&nbsp;&nbsp; ..&nbsp;&nbsp;&nbsp; </div>
+<div>&nbsp;&nbsp;&nbsp; // run</div>
+<div>&nbsp;&nbsp;&nbsp; ..</div></div>
+<div>&nbsp; }</div>
+<div>&nbsp;</div>
+<div>&nbsp; [Test]</div>
+<div>&nbsp; public void ShouldMasukinKeClass()</div>
+<div>&nbsp; {</div>
+<div>&nbsp;&nbsp;&nbsp; //assert apakah interaksinya bener&nbsp;di mock.</div>
+<div>&nbsp; }</div>
+<div>}</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>Context menandakan situasi di mana sebuah kode akan di text. Perhatikan nama classnya pun menggambarkan situasi tersebut: "WhenEnrolStudent".</div>
+<div>Struktur seperti ini dinamakan AAA: Arrange Act Assert</div>
+<div>
+<div></div>
+<div>
+<div>&nbsp;</div>
+<div class="gmail_quote">2009/7/15 fatur rahman <span dir="ltr">&lt;<a href="mailto:mfathur@..." target="_blank">mfathur@...</a>&gt;</span><br>
+<blockquote style="border-left:1px solid rgb(204, 204, 204);margin:0px 0px 0px 0.8ex;padding-left:1ex" class="gmail_quote">Setelah saya ulang...maju mundurin berulang-ulang-berkali-kali, kedengarannya NBehave. Bener gak? 
+<div><br></div>
+<div>Trus, hendry juga menyebut "Context", kayaknya ini perlu digaris bawahi. Karena menurut gua ini penting. Berikut ini ada contoh BDD dengan NBehave dari <a href="http://www.codeproject.com/KB/testing/bddnbehave.aspx" target="_blank">CodeProject</a>. Pertanyaanya: Apakah yang dimaksud "Context" hendry sama dengan Story dalam artikel itu?<br>
+
+
+
+
+<div><br></div>
+<div>rgds</div>
+<div>fatur<br>
+<div class="gmail_quote">
+<div>2009/7/15 fatur rahman <span dir="ltr">&lt;<a href="mailto:mfathur@..." target="_blank">mfathur@...</a>&gt;</span><br></div>
+<blockquote style="border-left:1px solid rgb(204, 204, 204);margin:0px 0px 0px 0.8ex;padding-left:1ex" class="gmail_quote">Mas Widya,&nbsp; 
+<div>
+<div></div>
+<div>
+<div>Itu Mas Hendry BDD-nya pakai tool apa ya? Gak ketangkep ditelinga saya hehehe&nbsp;</div>
+<div>Maaf ya.....mkn perlu beli korokan yang lebih banyak.</div>
+<div><br></div>
+<div>rgds</div>
+<div>fatur<br>
+<div class="gmail_quote">2009/7/14 Adrian Godong <span dir="ltr">&lt;<a href="mailto:adrian.godong@..." target="_blank">adrian.godong@...</a>&gt;</span> 
+<div>
+<div></div>
+<div><br>
+<blockquote style="border-left:1px solid rgb(204, 204, 204);margin:0px 0px 0px 0.8ex;padding-left:1ex" class="gmail_quote">BS... yang penting program jadi, client puas, dan kalau banyak bug,<br>bisa extend contract terus us us... :D :D :D<br>
+
+
+
+<br>2009/7/14 Ronald Widha &lt;<a href="mailto:ronaldwidha@..." target="_blank">ronaldwidha@...</a>&gt;:<br>
+<div>
+<div></div>
+<div>&gt; Ada yang punya pengalaman dengan test driven design?<br>&gt; Apakah praktisi ini bullshit atau ada gunanya?<br>&gt;<br>&gt; Aku ngebahas sama Hendry Luk sedikit di sini:<br>&gt; <a href="http://www.temanmacet.com/2009/07/13-dari-tdd-sampai-bdd/" target="_blank">http://www.temanmacet.com/2009/07/13-dari-tdd-sampai-bdd/</a><br>
+
+
+
+&gt; Gimana menurut kamu?<br>&gt; --<br>&gt; Ronald Widha<br>&gt; follow me on <a href="http://twitter.com/ronaldwidha" target="_blank">twitter.com/ronaldwidha</a><br>&gt; podcast tentang programming dan informatika <a href="http://www.temanmacet.com/" target="_blank">www.temanmacet.com</a><br>
+
+
+
+&gt; <a href="http://www.ronaldwidha.net/" target="_blank">www.ronaldwidha.net</a><br>&gt;<br></div></div><font color="#888888">--<br>Adrian Godong<br><a href="mailto:adrian.godong@..." target="_blank">adrian.godong@...</a><br>
+
+
+
+<br>---------------------------------------------------------------------<br>Untuk keluar dari keanggotaan mailing list, kirim email ke:<br>[<a href="mailto:dotnet-unsubscribe@..." target="_blank">dotnet-unsubscribe@...</a>]||<a href="http://dotnet.netindonesia.net/" target="_blank">http://dotnet.netindonesia.net</a><br>
+
+
+
+Peraturan milis: <a href="http://dotnet.netindonesia.net/peraturanmilis.html" target="_blank">http://dotnet.netindonesia.net/peraturanmilis.html</a><br></font></blockquote></div></div></div><br></div></div></div></blockquote>
+
+
+
+</div><br></div></div></blockquote></div><br><br clear="all">
+<div></div><br></div></div>-- <br>
+<div>Ronald Widha<br>follow me on <a href="http://twitter.com/ronaldwidha" target="_blank">twitter.com/ronaldwidha</a><br>podcast tentang programming dan informatika <a href="http://www.temanmacet.com/" target="_blank">www.temanmacet.com</a><br>
+
+
+
+<a href="http://www.ronaldwidha.net/" target="_blank">www.ronaldwidha.net</a><br></div></div></blockquote></div></div></div><br></div></blockquote></div><br><br clear="all">
+<div></div><br></div></div></div>
+</blockquote></div><br></div>
+</div></div></blockquote></div></div></div><br>
+</blockquote></div><br></div></body></html>

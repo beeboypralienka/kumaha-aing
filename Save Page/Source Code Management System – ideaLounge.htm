@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://blog.getilo.com/source-code-management-system/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Source Code Management System – ideaLounge</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+    	<link rel="icon" type="image/vnd.microsoft.icon" href="http://blog.getilo.com/wp-content/uploads/2013/08/logo-ilo1.ico">
+    	<link rel="shortcut icon" type="image/x-icon" href="http://blog.getilo.com/wp-content/uploads/2013/08/logo-ilo1.ico">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://blog.getilo.com/xmlrpc.php">
+
+	<link rel="alternate" type="application/rss+xml" title="ideaLounge » Feed" href="http://blog.getilo.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="ideaLounge » Comments Feed" href="http://blog.getilo.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="ideaLounge » Source Code Management System Comments Feed" href="http://blog.getilo.com/source-code-management-system/feed/">
+<link rel="stylesheet" id="jetpack-widgets-css" href="./Source Code Management System – ideaLounge_files/widgets.css" type="text/css" media="all">
+<link rel="stylesheet" id="athemes-fonts-css" href="./Source Code Management System – ideaLounge_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="athemes-symbols-css" href="./Source Code Management System – ideaLounge_files/athemes-symbols.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="./Source Code Management System – ideaLounge_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="athemes-style-css" href="./Source Code Management System – ideaLounge_files/style.css" type="text/css" media="all">
+<script type="text/javascript" src="./Source Code Management System – ideaLounge_files/jquery.js"></script>
+<script type="text/javascript" src="./Source Code Management System – ideaLounge_files/bootstrap.min.js"></script>
+<script type="text/javascript" src="./Source Code Management System – ideaLounge_files/superfish.js"></script>
+<script type="text/javascript" src="./Source Code Management System – ideaLounge_files/supersubs.js"></script>
+<script type="text/javascript" src="./Source Code Management System – ideaLounge_files/settings.js"></script>
+<script type="text/javascript" src="./Source Code Management System – ideaLounge_files/comment-reply.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.getilo.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.getilo.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Struktur Pengembangan Aplikasi Idea Lounge" href="http://blog.getilo.com/struktur-pengembangan-aplikasi-idea-lounge/">
+<link rel="next" title="Continuous Integration" href="http://blog.getilo.com/continuous-integration/">
+<meta name="generator" content="WordPress 3.5.2">
+<link rel="canonical" href="./Source Code Management System – ideaLounge_files/Source Code Management System – ideaLounge.htm">
+<link rel="shortlink" href="http://wp.me/p4iuqX-2a">
+<script charset="utf-8" type="text/javascript">var switchTo5x=true;</script><script charset="utf-8" type="text/javascript" src="./Source Code Management System – ideaLounge_files/buttons.js"></script><script charset="utf-8" type="text/javascript">stLight.options({publisher:"wp.80afee85-d3fe-4f25-a016-13c952964e17" });var st_type='wordpress3.5.2';</script>
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Source Code Management System">
+<meta property="og:url" content="http://blog.getilo.com/source-code-management-system/">
+<meta property="og:description" content="Dalam pengembangan aplikasi, maka source code merupakan basic building blocks. Aplikasi tidak dibuat dalam satu kali pekerjaan, namun dalam beberapa tahap. Sama seperti kita membangun sebuah rumah,...">
+<meta property="og:site_name" content="ideaLounge">
+<meta property="og:image" content="http://blog.getilo.com/wp-content/uploads/2014/01/git-logo.png">
+<meta property="og:image" content="http://blog.getilo.com/wp-content/uploads/2014/01/subversion_logo-300x41.png">
+<meta property="og:image" content="http://blog.getilo.com/wp-content/uploads/2014/01/800px-SVN_Server_Client_Structure-300x174.png">
+<meta name="twitter:site" content="@jetpack">
+<meta name="twitter:image" content="http://blog.getilo.com/wp-content/uploads/2014/01/git-logo.png?w=240">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./Source Code Management System – ideaLounge_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./Source Code Management System – ideaLounge_files/services.css"><script type="text/javascript" src="http://wd-edge.sharethis.com/button/getAllAppDefault.esi?cb=stLight.allDefault&app=all&publisher=wp.80afee85-d3fe-4f25-a016-13c952964e17&domain=blog.getilo.com"></script><script type="text/javascript" src="http://wd-edge.sharethis.com/button/checkOAuth.esi"></script><link rel="stylesheet" type="text/css" href="./Source Code Management System – ideaLounge_files/buttons.5be48d105d7701b1bc41eccdea7af7f3.css"></head>
+
+<body class="single single-post postid-134 single-format-standard group-blog">
+
+	<header id="masthead" class="clearfix container site-header" role="banner">
+	
+<nav id="main-navigation" class="container main-navigation" role="navigation">
+<a style="float: left; margin: 10px 0px 12px 177px;" href="http://blog.getilo.com/" title="ideaLounge" rel="home">
+					<img src="./Source Code Management System – ideaLounge_files/logo.png">
+				</a>
+		<div class="clearfix container autoscale">
+
+			<div class="sf-menu"><ul id="menu-main-menu" class="menu sf-js-enabled"><li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13"><a href="http://getilo.com/">Home</a></li>
+</ul></div>		</div>
+	<!-- #main-navigation --></nav>
+					<!-- #masthead --></header>
+
+	
+
+	<div id="main" class="site-main">
+		<div class="clearfix container">
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+		
+			
+<article id="post-134" class="post-134 post type-post status-publish format-standard hentry category-development tag-git tag-idea-lounge tag-management tag-source-code tag-subversion tag-svn tag-system tag-tools clearfix">
+	<header class="entry-header">
+		<h1 class="entry-title">Source Code Management System</h1>
+
+		<div class="entry-meta">
+			<span class="posted-on"><a href="./Source Code Management System – ideaLounge_files/Source Code Management System – ideaLounge.htm" title="01:00" rel="bookmark"><time class="entry-date published" datetime="2014-01-30T01:00:50+00:00">30 Jan 2014</time></a></span>
+						<span class="comments-link"> <a href="http://blog.getilo.com/source-code-management-system/#comments" title="Comment on Source Code Management System">1 Comment</a></span>
+					<!-- .entry-meta --></div>
+	<!-- .entry-header --></header>
+
+	<div class="clearfix entry-content">
+		<p>Dalam pengembangan aplikasi, maka <em>source code</em> merupakan <em>basic building blocks</em>. Aplikasi tidak dibuat dalam satu kali pekerjaan, namun dalam beberapa tahap. Sama seperti kita membangun sebuah rumah, maka kita mulai dari fondasi, kemudian tembok dan terakhir pintu dan jendela. Oleh karena itu, penting bagi bagi kami agar <em>source code</em> dapat kami telusuri perkembangan-nya dari awal hingga akhir.</p>
+<p>Selain itu, karena ada beberapa <em>developer/programmer</em> atau <em>designer</em> yang bekerja pada satu aplikasi, maka perubahan yang dilakukan oleh satu <em>developer/designer</em> seharusnya tidak terhapus oleh perubahan oleh <em>developer/designer</em> lainnya.</p>
+<p>Disinilah, <em>source code management system</em> diperlukan. Saat ini sudah banyak <em>source code management system</em> yang tersedia. Tiga yang paling populer adalah : CVS, Subversion atau disingkat SVN dan GIT.</p>
+<p><a href="./Source Code Management System – ideaLounge_files/git-logo.png"><img class="alignleft size-full wp-image-138" alt="git-logo" src="./Source Code Management System – ideaLounge_files/git-logo.png" width="220" height="92"></a>GIT merupakan <em>source code management system</em> yang terbaru dan melakukan pendekatan yang berbeda dengan pola “distributed” dimana tidak ada sebuah “<em>centralized server</em>” seperti yang digunakan di CVS dan SVN.</p>
+<p>CVS sendiri saat ini sudah kurang populer dan jarang dig<a href="http://subversion.tigris.org/"><img class="size-medium wp-image-137 alignright" alt="subversion_logo" src="./Source Code Management System – ideaLounge_files/subversion_logo-300x41.png" width="300" height="41"></a>unakan. SVN merupakan “penerus” untuk CVS karena merupakan pengembangan dari sistem CVS, khususnya dalam hal <em>folder management</em>.</p>
+<p>Idea Lounge sendiri menggunakan SVN,&nbsp; menggantikan sistem CVS yang sudah digunakan sejak tahun 2000.</p>
+<p>Pola kerja SVN sendiri dimulai dari:</p>
+<p><strong>A. Pembuatan Repository.</strong></p>
+<p>Di tahap ini, sebuah lokasi dibuat di server dan diberi nama yang unik dimana nama tersebut akan digunakan sebagai penanda akses oleh <em>developer/designer</em>. Umumnya nama yang digunakan adalah nama aplikasi yang akan dibuat.</p>
+<p><strong>B. Proses Checkout.</strong></p>
+<p>Pada proses ini, maka developer akan men-sinkronisasi-kan data dengan download dari server dan membuat sebuah “<em>local</em><em> copy</em>” di komputer <em>developer/designer</em>.</p>
+<p><strong>C. Proses Update.</strong></p>
+<p>Nah, proses update ini dilakukan untuk memperbaharui <em>source code</em> di <em>local copy</em> dengan <em>source code</em> baru di server yang sudah dicommit oleh <em>developer/designer</em> lain. Hal ini penting untuk dilakukan sebelum proses commit dilakukan agar tidak terjadi konflik dimana <em>source code</em> di server dan <em>source code</em> di <em>local copy</em> berbeda.</p>
+<p>Sistem SVN sudah dapat melakukan merger source code secara otomatis dimana perubahan otomatis dilakukan oleh sistem di proses update <img class="alignright size-medium wp-image-136" alt="800px-SVN_Server_Client_Structure" src="./Source Code Management System – ideaLounge_files/800px-SVN_Server_Client_Structure-300x174.png" width="300" height="174">ini. Dengan catatan, perubahan terjadi hanya di penambahan atau pengurangan baris <em>source code</em>.</p>
+<p>Bila dalam satu baris yang sama terdapat pertentangan <em>source code</em>, maka <em>developer/designer</em> wajib melihat dan memperbaiki agar <em>source code</em> menjadi selaras. Tentu saja hal ini dilakukan dengan tetap menjaga <em>source code</em> hasil commit <em>developer/designer</em> lain tetap dapat berjalan dengan baik. Demikian juga dengan perubahan yang dilakukan oleh <em>developer/designer</em> yang melakukan update.</p>
+<p><strong>D. Proses Commit.</strong></p>
+<p>Nah, setelah melakukan checkout, maka developer/designer akan melakukan <em>coding</em>.&nbsp; Apakah itu untuk menambahkan fitur baru atau membetulkan <em>bug</em>. Setelah selesai, maka dilakukan proses commit dimana sistem akan menambahkan <em>source code</em> baru ke dalam repository.</p>
+<p><strong>E. Perulangan</strong></p>
+<p>Proses perulangan yang terjadi adalah di tahap C dan D. Dimana tahap A dan B hanya perlu dilakukan di 1x di awal.</p>
+<p>Namun untuk <em>developer/designer</em> baru tetap perlu melakukan tahap B agar mendapatkan <em>local copy</em>.</p>
+<p>Kelebihan dari SVN adalah:</p>
+<ol>
+<li>Memungkinkan kolaborasi antar developer. Dimana kode yang sudah di-commit ke dalam repository akan tetap dijaga oleh developer berikutnya.</li>
+<li>Adanya riwayat source code. Setiap kode yang di-commit akan memiliki satu penomoran sendiri, dimana akan dicatat oleh sistem <em>file/folder</em> apa yang berubah dan siapa yang melakukan perubahan.</li>
+<li>Akses ke repository terbatas. Dimana untuk mengakses repository diperlukan username dan password. Otomatis pengguna SVN wajib didaftarkan terlebih dahulu. Sehingga tidak sembarang orang bisa mengakses dan melakukan perubahan.</li>
+</ol>
+<p>Nah, untuk SVN Client sendiri ada banyak aplikasi. Namun yang populer digunakan adalah:</p>
+<ol>
+<li><a href="http://rapidsvn.tigris.org/" target="_blank">RapidSVN</a> untuk Linux</li>
+<li><a href="http://tortoisesvn.net/downloads.html" target="_blank">TortoiseSVN</a> untuk Windows</li>
+</ol>
+<p>Masih banyak lagi aplikasi SVN Client yang bisa digunakan, silahkan gunakan mesin pencari Google untuk mencarinya. Atau mungkin tertarik untuk menelusuri lebih lanjut ?</p>
+<div id="stcpDiv">
+<p>Ingin bergabung dengan kami ? Silahkan kirim CV dan resume anda ke ricky.kurniawan@getilo.com</p>
+<p>Tertarik dengan sistem Idea Lounge dan ingin melihat produk-produk Idea Lounge ? Angkat telepon anda dan hubungi tim sales kami yang saat ini ditangani oleh <a href="http://indodatapratama.co.id/contact" target="_blank">Indodata Pratama</a> di 021-7804061.</p>
+<p><strong>Ricky Kurniawan :: Chief Technology Officer</strong></p>
+</div>
+<p>Sumber gambar :</p>
+<ul>
+<li><a href="http://subversion.tigris.org/" target="_blank">Subversion</a></li>
+<li><a href="http://www.git-scm.com/" target="_blank">Git</a></li>
+<li><a href="http://commons.wikimedia.org/wiki/File:SVN_Server_Client_Structure.png" target="_blank">Wikimedia</a></li>
+</ul>
+			<!-- .entry-content --></div>
+
+	<footer class="entry-meta entry-footer">
+		<span class="cat-links"><i class="ico-folder"></i> <a href="http://blog.getilo.com/category/development/" title="View all posts in Development" rel="category tag">Development</a></span><span class="tags-links"><i class="ico-tags"></i> <a href="http://blog.getilo.com/tag/git/" rel="tag">git</a>, <a href="http://blog.getilo.com/tag/idea-lounge/" rel="tag">idea lounge</a>, <a href="http://blog.getilo.com/tag/management/" rel="tag">management</a>, <a href="http://blog.getilo.com/tag/source-code/" rel="tag">source code</a>, <a href="http://blog.getilo.com/tag/subversion/" rel="tag">subversion</a>, <a href="http://blog.getilo.com/tag/svn/" rel="tag">svn</a>, <a href="http://blog.getilo.com/tag/system/" rel="tag">system</a>, <a href="http://blog.getilo.com/tag/tools/" rel="tag">tools</a></span>	<!-- .entry-meta --></footer>
+<!-- #post-134 --></article>
+
+			<div class="clearfix author-info">
+				<div class="author-photo"><img alt="" src="./Source Code Management System – ideaLounge_files/98e5376fcdd8f1f91b00bb44a7931022" class="avatar avatar-75 photo grav-hashed grav-hijack" height="75" width="75" id="grav-98e5376fcdd8f1f91b00bb44a7931022-0"></div>
+				<div class="author-content">
+					<h3>Ricky Kurniawan</h3>
+					<p></p>
+					<div class="author-links">
+						<a href="http://blog.getilo.com/author/ricky/" rel="me">More Posts</a>
+
+												<a href="http://twitter.com/firesnaker">Twitter</a>
+						
+						
+											</div>
+				</div>
+			<!-- .author-info --></div>
+
+				<nav role="navigation" id="nav-below" class="post-navigation">
+		<h1 class="screen-reader-text">Post navigation</h1>
+
+	
+		<div class="nav-previous"><span>Previous Article</span><a href="http://blog.getilo.com/struktur-pengembangan-aplikasi-idea-lounge/" rel="prev"><span class="meta-nav">←</span> Struktur Pengembangan Aplikasi Idea Lounge</a></div>		<div class="nav-next"><span>Next Article</span><a href="http://blog.getilo.com/continuous-integration/" rel="next">Continuous Integration <span class="meta-nav">→</span></a></div>
+	
+	</nav><!-- #nav-below -->
+	
+			
+	<div id="comments" class="comments-area">
+
+	
+			<h3 class="comments-title">
+			One Comment		</h3>
+
+		<ol class="comment-list">
+			
+	<li id="comment-12" class="pingback even thread-even depth-1">
+		<div class="comment-body">
+			Pingback: <a href="http://blog.getilo.com/continuous-integration/" rel="external nofollow" class="url">Continuous Integration – ideaLounge</a> 		</div>
+
+	</li>
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+									<div id="respond">
+				<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://blog.getilo.com/source-code-management-system/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://blog.getilo.com/wp-comments-post.php" method="post" id="commentform">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input x-autocompletetype="name-full" id="author" name="author" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input x-autocompletetype="email" id="email" name="email" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-url"><label for="url">Website</label><input id="url" name="url" type="text" value="" size="30"></p>
+<!-- 5 Spam Comments Blocked so far by Spam Free Wordpress version 2.2.3 located at http://www.toddlahman.com/shop/simple-comments/ -->
+<p><input type="text" value="9DCoiiJxfhtO" onclick="this.select()" size="20">
+		<b>* Copy This Password *</b></p><p><input type="text" name="passthis" id="passthis" value="" size="20">
+		<b>* Type Or Paste Password Here *</b></p>												<p class="comment-form-comment"><label for="comment">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>												<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="134" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="dcd89c7c30"></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments" style="display: inline;">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog" style="display: inline;">Notify me of new posts by email.</label></p>					</form>
+							</div><!-- #respond -->
+						
+</div><!-- #comments -->
+
+		
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+<div id="widget-area-2" class="site-sidebar widget-area" role="complementary">
+	<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://blog.getilo.com/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
+	</label>
+	<input type="submit" class="search-submit" value="Search">
+</form>
+</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="http://blog.getilo.com/aplikasi-desktop-vs-aplikasi-web-based/" title="Aplikasi Desktop vs Aplikasi Web Based">Aplikasi Desktop vs Aplikasi Web Based</a>
+						</li>
+					<li>
+				<a href="http://blog.getilo.com/antar-muka-satu-halaman/" title="Antar Muka Satu Halaman">Antar Muka Satu Halaman</a>
+						</li>
+					<li>
+				<a href="http://blog.getilo.com/ajax-library-jquery/" title="AJAX Library JQuery">AJAX Library JQuery</a>
+						</li>
+					<li>
+				<a href="http://blog.getilo.com/bahasa-pemrograman-php/" title="Bahasa Pemrograman PHP">Bahasa Pemrograman PHP</a>
+						</li>
+					<li>
+				<a href="http://blog.getilo.com/komputasi-awan/" title="Komputasi Awan">Komputasi Awan</a>
+						</li>
+				</ul>
+		</aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href="http://blog.getilo.com/2014/03/" title="March 2014">March 2014</a></li>
+	<li><a href="http://blog.getilo.com/2014/02/" title="February 2014">February 2014</a></li>
+	<li><a href="http://blog.getilo.com/2014/01/" title="January 2014">January 2014</a></li>
+	<li><a href="http://blog.getilo.com/2013/10/" title="October 2013">October 2013</a></li>
+	<li><a href="http://blog.getilo.com/2013/09/" title="September 2013">September 2013</a></li>
+		</ul>
+</aside><aside id="athemes_social_icons-2" class="widget widget_athemes_social_icons"><h3 class="widget-title"></h3><ul class="clearfix widget-social-icons">					<li class="widget-si-twitter"><a href="https://twitter.com/idealounge" title="Twitter"><i class="ico-twitter"></i></a></li>
+										<li class="widget-si-facebook"><a href="https://www.facebook.com/pages/IdeaLounge/91601846283" title="Facebook"><i class="ico-facebook"></i></a></li>
+										<li class="widget-si-linkedin"><a href="http://www.linkedin.com/company/idealounge" title="LinkedIn"><i class="ico-linkedin"></i></a></li>
+										<li class="widget-si-gplus"><a href="https://plus.google.com/b/113341582753502374267/113341582753502374267/about" title="Google+"><i class="ico-gplus"></i></a></li>
+										<li class="widget-si-vimeo"><a href="https://vimeo.com/idealounge" title="Vimeo"><i class="ico-vimeo"></i></a></li>
+										<li class="widget-si-dribbble"><a href="http://dribbble.com/idealounge" title="Dribbble"><i class="ico-dribbble"></i></a></li>
+					<!-- .widget-social-icons --></ul></aside><!-- #widget-area-2 --></div>		</div>
+	<!-- #main --></div>
+
+	
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="clearfix container">
+			<div class="site-info">
+				© 2014 ideaLounge. All rights reserved.
+			</div><!-- .site-info -->
+
+		</div>
+	<!-- #colophon --></footer>
+
+	<div style="display:none">
+	<div class="grofile-hash-map-98e5376fcdd8f1f91b00bb44a7931022">
+	</div>
+	</div>
+<script type="text/javascript" src="./Source Code Management System – ideaLounge_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="./Source Code Management System – ideaLounge_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Source Code Management System – ideaLounge_files/wpgroho.js"></script>
+
+	<script src="./Source Code Management System – ideaLounge_files/e-201414.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.7',blog:'63512239',post:'134',tz:'7'});
+	var load_cmc = function(){linktracker_init(63512239,134,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="./Source Code Management System – ideaLounge_files/g.gif" alt="">
+
+<div id="stcpDiv" style="position: absolute; top: -1999px; left: -1988px;">ShareThis Copy and Paste</div><iframe id="stSegmentFrame" name="stSegmentFrame" src="./Source Code Management System – ideaLounge_files/getSegment.htm" frameborder="0" scrolling="no" width="0px" height="0px" style="display:none;"></iframe><div id="stwrapper" class="stwrapper" style="visibility: hidden; top: -999px; left: -999px; width: 500px; z-index: 89999999;"><div class="stCloseNew2"></div><iframe allowtransparency="true" id="stLframe" class="stLframe" name="stLframe" frameborder="0" scrolling="no" width="500px" height="430px" src="./Source Code Management System – ideaLounge_files/index.811a18c8fe86aad89de2c7f303b82e75.htm" style="top: 0px; left: 0px;"></iframe></div><div id="stOverlay" style="height: 100%; width: 100%; background-color: rgb(0, 0, 0); opacity: 0.6; position: fixed; display: none; left: 0px; top: 0px; z-index: 89999990;"></div></body></html>

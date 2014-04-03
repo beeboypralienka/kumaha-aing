@@ -1,0 +1,1 @@
+try { clickdensity.setSession(-1,-1); /* SNR1 */ } catch (e) {}
