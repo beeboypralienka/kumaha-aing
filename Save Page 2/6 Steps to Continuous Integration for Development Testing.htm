@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<!-- saved from url=(0093)http://blog.parasoft.com/bid/115621/6-Steps-to-Continuous-Integration-for-Development-Testing -->
+<html class="no-js wf-oxygen-n7-active wf-droidsans-n7-active wf-droidsans-n4-active wf-active" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script id="hs-analytics" src="http://js.hs-analytics.net/analytics/1396887000000/69806.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="Parasoft">
+    <meta name="description" content="6 steps to bringing your Development Testing activities under Continuous Integration—in less than a day.">
+    <meta name="generator" content="HubSpot">
+    <title>6 Steps to Continuous Integration for Development Testing</title>
+    <link rel="shortcut icon" href="http://cdn2.hubspot.net/hub/69806/file-15236280-ico/favicon.ico?t=1368094701000">
+    
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js" type="text/javascript" async=""></script><script type="text/javascript" src="./6 Steps to Continuous Integration for Development Testing_files/jquery.min.js"></script>
+    <script type="text/javascript">hsjQuery = window['jQuery']</script>
+    <link href="https://static.hsappstatic.net/content_shared_assets/static-1.3594/css/public_common.css" rel="stylesheet">
+    <meta property="og:description" content="6 steps to bringing your Development Testing activities under Continuous Integration—in less than a day.">
+    <meta property="og:title" content="6 Steps to Continuous Integration for Development Testing">
+    <meta name="twitter:description" content="6 steps to bringing your Development Testing activities under Continuous Integration—in less than a day.">
+    <meta name="twitter:title" content="6 Steps to Continuous Integration for Development Testing">
+
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Oxygen:700:latin', 'Droid+Sans:700,400:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
+<link rel="canonical" href="./6 Steps to Continuous Integration for Development Testing_files/6 Steps to Continuous Integration for Development Testing.htm">
+<meta name="google-site-verification" content="5TqRnDrLUFy9bQ5Pv-Ru_kmsHSox5cm_nwEZ-pjLFpA">
+<style> 
+p#hubspot-author_data 
+{ 
+display:none; 
+} 
+.hs-author-social-section {
+display:none;
+}
+</style>
+<meta property="og:type" content="article">
+<link rel="alternate" type="application/rss+xml" href="http://blog.parasoft.com/rss.xml">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:domain" content="blog.parasoft.com">
+
+
+<meta property="og:image" content="http://cdn2.hubspot.net/hub/69806/file-39485932-jpg/images/continuous-integration.jpg?t=1368551971000">
+<meta name="twitter:image:src" content="http://cdn2.hubspot.net/hub/69806/file-39485932-jpg/images/continuous-integration.jpg?t=1368551971000">
+    
+    <!--[if lt IE 9]>
+    <script src="https://static.hsappstatic.net/content_shared_assets/static-1.3594/js/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="http://cdn2.hubspot.net/hub/69806/hub_generated/style_manager/1389822563538/custom/page/Parasoft_Theme_V2/Parasoft_Theme_V2.min.css?t=0"><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oxygen:700%7CDroid+Sans:700,400&subset=latin,latin">
+
+<style type="text/css">.hs-form fieldset{border:0;padding:0;margin:0;max-width:500px}.hs-form fieldset.form-columns-1 .hs-input{width:95%}.hs-form fieldset.form-columns-1 .input{margin-right:8px}.hs-form fieldset.form-columns-1 input[type=checkbox],.hs-form fieldset.form-columns-1 input[type=radio]{width:auto}.hs-form fieldset.form-columns-2 .hs-form-field{width:50%;float:left}.hs-form fieldset.form-columns-2 .input{margin-right:8px}.hs-form fieldset.form-columns-3 .hs-form-field{width:32.7%;float:left}.hs-form fieldset.form-columns-3 .input{margin-right:8px}.hsformerror{margin:0 0 2px;padding:2px 6px;height:auto;background-color:#fdd2d0;font-size:11px;border:1px solid #fcb3af;padding:4px 16px 4px 10px;color:#000;display:none;background-image:-webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#fefefe),color-stop(100%,#fdd2d0));background-image:-webkit-linear-gradient(#fefefe,#fdd2d0);background-image:-moz-linear-gradient(#fefefe,#fdd2d0);background-image:-o-linear-gradient(#fefefe,#fdd2d0);background-image:linear-gradient(#fefefe,#fdd2d0);-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 0 6px #ddd;-moz-box-shadow:0 0 6px #ddd;box-shadow:0 0 6px #ddd;z-index:99999}.hsformerror em{border:10px solid;border-color:#fdd2d0 transparent transparent;bottom:-17px;display:block;height:0;left:60px;position:absolute;width:0}.hsformerror p{font-family:Lucida Grande,Lucida Sans Unicode,bitstream vera sans,trebuchet ms,verdana,sans-serif;margin:0;float:left;margin-right:8px}.hsformerror:hover{cursor:default}.hsformerror .close-form-error{float:right;display:inline;top:3px;position:absolute;font-family:Verdana!important;color:#b17c79!important;cursor:pointer!important;font-size:11px!important;font-weight:400!important}.hsformerror .close-form-error:hover{color:#cc8884}#calroot{z-index:10000;margin-top:-1px;width:198px;padding:2px;background-color:#fff;font-size:11px;border:1px solid #ccc;-moz-border-radius:5px;-webkit-border-radius:5px;-moz-box-shadow:0 0 15px #666;-webkit-box-shadow:0 0 15px #666}#calroot p,#calroot div,#calroot a{font-family:Lucida Grande,Lucida Sans Unicode,bitstream vera sans,trebuchet ms,verdana,sans-serif}#calroot #calhead{padding:2px 0;height:22px}#calroot #caltitle{font-size:14px;color:#0150d1;float:left;text-align:center;width:155px;line-height:20px;text-shadow:0 1px 0 #ddd}#calroot #calnext,#calroot #calprev{display:block;margin:5px 7px;width:0;height:0;float:left;cursor:pointer}#calroot #calnext{float:right;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:5px solid #666}#calroot #calprev{border-top:5px solid transparent;border-bottom:5px solid transparent;border-right:5px solid #666}#calroot #calprev.caldisabled,#calroot #calnext.caldisabled{visibility:hidden}#calroot #caltitle select{font-size:10px}#calroot #caldays{height:14px;border-bottom:1px solid #ddd}#calroot #caldays span{display:block;float:left;width:28px;text-align:center}#calroot #calweeks{background-color:#fff;margin-top:4px}#calroot .calweek{clear:left;height:22px}#calroot .calweek a{display:block;float:left;width:27px;height:20px;text-decoration:none;font-size:11px;margin-left:1px;text-align:center;line-height:20px;color:#666;-moz-border-radius:3px;-webkit-border-radius:3px}#calroot .calweek a:hover{background-color:#ddd}#calroot .calfocus{background-color:#ddd}#calroot a.calsun{color:red}#calroot a.caloff{color:#ccc}#calroot a.caloff:hover{background-color:#f5f5fa}#calroot a.caldisabled{background-color:#efefef!important;color:#ccc!important;cursor:default}#calroot #calcurrent{background-color:#498ce2;color:#fff}#calroot #caltoday{background-color:#333;color:#fff}@media (max-width:400px),(min-device-width:320px) and (max-device-width:480px){form.hs-form .form-columns-2 .hs-form-field,form.hs-form .form-columns-3 .hs-form-field{float:none;width:100%}form.hs-form .form-columns-2 .hs-form-field .hs-input,form.hs-form .form-columns-3 .hs-form-field .hs-input{width:95%}}</style><style type="text/css">.comment-reply-to{background:url(https://static2cdn.hubspot.com/pictos_images/static-1.6/img/pictos-1-png/16/pictos-set1-21.png) no-repeat 5px;border:0;padding-left:25px;color:#333}.replying{padding-left:2em}.comment-from,.comment-date{display:inline-block}.comment-from h4{font-size:1.2em;font-weight:700}.comment-date{font-size:.8em;color:#666}#comment-form h4{font-size:1.4em}.comment.depth-0{border-top:2px solid #eee;padding-top:2em;margin-top:2em}.comment.depth-0:first-child{margin-top:0}.comment.depth-1{padding-left:2em}.comment.depth-2{padding-left:4em}.comment.depth-3{padding-left:6em}.comment.depth-4{padding-left:8em}.comment.depth-5{padding-left:10em}.comment.depth-6{padding-left:12em}.comment.depth-7{padding-left:14em}.comment.depth-8{padding-left:16em}.comment.depth-9{padding-left:18em}.shuffle{display:none}.hs_subscribe ul{padding-left:0}.hs_subscribe li{list-style:none}</style><script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&ajax=1&cachestop=0.16282137925736606"></script><style type="text/css">.recaptchatable td img{display:block}.recaptchatable .recaptcha_r1_c1{background:url('http://www.google.com/recaptcha/api/img/white/sprite.png') 0 -63px no-repeat;width:318px;height:9px}.recaptchatable .recaptcha_r2_c1{background:url('http://www.google.com/recaptcha/api/img/white/sprite.png') -18px 0 no-repeat;width:9px;height:57px}.recaptchatable .recaptcha_r2_c2{background:url('http://www.google.com/recaptcha/api/img/white/sprite.png') -27px 0 no-repeat;width:9px;height:57px}.recaptchatable .recaptcha_r3_c1{background:url('http://www.google.com/recaptcha/api/img/white/sprite.png') 0 0 no-repeat;width:9px;height:63px}.recaptchatable .recaptcha_r3_c2{background:url('http://www.google.com/recaptcha/api/img/white/sprite.png') -18px -57px no-repeat;width:300px;height:6px}.recaptchatable .recaptcha_r3_c3{background:url('http://www.google.com/recaptcha/api/img/white/sprite.png') -9px 0 no-repeat;width:9px;height:63px}.recaptchatable .recaptcha_r4_c1{background:url('http://www.google.com/recaptcha/api/img/white/sprite.png') -43px 0 no-repeat;width:171px;height:49px}.recaptchatable .recaptcha_r4_c2{background:url('http://www.google.com/recaptcha/api/img/white/sprite.png') -36px 0 no-repeat;width:7px;height:57px}.recaptchatable .recaptcha_r4_c4{background:url('http://www.google.com/recaptcha/api/img/white/sprite.png') -214px 0 no-repeat;width:97px;height:57px}.recaptchatable .recaptcha_r7_c1{background:url('http://www.google.com/recaptcha/api/img/white/sprite.png') -43px -49px no-repeat;width:171px;height:8px}.recaptchatable .recaptcha_r8_c1{background:url('http://www.google.com/recaptcha/api/img/white/sprite.png') -43px -49px no-repeat;width:25px;height:8px}.recaptchatable .recaptcha_image_cell center img{height:57px}.recaptchatable .recaptcha_image_cell center{height:57px}.recaptchatable .recaptcha_image_cell{background-color:white;height:57px}#recaptcha_area,#recaptcha_table{width:318px!important}.recaptchatable,#recaptcha_area tr,#recaptcha_area td,#recaptcha_area th{margin:0!important;border:0!important;padding:0!important;border-collapse:collapse!important;vertical-align:middle!important}.recaptchatable *{margin:0;padding:0;border:0;font-family:helvetica,sans-serif;font-size:8pt;color:black;position:static;top:auto;left:auto;right:auto;bottom:auto}.recaptchatable #recaptcha_image{position:relative;margin:auto}.recaptchatable #recaptcha_image #recaptcha_challenge_image{display:block}.recaptchatable #recaptcha_image #recaptcha_ad_image{display:block;position:absolute;top:0}.recaptchatable img{border:0!important;margin:0!important;padding:0!important}.recaptchatable a,.recaptchatable a:hover{cursor:pointer;outline:none;border:0!important;padding:0!important;text-decoration:none;color:blue;background:none!important;font-weight:normal}.recaptcha_input_area{position:relative!important;width:153px!important;height:45px!important;margin-left:7px!important;margin-right:7px!important;background:none!important}.recaptchatable label.recaptcha_input_area_text{margin:0!important;padding:0!important;position:static!important;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;background:none!important;height:auto!important;width:auto!important}.recaptcha_theme_red label.recaptcha_input_area_text,.recaptcha_theme_white label.recaptcha_input_area_text{color:black!important}.recaptcha_theme_blackglass label.recaptcha_input_area_text{color:white!important}.recaptchatable #recaptcha_response_field{width:153px!important;position:relative!important;bottom:7px!important;padding:0!important;margin:15px 0 0 0!important;font-size:10pt}.recaptcha_theme_blackglass #recaptcha_response_field,.recaptcha_theme_white #recaptcha_response_field{border:1px solid gray}.recaptcha_theme_red #recaptcha_response_field{border:1px solid #cca940}.recaptcha_audio_cant_hear_link{font-size:7pt;color:black}.recaptchatable{line-height:1!important}#recaptcha_instructions_error{color:red!important}.recaptcha_only_if_privacy{float:right;text-align:right}#recaptcha-ad-choices{position:absolute;height:15px;top:0;right:0}#recaptcha-ad-choices img{height:15px}.recaptcha-ad-choices-collapsed{width:30px;height:15px;display:block}.recaptcha-ad-choices-expanded{width:75px;height:15px;display:none}#recaptcha-ad-choices:hover .recaptcha-ad-choices-collapsed{display:none}#recaptcha-ad-choices:hover .recaptcha-ad-choices-expanded{display:block}
+
+.recaptcha_is_showing_audio .recaptcha_only_if_image,.recaptcha_isnot_showing_audio .recaptcha_only_if_audio,.recaptcha_had_incorrect_sol .recaptcha_only_if_no_incorrect_sol,.recaptcha_nothad_incorrect_sol .recaptcha_only_if_incorrect_sol{display:none !important}</style><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusRv44uI1PfUA1d2zUP_qHCN3eDoJBwA0Dw8kZSURaSaWzPYyfcdyr-78L7d16mRMVsa3KhiJ-sU8au_hR-WREryfxizn2uoCPBOPWj7tLv2clP5GwndJWVQweeYdOSs9Y65Zu37OT89bbKhvYa9-FfsTa6xEwU9ok90aUjMY3Ue-2ljypHblW229hpeQA_poHQ2vKymwCXbPXNEdliE-GbPe-0ElLlSvP82S3T7JqRwhzUk8I&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvXBAv3Nr0yF-JVXpW6UDrm5VpNFytzK7K-U3AOC5RBDeTMeP06TK4lazdruEbSaF6RJByHLmNN8424gsfrR9qVAnB_HgjtjhMdBEo84NRpNoq5Tk8R-nrAG3QcZn089AurWqf1oYVhY7TsNV8Z3m0AOe7acmDR4BjKpp892U6p3syqeDIvbiIlwTc4URtD2At1MXN52L-PeVY5ez1FQsfeiOVsNT8_1VXNzLvp-Ubx6fYlhRg&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VutWLUSH9M2U82doKJABULdE1FdAVp9PJ_uIEA6zC31czCnETVTkQF58FdDLyXdluDBk8ZZ6suhagPU07_auq_3ZKF_MWZIbC90FNwwz2sBOSl_HlGEXCeMVxqyd2YiPK-DlvC0FQnuqdWW-u_9EEj2cNBwjC_524zJNX95UNxiFy4Bx5VRtLPoE6vSxwkOVhmLXZM-I56JJetLDUXJ8ChFJD8RYT-4JIjfJJzb4yO7OKhd3p9M_nFes0sx5XE2WPAc5A2JH&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuuWG61xN6aM-UWQoUijmqFeTAIe8bZLL8rOCEQh4HVM5W89V1lTejedkahVH31edqXMim0FU9CPw0J5LtbG6oqMi4CWGPEWGBImknSeUBeQKVCrmq9eGALwH-h2XD4F8mnCZx8j6S8rHZDaqyHpUIiAEwtVLbVIk5KJEgA_9dgmG-mOcoFVxH1QMCsl9XZlpkP_6GqfgOPU5eZIYYkujvrNjdAzTFn638ebtE6NjfeeI8Rqv-rZ8v6uRxq3VXRKnwq5ZtH7&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvduCXL2XtnJBpT-6Rvz2upnT2G9tYa6ImbRo2MSTUD-BhdcGUqzqlim4Uwpj9tmXaNRRKKU8RtNb4DUgWzBgiwLTxKcPInXyM0gy5-c_5MFeG5FLJr2-39JVCXFlKbEB6i2_jHTnJRp3oxuSjeAMZfeWoXpUY90kSN5V-Q0HGegPB-KW59AxqPDklTt52sI_OTrqiCQnhQmBKbt6IjROBJPML-_Ty1W-IpyGa5enBuiJodnruQyt-Z0g8G9sONMXQfEr_2&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvduCXL2XtnJBpT-6Rvz2upnT2G9tYa6ImbRo2MSTUD-BhdcGUqzqlim4Uwpj9tmXaNRRKKU8RtNb4DUgWzBgiwLTxKcPInXyM0gy5-c_5MFeG5FLJr2-39JVCXFlKbEB6i2_jHTnJRp3oxuSjeAMZfeWoXpUY90kSN5V-Q0HGegPB-KW59AxqPDklTt52sI_OTrqiCQnhQmBKbt6IjROBJPML-_Ty1W-IpyGa5enBuiJodnruQyt-Z0g8G9sONMXQfEr_2&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvduCXL2XtnJBpT-6Rvz2upnT2G9tYa6ImbRo2MSTUD-BhdcGUqzqlim4Uwpj9tmXaNRRKKU8RtNb4DUgWzBgiwLTxKcPInXyM0gy5-c_5MFeG5FLJr2-39JVCXFlKbEB6i2_jHTnJRp3oxuSjeAMZfeWoXpUY90kSN5V-Q0HGegPB-KW59AxqPDklTt52sI_OTrqiCQnhQmBKbt6IjROBJPML-_Ty1W-IpyGa5enBuiJodnruQyt-Z0g8G9sONMXQfEr_2&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvduCXL2XtnJBpT-6Rvz2upnT2G9tYa6ImbRo2MSTUD-BhdcGUqzqlim4Uwpj9tmXaNRRKKU8RtNb4DUgWzBgiwLTxKcPInXyM0gy5-c_5MFeG5FLJr2-39JVCXFlKbEB6i2_jHTnJRp3oxuSjeAMZfeWoXpUY90kSN5V-Q0HGegPB-KW59AxqPDklTt52sI_OTrqiCQnhQmBKbt6IjROBJPML-_Ty1W-IpyGa5enBuiJodnruQyt-Z0g8G9sONMXQfEr_2&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvduCXL2XtnJBpT-6Rvz2upnT2G9tYa6ImbRo2MSTUD-BhdcGUqzqlim4Uwpj9tmXaNRRKKU8RtNb4DUgWzBgiwLTxKcPInXyM0gy5-c_5MFeG5FLJr2-39JVCXFlKbEB6i2_jHTnJRp3oxuSjeAMZfeWoXpUY90kSN5V-Q0HGegPB-KW59AxqPDklTt52sI_OTrqiCQnhQmBKbt6IjROBJPML-_Ty1W-IpyGa5enBuiJodnruQyt-Z0g8G9sONMXQfEr_2&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvduCXL2XtnJBpT-6Rvz2upnT2G9tYa6ImbRo2MSTUD-BhdcGUqzqlim4Uwpj9tmXaNRRKKU8RtNb4DUgWzBgiwLTxKcPInXyM0gy5-c_5MFeG5FLJr2-39JVCXFlKbEB6i2_jHTnJRp3oxuSjeAMZfeWoXpUY90kSN5V-Q0HGegPB-KW59AxqPDklTt52sI_OTrqiCQnhQmBKbt6IjROBJPML-_Ty1W-IpyGa5enBuiJodnruQyt-Z0g8G9sONMXQfEr_2&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvduCXL2XtnJBpT-6Rvz2upnT2G9tYa6ImbRo2MSTUD-BhdcGUqzqlim4Uwpj9tmXaNRRKKU8RtNb4DUgWzBgiwLTxKcPInXyM0gy5-c_5MFeG5FLJr2-39JVCXFlKbEB6i2_jHTnJRp3oxuSjeAMZfeWoXpUY90kSN5V-Q0HGegPB-KW59AxqPDklTt52sI_OTrqiCQnhQmBKbt6IjROBJPML-_Ty1W-IpyGa5enBuiJodnruQyt-Z0g8G9sONMXQfEr_2&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvduCXL2XtnJBpT-6Rvz2upnT2G9tYa6ImbRo2MSTUD-BhdcGUqzqlim4Uwpj9tmXaNRRKKU8RtNb4DUgWzBgiwLTxKcPInXyM0gy5-c_5MFeG5FLJr2-39JVCXFlKbEB6i2_jHTnJRp3oxuSjeAMZfeWoXpUY90kSN5V-Q0HGegPB-KW59AxqPDklTt52sI_OTrqiCQnhQmBKbt6IjROBJPML-_Ty1W-IpyGa5enBuiJodnruQyt-Z0g8G9sONMXQfEr_2&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuuwUmI-QfNGQGoamtmvCV2OFfC8nCidmJDJyEtn9nSG03Yap09hGM8WQY9dVHcxg5uK-GThchgdU9Qtzow0Fu0rOYqgNVIlEYdh2E8H7V66abuCe81GnQt0wT3iBhSusny613dWXHB5jhehs3ofvMQdG9QOkgxbgCqFJTdidLxBzzr0Z37THajp4qRgq5HDWjAAhUSH62WVq7Mr38QL94FAoZJdJRAsKuq_2qwNFEJ_jm9q3lM&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusD6fD43YlaLGlPD2y_0WJsItv4RF3E7tUyZvxcMbDNTkxPFy5-uxON5FvCYr4DSzTNEGByjUxY_AR2VLWe_DPH2-VUNvrQLaZ8A2Eje7O9aJUjarmuzs7RmXI9n2CA1afJvlTr1x87RadU42ATMSBqp_YQ2sRkTFXkHDJgIdOClZPSHDaKU8-hkO3D60t_3srsX8q7jZpimDs2BOauKJM3z9y4C6PBc8H5g82PLFAxpshGlCs&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuvmh0r7AvU58SVfv75vCCEMpqfdh4DY9qalhNHo7IBQ-JkqjnQWUMo6c_j1U5ZhpmylA4fnAwxjDbyMoZgdw_DKZGCXkNenk0yUGID3mLk9J4t8_G2hJJwDj4QlFET_mL4xAUzbLS8Zjuhk_pde_o-zRup8i80kU24yKZAHbrKsQmDdru0B_TtvmXPK4Y_edVOZ5O2_a5FTVko6gFd55HThNxcjxW06Cj3XeCmVL3p9QjcjM2c&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuva0T4KZrDNBZrjCxIezXipPJkuEzd6mCwurGu8dMli5srm9Dfw8ZHizi8E9AB3r3Tc9cgxkR7SF6BOdmNsnPGGF50NMoBdZuKc_E_zUblhTrBn98P1SkefpXOVu0M2LksW2-SNFjIMVPZN2Ez7nxcknWiUbv7edAEZEyov5jcbtDi8E5IRc2yLq7CVyN-VhzEkhmaoN8wvBw44JyQb7U70dH1zxp7ZE4QxuivahU6JW28SFveWZ5VyMvQNX22cRzYXXUf0&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuvx1dYixG_61Utr-w91fZQa_4PEdk29ZdZNcprZT_U430HLGkHJiqa8I6mE4MzVmKo6IFl1C_g0ngJNhI0l8tjcgszQYLOenhRzvLnevfWvRikmb2WjI6ERL7FWbWKQdd4PHp5pyVeGZQsc0TfP-zfDEvvCNfmW1gZw8FJdKI6cPRafVm8KMfC90Hkgx96NCn4psOp5C6_449AK_2hnesd6dERiLOgcsZug9TfmeUXltQH7uAD2t9jaOiqXBiRMeD-4CJ25&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuudKzsyVfKaaKFTLcDrNggHZSnvGBvQcwjFLg-XHSPDgAupME1gh_RgAYk4WDA5CXrtgUPKqVdU23yEhq_zkTucQk5VuRSGyjn0hb1ZUh8MBUveVLXpPku0EBIQgXP_pXAlVBChZF92MBXAIiJW28NwP3O95tahWvsjKl7pP4GBVALT9y27GewV0oW-_bsfvGrWK5mh0aqdPyJYhhnuuvOE4XDKD3hJcDXBO75rCiiDyb7HgbLw6Rigiab_NRuPoTP2YZqN&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusNywde8SN65-UIzSFbgfa04C3ewn15ahT_xnhtAL_oklpUU7dvWv8ShsuVsmM3SIYxve97ayxnN3p8p4Qpkssqi-Qc9keLeJS-Y3GX6esNottC2ZtS22JDx9KbINkxGAeHIpzcVoG0V7Ydt85951VvmLuc9oSn452IeAhAbX25GnswsnHJBnS9GSAgifCX7AOiJR-XugKu0iJbV_c8zwTSFl_W5g0pOMtYnOXIxr83k8Ml2fJUnouKz35RPsS9JrlBPWD7&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuu4A2KXNf9dr2gJuknYcg6ZK2ql0x4jgtLiGgt0E3VWlE6E4-8wOPOorGll3CPo-KVO9c-1vadNaQh8zNS1cNB4HnU0iXRmgO3y6bEKtvO5MybOVTMjxSQm8izwaFIQ6ioxpPgqXARv4OyzhN2nKvOCZXhmeWDwyj0504iluB7sYmiEgAv_V-DeD17H8NWlDwQNQzM8ZCJTxU685FGm6v8a2UC01yhPjh84Ba6F4CCjw5kJyd6sLvimdlX8raAdXGtwxqFj&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuven-M0cABfDOV0_hy94_liEzGK1_yqJkbdRfQfkhSbP7fjf8K-6da5WwzBdpFELSQz2gDqsQUVI0IfU0QOj2i9q7W3-u3qsl6SuA58FrfouC0Vop0k8wbMBmtBYgt_qShIqlN6K3ZnTRpFxpCvyGu1gxRTskWGaKWeRYpcYqtB61t6YDTXcKeVKhBe6Ny2Z_RqmOIf0jFVDR_JeGo7wr5-W6CzRGH4_QVhpbByXXPJDasc5k6S72cB4wGOuWYeXl8SE2uc&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuven-M0cABfDOV0_hy94_liEzGK1_yqJkbdRfQfkhSbP7fjf8K-6da5WwzBdpFELSQz2gDqsQUVI0IfU0QOj2i9q7W3-u3qsl6SuA58FrfouC0Vop0k8wbMBmtBYgt_qShIqlN6K3ZnTRpFxpCvyGu1gxRTskWGaKWeRYpcYqtB61t6YDTXcKeVKhBe6Ny2Z_RqmOIf0jFVDR_JeGo7wr5-W6CzRGH4_QVhpbByXXPJDasc5k6S72cB4wGOuWYeXl8SE2uc&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuven-M0cABfDOV0_hy94_liEzGK1_yqJkbdRfQfkhSbP7fjf8K-6da5WwzBdpFELSQz2gDqsQUVI0IfU0QOj2i9q7W3-u3qsl6SuA58FrfouC0Vop0k8wbMBmtBYgt_qShIqlN6K3ZnTRpFxpCvyGu1gxRTskWGaKWeRYpcYqtB61t6YDTXcKeVKhBe6Ny2Z_RqmOIf0jFVDR_JeGo7wr5-W6CzRGH4_QVhpbByXXPJDasc5k6S72cB4wGOuWYeXl8SE2uc&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuven-M0cABfDOV0_hy94_liEzGK1_yqJkbdRfQfkhSbP7fjf8K-6da5WwzBdpFELSQz2gDqsQUVI0IfU0QOj2i9q7W3-u3qsl6SuA58FrfouC0Vop0k8wbMBmtBYgt_qShIqlN6K3ZnTRpFxpCvyGu1gxRTskWGaKWeRYpcYqtB61t6YDTXcKeVKhBe6Ny2Z_RqmOIf0jFVDR_JeGo7wr5-W6CzRGH4_QVhpbByXXPJDasc5k6S72cB4wGOuWYeXl8SE2uc&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuven-M0cABfDOV0_hy94_liEzGK1_yqJkbdRfQfkhSbP7fjf8K-6da5WwzBdpFELSQz2gDqsQUVI0IfU0QOj2i9q7W3-u3qsl6SuA58FrfouC0Vop0k8wbMBmtBYgt_qShIqlN6K3ZnTRpFxpCvyGu1gxRTskWGaKWeRYpcYqtB61t6YDTXcKeVKhBe6Ny2Z_RqmOIf0jFVDR_JeGo7wr5-W6CzRGH4_QVhpbByXXPJDasc5k6S72cB4wGOuWYeXl8SE2uc&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuven-M0cABfDOV0_hy94_liEzGK1_yqJkbdRfQfkhSbP7fjf8K-6da5WwzBdpFELSQz2gDqsQUVI0IfU0QOj2i9q7W3-u3qsl6SuA58FrfouC0Vop0k8wbMBmtBYgt_qShIqlN6K3ZnTRpFxpCvyGu1gxRTskWGaKWeRYpcYqtB61t6YDTXcKeVKhBe6Ny2Z_RqmOIf0jFVDR_JeGo7wr5-W6CzRGH4_QVhpbByXXPJDasc5k6S72cB4wGOuWYeXl8SE2uc&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuven-M0cABfDOV0_hy94_liEzGK1_yqJkbdRfQfkhSbP7fjf8K-6da5WwzBdpFELSQz2gDqsQUVI0IfU0QOj2i9q7W3-u3qsl6SuA58FrfouC0Vop0k8wbMBmtBYgt_qShIqlN6K3ZnTRpFxpCvyGu1gxRTskWGaKWeRYpcYqtB61t6YDTXcKeVKhBe6Ny2Z_RqmOIf0jFVDR_JeGo7wr5-W6CzRGH4_QVhpbByXXPJDasc5k6S72cB4wGOuWYeXl8SE2uc&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuven-M0cABfDOV0_hy94_liEzGK1_yqJkbdRfQfkhSbP7fjf8K-6da5WwzBdpFELSQz2gDqsQUVI0IfU0QOj2i9q7W3-u3qsl6SuA58FrfouC0Vop0k8wbMBmtBYgt_qShIqlN6K3ZnTRpFxpCvyGu1gxRTskWGaKWeRYpcYqtB61t6YDTXcKeVKhBe6Ny2Z_RqmOIf0jFVDR_JeGo7wr5-W6CzRGH4_QVhpbByXXPJDasc5k6S72cB4wGOuWYeXl8SE2uc&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuu6DGINR92969oHJgas4grzRK5Mf4DXV87uux3j0Ko0bZR9IE6SHbK1deROCd0YPaj0K-Lz4c-z5HY0e1jg8YcQYrFWRQ7zuiklC-e6Rmro5dLQGcctMgC0jEWngw96uGv56S2fn99W-lxvl8xzUaP2WfU-Wzj-ffLqzZZkCRpXmYBb7vWXi5QgFZOyRFcKaYHI34FvX1r80uIogImH8Sfj0XhThBTt-TlCBLDHDXdstXcuHY0XEWi6XxOKineKH8kKyEwY&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuuZqYkF1mIs0X93zZKscGimTGaEnqF3y-UKt6YkzIFrENLlIV1bgr2WLyM974CZaIPVamzJzjTVBzC3OlA29pjcn1PN-6AZelb9HaA12p-pjGyFjmO5TedSJUg8mobHTmW4I3gHP7Yt92U3lO7ea6nH8GYNk_JePwMzLhgzOe1QoMWEjpGXna-55vXyoN_H3bpogLGyGiEBV_y4Re910W2hJH5xoXyzwTs5jOaQwnYwXWlJIrKm8H0ys9qj5PN3M_JUAFR8&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VutFKEw0arqu3d6jplypgPI4y3mO8xQBeQlyV8n2QS3ByT4BWHbgXAVC_m8qaSmoCtSiOu5lc6aeIEfHeL8W26JMoJQFh3S7-TVtVzfgAhr7Ng30aDn8vhAStzKj5EbD3D3501blASMkkVCgxYHP72mAgcmSBh-5i1aWfIVg3v0digSwoQgxxgN9ing24JsWgEUg0t-h7nAQZSMq4c9xpEvsiWsZPPVzL0NUbonoICWjsUcePHFF4FHC1CNoPt2MuJA6eddo&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusLFMM0MC8N-UgRhYyTjDdmGA6c03Y7z7jRT2Dt__c-XB5-OWBxjelueeY3rxq5C8zhVxXktFlV318sgA9waTPXoV7jp9qqG6R3dibR8rQmbQ9h4ye-McBB0UlHL9fVF5BLQeS70y7GXh0KWAz5N-dWPMZMDpiSEC2CQ3kIeBRVEhnnI78OR7hKLMUAGsIsy60QOYVLM-Rzkd4c-1I1yYF35Z6xF6KodpR4jddsy2cojF81tdUTDvLXeyAJDDC_l6xxlHXw&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VutLXGOXlIZtSZcIzp7WaMlXEWK4e-S4P-Gh06NnOn9hUTyFc2NiDf_Ph68eCwE-th1scSyu0JAWb1tBXbrupPcKCUPT763Fh0K5FfUxT1Z5TMre1_qfMj5k3F2Vtqwp_S8fkIn8oFkl2J8sJaQL5UvHrkWUL-U3kCqTtg7EmisubuzM69UsD6T6fovaQ4dcfCN_pzkhLWmv7SWiBBcB6NBAefWpSfyMQeQLftC3dxuOvkpTroHOfo_IXhDyXCR2odCr376d&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvLk1ZcCLL4rm3ujbfeKKc_0ftEoj-xnQhbeytnKufuVmhAVfV9y_CalCGTTMt3ktzKwIVekz_yKi9W4_l4cBgvFmz5JKA2XiZWzcWBkmRitgEP653J1qIHtOUqtyRmfHEoOS2iv5vFSfjTDxBoxy1I4HEfHhsS69_-UwU_B6K4bX1Osi0nFoSVS5In7cJBcbniihbfPgzCxKQOe5kDbLqrK9FVGhPKGIIJuvcEY98RF3Bl2Fg-DBsknS5vzgxVOnCHU_xO&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvLk1ZcCLL4rm3ujbfeKKc_0ftEoj-xnQhbeytnKufuVmhAVfV9y_CalCGTTMt3ktzKwIVekz_yKi9W4_l4cBgvFmz5JKA2XiZWzcWBkmRitgEP653J1qIHtOUqtyRmfHEoOS2iv5vFSfjTDxBoxy1I4HEfHhsS69_-UwU_B6K4bX1Osi0nFoSVS5In7cJBcbniihbfPgzCxKQOe5kDbLqrK9FVGhPKGIIJuvcEY98RF3Bl2Fg-DBsknS5vzgxVOnCHU_xO&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvLk1ZcCLL4rm3ujbfeKKc_0ftEoj-xnQhbeytnKufuVmhAVfV9y_CalCGTTMt3ktzKwIVekz_yKi9W4_l4cBgvFmz5JKA2XiZWzcWBkmRitgEP653J1qIHtOUqtyRmfHEoOS2iv5vFSfjTDxBoxy1I4HEfHhsS69_-UwU_B6K4bX1Osi0nFoSVS5In7cJBcbniihbfPgzCxKQOe5kDbLqrK9FVGhPKGIIJuvcEY98RF3Bl2Fg-DBsknS5vzgxVOnCHU_xO&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvylwlqK9YtTGWELACipKc-Wh92-dS20T10MARyLpUl7-z4fWi5ryBA2B0iIpp9hLonm7GIhiIYrk-1loE1495TmSjPN-q1DNwZI9H5WcnsjGgcEUcAmrvPwBCS0uPodLBfizkHn4kmXUCwFv3bFLWOEKEjL9-HsLDtNMW_kzoj_vYw2jXCY7PJGn_ES3YM_dJQEVMtfHrLUE6d0s3AlWD_2PbjhwLsEV89LORoJWtJ7-nDHFb_olcV8OVciR84_lvMb8i7&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuus0h1DBKBjRVokrBs2Tc7yhRl8yATMpH80y8QruLovahI7xbKQ4TLj4mfDxYj22vFaFSyfcsUMGAwH481XMLu-QFeqUf3r6cxu0_IwBdNr725_5VNCViq2ncX4kMQ1J_PlGXdntPVd8iQN1gXa-eYZS8_qg86bNHVaz7jh4oUIWZF5oJznOn1UEJNFJwBFzQnbjpyNt0Mbg6_43GvA7DXcrPBiUwX5Eq78KT3AsxznmcA07m-2bHbQCRvXODlc2hxUNOLP&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusurUlwhhiId7blHVjJ338X5F_koNeBV7to9y3GD4fWDtHUdAy9HWVu1roaOdrZu1RAbYnH4Afe0hhvE7EROKlEM2dJRqvOOnyMgBIMXdKXS3PrlbG_w62QR1pRDR0Qo3L1ntMAYt73CB78JS3R2tHIuT9_7KwMvAWIO7fc_7rltYwqZwlvVaF7UNO-tPTrN8XKRvW0hwuKyzJpZ7Tuv75zpkzsT9O4BI0jS7i72vt0K6n23VsUfZQ9vHU0SdfGQbFkACp3&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vut1xqDQOfpLLcF-3_UU8mUkZJuBOo1wZJX55hQX7GF6Hohmu7etfsXLGh9vE5QxAp8VV8QmrcOCtNMqKXOVonkPNye0EY3fRSGcYasmWXt8avuf-96dYzfsRq8K9llTipY5sYktpxQYK9hAS_Ob7jC0gHY_5nnRsadFPrV1-zRR1_J8uUyoyHefLdxNf-bBuG4lD6R8HZ_9WMfNPqc_MAlJIHcS9pzkIzumOgA11c77wHL_dyE13bPjA_3gMDckBpn5kDLn&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vus2f9R4XIUJDe2pX4T79bl0GPiVnporlh5kUTVCq-5u-TDz1wT2RDih0Ex9JizgEVL5obIgX5_6zeRD5A8I1ok6om-7OJgTZb16w1iCOBEXM2V43Nv_N13JvvUh70v2DmwVRjYN-68Rg4IwcofO0Pb7GHg1mn_p9ezjjX80FnZPpFCGi4wdO5qF5Z1Tiloov4Zcuq91QnCbKMVcRIEV_41vQOQ3rDtfOnelwMCfIuQvcGKtmpB87U6aU26xYN28L5cSq1fI&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vusyg3er_E6ljvtwtKDOROW8dZHMWjre2uiQY_O-9mh16F7pB0GC9aUeBzC9-nB_WWfjOx-sKGsMjdtNMN3kLl1G6JdktFqTNvBLv_BH0xXXgfN2ERMFNkYHmadA_Vx1_Urw2aqRiJMxrLk3Z8mA6_yDZLSooxIhhhJ_PObYpvKApe5dcrYKOPP5ZRJ2-rd_l52cBH94LDK8tHuSmyMlHAqeAYdoqI-o7VlEt7Un-szmas5kixh-TJGF34rwkLwnBM_64Q2F&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuuOII_7CBu9rAVtdwTKjmu9VLfxBchIONlANzWq-nGYo9y0PXC3eDfqFLT94AJqmMzY68YLJ0SX5zIPa-ziTTlzhTwPWWGaEuOPvE_p_aqgSe-xGWVuhMvC4MOibukKRGxX_FTWTBJHOLjW5JA779kpmYvUlHaTSMrqHn2YcwyY_d0KoGwittnF95dGuxLdoJ4I443S3BKYp3CkogIijdbbeEcAaUzYpxTLN7e5JQY7eQcHmJrWylKG03NTOP6Yo3U89tCn&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvpWF4w6IncgC7lLxT8DqScG1XnasN1LSA79jl3LCW9Hah4KeaAQUge1QghKdqoKoCAvkzwV1KXHnPNbd6QGhFi4dLLw038lKQbxnovhssZNMlo_5hxyzQAGiO7XK7eT9N2Ehs-kcyAQBOUm9ALFTXUqDKocZFn0iKj68Cp0JuAnZfDfGS3p50VCyW7pcrcxn9zcNSOLtjfqxhZ9n3XlELC1T92-5P8vpo311yQnpP1DSwswBAsPI1kAG7cwbyZYwTc4kgw&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuyfty9HVxe3WiVf_vcg0-e9nvMvndqdY6RMYf3WjaZZuPT9I2V0SMy1oE6LPYObVs1KBBHF_vFzK6K9fVOWV6waqgYmLqNTeyqDsLmtvOqpDVlm-7i-3gjgzX0VnDe7CpoX9ufdACPl6lL7E9gGWFTCRSDEQHOrCu-i3SUD7HqauEF0H8pIgqeLI9xT9__2Xq_KuHT6VEgMh7nm0dIIOouRIKJk6_0VBL9C7GqSLOvhIkYiEATlu1YTlomxYSmsyWlz_iM&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusalEMkBEF9xehP3g83OBChUc-i_d_iXlgJ7yLCXGtarpsuOJCVpVIR9EsyM3XtuUQyLsA4KteY08C8okbue64bhdukkPlwb0AY1En0kubz8trGvUc9BwCgqirzAADfAFX6hdGCWGcBhYDOhP0R-xBb2zE9MG5XgYY-lnI-_fGZ09qz6_aYe1Rpq-SQO4b7sy1eR433hCZUHrqgNyKd_Aqa52hmlx5by6cIAGbRgDM_gauh2xFtSNhA8EbjngvuVCGE8UoE&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuuMcYiojtAvyZFDly7sWkv6t_EiKmzvplKJh15Zc8gvPmhNkFZfB95bN6sttnbt9-DPVh65C5Bzl4dBBp5f1aoysNzRehn3WktnwUVcpAcqLfAbxRn4Pi_lmFYVTJN7_gxN1XRmYr4UoOV-Ys1ODFeNYYfwzV04W24YelfPJDrwce_KZXFnt6uA2QEaAHSVtCLUJQpORKJxhE5RLcwZDaSM4imG21NLa2-lDFn_b0Cs43xVP9kmO5rMP9tTbDXGhHCgos-Z&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuuTub3-23psRwFJUJLtEypM1XiVun08MCb4BH7x6abzlzmC2H4gojkr4ZNotHATMYXstiBAlQIsthjUeqVLWKU9k1HjIwUAhlkWQ6Gof9p758K8CGs_FkFd1mQDq2l70P2qe3b01wbgMg-uXp1xdjHjuoU_-QrvcYvnSewmskGdjLCtqJpwKT_8mMpt_1m-W0DeC_WeAfrwObVp2H7IRG29n9Fv3HmeU_ZBl_YUGf388E4bxn2CmVJPzJBfsv9joZVtGU3t&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuuWMe5Ra17qND7oE_SAFtHGhwW6TgeKZcjVLFeRIoKwqz5drWsIvOftRjWAcOPCIc64oLBMRgvE_4OlUfKv_N-2wN1PLmTwlu_JSM2hGL5pdE0YcsSUs0rnwUZJM4wV9CG212obL18uQSj2kT86yCHgkRLx2cn59lFzJb9YYzI9fjnpNClvvYb9PaHKFjdD5TC7iM1ZYNpYwQsFYmu82uidKRBbmNaPUGVCux-HCNWliuKwgoTjY1P4uLY1VpXNT54cT94q&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VutcqgcpvdOOzX_3fqfW6kNlxLqeksbd-fI62axxqnU6WlojyA60XpcrgsRAYJoDGvcQxpRediO_csRjpDfgQL-iAYAfwXsML9d6ZrPYRd2VoAgeZJ2ORfsvC9TpuFXI4sq_9-uPuHHij2tA8mmmwTtkhwGJFUZ0CuKZsUYQGXvopAdVPAU701pi9CNq9dMQWYe989MLeqWr3Vy_-7RJbu6atUhwgV8BWCTcWJhqohvcM5JYWDJLL35OT2UmJBtRW21LatAv&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuv_Z96UThJt_OjLx-uUxqiG3iacwToR3LqkSmSzPGV0xdeFKpcRAqGdNRS16YuAflhPe2VCH_UbIk7dS1dFXo0yb9VKqQ8BD3uxMmxMiflS01NYWaIIj2TaVLxTI_8lZzZ4u0cNoTwKR963nDw_aCcl0fzKMQe7t7p9n7dFTdVEKMz5LB_jiIaJ0ncqvdphivvBflYyIt5ATXG7SaluoVv2gYAB4rfBsd0O5P2IqUq6K6HyRzU6xqiUDw4W24Uvs54hNP5k&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuvz4_55H4VfFZ8wlJNeL01DJ36-2dGJUJ6ci0EBmhcg7E8UCubRx1TwalJQAvd4yjeY2g00XPz4u9OWylJXzBAHrKa1ZpcfZa6Ntjx2P3Sbp64mBxAeArudGipCt1mGEm4V9DbZsPqiiH38p7YC-gfjX7c3At2ue_qKKJ9UwvOoN1uh0mvLSN_XjZsdxJN4yDJa4Z9boN_B2yW8QHDX51E1GSIatr3WGZ_4OlBpQq16jPPehNmiV5qmhi9KBj-WgI9LYIIP&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuu5Ra4B6jC5AvXNzDuz1qt3PZGwxnZnOjQYh7ySGi9xF5CPlfxKQQ4TC_eGaeqwGAVubrvVP-3PBa3--wth71wAlhLMj8Jif8fDJQaVNL1aYQYZAHYQEh6dIs64LDjKb_CM59b3xcjVQRQjtEclmyqJgUuS6HT5EQESGpEfkHQGPRKcTCr75IqaB40dwBnafzlijHzNiokNqFQXQuvdcwLgm8EfMwaKxIDc3B9WfaSuMljwBBbEjvMmRFJScXoWHyYjQOcX&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vus5ASXitwMB8qM7f2HUxkVgNt3qxZ8KAW70RuYryWuxyoOeA7AQ_DNL73PtnowDpoCnZMDsR4ZI-CFUo-Pyo-A03FW9nruDyKcA4O0Xz4kLTcbtkp9gaVIOo1nGsUwnEUlT7Bnjdyjz06igv1bYN_OyPTdxf-4lJnaT9iYDxs6-sJt72-gv9s9Jpl0CUvQrUru28Gobm9ZLZTGnNotvNhRELtaZILYMaVwfH0r7A55db8nQ6s8bhlJjmHqT3MwZ39AgITfV&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vus5ASXitwMB8qM7f2HUxkVgNt3qxZ8KAW70RuYryWuxyoOeA7AQ_DNL73PtnowDpoCnZMDsR4ZI-CFUo-Pyo-A03FW9nruDyKcA4O0Xz4kLTcbtkp9gaVIOo1nGsUwnEUlT7Bnjdyjz06igv1bYN_OyPTdxf-4lJnaT9iYDxs6-sJt72-gv9s9Jpl0CUvQrUru28Gobm9ZLZTGnNotvNhRELtaZILYMaVwfH0r7A55db8nQ6s8bhlJjmHqT3MwZ39AgITfV&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VutuqHVn7GHK-Y63PBB3jCDmS2DkvP35QZwMETn73uI5R7x4k4Jlck4ENEMtvReMuGEKibqc-xvy_mfm7btBsvvp8VGuZWDpUfHx32EVXdIxgR5UUe2X68qNPBi11-ZO1x4E5c24z9wMzmPkaFZS_ZntomlALWiK5nRInByoGAtlucyvpN82XfOkqFNWAHzvmYe_pc0l6qAlaNNy9gjhX-YgFS336Cabo2wS5gFd4W8GqrIavCg-wAd2ubWDq8UAWaHR81dJ&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuu3v1sbj_iwcdRQFWbzPtNaHZBx7PxeYWJQlwHP-zmC2Ddhi0gTE46_tgxsgEz_yd9RJEmvxA_RRVN0KbK1ixEUiqLRrRdftg-SZUPYy6a8c4L3lUSlSuQqqonaeaen3IvXRqPQW2hgh8hrDmud8RR2qlcieaYILCGWEBJuMqLmDTmhjBcG2njPsW9jH-ht0c_53rK3GXU1H9lcKBrzL1X7_Zjy_6O6a396TXIh6BajlDX0ym_OC6PiLb5hCpNZSTZ9lpuX&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuuEm_9CN0d5yyRzJRz6q_ONvgqFUeeT_IEaxrx-QvC6mUWHYH_1Doa6moV60GS8GMNN3b0ZjO2ZC8j_3tfRak-iLw7Mw2DZtEKoHh46b8PABt2xNrYE5kndA8U07ZTB6EiFo1rPg4M3OMjACqr6v5xqwE1OcjdajjT45zUpqJj6lNfOojDqcTkJK8RfqjPbqe21qNDcNsKosNfQG2vaiADaugWWAfCVlOmzIGdr_BIhi_usv_cVg2EVHZvasPwk7xcb2ULF&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvahllIeFKrXZDH7uzq8pA_fSDw1hbT9J2eha2oCl0FJSbLCsn3y_DqqE3IKzQ4v4fnrpfe3dNkokReuoMGuwlJSQcp1IPf9mJgCQuuSNI-UjmvpQjJkifqJEzT_Mesry7Ry1K-dsz5QngXauKbaVxGxEybkuuUQ98AJqR5JU6H--seelwPHgqrfThgN7AUtKmzbu64dlXzuqOzyHbUj86SH2qJ83srz5q9Z8bixlP3gtKKaRY&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VutynenKSdvpn04wumpqSd6kcUL-QsQww3OuG_lMV6QKJXf5SD6yk8qmPGLTxlUzuJMpx0fTCEvde61Knul5A0umPOZde2W5no34nBRRF9axsL5NdXJ32vb8hCQs-NqHDJCgeMBdn5hKvthYhvoWDr1CzXtZmfs8UPgENYol4It9AHvtjfaO1ZoUBct_BQ23uRP-CgRcRDJRckgm7zNpwcqo2Cv2DKSEmJVh-JUYHK2Bq68_7hg&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvsojdWpBrVMLJNtNgsMG767gmBit4_hXr9tcMjCltVVgi2LwQx9gvrNGb1Yzkm9kdhZcf0q7jAmZoimTbjUoZX-pLcaHlvz7ivJqn_AF9UnJWsSsVhW9tTy1u_vRouH67rU35XaRR1dcyx1j5j9wdKE8lmYot9qic6e44Z6U5PGXoWZkHZixSBO7mlqGYhdVclJKMp_-OTzGJrSRn82H8Wdd8vc_LMydkleDP8IP7hxio89cQ&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvsojdWpBrVMLJNtNgsMG767gmBit4_hXr9tcMjCltVVgi2LwQx9gvrNGb1Yzkm9kdhZcf0q7jAmZoimTbjUoZX-pLcaHlvz7ivJqn_AF9UnJWsSsVhW9tTy1u_vRouH67rU35XaRR1dcyx1j5j9wdKE8lmYot9qic6e44Z6U5PGXoWZkHZixSBO7mlqGYhdVclJKMp_-OTzGJrSRn82H8Wdd8vc_LMydkleDP8IP7hxio89cQ&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvsojdWpBrVMLJNtNgsMG767gmBit4_hXr9tcMjCltVVgi2LwQx9gvrNGb1Yzkm9kdhZcf0q7jAmZoimTbjUoZX-pLcaHlvz7ivJqn_AF9UnJWsSsVhW9tTy1u_vRouH67rU35XaRR1dcyx1j5j9wdKE8lmYot9qic6e44Z6U5PGXoWZkHZixSBO7mlqGYhdVclJKMp_-OTzGJrSRn82H8Wdd8vc_LMydkleDP8IP7hxio89cQ&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuuuh9sBYXFNTv26WWJhCWEmw9QobfPh7riWs8nvMbXpbFIn-yYzKM9m3-mjVmIYj95Au4sdlwYVLh6kJV2pZs8c1ZSOIz387wK3dmUkYjyP0cp5xIQ0VoH-6yymr_CnuPc2av_ObO1CSR5jrDSEOf6jSQhLnDvRTAQdxQcIb_v124HVKGcN51fdGezX-ZUNDQcUKMs-baxvNvf8jx0bTv_6b95OlGtyunWfw7dy2QEQ0Qg3wvf1OCe7SEVtNZigxwrKeR-r&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vus0iQrKJxUs7-Rn7pIO58USFiKWXml1efOixOv12g1qPbYLb-RtqcpTyJKz7DijOAxvpQk5lqqBiwntyFPnBoVDgLJfwdOg8gt8yZkdwg36mMvW6-fk1KxZfLmipjiSy192myaM9KnyHpqDQFoq00WoPjNK1MwyWPlpeQURYdJ1R4EYMn6a7j4OCmsJBUxnG5WFWgpB&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vus0iQrKJxUs7-Rn7pIO58USFiKWXml1efOixOv12g1qPbYLb-RtqcpTyJKz7DijOAxvpQk5lqqBiwntyFPnBoVDgLJfwdOg8gt8yZkdwg36mMvW6-fk1KxZfLmipjiSy192myaM9KnyHpqDQFoq00WoPjNK1MwyWPlpeQURYdJ1R4EYMn6a7j4OCmsJBUxnG5WFWgpB&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vus0iQrKJxUs7-Rn7pIO58USFiKWXml1efOixOv12g1qPbYLb-RtqcpTyJKz7DijOAxvpQk5lqqBiwntyFPnBoVDgLJfwdOg8gt8yZkdwg36mMvW6-fk1KxZfLmipjiSy192myaM9KnyHpqDQFoq00WoPjNK1MwyWPlpeQURYdJ1R4EYMn6a7j4OCmsJBUxnG5WFWgpB&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vutq-nwNCA99zKy6nSV-CxDFzHI60RZBTQt12NueFz2WJ-NUHgrXCqEGTNbwCEKOnf4aIGvXVOq0XZtaxrwlNKURFWKqBr3RgKVhmeMOp_MQOQ6ZH7AeeVIVXH48Qh3f-aFBK1PWzNUh3E0mSgrwfpJ02asA-9tb0sjUqhwQ7OIZMxIWCkB-55A_4xmm6KuqIBwtD7i-&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuu78r6C7vFRo5QR3RyVHKRkwkddNdjRuNvHVLC_uBbVQrSnUcDdl0hevwZdhIEjm6t7hqFy1W1186k_50Hhz8HuqQEAP1E5Xp84BgCH7znYCoS1838IzPD2E4mL_7N6xh8dWBFDwWdvXj4j1d-LK9V9BpbRpco6rldZONI0FQNrOcAO5mrBU8a2WxmdkSXBI5_kHviy&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuu78r6C7vFRo5QR3RyVHKRkwkddNdjRuNvHVLC_uBbVQrSnUcDdl0hevwZdhIEjm6t7hqFy1W1186k_50Hhz8HuqQEAP1E5Xp84BgCH7znYCoS1838IzPD2E4mL_7N6xh8dWBFDwWdvXj4j1d-LK9V9BpbRpco6rldZONI0FQNrOcAO5mrBU8a2WxmdkSXBI5_kHviy&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuu78r6C7vFRo5QR3RyVHKRkwkddNdjRuNvHVLC_uBbVQrSnUcDdl0hevwZdhIEjm6t7hqFy1W1186k_50Hhz8HuqQEAP1E5Xp84BgCH7znYCoS1838IzPD2E4mL_7N6xh8dWBFDwWdvXj4j1d-LK9V9BpbRpco6rldZONI0FQNrOcAO5mrBU8a2WxmdkSXBI5_kHviy&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuu78r6C7vFRo5QR3RyVHKRkwkddNdjRuNvHVLC_uBbVQrSnUcDdl0hevwZdhIEjm6t7hqFy1W1186k_50Hhz8HuqQEAP1E5Xp84BgCH7znYCoS1838IzPD2E4mL_7N6xh8dWBFDwWdvXj4j1d-LK9V9BpbRpco6rldZONI0FQNrOcAO5mrBU8a2WxmdkSXBI5_kHviy&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuu78r6C7vFRo5QR3RyVHKRkwkddNdjRuNvHVLC_uBbVQrSnUcDdl0hevwZdhIEjm6t7hqFy1W1186k_50Hhz8HuqQEAP1E5Xp84BgCH7znYCoS1838IzPD2E4mL_7N6xh8dWBFDwWdvXj4j1d-LK9V9BpbRpco6rldZONI0FQNrOcAO5mrBU8a2WxmdkSXBI5_kHviy&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuu78r6C7vFRo5QR3RyVHKRkwkddNdjRuNvHVLC_uBbVQrSnUcDdl0hevwZdhIEjm6t7hqFy1W1186k_50Hhz8HuqQEAP1E5Xp84BgCH7znYCoS1838IzPD2E4mL_7N6xh8dWBFDwWdvXj4j1d-LK9V9BpbRpco6rldZONI0FQNrOcAO5mrBU8a2WxmdkSXBI5_kHviy&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuu78r6C7vFRo5QR3RyVHKRkwkddNdjRuNvHVLC_uBbVQrSnUcDdl0hevwZdhIEjm6t7hqFy1W1186k_50Hhz8HuqQEAP1E5Xp84BgCH7znYCoS1838IzPD2E4mL_7N6xh8dWBFDwWdvXj4j1d-LK9V9BpbRpco6rldZONI0FQNrOcAO5mrBU8a2WxmdkSXBI5_kHviy&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuu78r6C7vFRo5QR3RyVHKRkwkddNdjRuNvHVLC_uBbVQrSnUcDdl0hevwZdhIEjm6t7hqFy1W1186k_50Hhz8HuqQEAP1E5Xp84BgCH7znYCoS1838IzPD2E4mL_7N6xh8dWBFDwWdvXj4j1d-LK9V9BpbRpco6rldZONI0FQNrOcAO5mrBU8a2WxmdkSXBI5_kHviy&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuu78r6C7vFRo5QR3RyVHKRkwkddNdjRuNvHVLC_uBbVQrSnUcDdl0hevwZdhIEjm6t7hqFy1W1186k_50Hhz8HuqQEAP1E5Xp84BgCH7znYCoS1838IzPD2E4mL_7N6xh8dWBFDwWdvXj4j1d-LK9V9BpbRpco6rldZONI0FQNrOcAO5mrBU8a2WxmdkSXBI5_kHviy&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vutk1UuCcZpNdRDYwXYP8h_pr635k2dMvyr_22vKSrV2qvY8Jhjui36TikyqGyv9rvnvyDquvF9L5G9biYG5Rr6_jDfZOla3J2EsjtDLd-7o86sgjNrkVak9xBrYED9VONBbla_3SyzhTwGSVBYsphHXGgPLwMzwUrNnPbwW1AY0ZilVv1v9qUWxPA7XOrFWu43U_o87&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuvhpWd6ZM-Z1rxu6q8L3lo6B7tWN_4zGpyYt4ihBmiRxWMglkIj7OP0doMh4ruICMUM0yRcysXVrk9iqM9oEOtOgKq1UCW797uS_jn3kBERE6DXonxJTiYr8wsiRxd7PwZKdb69QKFzsjQpZT9x8Dhxk5Wu4tWMtT1t69PeM1iZWTwvvGysc4TYkAEBbP5oIkvytjUW&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vusc4giOqDOaKt9xhNFG14nOLq6_QXYY0Iv1JBTENnnKF81CLcYx74mqGygvWyh4HWLvkb1Z2mAAiN7GxBgwenGk7pJUA6K0FKZEMFsQgvwM9l6Ux_b38TRNuVXtIwZSwXpbuc0vNCGsS6lwsrCf5hvH_VKdpPkvBeP0r1yOlnwbzrccPS_Z3JaR-1czwvJLMvY8GSqh&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_Vuv7pCUzQiwsXi7loalFMsfh2r0nAbitOxVrOmHJTWB2oHcnkejnB4J-ETs6F4uKTrvCLESwwErtAasgO_52fQRZisMzVgmaeVyyBCiqQF0wUaZGPOctiqDRQxxkRqH-5MvFz-8PLfgp9xHZU2dY7fekuiy9r12tv7Cb3Zb1KA4BiAAXMsCxrOpeW1o7GxIwoyVflB4q&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuuQYBu7NHmRQLmq1wBYhelu27-71CUHeQxjT3gZszBo_-3JByO4IdUIJw7lX90URlxcwkGQGdAIFEyYfHd6vCyyNFNfA5P9_a7w2MRiZwOS3Pw9ZEGFRf5a8OMKqAyQ8SjkxZFmFt7LvRxQy_JO94JpnK7_R-tXy8f5E2Bw1B4Kke9blXJtlldPcRf4LPp3YcglJ050&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VuuQYBu7NHmRQLmq1wBYhelu27-71CUHeQxjT3gZszBo_-3JByO4IdUIJw7lX90URlxcwkGQGdAIFEyYfHd6vCyyNFNfA5P9_a7w2MRiZwOS3Pw9ZEGFRf5a8OMKqAyQ8SjkxZFmFt7LvRxQy_JO94JpnK7_R-tXy8f5E2Bw1B4Kke9blXJtlldPcRf4LPp3YcglJ050&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusZKUPn5cqfSJe_clWIsmoahne8H8Qwj4ATuuU5hj8CJC1v3cI_ifHW3P1_czhkAdYpp44JpmBHld9SjTVqme9ZGelMOYq_SOjxEanZJo9RclWdX0xJvpMSFa4jQFe5XW1QMHyJYn59PdpNWrcMOqx7L8LCPW4EttAvUMmUcupLCNpRSzOxZ2IwZCYogKBlz4sgP8CG&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusmVbExUD4utnGFnUcxIa5OwvMMOArUQlbLAQz2lTxWCVzmapxAkNqILjghXD5bNgioucTvqG_Ka45iovxUq3iWX_BCgIvytjrc98FVITPuqIya2g4O_8fvhPOFpWGpq2PG5B25nLHEm8d5FDYPaBC0-s1NIyUGVvGhUd9UYlht-RlD-goEcllmXlghoZPWtEcigfPW&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusmVbExUD4utnGFnUcxIa5OwvMMOArUQlbLAQz2lTxWCVzmapxAkNqILjghXD5bNgioucTvqG_Ka45iovxUq3iWX_BCgIvytjrc98FVITPuqIya2g4O_8fvhPOFpWGpq2PG5B25nLHEm8d5FDYPaBC0-s1NIyUGVvGhUd9UYlht-RlD-goEcllmXlghoZPWtEcigfPW&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusmVbExUD4utnGFnUcxIa5OwvMMOArUQlbLAQz2lTxWCVzmapxAkNqILjghXD5bNgioucTvqG_Ka45iovxUq3iWX_BCgIvytjrc98FVITPuqIya2g4O_8fvhPOFpWGpq2PG5B25nLHEm8d5FDYPaBC0-s1NIyUGVvGhUd9UYlht-RlD-goEcllmXlghoZPWtEcigfPW&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusmVbExUD4utnGFnUcxIa5OwvMMOArUQlbLAQz2lTxWCVzmapxAkNqILjghXD5bNgioucTvqG_Ka45iovxUq3iWX_BCgIvytjrc98FVITPuqIya2g4O_8fvhPOFpWGpq2PG5B25nLHEm8d5FDYPaBC0-s1NIyUGVvGhUd9UYlht-RlD-goEcllmXlghoZPWtEcigfPW&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusmVbExUD4utnGFnUcxIa5OwvMMOArUQlbLAQz2lTxWCVzmapxAkNqILjghXD5bNgioucTvqG_Ka45iovxUq3iWX_BCgIvytjrc98FVITPuqIya2g4O_8fvhPOFpWGpq2PG5B25nLHEm8d5FDYPaBC0-s1NIyUGVvGhUd9UYlht-RlD-goEcllmXlghoZPWtEcigfPW&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusmVbExUD4utnGFnUcxIa5OwvMMOArUQlbLAQz2lTxWCVzmapxAkNqILjghXD5bNgioucTvqG_Ka45iovxUq3iWX_BCgIvytjrc98FVITPuqIya2g4O_8fvhPOFpWGpq2PG5B25nLHEm8d5FDYPaBC0-s1NIyUGVvGhUd9UYlht-RlD-goEcllmXlghoZPWtEcigfPW&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusmVbExUD4utnGFnUcxIa5OwvMMOArUQlbLAQz2lTxWCVzmapxAkNqILjghXD5bNgioucTvqG_Ka45iovxUq3iWX_BCgIvytjrc98FVITPuqIya2g4O_8fvhPOFpWGpq2PG5B25nLHEm8d5FDYPaBC0-s1NIyUGVvGhUd9UYlht-RlD-goEcllmXlghoZPWtEcigfPW&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusmVbExUD4utnGFnUcxIa5OwvMMOArUQlbLAQz2lTxWCVzmapxAkNqILjghXD5bNgioucTvqG_Ka45iovxUq3iWX_BCgIvytjrc98FVITPuqIya2g4O_8fvhPOFpWGpq2PG5B25nLHEm8d5FDYPaBC0-s1NIyUGVvGhUd9UYlht-RlD-goEcllmXlghoZPWtEcigfPW&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusmVbExUD4utnGFnUcxIa5OwvMMOArUQlbLAQz2lTxWCVzmapxAkNqILjghXD5bNgioucTvqG_Ka45iovxUq3iWX_BCgIvytjrc98FVITPuqIya2g4O_8fvhPOFpWGpq2PG5B25nLHEm8d5FDYPaBC0-s1NIyUGVvGhUd9UYlht-RlD-goEcllmXlghoZPWtEcigfPW&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script><script type="text/javascript" src="http://www.google.com/recaptcha/api/reload?c=03AHJ_VusmVbExUD4utnGFnUcxIa5OwvMMOArUQlbLAQz2lTxWCVzmapxAkNqILjghXD5bNgioucTvqG_Ka45iovxUq3iWX_BCgIvytjrc98FVITPuqIya2g4O_8fvhPOFpWGpq2PG5B25nLHEm8d5FDYPaBC0-s1NIyUGVvGhUd9UYlht-RlD-goEcllmXlghoZPWtEcigfPW&k=6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt&reason=t&type=image&lang=id"></script></head>
+<body class="  hs-content-id-385510352 hs-blog-post hs-content-path-bid1156216-steps-to-continuous-integration-for-dev hs-content-name-6-steps-to-continuous-integration-for-development- hs-blog-name-service-virtualization-development-testing-api-tes hs-blog-id-382770343" style="">
+    <div class="header-container-wrapper">
+    <div class="header-container container-fluid">
+
+        <div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+        <div class="row-fluid ">
+            <div class="span12 widget-span widget-type-cell page-center" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+                <div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+                <div class="row-fluid ">
+                    <div class="span12 widget-span widget-type-global_group " style="" data-widget-type="global_group" data-x="0" data-w="12">
+<div class="">        <div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+        <div class="row-fluid ">
+            <div class="span4 widget-span widget-type-rich_text custom_logo" style="" data-widget-type="rich_text" data-x="0" data-w="4">
+                <div class="cell-wrapper layout-widget-wrapper">
+                    <span id="hs_cos_wrapper_module_13856416002282" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><a href="http://www.parasoft.com/jsp/home.jsp"><img title="Parasoft" src="http://cdn2.hubspot.net/hub/69806/file-392704843-gif/Parasoft_Theme/Images/logo25y13.gif?t=1385628393000" alt="Parasoft"></a></span>
+                </div><!--end layout-widget-wrapper -->
+            </div><!--end widget-span -->
+            <div class="span8 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="4" data-w="8">
+
+                <div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+                <div class="row-fluid ">
+                    <div class="span7 widget-span widget-type-menu custom_header_top_menu" style="" data-widget-type="menu" data-x="0" data-w="7">
+                        <div class="cell-wrapper layout-widget-wrapper">
+                            <span id="hs_cos_wrapper_module_138597855996859" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_menu" style="" data-hs-cos-general-type="widget" data-hs-cos-type="menu"><div id="hs_menu_wrapper_module_138597855996859" class="hs-menu-wrapper active-branch no-flyouts hs-menu-flow-horizontal" data-sitemap-name="Header Top Menu">
+    <ul>
+        <li class="hs-menu-item hs-menu-depth-1   "><a href="http://www.parasoft.com/jsp/customers/customer.jsp?itemId=1">Account</a>
+        </li>
+        <li class="hs-menu-item hs-menu-depth-1   "><a href="http://www.parasoft.com/jsp/pr/contacts.jsp?itemId=268">Contact us</a>
+        </li>
+        <li class="hs-menu-item hs-menu-depth-1 active  active-branch"><a href="http://blog.parasoft.com/">Blog</a>
+        </li>
+        <li class="hs-menu-item hs-menu-depth-1   "><a href="http://www.parasoft.com/jsp/products/tech_support.jsp?itemId=291">Support</a>
+        </li>
+        <li class="hs-menu-item hs-menu-depth-1   "><a href="http://www.parasoft.com/jsp/trial_request.jsp?itemId=303">Downloads</a>
+        </li>
+    </ul>
+</div><!-- hs_menu_wrapper --></span>
+                        </div><!--end layout-widget-wrapper -->
+                    </div><!--end widget-span -->
+                    <div class="span5 widget-span widget-type-rich_text custom_contact" style="" data-widget-type="rich_text" data-x="7" data-w="5">
+                        <div class="cell-wrapper layout-widget-wrapper">
+                            <span id="hs_cos_wrapper_module_138597833094558" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><a href="mailto:info@parasoft.com">info@parasoft.com</a><span>888-305-0041</span></span>
+                        </div><!--end layout-widget-wrapper -->
+                    </div><!--end widget-span -->
+                </div><!--end row-->
+                </div><!--end row-wrapper -->
+            </div><!--end widget-span -->
+    </div><!--end row-->
+    </div><!--end row-wrapper -->
+    <div class="row-fluid-wrapper row-depth-0 row-number-1 ">
+    <div class="row-fluid ">
+        <div class="span12 widget-span widget-type-menu custom_header_menu" style="" data-widget-type="menu" data-x="0" data-w="12">
+            <div class="cell-wrapper layout-widget-wrapper">
+                <span id="hs_cos_wrapper_module_13856416002435" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_menu" style="" data-hs-cos-general-type="widget" data-hs-cos-type="menu"><div id="hs_menu_wrapper_module_13856416002435" class="hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal" data-sitemap-name="default">
+    <ul>
+        <li class="hs-menu-item hs-menu-depth-1   "><a href="http://www.parasoft.com/jsp/home.jsp?itemId=0">Home</a>
+        </li>
+        <li class="hs-menu-item hs-menu-depth-1  hs-item-has-children "><a href="http://www.parasoft.com/development_testing/overview.jsp">Capabilities</a>
+          <ul class="hs-menu-children-wrapper">
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/products/virtualize_splash.jsp?itemId=538">Service Virtualization</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/development_testing/static_analysis.jsp">Static Analysis</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/development_testing/unit_testing.jsp">Unit Testing</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/solutions/soa_solution.jsp?itemId=319">API Testing</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/development_testing/coverage_analysis.jsp">Coverage Analysis</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/solutions/soa_solution.jsp">Load Testing</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/development_testing/manual_testing.jsp">Manual Testing</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/development_testing/memory_error_detection.jsp">Memory Error Detection</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/development_testing/code_review.jsp">Peer Review</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/development_testing/runtime_error_detection.jsp">Runtime Error Detection</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/api-testing/soatesting">SOA Testing</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/development_testing/traceability.jsp">Traceability</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/api-testing/webuitesting">Web Testing</a>
+                </li>
+          </ul>
+        </li>
+        <li class="hs-menu-item hs-menu-depth-1  hs-item-has-children "><a href="http://www.parasoft.com/jsp/products.jsp?itemId=13">Products</a>
+          <ul class="hs-menu-children-wrapper">
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/products/virtualize_splash.jsp?itemId=538">Virtualize</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/products/soatest.jsp?itemId=101">SOAtest</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/products/soatest.jsp?itemId=101">Load Test</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/development-testing-platform">Development Testing Platform</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/products/cpptest.jsp?itemId=47">C/C++test</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/products/jtest.jsp?itemId=14">Jtest</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/products/dottest.jsp?itemId=135">dotTEST</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/products/insure.jsp?itemId=63">Insure++</a>
+                </li>
+          </ul>
+        </li>
+        <li class="hs-menu-item hs-menu-depth-1  hs-item-has-children "><a href="http://www.parasoft.com/jsp/solutions/compliance.jsp?itemId=339">Compliance</a>
+          <ul class="hs-menu-children-wrapper">
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/products/concerto/safety_critical.jsp?itemId=476">Safety-Critical &amp; Embedded</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/products/concerto/fda_medical.jsp?itemId=474">FDA/Medical</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/solutions/automotive_software_compliance.jsp?itemId=615">Automotive</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/standards/compliance_misra.jsp">MISRA</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/standards/compliance_iso_26262.jsp">ISO 26262 &amp; ASIL</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/standards/compliance_iec_61508.jsp">IEC 61508 &amp; SIL</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/standards/compliance_do_178b.jsp">DO-178B/C</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/standards/compliance_jsf.jsp">JSF</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/solutions/avionics.jsp?itemId=654">Avionics</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/standards/compliance_ellemtel.jsp">Ellemtel</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/solutions/application_security_solution.jsp?itemId=322">Security</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/standards/compliance_custom.jsp">Custom/other</a>
+                </li>
+          </ul>
+        </li>
+        <li class="hs-menu-item hs-menu-depth-1   "><a href="http://www.parasoft.com/jsp/technologies/services.jsp?itemId=351">Services</a>
+        </li>
+        <li class="hs-menu-item hs-menu-depth-1  hs-item-has-children "><a href="http://www.parasoft.com/jsp/pr/company.jsp?itemId=265">Company</a>
+          <ul class="hs-menu-children-wrapper">
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/pr/company.jsp?itemId=265">About Us</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/products/article.jsp?articleId=3157">Customers</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/pr/partners.jsp?itemId=241">Partners</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/pr/contacts.jsp#distr">Distributors</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/products/article.jsp?label=Corporation_Factsheet">Fact Sheet</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/pr/awards.jsp?itemId=352">Awards</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/pr/media_room.jsp?itemId=247">Media Room</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/pr/careers.jsp?itemId=267">Careers</a>
+                </li>
+          </ul>
+        </li>
+        <li class="hs-menu-item hs-menu-depth-1  hs-item-has-children "><a href="http://www.parasoft.com/jsp/resources?itemId=480">Resources</a>
+          <ul class="hs-menu-children-wrapper">
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/resources/virtualization?itemId=539">Service Virtualization</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/resources/development_testing?itemId=617">Development Testing</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/resources/cloud?itemId=525">API Testing</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/resources/static_analysis?itemId=509">Static Analysis</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/resources/embedded_software_development?itemId=500">Embedded</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/resources/safety_critical_software_development?itemId=508">Safety-Critical</a>
+                </li>
+                <li class="hs-menu-item hs-menu-depth-2   "><a href="http://www.parasoft.com/jsp/resources?itemId=480">All</a>
+                </li>
+          </ul>
+        </li>
+    </ul>
+</div><!-- hs_menu_wrapper --></span>
+            </div><!--end layout-widget-wrapper -->
+        </div><!--end widget-span -->
+    </div><!--end row-->
+    </div><!--end row-wrapper -->
+</div>
+                    </div><!--end widget-span -->
+                </div><!--end row-->
+                </div><!--end row-wrapper -->
+            </div><!--end widget-span -->
+    </div><!--end row-->
+    </div><!--end row-wrapper -->
+
+    </div><!--end header -->
+</div><!--end header wrapper -->
+
+<div class="body-container-wrapper">
+    <div class="body-container container-fluid">
+
+        <div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+        <div class="row-fluid ">
+            <div class="span12 widget-span widget-type-cell page-center" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+                <div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+                <div class="row-fluid ">
+                    <div class="span9 widget-span widget-type-cell left-col-test" style="" data-widget-type="cell" data-x="0" data-w="9">
+
+                        <div class="row-fluid-wrapper row-depth-2 row-number-1 ">
+                        <div class="row-fluid ">
+                            <div class="span12 widget-span widget-type-raw_jinja hs-blog-header" style="" data-widget-type="raw_jinja" data-x="0" data-w="12">
+<h1>Service Virtualization, Development Testing, API Testing Tips</h1></div><!--end widget-span -->
+
+                        </div><!--end row-->
+                        </div><!--end row-wrapper -->
+                        <div class="row-fluid-wrapper row-depth-2 row-number-2 ">
+                        <div class="row-fluid ">
+                            <div class="span12 widget-span widget-type-blog_content " style="" data-widget-type="blog_content" data-x="0" data-w="12">
+<div class="blog-section">
+    <div class="blog-post-wrapper cell-wrapper">
+                <div class="section post-header">
+            <h2>
+                <a href="./6 Steps to Continuous Integration for Development Testing_files/6 Steps to Continuous Integration for Development Testing.htm" id="hubspot-name" class="link hubspot-editable" data-hubspot-form-id="name" data-hubspot-name="Blog Title"><span id="hs_cos_wrapper_name" class="hs_cos_wrapper hs_cos_wrapper_meta_field hs_cos_wrapper_type_text" style="" data-hs-cos-general-type="meta_field" data-hs-cos-type="text">6 Steps to Continuous Integration for Development Testing</span></a>
+            </h2>
+            <p>
+                Posted on May 30, 2013 1:01:00 PM
+            </p>
+            
+            <p id="hubspot-author_data" class="hubspot-editable" data-hubspot-form-id="author_data" data-hubspot-name="Blog Author">
+                            
+                            
+                                <span class="hs-author-label">by</span>
+                                <a class="author-link" href="http://blog.parasoft.com/author/parasoft-marketing">Parasoft Marketing</a>
+                                
+                    </p>
+                    
+                    <div class="hs-author-social-section">
+                            <span class="hs-author-social-label">Find me on:</span>
+                            <div class="hs-author-social-links">
+                                    
+                                    
+                                    
+                                    
+                                        <a href="http://plus.google.com/+parasoft?rel=author" target="_blank" class="hs-author-social-link hs-social-google-plus">Google+</a>
+                                    
+                            </div>
+                    </div>
+                    
+                    
+            </div>
+            
+        </div>
+        <div class="custom_social_bar">
+		<span id="hs_cos_wrapper_social_sharing" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_social_sharing" style="" data-hs-cos-general-type="widget" data-hs-cos-type="social_sharing"><a href="http://www.facebook.com/share.php?u=http%3A%2F%2Fblog.parasoft.com%2Fbid%2F115621%2F6-Steps-to-Continuous-Integration-for-Development-Testing%3Futm_medium%3Dsocial%26utm_source%3Dfacebook" target="_blank" style="width:24px;border-width:0px;border:0px;"><img src="https://static.hubspot.com/final/img/common/icons/social/facebook-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="height:24px;width:24px;border-width:0px;border:0px;" width="24" height="24" hspace="0" alt="Share on Facebook"></a>&nbsp;<a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fblog.parasoft.com%2Fbid%2F115621%2F6-Steps-to-Continuous-Integration-for-Development-Testing%3Futm_medium%3Dsocial%26utm_source%3Dlinkedin" target="_blank" style="width:24px;border-width:0px;border:0px;"><img src="https://static.hubspot.com/final/img/common/icons/social/linkedin-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="height:24px;width:24px;border-width:0px;border:0px;" width="24" height="24" hspace="0" alt="Share on LinkedIn"></a>&nbsp;<a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fblog.parasoft.com%2Fbid%2F115621%2F6-Steps-to-Continuous-Integration-for-Development-Testing%3Futm_medium%3Dsocial%26utm_source%3Dtwitter&url=http%3A%2F%2Fblog.parasoft.com%2Fbid%2F115621%2F6-Steps-to-Continuous-Integration-for-Development-Testing%3Futm_medium%3Dsocial%26utm_source%3Dtwitter&source=tweetbutton&text=6%20Steps%20to%20Continuous%20Integration%20for%20Development%20Testing%20" target="_blank" style="width:24px;border-width:0px;border:0px;"><img src="https://static.hubspot.com/final/img/common/icons/social/twitter-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="height:24px;width:24px;border-width:0px;border:0px;" width="24" height="24" hspace="0" alt="Share on Twitter"></a>&nbsp;<a href="https://plus.google.com/share?url=http%3A%2F%2Fblog.parasoft.com%2Fbid%2F115621%2F6-Steps-to-Continuous-Integration-for-Development-Testing%3Futm_medium%3Dsocial%26utm_source%3Dgoogle_plus" target="_blank" style="width:24px;border-width:0px;border:0px;"><img src="https://static.hubspot.com/final/img/common/icons/social/googleplus-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="height:24px;width:24px;border-width:0px;border:0px;" width="24" height="24" hspace="0" alt="Share on Google+"></a>&nbsp;<a href="mailto:?subject=Check%20out%20http%3A%2F%2Fblog.parasoft.com%2Fbid%2F115621%2F6-Steps-to-Continuous-Integration-for-Development-Testing%3Futm_medium%3Dsocial%26utm_source%3Demail%20&body=Check%20out%20http%3A%2F%2Fblog.parasoft.com%2Fbid%2F115621%2F6-Steps-to-Continuous-Integration-for-Development-Testing%3Futm_medium%3Dsocial%26utm_source%3Demail" target="_blank" style="width:24px;border-width:0px;border:0px;"><img src="https://static.hubspot.com/final/img/common/icons/social/email-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="height:24px;width:24px;border-width:0px;border:0px;" width="24" height="24" hspace="0" alt="Share on Email"></a></span>                                           
+		</div>
+
+        <div class="section post-body">
+            <span id="hs_cos_wrapper_post_body" class="hs_cos_wrapper hs_cos_wrapper_meta_field hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="meta_field" data-hs-cos-type="rich_text"><div class="hs-migrated-cms-post">
+<p><strong><a href="http://www.parasoft.com/development-testing" target="_self"><img id="img-1368551981026" class="alignRight" style="float: right;" src="http://cdn2.hubspot.net/hub/69806/file-39485932-jpg/images/continuous-integration.jpg?t=1368551971000" alt="continuous integration" width="276" height="236" border="0"></a>By Jason Schadewald, Product Manager at Parasoft</strong></p>
+<p>Build automation is undeniably a critical component of <a title="Continuous Integration" href="http://en.wikipedia.org/wiki/Continuous_integration" target="_self">Continuous Integration</a>. But in the most creative and advanced companies, Continuous Integration extends far beyond build automation, enabling them to <strong>achieve greater scalability, productivity, and quality throughout the SDLC</strong>.</p>
+<p>Here are 6 steps to taking your <a title="Development Testing" href="http://en.wikipedia.org/wiki/Development_Testing" target="_self">Development Testing</a> activities (and more) from manual integration to Continuous Integration<span>—</span>in less than a day.<!--more--></p>
+<h2><span style="color: #003366;">1. Identify Manual Processes</span></h2>
+<p>Start off by taking an inventory of your regular time-consuming efforts. Your goal is to identify tedious “must do” tasks that you or your team performs over and over. The processes you identify may include:</p>
+<ul>
+<li>Transferring files between machines</li>
+<li>Entering commands in a console</li>
+<li>Copying data between different systems or into another format</li>
+<li>Visually verifying information, data, or test results</li>
+<li>Writing documentation</li>
+<li>Getting verbal or written approval</li>
+<li>Scheduling and participating in meetings</li>
+<li>Clicking a button/icon to execute a script or program</li>
+<li>Creating and sending reports</li>
+</ul>
+<p>At this stage, you don't need to worry about automation; focus on determining tedious, routine manual processes. If creating this list takes longer than 15 minutes, stop where you are and move to step two.</p>
+<h2><span style="color: #003366;">2. Estimate Frequency and Duration</span></h2>
+<p>Now that you've created a short list of these processes, your next step is to determine the relative gains from automation. The easiest way to do this is by estimating frequency and duration. When estimating the frequency of a process, don't limit yourself to current conditions. Instead, focus on the value of the process by considering how often you would use the results or how long it takes before the results become outdated:</p>
+<ul>
+<li>Several times per day&nbsp;</li>
+<li>A few times per week&nbsp;</li>
+<li>Every sprint</li>
+<li>Twice per release cycle</li>
+</ul>
+<p>Next, go through the list and estimate how long it takes to complete each process under current conditions. Durations can range from minutes to days for common process. It’s a natural human tendency to underestimate durations, so feel free to round up or add fudge factors.</p>
+<h2><span style="color: #003366;">3. Select (Sub) Processes for Automation</span></h2>
+<p>Review your list and choose one item that if automated would noticeably improve your software development team’s productivity. Common selection methods include:</p>
+<ul>
+<li>Choose the process with the highest duration</li>
+<li>Choose the process with the highest frequency</li>
+<li>Choose the process with the highest (frequency) * (duration)</li>
+</ul>
+<p>At this point, many people make the mistake of taking an “all or nothing” view. Instead, focus on the portions of the process that can be automated and proceed with the understanding that you will improve as you go.</p>
+<p>Go through the exercise of doing the task, either mentally or physically, and make notes for each step. Jot down information gathered, commands entered, permissions needed, people involved, etc. – enough to jog your memory later.</p>
+<p>The end result will be a mini instruction manual for a repeatable human process. Review your instructions and identify the steps that a computer can perform. Commands you entered into a console or textbox and any information pulled from a website or database are good candidates. For multi-person and multi-stage processes, also pay attention to methods of notifying individuals of their turn and role in the process</p>
+<h2><span style="color: #003366;">4. Create Automation Scripts</span></h2>
+<p>Look through your instruction manual from the last step, then:</p>
+<ul>
+<li>Copy your console commands into an editor and save them as .bat (Windows) or .sh (Unix/Linux) scripts</li>
+<li>Use a development testing tool with a command line interface to</li>
+<ul>
+<li>Statically analyze code for safety, security, and defects</li>
+<li>Automatically generate and run unit tests</li>
+<li>Automatically assign and track peer review tasks</li>
+<li>Functionally test APIs</li>
+<li>Scrape websites, services, and databases for intermediate data</li>
+</ul>
+<li>Use build and reporting tools to inform subsequent stages of the automation infrastructure</li>
+<li>Capture multi-stage processes in the form of BPEL or another high-level process engine</li>
+</ul>
+<p>The goal is to keep it simple and target the low-hanging fruit—you can worry about optimization, generalization, and parameterization later.</p>
+<h2><span style="color: #003366;">5. Schedule and/or Trigger the Artifacts</span></h2>
+<p>The formally-accepted definition of continuous integration specifies that your script must be triggered by a commit to your SCM. Most people, however, really just care about getting work done. Whether their processes match one definition or another is beside the point. Feel free to carve out your own interpretation of CI that saves you the hassle of tedious tasks.</p>
+<p>Now that you have a script or other automatable artifact, you need a tool to manage the scheduling/triggering of those artifacts. One straightforward strategy for finding automation tools is to search for the term <em>continuous integration</em>; the results will yield tips on automating not just the build, but scores of other development, QA, and IT activities. CI tools provide the simple and necessary framework for scheduling the regular runs of some artifacts and stitching together the triggered runs of others.</p>
+<h2><span style="color: #003366;">6. Iterate, Improve, Repeat</span></h2>
+<p>With the time you saved automating your Development Testing processes, you can now focus on improving your basic continuous integration implementation. Go back to step one and add some new manual tasks to your list. For example, maybe you manually modify certain scripts or copy them for slightly similar purposes. Your next automation project might be to consolidate and parameterize your automation artifacts</p>
+<p>You just jumped 2-3 CMMI levels (for those keeping score). Congrats!&nbsp;</p>
+<p>&nbsp;</p>
+<p>***</p>
+<p>Want more <a title="Development Testing" href="http://www.parasoft.com/development_testing/" target="_self">Development Testing</a> tips? Visit Parasoft's <a title="  Development Testing resource center" href="http://www.parasoft.com/jsp/resources/development_testing" target="_self">Development Testing Resource Center</a> for articles, webinars, blogs, podcasts, and more.</p>
+</div></span>
+        </div>
+        
+             <p id="hubspot-topic_data"> Topics:
+                
+                    <a class="topic-link" href="http://blog.parasoft.com/topic/development-testing">Development Testing</a>
+                
+             </p>
+        
+
+    </div>
+</div>
+
+                        </div><!--end row-->
+                        </div><!--end row-wrapper -->
+                        <div class="row-fluid-wrapper row-depth-2 row-number-3 ">
+                        <div class="row-fluid ">
+                            <div class="span12 widget-span widget-type-blog_comments " style="" data-widget-type="blog_comments" data-x="0" data-w="12">
+                                <div class="cell-wrapper layout-widget-wrapper">
+                                    <span id="hs_cos_wrapper_blog_comments" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_blog_comments" style="" data-hs-cos-general-type="widget" data-hs-cos-type="blog_comments">
+<div class="section post-footer">
+	<div id="comments-listing" class="new-comments">
+    
+    
+</div><div id="comment-form" class="new-comments">
+  <h4>Add a comment</h4>
+  <form id="blog-comment-form" class="hs-form new-comments" action="https://api.hubapi.com/comments/v3/comment?portalId=69806" method="post">
+    <div class="field hs-form-field">
+      <label>Name</label>
+      <div class="input">
+        <input class="hs-input" id="id_userName" type="text" name="userName" maxlength="100" placeholder="Name">
+      </div>
+    </div>
+
+    <div class="field hs-form-field">
+      <label>Email</label>
+      <div class="input">
+        <input class="hs-input" type="text" name="userEmail" id="id_userEmail" placeholder="Email">
+      </div>
+    </div>
+
+    <div class="field hs-form-field">
+      <label>Website</label>
+      <div class="input">
+        <input class="hs-input" type="text" name="userUrl" id="id_userUrl" placeholder="Website">
+      </div>
+    </div>
+
+    <div class="field hs-form-field comment-field">
+      <label>Comment</label>
+      <div class="input">
+        <textarea class="hs-input" id="id_comment" rows="10" cols="40" name="comment" placeholder="Your comment here..."></textarea>
+      </div>
+    </div>
+
+    <div class="field hs-form-field follow-up-field">
+      <div class="input">
+        <label for="id_follow_up">
+          <input id="id_follow_up" type="checkbox" name="subscribe" value="true">
+          Subscribe to Follow Up Comments for this Post
+        </label>
+      </div>
+    </div>
+
+    <input type="hidden" id="id_portalId" name="portalId" value="69806">
+    <input type="hidden" id="id_contentId" name="contentId" value="385510352">
+    <input type="hidden" id="id_collectionId" name="collectionId" value="382770343">
+    <input type="hidden" id="id_contentAuthorEmail" name="contentAuthorEmail" value="marketing@parasoft.com">
+    <input type="hidden" id="id_contentAuthorName" name="contentAuthorName" value="Parasoft Marketing">
+    <input type="hidden" id="id_comment_verification_text" name="comment_verification_text" value="Your comment has been received.">
+    <input type="hidden" id="id_contentTitle" name="contentTitle" value="6 Steps to Continuous Integration for Development Testing">
+    <input type="hidden" id="id_contentPermalink" name="contentPermalink" value="http://blog.parasoft.com/bid/115621/6-Steps-to-Continuous-Integration-for-Development-Testing">
+    <input type="hidden" id="id_contentCreatedAt" name="contentCreatedAt" value="1369944060000">
+
+    
+    <div class="field hs-form-field">
+      <div id="captcha_wrapper" class=" recaptcha_nothad_incorrect_sol recaptcha_isnot_showing_audio"><div id="recaptcha_area"><table id="recaptcha_table" class="recaptchatable recaptcha_theme_white"> <tbody><tr> <td colspan="6" class="recaptcha_r1_c1"></td> </tr> <tr> <td class="recaptcha_r2_c1"></td> <td colspan="4" class="recaptcha_image_cell"><center><div id="recaptcha_image" style="width: 300px; height: 57px;"><img id="recaptcha_challenge_image" alt="Gambar tantangan reCAPTCHA" height="57" width="300" src="./6 Steps to Continuous Integration for Development Testing_files/image"></div></center></td> <td class="recaptcha_r2_c2"></td> </tr> <tr> <td rowspan="6" class="recaptcha_r3_c1"></td> <td colspan="4" class="recaptcha_r3_c2"></td> <td rowspan="6" class="recaptcha_r3_c3"></td> </tr> <tr> <td rowspan="3" class="recaptcha_r4_c1" height="49"> <div class="recaptcha_input_area"> <span id="recaptcha_challenge_field_holder" style="display: none;"><input type="hidden" name="recaptcha_challenge_field" id="recaptcha_challenge_field" value="03AHJ_VusmVbExUD4utnGFnUcxIa5OwvMMOArUQlbLAQz2lTxWCVzmapxAkNqILjghXD5bNgioucTvqG_Ka45iovxUq3iWX_BCgIvytjrc98FVITPuqIya2g4O_8fvhPOFpWGpq2PG5B25nLHEm8d5FDYPaBC0-s1NIyUGVvGhUd9UYlht-RlD-goEcllmXlghoZPWtEcigfPW"></span><input name="recaptcha_response_field" id="recaptcha_response_field" type="text" autocorrect="off" autocapitalize="off" placeholder="Ketik teks" autocomplete="off"> <span id="recaptcha_privacy" class="recaptcha_only_if_privacy"></span> </div> </td> <td rowspan="4" class="recaptcha_r4_c2"></td> <td><a id="recaptcha_reload_btn" title="Dapatkan kata pengujian baru"><img id="recaptcha_reload" width="25" height="17" src="http://www.google.com/recaptcha/api/img/white/refresh.gif" alt="Dapatkan kata pengujian baru"></a></td> <td rowspan="4" class="recaptcha_r4_c4"></td> </tr> <tr> <td><a id="recaptcha_switch_audio_btn" class="recaptcha_only_if_image" title="Dapatkan kata pengujian berbentuk audio"><img id="recaptcha_switch_audio" width="25" height="16" alt="Dapatkan kata pengujian berbentuk audio" src="http://www.google.com/recaptcha/api/img/white/audio.gif"></a><a id="recaptcha_switch_img_btn" class="recaptcha_only_if_audio" title="Dapatkan kata pengujian berbentuk visual"><img id="recaptcha_switch_img" width="25" height="16" alt="Dapatkan kata pengujian berbentuk visual" src="http://www.google.com/recaptcha/api/img/white/text.gif"></a></td> </tr> <tr> <td><a id="recaptcha_whatsthis_btn" title="Bantuan"><img id="recaptcha_whatsthis" width="25" height="16" src="http://www.google.com/recaptcha/api/img/white/help.gif" alt="Bantuan"></a></td> </tr> <tr> <td class="recaptcha_r7_c1"></td> <td class="recaptcha_r8_c1"></td> </tr> </tbody></table> </div></div>
+    </div>
+    
+    
+
+    <div class="hs_submit">
+      <div class="actions">
+        <input id="add-comment-button" type="submit" class="hs-button primary" value="Submit Comment">
+      </div>
+    </div>
+  </form>
+</div><!-- end comment-form -->
+
+    <script type="text/javascript">
+        (function($) {
+            var commentsEmbedContext = {
+                portalId: 69806,
+                collectionId: 382770343,
+                contentId: 385510352,
+                target: '#comments-listing.new-comments',
+                showComments: true,
+                showForm: true,
+                commentVerificationText: "Your comment has been received.",
+                embedScriptEnv: "prod",
+                apiEnv: "prod",
+                contentTitle: "6 Steps to Continuous Integration for Development Testing",
+                contentCreatedAt: "1369944060000",
+                contentPermalink: "http://blog.parasoft.com/bid/115621/6-Steps-to-Continuous-Integration-for-Development-Testing",
+                contentAuthorEmail: "marketing@parasoft.com",
+                contentAuthorName: "Parasoft Marketing",
+                captchaRequired: true,
+                captchaKey: "6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt",
+                maxThreadDepth: 3,
+                formId: ""
+            };
+            function loadComments() {
+                if (window.hubspot && typeof window.hubspot.loadCommentsEmbed === 'function') {
+                    hubspot.loadCommentsEmbed(commentsEmbedContext.embedScriptEnv, function() {
+                        if (typeof window.hsEmbedComments === 'function') {
+                            window.hsEmbedComments(commentsEmbedContext);
+                        }
+                    });
+                } else {
+                  setTimeout(loadComments, 50);
+                }
+            }
+            loadComments();
+        })(jQuery);
+    </script>
+</div>
+</span>
+                                </div><!--end layout-widget-wrapper -->
+                            </div><!--end widget-span -->
+                        </div><!--end row-->
+                        </div><!--end row-wrapper -->
+                    </div><!--end widget-span -->
+                <div class="span3 widget-span widget-type-cell custom_blog_right_col" style="" data-widget-type="cell" data-x="9" data-w="3">
+
+                    <div class="row-fluid-wrapper row-depth-2 row-number-4 ">
+                    <div class="row-fluid ">
+                        <div class="span12 widget-span widget-type-blog_subscribe custom_blog_module" style="" data-widget-type="blog_subscribe" data-x="0" data-w="12">
+                            <div class="cell-wrapper layout-widget-wrapper">
+                                <span id="hs_cos_wrapper_blog_subscription" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_blog_subscribe" style="" data-hs-cos-general-type="widget" data-hs-cos-type="blog_subscribe"><h3 id="hs_cos_wrapper_blog_subscription_title" class="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text">Subscribe to Email Updates</h3>
+
+<div id="hs_form_target_blog_subscription"><form accept-charset="UTF-8" enctype="multipart/form-data" id="hsForm_d254d0a4-2c32-4820-8b37-e8a3892c8624_8788" class="hs-form stacked" action="https://forms.hubspot.com/uploads/form/v2/69806/d254d0a4-2c32-4820-8b37-e8a3892c8624" method="POST" novalidate="novalidate"><div class="hs_email field hs-form-field"><label placeholder="Enter your Email" for="email-d254d0a4-2c32-4820-8b37-e8a3892c8624_8788">Email<span class="hs-form-required"> * </span></label><div class="hs-field-desc" style="display: none;"></div><div class="input"><input class="hs-input" type="email" required="required" id="email-d254d0a4-2c32-4820-8b37-e8a3892c8624_8788" name="email"></div></div><div class="hs_blog_service_virtualization_development_testing_api_testing_tips_subscription field hs-form-field"><label placeholder="Enter your Notification Frequency" for="blog_service_virtualization_development_testing_api_testing_tips_subscription-d254d0a4-2c32-4820-8b37-e8a3892c8624_8788">Notification Frequency<span class="hs-form-required"> * </span></label><div class="hs-field-desc" style="display: none;"></div><div class="input"><ul class="inputs-list multi-container" required="required"><li class="hs-form-radio"><label class="hs-form-radio-display" for="blog_service_virtualization_development_testing_api_testing_tips_subscription0-d254d0a4-2c32-4820-8b37-e8a3892c8624_8788"><input name="blog_service_virtualization_development_testing_api_testing_tips_subscription" type="radio" value="instant" id="blog_service_virtualization_development_testing_api_testing_tips_subscription0-d254d0a4-2c32-4820-8b37-e8a3892c8624_8788" class="hs-input">Instant</label></li><li class="hs-form-radio"><label class="hs-form-radio-display" for="blog_service_virtualization_development_testing_api_testing_tips_subscription1-d254d0a4-2c32-4820-8b37-e8a3892c8624_8788"><input name="blog_service_virtualization_development_testing_api_testing_tips_subscription" type="radio" value="daily" id="blog_service_virtualization_development_testing_api_testing_tips_subscription1-d254d0a4-2c32-4820-8b37-e8a3892c8624_8788" class="hs-input">Daily</label></li><li class="hs-form-radio"><label class="hs-form-radio-display" for="blog_service_virtualization_development_testing_api_testing_tips_subscription2-d254d0a4-2c32-4820-8b37-e8a3892c8624_8788"><input name="blog_service_virtualization_development_testing_api_testing_tips_subscription" type="radio" value="weekly" id="blog_service_virtualization_development_testing_api_testing_tips_subscription2-d254d0a4-2c32-4820-8b37-e8a3892c8624_8788" class="hs-input">Weekly</label></li><li class="hs-form-radio"><label class="hs-form-radio-display" for="blog_service_virtualization_development_testing_api_testing_tips_subscription3-d254d0a4-2c32-4820-8b37-e8a3892c8624_8788"><input name="blog_service_virtualization_development_testing_api_testing_tips_subscription" type="radio" value="monthly" id="blog_service_virtualization_development_testing_api_testing_tips_subscription3-d254d0a4-2c32-4820-8b37-e8a3892c8624_8788" class="hs-input">Monthly</label></li></ul></div></div><div class="hs_lifecyclestage field hs-form-field" style="display: none;"><div class="hs-field-desc" style="display: none;"></div><div class="input"><input class="hs-input" type="hidden" name="lifecyclestage" value="subscriber"></div></div><div class="hs_submit"><div class="hs-field-desc" style="display: none;"></div><div class="actions"><input class="hs-button primary large" type="submit" value="Subscribe"></div></div></form></div>
+<script chartset="utf-8" src="https://js.hsforms.net/forms/current.js"></script>
+<script>
+    hbspt.forms.create({
+        portalId: '69806',
+        formId: 'd254d0a4-2c32-4820-8b37-e8a3892c8624',
+        formInstanceId: '8788',
+        pageId: 385510352,
+        pageName: '6 Steps to Continuous Integration for Development Testing',
+        redirectUrl: 'http://blog.parasoft.com/bid/115621/6-Steps-to-Continuous-Integration-for-Development-Testing?hsFormKey=d824be5e407b44d7d71cc82e162bf040#blog_subscription',
+        css: '',
+        target: '#hs_form_target_blog_subscription',
+        
+        formData: {
+          cssClass: 'hs-form stacked'
+        }
+    });
+</script></span>
+                            </div><!--end layout-widget-wrapper -->
+                        </div><!--end widget-span -->
+                    </div><!--end row-->
+                    </div><!--end row-wrapper -->
+                    <div class="row-fluid-wrapper row-depth-2 row-number-5 ">
+                    <div class="row-fluid ">
+                        <div class="span12 widget-span widget-type-rich_text " style="" data-widget-type="rich_text" data-x="0" data-w="12">
+                            <div class="cell-wrapper layout-widget-wrapper">
+                                <span id="hs_cos_wrapper_module_13896416257121744" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><p><strong><span style="color: #0056a6;">Achieve Faster Time to Market with Reduced Business Risk</span></strong></p>
+<p><a href="http://www.sdlcsummit.com/"><img src="http://cdn2.hubspot.net/hub/69806/file-628078661-jpg/blog_banners_sidebar.jpg?t=1396355678000" alt="blog_banners_sidebar" width="187" height="270"></a></p>
+<p>Explore SDLC acceleration best practices, trends &amp; insights with your peers and industry experts</p></span>
+                            </div><!--end layout-widget-wrapper -->
+                        </div><!--end widget-span -->
+                    </div><!--end row-->
+                    </div><!--end row-wrapper -->
+                    <div class="row-fluid-wrapper row-depth-2 row-number-6 ">
+                    <div class="row-fluid ">
+                        <div class="span12 widget-span widget-type-post_listing custom_blog_module" style="" data-widget-type="post_listing" data-x="0" data-w="12">
+                            <div class="cell-wrapper layout-widget-wrapper">
+                                <span id="hs_cos_wrapper_top_posts" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_post_listing" style="" data-hs-cos-general-type="widget" data-hs-cos-type="post_listing"><div class="block">
+  <h3>Recent Posts</h3>
+  <div class="widget-module">
+    <ul>
+      
+      <li><a href="http://blog.parasoft.com/continuous-testing-business-value">Continuous Testing: What's the Business Value?</a></li>
+      
+      <li><a href="http://blog.parasoft.com/continuous-delivery-electric-cloud">2014: The Year of Continuous Delivery [Guest Blog]</a></li>
+      
+      <li><a href="http://blog.parasoft.com/skytap-theresa-lanowitz">Theresa Lanowitz on Solving Age-Old Problems in the Enterprise [Guest Blog]</a></li>
+      
+      <li><a href="http://blog.parasoft.com/continuous-testing-risk">Continuous Testing: It's All About Risk</a></li>
+      
+      <li><a href="http://blog.parasoft.com/software-development-meeting-expectations">[INFOGRAPHIC] Is Software Development Meeting Expectations?</a></li>
+      
+      <li><a href="http://blog.parasoft.com/sdlc-acceleration-bugs">Will SDLC Acceleration Ultimately Deliver Bugs to your Customers Faster?</a></li>
+      
+      <li><a href="http://blog.parasoft.com/continuous-delivery-quality-rollback">Rollback as a Quality Strategy: The ‘Pink Slime’ of Continuous Delivery</a></li>
+      
+      <li><a href="http://blog.parasoft.com/cost-of-quality-software">"Cost of Quality": It's More Than You Think</a></li>
+      
+      <li><a href="http://blog.parasoft.com/bid/169040/Managing-the-Risks-of-SaaS-Development-with-a-Development-Testing-Platform">Managing the Risks of SaaS Development with a Development Testing Platform</a></li>
+      
+      <li><a href="http://blog.parasoft.com/continuous-testing-infographic">[INFOGRAPHIC] Continuous Testing</a></li>
+      
+    </ul>
+  </div>
+</div></span>
+                            </div><!--end layout-widget-wrapper -->
+                        </div><!--end widget-span -->
+                    </div><!--end row-->
+                    </div><!--end row-wrapper -->
+                    <div class="row-fluid-wrapper row-depth-2 row-number-7 ">
+                    <div class="row-fluid ">
+                        <div class="span12 widget-span widget-type-post_filter custom_blog_module" style="" data-widget-type="post_filter" data-x="0" data-w="12">
+                            <div class="cell-wrapper layout-widget-wrapper">
+                                <span id="hs_cos_wrapper_post_filter" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_post_filter" style="" data-hs-cos-general-type="widget" data-hs-cos-type="post_filter"><div class="block">
+  <h3>Posts by Topic</h3>
+  <div class="widget-module">
+    <ul>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/development-testing">Development Testing (70)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/static-analysis">Static Analysis (51)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/service-virtualization">Service Virtualization (50)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/static-code-analysis">Static Code Analysis (37)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/unit-testing">Unit Testing (27)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/agile-development">agile development (15)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/software-development-management">software development management (15)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/application-behavior-virtualization">Application Behavior Virtualization (13)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/embedded-testing">Embedded Testing (13)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/defect-prevention">defect prevention (12)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/runtime-error-detection">Runtime Error Detection (11)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/soawebcloud-testing">SOA/Web/Cloud Testing (11)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/sdlc-acceleration">SDLC Acceleration (10)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/adam-kolawa">Adam Kolawa (8)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/continuous-testing">continuous testing (8)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/load-performance-testing">Load &amp; Performance Testing (8)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/medical-device-software-compliance">medical device software compliance (8)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/safety-critical">Safety Critical (8)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/soa-testing">SOA Testing (7)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/api-testing">API Testing (6)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/code-coverage-analysis">code coverage analysis (6)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/secure-application-development">Secure Application Development (5)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/tdd">TDD (5)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/memory-error-detection">Memory Error Detection (4)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/64-bit-porting">64-bit porting (3)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/java">Java (3)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/api-integrity">API Integrity (2)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/code-review">code review (2)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/requirements-traceability">requirements traceability (1)</a>
+        </li>
+      
+        <li>
+          <a href="http://blog.parasoft.com/topic/unit-test-maintenance">Unit Test Maintenance (1)</a>
+        </li>
+      
+    </ul>
+    
+  </div>
+</div>
+
+</span>
+                            </div><!--end layout-widget-wrapper -->
+                        </div><!--end widget-span -->
+                    </div><!--end row-->
+                    </div><!--end row-wrapper -->
+                    <div class="row-fluid-wrapper row-depth-2 row-number-8 ">
+                    <div class="row-fluid ">
+                        <div class="span12 widget-span widget-type-follow_me custom_blog_module" style="" data-widget-type="follow_me" data-x="0" data-w="12">
+                            <div class="cell-wrapper layout-widget-wrapper">
+                                <span id="hs_cos_wrapper_module_1385642236309189" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_follow_me" style="" data-hs-cos-general-type="widget" data-hs-cos-type="follow_me"><h3>Follow Me</h3>
+<div style=""><a target="_blank" class="fm_button fm_youtube" href="http://www.youtube.com/user/parasoftcorp"><span title="Follow us on YouTube" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;http://static.hubspot.com/img/follow/icon_youtube.png&#39;, sizingMethod=&#39;scale&#39;);  width: 32px; height: 32px; display:inline-block;cursor:pointer;  background-image:url(&#39;http://static.hubspot.com/img/follow/icon_youtube.png&#39;); _bac\kground-image:none;"></span></a><a target="_blank" class="fm_button fm_facebook" href="http://www.facebook.com/pages/Parasoft+Corporation/101045148451"><span title="Follow us on Facebook" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;http://static.hubspot.com/img/follow/icon_facebook.png&#39;, sizingMethod=&#39;scale&#39;);  width: 32px; height: 32px; display:inline-block;cursor:pointer;  background-image:url(&#39;http://static.hubspot.com/img/follow/icon_facebook.png&#39;); _bac\kground-image:none;"></span></a><a target="_blank" class="fm_button fm_twitter" href="https://twitter.com/Parasoft"><span title="Follow us on Twitter" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;http://static.hubspot.com/img/follow/icon_twitter.png&#39;, sizingMethod=&#39;scale&#39;);  width: 32px; height: 32px; display:inline-block;cursor:pointer;  background-image:url(&#39;http://static.hubspot.com/img/follow/icon_twitter.png&#39;); _bac\kground-image:none;"></span></a><a target="_blank" class="fm_button fm_rss" href="http://blog.parasoft.com/CMS/UI/Modules/BizBlogger/rss.aspx?moduleid=425374"><span title="Follow us on our blog" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;http://static.hubspot.com/img/follow/icon_rss.png&#39;, sizingMethod=&#39;scale&#39;);  width: 32px; height: 32px; display:inline-block;cursor:pointer;  background-image:url(&#39;http://static.hubspot.com/img/follow/icon_rss.png&#39;); _bac\kground-image:none;"></span></a><a target="_blank" class="fm_button fm_linkedin" href="http://www.linkedin.com/companies/parasoft?trk=copro_tab"><span title="Follow us on Linkedin" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;http://static.hubspot.com/img/follow/icon_linkedin.png&#39;, sizingMethod=&#39;scale&#39;);  width: 32px; height: 32px; display:inline-block;cursor:pointer;  background-image:url(&#39;http://static.hubspot.com/img/follow/icon_linkedin.png&#39;); _bac\kground-image:none;"></span></a></div></span>
+                            </div><!--end layout-widget-wrapper -->
+                        </div><!--end widget-span -->
+                    </div><!--end row-->
+                    </div><!--end row-wrapper -->
+                </div><!--end widget-span -->
+        </div><!--end row-->
+        </div><!--end row-wrapper -->
+    </div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+    </div><!--end body -->
+</div><!--end body wrapper -->
+
+<div class="footer-container-wrapper">
+    <div class="footer-container container-fluid">
+
+        <div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+        <div class="row-fluid ">
+            <div class="span12 widget-span widget-type-cell page-center" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+                <div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+                <div class="row-fluid ">
+                    <div class="span12 widget-span widget-type-global_group " style="" data-widget-type="global_group" data-x="0" data-w="12">
+<div class="">        <div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+        <div class="row-fluid ">
+            <div class="span6 widget-span widget-type-rich_text custom_social_links" style="" data-widget-type="rich_text" data-x="0" data-w="6">
+                <div class="cell-wrapper layout-widget-wrapper">
+                    <span id="hs_cos_wrapper_module_13856416417557" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><a href="https://plus.google.com/105634288582340886527?prsrc=3"><img src="http://cdn2.hubspot.net/hub/69806/file-394560196-gif/Parasoft_Theme/Images/gplus.gif?t=1385629980000" alt="gplus"></a> <a href="http://www.parasoft.com/jsp/rss"><img src="http://cdn2.hubspot.net/hub/69806/file-394548926-gif/Parasoft_Theme/Images/rss.gif?t=1385629980000" alt="rss"></a>&nbsp; <a href="http://alm.parasoft.com/"><img src="http://cdn2.hubspot.net/hub/69806/file-392728478-gif/Parasoft_Theme/Images/blog.gif?t=1385629980000" alt="blog"></a>&nbsp; <a href="http://twitter.com/#!/Parasoft"><img src="http://cdn2.hubspot.net/hub/69806/file-394558406-gif/Parasoft_Theme/Images/twitter.gif?t=1385629980000" alt="twitter"></a> <a href="http://www.facebook.com/pages/Monrovia-CA/Parasoft-Corporation/101045148451?ref=s"><img src="http://cdn2.hubspot.net/hub/69806/file-396787965-gif/Parasoft_Theme/Images/facebook.gif?t=1385629980000" alt="facebook"></a> <a href="http://en.wikipedia.org/wiki/Parasoft"><img src="http://cdn2.hubspot.net/hub/69806/file-391442689-gif/Parasoft_Theme/Images/wiki.gif?t=1385629980000" alt="wiki"></a> <a href="http://www.linkedin.com/company/parasoft"><img src="http://cdn2.hubspot.net/hub/69806/file-396787255-gif/Parasoft_Theme/Images/in.gif?t=1385629981000" alt="in"></a></span>
+                </div><!--end layout-widget-wrapper -->
+            </div><!--end widget-span -->
+            <div class="span6 widget-span widget-type-rich_text custom_footer" style="" data-widget-type="rich_text" data-x="6" data-w="6">
+                <div class="cell-wrapper layout-widget-wrapper">
+                    <span id="hs_cos_wrapper_module_13856416417558" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><p>Copyright © 1996-2013 Parasoft | <a href="javascript:openPopupWindow('/jsp/products/article.jsp?label=Privacy+Policy&popup=true');">Privacy Policy</a>&nbsp;|&nbsp;<a href="http://www.parasoft.com/jsp/site_map.jsp?itemId=11">Site Map</a></p></span>
+                </div><!--end layout-widget-wrapper -->
+            </div><!--end widget-span -->
+        </div><!--end row-->
+        </div><!--end row-wrapper -->
+</div>
+                    </div><!--end widget-span -->
+                </div><!--end row-->
+                </div><!--end row-wrapper -->
+            </div><!--end widget-span -->
+    </div><!--end row-->
+    </div><!--end row-wrapper -->
+
+    </div><!--end footer -->
+</div><!--end footer wrapper -->
+
+    
+
+<script type="text/javascript" src="https://static.hsappstatic.net/content_shared_assets/static-1.3594/js/public_common.js"></script>
+
+
+<!-- Start of Async HubSpot Analytics Code -->
+<script type="text/javascript">
+var _hsq = _hsq || [];
+_hsq.push(["setContentType", "blog-post"]);
+_hsq.push(["setCanonicalUrl", "http://blog.parasoft.com/bid/115621/6\u002DSteps\u002Dto\u002DContinuous\u002DIntegration\u002Dfor\u002DDevelopment\u002DTesting"]);
+_hsq.push(["setPageId", "246221-115621"]);
+
+(function(d,s,i,r) {
+    if (d.getElementById(i)){return;}
+    var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+    n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/69806.js';
+    e.parentNode.insertBefore(n, e);
+})(document,"script","hs-analytics",300000);
+</script>
+<!-- End of Async HubSpot Analytics Code -->
+
+
+<script type="text/javascript">
+var hsVars = {
+    ticks: 1396886989806,
+    page_id: 385510352,
+    content_group_id: 382770343,
+    portal_id: 69806,
+    app_hs_base_url: "https://app.hubspot.com"
+}
+</script>
+
+
+
+
+
+
+    <!-- Generated by the HubSpot Template Builder - template version 1.03 -->
+
+<script type="text/javascript" src="https://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script><script type="text/javascript" src="http://js.hubspot.com/forms/current.js"></script><script type="text/javascript" src="https://static.hsstatic.net/comments_embed/ex/embed.js"></script><iframe src="about:blank" style="height: 0px; width: 0px; visibility: hidden; border: none;">This frame prevents back/forward cache problems in Safari.</iframe></body></html>

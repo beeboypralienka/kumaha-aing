@@ -1,0 +1,17 @@
+CI manual
+1. Integrator melengkapi semua modul yang benar dari setiap anggota tim
+2. Integrator menggabungkan modul
+3. Integrator menguji pengintegrasian modul
+4. Integrator memberikan notifikasi kesalahan kepada para anggota tim apabila pengujian gagal
+5. Integrator membuat paket aplikasi dari pengintegrasian modul yang telah lulus pengujian
+6. Integrator mengarsipkan semua paket aplikasi pada mesin integrasi
+7. Integrator men-deploy paket aplikasi ke customer
+8. Integrator membuat laporan kemajuan proses pembangunan PL berdasarkan arsip paket aplikasi
+
+CI otomatis
+1. Mesin integrasi memantau setiap perubahan pada repository secara otomatis
+2. Mesin integrasi menguji integrasi modul dan membuat paket aplikasi secara otomatis berdasarkan jadwal integrasi
+3. Mesin integrasi memberikan notifikasi kesalahan kepada para anggota tim dan membatalkan pembuatan paket aplikasi secara otomatis apabila pengujian gagal
+4. Mesin integrasi mengarsipkan semua paket aplikasi secara otomatis
+5. Mesin integrasi men-deploy paket aplikasi ke customer secara otomatis
+6. Mesin integrasi membuat laporan kemajuan proses pembangunan PL secara otomatis

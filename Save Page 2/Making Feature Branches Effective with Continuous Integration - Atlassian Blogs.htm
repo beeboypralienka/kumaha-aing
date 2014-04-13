@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)http://blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="wf-kulturistaweb1-i1-active wf-kulturistaweb1-i3-active wf-kulturistaweb1-i4-active wf-kulturistaweb1-i6-active wf-kulturistaweb1-i7-active wf-kulturistaweb1-n1-active wf-kulturistaweb1-n3-active wf-kulturistaweb1-n4-active wf-kulturistaweb1-n6-active wf-kulturistaweb1-n7-active wf-museoslab1-i3-active wf-museoslab1-i7-active wf-museoslab1-n3-active wf-museoslab1-n7-active wf-active"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="google-site-verification" content="BZsv7UpJVZ6vjyH6gB7xa0XldXOL6DjbGFPvxQihDF8">
+    
+
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="stylesheet" type="text/css" media="all" href="http://blogs.atlassian.com/wp-content/themes/atlassian/css/screen.css?version=09252013">
+  <!--[if IE]><link rel="stylesheet" type="text/css" href="http://blogs.atlassian.com/wp-content/themes/atlassian/css/ie.css?version=01232012" /><![endif]-->
+  <link rel="shortcut icon" href="https://blogs.atlassian.com/favicon.ico">
+  <link rel="pingback" href="http://blogs.atlassian.com/xmlrpc.php">
+
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--[if lte IE 8]>
+    <script type="text/javascript">
+      document.createElement('header');
+      document.createElement('hgroup');
+      document.createElement('nav');
+      document.createElement('menu');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('footer');
+    </script>
+  <![endif]-->
+
+  
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.4.18 - http://yoast.com/wordpress/seo/ -->
+<title>Making Feature Branches Effective with Continuous Integration - Atlassian Blogs</title>
+<link rel="canonical" href="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/Making Feature Branches Effective with Continuous Integration - Atlassian Blogs.htm">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Making Feature Branches Effective with Continuous Integration - Atlassian Blogs">
+<meta property="og:description" content="The basic idea of Feature Branching is that when you start work on a feature,  you create a branch off of the repository and commit all the changes for the feature onto the branch and when your feature is code complete then merge the changes back. The advantage in using feature branches is that your main line (you might call main line ‘master’, ‘trunk’ or ‘head’ depending on the version control system you use) is kept clear of uncompleted features or bug fixes, which enables you to release software at any time because you don’t have to wait for all the features and bug fixes being worked on to be completed. Thanks to tools like Git and Mercurial, Feature Branching has passed from the realm of theoretical development practices and firmly into the world of the practical. These tools not only allow branches to be created quickly and easily, but also provide very advanced algorithms that allow merging to happen quickly and in a less error prone manner. This is less practiced in teams where older tools like Subversion are used because the branching and merging process is not as smooth. When combined with Feature Branches, Continuous Integration has suffered two distinct problems, which I’ve outlined below: Duplication and drift of build configuration When a developer creates a branch, multiple build configurations on the Continuous Integration server needed to be cloned manually. Because it’s a manual step, some developers didn’t bother with it (and thus no tests were executed as they developed the feature) and eventually the build configuration started to drift away from the original configuration it was cloned from, causing administration headaches. Worse, if the developer didn’t bother to set up a build to test their branch, no code would be tested. Uncertainty of integration state Unless the developer was constantly merging changes from the main line into their branch and running the tests, there was always uncertainty around whether the code worked or not – at least until the branch was merged into the mainline.  Often times, the code did not work as expected and the mainline was infected with non-functional code –defeating the point of Feature Branches and Continuous Integration entirely (ie, isolation and assurance that all the changes to the codebase work). That was then. Enter Bamboo 4, which solves these two problems entirely using a feature called Plan Branches. What are Plan Branches? Plan Branches are a Bamboo Plan configuration that represent a branch in your version control system. They inherit all of the configuration defined by the parent Plan, except that instead of building against the repository’s main line, they build against a specified branch. Then, when the branch build succeeds, changes can be merged from the branch automatically to the main line. As you can see in the screenshot below, our Angry Nerds project is building not only the master branch (main line) it is also building the new-physics, more-angry-nerd-chars and feature-highres-graphics branches. Bamboo makes it easy to see which Plans also have branches by displaying […]">
+<meta property="og:url" content="http://blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/">
+<meta property="og:site_name" content="Atlassian Blogs">
+<meta property="article:publisher" content="http://www.facebook.com/AtlassianSoftware">
+<meta property="og:image" content="http://blogs.atlassian.com/wp-content/uploads/branch-icon.png">
+<meta property="og:image" content="http://blogs.atlassian.com/wp-content/uploads/1_dashboard-600x403.png">
+<meta property="og:image" content="http://blogs.atlassian.com/wp-content/uploads/3_branches_config-600x406.png">
+<meta property="og:image" content="http://blogs.atlassian.com/wp-content/uploads/4_create_branch-600x405.png">
+<meta property="og:image" content="http://blogs.atlassian.com/wp-content/uploads/5_branch_details-600x403.png">
+<meta property="og:image" content="http://blogs.atlassian.com/wp-content/uploads/6_building_branch-600x406.png">
+<meta property="og:image" content="http://blogs.atlassian.com/wp-content/uploads/7_branch_result-600x406.png">
+<meta property="og:image" content="http://blogs.atlassian.com/wp-content/uploads/8_config_merge-600x368.png">
+<meta property="og:image" content="http://blogs.atlassian.com/wp-content/uploads/9_merge-600x404.png">
+<meta property="og:image" content="http://blogs.atlassian.com/wp-content/uploads/png3.png">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="stylesheet" id="prettify-css" href="http://blogs.atlassian.com/wp-content/plugins/prettify-code-syntax/stylesheets/default.css?ver=3.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="codecolorer-css" href="http://blogs.atlassian.com/wp-content/plugins/codecolorer/codecolorer.css?ver=0.9.9" type="text/css" media="screen">
+<link rel="stylesheet" id="lightboxStyle-css" href="http://blogs.atlassian.com/wp-content/plugins/lightbox-plus/css/dark/colorbox.css?ver=2.0.2" type="text/css" media="screen">
+<link rel="stylesheet" id="wp-paginate-css" href="http://blogs.atlassian.com/wp-content/plugins/wp-paginate/wp-paginate.css?ver=1.2.4" type="text/css" media="screen">
+<script src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/cb=gapi.loaded_1" async=""></script><script src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/plusone.js" gapi_processed="true"></script><script src="http://use.typekit.com/wja5xmm.js" type="text/javascript" async=""></script><script type="text/javascript" src="http://blogs.atlassian.com/wp-includes/js/jquery/jquery.js?ver=1.10.2"></script>
+<script type="text/javascript" src="http://blogs.atlassian.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1"></script>
+<script type="text/javascript" src="http://blogs.atlassian.com/wp-includes/js/comment-reply.min.js?ver=3.8.1"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blogs.atlassian.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blogs.atlassian.com/wp-includes/wlwmanifest.xml"> 
+<link rel="shortlink" href="http://wp.me/p2q5Zc-5ru">
+
+<!-- Dynamic Widgets v1.5.1 by QURL - http://www.qurl.nl //-->
+
+      <script type="text/javascript">
+      TypekitConfig = {
+        kitId: 'wja5xmm',
+        scriptTimeout: 3750
+      };
+      (function() {
+        var h = document.getElementsByTagName('html')[0];
+        h.className += ' wf-loading';
+        var t = setTimeout(function() {
+          h.className = h.className.replace(/(\s|^)wf-loading(\s|$)/g, '');
+          h.className += ' wf-inactive';
+        }, TypekitConfig.scriptTimeout);
+        var tk = document.createElement('script');
+        tk.src = '//use.typekit.com/' + TypekitConfig.kitId + '.js';
+        tk.type = 'text/javascript';
+        tk.async = 'true';
+        tk.onload = tk.onreadystatechange = function() {
+          var rs = this.readyState;
+          if (rs && rs != 'complete' && rs != 'loaded') return;
+          clearTimeout(t);
+          try { Typekit.load(TypekitConfig); } catch (e) {}
+        };
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(tk, s);
+      })();
+    </script>
+    
+<script type="text/javascript" src="http://j.clickdensity.com/cr.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+var clickdensity_keyElement = 'kvalue';
+//]]>
+</script>
+
+  <link rel="alternate" type="application/rss+xml" title="Dev Tools Feed" href="http://feeds.feedburner.com/AtlassianDevToolsBlog">
+
+<!-- Start Changes -->
+<script src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		if($('#blognav ul li.selected ul').length != 0) {
+		  	// To fix padding between content and nav if there are sub-categories
+		  	$('#blognav').after('<div style="height: 32px;"></div>');
+		}
+				
+		$('.bn-more > a').click(function() {
+			return false;
+		});
+		
+	});
+</script>
+<!-- End Changes -->  
+<script type="text/javascript">
+adroll_adv_id = "32VY3BYAQRHLDDVMBEAGU2";
+adroll_pix_id = "7Q44S6SDXNA4NE4TSAUFGF";
+(function () {
+var oldonload = window.onload;
+window.onload = function(){
+   __adroll_loaded=true;
+   var scr = document.createElement("script");
+   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+   scr.setAttribute('async', 'true');
+   scr.type = "text/javascript";
+   scr.src = host + "/j/roundtrip.js";
+   ((document.getElementsByTagName('head') || [null])[0] ||
+    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+   if(oldonload){oldonload()}};
+}());
+</script>
+
+<script>
+var blogCat = '';
+		blogCat = blogCat + 'Dev Tools' + ',';
+				blogCat = blogCat + 'Bamboo' + ',';
+			if(blogCat != '') {
+		blogCat = window.location.pathname + '?category=' + blogCat.replace(' ', '').slice(0, -1);
+	}
+</script>
+
+<script>
+	/*
+document.domain = "atlassian.com";
+	requestString = "url=" + encodeURIComponent(document.URL);
+	requestString = requestString + "&referer=" + encodeURIComponent(document.referrer);
+	$.ajax({ 
+	  type: "POST",
+	  url: "//atlassian.com/blogsTrack?" + requestString,
+	  xhrFields: { withCredentials: true } 
+	});
+*/
+</script>
+
+  <script src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/jquery.min(1).js" type="text/javascript"></script>
+  <script src="http://blogs.atlassian.com/wp-content/themes/atlassian/js/cookie.js" type="text/javascript"></script>
+  <script src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/in.js" type="text/javascript"></script><script src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/nonSecureAnonymousFramework"></script><style type="text/css">.tk-kulturista-web{font-family:"kulturista-web-1","kulturista-web-2",serif;}.tk-museo-slab{font-family:"museo-slab-1","museo-slab-2",serif;}</style><link rel="stylesheet" href="http://use.typekit.com/c/232045/kulturista-web-1:i1:i3:i4:i6:i7:n1:n3:n4:n6:n7,museo-slab-1:i3:i7:n3:n7.ZPQ:M:2,ZPS:M:2,ZPV:M:2,ZPX:M:2,ZPZ:M:2,ZPP:M:2,ZPR:M:2,ZPT:M:2,ZPW:M:2,ZPY:M:2,SLT:M:2,QL2:M:2,SKB:M:2,VnC:M:2/d?3bb2a6e53c9684ffdc9a99f2195b2a62f51de90b87c559a7fd71797526f33423aee45cf612f24c10d272bd5adb87281df8253b23561dd6e05c76d9e083bb6b540932dd2b5365cd12dbd3de805154d0ff494484819ad6978a404cfc51b0686f9632aa158c6f7502f33111b9748bf2527970f2883d0b56bab6f9282c1ad6cab05cc32b4ac8bddf327a2644f5f975723deb62c4e9443ccaba001a3f8531aebbe574bf7b93bd342185c635ab6d97cdf0fea7ec03214708ceedb706dc3a6b8ac17874df2392ef1858e9569509a385f5494b29a7bca5b3a4bb1b4e6997e02b800049154bcb13c7a42537d505d30a9a080d51e2a092266d451b253f49172a6c71c397d7514a1d1f21669622fe22bafc3a01eac32b0104a558018395efbc7ac94ccc0b315064df0bc95ad1e05f2c2a71dac7518c3f715d8cf7855ce9e0510dd8cf328086b2278f829ec4ccf5151eca3d6865ac6070f76346bca31a">	
+<style type="text/css">* html #li_ui_li_gen_1396887033168_0 a#li_ui_li_gen_1396887033168_0-link{height:1% !important;}#li_ui_li_gen_1396887033168_0{position:relative !important;overflow:visible !important;display:block !important;}#li_ui_li_gen_1396887033168_0 a#li_ui_li_gen_1396887033168_0-link{border:0 !important;height:20px !important;text-decoration:none !important;padding:0 !important;margin:0 !important;display:inline-block !important;}#li_ui_li_gen_1396887033168_0 a#li_ui_li_gen_1396887033168_0-link:link, #li_ui_li_gen_1396887033168_0 a#li_ui_li_gen_1396887033168_0-link:visited, #li_ui_li_gen_1396887033168_0 a#li_ui_li_gen_1396887033168_0-link:hover, #li_ui_li_gen_1396887033168_0 a#li_ui_li_gen_1396887033168_0-link:active{border:0 !important;text-decoration:none !important;}#li_ui_li_gen_1396887033168_0 a#li_ui_li_gen_1396887033168_0-link:after{content:"." !important;display:block !important;clear:both !important;visibility:hidden !important;line-height:0 !important;height:0 !important;}#li_ui_li_gen_1396887033168_0 #li_ui_li_gen_1396887033168_0-logo{background-image:url(http://s.c.lnkd.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-position:0px -276px !important;background-repeat:no-repeat !important;background-size:initial !important;cursor:pointer !important;border:0 !important;text-indent:-9999em !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:absolute !important;left:0px !important;top:0px !important;display:block !important;width:20px !important;height:20px !important;float:right !important;border-radius:0 !important;-webkit-border-radius:0 !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;}#li_ui_li_gen_1396887033168_0.hovered #li_ui_li_gen_1396887033168_0-logo{background-position:-20px -276px !important;}#li_ui_li_gen_1396887033168_0.clicked #li_ui_li_gen_1396887033168_0-logo, #li_ui_li_gen_1396887033168_0.down #li_ui_li_gen_1396887033168_0-logo{background-position:-40px -276px !important;}.IN-shadowed #li_ui_li_gen_1396887033168_0 #li_ui_li_gen_1396887033168_0-logo{}#li_ui_li_gen_1396887033168_0 #li_ui_li_gen_1396887033168_0-title{color:#333 !important;cursor:pointer !important;display:block !important;white-space:nowrap !important;float:left !important;margin-left:1px !important;vertical-align:top !important;overflow:hidden !important;text-align:center !important;height:18px !important;padding:0 4px 0 23px !important;border:1px solid #000 !important;border-top-color:#E2E2E2 !important;border-right-color:#BFBFBF !important;border-bottom-color:#B9B9B9 !important;border-left-color:#E2E2E2 !important;border-left:0 !important;text-shadow:#FFFFFF -1px 1px 0 !important;line-height:20px !important;border-radius:0 !important;-webkit-border-radius:0 !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;background-color:#ECECEC !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#FEFEFE), color-stop(100%,#ECECEC)) !important; background-image: -webkit-linear-gradient(top, #FEFEFE 0%, #ECECEC 100%) !important;}#li_ui_li_gen_1396887033168_0.hovered #li_ui_li_gen_1396887033168_0-title{border:1px solid #000 !important;border-top-color:#ABABAB !important;border-right-color:#9A9A9A !important;border-bottom-color:#787878 !important;border-left-color:#04568B !important;border-left:0 !important;background-color:#EDEDED !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#EDEDED), color-stop(100%,#DEDEDE)) !important; background-image: -webkit-linear-gradient(top, #EDEDED 0%, #DEDEDE 100%) !important;}#li_ui_li_gen_1396887033168_0.clicked #li_ui_li_gen_1396887033168_0-title, #li_ui_li_gen_1396887033168_0.down #li_ui_li_gen_1396887033168_0-title{color:#666 !important;border:1px solid #000 !important;border-top-color:#B6B6B6 !important;border-right-color:#B3B3B3 !important;border-bottom-color:#9D9D9D !important;border-left-color:#49627B !important;border-left:0 !important;background-color:#DEDEDE !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#E3E3E3), color-stop(100%,#EDEDED)) !important; background-image: -webkit-linear-gradient(top, #E3E3E3 0%, #EDEDED 100%) !important;}.IN-shadowed #li_ui_li_gen_1396887033168_0 #li_ui_li_gen_1396887033168_0-title{}.IN-shadowed #li_ui_li_gen_1396887033168_0.hovered #li_ui_li_gen_1396887033168_0-title{}.IN-shadowed #li_ui_li_gen_1396887033168_0.clicked #li_ui_li_gen_1396887033168_0-title, .IN-shadowed #li_ui_li_gen_1396887033168_0.down #li_ui_li_gen_1396887033168_0-title{}#li_ui_li_gen_1396887033168_0 #li_ui_li_gen_1396887033168_0-title-text, #li_ui_li_gen_1396887033168_0 #li_ui_li_gen_1396887033168_0-title-text *{color:#333 !important;font-size:11px !important;font-family:Arial, sans-serif !important;font-weight:bold !important;font-style:normal !important;-webkit-font-smoothing:antialiased !important;display:inline-block !important;background:transparent none !important;vertical-align:top !important;height:18px !important;line-height:20px !important;float:none !important;}#li_ui_li_gen_1396887033168_0 #li_ui_li_gen_1396887033168_0-title-text strong{font-weight:bold !important;}#li_ui_li_gen_1396887033168_0 #li_ui_li_gen_1396887033168_0-title-text em{font-style:italic !important;}#li_ui_li_gen_1396887033168_0.hovered #li_ui_li_gen_1396887033168_0-title-text, #li_ui_li_gen_1396887033168_0.hovered #li_ui_li_gen_1396887033168_0-title-text *{color:#000 !important;}#li_ui_li_gen_1396887033168_0.clicked #li_ui_li_gen_1396887033168_0-title-text, #li_ui_li_gen_1396887033168_0.down #li_ui_li_gen_1396887033168_0-title-text, #li_ui_li_gen_1396887033168_0.clicked #li_ui_li_gen_1396887033168_0-title-text *, #li_ui_li_gen_1396887033168_0.down #li_ui_li_gen_1396887033168_0-title-text *{color:#666 !important;}#li_ui_li_gen_1396887033168_0 #li_ui_li_gen_1396887033168_0-title #li_ui_li_gen_1396887033168_0-mark{display:inline-block !important;width:0px !important;overflow:hidden !important;}.success #li_ui_li_gen_1396887033168_0 #li_ui_li_gen_1396887033168_0-title{color:#333 !important;border-top-color:#E2E2E2 !important;border-right-color:#BFBFBF !important;border-bottom-color:#B9B9B9 !important;border-left-color:#E2E2E2 !important;background-color:#ECECEC !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#FEFEFE), color-stop(100%,#ECECEC)) !important; background-image: -webkit-linear-gradient(top, #FEFEFE 0%, #ECECEC 100%) !important;}.success #li_ui_li_gen_1396887033168_0 #li_ui_li_gen_1396887033168_0-title-text, .success #li_ui_li_gen_1396887033168_0 #li_ui_li_gen_1396887033168_0-title-text *{color:#333 !important;}.IN-shadowed .success #li_ui_li_gen_1396887033168_0 #li_ui_li_gen_1396887033168_0-title{}.success #li_ui_li_gen_1396887033168_0.hovered #li_ui_li_gen_1396887033168_0-title{color:#000 !important;border-top-color:#ABABAB !important;border-right-color:#9A9A9A !important;border-bottom-color:#787878 !important;border-left-color:#04568B !important;background-color:#EDEDED !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#EDEDED), color-stop(100%,#DEDEDE)) !important; background-image: -webkit-linear-gradient(top, #EDEDED 0%, #DEDEDE 100%) !important;}.success #li_ui_li_gen_1396887033168_0.hovered #li_ui_li_gen_1396887033168_0-title-text, .success #li_ui_li_gen_1396887033168_0.hovered #li_ui_li_gen_1396887033168_0-title-text *{color:#000 !important;}.success #li_ui_li_gen_1396887033168_0.clicked #li_ui_li_gen_1396887033168_0-title, .success #li_ui_li_gen_1396887033168_0.down #li_ui_li_gen_1396887033168_0-title{color:#666 !important;border-top-color:#B6B6B6 !important;border-right-color:#B3B3B3 !important;border-bottom-color:#9D9D9D !important;border-left-color:#49627B !important;background-color:#DEDEDE !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#E3E3E3), color-stop(100%,#EDEDED)) !important; background-image: -webkit-linear-gradient(top, #E3E3E3 0%, #EDEDED 100%) !important;}.success #li_ui_li_gen_1396887033168_0.clicked #li_ui_li_gen_1396887033168_0-title-text, .success #li_ui_li_gen_1396887033168_0.down #li_ui_li_gen_1396887033168_0-title-text, .success #li_ui_li_gen_1396887033168_0.clicked #li_ui_li_gen_1396887033168_0-title-text *, .success #li_ui_li_gen_1396887033168_0.down #li_ui_li_gen_1396887033168_0-title-text *{color:#666 !important;}.IN-shadowed .success #li_ui_li_gen_1396887033168_0.clicked #li_ui_li_gen_1396887033168_0-title, .IN-shadowed .success #li_ui_li_gen_1396887033168_0.down #li_ui_li_gen_1396887033168_0-title{}#li_ui_li_gen_1396887033200_1-container.IN-right {display:inline-block !important;float:left !important;overflow:visible !important;position:relative !important;height:18px !important;padding-left:2px !important;line-height:1px !important;cursor:pointer !important;}#li_ui_li_gen_1396887033200_1.IN-right {display:block !important;float:left !important;height:18px !important;margin-right:4px !important;padding-right:4px !important;background-image:url(http://s.c.lnkd.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:right -100px !important;}#li_ui_li_gen_1396887033200_1-inner.IN-right {display:block !important;float:left !important;padding-left:8px !important;text-align:center !important;background-image:url(http://s.c.lnkd.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:0px -60px !important;}#li_ui_li_gen_1396887033200_1-content.IN-right {display:inline !important;font-size:11px !important;color:#04558B !important;font-weight:bold !important;font-family:Arial, sans-serif !important;line-height:18px !important;padding:0 5px 0 5px !important;}#li_ui_li_gen_1396887033200_1-container.IN-empty {display:none !important;}#li_ui_li_gen_1396887033200_1-container.IN-hidden #li_ui_li_gen_1396887033200_1 {display:none !important;}* html #li_ui_li_gen_1396887033208_2 a#li_ui_li_gen_1396887033208_2-link{height:1% !important;}#li_ui_li_gen_1396887033208_2{position:relative !important;overflow:visible !important;display:block !important;}#li_ui_li_gen_1396887033208_2 a#li_ui_li_gen_1396887033208_2-link{border:0 !important;height:20px !important;text-decoration:none !important;padding:0 !important;margin:0 !important;display:inline-block !important;}#li_ui_li_gen_1396887033208_2 a#li_ui_li_gen_1396887033208_2-link:link, #li_ui_li_gen_1396887033208_2 a#li_ui_li_gen_1396887033208_2-link:visited, #li_ui_li_gen_1396887033208_2 a#li_ui_li_gen_1396887033208_2-link:hover, #li_ui_li_gen_1396887033208_2 a#li_ui_li_gen_1396887033208_2-link:active{border:0 !important;text-decoration:none !important;}#li_ui_li_gen_1396887033208_2 a#li_ui_li_gen_1396887033208_2-link:after{content:"." !important;display:block !important;clear:both !important;visibility:hidden !important;line-height:0 !important;height:0 !important;}#li_ui_li_gen_1396887033208_2 #li_ui_li_gen_1396887033208_2-logo{background-image:url(http://s.c.lnkd.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-position:0px -276px !important;background-repeat:no-repeat !important;background-size:initial !important;cursor:pointer !important;border:0 !important;text-indent:-9999em !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:absolute !important;left:0px !important;top:0px !important;display:block !important;width:20px !important;height:20px !important;float:right !important;border-radius:0 !important;-webkit-border-radius:0 !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;}#li_ui_li_gen_1396887033208_2.hovered #li_ui_li_gen_1396887033208_2-logo{background-position:-20px -276px !important;}#li_ui_li_gen_1396887033208_2.clicked #li_ui_li_gen_1396887033208_2-logo, #li_ui_li_gen_1396887033208_2.down #li_ui_li_gen_1396887033208_2-logo{background-position:-40px -276px !important;}.IN-shadowed #li_ui_li_gen_1396887033208_2 #li_ui_li_gen_1396887033208_2-logo{}#li_ui_li_gen_1396887033208_2 #li_ui_li_gen_1396887033208_2-title{color:#333 !important;cursor:pointer !important;display:block !important;white-space:nowrap !important;float:left !important;margin-left:1px !important;vertical-align:top !important;overflow:hidden !important;text-align:center !important;height:18px !important;padding:0 4px 0 23px !important;border:1px solid #000 !important;border-top-color:#E2E2E2 !important;border-right-color:#BFBFBF !important;border-bottom-color:#B9B9B9 !important;border-left-color:#E2E2E2 !important;border-left:0 !important;text-shadow:#FFFFFF -1px 1px 0 !important;line-height:20px !important;border-radius:0 !important;-webkit-border-radius:0 !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;background-color:#ECECEC !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#FEFEFE), color-stop(100%,#ECECEC)) !important; background-image: -webkit-linear-gradient(top, #FEFEFE 0%, #ECECEC 100%) !important;}#li_ui_li_gen_1396887033208_2.hovered #li_ui_li_gen_1396887033208_2-title{border:1px solid #000 !important;border-top-color:#ABABAB !important;border-right-color:#9A9A9A !important;border-bottom-color:#787878 !important;border-left-color:#04568B !important;border-left:0 !important;background-color:#EDEDED !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#EDEDED), color-stop(100%,#DEDEDE)) !important; background-image: -webkit-linear-gradient(top, #EDEDED 0%, #DEDEDE 100%) !important;}#li_ui_li_gen_1396887033208_2.clicked #li_ui_li_gen_1396887033208_2-title, #li_ui_li_gen_1396887033208_2.down #li_ui_li_gen_1396887033208_2-title{color:#666 !important;border:1px solid #000 !important;border-top-color:#B6B6B6 !important;border-right-color:#B3B3B3 !important;border-bottom-color:#9D9D9D !important;border-left-color:#49627B !important;border-left:0 !important;background-color:#DEDEDE !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#E3E3E3), color-stop(100%,#EDEDED)) !important; background-image: -webkit-linear-gradient(top, #E3E3E3 0%, #EDEDED 100%) !important;}.IN-shadowed #li_ui_li_gen_1396887033208_2 #li_ui_li_gen_1396887033208_2-title{}.IN-shadowed #li_ui_li_gen_1396887033208_2.hovered #li_ui_li_gen_1396887033208_2-title{}.IN-shadowed #li_ui_li_gen_1396887033208_2.clicked #li_ui_li_gen_1396887033208_2-title, .IN-shadowed #li_ui_li_gen_1396887033208_2.down #li_ui_li_gen_1396887033208_2-title{}#li_ui_li_gen_1396887033208_2 #li_ui_li_gen_1396887033208_2-title-text, #li_ui_li_gen_1396887033208_2 #li_ui_li_gen_1396887033208_2-title-text *{color:#333 !important;font-size:11px !important;font-family:Arial, sans-serif !important;font-weight:bold !important;font-style:normal !important;-webkit-font-smoothing:antialiased !important;display:inline-block !important;background:transparent none !important;vertical-align:top !important;height:18px !important;line-height:20px !important;float:none !important;}#li_ui_li_gen_1396887033208_2 #li_ui_li_gen_1396887033208_2-title-text strong{font-weight:bold !important;}#li_ui_li_gen_1396887033208_2 #li_ui_li_gen_1396887033208_2-title-text em{font-style:italic !important;}#li_ui_li_gen_1396887033208_2.hovered #li_ui_li_gen_1396887033208_2-title-text, #li_ui_li_gen_1396887033208_2.hovered #li_ui_li_gen_1396887033208_2-title-text *{color:#000 !important;}#li_ui_li_gen_1396887033208_2.clicked #li_ui_li_gen_1396887033208_2-title-text, #li_ui_li_gen_1396887033208_2.down #li_ui_li_gen_1396887033208_2-title-text, #li_ui_li_gen_1396887033208_2.clicked #li_ui_li_gen_1396887033208_2-title-text *, #li_ui_li_gen_1396887033208_2.down #li_ui_li_gen_1396887033208_2-title-text *{color:#666 !important;}#li_ui_li_gen_1396887033208_2 #li_ui_li_gen_1396887033208_2-title #li_ui_li_gen_1396887033208_2-mark{display:inline-block !important;width:0px !important;overflow:hidden !important;}.success #li_ui_li_gen_1396887033208_2 #li_ui_li_gen_1396887033208_2-title{color:#333 !important;border-top-color:#E2E2E2 !important;border-right-color:#BFBFBF !important;border-bottom-color:#B9B9B9 !important;border-left-color:#E2E2E2 !important;background-color:#ECECEC !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#FEFEFE), color-stop(100%,#ECECEC)) !important; background-image: -webkit-linear-gradient(top, #FEFEFE 0%, #ECECEC 100%) !important;}.success #li_ui_li_gen_1396887033208_2 #li_ui_li_gen_1396887033208_2-title-text, .success #li_ui_li_gen_1396887033208_2 #li_ui_li_gen_1396887033208_2-title-text *{color:#333 !important;}.IN-shadowed .success #li_ui_li_gen_1396887033208_2 #li_ui_li_gen_1396887033208_2-title{}.success #li_ui_li_gen_1396887033208_2.hovered #li_ui_li_gen_1396887033208_2-title{color:#000 !important;border-top-color:#ABABAB !important;border-right-color:#9A9A9A !important;border-bottom-color:#787878 !important;border-left-color:#04568B !important;background-color:#EDEDED !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#EDEDED), color-stop(100%,#DEDEDE)) !important; background-image: -webkit-linear-gradient(top, #EDEDED 0%, #DEDEDE 100%) !important;}.success #li_ui_li_gen_1396887033208_2.hovered #li_ui_li_gen_1396887033208_2-title-text, .success #li_ui_li_gen_1396887033208_2.hovered #li_ui_li_gen_1396887033208_2-title-text *{color:#000 !important;}.success #li_ui_li_gen_1396887033208_2.clicked #li_ui_li_gen_1396887033208_2-title, .success #li_ui_li_gen_1396887033208_2.down #li_ui_li_gen_1396887033208_2-title{color:#666 !important;border-top-color:#B6B6B6 !important;border-right-color:#B3B3B3 !important;border-bottom-color:#9D9D9D !important;border-left-color:#49627B !important;background-color:#DEDEDE !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#E3E3E3), color-stop(100%,#EDEDED)) !important; background-image: -webkit-linear-gradient(top, #E3E3E3 0%, #EDEDED 100%) !important;}.success #li_ui_li_gen_1396887033208_2.clicked #li_ui_li_gen_1396887033208_2-title-text, .success #li_ui_li_gen_1396887033208_2.down #li_ui_li_gen_1396887033208_2-title-text, .success #li_ui_li_gen_1396887033208_2.clicked #li_ui_li_gen_1396887033208_2-title-text *, .success #li_ui_li_gen_1396887033208_2.down #li_ui_li_gen_1396887033208_2-title-text *{color:#666 !important;}.IN-shadowed .success #li_ui_li_gen_1396887033208_2.clicked #li_ui_li_gen_1396887033208_2-title, .IN-shadowed .success #li_ui_li_gen_1396887033208_2.down #li_ui_li_gen_1396887033208_2-title{}#li_ui_li_gen_1396887033216_3-container.IN-right {display:inline-block !important;float:left !important;overflow:visible !important;position:relative !important;height:18px !important;padding-left:2px !important;line-height:1px !important;cursor:pointer !important;}#li_ui_li_gen_1396887033216_3.IN-right {display:block !important;float:left !important;height:18px !important;margin-right:4px !important;padding-right:4px !important;background-image:url(http://s.c.lnkd.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:right -100px !important;}#li_ui_li_gen_1396887033216_3-inner.IN-right {display:block !important;float:left !important;padding-left:8px !important;text-align:center !important;background-image:url(http://s.c.lnkd.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:0px -60px !important;}#li_ui_li_gen_1396887033216_3-content.IN-right {display:inline !important;font-size:11px !important;color:#04558B !important;font-weight:bold !important;font-family:Arial, sans-serif !important;line-height:18px !important;padding:0 5px 0 5px !important;}#li_ui_li_gen_1396887033216_3-container.IN-empty {display:none !important;}#li_ui_li_gen_1396887033216_3-container.IN-hidden #li_ui_li_gen_1396887033216_3 {display:none !important;}</style><script type="text/javascript" src="http://r.clickdensity.com/Default.aspx?version=2011062101&srx=1366&sry=768&pageHost=blogs.atlassian.com&referrerPath=https://www.google.com/&referrerQS=undefined&page=%2F2012%2F04%2Fbamboofeature-branch-continuous-integration-hg-git%2F&fs=14"></script><script async="true" type="text/javascript" src="http://a.adroll.com/j/roundtrip.js"></script><script async="true" type="text/javascript" src="http://d.adroll.com/pixel/32VY3BYAQRHLDDVMBEAGU2/7Q44S6SDXNA4NE4TSAUFGF?pv=61443494004.19742&cookie=&keyw="></script><div style="width: 1px; height: 1px; display: inline;"><img height="1" width="1" style="border-style:none;" alt="" src="http://d.adroll.com/cm/f/out">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://d.adroll.com/cm/w/out">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://d.adroll.com/cm/x/out">
+<img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=176306672533724&cd[segment_eid]=DC72LFRO7ZAQ3K7TI7RDIE"><img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1032613984/?label=_xDkCNrF2woQ4OCx7AM&guid=ON&script=0&ord=4744563412386924">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://d.adroll.com/cm/g/out?google_nid=adroll">
+<!-- rmx placeholder -->
+<img src="http://ib.adnxs.com/seg?add=1468574&t=2" width="1" height="1">
+</div></head>
+<body class="single single-post postid-20924 single-format-standard custom-background" data-twttr-rendered="true" style="">
+<div style="background-color: rgb(88, 175, 229); text-align: center; color: rgb(255, 255, 255); height: 40px; line-height: 40px; position: relative; display: block; background-position: initial initial; background-repeat: initial initial;" id="brandAmpBanner">Say hello to JIRA Agile and JIRA Capture <a href="http://blogs.atlassian.com/2013/08/renaming-greenhopper-and-bonfire/" style="color: #fff; text-decoration: underline;">Learn More</a><span class="arrow" style="text-decoration: none !important;"> »</span><span id="brandAmpDismiss"></span></div>
+
+
+  <div id="page">
+    <header id="header">
+      <div class="grid">
+        <h1><a href="http://blogs.atlassian.com/">Atlassian Blogs</a></h1>
+        <div id="headernav">
+          <div id="globalnav">
+            <ul>
+              <li><a href="http://www.atlassian.com/">Atlassian Home</a></li>
+              <li><a href="http://atlassian.com/resources/support">Get Help</a></li>
+              <li><a href="http://marketplace.atlassian.com/">Marketplace</a></li>
+            </ul>
+          </div><!--/globalnav-->
+          <div id="headersearch">
+            <form role="search" method="get" id="searchform" action="http://blogs.atlassian.com/">
+    <div>
+    <input type="text" value="" name="s" id="header-s" placeholder="Search Blogs" class="placeholder">
+    <input type="submit" id="searchsubmit" value="Search">
+    </div>
+    </form>          </div><!--/headersearch-->
+        </div><!--/headernav-->
+      </div><!--/grid-->
+    </header>
+
+    <div id="main">
+      <div id="blognav">
+      
+      <ul>
+    <li id="bn-all" class=""><a href="http://blogs.atlassian.com/">All Blogs</a></li>
+		
+	<li id="bn-products" class=""><a href="http://blogs.atlassian.com/blog-cat/products/">Products</a>
+
+
+		
+	<ul>
+	
+								<li class="bn-jira"><a href="http://blogs.atlassian.com/blog-cat/jira/">JIRA</a>
+						</li>
+								<li class="bn-confluence"><a href="http://blogs.atlassian.com/blog-cat/confluence/">Confluence</a>
+						</li>
+								<li class="bn-greenhopper"><a href="http://blogs.atlassian.com/blog-cat/greenhopper/">JIRA Agile</a>
+						</li>
+								<li class="bn-team_calendars"><a href="http://blogs.atlassian.com/blog-cat/team_calendars/">Team Calendars</a>
+						</li>
+								<li class="bn-hipchat"><a href="http://blogs.atlassian.com/blog-cat/hipchat/">HipChat</a>
+						</li>
+								<li class="bn-bitbucket"><a href="http://blogs.atlassian.com/blog-cat/bitbucket/">Bitbucket</a>
+						</li>
+								<li class="bn-stash"><a href="http://blogs.atlassian.com/blog-cat/stash/">Stash</a>
+						</li>
+								<li class="bn-more"><a href="http://blogs.atlassian.com/blog-cat/more/">More</a>
+							<ul>
+													<li><a href="http://blogs.atlassian.com/blog-cat/bonfire/">Bonfire</a></li>
+													<li><a href="http://blogs.atlassian.com/blog-cat/fisheye/">FishEye</a></li>
+													<li><a href="http://blogs.atlassian.com/blog-cat/bamboo/">Bamboo</a></li>
+													<li><a href="http://blogs.atlassian.com/blog-cat/crucible/">Crucible</a></li>
+													<li><a href="http://blogs.atlassian.com/blog-cat/clover/">Clover</a></li>
+													<li><a href="http://blogs.atlassian.com/blog-cat/sourcetree/">SourceTree</a></li>
+								</ul>
+						</li>
+				
+	</ul>
+		
+	</li>
+		
+	<li id="bn-developer" class=""><a href="http://blogs.atlassian.com/blog-cat/developer/">Developer</a>
+
+
+		
+	</li>
+		
+	<li id="bn-news" class=""><a href="http://blogs.atlassian.com/blog-cat/news/">News</a>
+
+
+		
+	</li>
+		
+	
+	
+</ul>
+
+        
+      </div><!--/blognav-->
+
+
+  <div id="content">
+    
+  
+    
+    <article id="post-20924" class="post-20924 post type-post status-publish format-standard hentry category-bamboo category-developer category-dvcs-3 tag-agile tag-bamboo tag-continuous-integration tag-do-agile-right tag-dvcs odd first-post">
+      <div class="postheader">
+        <h2>
+          Making Feature Branches Effective with Continuous Integration        </h2>
+        <div class="postinfo">
+          <a href="http://blogs.atlassian.com/author/jdumay/"><img alt="" src="http://0.gravatar.com/avatar/eca319973d6bc8d1f593793d611a8301?s=48&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D48&r=PG" class="avatar avatar-48 photo" height="48" width="48"></a>          <ul>
+            <li>
+              By <a href="http://blogs.atlassian.com/author/jdumay/">James Dumay</a>, Product Manager            </li>
+            <li>
+                            <a href="http://blogs.atlassian.com/blog-cat/dev-tools/">Dev Tools</a>, <a href="http://blogs.atlassian.com/blog-cat/bamboo/">Bamboo</a>            </li>
+            <li>On April 2, 2012</li>
+          </ul>
+          <div class="social-media-buttons">
+
+<div class="postshare">
+<div class="button facebook">
+<iframe src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/like.htm" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowtransparency="true"></iframe>
+</div><!--/button-->
+<div class="button twitter">
+<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/tweet_button.1395870373.htm" class="twitter-share-button twitter-tweet-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 110px; height: 20px;"></iframe>
+</div><!--/button-->
+<div class="button">
+<span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1396887033168_0"><a id="li_ui_li_gen_1396887033168_0-link" href="javascript:void(0);"><span id="li_ui_li_gen_1396887033168_0-logo">in</span><span id="li_ui_li_gen_1396887033168_0-title"><span id="li_ui_li_gen_1396887033168_0-mark"></span><span id="li_ui_li_gen_1396887033168_0-title-text">Share</span></span></a></span></span><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1396887033200_1-container" class="IN-right"><span id="li_ui_li_gen_1396887033200_1" class="IN-right"><span id="li_ui_li_gen_1396887033200_1-inner" class="IN-right"><span id="li_ui_li_gen_1396887033200_1-content" class="IN-right">8</span></span></span></span></span></span><script type="IN/Share+init" data-url="http://blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/" data-counter="right"></script></div>
+<div class="button google"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background-position: initial initial; background-repeat: initial initial;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1396887038644" name="I0_1396887038644" src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/fastbutton.htm" data-gapiattached="true" title="+1"></iframe></div></div><!--/button-->
+
+<span class="close"></span></div>
+</div>
+  
+
+        </div><!--/postinfo-->
+        
+        
+        
+        
+        
+      </div><!--/postheader-->
+      <div class="postcontent">
+        <p style="text-align: left;">The basic idea of&nbsp;<a href="http://martinfowler.com/bliki/FeatureBranch.html" target="_blank">Feature Branching</a>&nbsp;is that when you start work on a feature, &nbsp;you create a branch off of the repository and commit all the changes for the feature onto the branch and when your feature is code complete then merge the changes back.</p>
+<p style="text-align: left;">The advantage in using feature branches is that your main line (you might call main line ‘master’, ‘trunk’ or ‘head’ depending on the version control system you use) is kept clear of uncompleted features or bug fixes, which enables you to release software at any time because you don’t have to wait for all the features and bug fixes being worked on to be completed.</p>
+<p style="text-align: left;">Thanks to tools like <a href="http://git-scm.com/" target="_blank">Git</a> and <a href="http://mercurial.selenic.com/">Mercurial</a>, Feature Branching has passed from the realm of theoretical development practices and firmly into the world of the practical. These tools not only allow branches to be created quickly and easily, but also provide very advanced algorithms that allow merging to happen quickly and in a less error prone manner. This is less practiced in teams where older tools like Subversion are used because the branching and merging process is not as smooth.</p>
+<p style="text-align: left;">When combined with Feature Branches, Continuous Integration has suffered two distinct problems, which I’ve outlined below:</p>
+<p style="text-align: left;"><strong>Duplication and drift of build configuration</strong></p>
+<p style="text-align: left;">When a developer creates a branch, multiple build configurations on the Continuous Integration server needed to be cloned manually. Because it’s a manual step, some developers didn’t bother with it (and thus no tests were executed as they developed the feature) and eventually the build configuration started to drift away from the original configuration it was cloned from, causing administration headaches. Worse, if the developer didn’t bother to set up a build to test their branch, no code would be tested.</p>
+<p style="text-align: left;"><strong>Uncertainty of integration state</strong></p>
+<p style="text-align: left;">Unless the developer was constantly merging changes from the main line into their branch and running the tests, there was always uncertainty around whether the code worked or not – at least until the branch was merged into the mainline. &nbsp;Often times, the code did not work as expected and the mainline was infected with non-functional code –defeating the point of Feature Branches and Continuous Integration entirely (ie, isolation and assurance that all the changes to the codebase work).</p>
+<div>That was then. Enter Bamboo 4, which solves these two problems entirely using a feature called <em>Plan Branches.</em></div>
+<h2>What are Plan Branches?</h2>
+<p style="text-align: left;">Plan Branches are a Bamboo Plan configuration that represent a branch in your version control system. They inherit all of the configuration defined by the parent Plan, except that instead of building against the repository’s main line, they build against a specified branch. Then, when the branch build succeeds, changes can be merged from the branch automatically to the main line.</p>
+<p style="text-align: left;">As you can see in the screenshot below, our Angry Nerds project is building not only the <em>master</em>&nbsp;branch (main line) it is also building the <em>new-physics, more-angry-nerd-chars </em>and <em>feature-highres-graphics</em>&nbsp;branches. Bamboo makes it easy to see which Plans also have branches by displaying the branch symbol <a href="http://blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/branch-icon/" rel="attachment wp-att-20959"><img class="alignnone  wp-image-20959" title="branch-icon" alt="" src="http://blogs.atlassian.com/wp-content/uploads/branch-icon.png" width="16" height="16"></a>.</p>
+<p style="text-align: left;"><a href="http://blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/1_dashboard/" rel="attachment wp-att-20950"><img class="aligncenter size-large wp-image-20950" style="border-width: 1px; border-color: black; border-style: solid;" title="1_dashboard" alt="" src="http://blogs.atlassian.com/wp-content/uploads/1_dashboard-600x403.png" width="600" height="403"></a></p>
+<p style="text-align: left;">To set this up, go to the configuration screen for the Plan you wish to configure Plan Branches, and click the <em>Branches</em>&nbsp;tab. &nbsp;(Make sure to log in as a user with admin privileges for that Plan!)</p>
+<p style="text-align: left;">From here we can configure Bamboo to automatically detect new branches in the repository, and create the corresponding Plan Branch. &nbsp;Note that automatic branch detection is currently available for Git and Mercurial repositories only but don’t feel left out if you use another version control system like Subversion or Perforce, as you can manually create a Plan Branch too.</p>
+<p style="text-align: left;">It’s likely that you don’t want to build every branch you create. If you use a naming convention where all branches that you want tested start with, for example, “feature-*” then Bamboo can be configured to only create Plan Branches that match that prefix. &nbsp;(Hint: you can use a regular expression too)</p>
+<p style="text-align: left;">Since most feature branches are short-lived (3-4 days at most), you can configure the Plan to remove the branch and it’s build results from Bamboo after a certain number of days of inactivity. This can be disabled on a per branch basis if you want to keep it around for an indefinite amount of time, after which you will have to remove it manually. &nbsp;Don’t worry: we won’t remove the branch from your repository – we leave that task up to you.</p>
+<p style="text-align: left;">Disabling automatic cleanup outright for some branches is a good idea for situations where you might maintain a long lived “stable” branch of your project.</p>
+<p style="text-align: left;"><a href="http://blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/3_branches_config/" rel="attachment wp-att-20952"><img class="aligncenter size-large wp-image-20952" style="border-width: 1px; border-color: black; border-style: solid;" title="3_branches_config" alt="" src="http://blogs.atlassian.com/wp-content/uploads/3_branches_config-600x406.png" width="600" height="406"></a></p>
+<h2>Building every branch the easy way</h2>
+<p style="text-align: left;">It’s possible to create a Plan Branch for any version control system supported by Bamboo. To create a branch, go to Plan &gt; Configuration &gt; Branches, and click the&nbsp;<em>Create Branch</em>&nbsp;button. &nbsp;For Git and Mercurial, a dialog will appear listing all the available Branches in the repository which do not yet have a corresponding Plan Branch in Bamboo. Pick a branch and hit <em>Create</em>. Users of traditional VCS repositories will be asked to simply choose a name, description and what branch they want to use (for Subversion this is the URL to the branch) before hitting <em>Create</em>.</p>
+<p style="text-align: left;"><a href="http://blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/4_create_branch/" rel="attachment wp-att-20953"><img class="aligncenter size-large wp-image-20953" style="border-width: 1px; border-color: black; border-style: solid;" title="4_create_branch" alt="" src="http://blogs.atlassian.com/wp-content/uploads/4_create_branch-600x405.png" width="600" height="405"></a></p>
+<p style="text-align: left;">You can now disable the automatic cleanup for the current Plan Branch if you wish, and in the case of DVCS repos, configure a Merge Strategy. &nbsp;Merge Strategies allow Bamboo to automatically merge code between branches on successful builds (more on that later). &nbsp;It is also possible at this point to override repository information (if you are using Plan Branches with Subversion, you can change the SVN URL from trunk to branch here) or override build variables. &nbsp;For example, you might have a variable that specifies whether you are going to deploy to production that you may want to change for the Plan Branch.</p>
+<p style="text-align: left;"><a href="http://blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/5_branch_details/" rel="attachment wp-att-20954"><img class="aligncenter size-large wp-image-20954" style="border-width: 1px; border-color: black; border-style: solid;" title="5_branch_details" alt="" src="http://blogs.atlassian.com/wp-content/uploads/5_branch_details-600x403.png" width="600" height="403"></a></p>
+<p style="text-align: left;">Triggering a build of your Plan Branch will happen just like it normally does for the parent Plan, except against the selected branch instead of the main line.</p>
+<p style="text-align: left;"><a href="http://blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/6_building_branch/" rel="attachment wp-att-20955"><img class="aligncenter size-large wp-image-20955" style="border-width: 1px; border-color: black; border-style: solid;" title="6_building_branch" alt="" src="http://blogs.atlassian.com/wp-content/uploads/6_building_branch-600x406.png" width="600" height="406"></a></p>
+<p style="text-align: left;">Since the build steps for parent Plan builds and Plan Branch builds work exactly the same, features like <a href="http://blogs.atlassian.com/2012/01/continuous-delivery-with-bamboo-stages/" target="_blank">Manual Stages</a> also work normally too. If you have notifications configured, Bamboo will notify you automatically if the build has passed or failed so you are aware of the state of your branch at all times.</p>
+<p style="text-align: left;"><a href="http://blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/7_branch_result/" rel="attachment wp-att-20956"><img class="aligncenter size-large wp-image-20956" style="border-width: 1px; border-color: black; border-style: solid;" title="7_branch_result" alt="" src="http://blogs.atlassian.com/wp-content/uploads/7_branch_result-600x406.png" width="600" height="406"></a></p>
+<h2>Automatically Merging Branches</h2>
+<p>Since you don’t really know if everything works until you’ve merged changes to or from the main line, Bamboo provides a two models to do that automatically in DVCS repositories –we call them “Branch Updater” and “Gatekeeper”. &nbsp; When activated, before the build runs, Bamboo will either merge changes from trunk into the branch (<em>Branch Updater</em>) or checkout the main branch and merge changes in from the current branch (<em>Gatekeeper</em>). &nbsp;Bamboo then proceeds to run the build.</p>
+<p style="text-align: left;"><a href="http://blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/8_config_merge/" rel="attachment wp-att-20957"><img class="aligncenter size-large wp-image-20957" style="border-width: 1px; border-color: black; border-style: solid;" title="8_config_merge" alt="" src="http://blogs.atlassian.com/wp-content/uploads/8_config_merge-600x368.png" width="600" height="368"></a></p>
+<p style="text-align: left;">If the build is successful (and you’ve checked the <em>Push on Success</em>&nbsp;checkbox) the changes are automatically pushed to the branch that was checked out. If you are using the <em>Gatekeeper</em>&nbsp;model, this means changes on branch are pushed to the main line, or if using the <em>Branch Updater</em>&nbsp;mode, the feature branch is kept up to date with changes happening on main. Now <em>that’s</em> Continuous Integration!</p>
+<p style="text-align: left;"><a href="http://blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/9_merge/" rel="attachment wp-att-20958"><img class="aligncenter size-large wp-image-20958" style="border-width: 1px; border-color: black; border-style: solid;" title="9_merge" alt="" src="http://blogs.atlassian.com/wp-content/uploads/9_merge-600x404.png" width="600" height="404"></a></p>
+<h2 style="text-align: left;">So what are you waiting for?</h2>
+<p style="text-align: left;">Current customers can simply update their instance to version 4 and get building. &nbsp;New customers can enjoy a 30-day free trial. &nbsp;Start testing more, and configuring less by downloading Bamboo 4 today!</p>
+<p style="text-align: center;"><a href="http://blogs.atlassian.com/2012/03/feature-branch-continuous-integration-hg-git"><img class="alignnone size-full wp-image-21253" title="png" alt="" src="http://blogs.atlassian.com/wp-content/uploads/png3.png" width="149" height="52"></a></p>
+      </div><!--/postcontent-->
+      <div class="postmeta">
+        <div class="tags">
+          <strong>Tags:</strong> <a href="http://blogs.atlassian.com/tag/agile/" rel="tag">Agile</a>, <a href="http://blogs.atlassian.com/tag/bamboo/" rel="tag">Bamboo</a>, <a href="http://blogs.atlassian.com/tag/continuous-integration/" rel="tag">continuous integration</a>, <a href="http://blogs.atlassian.com/tag/do-agile-right/" rel="tag">do agile right</a>, <a href="http://blogs.atlassian.com/tag/dvcs/" rel="tag">dvcs</a>        </div><!--/tags-->
+                  <div class="social-media-buttons">
+
+<div class="postshare">
+<div class="button facebook">
+<iframe src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/like.htm" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowtransparency="true"></iframe>
+</div><!--/button-->
+<div class="button twitter">
+<iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/tweet_button.1395870373(1).htm" class="twitter-share-button twitter-tweet-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 110px; height: 20px;"></iframe>
+</div><!--/button-->
+<div class="button">
+<span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1396887033208_2"><a id="li_ui_li_gen_1396887033208_2-link" href="javascript:void(0);"><span id="li_ui_li_gen_1396887033208_2-logo">in</span><span id="li_ui_li_gen_1396887033208_2-title"><span id="li_ui_li_gen_1396887033208_2-mark"></span><span id="li_ui_li_gen_1396887033208_2-title-text">Share</span></span></a></span></span><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1396887033216_3-container" class="IN-right"><span id="li_ui_li_gen_1396887033216_3" class="IN-right"><span id="li_ui_li_gen_1396887033216_3-inner" class="IN-right"><span id="li_ui_li_gen_1396887033216_3-content" class="IN-right">8</span></span></span></span></span></span><script type="IN/Share+init" data-url="http://blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/" data-counter="right"></script></div>
+<div class="button google"><div id="___plusone_1" style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background-position: initial initial; background-repeat: initial initial;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I1_1396887038649" name="I1_1396887038649" src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/fastbutton(1).htm" data-gapiattached="true" title="+1"></iframe></div></div><!--/button-->
+
+<span class="close"></span></div>
+</div>
+  
+ 
+          
+          
+<div class="global_ad"><div class="global_ad_text"><script type="text/javascript"><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://ace.atlassian.com/b/':'http://ace.atlassian.com/b/');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=29&amp;target=_top");
+document.write ("&amp;ace-targeting=" + ( $.cookie('ace-targeting') || '' ));
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><script type="text/javascript" src="http://ace.atlassian.com/b/?zoneid=29&target=_top&ace-targeting=&cb=71867667952&charset=UTF-8&loc=http%3A//blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/&referer=https%3A//www.google.com/"></script><a href="https://ace.atlassian.com/del/ck.php?oaparams=2__bannerid=213__zoneid=29__cb=56310a6861__oadest=https%3A%2F%2Fwww.atlassian.com%2Fgit%2Ftips%2Foverview%3Fatl_source%3Dbac-footer1%26atl_medium%3Dace%26atl_campaign%3DACE-147" target="_blank">Subscribe to the <b>Git Insiders</b> Email &amp; receive tips, tricks &amp; more.<span class="global_ad_arrow"> »</span></a><div id="beacon_56310a6861" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="https://ace.atlassian.com/del/lg.php?bannerid=213&campaignid=26&zoneid=29&loc=1&referer=http%3A%2F%2Fblogs.atlassian.com%2F2012%2F04%2Fbamboofeature-branch-continuous-integration-hg-git%2F&cb=56310a6861" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+
+</div></div>
+<div class="global_ad"><div class="global_ad_text"><script type="text/javascript"><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://ace.atlassian.com/b/':'http://ace.atlassian.com/b/');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=30&amp;target=_top");
+document.write ("&amp;ace-targeting=" + ( $.cookie('ace-targeting') || '' ));
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><script type="text/javascript" src="http://ace.atlassian.com/b/?zoneid=30&target=_top&ace-targeting=&cb=7988011650&charset=UTF-8&loc=http%3A//blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/&referer=https%3A//www.google.com/"></script></div></div>
+          
+          
+              </div><!--/postmeta-->
+      <div id="comments">
+  
+      <h3 id="commentsheading">Comments (18)</h3>
+
+    
+    <ul id="commentslist">
+          <li class="comment even thread-even depth-1" id="comment-60888">
+      <img alt="" src="http://0.gravatar.com/avatar/ccb2998e8d52f95045a4994daa69a91d?s=45&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D45&r=PG" class="avatar avatar-45 photo" height="45" width="45">      <div class="commentcontent">
+        <div class="commentmessage">
+          
+          <p>Is there a way to exclude specific branches from automatic detection and detect all the rest?</p>
+        </div><!--/commentmessage-->
+        <div class="commentmeta">
+          <p>
+            By Konstantin on April 23, 2012 
+                      </p>
+        </div><!--/commentmeta-->
+      </div><!--/commentcontent-->
+    <ul class="children">
+    <li class="comment byuser comment-author-jdumay bypostauthor odd alt depth-2" id="comment-61047">
+      <img alt="" src="http://0.gravatar.com/avatar/eca319973d6bc8d1f593793d611a8301?s=45&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D45&r=PG" class="avatar avatar-45 photo" height="45" width="45">      <div class="commentcontent">
+        <div class="commentmessage">
+          
+          <p>Have you tried doing an inverse regexp match?</p>
+        </div><!--/commentmessage-->
+        <div class="commentmeta">
+          <p>
+            By James on April 23, 2012 
+                      </p>
+        </div><!--/commentmeta-->
+      </div><!--/commentcontent-->
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment even thread-odd thread-alt depth-1" id="comment-62774">
+      <a href="http://detectivegroup.co.uk/"><img alt="" src="http://1.gravatar.com/avatar/9e6f21fe66a9c37d8dc93281d921b516?s=45&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D45&r=PG" class="avatar avatar-45 photo" height="45" width="45"></a>      <div class="commentcontent">
+        <div class="commentmessage">
+          
+          <p>Hmm, the post mentions “branches”a lot, but does not clarify what branches are meant. I mean – Mercurial we have named branches and non-named branches, which usually exist simultaneously. Technically there is not much difference between these two, but previous version of Bamboo ignored non-named branches completely.<br>
+So, does bamboo only work for named branches, or it implements automatic detection of non-named branches also?</p>
+        </div><!--/commentmessage-->
+        <div class="commentmeta">
+          <p>
+            By <a href="http://detectivegroup.co.uk/" rel="external nofollow" class="url">Alex</a> on May 1, 2012 
+                      </p>
+        </div><!--/commentmeta-->
+      </div><!--/commentcontent-->
+    <ul class="children">
+    <li class="comment byuser comment-author-jdumay bypostauthor odd alt depth-2" id="comment-66753">
+      <img alt="" src="http://0.gravatar.com/avatar/eca319973d6bc8d1f593793d611a8301?s=45&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D45&r=PG" class="avatar avatar-45 photo" height="45" width="45">      <div class="commentcontent">
+        <div class="commentmessage">
+          
+          <p>Sorry for not responding sooner, Alex. To answer your question for the moment we only support named branches.</p>
+        </div><!--/commentmessage-->
+        <div class="commentmeta">
+          <p>
+            By James on May 16, 2012 
+                      </p>
+        </div><!--/commentmeta-->
+      </div><!--/commentcontent-->
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment even thread-even depth-1" id="comment-71330">
+      <img alt="" src="http://1.gravatar.com/avatar/5c48b50f9ca6e2c88759e280aaecec33?s=45&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D45&r=PG" class="avatar avatar-45 photo" height="45" width="45">      <div class="commentcontent">
+        <div class="commentmessage">
+          
+          <p>Changes to the Plan do not apply to the branch plans? How can we do a “cascading” update on plans?</p>
+<p>It would be really helpful if you have multiple branches (staging, testing, production) that essentially just deploy to a different env.</p>
+        </div><!--/commentmessage-->
+        <div class="commentmeta">
+          <p>
+            By Faizan Shaharyar on June 18, 2012 
+                      </p>
+        </div><!--/commentmeta-->
+      </div><!--/commentcontent-->
+    <ul class="children">
+    <li class="comment odd alt depth-2" id="comment-74163">
+      <img alt="" src="http://1.gravatar.com/avatar/7be7a963f5a637919b710a6f88bc306d?s=45&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D45&r=PG" class="avatar avatar-45 photo" height="45" width="45">      <div class="commentcontent">
+        <div class="commentmessage">
+          
+          <p>Changes to the Plan do apply to all the Plan Branches <img src="http://blogs.atlassian.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+        </div><!--/commentmessage-->
+        <div class="commentmeta">
+          <p>
+            By James Dumay on September 26, 2012 
+                      </p>
+        </div><!--/commentmeta-->
+      </div><!--/commentcontent-->
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment even thread-odd thread-alt depth-1" id="comment-71805">
+      <img alt="" src="http://1.gravatar.com/avatar/9984226d2b5236d9433fa6b32853348f?s=45&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D45&r=PG" class="avatar avatar-45 photo" height="45" width="45">      <div class="commentcontent">
+        <div class="commentmessage">
+          
+          <p>Plan branches is a welcome addition and the timing of this feature addition was perfect (for us).  One thing that threw me off was that the Bamboo build number resets back to 1 for the plan branch.  I don’t know why I had an assumption that the build number would be incremental and unique across the entire plan (including it’s branches).  But that’s not the way it works so I have to make a small adjustment to the naming scheme for our artifacts.</p>
+        </div><!--/commentmessage-->
+        <div class="commentmeta">
+          <p>
+            By Logan Rhodehamel on June 30, 2012 
+                      </p>
+        </div><!--/commentmeta-->
+      </div><!--/commentcontent-->
+    <ul class="children">
+    <li class="comment odd alt depth-2" id="comment-74165">
+      <img alt="" src="http://1.gravatar.com/avatar/7be7a963f5a637919b710a6f88bc306d?s=45&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D45&r=PG" class="avatar avatar-45 photo" height="45" width="45">      <div class="commentcontent">
+        <div class="commentmessage">
+          
+          <p>The build result number is reset because its a whole different span of history.</p>
+        </div><!--/commentmessage-->
+        <div class="commentmeta">
+          <p>
+            By James Dumay on September 26, 2012 
+                      </p>
+        </div><!--/commentmeta-->
+      </div><!--/commentcontent-->
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment even thread-even depth-1" id="comment-71936">
+      <img alt="" src="http://0.gravatar.com/avatar/829c84e9c51302dfd32a49e6150111d6?s=45&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D45&r=PG" class="avatar avatar-45 photo" height="45" width="45">      <div class="commentcontent">
+        <div class="commentmessage">
+          
+          <p>Is it some how possible to run branch plans with different configurations?</p>
+<p>Main-Branch<br>
+–Job0</p>
+<p>FeatureBranch1<br>
+–Job1<br>
+–Job2</p>
+<p>FeatureBranch2<br>
+–Job1<br>
+–Job3</p>
+        </div><!--/commentmessage-->
+        <div class="commentmeta">
+          <p>
+            By Filip Lindqvist on July 5, 2012 
+                      </p>
+        </div><!--/commentmeta-->
+      </div><!--/commentcontent-->
+    <ul class="children">
+    <li class="comment odd alt depth-2" id="comment-74164">
+      <img alt="" src="http://1.gravatar.com/avatar/7be7a963f5a637919b710a6f88bc306d?s=45&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D45&r=PG" class="avatar avatar-45 photo" height="45" width="45">      <div class="commentcontent">
+        <div class="commentmessage">
+          
+          <p>You will need to configure different Plans for that kind of configuration.</p>
+        </div><!--/commentmessage-->
+        <div class="commentmeta">
+          <p>
+            By James Dumay on September 26, 2012 
+                      </p>
+        </div><!--/commentmeta-->
+      </div><!--/commentcontent-->
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment pingback">
+      <p><strong>Pingback:</strong>  <a href="http://blog.praecipio.com/2012/07/17/meet-the-new-improved-bamboo-ondemand/" rel="external nofollow" class="url">Meet the New &amp; Improved Bamboo OnDemand! « Praecipio Consulting Blog</a></p>
+    </li><!-- #comment-## -->
+    <li class="comment pingback">
+      <p><strong>Pingback:</strong>  <a href="http://blog.bitbucket.org/2012/07/24/continuous-integration-bamboo-ondemand-bitbucket/" rel="external nofollow" class="url">Pair Bitbucket with Bamboo OnDemand for Continuous Integration in the Cloud – Bitbucket</a></p>
+    </li><!-- #comment-## -->
+    <li class="comment even thread-odd thread-alt depth-1" id="comment-76788">
+      <img alt="" src="http://1.gravatar.com/avatar/70acb4916d34471ffa0d1486f67272f9?s=45&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D45&r=PG" class="avatar avatar-45 photo" height="45" width="45">      <div class="commentcontent">
+        <div class="commentmessage">
+          
+          <p>If you are using feature branches, then you aren’t doing Continuous Integration. You may be doing automated builds, and you may be running automated tests, but you’re not doing CI. If your tool automatically merges when the tests run successfully, then you may be *approximating* CI, but if most commits lead to an automated merge then you don’t need feature branches to begin with.</p>
+<p>All sorts of approaches are possible, and there could be circumstances where feature branches are a good idea, but it doesn’t help if you confuse the meaning of terms. CI has a very clear meaning, and that meaning is basically incompatible with use of feature branches.</p>
+        </div><!--/commentmessage-->
+        <div class="commentmeta">
+          <p>
+            By Martijn Meijering on November 14, 2012 
+                      </p>
+        </div><!--/commentmeta-->
+      </div><!--/commentcontent-->
+    <ul class="children">
+    <li class="comment odd alt depth-2" id="comment-76834">
+      <img alt="" src="http://0.gravatar.com/avatar/25ef72bab7952f3427596ce4f625699f?s=45&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D45&r=PG" class="avatar avatar-45 photo" height="45" width="45">      <div class="commentcontent">
+        <div class="commentmessage">
+          
+          <p>“If you are using feature branches, then you aren’t doing Continuous Integration.” This is a dogmatic answer. Read Jez’s opinion on feature branches and understand that it’s more subtile than that : <a href="http://continuousdelivery.com/2011/07/on-dvcs-continuous-integration-and-feature-branches/" rel="nofollow">http://continuousdelivery.com/2011/07/on-dvcs-continuous-integration-and-feature-branches/</a></p>
+        </div><!--/commentmessage-->
+        <div class="commentmeta">
+          <p>
+            By Gilles Philippart on November 15, 2012 
+                      </p>
+        </div><!--/commentmeta-->
+      </div><!--/commentcontent-->
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment even thread-even depth-1" id="comment-76845">
+      <img alt="" src="http://1.gravatar.com/avatar/70acb4916d34471ffa0d1486f67272f9?s=45&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D45&r=PG" class="avatar avatar-45 photo" height="45" width="45">      <div class="commentcontent">
+        <div class="commentmessage">
+          
+          <p>No, it’s not a dogmatic answer, it’s a call for precise use of language. I didn’t say there was no place for feature branches, in fact I explicitly said there could be circumstances where feature branches would be a good idea. I merely said that the result should not be called CI, since that is defined to mean the practice where everybody merges both ways to the mainline several times a day.</p>
+<p>Definitions matter. Cats are not dogs, though both make fine pets. Spoons are not forks, though both can be very useful, depending on the situation. Similarly, what is proposed here is not the same as CI. It’s also not the same as big-bang integration. Let’s keep the meaning of technical terms clear. Opinions differ on whether CI is better than other approaches, and the discussion isn’t helped b using the same term to mean different things. It can lead to people thinking they agree when they disagree or the other way round, simply because they misunderstand what the other person means by the same term.</p>
+<p>It’s fine to disagree on whether CI is a good idea or not. It’s not fine to redefine CI in such a way as to blur the differences between it and different approaches.</p>
+        </div><!--/commentmessage-->
+        <div class="commentmeta">
+          <p>
+            By Martijn Meijering on November 15, 2012 
+                      </p>
+        </div><!--/commentmeta-->
+      </div><!--/commentcontent-->
+    </li><!-- #comment-## -->
+    <li class="comment pingback">
+      <p><strong>Pingback:</strong>  <a href="http://japan.blogs.atlassian.com/2013/04/switch-from-subversion-to-dvcs/" rel="external nofollow" class="url">DVCS への移行：Subversion から DVCS へ移行した FishEye 開発チーム | Atlassian Japan</a></p>
+    </li><!-- #comment-## -->
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="comment-99916">
+      <img alt="" src="http://1.gravatar.com/avatar/5e40a08d65b0361b91b6a991b786fb6a?s=45&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D45&r=PG" class="avatar avatar-45 photo" height="45" width="45">      <div class="commentcontent">
+        <div class="commentmessage">
+          
+          <p>Hi I’m trying to get Bamboo to recognize a new branch in our GIT source control, I have it switched on for the plan but nothing happens when I create a new branch, it does not see it?</p>
+        </div><!--/commentmessage-->
+        <div class="commentmeta">
+          <p>
+            By paul on April 22, 2013 
+                      </p>
+        </div><!--/commentmeta-->
+      </div><!--/commentcontent-->
+    </li><!-- #comment-## -->
+    <li class="comment pingback">
+      <p><strong>Pingback:</strong>  <a href="http://thereleaseengineer.com/2013/07/01/multi-branch-builds-in-jenkins/" rel="external nofollow" class="url">Multi-branch builds in Jenkins | The Release Engineer</a></p>
+    </li><!-- #comment-## -->
+    </ul><!--/commentslist-->
+
+    
+  
+</div><!--/comments-->
+
+<div id="responddefault">
+  		</div><!--/responddefault-->    </article><!--/post-->
+
+          <div class="pagination">
+        <div class="paginationposts">
+          <div class="newer">
+            <a href="http://blogs.atlassian.com/2012/04/greenhopper-5-9-3-sprint-retrospective-report/" rel="next"><span>«</span> <strong>GreenHopper 5.9.3 – Sprint Retrospective Report</strong></a>          </div><!--/newer-->
+          <div class="older">
+            <a href="http://blogs.atlassian.com/2012/03/meet-the-newest-atlassian-product-hello-irkd/" rel="prev"><strong>Meet the newest Atlassian product. Hello, IRKD.</strong> <span>»</span></a>          </div><!--/older-->
+        </div><!--/paginationposts-->
+      </div><!--/pagination-->
+    
+  
+  </div><!--/content-->
+
+
+
+
+
+<div id="sidebar">
+  
+  <div class="subscribe">
+  	<h2>Subscribe</h2>
+  </div>
+  
+    <p>Subscribe to Dev Tools by email</p>
+  
+	<div id="email-subscription">
+		<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#39;http://feedburner.google.com/fb/a/mailverify?uri=AtlassianDevToolsBlog&#39;, &#39;popupwindow&#39;, &#39;scrollbars=yes,width=550,height=520&#39;);return true">
+		<input type="text" name="email" placeholder="Your Email" class="placeholder">
+		<input type="hidden" value="AtlassianDevToolsBlog" name="uri">
+		<input type="hidden" name="loc" value="en_US">
+		<p class="form-submit">
+		  <input type="submit" value="Subscribe" class="button">
+		</p>
+		</form>
+	</div>
+  
+  <p>Subscribe by RSS</p>
+  
+  <p id="subscribeRSS">
+  
+  	<a href="http://feeds.feedburner.com/AtlassianDevToolsBlog">Dev Tools RSS feed</a>
+  </p>
+               
+  <div class="widget" id="sidebarnav">
+  </div><!--/sidebarnav-->
+  <div class="widget" id="postslist">
+    <h3>Popular Posts</h3>
+            <ul>
+      <li><a href="http://blogs.atlassian.com/2014/02/git-whole-picture-jira/">Git the whole picture in JIRA</a></li><li><a href="http://blogs.atlassian.com/2014/02/stash-2-11-faster-feedback-better-diffs-commenting/">Stash 2.11: Faster feedback with better diffs and commenting</a></li><li><a href="http://blogs.atlassian.com/2014/04/stash-2-12-find-focus-improved-diffs-comments/">Stash 2.12: Find your focus with improved diffs and comments</a></li><li><a href="http://blogs.atlassian.com/2014/02/webinar-announcement-feature-development-lifecycle-git/">New webinar – Feature development lifecycle with Git</a></li><li><a href="http://blogs.atlassian.com/2014/03/webinar-git-essentials-see-live/">Webinar: Git Essentials –&nbsp;see it live!</a></li>    </ul>
+  </div><!--/postslist-->
+  <div class="widget" id="tagslist">
+    <h3>Popular Tags</h3>
+    <ul>
+      <li><a href="http://blogs.atlassian.com/tag/plugins/"><strong>plugins</strong> <span class="count">221</span></a><span class="percentage" style="width:100%;"></span></li><li><a href="http://blogs.atlassian.com/tag/wikis/"><strong>wikis</strong> <span class="count">127</span></a><span class="percentage" style="width:57.4660633484%;"></span></li><li><a href="http://blogs.atlassian.com/tag/agile/"><strong>Agile</strong> <span class="count">122</span></a><span class="percentage" style="width:55.2036199095%;"></span></li><li><a href="http://blogs.atlassian.com/tag/summit/"><strong>summit</strong> <span class="count">121</span></a><span class="percentage" style="width:54.7511312217%;"></span></li><li><a href="http://blogs.atlassian.com/tag/press-releases/"><strong>press releases</strong> <span class="count">109</span></a><span class="percentage" style="width:49.3212669683%;"></span></li><li><a href="http://blogs.atlassian.com/tag/plugin/"><strong>plugin</strong> <span class="count">108</span></a><span class="percentage" style="width:48.8687782805%;"></span></li><li><a href="http://blogs.atlassian.com/tag/git/"><strong>git</strong> <span class="count">94</span></a><span class="percentage" style="width:42.5339366516%;"></span></li><li><a href="http://blogs.atlassian.com/tag/atlassiantv/"><strong>atlassiantv</strong> <span class="count">94</span></a><span class="percentage" style="width:42.5339366516%;"></span></li><li><a href="http://blogs.atlassian.com/tag/add-on/"><strong>add-on</strong> <span class="count">88</span></a><span class="percentage" style="width:39.8190045249%;"></span></li><li><a href="http://blogs.atlassian.com/tag/development-tools/"><strong>development tools</strong> <span class="count">86</span></a><span class="percentage" style="width:38.9140271493%;"></span></li>    </ul>
+  </div><!--/tagslist-->
+  <div id="local-blogs-list">
+  <h3>Local Blogs</h3>
+  <ul>
+  <!--<li><a href="http://blogs.atlassian.es">Spain Blog</a></li>-->
+  <li><a href="http://blogs.atlassian.fr/">France Blog</a></li>
+  <li><a href="http://blogs.atlassian.de/">Germany Blog</a></li>
+  <li><a href="http://blogs.atlassian.jp/">Japan Blog</a></li>
+  <li><a href="http://china.blogs.atlassian.com/">China Blog</a></li>
+  </ul>
+  </div> 
+ 
+<ul>
+<li id="advanced_text-10" class="widget advanced_text"><script type="text/javascript"><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://ace.atlassian.com/b/':'http://ace.atlassian.com/b/');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=18&amp;target=_top");
+  document.write ("&amp;ace-targeting=" + ( $.cookie('ace-targeting') || '' ));
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><script type="text/javascript" src="http://ace.atlassian.com/b/?zoneid=18&target=_top&ace-targeting=&cb=74473817762&charset=UTF-8&loc=http%3A//blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/&referer=https%3A//www.google.com/"></script><a href="https://ace.atlassian.com/del/ck.php?oaparams=2__bannerid=292__zoneid=18__cb=092a09fd4b__oadest=https%3A%2F%2Fmarketplace.atlassian.com%3Fatl_source%3DBAC%26atl_medium%3DACE%26atl_campaign%3DACE-195" target="_top"><img src="https://ace.atlassian.com/img/32b6afd49309c0a796b46708a97de9c7.png" width="198" height="99" alt="" title="" border="0"></a><div id="beacon_092a09fd4b" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="https://ace.atlassian.com/del/lg.php?bannerid=292&campaignid=99&zoneid=18&loc=http%3A%2F%2Fblogs.atlassian.com%2F2012%2F04%2Fbamboofeature-branch-continuous-integration-hg-git%2F&referer=https%3A%2F%2Fwww.google.com%2F&cb=092a09fd4b" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+<noscript>&lt;a href='https://ace.atlassian.com/d/?n=a9c2baef&amp;amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_top'&gt;&lt;img src='https://ace.atlassian.com/c/?zoneid=18&amp;amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;amp;n=a9c2baef' border='0' alt='' /&gt;&lt;/a&gt;</noscript></li>
+
+<li id="advanced_text-11" class="widget advanced_text"><script type="text/javascript"><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://ace.atlassian.com/b/':'http://ace.atlassian.com/b/');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=19&amp;target=_top");
+document.write ("&amp;ace-targeting=" + ( $.cookie('ace-targeting') || '' ));
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><script type="text/javascript" src="http://ace.atlassian.com/b/?zoneid=19&target=_top&ace-targeting=&cb=57804493116&charset=UTF-8&loc=http%3A//blogs.atlassian.com/2012/04/bamboofeature-branch-continuous-integration-hg-git/&referer=https%3A//www.google.com/"></script><a href="https://ace.atlassian.com/del/ck.php?oaparams=2__bannerid=243__zoneid=19__cb=f471b9d1e7__oadest=https%3A%2F%2Faug.atlassian.com%2Fdisplay%2FAUG%2FHome%3Fatl_source%3Dwac%26atl_medium%3Dace%26atl_campaign%3DACE-164-AUGs" target="_top"><img src="https://ace.atlassian.com/img/29c338bf1d8b415df6ec607fede3ef8b.png" width="198" height="99" alt="" title="" border="0"></a><div id="beacon_f471b9d1e7" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="https://ace.atlassian.com/del/lg.php?bannerid=243&campaignid=82&zoneid=19&loc=http%3A%2F%2Fblogs.atlassian.com%2F2012%2F04%2Fbamboofeature-branch-continuous-integration-hg-git%2F&referer=https%3A%2F%2Fwww.google.com%2F&cb=f471b9d1e7" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+<noscript>&lt;a href='https://ace.atlassian.com/d/?n=a07b479a&amp;amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_top'&gt;&lt;img src='https://ace.atlassian.com/c/?zoneid=19&amp;amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;amp;n=a07b479a' border='0' alt='' /&gt;&lt;/a&gt;</noscript></li>
+
+</ul>
+
+
+<div id="twitterdata">
+    <div id="twitterusername">
+      <a href="http://twitter.com/AtlDevTools">@AtlDevTools</a>
+    </div><!--/twitterusername-->
+    <div> <span class="twitterwidget twitterwidget-title"> </span> <ul><li class="wpTwitterWidgetEmpty">No Tweets Available</li></ul></div>  </div><!--/twitterdata-->
+  <div class="widget" id="twitter" style="display: none;">
+      <p class="t-status"><span class="endquote"></span></p><div class="t-meta"><p>
+      <a href="http://twitter.com/AtlDevTools">@AtlDevTools</a>
+    <small></small></p></div></div><!--/twitter-->                                        
+    
+  
+</div><!--/sidebar-->    </div><!--/main-->
+
+    <!-- footer, from atlassian.com -->
+    <div id="footer">
+    <div class="box">
+    <div class="col">
+    <h4><a href="http://atlassian.com/software">Products</a></h4>
+    <ul>
+    <li><a href="http://atlassian.com/software/jira/overview" class="">JIRA</a></li>
+    <li><a href="http://atlassian.com/software/confluence/overview" class="">Confluence</a></li>
+    
+    <li><a href="http://atlassian.com/software/stash/overview" class="">Stash</a></li>
+    <li><a href="http://atlassian.com/software/sharepoint-connector/overview" class="">SharePoint Connector</a></li>
+    <li><a href="http://atlassian.com/software/bamboo/overview" class="">Bamboo</a></li>
+    <li><a href="http://atlassian.com/software/fisheye/overview" class="">FishEye</a></li>
+    <li><a href="http://atlassian.com/software/crucible/overview" class="">Crucible</a></li>
+    <li><a href="http://atlassian.com/software/bitbucket/overview" class="">Bitbucket</a></li>
+    <li><a href="http://atlassian.com/software" class="cta">All Products <span class="arrow">»</span></a></li>
+    </ul>
+    </div>
+    <div class="col">
+    <h4><a href="http://atlassian.com/resources">Resources</a></h4>
+    <ul>
+    <li><a href="http://atlassian.com/resources/support" class="">Get Help</a></li>
+    <li><a href="http://atlassian.com/resources/experts" class="">Experts</a></li>
+    <li><a href="http://atlassian.com/resources/training" class="">Training</a></li>
+    <li><a href="http://atlassian.com/licensing/purchase-licensing" class="">Purchasing FAQ</a></li>
+    <li><a href="http://atlassian.com/tv" class="">AtlassianTV</a></li>
+    <li><a href="http://confluence.atlassian.com/display/ALLDOC/Atlassian+Documentation" class="">Documentation</a></li>
+    <li><a href="http://plugins.atlassian.com/" class="">Add-ons</a></li>
+    <li><a href="http://atlassian.com/resources/alliances" class="">Alliances</a></li>
+    <li><a href="https://my.atlassian.com/purchase" class="">Get a Quote</a></li>
+    <li><a href="http://atlassian.com/download" class="">Download</a></li>
+    </ul>
+    </div>
+    <div class="col">
+    <h4><a href="http://atlassian.com/company">Company</a></h4>
+    <ul>
+    <li><a href="http://atlassian.com/company" class="">Overview</a></li>
+    <li><a href="http://atlassian.com/company/about" class="">About Us</a></li>
+    <li><a href="http://atlassian.com/company/careers" class="">Careers</a></li>
+    <li><a href="http://atlassian.com/company/customers" class="">Customers</a></li>
+    <li><a href="http://atlassian.com/company/press" class="">Press</a></li>
+    <li><a href="http://atlassian.com/company/contact" class="">Contact</a></li>
+    </ul>
+    </div>
+    <div class="col">
+    <h4><a href="http://atlassian.com/company/community">Community</a></h4>
+    <ul>
+    <li><a href="http://atlassian.com/company/community#events" class="">Events</a></li>
+    <li><a href="http://confluence.atlassian.com/display/AUG/Home" class="">Atlassian User Groups</a></li>
+    <li><a href="https://developer.atlassian.com/" class="">Atlassian Developers</a></li>
+    <li><a href="http://answers.atlassian.com/" class="">Answers Forum</a></li>
+    <li><a href="http://atlassian.com/local" class="">Local</a></li>
+    <li><a href="http://www.ptxstore.com/atlassian/" class="">T-Shirts</a></li>
+    </ul>
+    </div>
+    <div class="col last">
+    <h4>Connect</h4>
+    <ul>
+    <li>
+    <p>Subscribe to our <a href="http://atlassian.com/newsletter">newsletter</a>.</p>
+    <!-- Newsletter Form -->
+    <form method="post" id="subscribeForm" name="subscribeForm" onsubmit="pageTracker._trackEvent(&#39;Newsletter&#39;,&#39; Signup - footer&#39;);" action="http://cl.exct.net/subscribe.aspx?lid=234098">
+    <input type="hidden" value="http://www.atlassian.com/en/wac/newsletter/subscribe-confirmation" name="thx">
+    <input type="hidden" value="http://www.atlassian.com/en/wac/newsletter/error" name="err">
+    <input type="hidden" value="http://www.atlassian.com/en/wac/newsletter/unsubscribe-confirmation" name="usub">
+    <input type="hidden" value="sub_add_update" name="SubAction">
+    <input type="hidden" value="132689" name="MID">
+    <input type="text" name="Email Address" value="" id="newsletterSubscribe" class="placeholder" placeholder="Enter your email">
+    <input type="submit" value="Search" id="newsletterSubmit">
+    </form>
+    </li>
+    <p class="emailError">
+    Please enter a valid email address.
+    </p>
+    <!-- Social Links -->
+    <li id="linkFacebook"><a href="http://www.facebook.com/AtlassianSoftware">Facebook</a></li>
+    <li id="linkTwitter"><a href="http://twitter.com/atlassian">Twitter</a></li>
+    <li id="linkBlogs"><a href="http://blogs.atlassian.com/">Blogs</a></li>
+    <li id="linkFeeds"><a href="https://my.atlassian.com/feeds">Feed Center</a></li>
+    </ul>
+    </div>
+    <div id="copyright">
+    <ul>
+
+    <li>
+    Copyright © 2014 Atlassian. All Rights Reserved. 
+    &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
+    <a class="" href="http://atlassian.com/company/privacy">Privacy</a>
+    &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
+    <a class="" href="http://atlassian.com/company/privacy#trademark">Trademark</a>
+    </li>
+    </ul>
+    </div>
+    </div><!--/.box-->
+    </div>
+    <!-- end footer section -->
+
+  </div><!--/page-->
+
+
+  <script src="http://blogs.atlassian.com/wp-content/themes/atlassian/js/scripts.js?version=08272013" type="text/javascript"></script>
+
+  <!-- social media js -->
+  <script type="text/javascript">(function() { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = 'https://apis.google.com/js/plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();</script>
+  <script type="text/javascript" src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/widgets.js"></script>
+
+    	 
+    <!-- Google Analytics -->		
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script><script src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/ga.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var pageTracker = _gat._getTracker("UA-6032469-1");
+      pageTracker._setDomainName(".atlassian.com");
+      
+      var pageTracker_devrel = _gat._getTracker("UA-6032469-39");
+      pageTracker_devrel._setDomainName(".atlassian.com");
+
+      var pageTracker_global = _gat._getTracker("UA-6032469-23");
+      pageTracker_global._setDomainName(".atlassian.com");
+
+      //comment
+      function _p(l,n,s) {
+      if (!l || l=="") { return ""; } l += s;
+      var i = l.indexOf(n); if (i == -1) return "";
+      return l.substring((i+n.length),l.indexOf(s,i));
+      }
+
+      var r = _p(document.cookie,'_utma=',';'); // _utma holds returning visitor info
+
+      if(!pageTracker._getVisitorCustomVar(1) || !pageTracker_global._getVisitorCustomVar(1) || !r) {
+      //Retrieve campaign and referrer info from the _utmz cookie
+      var z = _p(document.cookie, '__utmz=', ';');
+      var a = _p(z,'utmgclid=','|'); // if gclid is there then this is an adwords click and source/medium are not set
+      var uS=(a ? 'google' : _p(z,'utmcsr=','|'))+'!'+(a ? 'cpc' : _p(z,'utmcmd=','|'))+'!'+_p(z,'utmctr=','|')+'!'
+      +_p(z,'utmcct=','|')+'!'+_p(z,'utmccn=','|');
+
+      //Replace URL-encoded 'spaces' with dashes
+      uS=uS.replace(/%20/g,'-');
+      //RegEx to retain only whitelisted characters
+      uS=uS.replace(/[^a-zA-Z0-9-~!*_.|]/g,'');
+      //Set string to specific length
+      uS=uS.substr(0,62);
+
+      pageTracker._setCustomVar(1,'ft',uS,1);
+      pageTracker_global._setCustomVar(1,'ft',uS,1);
+      }
+
+      pageTracker._trackPageview(blogCat);
+      pageTracker_global._trackPageview(blogCat);
+      pageTracker_devrel._trackPageview(blogCat);
+    </script>
+
+  <!-- Lightbox Plus v2.3 - 2011.08.11 - Message: 1-->
+<script type="text/javascript">
+jQuery(document).ready(function($){
+  $("a[rel*=lightbox]").colorbox({maxWidth:"800",opacity:0.8});
+  $(".lbpModal").colorbox({innerWidth:"50%",innerHeight:"50%",opacity:0.8,iframe:true});
+});
+</script>
+<script type="text/javascript" src="http://blogs.atlassian.com/wp-content/plugins/lightbox-plus/js/jquery.colorbox-min.js?ver=1.3.17.2"></script>
+<script type="text/javascript" src="http://blogs.atlassian.com/wp-content/plugins/prettify-code-syntax/javascripts/prettify.js?ver=3.8.1"></script>
+<script type="text/javascript" src="http://blogs.atlassian.com/wp-content/plugins/prettify-code-syntax/javascripts/load.js?ver=3.8.1"></script>
+
+	<script src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/e-201415.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:1.2.4',blog:'35772214',post:'20924'});
+	var load_cmc = function(){linktracker_init(35772214,20924,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="http://stats.wordpress.com/g.gif?host=blogs.atlassian.com&rand=0.49137377296574414&v=ext&j=1%3A1.2.4&blog=35772214&post=20924&ref=https%3A//www.google.com/" alt="">
+<style type="text/css">img#wpstats{display:none}</style>
+<script src="http://platform.twitter.com/oct.js" type="text/javascript"></script>
+<script type="text/javascript">
+twttr.conversion.trackPid('l48rc');
+</script>
+<noscript>
+&lt;img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l48rc&amp;p_id=Twitter" /&gt;
+</noscript>
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" style="padding-bottom: 20px; padding-right: 0px; display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><div id="cboxNext" style="float: left;"></div><div id="cboxPrevious" style="float: left;"></div><div id="cboxSlideshow" style="float: left;"></div><div id="cboxClose" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><iframe name="oauth2relay357207855" id="oauth2relay357207855" src="./Making Feature Branches Effective with Continuous Integration - Atlassian Blogs_files/postmessageRelay.htm" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0124)https://weblogs.java.net/blog/johnsmart/archive/2011/08/08/seven-phases-introducing-continuous-integration-your-organization -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>The Seven Phases of Introducing Continuous Integration into Your Organization | Java.net</title>
+  
+<link rel="shortcut icon" href="https://weblogs.java.net/sites/default/files/java_adaptive_favicon_2.png" type="image/x-icon">
+<meta name="description" content="Java.net is the source for Java Technology Collaboration.">
+<meta name="keywords" content="java,java.net,java technology collaboration,java collaboration,javafx,glassfiish,embedded,netbeans,Blogs">
+<link rel="canonical" href="http://weblogs.java.net/blog/johnsmart/archive/2011/08/08/seven-phases-introducing-continuous-integration-your-organization">
+<meta name="revisit-after" content="1 day">
+  <link type="text/css" rel="stylesheet" media="all" href="https://weblogs.java.net/sites/default/files/css/css_fbc12ddb6e90d157bb48353dae071864.css">
+  <style type="text/css">#container{width:100%;}.two-sidebars .content-inner{margin-left:240px; margin-right:240px;}.sidebar-first .content-inner{margin-left:240px; margin-right:0;}.sidebar-last .content-inner{margin-right:240px; margin-left:0;}#sidebar-first{width:240px;margin-left:-100%;}#sidebar-last{width:240px;margin-left:-240px;}</style>    <!--[if lte IE 6]><style type="text/css" media="all">@import "/sites/all/themes/java_adaptive/css/ie6.css";</style><![endif]-->
+    <!--[if IE 7]><style type="text/css" media="all">@import "/sites/all/themes/java_adaptive/css/ie7.css";</style><![endif]-->
+    <!--[if IE 8]><style type="text/css" media="all">@import "/sites/all/themes/java_adaptive/css/ie8.css";</style><![endif]-->
+
+</head>
+<body class="not-front not-logged-in article-type-blog two-sidebars section-blog page-node-830849 chrome chrome33 win desktop lightbox-processed jsenabled">
+  <div id="container">
+
+    <div id="skip-nav" class="element-invisible">
+      <!-- To adjust the display of the skip link see the Advanced theme settings (General settings), and never use display:none! -->
+      <a href="https://weblogs.java.net/blog/johnsmart/archive/2011/08/08/seven-phases-introducing-continuous-integration-your-organization#main-content">Skip to main content</a>
+    </div>
+
+        
+    
+          <div id="leaderboard"><div id="block-block-31" class="block">
+  <div class="block-inner">
+
+    
+    <div class="content"><a href="https://java.net/people/login?original_uri=http://weblogs.java.net/blog/johnsmart/archive/2011/08/08/seven-phases-introducing-continuous-integration-your-organization">Login</a><a href="https://java.net/people/new">Join Now</a><a href="https://java.net/projects/help/pages/Home" class="last">Help</a></div>
+
+    
+  </div>
+</div> <!-- /block -->
+</div> <!-- /leaderboard -->
+    
+    <div id="header" class="clearfix">
+
+              <div id="branding">
+
+                                    <div class="logo-site-name"><strong>
+                <span id="logo"><a href="https://weblogs.java.net/" rel="home"><img src="https://weblogs.java.net/sites/all/themes/java_adaptive/images/logo.png" alt="Java.net logo" title="Home page"></a></span>                              </strong></div> <!-- /logo/site name -->
+                      
+                      <div id="site-slogan">The Source for Java Technology Collaboration</div> <!-- /slogan -->
+          
+        </div> <!-- /branding -->
+      
+              <div id="search-box" class="hide-label">
+        <!-- default search disabled  -->
+          <form action="https://weblogs.java.net/search/node" method="post" id="search-theme-form">
+            <div id="search">
+            <!-- Filter search by content type -->
+              <input type="hidden" value="search_form" id="edit-search-form" name="form_id">
+              <div style="margin-left: -10px;" class="checks">
+                <span><input type="checkbox" name="type[forum]" id="edit-forums" value="forum"> <span class="label">Forums</span></span>
+                <span><input type="checkbox" name="type[blog]" id="edit-blogs" value="blog"> <span class="label">Blogs</span></span>
+                <span><input type="checkbox" name="projects" id="edit-projects" value="project"> <span class="label">Projects</span></span>
+                <span><input type="checkbox" name="people" id="edit-people" value="people"> <span class="label">People</span></span>
+              </div>
+            <!-- Search text field and submit -->
+              <input type="text" class="form-text" id="edit-search-theme-form-1" value="Search All" size="15" onclick="this.value = &#39;&#39;" onblur="if (!this.value) this.value = &#39;&#39;" name="keys">
+              <input type="submit" value="" name="op" title="Search" class="form-submit" alt="Search">
+              <!-- <input type="hidden" value="4ee263a3988dda8168082a9265a84798" name="form_token" /> -->
+            </div>
+          </form>
+        </div> <!-- /search box -->
+      
+      
+    </div> <!-- /header -->
+
+    
+          <div id="primary" class="nav">
+        <div id="primary-inner">
+        <h2 class="element-invisible">Main Menu</h2>
+        <ul class="primary-links clearfix"><li class="menu-8209"><a href="https://weblogs.java.net/" title="Return to the java.net homepage">Home</a></li>
+<li class="menu-8210"><a href="https://weblogs.java.net/projects" title="View the projects hosted on java.net">Projects</a></li>
+<li class="menu-8211"><a href="https://weblogs.java.net/forums" title="Participate in the java.net forums">Forums</a></li>
+<li class="menu-8240"><a href="https://java.net/people" title="View all the people involved with java.net">People</a></li>
+<li class="menu-8241"><a href="https://weblogs.java.net/jugs/java-user-groups" title="Get involved in your local Java User Group (JUG)">Java User Groups</a></li>
+<li class="menu-19124"><a href="https://weblogs.java.net/community/jcp" title="Get involved with the Java Community Process!">JCP</a></li>
+</ul>
+        </div>
+      </div> <!-- /primary link menu -->
+        
+    
+    
+    
+    
+    <div id="columns"><div class="columns-inner clearfix">
+
+      <div id="content-column"><div class="content-inner">
+
+        
+                  <div id="content-top"><div id="block-block-20" class="block">
+  <div class="block-inner">
+
+    
+    <div class="content"><div id="blog-author-top"><table><tbody><tr><td><div id="blog-author-body"><img align="left" src="https://weblogs.java.net/images/people/john_ferguson_smart.jpg" border="0"></div></td><td valign="top"><h2><a href="https://weblogs.java.net/blogs/johnsmart">John Ferguson Smart</a></h2><div id="blog-nav-links"><a href="https://weblogs.java.net/blog/johnsmart/archive/2011/06/27/completing-circle-automated-web-tests-team-communication-tool">Completing the circle - Automated web tests as a team communication tool</a> | <a href="https://weblogs.java.net/blogs/johnsmart">Main</a> | <a href="https://weblogs.java.net/blog/johnsmart/archive/2011/08/16/java-tddbdd-and-atdd-training-sydney-and-wellington">Java TDD/BDD and ATDD training in Sydney and Wellington</a></div></td></tr></tbody></table><div id="blog-author-feedlink2"><a href="https://weblogs.java.net/blog/283887/feed"><img src="https://weblogs.java.net/misc/feed.png" border="0"></a></div></div><div style="clear:both"></div><div style="border-bottom: 4px #eee solid;">&nbsp;</div></div>
+
+    
+  </div>
+</div> <!-- /block -->
+</div> <!-- /content-top -->
+        
+        <div id="main-content">
+
+                      <div id="main-content-header">
+              <h1 id="page-title">The Seven Phases of Introducing Continuous Integration into Your Organization</h1>
+                          </div>
+          
+          
+          <div id="content">
+          <div class="article">
+
+    <div id="blog-submitted">Posted by <a href="https://weblogs.java.net/blog/johnsmart">johnsmart</a> on August 8, 2011 at 7:22 PM PDT</div> 
+  
+    <p><em>(From <a href="http://www.wakaleo.com/books/jenkins-the-definitive-guide" target="_blank">'Jenkins: The Definitive Guide'</a>)</em></p>
+<div style="float:right; padding:4px;"><img width="200px" alt="" src="http://www.wakaleo.com/images/jenkins-cover-small.png"></div>
+<p>Continuous Integration is not an all-or-nothing affair. In fact, introducing CI into an organization takes you on a path that progresses through several distinct phases. Each of these phases involves incremental improvements to the technical infrastructure as well as, perhaps more importantly, improvements in the practices and culture of the development team itself. In the following paragraphs, I have tried to paint an approximate picture of each phase.&nbsp;</p>
+<h2>Phase 1—No Build Server</h2>
+<p>Initially, the team has no central build server of any kind. Software is built manually on a   developer’s machine, though it may use an Ant script or similar to do   so. Source code may be stored in a central source code repository, but   developers do not necessarily commit their changes on a regular basis.   Some time before a release is scheduled, a developer manually integrates   the changes, a process which is generally associated with pain and   suffering.&nbsp;</p>
+<h2>Phase 2—Nightly Builds</h2>
+<p>In this phase, the team has a build server, and automated builds are scheduled on a regular (typically   nightly) basis. This build simply compiles the code, as there are no   reliable or repeatable unit tests. Indeed, automated tests, if they are   written, are not a mandatory part of the build process, and may well not   run correctly at all. However developers now commit their changes   regularly, at least at the end of every day. If a developer commits code   changes that conflict with another developer’s work, the build server   alerts the team via email the following morning. Nevertheless, the team   still tends to use the build server for information purposes only—they   feel little obligation to fix a broken build immediately, and builds may   stay broken on the build server for some time.&nbsp;</p>
+<h2>Phase 3—Nightly Builds and Basic Automated Tests</h2>
+<p>The team is now starting to take Continuous Integration and   automated testing more seriously. The build server is configured to kick   off a build whenever new code is committed to the version control   system, and team members are able to easily see what changes in the   source code triggered a particular build, and what issues these changes   address. In addition, the build script compiles the application and runs   a set of automated unit and/or integration tests. In addition to email,   the build server also alerts team members of integration issues using   more proactive channels such as Instant Messaging. Broken builds are now   generally fixed quickly.</p>
+<h2>Phase 4—Enter the Metrics</h2>
+<p>Automated code quality and code coverage metrics are now run to help   evaluate the quality of the code base and (to some extent, at least) the   relevance and effectiveness of the tests. The code quality build also   automatically generates API documentation for the application. All this   helps teams keep the quality of the code base high, alerting team   members if good testing practices are slipping. The team has also set up   a “build radiator,” a dashboard view of the project status that is   displayed on a prominent screen visible to all team members.&nbsp;</p>
+<h2>Phase 5—Getting More Serious About Testing</h2>
+<p>The benefits of Continuous Integration are closely related to   solid testing practices. Now, practices like Test-Driven Development are   more widely practiced, resulting in a growing confidence in the results   of the automated builds. The application is no longer simply compiled   and tested, but if the tests pass, it is automatically deployed to an   application server for more comprehensive end-to-end tests and   performance tests.&nbsp;</p>
+<h2>Phase 6—Automated Acceptance Tests and More Automated Deployment</h2>
+<p>Acceptance-Test Driven Development is practiced, guiding development efforts and providing   high-level reporting on the state of the project. These automated tests   use Behavior-Driven Development and Acceptance-Test Driven Development   tools to act as communication and documentation tools and documentation   as much as testing tools, publishing reports on test results in business   terms that non-developers can understand. Since these high-level tests   are automated at an early stage in the development process, they also   provide a clear idea of what features have been implemented, and which   remain to be done. The application is automatically deployed into test   environments for testing by the QA team either as changes are committed,   or on a nightly basis; a version can be deployed (or “promoted”) to UAT   and possibly production environments using a manually-triggered build   when testers consider it ready. The team is also capable of using the   build server to back out a release, rolling back to a previous release,   if something goes horribly wrong.</p>
+<h2>Phase 7—Continuous Deployment</h2>
+<p>Confidence in the automated unit, integration and acceptance tests   is now such that teams can apply the automated deployment techniques   developed in the previous phase to push out new changes directly into   production.</p>
+<p>The progression between levels here is of course somewhat   approximate, and may not always match real-world situations. For   example, you may well introduce automated web tests before integrating   code quality and code coverage reporting. However, it should give a   general idea of how implementing a Continuous Integration strategy in a   real world organization generally works.</p>
+    <div class="taxonomy"><span class="label" style="font-weight: bold; margin-right: 0.5em; float: left;">Related Topics &gt;&gt;</span>
+        <ul class="links inline"><li class="taxonomy_term_46"><a href="https://weblogs.java.net/feed-category/blogs" rel="tag" title="">Blogs</a></li>
+</ul>
+    </div>
+      <div class="node-links"><span class="label" style="font-weight: bold; margin-right: 0.5em; float: left;">Blog Links &gt;&gt;</span>
+  <ul class="links inline"><li class="comment_forbidden"><span><a href="https://weblogs.java.net/user/login?destination=comment%2Freply%2F830849%23comment-form">Login</a> or <a href="https://weblogs.java.net/user/register?destination=comment%2Freply%2F830849%23comment-form">register</a> to post comments</span></li>
+<li class="print_html"><a href="https://weblogs.java.net/print/830849" title="Display a printer-friendly version of this page." class="print-page" rel="nofollow">Printer-friendly version</a></li>
+<li class="blog_usernames_blog"><a href="https://weblogs.java.net/blog/johnsmart" title="Read johnsmart&#39;s latest blog entries.">johnsmart's blog</a></li>
+<li class="statistics_counter"><span>7451 reads</span></li>
+</ul>
+  </div>
+  
+</div> <!-- /article -->
+          </div>
+
+        </div> <!-- /main-content -->
+
+          <!--  Begin SiteCatalyst code  -->
+  <script type="text/javascript" defer="" async="" src="https://weblogs.java.net/blog/johnsmart/archive/2011/08/08/piwik.js"></script><script language="JavaScript" src="https://weblogs.java.net/images/s_code_remote.js"></script><script type="text/javascript" src="./The Seven Phases of Introducing Continuous Integration into Your Organization   Java.net_files/metrics_group1.js"></script>
+  <!--  End SiteCatalyst code  -->
+      </div></div> <!-- /content-column -->
+
+              <div id="sidebar-first" class="sidebar"><div id="block-menu-menu-get-involved" class="block">
+  <div class="block-inner">
+
+          <h2>Get Involved</h2>
+    
+    <div class="content"><ul class="menu">
+ <li class="leaf first"><a href="https://weblogs.java.net/about-javanet" title="About java.net">About Java.net</a></li>
+<li class="leaf"><a href="http://java.net/projects/adoptajsr/pages/Home" title="Adopt">Adopt a JSR</a></li>
+<li class="leaf"><a href="https://weblogs.java.net/create-project" title="Create a Project">Create a Project</a></li>
+<li class="leaf last"><a href="https://weblogs.java.net/javanet-linking-instructions" title="Link an offiste project">Link an Offsite Project</a></li>
+ </ul>
+</div>
+
+    
+  </div>
+</div> <!-- /block -->
+<div id="block-menu-menu-get-informed" class="block">
+  <div class="block-inner">
+
+          <h2>Get Informed</h2>
+    
+    <div class="content"><ul class="menu">
+ <li class="leaf first"><a href="https://weblogs.java.net/articles" title="">Articles</a></li>
+<li class="leaf"><a href="https://weblogs.java.net/blogfront" title="">Blogs</a></li>
+<li class="leaf"><a href="https://weblogs.java.net/events" title="">Events</a></li>
+<li class="leaf"><a href="http://www.oracle.com/technetwork/java/javamagazine/index.html?origref=http://java.net/projects/java-magazine" title="Subscribe to Java Magazine" target="_blank">Java Magazine</a></li>
+<li class="leaf last"><a href="http://education.oracle.com/pls/web_prod-plq-dad/ou_product_category.getFamilyPage?p_family_id=48&intcmp=WWOU11042412MPP012C010" title="Java Training and Certification at Oracle University" target="_blank">Oracle University</a></li>
+ </ul>
+</div>
+
+    
+  </div>
+</div> <!-- /block -->
+</div> <!-- /sidebar-first -->
+      
+              <div id="sidebar-last" class="sidebar"><div id="block-block-22" class="block">
+  <div class="block-inner">
+
+          <h2>Recent Entries</h2>
+    
+    <div class="content"><a href="https://weblogs.java.net/blog/johnsmart/archive/2014/03/16/automated-web-testing-webdriver-workshop-now-running-over-two-days">Automated Web Testing with WebDriver workshop - now running over two days!</a><br><br><a href="https://weblogs.java.net/blog/johnsmart/archive/2014/01/27/three-amigos-special-deal-advanced-agile-requirements-practices-workshop-whole-team">The Three Amigos Special Deal - Advanced Agile Requirements Practices Workshop for the whole team!</a><br><br><a href="https://weblogs.java.net/blog/johnsmart/archive/2014/01/06/hone-your-bdd-skills-2014">Hone up your BDD skills in 2014!</a><br><br></div>
+
+    
+  </div>
+</div> <!-- /block -->
+<div id="block-block-19" class="block">
+  <div class="block-inner">
+
+          <h2>Archives</h2>
+    
+    <div class="content"><a href="https://weblogs.java.net/blogarchive/johnsmart/201403">March 2014</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201401">January 2014</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201308">August 2013</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201304">April 2013</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201303">March 2013</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201301">January 2013</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201210">October 2012</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201209">September 2012</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201206">June 2012</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201203">March 2012</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201202">February 2012</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201112">December 2011</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201111">November 2011</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201110">October 2011</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201109">September 2011</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201108">August 2011</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201106">June 2011</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201105">May 2011</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201104">April 2011</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201103">March 2011</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201102">February 2011</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201101">January 2011</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201012">December 2010</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201011">November 2010</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201010">October 2010</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201009">September 2010</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201008">August 2010</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201007">July 2010</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201006">June 2010</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201005">May 2010</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201004">April 2010</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201003">March 2010</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201002">February 2010</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/201001">January 2010</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200912">December 2009</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200911">November 2009</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200910">October 2009</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200909">September 2009</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200908">August 2009</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200907">July 2009</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200906">June 2009</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200905">May 2009</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200904">April 2009</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200903">March 2009</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200902">February 2009</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200901">January 2009</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200812">December 2008</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200811">November 2008</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200810">October 2008</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200809">September 2008</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200808">August 2008</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200807">July 2008</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200806">June 2008</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200805">May 2008</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200804">April 2008</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200803">March 2008</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200802">February 2008</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200801">January 2008</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200710">October 2007</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200707">July 2007</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200706">June 2007</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200705">May 2007</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200704">April 2007</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200703">March 2007</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200702">February 2007</a><br><a href="https://weblogs.java.net/blogarchive/johnsmart/200611">November 2006</a><br></div>
+
+    
+  </div>
+</div> <!-- /block -->
+</div> <!-- /sidebar-last -->
+      
+    </div></div> <!-- /columns -->
+
+          <div id="tertiary-content"><div id="block-menu-menu-footer-menu" class="block">
+  <div class="block-inner">
+
+    
+    <div class="content"><ul class="menu">
+ <li class="leaf first"><a href="https://weblogs.java.net/contact" title="">Feedback</a></li>
+<li class="leaf"><a href="https://weblogs.java.net/javanet-faq" title="">FAQ</a></li>
+<li class="leaf"><a href="https://weblogs.java.net/javanet-web-site-terms-use" title="">Terms of Use</a></li>
+<li class="leaf"><a href="http://www.oracle.com/us/legal/privacy/index.html" title="" target="_blank">Privacy</a></li>
+<li class="leaf last"><a href="http://www.oracle.com/us/legal/third-party-trademarks/index.html" title="" target="_blank">Trademarks</a></li>
+ </ul>
+</div>
+
+    
+  </div>
+</div> <!-- /block -->
+</div> <!-- /tertiary-content -->
+    
+          <div id="footer">
+
+                  <div id="footer-region"><div id="block-block-27" class="block">
+  <div class="block-inner">
+
+    
+    <div class="content"><div style="width: 59%; float: left;">
+<p>Your use of this web site or any of its content or software indicates your agreement to be bound by these <a href="https://weblogs.java.net/javanet-web-site-terms-use">Terms of Participation</a>.</p>
+<p>Copyright © 2014, Oracle and/or its affiliates. All rights reserved. Oracle and Java are registered trademarks of Oracle and/or its affiliates. Other names may be trademarks of their respective owners.</p>
+</div>
+
+<div style="width: 39%; float: left; text-align: right;">
+<div style="float: right;"><a href="http://www.oracle.com/" target="_blank"><img src="https://weblogs.java.net/sites/all/themes/java_adaptive/images/oracle.png"></a><a href="http://kenai.com/" target="_blank"><img src="https://weblogs.java.net/sites/all/themes/java_adaptive/images/kenai.png"></a><a href="http://www.cognisync.com/" target="_blank"><img src="https://weblogs.java.net/sites/all/themes/java_adaptive/images/cognisync.png"></a><br>
+<div class="powered-by">Powered by Oracle, Project Kenai and Cognisync</div></div>
+</div></div>
+
+    
+  </div>
+</div> <!-- /block -->
+</div> <!-- /footer-region -->
+        
+        
+        
+      </div> <!-- /footer -->
+    
+
+  </div> <!-- /container -->
+  <script type="text/javascript" src="https://weblogs.java.net/sites/default/files/js/js_accb1fed6d81b0a89babe4b129fe2cf1.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "datetweaks": { "use_dropdown": true }, "fivestar": { "titleUser": "Your rating: ", "titleAverage": "Average: ", "feedbackSavingVote": "Saving your vote...", "feedbackVoteSaved": "Your vote has been saved.", "feedbackDeletingVote": "Deleting your vote...", "feedbackVoteDeleted": "Your vote has been deleted." }, "lightbox2": { "rtl": 0, "file_path": "/(\\w\\w/)sites/default/files", "default_image": "/sites/all/modules/lightbox2/images/brokenimage.jpg", "border_size": 0, "font_color": "000", "box_color": "fff", "top_position": "", "overlay_opacity": "0.8", "overlay_color": "000", "disable_close_click": 1, "resize_sequence": 0, "resize_speed": 400, "fade_in_speed": 400, "slide_down_speed": 600, "use_alt_layout": 1, "disable_resize": 0, "disable_zoom": 0, "force_show_nav": 0, "show_caption": 1, "loop_items": 0, "node_link_text": "View Image Details", "node_link_target": 0, "image_count": "Image !current of !total", "video_count": "Video !current of !total", "page_count": "Page !current of !total", "lite_press_x_close": "press \x3ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\x3e\x3ckbd\x3ex\x3c/kbd\x3e\x3c/a\x3e to close", "download_link_text": "", "enable_login": false, "enable_contact": false, "keys_close": "c x 27", "keys_previous": "p 37", "keys_next": "n 39", "keys_zoom": "z", "keys_play_pause": "32", "display_image_size": "original", "image_node_sizes": "()", "trigger_lightbox_classes": "", "trigger_lightbox_group_classes": "", "trigger_slideshow_classes": "", "trigger_lightframe_classes": "", "trigger_lightframe_group_classes": "", "custom_class_handler": 0, "custom_trigger_classes": "", "disable_for_gallery_lists": true, "disable_for_acidfree_gallery_lists": true, "enable_acidfree_videos": true, "slideshow_interval": 5000, "slideshow_automatic_start": true, "slideshow_automatic_exit": true, "show_play_pause": true, "pause_on_next_click": false, "pause_on_previous_click": true, "loop_slides": false, "iframe_width": 900, "iframe_height": 700, "iframe_border": 1, "enable_video": 0 }, "prettify": { "linenums": false, "match": ".content", "nocode": "no-code", "custom": [  ], "markup": { "code": true, "pre": true, "precode": true } }, "extlink": { "extTarget": "_blank", "extClass": 0, "extSubdomains": 1, "extExclude": "", "extInclude": "", "extAlert": 0, "extAlertText": "This link will take you to an external web site. We are not responsible for their content.", "mailtoClass": 0 }, "custom_search": { "form_target": "_self", "solr": 0 } });
+//--><!]]>
+</script>
+    <!--  Begin SiteCatalyst code  -->
+<script language="JavaScript">
+<!--
+var s_channel="other";
+//--></script>
+<!--  End SiteCatalyst code  -->
+  <script type="text/javascript" src="https://weblogs.java.net/sites/default/files/js/js_73073c3e310796ef9742b1e589007f66.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _paq = _paq || [];(function(){var u=(("https:" == document.location.protocol) ? "" : "http://piwik.cognihosting.com/");_paq.push(["setSiteId", "1"]);_paq.push(["setTrackerUrl", u+"piwik.php"]);_paq.push(["setDoNotTrack", 1]);_paq.push(["setCookieDomain", ".java.net"]);_paq.push(["trackPageView"]);_paq.push(["enableLinkTracking"]);var d=document,g=d.createElement("script"),s=d.getElementsByTagName("script")[0];g.type="text/javascript";g.defer=true;g.async=true;g.src=u+"piwik.js";s.parentNode.insertBefore(g,s);})();
+//--><!]]>
+</script>
+
+
+<div id="lightbox2-overlay" style="display: none;"></div>      <div id="lightbox" style="display: none;" class="lightbox2-alt-layout">        <div id="outerImageContainer" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"><div id="modalContainer" style="display: none; padding: 0px;"></div><div id="frameContainer" style="display: none; padding: 0px;"></div><div id="imageContainer" style="display: none; padding: 0px;"><img id="lightboxImage" alt=""></div><div id="loading"><a href="https://weblogs.java.net/blog/johnsmart/archive/2011/08/08/seven-phases-introducing-continuous-integration-your-organization#" id="loadingLink"></a></div><div id="bottomNav"><a id="bottomNavClose" title="Close" href="https://weblogs.java.net/blog/johnsmart/archive/2011/08/08/seven-phases-introducing-continuous-integration-your-organization#" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"></a><a id="bottomNavZoom" href="https://weblogs.java.net/blog/johnsmart/archive/2011/08/08/seven-phases-introducing-continuous-integration-your-organization#" style="bottom: 0px; right: 0px;"></a><a id="bottomNavZoomOut" href="https://weblogs.java.net/blog/johnsmart/archive/2011/08/08/seven-phases-introducing-continuous-integration-your-organization#" style="bottom: 0px; right: 0px;"></a></div></div>        <div id="imageDataContainer" class="clearfix" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">          <div id="imageData"><div id="hoverNav"><a id="prevLink" title="Previous" href="https://weblogs.java.net/blog/johnsmart/archive/2011/08/08/seven-phases-introducing-continuous-integration-your-organization#" style="padding-top: 0px;"></a><a id="nextLink" title="Next" href="https://weblogs.java.net/blog/johnsmart/archive/2011/08/08/seven-phases-introducing-continuous-integration-your-organization#" style="padding-top: 0px;"></a></div><div id="imageDetails"><span id="caption"></span><span id="numberDisplay"></span><a id="lightshowPause" title="Pause Slideshow" href="https://weblogs.java.net/blog/johnsmart/archive/2011/08/08/seven-phases-introducing-continuous-integration-your-organization#" style="display: none;"></a><a id="lightshowPlay" title="Play Slideshow" href="https://weblogs.java.net/blog/johnsmart/archive/2011/08/08/seven-phases-introducing-continuous-integration-your-organization#" style="display: none;"></a></div></div>        </div>      </div></body></html>
