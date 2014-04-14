@@ -1,0 +1,14 @@
+versi perubahan kode program -> versi kode program yang sudah berubah
+
+Revisi 3.2.1 Konsep VCS -> Penyimpanan versi modul ke repository pusat
+
+Bingung 1: Pengujian integrasi itu integrasi unit atau integrasi modul atau 22nya?
+Jawaban 1: Tergantung sudut pandang, kalau acuannya modul berarti integrasi modul, kalau acuannya unit berarti dapat juga integrasi unit.
+------------------------------------------------------------------------------------------
+Bingung 2: Pengujian integrasi bottom-up membutuhkan driver? pengujian unit manual juga membutuhkan driver?
+Jawaban 2: Driver itu untuk memanggil kode pengujian. Pengujian modul tingkat bawah (bottom-up) juga perlu dieksekusi, jadi perlu driver. Apakah top-down juga perlu driver? Nah ini saya juga blm tau, tapi menurut saya sih tetep perlu driver, hanya saja top-down perlu stubs. gitu doang.
+Tetapi, khusus untuk yang menggunakan tool automated testing, tim tidak perlu membuat driver lagi, karena pengujian akan dieksekusi oleh tool tsb secara otomatis.
+------------------------------------------------------------------------------------------
+Bingung 3: Pengujian integrasi pada modul-modul tingkat bawah (belum ada modul tingkat atas) itu pengujian integrasinya bagaimana?
+Jawaban 3: Ya uji saja dari semua modul tsb. Kalau ada 3 modul yang blm ada dependensi kemudian digabungkan, uji keseluruhan modul tsb. Penggabungan modul yang belum memiliki dependensi disebut cluster. Jadi, tetap uji detil dari fungsi tiap-tiap modul.
+
