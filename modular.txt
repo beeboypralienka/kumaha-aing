@@ -1,0 +1,14 @@
+Modul aplikasi medrecapp
+
+Kenapa perlu membagi pekerjaan berdasarkan modul (modular)?
+Untuk mengisolasi/memisahkan satu area fungsional dari yang lain, sehingga perubahan yang dilakukan tidak mengganggu operasi dari area fungsional yang lain.
+
+Meskipun pengembang cenderung modularize dan membagi pekerjaan mereka menjadi potongan-potongan dikelola, sering kali sulit untuk memiliki granularity seperti modifikasi yang masing-masing siap dalam beberapa jam.
+
+Kode untuk setiap area fungsional harus ditempatkan ke dalam paket terpisah.
+
+area fungsional yang telah diidentifikasi dan dipisahkan satu sama lain, memungkinkan terdapat dependensi dengan area fungsional yang lain. Oleh karena itu perlu integrasi (?)
+
+area fungsional umumnya dapat diidentifikasi pada awal project, tetapi akan terus muncul dan berkembang selama pengembangan.
+
+integrasi = Tindakan menggabungkan artefak source-code terpisah untuk menentukan bagaimana mereka bekerja secara keseluruhan 

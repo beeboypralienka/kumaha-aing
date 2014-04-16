@@ -1,0 +1,7 @@
+Membagi pekerjaan berdasarkan modul (satu area fungsional),
+agar tidak mengganggu area fungsional lain yang dikerjakan developer lain.
+Pembagian modul dilakukan tim berdasarkan package aplikasi medrecapp.
+[GAMBAR]
+Pada package aplikasi medrecapp terdapat dependensi terhadap package yang lain. Pada gambar 'tersebut' package medrecapp terdiri dari 9 package yaitu blablabla. Setiap dependensi digambarkan pada modul tingkat atas terhadap modul tingkat bawah.
+Untuk menghindari pembuatan stubs, tim akan menggunakan strategi bottom-up pada integrasi modul.
+Sebagai contoh pada sub bab berikutnya, akan 'diumpamakan' ketiga developer akan mengerjakan 3 modul. Fachrul mengerjakan modul jaminan, Herna mengerjakan modul pasien, dan Yuanita mengerjakan modul staf.
