@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://gist.github.com/toopay/7086599 -->
+<html class=" "><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# githubog: http://ogp.me/ns/fb/githubog#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Composer Explained (PHP Indonesia EMagz Draft)</title>
+
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="pcNsLA9faz1zAx2txWL8h7tnOI+7QYOLNmtde/THn6U=" name="csrf-token">
+  <meta name="viewport" content="width=960">
+
+
+    <link type="text/plain" rel="author" href="https://github.com/humans.txt">
+    <meta content="gist" name="octolytics-app-id"><meta content="collector.githubapp.com" name="octolytics-host"><meta content="collector-cdn.github.com" name="octolytics-script-host"><meta content="78B17579:0AB7:583517A:535193F7" name="octolytics-dimension-request_id">
+
+  <link href="https://gist-assets.github.com/assets/application-f1a3a76206aab44c75ae449978eab8c4.css" media="screen, print" rel="stylesheet">
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://gist-assets.github.com/assets/application-74a9c7b769fab256fbffb0639b15c275.js"></script>
+
+      <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@github">
+  <meta property="og:title" content="toopay/composer.md">
+  <meta property="og:type" content="githubog:gist">
+  <meta property="og:url" content="https://gist.github.com//toopay/7086599">
+  <meta property="og:image" content="https://avatars2.githubusercontent.com/u/534245?s=140">
+  <meta property="og:site_name" content="GitHub Gists">
+  <meta property="og:description" content="Composer Explained (PHP Indonesia EMagz Draft) - Gist is a simple way to share snippets of text and code with others.">
+  <meta name="description" content="Composer Explained (PHP Indonesia EMagz Draft) - Gist is a simple way to share snippets of text and code with others.">
+
+
+<script src="https://collector-cdn.github.com/assets/api.js"></script></head>
+
+<body class=" " data-plan="">
+
+  <div id="wrapper">
+    
+
+    <div id="header" class="header header-logged-out">
+      <div class="container">
+        <a class="header-logo-wordmark" href="https://gist.github.com/">
+          <span class="octicon octicon-logo-github"></span>
+          <span class="octicon-logo octicon-logo-gist"></span>
+        </a>
+
+        <div class="header-actions">
+          <a class="button primary" href="https://github.com/signup?return_to=gist">Sign up for a GitHub account</a>
+          <a class="button" href="https://gist.github.com/login?return_to=/toopay/7086599" data-skip-pjax="">Sign in</a>
+        </div>
+        <div class="divider-vertical"></div>
+        <div class="topsearch">
+  <form id="top_search_form" action="https://gist.github.com/search" data-pjax-remote="push" accept-charset="UTF-8">
+    <div class="search">
+      <input type="text" class="search js-search js-navigation-enable " name="q" placeholder="Search…" data-hotkey="/" autocomplete="off" autocorrect="off" value="">
+
+    </div>
+    <div class="divider-vertical"></div>
+  </form>
+  <ul class="top-nav">
+    <li class="explore"><a href="https://gist.github.com/discover/">Discover Gists</a></li>
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <div class="site-content" id="js-pjax-container" data-pjax-container="">
+      <div class=" site-container js-site-container" data-url="/toopay/7086599">
+  
+  
+
+<meta content="true" name="octolytics-dimension-public"><meta content="7086599" name="octolytics-dimension-gist_id"><meta content="7086599" name="octolytics-dimension-gist_name"><meta content="false" name="octolytics-dimension-anonymous"><meta content="534245" name="octolytics-dimension-owner_id"><meta content="toopay" name="octolytics-dimension-owner_login"><meta content="false" name="octolytics-dimension-forked">
+
+<div class="pagehead repohead">
+  <div class="container">
+    <div class="title-actions-bar">
+      <ul class="pagehead-actions">
+
+
+      </ul>
+      <h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+        <span class="repo-label"><span class="">public</span></span>
+        <span class="mega-octicon octicon-gist"></span>
+        <div class="meta">
+          <div class="gist-author">
+            <img src="https://avatars2.githubusercontent.com/u/534245?s=140" width="26" height="26">
+            <span class="author vcard">
+                <span itemprop="title"><a href="https://gist.github.com/toopay">toopay</a></span>
+            </span> /
+            <strong><a href="./Composer Explained (PHP Indonesia EMagz Draft)_files/Composer Explained (PHP Indonesia EMagz Draft).htm" class="js-current-repository">composer.md</a></strong>
+          </div>
+          <div class="gist-timestamp">
+              <span class="datetime">Last active <time class="js-relative-date" title="2013-10-23T18:34:40Z" datetime="2013-10-23T18:34:40Z">6 months ago</time></span>
+          </div>
+      </div></h1>
+    </div>
+
+  </div>
+</div>
+
+
+  <div class="gist-description container">
+    <p></p><div>Composer Explained (PHP Indonesia EMagz Draft)</div><p></p>
+  </div>
+<div class="gist container js-gist-container" data-version="07f5fe7318ac45d775febffb269b525939d10131" data-created="false" data-updated="false">
+
+    <div class="root-pane">
+  <div class="menu-container">
+    <ul class="menu gisttabs">
+      <li>
+        <a href="./Composer Explained (PHP Indonesia EMagz Draft)_files/Composer Explained (PHP Indonesia EMagz Draft).htm" class="selected">
+          Gist Detail
+        </a>
+      </li>
+
+        <li class="revision-count">
+          <a href="https://gist.github.com/toopay/7086599/revisions">
+            Revisions
+            <span class="counter">21</span>
+          </a>
+        </li>
+
+
+    </ul>
+  </div>
+
+  <ul class="export-references">
+    <li>
+      <a href="https://gist.github.com/toopay/7086599/download" class="minibutton" data-skip-pjax="true" rel="nofollow"><span class="octicon octicon-cloud-download"></span>Download Gist</a>
+    </li>
+    <li>
+      <label for="url-field"><strong>Clone</strong> this gist</label>
+      <input type="text" readonly="" spellcheck="false" class="url-field js-url-field js-copy-toggle" name="url-field" value="https://gist.github.com/7086599.git">
+    </li>
+    <li>
+      <label for="embed-field"><strong>Embed</strong> this gist</label>
+      <input type="text" readonly="" spellcheck="false" class="url-field js-url-field" name="embed-field" value="&lt;script src=&quot;https://gist.github.com/toopay/7086599.js&quot;&gt;&lt;/script&gt;">
+    </li>
+    <li>
+      <label for="link-field"><strong>Link to</strong> this gist</label>
+      <input type="text" readonly="" spellcheck="false" class="url-field js-url-field" name="link-field" value="https://gist.github.com/toopay/7086599">
+    </li>
+  </ul>
+</div>
+
+
+  <div class="column files">
+        <div id="file-composer-md" class="bubble">
+          <div class="file-box ">
+            <div class="meta">
+              <div class="file-info">
+                <span class="file-type-icon"><span class="octicon octicon-gist"></span></span>
+                <strong class="file-name js-selectable-text">composer.md</strong>
+              </div>
+              <div class="file-actions">
+                <span class="file-language">Markdown</span>
+                <ul class="button-group">
+                  <li><a aria-label="Permalink" href="https://gist.github.com/toopay/7086599#file-composer-md" class="file-actions-button tooltipped tooltipped-s permalink"><span class="octicon octicon-link"></span></a></li>
+                  <li><a aria-label="View Raw" title="View Raw" href="https://gist.githubusercontent.com/toopay/7086599/raw/ca9173f0186c64db8cc3e638bfbd7729595094e9/composer.md" data-skip-pjax="" class="file-actions-button tooltipped tooltipped-s raw-url"><span class="octicon octicon-code"></span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="suppressed">
+              <a class="js-show-suppressed-file">File suppressed. Click to show.</a>
+            </div>
+            
+
+    <div class="readme context-loader-container context-loader-overlay">
+      <article class="markdown-body js-file " data-task-list-update-url="/toopay/7086599/file/composer.md">
+        <h1>
+<a name="user-content-composer-explained" class="anchor" href="https://gist.github.com/toopay/7086599#composer-explained" rel="noreferrer"><span class="octicon octicon-link"></span></a>Composer Explained</h1>
+
+<p>oleh <a href="https://github.com/toopay" rel="noreferrer">Taufan Aditya</a></p>
+
+<h2>
+<a name="user-content-i-kenapa-menggunakan-composer" class="anchor" href="https://gist.github.com/toopay/7086599#i-kenapa-menggunakan-composer" rel="noreferrer"><span class="octicon octicon-link"></span></a>I. Kenapa Menggunakan Composer</h2>
+
+<p><strong>a. Sekilas tentang "native" PHP</strong></p>
+
+<p>Mari kita perhatikan sejenak kode berikut ini :</p>
+
+<div class="highlight highlight-php"><pre><span class="cp">&lt;?php</span>
+<span class="nv">$title</span> <span class="o">=</span> <span class="s1">'User Detail'</span><span class="p">;</span>
+<span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+
+<span class="nv">$con</span><span class="o">=</span><span class="nb">mysqli_connect</span><span class="p">(</span><span class="s2">"example.com"</span><span class="p">,</span><span class="s2">"peter"</span><span class="p">,</span><span class="s2">"abc123"</span><span class="p">,</span><span class="s2">"my_db"</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">mysqli_connect_errno</span><span class="p">())</span> <span class="p">{</span>
+  <span class="k">die</span><span class="p">(</span><span class="s2">"Failed to connect to MySQL: "</span> <span class="o">.</span> <span class="nx">mysqli_connect_error</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">mysqli_query</span><span class="p">(</span><span class="nv">$con</span><span class="p">,</span><span class="s2">"SELECT * FROM users"</span><span class="p">);</span>
+
+<span class="k">while</span><span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nx">mysqli_fetch_array</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nv">$data</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$row</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">mysqli_close</span><span class="p">(</span><span class="nv">$con</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;html&gt;</span>
+<span class="x">&lt;head&gt;</span>
+<span class="x">   &lt;title&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+<span class="x">&lt;/head&gt;</span>
+<span class="x">&lt;body&gt;</span>
+<span class="cp">&lt;?php</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$data</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">)</span> <span class="p">{</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;h1&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$item</span><span class="p">[</span><span class="s2">"name"</span><span class="p">];</span><span class="cp">?&gt;</span><span class="x">&lt;/h1&gt;</span>
+<span class="x">&lt;p&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$item</span><span class="p">[</span><span class="s2">"biodata"</span><span class="p">];</span><span class="cp">?&gt;</span><span class="x">&lt;/p&gt;</span>
+<span class="cp">&lt;?php</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</pre></div>
+
+<p>Potongan kode diatas mungkin tampak familiar bagi anda. Apakah menurut anda, ada yang salah dengan potongan kode diatas? Mayoritas developer PHP akan sepakat bahwa potongan kode diatas bekerja sebagaimana yang diharapkan. Dan jika anda termasuk mereka yang menganggap tidak ada yang salah dengan potongan kode diatas, hal tsb bukan-lah salah anda. </p>
+
+<p>Jika kita bedah lebih lanjut potongan kode diatas, di satu sisi dia melakukan hal yang memang diperlukan. Kita bisa lihat (dengan sedikit usaha ekstra) bahwa program diatas mengambil data user dari database, kemudian secara traversal menampilkan nama dan biodata tiap user. Namun disisi lain, kita juga bisa melihat bahwa potongan kode diatas menempatkan markup SQL, markup HTML dan markup PHP dalam satu file. <strong>PHP, secara natural memang memiliki semacam kelebihan (bisa dikatakan bakat) untuk menghasilkan <a href="http://en.wikipedia.org/wiki/Spaghetti_code" rel="noreferrer">spaghetti code</a> semacam ini</strong>. Dan hampir semua tutorial PHP yang beredar di internet (sayangnya) akan mengantarkan para pemula, <strong>ke kesalahan fundamental tersebut : kombinasi SQL dengan HTML, di balut dengan markup PHP, yang di-glorifikasi di seluruh bagian aplikasi</strong>.</p>
+
+<p>Isu utama pada spaghetti code adalah :</p>
+
+<ul>
+<li>Tidak ada modularitas. </li>
+<li>Kurangnya peng-organisasi-an kode</li>
+<li>Tidak ada pembagian antara fungsi dan tujuan.</li>
+<li>Tidak memungkinan penggunaan ulang (mengandalkan Copy-Pasta!).</li>
+<li>Sulit untuk di-verifikasi.</li>
+</ul><p>Kecenderungan ini menjadi problem umum bagi developer PHP, hingga pada tahun 2005-2006 bermunculan apa yang kemudian kita sebut sebagai PHP Framework : Symfony, Zend Framework, Cake PHP, CodeIgniter. Secara umum, <strong>sebuah web-framework adalah alat yang menyederhanakan persoalan, dengan menyediakan seperangkat alat yang umum, sehingga developer bisa fokus ke tugas dan tujuan yang spesifik</strong>. Web-framework memperkenalkan konsep <a href="http://en.wikipedia.org/wiki/Separation_of_concerns" rel="noreferrer">Separation of Concern</a>. Dengan web-framework, seorang developer PHP bisa menyelesaikan sebuah task lebih cepat daripada sebelumnya. Selain itu, hal-hal penting lainnya yang diperkenalkan oleh web-framework adalah :</p>
+
+<ul>
+<li>Organisasi kode.</li>
+<li>Mempromosikan standard.</li>
+<li>Mempromosikan reusabilitas kode.</li>
+</ul><p>Kita tidak akan membahas lebih detail komparasi antara aplikasi yang ditulis dengan web-framework dengan yang tidak ditulis dengan web-framework, ada banyak resource yang tersebar di internet soal hal tersebut (salah satunya <a href="http://symfony.com/doc/current/book/from_flat_php_to_symfony2.html" rel="noreferrer">tulisan tentang perbandingan Symfony2 versus Flat PHP</a>)</p>
+
+<p><strong>b. Apakah Framework sudah menjawab semua persoalan?</strong></p>
+
+<p>Hingga tulisan ini dibuat, <a href="http://en.wikipedia.org/wiki/Comparison_of_web_application_frameworks" rel="noreferrer">PHP adalah bahasa yang memiliki web-framework terbanyak</a>. Setiap hari, di suatu tempat, seseorang mungkin sedang menulis "Yet Another PHP Framework". Anda mungkin telah mengenal dan menggunakan web-framework dalam kehidupan sehari-hari anda. Dan, kalau anda seperti saya, anda akan mulai melihat problem utama pada (semua) web-framework : <strong>interopabilitas</strong>.</p>
+
+<p>Kenapa kita peduli tentang interopabilitas? Bukankah web-framework sudah memberikan kita fondasi yang solid untuk mengembangkan aplikasi yang mudah di-maintain?</p>
+
+<p>Pernahkan, pada satu waktu, anda memerlukan fungsionalitas yang tidak disediakan web-framework yang anda gunakan? Misalnya, fungsionalitas untuk mengirim payload data ke message-queue broker. Atau fungsionalitas untuk melakukan autentifikasi berbasis protokol oAuth misalnya. Anda akan dihadapkan ke dua pilihan yang tidak mudah :</p>
+
+<ul>
+<li>Mengimport external library.</li>
+<li>Menulis library sendiri.</li>
+</ul><p>Pilihan pertama mungkin tampak mudah. Kita tinggal melakukan riset untuk mencari library yang sesuai dengan kebutuhan kita. Setiap framework memiliki repository untuk library mereka masing-masing :</p>
+
+<ul>
+<li>Symfony -&gt; Bundle</li>
+<li>CodeIgniter -&gt; Spark</li>
+<li>Zend Framework -&gt; Modules</li>
+<li>CakePHP -&gt; Bakery</li>
+</ul><p>Anda mungkin akan mendapat salah satu dari hasil berikut : </p>
+
+<ul>
+<li>Menemukan library yang (tampaknya) sesuai, tapi dia berada di repository framework lain.</li>
+<li>Menemukan library yang (sekali lagi, tampaknya) sesuai, tapi dia berada di PEAR repository (atau situs sejenis PHPClasses?)</li>
+<li>Tidak menemukan library yang sesuai dengan kebutuhan anda di manapun.</li>
+</ul><p>Jika anda tidak menemukan apapun yang cocok, maka hanya tersisa satu pilihan untuk anda : menulis sendiri library tersebut. Meskipun tampaknya hal tersebut menyeramkan, mungkin itu adalah pilihan terbaik anda. Kenapa? Jika anda menemukan library yang sesuai dengan kebutuhan anda, tapi dia tidak berada di repository web-framework yang anda gunakan, maka kemungkinan besar anda akan mengalami masalah saat mengintegrasikan library tersebut ke framework anda. Pernahkah anda menggunakan library yang dikembangkan untuk web-framework lain di web-framework anda? Jika anda pernah mengalami hal tersebut, saya yakin anda memahami maksud saya. Yap. Setiap web-framework memiliki standard dan konvensi mereka sendiri. Kecil kemungkinan anda dapat menggunakan library yang dikembangkan untuk web-framework lain, untuk di-integrasikan ke web-framework anda tanpa menambahkan boilerplate ke dalam aplikasi anda. Technical debt semacam ini, jika tidak di-manage dengan baik, bisa membawa aplikasi anda ke arah yang tidak pernah anda harapkan : kode yang tidak terurus, kotor dan tidak fleksibel. Bayangkan jika anda perlu memperbarui eksternal library tersebut dengan patch terbaru : chaos!</p>
+
+<p>Dalam situasi tersebut, anda mungkin berpendapat bahwa ada yang salah dengan web-framework yang anda pakai. Anda mungkin akan mengambil langkah drastis : berpindah ke web-framework lain. Percayalah, hal ini pun bukan pilihan yang ideal. <strong>Berpindah ke web-framework lain berarti membuang semua yang sudah anda bangun (termasuk konvensi dan standard-standard anda sudah terbiasa dengannya), dan memulai semuanya dari nol</strong>. Anda (dan tim anda) akan memerlukan waktu yang cukup banyak, untuk mempelajari dan terbiasa dengan konvensi dan standard web-framework baru tersebut, yang tentunya, mempengaruhi waktu pengembangan. Dan meskipun pihak manajemen perusahaan anda, setuju untuk membuang semua hasil kerja beberapa bulan (atau tahun) terakhir, dan memulai semuanya dari awal, tidak ada jaminan anda tidak akan berakhir di tempat yang sama.</p>
+
+<h2>
+<a name="user-content-ii-apa-itu-composer" class="anchor" href="https://gist.github.com/toopay/7086599#ii-apa-itu-composer" rel="noreferrer"><span class="octicon octicon-link"></span></a>II. Apa itu Composer?</h2>
+
+<p><strong>a. Composer : Depedency Manager untuk PHP</strong></p>
+
+<p>Berikut bisa kita lihat, perbandingan arsitektur package antar bahasa pemrograman :</p>
+
+<ul>
+<li>Perl -&gt; CPAN</li>
+<li>Ruby -&gt; Gem</li>
+<li>Java -&gt; Maven</li>
+<li>Python -&gt; pip</li>
+<li>C#(.net) -&gt; NuGet</li>
+<li>Node.JS-&gt; npm</li>
+<li><strong>PHP -&gt; Composer</strong></li>
+</ul><p>Yap. Composer adalah depedency manager. Artinya : </p>
+
+<ul>
+<li>Composer bisa menginstall package yang dibutuhkan</li>
+<li>Composer bisa mengupdate package yang memiliki release terbaru</li>
+<li>Composer bisa menghapus package yang sudah tidak diperlukan</li>
+</ul><p>Lalu, masalah apa yang coba diselesaikan oleh Composer? Coba kita lihat kembali point sebelumnya : integrasi eksternal library kedalam web-framework bukanlah hal mudah. Ambil contoh nyata. Misal anda ingin mengintegrasikan PHPActiveRecord ORM ke dalam project anda. <a href="http://www.phpactiverecord.org/projects/main/wiki/Frameworks" rel="noreferrer">Ada berbagai cara untuk melakukannya, semuanya tergantung framework apa yang anda gunakan</a>.</p>
+
+<p>Bagaimana dengan composer? Hanya diperlukan 3 langkah mudah :</p>
+
+<ul>
+<li>Buat deskripsi depedency. Misalnya, kita hendak menggunakan <a href="https://github.com/Seldaek/monolog" rel="noreferrer">Monolog</a>, maka kita perlu membuat file bernama <code>composer.json</code> dengan isi sebagai berikut :</li>
+</ul><div class="highlight highlight-bash"><pre><span class="o">{</span>
+    <span class="s2">"require"</span>: <span class="o">{</span>
+        <span class="s2">"monolog/monolog"</span>: <span class="s2">"~1.6"</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+<ul>
+<li>Install depedency menggunakan composer. Buka terminal dan jalankan perintah berikut :</li>
+</ul><div class="highlight highlight-bash"><pre>curl -s http://getcomposer.org/installer <span class="p">|</span> php
+php composer.phar install
+</pre></div>
+
+<p>Composer akan membuat direktori <code>vendor</code> yang berisi semua depedency project anda.</p>
+
+<ul>
+<li>Import autoloader yang dihasilkan composer pada project anda :</li>
+</ul><div class="highlight highlight-php"><pre><span class="x">require 'vendor/autoload.php';</span>
+</pre></div>
+
+<p>Dan libray eksternal tersebut sudah siap dipakai! <strong>Tak peduli library eksternal apapun yang anda perlukan, hanya perlu satu cara untuk menggunakannya, jika anda memilih Composer sebagai depedency manager untuk project PHP anda</strong>. Dan jika library tersebut juga memiliki depedency terhadap library lain? Selama depedency tersebut memiliki repository composer, maka Composer akan me-resolusi depedensi tersebut untuk anda.</p>
+
+<p>Cara Composer dalam me-resolusi depedensi yang anda perlukan sangat reliable. Hal ini dikarenakan <strong>Composer mengadopsi <a href="http://en.wikipedia.org/wiki/Boolean_satisfiability_problem" rel="noreferrer">SAT solver</a> sebagai algoritma untuk me-resolusi depedensi</strong>. Semua package pertama-tama di kumpulkan dalam <strong>pool</strong>. Depedency antar package kemudian diterjemahkan menjadi boolean. Berikut contoh terjemahan depedensi di Composer dalam anotasi boolean :</p>
+
+<table>
+<tbody><tr>
+<th>Statement</th>
+<th>Anotasi</th>
+</tr>
+<tr>
+<td>Install B (versi 1 atau 2)</td>
+<td>(B1|B2)</td>
+</tr>
+<tr>
+<td>A require B (versi 1 atau 2)</td>
+<td>(-A|B1|B2)</td>
+</tr>
+<tr>
+<td>A conflict B (versi 1 atau 2)</td>
+<td>(-A|-B1), (-A|-B2)</td>
+</tr>
+<tr>
+<td>C dan D provide E</td>
+<td>(-E|C|D)</td>
+</tr>
+<tr>
+<td>B2 update B1</td>
+<td>(-B1|-B2)</td>
+</tr>
+</tbody></table><p>Sehingga, misalnya dalam suatu contoh kasus, kita memiliki depedensi seperti berikut :</p>
+
+<div class="highlight highlight-bash"><pre><span class="o">(</span>-A<span class="p">|</span>B1<span class="p">|</span>B2<span class="o">)</span> <span class="o">(</span>-B2<span class="p">|</span>C<span class="o">)</span> <span class="o">(</span>A<span class="o">)</span> <span class="o">(</span>-B1<span class="p">|</span>-B2<span class="o">)</span> <span class="o">(</span>-A<span class="p">|</span>-C<span class="o">)</span>
+</pre></div>
+
+<p>SAT solver akan mengevaluasi boolean untuk A, B1, B2 dan C sehingga semua kondisi menjadi TRUE. Jika nilai akhirnya TRUE, dia akan diinstall.</p>
+
+<p><strong>b. Composer Quick Start</strong></p>
+
+<p>Menggunakan Composer untuk mengimport atau menyediakan dependensi sangat sederhana dan mudah. Untuk mendefinisikan dependensi, buat file <code>composer.json</code> berisi :</p>
+
+<div class="highlight highlight-bash"><pre><span class="o">{</span>
+    <span class="s2">"require"</span>: <span class="o">{</span>
+        <span class="s2">"vendor/package"</span>: <span class="s2">"1.3.2"</span>,
+        <span class="s2">"vendor/package2"</span>: <span class="s2">"1.*"</span>,
+        <span class="s2">"vendor/package3"</span>: <span class="s2">"&gt;=2.0.3"</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+<p>Dalam resep <code>composer.json</code> diatas, kita menggunakan keyword <code>require</code> untuk memberi informasi Composer tentang daftar package yang diperlukan oleh project kita. Semua package/library dalam composer memiliki format <code>vendor/package</code>. Sehingga jika anda memutuskan untuk membuat sebuah library untuk didistribusikan melalui composer, anda juga perlu mengikuti format tersebut. Misalnya, saya ingin membuat sebuah library untuk mengambil data dari kaskus, saya mungkin akan memiliki <code>composer.json</code> sebagai berikut dalam root project saya :</p>
+
+<div class="highlight highlight-bash"><pre><span class="o">{</span>
+    <span class="s2">"name"</span>: <span class="s2">"toopay/kaskus"</span>,
+    <span class="s2">"require"</span>: <span class="o">{</span>
+        <span class="s2">"php"</span>: <span class="s2">"&gt;=5.3.0"</span>,
+        <span class="s2">"another-vendor/package"</span>: <span class="s2">"1.*"</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+<p>Jika kita perhatikan, dua contoh <code>composer.json</code> diatas, menjadi jelas bahwa perbedaan antara <code>provider</code> dan <code>consumer</code> terletak hanya di eksistensi atribut <code>name</code>. Hanya dengan menambahkan atribut <code>name</code> pada <code>composer.json</code> project kita, maka project kita sendiri telah menjadi sebuah <code>package</code> yang bisa di-install oleh project lain sebagai depedensi!</p>
+
+<p><strong>Hal ini sangat membantu bagi banyak pihak yang hendak mengadopsi Composer sebagai dependensi manager, untuk kemudian misalnya, mengekstrak project mereka menjadi bagian-bagian yang lebih kecil dan di-distribusikan sebagai package yang independen</strong>. <a href="http://fabien.potencier.org/article/49/what-is-symfony2" rel="noreferrer">Symfony2</a> menjadi pioner dalam hal ini. Seluruh komponen yang membentuk Symfony2, sebagai sebuah full-stack framework, adalah komponen-komponen yang bersifat independen dan didistribusikan melalui Composer. Artinya, kita dapat menggunakan satu atau dua komponen Symfony (seperti <strong>HttpFoundation</strong> - library yang menyediakan Object-Oriented layer untuk HTTP - atau <strong>Console</strong> - library yang menyediakan komponen komponen standard I/O - misalnya) tanpa perlu menginstall keseluruhan web-framework. Ini sungguh sebuah kemajuan, bukan hanya bagi Symfony sebagai sebuah open-source project, melainkan juga, PHP sebagai web-platform. Dan tidak berhenti disitu, saat ini sudah cukup banyak open-source project yang mengikuti langkah tersebut (dan saling berkolaborasi dalam perjalannya) : Zend, Laravel, Drupal, Joomla. Dan daftar ini hanya bisa terus bertambah.</p>
+
+<p>Composer mendukung beberapa terms dependensi, selain statemen <code>require</code> yang sudah sering kita pakai dalam contoh-contoh deklarasi dependensi diatas. Beberapa istilah dependensi yang ada di Composer adalah sebagai berikut :</p>
+
+<ul>
+<li>
+<strong>Require</strong> : daftar package yang diperlukan oleh project.</li>
+<li>
+<strong>Require-dev</strong> : daftar package yang diperlukan oleh project, ketika project berposisi sebagai <strong>root</strong> project. Jika project di-install sebagai dependensi, maka daftar ini akan diabaikan. Daftar ini sangat berguna dalam proses development package.</li>
+<li>
+<strong>Provide</strong> : daftar package yang disediakan oleh project.</li>
+<li>
+<strong>Replace</strong> : daftar package yang digantikan oleh project ini. Daftar ini berguna jika kita, di kemudian hari, mengubah nama project/package kita.</li>
+<li>
+<strong>Conflict</strong> : daftar package yang tidak bisa ko-eksis dengan package kita.</li>
+<li>
+<strong>Recommend</strong> : daftar package yang direkomendasikan oleh package kita.</li>
+<li>
+<strong>Suggest</strong> : daftar package yang disarankan oleh package kita.</li>
+</ul><p>Sebagai infrastruktur distribusi library/package, <strong>Composer memiliki sentral repository bernama <a href="https://packagist.org/" rel="noreferrer">Packagist</a></strong>, yang merupakan agregasi semua open-source package. Untuk closed-source package, <strong>Composer juga mendukung private repository via <a href="https://github.com/composer/satis" rel="noreferrer">Satis</a></strong>. Jika anda menggunakan Github, tersedia service-hook <a href="http://depending.in/" rel="noreferrer">Depending</a> yang akan memudahkan anda dalam memonitor kesehatan dependensi project anda.</p>
+
+<p><strong>c. Peran Lain Composer</strong></p>
+
+<p>Selain sebagai dependensi manager, Composer memiliki dua peran penting lain :</p>
+
+<ul>
+<li>Memungkinkan kita me-reproduksi <strong>environment</strong> aplikasi yang sama di semua mesin yang kita pakai</li>
+<li>Memungkinkan kita melakukan automatisasi dalam lifecycle development</li>
+</ul><p>Ketika kita menggunakan composer untuk menginstall dependensi, sebuah file bernama <code>composer.lock</code> akan dihasilkan. Saya rekomendasikan anda untuk memasukkan file ini dalam SVN yang anda gunakan. <strong>Composer akan menginstall package berdasarkan <code>composer.lock</code>, dan bukan berdasarkan <code>composer.json</code>, jika file tersebut ditemukan</strong>. Dengan begitu, tidak ada lagi statemen klise developer yang sering terdengar : "Semuanya baik-baik saja di komputerku" ketika program memuntahkan error. <strong>Dengan menyertakan <code>composer.lock</code> dalam SVN, semua developer dalam team bisa bekerja dengan versi package yang sama</strong>. Artinya, tidak ada developer yang menggunakan versi yang belum kita verifikasi. Semua mesin (target deploy) juga akan menggunakan versi package yang sama. </p>
+
+<p>Composer memiliki <strong>Hooks</strong>, sebagai entri point bagi penyedia library untuk mengintersep dan berinteraksi dengan life-cycle composer. Bayangkan jika anda menyediakan sebuah library yang memerlukan pengecekan kondisi environment di komputer target. Dengan hooks, <strong>anda bisa meletakan proses pengecekan tersebut atau hal-hal lain yang diperlukan sebagai pre-requirement agar library anda bekerja, misalnya, menginstall keseluruhan schema database yang diperlukan, sebelum (atau sesudah) composer menginstall package anda</strong>. Tentu ini menambahkan fleksibilitas, dan mengurangi kerja manual yang biasa kita lakukan saat menginstall sebuah package/library. Hal ini juga sangat membantu kita dalam, misalnya, automatisasi workflow development kita atau dalam proses provisioning di Continuous-Integration server yang kita gunakan.</p>
+
+<h2>
+<a name="user-content-iii-penutup" class="anchor" href="https://gist.github.com/toopay/7086599#iii-penutup" rel="noreferrer"><span class="octicon octicon-link"></span></a>III. Penutup</h2>
+
+<p>Composer, sebagai arsitektur depedency package, jelas sebuah kemajuan bagi PHP. Bahasa lain seperti Ruby, telah menunjukkan betapa mudah untuk menggunakan package dalam project sehingga masalan yang umum bisa segera dipecahkan, dan kita bisa berhenti menghabiskan waktu sebagai developer untuk terus-menerus "reinvent the wheel".</p>
+
+<p>Dan seperti yang sudah disinggung diatas, sudah banyak open-source project yang telah mengadopsi Composer. Hingga tulisan ini dibuat, Composer telah melakukan <strong>7 kali release (sejak 2011)</strong>, memiliki <strong>244 contributor</strong>, menyediakan <strong>16.586 packages</strong> (di packagist) dalam <strong>55.071 versi</strong> dan total instalasi keseluruhan mencapai <strong>68.718 940</strong>. Composer sudah dipakai oleh developer di 182 negara (hanya menyisakan beberapa negara afrika, green-land dan korea utara untuk mengcover seluruh dunia!). Sebagai seorang PHP developer, Composer akan menjadi teman baik anda, dan seiring dengan meningkatnya penggunaan Composer, dia akan menjadi bagian penting dalam keseharian anda. </p>
+
+<p><strong>Composer telah memecahkan problem besar yang selama ini menaungi PHP sebagai bahasa pemrograman</strong>, dan benar-benar tidak ada alasan bagi anda untuk tidak segera mengadopsinya, hari ini.</p>
+      </article>
+    </div>
+
+
+
+          </div>
+        </div>
+    <div id="comments" class="new-comments">
+      
+<div class="discussion-bubble js-comment-container">
+  <img class="discussion-bubble-avatar" src="https://avatars1.githubusercontent.com/u/1916749?s=140" width="48" height="48">
+  <div class="discussion-bubble-content bubble">
+    <div class="discussion-bubble-inner">
+
+      <div class="comment js-comment " id="comment-983375">
+        <div class="comment-header normal-comment-header">
+          <a href="https://gist.github.com/toopay/7086599#" class="comment-type-icon octicon octicon-comment"></a>
+          <a href="https://gist.github.com/23Pstars" class="comment-header-author">23Pstars</a>
+          <span class="comment-header-action-text">
+            <span id="gistcomment-983375">
+              <a href="https://gist.github.com/toopay/7086599/#comment-983375">commented</a></span>
+          </span>
+          <span class="comment-header-right">
+            <span id="gistcomment-983375">
+              <a href="https://gist.github.com/toopay/7086599/#comment-983375" class="comment-header-date">
+                <time class="js-relative-date" title="2014-01-09T18:15:19Z" datetime="2014-01-09T18:15:19Z">3 months ago</time>
+              </a>
+            </span>
+          </span>
+        </div>
+
+
+        <div class="comment-content">
+          <div class="edit-comment-hide">
+            <!-- <div class="comment-form-error">There has been an error</div> -->
+            <div class="comment-body markdown-body markdown-format js-comment-body">
+                <p>mantap :D</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </div>
+      <p class="uncommentable"><span class="octicon octicon-alert"></span> Please <a href="https://gist.github.com/login?return_to=/toopay/7086599" rel="nofollow">sign in</a> to comment on this gist.</p>
+  </div>
+</div>
+
+  <div class="context-overlay"></div>
+</div>
+
+    </div>
+    <div class="slow-loading-overlay"></div>
+  </div>
+
+  <div id="ajax-error-message" class="flash flash-error">
+    <div class="container">
+      <span class="octicon octicon-alert"></span>
+      Something went wrong with that request. Please try again.
+      <a href="https://gist.github.com/toopay/7086599#" class="octicon octicon-remove-close ajax-error-dismiss"></a>
+    </div>
+  </div>
+
+
+  <footer>
+    <div id="footer">
+  <div class="container clearfix">
+
+    <!-- Served fresh by github-fe103-cp1-prd.iad.github.net -->
+    <p class="right">© 2014 GitHub Inc. All rights reserved.</p>
+    <a class="left" href="https://gist.github.com/">
+      <span class="mega-octicon octicon-mark-github"></span>
+    </a>
+    <ul id="legal">
+      <li><a href="https://github.com/blog">The GitHub Blog</a></li>
+      <li><a href="mailto:support@github.com">Support</a></li>
+      <li><a href="https://github.com/contact">Contact</a></li>
+    </ul>
+
+  </div><!-- /.container -->
+</div><!-- /.#footer -->
+
+  </footer>
+
+
+
+</body></html>

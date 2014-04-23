@@ -1,0 +1,24 @@
+
+<!-- saved from url=(0184)https://stackauth.com/auth/global/read?request=undnkOKhGHrn9glcF1obRskYeMNlZJwiMK5M2hLTGtUKolwkdL%2BlL%2Fq1MFIay9%2F%2BfqHSi5s84r2OMity67vsmw%3D%3D&nonce=ZDtVUwAAAACK%2BQaI6J2kew%3D%3D -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                  <script>
+                  var data = {"ReadSession":"https://stackauth.com/auth/global/read-session","Request":"undnkOKhGHrn9glcF1obRskYeMNlZJwiMK5M2hLTGtUKolwkdL+lL/q1MFIay9/+fqHSi5s84r2OMity67vsmw==","Nonce":"ZDtVUwAAAACK+QaI6J2kew==","Referrer":"http://stackoverflow.com/questions/9621565/c-sharp-gui-testing-from-continuous-integration","StorageName":"GlobalLogin"};
+
+                  var toMsg = window.parent;
+
+                  var obj = localStorage.getItem(data.StorageName);
+                  if(obj != null) {
+                  var req = new XMLHttpRequest();
+                  req.open('POST', data.ReadSession+'?request='+encodeURIComponent(data.Request)+'&nonce='+encodeURIComponent(data.Nonce)+'&seriesAndToken='+encodeURIComponent(obj), false);
+                  req.send(null);
+                  
+                    if(req.status == 200){
+                      toMsg.postMessage(req.responseText, data.Referrer);
+                    }else{
+                      toMsg.postMessage('No Session', data.Referrer);
+                    }
+                  }else{
+                    toMsg.postMessage('No Local Storage', data.Referrer);
+                  }
+                  </script>
+                  </head><body></body></html>

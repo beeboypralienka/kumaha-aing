@@ -1,0 +1,1016 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0089)http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width">
+<title>Continuous Integration in a Huge Multi-Module Project | c0nnexx10n : C0nnect1ng L1fe w1th Techn010gy</title>
+<link rel="pingback" href="http://vikashazrati.wordpress.com/xmlrpc.php">
+<link rel="alternate" type="application/rss+xml" title="c0nnexx10n : C0nnect1ng L1fe w1th Techn010gy » Feed" href="http://vikashazrati.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="c0nnexx10n : C0nnect1ng L1fe w1th Techn010gy » Comments Feed" href="http://vikashazrati.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="c0nnexx10n : C0nnect1ng L1fe w1th Techn010gy » Continuous Integration in a Huge Multi-Module Project Comments Feed" href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" id="all-css-0" href="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/saved_resource" type="text/css" media="all">
+<!--[if lte IE 8]>
+<link rel='stylesheet' id='inuittypes-ie-css'  href='http://s2.wp.com/wp-content/themes/pub/inuit-types/css/ie.css?ver=3.9' type='text/css' media='all' />
+<![endif]-->
+<!--[if lte IE 6]>
+<link rel='stylesheet' id='inuittypes-ie6-css'  href='http://s2.wp.com/wp-content/themes/pub/inuit-types/css/ie6.css?ver=3.9' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="all-css-4" href="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/saved_resource(1)" type="text/css" media="all">
+<link rel="stylesheet" id="print-css-4" href="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/global-print.css" type="text/css" media="print">
+<script type="text/javascript">
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Your subscription did not succeed, please try again with a valid email address."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/saved_resource(2)"></script>
+<link rel="stylesheet" id="all-css-0" href="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/style.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='http://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://vikashazrati.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://vikashazrati.wordpress.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Infrastructure is Served, Get Started With Agile Development in a Flash" href="http://vikashazrati.wordpress.com/2008/11/13/infrastructure-is-served-start-with-agile-development-quickly/">
+<link rel="next" title="JumpStart Your Web Application" href="http://vikashazrati.wordpress.com/2008/12/03/jumpstart-your-web-application/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy.htm">
+<link rel="shortlink" href="http://wp.me/p4bZe-3P">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&url=http%3A%2F%2Fvikashazrati.wordpress.com%2F2008%2F11%2F19%2Fcontinuous-integration-multi-module-project%2F&for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&url=http%3A%2F%2Fvikashazrati.wordpress.com%2F2008%2F11%2F19%2Fcontinuous-integration-multi-module-project%2F&for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Continuous Integration in a Huge Multi-Module Project">
+<meta property="og:url" content="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/">
+<meta property="og:description" content="The benefits of Continuous Integration cannot be discounted in any environment whether you are working on a small project or a huge one. The difference being in the set up and configuration of cont...">
+<meta property="article:published_time" content="2008-11-19T05:44:44+00:00">
+<meta property="article:modified_time" content="2008-11-19T05:44:44+00:00">
+<meta property="article:author" content="http://vikashazrati.wordpress.com/author/vikashazrati/">
+<meta property="og:site_name" content="c0nnexx10n : C0nnect1ng L1fe w1th Techn010gy">
+<meta property="og:image" content="http://vikashazrati.wordpress.com/files/2008/11/system.png">
+<meta property="og:image" content="http://vikashazrati.wordpress.com/files/2008/11/dependencies.png">
+<meta property="og:image" content="http://vikashazrati.wordpress.com/files/2008/11/staging.png">
+<meta property="og:image" content="http://vikashazrati.wordpress.com/files/2008/11/bdependency.png">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:image" content="http://vikashazrati.wordpress.com/files/2008/11/system.png?w=240">
+<meta name="twitter:card" content="summary">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+<link rel="shortcut icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1311975824g" sizes="16x16 24x24 32x32 48x48">
+<link rel="icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1311975824g" sizes="16x16 24x24 32x32 48x48">
+<link rel="apple-touch-icon-precomposed" href="http://s0.wp.com/i/webclip.png?m=1391188133g">
+<link rel="openid.server" href="http://vikashazrati.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="http://vikashazrati.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="http://vikashazrati.wordpress.com/osd.xml" title="c0nnexx10n : C0nnect1ng L1fe w1th Techn010gy">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com">
+<meta name="application-name" content="c0nnexx10n : C0nnect1ng L1fe w1th Techn010gy"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Byte by Byte Impressions on Technology, People and Process !"><meta name="msapplication-task" content="name=Subscribe;action-uri=http://vikashazrati.wordpress.com/feed/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="title" content="Continuous Integration in a Huge Multi-Module Project | c0nnexx10n : C0nnect1ng L1fe w1th Techn010gy on WordPress.com">
+<meta name="description" content="The benefits of Continuous Integration cannot be discounted in any environment whether you are working on a small project or a huge one. The difference being in the set up and configuration of continuous integration in a multi-module project. Multiple modules bring in additional complexity in terms of versions, teams collaborating, release cycles, separate sprints…">
+
+<script type="text/javascript" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/google_service.js">
+</script>
+<script type="text/javascript">
+if ( typeof GS_googleAddAdSenseService == 'function' ) { GS_googleAddAdSenseService("ca-pub-3443918307802676"); }
+if ( typeof GS_googleEnableAllServices == 'function' ) { GS_googleEnableAllServices() };
+</script><script src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/google_ads.js"></script>
+<script type="text/javascript" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/amzn_ads.js"></script>
+<script type="text/javascript">
+try { amznads.getAds("3033","300x250"); } catch(e) { /* ignore */ }
+</script><script type="text/javascript" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/bid"></script>
+<script type="text/javascript">
+var amznKeys = amznads.getKeys();
+if (typeof amznKeys != "undefined" && amznKeys != "") { for (var i =0; i < amznKeys.length; i++) { var key = amznKeys[i]; GA_googleAddAttr("amzn", key);} }
+document.close();
+</script>
+<script type="text/javascript">
+if ( typeof GA_googleAddSlot == 'function' ) { GA_googleAddSlot("ca-pub-3443918307802676", "wpcom_below_post_adsafe"); }
+</script>
+<script type="text/javascript">
+if ( typeof GA_googleFetchAds == 'function' ) { GA_googleFetchAds(); }
+</script>
+
+<script type="text/javascript">
+var wpcom_ads = { bid: 999392, pt: 'permalink', wa: 0, as: 1, domain: 'vikashazrati.wordpress.com', url: 'http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/', gid: '', };
+</script>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/ga.js"></script>
+<script charset="utf-8" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/rate.php"></script><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/services.css"><style type="text/css" id="pd_popup_holder_style_368984_post_237">#pd_popup_holder_368984_post_237 { position:absolute; display:none; width:350px; height:auto; top:0px; left:0px; z-index:10000; border:solid 1px #CCC; background-color:white; padding:0px 15px;font-family:Arial,Sans;box-shadow: -10px 10px 20px rgba(0, 0, 0, .5);-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25); }</style><script type="text/javascript" async="" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/saved_resource(3)"></script></head>
+
+<body class="single single-post postid-237 single-format-standard mp6 highlander-enabled highlander-light" style="">
+
+	<div class="wrapper">
+	
+	<div id="main_menu" class="top_menu">
+
+		<div class="fl">
+
+			<div class="menu"><ul><li class="page_item page-item-2"><a href="http://vikashazrati.wordpress.com/about/" sl-processed="1">About Vikas Hazrati</a></li><li class="page_item page-item-20"><a href="http://vikashazrati.wordpress.com/%c2%a9-disclaimer/" sl-processed="1">© &amp; Disclaimer</a></li><li class="page_item page-item-64"><a href="http://vikashazrati.wordpress.com/trainings/" sl-processed="1">Trainings</a></li><li class="page_item page-item-520"><a href="http://vikashazrati.wordpress.com/inphina/" sl-processed="1">Knoldus</a></li><li class="page_item page-item-525"><a href="http://vikashazrati.wordpress.com/contact-us/" sl-processed="1">Contact Us</a></li></ul></div>
+
+		</div>
+
+
+		<div class="fr">
+
+			<span class="subscribe">
+
+			<a href="http://vikashazrati.wordpress.com/feed/" sl-processed="1"><span class="rss-button">RSS</span></a> &nbsp;Subscribe:&nbsp;
+
+			<a href="http://vikashazrati.wordpress.com/feed/" sl-processed="1">RSS feed</a>
+
+			</span>
+
+		</div>
+
+	</div><!-- #main_menu -->
+
+
+		<div id="container" class="container">
+
+			<div id="inuit-content" class="content content_left">
+
+								<div id="header">
+
+						<div class="blog-title"><a href="http://vikashazrati.wordpress.com/" sl-processed="1">c0nnexx10n : C0nnect1ng L1fe w1th Techn010gy</a></div>
+
+						<div class="blog-description">Byte by Byte Impressions on Technology, People and Process !</div>
+
+				</div>
+
+		
+			
+				<div id="post-237" class="post-237 post type-post status-publish format-standard hentry category-agile category-architecture category-article category-better-software single-post">
+
+					<div id="header-about">
+
+	                <h1>Continuous Integration in a Huge Multi-Module&nbsp;Project </h1>
+
+	                </div>
+
+					<div class="date-comments">
+
+				    <p class="fl">
+
+
+					    <em>Posted on Wednesday, November 19, 2008</em>
+
+					    
+					</p>
+
+				    <p class="fr"><span class="comments">
+
+					    
+		                      <a href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/#comments" sl-processed="1">0</a>
+
+						
+					</span></p>
+
+			        </div>
+
+					<div class="clear"></div>
+
+					<br>
+
+					<div class="entry">
+
+	                	
+						<p>The benefits of Continuous Integration cannot be discounted in any environment whether you are working on a small project or a huge one. The difference being in the set up and configuration of continuous integration in a multi-module project.</p>
+<p>Multiple modules bring in additional complexity in terms of versions, teams collaborating, release cycles, separate sprints etc etc. In an ideal world all this would not be necessary and we would have just one module for the entire system. With every developer check-in the CI build would trigger. Of course the CI box would have unlimited processing power, load distributing capability and unlimited storage to still build the system of any size under 10 minutes.</p>
+<p>The magic number of 10 minutes is an XP practice for CI where it is correctly stated that if a build is taking more than 10 minutes then the value of CI is lost. If the time is more developers would check in less frequently because who wants to wait for say 2 hours to get the status, they would rather check-in their code end of the day and even worse not wait for the build to complete. A broken build, which would happen many times would be fixed the next day. Now just assume that the team is distributed across time zones and are struggling with a broken build when they step into the office.</p>
+<p>Let us switch the real world and agree that having a huge system build under 10 minutes is a far fetched dream. If you are working in a huge enterprise, where various complex systems are collaborating together then you would agree to my point.</p>
+<p>So the best way to build a huge system is by distributing it into multiple smaller systems or modules and then building each module separately so that each module can build under 10 minutes.</p>
+<p>Taking a simplistic view of the real world let us assume that we successfully divided our system into 3 modules.</p>
+<p>System = Ʃ modules (A,B,C)</p>
+<p style="text-align:center;"><a href="http://vikashazrati.files.wordpress.com/2008/11/system.png" sl-processed="1"><img class="size-full wp-image-238 aligncenter" title="system" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/system.png" alt="system"></a><span id="more-237"></span></p>
+<p>Each module is developed and maintained by a separate scrum team, so we have 3 scrum teams.</p>
+<p>The dependency between the modules is like this. Module A is independent. Module B depends on A and module C depends on A and B.</p>
+<p><a href="http://vikashazrati.files.wordpress.com/2008/11/dependencies.png" sl-processed="1"><img class="aligncenter size-full wp-image-239" title="dependencies" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/dependencies.png" alt="dependencies"></a></p>
+<p>Each module has its own build cycle and frequency and since the System is divided into 3 modules, each module can be built under the 10 minute limit.</p>
+<p><span style="text-decoration:underline;"><strong>Staging Area</strong></span></p>
+<p>Once a module is built, it is deployed onto the repository area. This repository area is version-ed so all build of module A would be present like A1.0, A1.01-Snapshot, A1.02-Snapshot, A1.1-RC1, A1.1-RC2, A1.1 etc.</p>
+<p>When A is built it does not have a dependency on B or C hence the build artifact of A is created and posted to the repository.</p>
+<p><a href="http://vikashazrati.files.wordpress.com/2008/11/staging.png" sl-processed="1"><img class="aligncenter size-full wp-image-240" title="staging" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/staging.png" alt="staging"></a></p>
+<p>B depends on A. Whenever the continuous integration of B triggers it has a dependency on a particular version of A in the repository area. So essentially B always builds against a repository version of A. So say we are building a new version of B which is B1.01-RC1, now this version would be dependent on the version A1.1Rc1 as shown in the diagram.</p>
+<p style="text-align:center;"><a href="http://vikashazrati.files.wordpress.com/2008/11/bdependency.png" sl-processed="1"><img class="aligncenter size-full wp-image-241" title="bdependency" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/bdependency.png" alt="bdependency"></a></p>
+<p>There could be an issue where B has the dependency upon A1.1-RC1 where as the TeamA has already produced a new version A1.1-RC2. In this scenario either one has to manually check for a new version in the repository area or the build process compares the current dependency with the latest release and notifies back with a warning. A maven mojo makes this process easier.</p>
+<p>Similarly C depends on A and B and follows the similar process of being dependent upon released versions of A and B in the repository. As a module has dependency on more number of modules the process of keeping upto date with the latest released versions becomes even more important.</p>
+<p><span style="text-decoration:underline;"><strong>Challenges</strong></span><br>
+Some would argue that this is a pseudo continuous integration because the entire System is not being continuously integrated. To an extent they are correct. The key thing to note here is that you have to walk a tight rope between achieving complete CI and fail to achieve the 10 minute build target or break it down into smaller modules and make it more manageable. A way to still achieve something closer to full continuous integration is to have an intelligent process running in the background which build all the latest versions present in the repository area and report issues if any. This would take care of the fact that the individual modules do not have their dependencies updated to reflect the latest versions in the repositories.</p>
+<p>Apart from the above technical challenges there are other softer challenges which need to be tackled with module separated teams. Each of these teams is now an individual scrum team, there would be an additional cost of communication. Scrum of scrums would help but you have to accept the fact that there are multiple teams now and the us-them phenomenon would spring up however hard you may try. Each module should consider other modules on which it is dependent as third party libs. This would make the process easier. The handoff between the modules is through well defined and mutually agreed upon interfaces.</p>
+
+<div class="wpa" style="position: relative; width:300px; text-align: center; padding: 0; margin: 10px auto; overflow: hidden; clear: both;">
+<a style="position: absolute; text-align: left; display: block; font: 9px/1 sans-serif; text-decoration: underline;" href="http://en.wordpress.com/about-these-ads/" rel="nofollow" sl-processed="1">About these ads</a>
+<script type="text/javascript">
+		var wpcom_adclk_hovering = false;
+		var wpcom_adclk_recorded = false;
+		var wpcom_adclk_theme = "Inuit Types";
+		var wpcom_adclk_slot = "wpcom_below_post_adsafe";
+		var wpcom_adclk_network = ( typeof wpcom_adclk_network === "undefined" ) ? "" : wpcom_adclk_network ;
+
+		jQuery(document).ready( function() {
+			function wpcom_adclk_hover_yes() { wpcom_adclk_hovering = true; }
+			function wpcom_adclk_hover_no() { wpcom_adclk_hovering = false; }
+			jQuery(".wpa").click(wpcom_adclk_click);
+			jQuery(".wpa iframe").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+			jQuery(".wpa object").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+
+			jQuery(window).blur( function() {
+				if ( wpcom_adclk_hovering ) { wpcom_adclk_click(); }
+			});
+		});
+
+		function wpcom_adclk_impression() {
+			var stat_gif = document.location.protocol + "//stats.wordpress.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_imp_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_imp_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_imp_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_imp_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			return true;
+		}
+
+		function wpcom_adclk_click() {
+			if (wpcom_adclk_recorded) { return true; } // no double counting
+			var stat_gif = document.location.protocol + "//stats.wordpress.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_click_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_click_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_click_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_click_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			wpcom_adclk_recorded = true;
+			var now=new Date(); var end=now.getTime()+250;
+			while(true){now=new Date();if(now.getTime()>end){break;}}
+			return true;
+		}
+	
+if ( typeof GA_googleAddAttr == 'function' ) {
+GA_googleAddAttr("AdOpt", "1");
+GA_googleAddAttr("Origin", "extsearch");
+GA_googleAddAttr("LangId", "1");
+GA_googleAddAttr("Domain", "vikashazrati.wordpress.com");
+GA_googleAddAttr("BlogId", "999392");
+GA_googleAddAttr("PageURL", "http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/");
+GA_googleAddAttr("AdSafe", "1");
+GA_googleAddAttr("Autotag", "technology");
+GA_googleAddAttr("Autotag", "education");
+GA_googleAddAttr("Tag", "agile");
+GA_googleAddAttr("Tag", "architecture");
+GA_googleAddAttr("Tag", "article");
+GA_googleAddAttr("Tag", "better-software");
+GA_googleAddAttr("Partner", "AOL");
+GA_googleAddAttr("theme_bg", "ffffff");
+GA_googleAddAttr("theme_text", "333333");
+GA_googleAddAttr("theme_link", "222222");
+GA_googleAddAttr("theme_border", "dddddd");
+GA_googleAddAttr("theme_url", "346ba4");
+GA_googleAddAdSensePageAttr("google_page_url", "http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/");
+GA_googleFillSlot("wpcom_below_post_adsafe");
+}
+</script><script src="http://pubads.g.doubleclick.net/gampad/ads?correlator=686774379610112&output=json_html&callback=GA_googleSetAdContentsBySlotForSync&impl=s&client=ca-pub-3443918307802676&slotname=wpcom_below_post_adsafe&page_slots=wpcom_below_post_adsafe&cust_params=AdOpt%3D1%26Origin%3Dextsearch%26LangId%3D1%26Domain%3Dvikashazrati.wordpress.com%26BlogId%3D999392%26PageURL%3Dhttp%253A%252F%252Fvikashazrati.wordpress.com%252F2008%252F11%252F19%252Fcontinuous-integration-multi-module-project%252F%26AdSafe%3D1%26Autotag%3Dtechnology%252Ceducation%26Tag%3Dagile%252Carchitecture%252Carticle%252Cbetter-software%26Partner%3DAOL%26theme_bg%3Dffffff%26theme_text%3D333333%26theme_link%3D222222%26theme_border%3Ddddddd%26theme_url%3D346ba4&cookie=ID%3D80a31ed07317a871%3AT%3D1395290154%3AS%3DALNI_Mb9AlOgLr1KTN_m6aGjlJZP8nDn1g&url=http%3A%2F%2Fvikashazrati.wordpress.com%2F2008%2F11%2F19%2Fcontinuous-integration-multi-module-project%2F&ref=https%3A%2F%2Fwww.google.com%2F&lmt=1397830048&dt=1397855248868&cc=2&url=http%3A%2F%2Fvikashazrati.wordpress.com%2F2008%2F11%2F19%2Fcontinuous-integration-multi-module-project%2F&biw=1273&bih=728&adk=2649813916&adx=297&ady=2824&ifi=1&oid=3&u_tz=420&u_his=1&u_java=true&u_h=768&u_w=1366&u_ah=728&u_aw=1366&u_cd=24&u_nplug=11&u_nmime=52&flash=12.0.0&gads=v2&ga_vid=1591059988.1397855249&ga_sid=1397855249&ga_hid=806361441&ga_wpids=UA-52447-2"></script>
+</div>
+<style type="text/css">
+div.wpa>div { margin-top: 1em; } #google_ads_div_wpcom_below_post_adsafe_ad_container { display: block !important; }
+</style>
+<script type="text/javascript">
+jQuery( window ).load( function() {
+    if ( jQuery(".wpa script[src*='virool.com']").length > 0 || jQuery(".wpa script[src*='shareth.ru']").length > 0 || jQuery(".wpa iframe[src*='boomvideo.tv']").length > 0 || jQuery(".wpa iframe[src*='viewablemedia.net']").length > 0 || jQuery(".wpa .sharethrough-placement").length > 0 ) {
+        jQuery( '.wpa' ).css( 'width', '400px' );
+    }
+setTimeout(function(){if(typeof GS_googleAddAdSenseService !== 'function'){new Image().src=document.location.protocol+"//stats.wordpress.com/g.gif?v=wpcom-no-pv&x_noads=adblock&baba="+Math.random()}},100);
+} );
+</script>
+<div id="jp-post-flair" class="sharedaddy sd-rating-enabled sd-like-enabled sd-sharing-enabled"><div class="sd-block sd-rating"><h3 class="sd-title">Rate this:</h3><div class="pd-rating" id="pd_rating_holder_368984_post_237" style="display: inline-block;"><div class="rating-icons" id="pd_rate_368984_post_237" style="float:left;"><div class="rating-star-icon" onmouseout="PDRTJS_368984_post_237.rebuild();" onclick="PDRTJS_368984_post_237.rate(1);" onmouseover="PDRTJS_368984_post_237.hover(1);" id="PDRTJS_368984_post_237_stars_1" style="background-size: 32px 48px !important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(http://i0.poll.fm/images/ratings/star-yellow-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_368984_post_237.rebuild();" onclick="PDRTJS_368984_post_237.rate(2);" onmouseover="PDRTJS_368984_post_237.hover(2);" id="PDRTJS_368984_post_237_stars_2" style="background-size: 32px 48px !important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(http://i0.poll.fm/images/ratings/star-yellow-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_368984_post_237.rebuild();" onclick="PDRTJS_368984_post_237.rate(3);" onmouseover="PDRTJS_368984_post_237.hover(3);" id="PDRTJS_368984_post_237_stars_3" style="background-size: 32px 48px !important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(http://i0.poll.fm/images/ratings/star-yellow-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_368984_post_237.rebuild();" onclick="PDRTJS_368984_post_237.rate(4);" onmouseover="PDRTJS_368984_post_237.hover(4);" id="PDRTJS_368984_post_237_stars_4" style="background-size: 32px 48px !important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(http://i0.poll.fm/images/ratings/star-yellow-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_368984_post_237.rebuild();" onclick="PDRTJS_368984_post_237.rate(5);" onmouseover="PDRTJS_368984_post_237.hover(5);" id="PDRTJS_368984_post_237_stars_5" style="background-size: 32px 48px !important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(http://i0.poll.fm/images/ratings/star-yellow-sml.png) bottom left; float: left; padding: 0px; margin: 0px; margin-right: 1px;">&nbsp;</div></div><span style="float:left;">&nbsp;</span><div id="rating_info_368984_post_237" style="display:block;float:left;background:url(http://i0.poll.fm/images/ratings/info.png) no-repeat 3px 2px;width:16px;height:16px;cursor:pointer; null " onclick="javascript:PDRTJS_368984_post_237.togglePopup();return false;"><span style="display:none;">i</span></div><div class="pd_popup_holder" id="pd_popup_holder_368984_post_237">&nbsp;</div><div class="rating-msg" id="PDRTJS_368984_post_237_msg" style="float:left; padding-left: 5px; text-align: left; font:normal normal /16px ; color: #;">Rate This</div><p style="padding: 0px; margin: 0px; clear: both;"></p></div></div><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-stumbleupon"><a rel="nofollow" class="share-stumbleupon sd-button share-icon" href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/?share=stumbleupon&nb=1" target="_blank" title="Click to share on StumbleUpon" sl-processed="1"><span>StumbleUpon</span></a></li><li class="share-digg"><a rel="nofollow" class="share-digg sd-button share-icon" href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/?share=digg&nb=1" target="_blank" title="Click to Digg this post" sl-processed="1"><span>Digg</span></a></li><li class="share-linkedin"><a rel="nofollow" class="share-linkedin sd-button share-icon" href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/?share=linkedin&nb=1" target="_blank" title="Click to share on LinkedIn" id="sharing-linkedin-237" sl-processed="1"><span>LinkedIn</span></a></li><li class="share-reddit"><a rel="nofollow" class="share-reddit sd-button share-icon" href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/?share=reddit&nb=1" target="_blank" title="Click to share on Reddit" sl-processed="1"><span>Reddit</span></a></li><li class="share-facebook"><a rel="nofollow" class="share-facebook sd-button share-icon" href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/?share=facebook&nb=1" target="_blank" title="Share on Facebook" id="sharing-facebook-237" sl-processed="1"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow" class="share-twitter sd-button share-icon" href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/?share=twitter&nb=1" target="_blank" title="Click to share on Twitter" id="sharing-twitter-237" sl-processed="1"><span>Twitter</span></a></li><li><a href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/#" class="sharing-anchor sd-button share-more" sl-processed="1"><span>More</span></a></li><li class="share-end"></li></ul><div class="sharing-hidden"><div class="inner" style="display: none;"><ul><li class="share-email share-service-visible"><a rel="nofollow" class="share-email sd-button share-icon" href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/?share=email&nb=1" target="_blank" title="Click to email this to a friend" sl-processed="1"><span>Email</span></a></li><li class="share-print"><a rel="nofollow" class="share-print sd-button share-icon" href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/#print" target="_blank" title="Click to print" sl-processed="1"><span>Print</span></a></li><li class="share-end"></li><li class="share-end"></li></ul></div></div></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-999392-237-5351940708520" data-src="//widgets.wp.com/likes/#blog_id=999392&amp;post_id=237&amp;origin=vikashazrati.wordpress.com&amp;obj_id=999392-237-5351940708520" data-name="like-post-frame-999392-237-5351940708520"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-999392-237-5351940708520" height="55px" width="100%" frameborder="0" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/saved_resource.htm"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal"><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="119" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="http://vikashazrati.wordpress.com/2008/07/04/better-software-development-environment/" title="Better Software: Setting Up the Development Environment
+
+This is first, in series of posts on how to write Better Software. The series would try to touch upon stories which would result in development of better software. This&amp;hellip;" rel="nofollow" data-origin="237" data-position="0" sl-processed="1">Better Software: Setting Up the Development Environment</a></span><span class="jp-relatedposts-post-context">In "Agile"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="503" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="http://vikashazrati.wordpress.com/2010/03/05/excellent-code-is-also-an-issue/" title="Excellent Code is also an Issue
+
+We all know the importance of good clean code. Meaningful names, ubiquitous language, one level of abstraction per function, SRP, OCP etc etc. It is not debatable that good code&amp;hellip;" rel="nofollow" data-origin="237" data-position="1" sl-processed="1">Excellent Code is also an Issue</a></span><span class="jp-relatedposts-post-context">In "Agile"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="526" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="http://vikashazrati.wordpress.com/2010/03/05/excellent-code-quality-is-also-an-issue/" title="Excellent Code Quality is Also an Issue
+
+We all know the importance of good clean code. Meaningful names, ubiquitous language, one level of abstraction per function, SRP, OCP etc etc. It is not debatable that good code&amp;hellip;" rel="nofollow" data-origin="237" data-position="2" sl-processed="1">Excellent Code Quality is Also an&nbsp;Issue</a></span><span class="jp-relatedposts-post-context">In "Agile"</span></p></div></div></div>
+						
+                        
+                        <div class="categories">Posted in: <em><a href="http://vikashazrati.wordpress.com/category/agile/" title="View all posts in Agile" rel="category tag" sl-processed="1">Agile</a>, <a href="http://vikashazrati.wordpress.com/category/architecture/" title="View all posts in Architecture" rel="category tag" sl-processed="1">Architecture</a>, <a href="http://vikashazrati.wordpress.com/category/article/" title="View all posts in Article" rel="category tag" sl-processed="1">Article</a>, <a href="http://vikashazrati.wordpress.com/category/better-software/" title="View all posts in Better Software" rel="category tag" sl-processed="1">Better Software</a></em></div>
+
+					</div>
+
+					<div id="nav-below" class="navigation">
+
+						<div class="nav-previous"><a href="http://vikashazrati.wordpress.com/2008/11/13/infrastructure-is-served-start-with-agile-development-quickly/" rel="prev" sl-processed="1">← Infrastructure is Served, Get Started With Agile Development in a&nbsp;Flash</a></div>
+
+						<div class="nav-next"><a href="http://vikashazrati.wordpress.com/2008/12/03/jumpstart-your-web-application/" rel="next" sl-processed="1">JumpStart Your Web&nbsp;Application →</a></div>
+
+					</div><!-- #nav-below -->
+
+					<div class="fix"></div>
+
+				</div>
+
+	            <div class="fix"></div>
+
+				<div id="comments">
+
+					
+
+<!-- You can start editing here. -->
+
+
+			<!-- If comments are open, but there are no comments. -->
+		<div class="commh2">Be the first to start a conversation</div>
+
+	 
+
+
+								<div id="respond" class="comment-respond js">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/#respond" style="display:none;" sl-processed="1">Cancel reply</a></small></h3>
+									<form action="http://vikashazrati.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																										
+
+
+												<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="2912051cfd"><input type="hidden" name="_wp_http_referer" value="/2008/11/19/continuous-integration-multi-module-project/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; -webkit-transition: none; transition: none; height: 0px !important; min-height: 0px !important; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none; word-spacing: 0px; text-indent: 0px; line-height: normal; width: 588px;" class="autosizejs "></textarea><textarea id="comment" name="comment" title="Enter your comment here..." placeholder="Enter your comment here..." style="height: 36px; overflow: hidden; word-wrap: break-word; resize: horizontal;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/#comment-form-guest" id="postas-guest" title="Guest" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook" sl-processed="1">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/saved_resource(7).htm" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank" sl-processed="1">				<img src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/ad516503a11cd5ca435acc9bb6523536" alt="Gravatar" width="25" class="no-grav">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text" value=""></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/wplogo.png" alt="WordPress.com Logo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="">
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your <span class="skimlinks-unlinked">WordPress.com</span> account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/ad516503a11cd5ca435acc9bb6523536" alt="Twitter picture" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/ad516503a11cd5ca435acc9bb6523536" alt="Facebook photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/ad516503a11cd5ca435acc9bb6523536" alt="Google+ photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );" sl-processed="1">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/#" onclick="javascript:HighlanderComments.switchAccount();return false;" sl-processed="1">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();" sl-processed="1">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+	
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of follow-up comments via email.</label></p></div>
+
+												<p class="form-submit" style="display: none;">
+							<input name="submit" type="submit" id="comment-submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="237" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="3247c97b60"></p>
+<input type="hidden" name="genseq" value="1397855239">
+<script type="text/javascript" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/form.js"></script>
+<p style="display: none;"></p>					<input type="hidden" id="ak_js" name="ak_js" value="1397855252057"></form>
+							</div><!-- #respond -->
+			<div style="clear: both"></div>
+
+				</div>
+
+		
+	    
+</div><!-- Content -->
+
+<div class="sidebar sidebar_right">
+	
+    	<div id="text-4" class="widget widget_text"><h3 class="hl">Vikas Hazrati</h3>			<div class="textwidget"><a href="http://vikashazrati.wordpress.com/about/" sl-processed="1"><img src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/flipped_polarized.png" alt="Vikas Hazrati" width="100px"></a></div>
+		</div><!--/widget--><div id="calendar-2" class="widget widget_calendar"><h3 class="hl">Actively posted on</h3><div id="calendar_wrap"><table id="wp-calendar">
+	<caption>November 2008</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="http://vikashazrati.wordpress.com/2008/10/" title="View posts for October 2008" sl-processed="1">« Oct</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next"><a href="http://vikashazrati.wordpress.com/2008/12/" title="View posts for December 2008" sl-processed="1">Dec »</a></td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="5" class="pad">&nbsp;</td><td>1</td><td>2</td>
+	</tr>
+	<tr>
+		<td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td><a href="http://vikashazrati.wordpress.com/2008/11/09/" title="QuickTip: Solved | Ubuntu 8.10 Firefox Flash Sound Issue" sl-processed="1">9</a></td>
+	</tr>
+	<tr>
+		<td>10</td><td>11</td><td>12</td><td><a href="http://vikashazrati.wordpress.com/2008/11/13/" title="Infrastructure is Served, Get Started With Agile Development in a Flash" sl-processed="1">13</a></td><td>14</td><td>15</td><td>16</td>
+	</tr>
+	<tr>
+		<td>17</td><td>18</td><td><a href="http://vikashazrati.wordpress.com/2008/11/19/" title="Continuous Integration in a Huge Multi-Module Project" sl-processed="1">19</a></td><td>20</td><td>21</td><td>22</td><td>23</td>
+	</tr>
+	<tr>
+		<td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+	</tr>
+	</tbody>
+	</table></div></div><!--/widget--><div id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" class="searchform" action="http://vikashazrati.wordpress.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s">
+					<input type="submit" id="searchsubmit" value="Search">
+				</div>
+			</form></div><!--/widget--><div id="tag_cloud-2" class="widget widget_tag_cloud"><h3 class="hl">Interested on</h3><div style="overflow: hidden;"><a href="http://vikashazrati.wordpress.com/category/acegi/" style="font-size: 100%; padding: 1px; margin: 1px;" title="Acegi (1)" sl-processed="1">Acegi</a> <a href="http://vikashazrati.wordpress.com/category/agile/" style="font-size: 192.64705882353%; padding: 1px; margin: 1px;" title="Agile (55)" sl-processed="1">Agile</a> <a href="http://vikashazrati.wordpress.com/category/architecture/" style="font-size: 204.6568627451%; padding: 1px; margin: 1px;" title="Architecture (62)" sl-processed="1">Architecture</a> <a href="http://vikashazrati.wordpress.com/category/article/" style="font-size: 103.43137254902%; padding: 1px; margin: 1px;" title="Article (3)" sl-processed="1">Article</a> <a href="http://vikashazrati.wordpress.com/category/auditing/" style="font-size: 100%; padding: 1px; margin: 1px;" title="Auditing (1)" sl-processed="1">Auditing</a> <a href="http://vikashazrati.wordpress.com/category/better-software/" style="font-size: 124.01960784314%; padding: 1px; margin: 1px;" title="Better Software (15)" sl-processed="1">Better Software</a> <a href="http://vikashazrati.wordpress.com/category/business/" style="font-size: 112.00980392157%; padding: 1px; margin: 1px;" title="Business (8)" sl-processed="1">Business</a> <a href="http://vikashazrati.wordpress.com/category/cloud/" style="font-size: 139.46078431373%; padding: 1px; margin: 1px;" title="Cloud (24)" sl-processed="1">Cloud</a> <a href="http://vikashazrati.wordpress.com/category/cms/" style="font-size: 100%; padding: 1px; margin: 1px;" title="CMS (1)" sl-processed="1">CMS</a> <a href="http://vikashazrati.wordpress.com/category/conference/" style="font-size: 100%; padding: 1px; margin: 1px;" title="Conference (1)" sl-processed="1">Conference</a> <a href="http://vikashazrati.wordpress.com/category/database/" style="font-size: 101.71568627451%; padding: 1px; margin: 1px;" title="Database (2)" sl-processed="1">Database</a> <a href="http://vikashazrati.wordpress.com/category/dbunit/" style="font-size: 101.71568627451%; padding: 1px; margin: 1px;" title="dbunit (2)" sl-processed="1">dbunit</a> <a href="http://vikashazrati.wordpress.com/category/general/" style="font-size: 148.03921568627%; padding: 1px; margin: 1px;" title="General (29)" sl-processed="1">General</a> <a href="http://vikashazrati.wordpress.com/category/hibernate/" style="font-size: 100%; padding: 1px; margin: 1px;" title="Hibernate (1)" sl-processed="1">Hibernate</a> <a href="http://vikashazrati.wordpress.com/category/hsqldb/" style="font-size: 101.71568627451%; padding: 1px; margin: 1px;" title="hsqldb (2)" sl-processed="1">hsqldb</a> <a href="http://vikashazrati.wordpress.com/category/infrastructure/" style="font-size: 103.43137254902%; padding: 1px; margin: 1px;" title="Infrastructure (3)" sl-processed="1">Infrastructure</a> <a href="http://vikashazrati.wordpress.com/category/java/" style="font-size: 275%; padding: 1px; margin: 1px;" title="Java (103)" sl-processed="1">Java</a> <a href="http://vikashazrati.wordpress.com/category/linux/" style="font-size: 139.46078431373%; padding: 1px; margin: 1px;" title="linux (24)" sl-processed="1">linux</a> <a href="http://vikashazrati.wordpress.com/category/maven/" style="font-size: 105.14705882353%; padding: 1px; margin: 1px;" title="Maven (4)" sl-processed="1">Maven</a> <a href="http://vikashazrati.wordpress.com/category/news/" style="font-size: 101.71568627451%; padding: 1px; margin: 1px;" title="News (2)" sl-processed="1">News</a> <a href="http://vikashazrati.wordpress.com/category/plugin/" style="font-size: 100%; padding: 1px; margin: 1px;" title="Plugin (1)" sl-processed="1">Plugin</a> <a href="http://vikashazrati.wordpress.com/category/quality/" style="font-size: 101.71568627451%; padding: 1px; margin: 1px;" title="Quality (2)" sl-processed="1">Quality</a> <a href="http://vikashazrati.wordpress.com/category/random-thoughts/" style="font-size: 105.14705882353%; padding: 1px; margin: 1px;" title="Random Thoughts (4)" sl-processed="1">Random Thoughts</a> <a href="http://vikashazrati.wordpress.com/category/scala-3-3/" style="font-size: 100%; padding: 1px; margin: 1px;" title="Scala (1)" sl-processed="1">Scala</a> <a href="http://vikashazrati.wordpress.com/category/scrum/" style="font-size: 105.14705882353%; padding: 1px; margin: 1px;" title="Scrum (4)" sl-processed="1">Scrum</a> <a href="http://vikashazrati.wordpress.com/category/security/" style="font-size: 101.71568627451%; padding: 1px; margin: 1px;" title="Security (2)" sl-processed="1">Security</a> <a href="http://vikashazrati.wordpress.com/category/testing/" style="font-size: 108.57843137255%; padding: 1px; margin: 1px;" title="testing (6)" sl-processed="1">testing</a> <a href="http://vikashazrati.wordpress.com/category/tip/" style="font-size: 110.29411764706%; padding: 1px; margin: 1px;" title="Tip (7)" sl-processed="1">Tip</a> <a href="http://vikashazrati.wordpress.com/category/weblogic/" style="font-size: 101.71568627451%; padding: 1px; margin: 1px;" title="Weblogic (2)" sl-processed="1">Weblogic</a> </div></div><!--/widget--><div id="top-posts-2" class="widget widget_top-posts"><h3 class="hl">Top Posts</h3><ul><li><a href="http://vikashazrati.wordpress.com/2007/07/26/quicktip-how-to-increase-the-java-heap-memory-for-maven-2-on-linux/" class="bump-view" data-bump-view="tp" sl-processed="1">QuickTip : How to increase the Java heap memory for Maven 2 on linux</a></li>
+<li><a href="http://vikashazrati.wordpress.com/2008/02/03/quicktip-transferring-files-between-two-ubuntu-systems/" class="bump-view" data-bump-view="tp" sl-processed="1">QuickTip: Transferring files between two Ubuntu systems</a></li>
+<li><a href="http://vikashazrati.wordpress.com/2008/10/30/fault-failure-error/" class="bump-view" data-bump-view="tp" sl-processed="1">Difference between Fault, Failure and Error</a></li>
+<li><a href="http://vikashazrati.wordpress.com/2007/12/05/quicktip-spring-20-testing-javalangnosuchmethoderror-orgspringframeworkutilobjectutilsnullsafetostring/" class="bump-view" data-bump-view="tp" sl-processed="1">QuickTip : Spring 2.0 testing: java.lang.NoSuchMethodError: org.springframework.util.ObjectUtils.nullSafeToString</a></li>
+<li><a href="http://vikashazrati.wordpress.com/2008/10/24/truth-about-availabilit/" class="bump-view" data-bump-view="tp" sl-processed="1">The Truth About Availability: What does 99.99% mean?</a></li>
+<li><a href="http://vikashazrati.wordpress.com/2009/01/25/http-proxy-sv/" class="bump-view" data-bump-view="tp" sl-processed="1">QuickTip: Setting HTTP Proxy for SVN</a></li>
+<li><a href="http://vikashazrati.wordpress.com/2009/10/10/apache-weblogic-ubuntu/" class="bump-view" data-bump-view="tp" sl-processed="1">Installing Apache 2.2.11 with Weblogic 10.3 on Ubuntu 9.04 64 bit</a></li>
+<li><a href="http://vikashazrati.wordpress.com/2010/06/26/could-not-calculate-build-plan-missing-maven-resources-pluginmaven-plugin2-4-1/" class="bump-view" data-bump-view="tp" sl-processed="1">Could not calculate build plan: Missing: maven-resources-plugin:maven-plugin:2.4.1</a></li>
+<li><a href="http://vikashazrati.wordpress.com/2011/01/12/creating-a-management-dashboard-with-google-apps-in-10-minutes/" class="bump-view" data-bump-view="tp" sl-processed="1">Creating a Management Dashboard with Google Apps in 10 minutes</a></li>
+<li><a href="http://vikashazrati.wordpress.com/2007/07/30/dbunit-extracting-test-data-into-xml-file/" class="bump-view" data-bump-view="tp" sl-processed="1">DBUNIT : Extracting Test Data into XML file</a></li>
+</ul></div><!--/widget-->
+</div>
+
+			<div class="footer footer_left">
+
+                <div class="fl"><a href="http://wordpress.com/?ref=footer" sl-processed="1">Blog at WordPress.com</a>.</div>
+
+				<div class="fr"><a href="http://theme.wordpress.com/themes/inuit-types/" title="Learn more about this theme" sl-processed="1">The Inuit Types Theme</a>.</div>
+
+                <div class="fix"><!----></div>
+
+            </div>
+
+
+    </div>
+
+</div>
+
+<div class="fix"><!----></div>
+
+<script type="text/javascript" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/wpgroho.js"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"http:\/\/vikashazrati.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"http:\/\/vikashazrati.wordpress.com\/wp-login.php?action=logout&_wpnonce=7d9f06553c","homeURL":"http:\/\/vikashazrati.wordpress.com\/","postID":"237","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"","userIsLoggedIn":"","isJetpack":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/saved_resource(4)"></script>
+
+	<div id="bit" class="loggedout-follow-normal" style="bottom: -280px;">
+		<a class="bsub" href="javascript:void(0)" sl-processed="1"><span id="bsub-text">Follow</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Follow “c0nnexx10n : C0nnect1ng L1fe w1th Techn010gy”</label></h3>
+
+			<form action="https://subscribe.wordpress.com/" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+			
+			<p><input type="email" name="email" value="Enter your email address" onfocus="this.value=(this.value==&quot;Enter your email address&quot;) ? &quot;&quot; : this.value;" onblur="this.value=(this.value==&quot;&quot;) ? &quot;Enter email address&quot; : this.value;" id="loggedout-follow-field"></p>
+
+			<input type="hidden" name="action" value="subscribe">
+			<input type="hidden" name="blog_id" value="999392">
+			<input type="hidden" name="source" value="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/">
+			<input type="hidden" name="sub-type" value="loggedout-follow">
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="f820183a19"><input type="hidden" name="_wp_http_referer" value="/2008/11/19/continuous-integration-multi-module-project/">
+			<p id="bsub-subscribe-button"><input type="submit" value="Sign me up"></p>
+			</form>
+					<div id="bsub-credit"><a href="http://wordpress.com/signup/?ref=lof" sl-processed="1">Powered by WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+	<script type="text/javascript">
+	var skimlinks_pub_id = "725X584219"
+	var skimlinks_sitename = "vikashazrati.wordpress.com";
+	</script>
+	<script type="text/javascript" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/725X1342.skimlinks.js"></script><script type="text/javascript" charset="UTF-8" id="polldaddyRatings"><!--//--><![CDATA[//><!--
+PDRTJS_settings_368984_post_237={"id":368984,"unique_id":"wp-post-237","title":"Continuous%20Integration%20in%20a%20Huge%20Multi-Module%26nbsp%3BProject","permalink":"http:\/\/vikashazrati.wordpress.com\/2008\/11\/19\/continuous-integration-multi-module-project\/","item_id":"_post_237"}; if ( typeof PDRTJS_RATING !== 'undefined' ){if ( typeof PDRTJS_368984_post_237 == 'undefined' ){PDRTJS_368984_post_237 = new PDRTJS_RATING( PDRTJS_settings_368984_post_237 );}}
+//--><!]]></script><script type="text/javascript" charset="UTF-8" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/rating.js"></script>
+	<script type="text/javascript">
+		WPCOM_sharing_counts = {"http:\/\/vikashazrati.wordpress.com\/2008\/11\/19\/continuous-integration-multi-module-project\/":237}	</script>
+		<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-linkedin' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+			<div id="sharing_email" style="display: none;">
+		<form action="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy.htm" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="">
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="">
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="">
+
+			
+			<div class="recaptcha" id="sharing_recaptcha"></div><input type="hidden" name="recaptcha_public_key" id="recaptcha_public_key" value="6LcYW8MSAAAAADBAuEH9yaPcF7lWh11Iq62ZKtoo">
+			<img style="float: right; display: none" class="loading" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/loading.gif" alt="loading" width="16" height="16">
+			<input type="submit" value="Send Email" class="sharing_send">
+			<a href="http://vikashazrati.wordpress.com/2008/11/19/continuous-integration-multi-module-project/#cancel" class="sharing_cancel" sl-processed="1">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+		<iframe src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/master.htm" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesWidgetBatch = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesBatchHandler() {
+				var requests = [];
+				jQuery( 'div.jetpack-likes-widget-unloaded' ).each( function( i ) {
+					if ( jetpackLikesWidgetBatch.indexOf( this.id ) > -1 )
+						return;
+					jetpackLikesWidgetBatch.push( this.id );
+					var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+					var match = regex.exec( this.id );
+					if ( ! match || match.length != 5 )
+						return;
+
+					var info = {
+						blog_id: match[2],
+						width:   this.width
+					};
+
+					if ( 'post' == match[1] ) {
+						info.post_id = match[3];
+					} else if ( 'comment' == match[1] ) {
+						info.comment_id = match[3];
+					}
+
+					info.obj_id = match[4];
+
+					requests.push( info );
+				});
+
+				if ( requests.length > 0 ) {
+					JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+				}
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' ),
+								isRtl: ( 'rtl' == jQuery( '#wpadminbar' ).css( 'direction' ) )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						JetpackLikesBatchHandler();
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'clickReblogFlair' == event.event ) {
+					wpcom_reblog.toggle_reblog_box_flair( event.obj_id );
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="' + liker.profile_URL + '" class="wpl-liker" rel="nofollow" target="_parent"><img src="' + liker.avatar_URL + '" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Grab any unloaded widgets for a batch request
+					JetpackLikesBatchHandler();
+
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				if ( 'undefined' === typeof wrapperID ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var recaptcha_options = {"lang":"en"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/saved_resource(5)"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/w.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'999392','v':'wpcom','tz':'5','user_id':'0','post':'237','subd':'vikashazrati'});
+ex_go({'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWFnNncxc1tjZG9XVXhRdEl8TyVnZTFjeVZjYlcmTitVRjVXcT1zWSZ2SzRwb1dHUVRKZSw/RnRXY2dQW28zQmUvM2w/XV9KMHVQSVlkZHU/XUFiZlR4fF1xSz1+Nm5wRHx0OE5pWlg3akhSVy9nWUxwb3pbMUczXXpXLFQzaWVORHZXQ0J1SHFsNi1ySGFSfGJHXU9GQVVpL0M5S1duZ1E/L2R8dz9xNTQlREN4em1XPTVQb0hrVDJpckI2LiUrTD8lNixOPyUlZj9QaEIyZl8/TWNCSGp0enVxVmVKbUFEXXRlSGZVUkJOLU49VFN+LzhnWWJQd21zW1tVYko/T3EsQ016JjNVbmR5SUMvMW15RnEyREZsaWJRbUxxRHdVPVExJTlaJg=='});
+addLoadEvent(function(){linktracker_init('999392',237);});
+	</script><img id="wpstats" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/g.gif" alt=""><img id="wpstats2" src="./Continuous Integration in a Huge Multi-Module Project   c0nnexx10n   C0nnect1ng L1fe w1th Techn010gy_files/g(1).gif" alt="" style="display:none">
+<noscript>&lt;img src="http://stats.wordpress.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /&gt;</noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//stats.wordpress.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+<!--[if lt IE 7]>
+<script src="http://s2.wp.com/wp-content/themes/pub/inuit-types/library/js/IE7.js?m=1315596887g" type="text/javascript"></script>
+<![endif]-->
+
+
+</body></html>

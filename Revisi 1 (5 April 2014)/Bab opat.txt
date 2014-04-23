@@ -1,0 +1,26 @@
+4.1
+- Untuk meningkatkan produktivitas pekerjaan setiap developer
+- Developer produktivitasnya berbeda, lebih mudah 1 modul area fungsional
+
+Modul = Package + (1 atau lebih) Class
+Unit  = Method
+
+Backup -> Diperuntukkan agar developer dapat melakukan rollback terhadap vesi dari modul sebelumnya yang belum diubah
+
+Integrasi harus ada dependensi
+
+1 skenario = 1 test case
+Skenario: Langkah-langkah yang akan dilakukan
+test case: Isian yang akan dimasukkan ke skenario
+
+JUnit -> Mengotomasi eksekusi kode pengujian
+FEST -> Mengotomasikan skenario pengujian Unit/integrasi pada GUI
+
+Unit testing = Punya skenario pengujian
+Integration testing = Punya skenario pengujian, tetapi ada dependensi dengan modul yang lain.
+
+Bab 4 -> Jangan bilang folder, lebih baik package
+Bab 4 -> Gapake branching atau forking? ga masalah
+Bab 4 -> Perlu dikasih alasan pada praktik? Siapkan saja
+Bab 4 -> Pemilihan tool langsung di sub bab (N.N.N)
+

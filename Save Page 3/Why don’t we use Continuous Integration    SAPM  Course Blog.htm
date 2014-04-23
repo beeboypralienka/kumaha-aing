@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)https://blog.inf.ed.ac.uk/sapm/2014/02/14/why-dont-we-use-continuous-integration/ -->
+<html lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Why don’t we use Continuous Integration? | SAPM: Course Blog</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://blog.inf.ed.ac.uk/sapm/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="https://blog.inf.ed.ac.uk/sapm/wp-content/themes/twentythirteen/js/html5.js"></script>
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="SAPM: Course Blog » Feed" href="https://blog.inf.ed.ac.uk/sapm/feed/">
+<link rel="alternate" type="application/rss+xml" title="SAPM: Course Blog » Comments Feed" href="https://blog.inf.ed.ac.uk/sapm/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="SAPM: Course Blog » Why don’t we use Continuous Integration? Comments Feed" href="https://blog.inf.ed.ac.uk/sapm/2014/02/14/why-dont-we-use-continuous-integration/feed/">
+<link rel="stylesheet" id="twentythirteen-fonts-css" href="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="genericons-css" href="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentythirteen-style-css" href="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/style.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentythirteen-ie-css'  href='https://blog.inf.ed.ac.uk/sapm/wp-content/themes/twentythirteen/css/ie.css?ver=2013-07-18' type='text/css' media='all' />
+<![endif]-->
+<script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/jquery.js"></script>
+<script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/jquery-migrate.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.inf.ed.ac.uk/sapm/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.inf.ed.ac.uk/sapm/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Design patterns. Not for eating." href="https://blog.inf.ed.ac.uk/sapm/2014/02/14/design-patterns-not-for-eating/">
+<link rel="next" title="From Functions to Functors:  programming languages evolution towards code reuse in the large ." href="https://blog.inf.ed.ac.uk/sapm/2014/02/14/from-functions-to-functors-programming-languages-evolution-towards-code-reuse-in-the-large/">
+<meta name="generator" content="WordPress 3.8.1">
+<link rel="canonical" href="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/Why don’t we use Continuous Integration    SAPM  Course Blog.htm">
+<link rel="shortlink" href="https://blog.inf.ed.ac.uk/sapm/?p=217">
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+	<style type="text/css" id="twentythirteen-header-css">
+			.site-header {
+			background: url(https://blog.inf.ed.ac.uk/sapm/wp-content/themes/twentythirteen/images/headers/circle.png) no-repeat scroll top;
+			background-size: 1600px auto;
+		}
+		</style>
+	<script type="text/javascript" charset="UTF-8" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/tCBzJRqneV5tJFCAUdKmLPYTyVH8SN5m5IZzuhnsVzY.js"></script><style type="text/css">.recaptchatable td img{display:block}.recaptchatable .recaptcha_r1_c1{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') 0 -63px no-repeat;width:318px;height:9px}.recaptchatable .recaptcha_r2_c1{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -18px 0 no-repeat;width:9px;height:57px}.recaptchatable .recaptcha_r2_c2{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -27px 0 no-repeat;width:9px;height:57px}.recaptchatable .recaptcha_r3_c1{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') 0 0 no-repeat;width:9px;height:63px}.recaptchatable .recaptcha_r3_c2{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -18px -57px no-repeat;width:300px;height:6px}.recaptchatable .recaptcha_r3_c3{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -9px 0 no-repeat;width:9px;height:63px}.recaptchatable .recaptcha_r4_c1{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -43px 0 no-repeat;width:171px;height:49px}.recaptchatable .recaptcha_r4_c2{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -36px 0 no-repeat;width:7px;height:57px}.recaptchatable .recaptcha_r4_c4{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -214px 0 no-repeat;width:97px;height:57px}.recaptchatable .recaptcha_r7_c1{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -43px -49px no-repeat;width:171px;height:8px}.recaptchatable .recaptcha_r8_c1{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -43px -49px no-repeat;width:25px;height:8px}.recaptchatable .recaptcha_image_cell center img{height:57px}.recaptchatable .recaptcha_image_cell center{height:57px}.recaptchatable .recaptcha_image_cell{background-color:white;height:57px}#recaptcha_area,#recaptcha_table{width:318px!important}.recaptchatable,#recaptcha_area tr,#recaptcha_area td,#recaptcha_area th{margin:0!important;border:0!important;padding:0!important;border-collapse:collapse!important;vertical-align:middle!important}.recaptchatable *{margin:0;padding:0;border:0;font-family:helvetica,sans-serif;font-size:8pt;color:black;position:static;top:auto;left:auto;right:auto;bottom:auto}.recaptchatable #recaptcha_image{position:relative;margin:auto}.recaptchatable #recaptcha_image #recaptcha_challenge_image{display:block}.recaptchatable #recaptcha_image #recaptcha_ad_image{display:block;position:absolute;top:0}.recaptchatable img{border:0!important;margin:0!important;padding:0!important}.recaptchatable a,.recaptchatable a:hover{cursor:pointer;outline:none;border:0!important;padding:0!important;text-decoration:none;color:blue;background:none!important;font-weight:normal}.recaptcha_input_area{position:relative!important;width:153px!important;height:45px!important;margin-left:7px!important;margin-right:7px!important;background:none!important}.recaptchatable label.recaptcha_input_area_text{margin:0!important;padding:0!important;position:static!important;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;background:none!important;height:auto!important;width:auto!important}.recaptcha_theme_red label.recaptcha_input_area_text,.recaptcha_theme_white label.recaptcha_input_area_text{color:black!important}.recaptcha_theme_blackglass label.recaptcha_input_area_text{color:white!important}.recaptchatable #recaptcha_response_field{width:153px!important;position:relative!important;bottom:7px!important;padding:0!important;margin:15px 0 0 0!important;font-size:10pt}.recaptcha_theme_blackglass #recaptcha_response_field,.recaptcha_theme_white #recaptcha_response_field{border:1px solid gray}.recaptcha_theme_red #recaptcha_response_field{border:1px solid #cca940}.recaptcha_audio_cant_hear_link{font-size:7pt;color:black}.recaptchatable{line-height:1!important}#recaptcha_instructions_error{color:red!important}.recaptcha_only_if_privacy{float:right;text-align:right}#recaptcha-ad-choices{position:absolute;height:15px;top:0;right:0}#recaptcha-ad-choices img{height:15px}.recaptcha-ad-choices-collapsed{width:30px;height:15px;display:block}.recaptcha-ad-choices-expanded{width:75px;height:15px;display:none}#recaptcha-ad-choices:hover .recaptcha-ad-choices-collapsed{display:none}#recaptcha-ad-choices:hover .recaptcha-ad-choices-expanded{display:block}
+
+.recaptcha_is_showing_audio .recaptcha_only_if_image,.recaptcha_isnot_showing_audio .recaptcha_only_if_audio,.recaptcha_had_incorrect_sol .recaptcha_only_if_no_incorrect_sol,.recaptcha_nothad_incorrect_sol .recaptcha_only_if_incorrect_sol{display:none !important}</style><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(1)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(2)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(3)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(4)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(5)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(6)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(7)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(8)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(9)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(10)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(11)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(12)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(13)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(14)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(15)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(16)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(17)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(18)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(19)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(20)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(21)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(22)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(23)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(24)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(25)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(26)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(27)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(28)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(29)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(30)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(31)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(32)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(33)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(34)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(35)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(36)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(37)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(38)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(39)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(40)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(41)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(42)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(43)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(44)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(45)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(46)"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/reload(47)"></script></head>
+
+<body class="single single-post postid-217 single-format-standard" style="">
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header" role="banner">
+			<a class="home-link" href="https://blog.inf.ed.ac.uk/sapm/" title="SAPM: Course Blog" rel="home">
+				<h1 class="site-title">SAPM: Course Blog</h1>
+				<h2 class="site-description">Just another Informatics Blogging Service site</h2>
+			</a>
+
+			<div id="navbar" class="navbar">
+				<nav id="site-navigation" class="navigation main-navigation" role="navigation">
+					<h3 class="menu-toggle">Menu</h3>
+					<a class="screen-reader-text skip-link" href="https://blog.inf.ed.ac.uk/sapm/2014/02/14/why-dont-we-use-continuous-integration/#content" title="Skip to content">Skip to content</a>
+					<div class="nav-menu"><ul><li class="page_item page-item-2"><a href="https://blog.inf.ed.ac.uk/sapm/sample-page/">Sample Page</a></li></ul></div>
+					<form role="search" method="get" class="search-form" action="https://blog.inf.ed.ac.uk/sapm/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form>				</nav><!-- #site-navigation -->
+			</div><!-- #navbar -->
+		</header><!-- #masthead -->
+
+		<div id="main" class="site-main">
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+						
+				
+<article id="post-217" class="post-217 post type-post status-publish format-standard hentry category-uncategorized tag-continuous-delivery tag-continuous-testing tag-software-engineering">
+	<header class="entry-header">
+		
+				<h1 class="entry-title">Why don’t we use Continuous Integration?</h1>
+		
+		<div class="entry-meta">
+			<span class="date"><a href="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/Why don’t we use Continuous Integration    SAPM  Course Blog.htm" title="Permalink to Why don’t we use Continuous Integration?" rel="bookmark"><time class="entry-date" datetime="2014-02-14T11:33:07+00:00">February 14, 2014</time></a></span><span class="categories-links"><a href="https://blog.inf.ed.ac.uk/sapm/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a></span><span class="tags-links"><a href="https://blog.inf.ed.ac.uk/sapm/tag/continuous-delivery/" rel="tag">Continuous Delivery</a>, <a href="https://blog.inf.ed.ac.uk/sapm/tag/continuous-testing/" rel="tag">Continuous Testing</a>, <a href="https://blog.inf.ed.ac.uk/sapm/tag/software-engineering/" rel="tag">Software Engineering</a></span><span class="author vcard"><a class="url fn n" href="https://blog.inf.ed.ac.uk/sapm/author/s1367762/" title="View all posts by s1367762" rel="author">s1367762</a></span>					</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<h1 style="text-align: justify;font-size: 24px">1. Introduction:</h1>
+<p>While reading some articles or blog posts ([1], [2], [3]) on Continuous Integration it’s easy to come to the conclusion that this approach ensures your code quality, reduces risks and sets programmers minds at ease. It is not dependant on any particular software development methodology. If it is so, I thought that everybody should use it for the projects they carry out. However, it is not a case – there are many companies that still haven’t started development with CI and I question myself “why?”. This article aims to answer that question.</p>
+<h1 style="text-align: justify;font-size: 24px">2. Continuous Integration itself:</h1>
+<p style="text-align: justify">Continuous Integration [1] is a software development practice which assumes constant integration of code under development. Developers check-ins to the integration server should be made few times a day. Process of code submission is not done until entire compilation, tests and inspection is carried out, proving no problems. Otherwise instant measures should be taken by the developer, to fix any issues. Most important outcome is that there is a great probability that software is functional and the newest version is available to whoever wants it.</p>
+<h1 style="text-align: justify;font-size: 24px">3. Background:</h1>
+<p style="text-align: justify">Some of the issues that I raise in this article are backed up with examples taken from my experience in a company I worked for. Therefore a brief introduction to it is necessary. The firm is a small start-up project, which manufactures home automation system devices. The software developed there is to be considered as long-term projects and large when compared to the number of people working on them. Main software developed there is:</p>
+<ul>
+<li>low level programs for field devices (sensors and actuators);</li>
+<li>applications for controllers running embedded (mainly Linux) operating systems or for mobile devices. This software was the biggest one, constantly extended with newer modules;</li>
+<li>installation configuration system for Desktop computers.</li>
+</ul>
+<p style="text-align: justify">When I joined that company, there was only one experienced programmer working for it. After some time, he left leaving me as the only permanent one, with others being partially hired for some tasks, when there was a need for that. Don’t take the impression of the company, as working in terms of anti-patterns – I mention here its bad aspects only, since the article requires so. I believe there are many companies like this one, especially small ones, that work the same way.</p>
+<h1 style="text-align: justify;font-size: 24px">4. Why CI has not been implemented yet:</h1>
+<p style="text-align: justify">Although many of its advantages, CI doesn’t make its way to all the projects being developed. Most people seem to know its advantages and the outcome it gives to the project. It sounds like a panacea to many of the issues concerning software development – it enforces programming good practices and forces developers to be consequent. However, many aspects such as human state of mind of both managers and programmers, developers’ habits and abilities or the company targets (e.g. money first, quality later) stop CI from being the part of their projects.</p>
+<h2 style="text-align: justify;font-size: 20px">4.1. Commits frequency:</h2>
+<p style="text-align: justify">First of all, I find that basic assumption of CI could be problematic in some circumstances – very frequent code check-outs. To realize it, programmer commits are to be small what poses a difficulty of dividing work into really tiny chunks [2]. Even though developers tend to modularize and divide their work into manageable pieces, it’s often hard to have such granularity of modifications that each is ready in few hours. Every feature being developed requires full life-cycle consisting of consideration, planning and implementation. Especially, if the feature is to be tested before check-in, it’s problematic to reduce its development time.</p>
+<p style="text-align: justify">Moreover, incremental committing just doesn’t work sometimes. This could happen, for instance, if software architecture was not well thought. That kind of issue may be even more frequent in Agile development. Let’s say, one needs to modify part of the code, to adapt it to some changed requirements. If multiple modules are dependent on that change, the tests may fail if the modification is not made in its entirety. Thus bigger change is to be made and it could take more time, before the program works again in as a whole. Then, in order not to break the build, the commits may not be just checked into the main repository for even few day, whatever is needed.</p>
+<p style="text-align: justify">The above example may be a little exaggerated but there is even more to it – human mentality. Programmers, who start working on project parts in the beginning of the day, naturally tend to first analyse the problem and after solution is chosen, implement that strategy. That means most of the commits could occur in the end of the day, which makes integration even more troublesome – they have to get into the queue to the integration server and that takes time.</p>
+<p style="text-align: justify">Increasing commits to the high frequency expected by CI requires significant&nbsp;mind shift. Thus, if there is no mentor, who may help in such process (e.g. experienced manager or some senior developer, who has done CI before) this transition may become a barrier not to be crossed.</p>
+<h2 style="text-align: justify;font-size: 20px">4.2. Mainline only:</h2>
+<p style="text-align: justify">Another aspect, which seems counter-intuitive and may result in turning CI down, is requirement to keep every code in a mainline. This seems even more insane, when CI assumes that broken build gets highest developer’s priority. The problem here is that it is not uncommon that programmers work on some feature in their spare time, between other, more important works. That feature may not be usable or functional for a longer period, and thus incorporating it would very probably break the build.</p>
+<p style="text-align: justify">In my company, there were many projects (mostly extensions to the controlling projects), that were started because there was a need for such functionality. However, there was no need for them to be completely finished or polished (e.g. easily configurable as the rest of the software), because they were meant to be used just in a few instances. Once proof-of-concept was working, there was no additional time devoted for finishing them and making a cohesive part of the entire project. The reason for this was, of course, limitation of resources. If the need occurred, they were meant to be continued, but until then there they had no appropriate tests and they were not acting as a cohesive part of the project. Thus they were held as a separate branches, which according to [1] is against the CI idea.</p>
+<p style="text-align: justify">The main reason why some developed modules should not be on the mainline is lack of resources devoted by managers to it. If it is not finished or tests are not complete, and other duties have higher priority, committing it to the main code is not what CI expects.</p>
+<h2 style="text-align: justify;font-size: 20px">4.3. Automate your tests:</h2>
+<p style="text-align: justify">Creating automated tests for every part of the project, when introducing CI, may impose another&nbsp;difficulty. As mentioned, automated tests are very important part of the CI process and they should cover the code pretty well to reduce the risk of potential bugs [4]. Even though it’s a common practice to write tests, some of them are very difficult to automate.</p>
+<p style="text-align: justify">In our team we didn’t have people who were specialized in tests. This led to situation that testing of more complex modules like those responsible for configuration generation (writing configuration validation was as very difficult) or some GUI components was very challenging and time consuming. Given limited number of developers and time, some of them were carried out manually or by the group of people who used applications (like beta-testers). In the second case, if some bug was detected, first its harmfulness was estimated and then fix priority set. So the “small” bug might be there left for appropriate time to come, which is again against the CI ideas.</p>
+<p style="text-align: justify">One may argue, that difficulty of automated tests writing is not a point against Continuous Integration. CI may still be used, just with small coverage or no code tested at all. However, in such a case it is not that efficient (only compilation correctness is proved) and convincing the manager of CI usability is much more difficult. So, when decision about taking the track of CI is to be made, there are less advantages to speak out.</p>
+<h2 style="text-align: justify;font-size: 20px">4.4. Appropriate timing:</h2>
+<p style="text-align: justify">One important aspect that should be addressed is the time in the project lice cycle, when CI is to be introduced. It is much easier to have the project running with CI, if it was started with CI in mind. Then, all the components of the project (such as tests, scripts, even its architecture) are prepared so that it’s compatible with the idea and tools used for CI.</p>
+<p style="text-align: justify">It is not easy, though, if the project is already ongoing (this could be the case of long-term projects). In this case it could require too significant modifications or time-consuming additions to be made, to consider CI as a good solution (of course this approach is short-sighted). In such situations, it should be estimated, what are the advantages and costs of switching to CI – the latter ones could be too high, so even if there is a team will, managers don’t agree.</p>
+<h2 style="text-align: justify;font-size: 20px">4.5. Direct costs:</h2>
+<p style="text-align: justify">Not to be forgotten obstacle of introducing CI in the company may be the cost of integration servers and time cost, required to run these machines [5]. There are many open source projects such as Cruise Control [6] that could be used for that purpose. However, there is still the need for some training (especially, when no one in the team has done that before). The hardware cost depends on the type of project being tested. If it’s small and tests are not resources consuming, some old computer may be used [7]. Otherwise, newer machine should be used. In cases of more complicated processes, where build time exceeds 10 minutes limit [1], the build should be divided into few steps over multiple computers. Again, this may pose significant costs, especially for smaller companies. Larger ones, probably won’t see that as a drawback, since in comparison to money they pay as salary to the software engineers is much more insignificant cost.</p>
+<h2 style="text-align: justify;font-size: 20px">4.6. Project ROI:</h2>
+<p style="text-align: justify">Last thing, not connected to large projects, but worth mentioning while CI is discussed is return of investment [5]. In case of small programs with short life cycle period, especially for those that long term maintenance is not assumed, the burden of setting things up could be too high.</p>
+<h1 style="text-align: justify;font-size: 24px">5. Summary:</h1>
+<p style="text-align: justify">In my opinion, presented issues are the most important ones that prevent software developer teams from &nbsp;introducing Continuous Integration. It is worth for a team considering using CI to detect if these apply to them. If so, they should not be discouraged but try more step-by-step approach. Continuous Integration has significant advantages which are especially obvious for projects where more than one developer work on.&nbsp;It is worth the effort in a longer run, since it reduces&nbsp;integration risks, gives better overview of the project state, encourage developers to work proactively and not to procrastinate. It is a really good way to achieve high quality product just by sticking to some general rules.</p>
+<h1 style="text-align: justify;font-size: 24px">6. Bibliography:</h1>
+<p style="text-align: left">[1] http://www.martinfowler.com/articles/continuousIntegration.html<br>
+[2] http://www.jrothman.com/blog/mpd/2011/12/is-the-cost-of-continuous-integration-worth-the-value-on-your-program-part-1.html (also 2nd and 3rd parts);<br>
+[3] Paul Duvall, Stephen M. Matyas, and Andrew Glover. 2007. Continuous Integration: Improving Software Quality and Reducing Risk (The Addison-Wesley Signature Series). Addison-Wesley Professional<br>
+[4] http://www.ibm.com/developerworks/java/library/j-ap11297/index.html<br>
+[5] http://stackoverflow.com/questions/214695/what-are-some-arguments-against-using-continuous-integration<br>
+[6] http://cruisecontrol.sourceforge.net/<br>
+[7] http://www.jamesshore.com/Blog/Continuous-Integration-on-a-Dollar-a-Day.html<br>
+[8] http://callport.blogspot.co.uk/2009/02/continuous-integration-should-we-always.html</p>
+			</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+					<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">Post navigation</h1>
+		<div class="nav-links">
+
+			<a href="https://blog.inf.ed.ac.uk/sapm/2014/02/14/design-patterns-not-for-eating/" rel="prev"><span class="meta-nav">←</span> Design patterns. Not for eating.</a>			<a href="https://blog.inf.ed.ac.uk/sapm/2014/02/14/from-functions-to-functors-programming-languages-evolution-towards-code-reuse-in-the-large/" rel="next">From Functions to Functors:  programming languages evolution towards code reuse in the large . <span class="meta-nav">→</span></a>
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+					
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			2 thoughts on “<span>Why don’t we use Continuous Integration?</span>”		</h2>
+
+		<ol class="comment-list">
+					<li id="comment-37" class="comment even thread-even depth-1">
+			<article id="div-comment-37" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/844f54c6bdd57c0c399811ef89bf6a7d" class="avatar avatar-74 photo" height="74" width="74">						<b class="fn">Brian</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://blog.inf.ed.ac.uk/sapm/2014/02/14/why-dont-we-use-continuous-integration/#comment-37">
+							<time datetime="2014-02-20T02:15:56+00:00">
+								February 20, 2014 at 2:15 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Nice post. I think you make the point that CI is not the obvious choice for many groups quite well.</p>
+<p>Story time…</p>
+<p>I just finished integrating CI for a handful of my projects about 6 months ago. The environment is extremely similar to what you described in your post. Small company and dev team, limited resources etc etc. So I can completely relate to the reasons you have outlined, they make a lot of sense too me. In large part, they are why I resisted CI for so long. </p>
+<p>I like to think that what we have built out now is “CI – lite”. We have the source control, the build server and the test runner, but the tests themselves are very limited. They only test core functionality where we absolutely cannot afford regressions and other problems (firmware updates, daylight savings time transitions, and other important data transfers). </p>
+<p>And to add to your post a bit, doing a firmware update takes about 20 seconds. The aggregate across all the device types is quite large. There is no way a battery of unit tests will take under 5 minutes. As you mentioned, technically, this is not appropriate for CI.</p>
+<p>Up to this point the largest gain from CI is organization, stability and confidence across all projects. Because of varying reasons, development pace is very high and often times quality is only average – and that is the expectation. As developers we are assigned to something, reassigned… reassigned again, then back to the original assignment. It’s horrible. As this cycle repeats over and over, disorganization sets in and you get everything from software rot too completely broken builds. I have found that CI helps keep the projects “on the rails”.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="https://blog.inf.ed.ac.uk/sapm/2014/02/14/why-dont-we-use-continuous-integration/?replytocom=37#respond" onclick="return addComment.moveForm(&quot;div-comment-37&quot;, &quot;37&quot;, &quot;respond&quot;, &quot;217&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-55" class="comment byuser comment-author-s1312945 odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-55" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/d2a6d934f5e2d951f560bd9f29e9156e" class="avatar avatar-74 photo" height="74" width="74">						<b class="fn">Aimo Thiele</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://blog.inf.ed.ac.uk/sapm/2014/02/14/why-dont-we-use-continuous-integration/#comment-55">
+							<time datetime="2014-02-28T15:40:28+00:00">
+								February 28, 2014 at 3:40 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hey,</p>
+<p>thanks for the inspiring post! I just wanted to let you know I just posted a response article: <a href="http://blog.inf.ed.ac.uk/sapm/2014/02/28/continuous-integration-software-quality-vs-resources/" rel="nofollow">http://blog.inf.ed.ac.uk/sapm/2014/02/28/continuous-integration-software-quality-vs-resources/</a></p>
+<p>Kind regards<br>
+Aimo</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply">
+					<a class="comment-reply-link" href="https://blog.inf.ed.ac.uk/sapm/2014/02/14/why-dont-we-use-continuous-integration/?replytocom=55#respond" onclick="return addComment.moveForm(&quot;div-comment-55&quot;, &quot;55&quot;, &quot;respond&quot;, &quot;217&quot;)">Reply</a>				</div><!-- .reply -->
+			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+		
+	
+									<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://blog.inf.ed.ac.uk/sapm/2014/02/14/why-dont-we-use-continuous-integration/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="https://blog.inf.ed.ac.uk/sapm/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" aria-required="true"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30"></p>
+		<script type="text/javascript">
+			var RecaptchaOptions = (typeof CustomRecaptchaOptions === 'undefined') ? {
+				theme: 'red',
+				lang: 'en',
+			} : CustomRecaptchaOptions;
+		</script>
+			<input type="hidden" name="error_redirect_to" value="">
+<script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/challenge"></script><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/recaptcha.js"></script><div id="recaptcha_widget_div" style="" class=" recaptcha_nothad_incorrect_sol recaptcha_isnot_showing_audio"><div id="recaptcha_area"><table id="recaptcha_table" class="recaptchatable recaptcha_theme_red"> <tbody><tr> <td colspan="6" class="recaptcha_r1_c1"></td> </tr> <tr> <td class="recaptcha_r2_c1"></td> <td colspan="4" class="recaptcha_image_cell"><center><div id="recaptcha_image" style="width: 300px; height: 57px;"><img id="recaptcha_challenge_image" alt="reCAPTCHA challenge image" height="57" width="300" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/image"></div></center></td> <td class="recaptcha_r2_c2"></td> </tr> <tr> <td rowspan="6" class="recaptcha_r3_c1"></td> <td colspan="4" class="recaptcha_r3_c2"></td> <td rowspan="6" class="recaptcha_r3_c3"></td> </tr> <tr> <td rowspan="3" class="recaptcha_r4_c1" height="49"> <div class="recaptcha_input_area"> <span id="recaptcha_challenge_field_holder" style="display: none;"><input type="hidden" name="recaptcha_challenge_field" id="recaptcha_challenge_field" value="03AHJ_VuvPHRVux8Zsw7G4iaU_5iaQps-KpahaEawwAZ6JJZyq83QvwOVIIwe7rDF10lzjt8SXinuLHVVTnkfdSU01rU3werBaQr-rnXMxrCybaYQDIBLyZla1IOkAXGwtF7XIMKQ96977HS7NA8IN-37Yo1xymQ3raxOiRg3Oje4Vi_hnn9Hh7KpiqW_uPvZBPZ22CO8KPrUyMz4YbFDewXjF_YSLBGX4mO2BKhDTVH-A9mD57HMKG4bS5E-Q3BwJdLHgFE0l8nSY"></span><input name="recaptcha_response_field" id="recaptcha_response_field" type="text" autocorrect="off" autocapitalize="off" placeholder="Type the text" autocomplete="off"> <span id="recaptcha_privacy" class="recaptcha_only_if_privacy"><a href="http://www.google.com/intl/en/policies/" target="_blank">Privacy &amp; Terms</a></span> </div> </td> <td rowspan="4" class="recaptcha_r4_c2"></td> <td><a id="recaptcha_reload_btn" title="Get a new challenge"><img id="recaptcha_reload" width="25" height="17" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/refresh.gif" alt="Get a new challenge"></a></td> <td rowspan="4" class="recaptcha_r4_c4"></td> </tr> <tr> <td><a id="recaptcha_switch_audio_btn" class="recaptcha_only_if_image" title="Get an audio challenge"><img id="recaptcha_switch_audio" width="25" height="16" alt="Get an audio challenge" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/audio.gif"></a><a id="recaptcha_switch_img_btn" class="recaptcha_only_if_audio" title="Get a visual challenge"><img id="recaptcha_switch_img" width="25" height="16" alt="Get a visual challenge" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/text.gif"></a></td> </tr> <tr> <td><a id="recaptcha_whatsthis_btn" title="Help"><img id="recaptcha_whatsthis" width="25" height="16" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/help.gif" alt="Help"></a></td> </tr> <tr> <td class="recaptcha_r7_c1"></td> <td class="recaptcha_r8_c1"></td> </tr> </tbody></table> </div></div>
+
+	<noscript>
+  		&lt;iframe src="https://www.google.com/recaptcha/api/noscript?k=6Le-S9cSAAAAAIkUsgCe8ew20vwGk5H3arXhmYO1&amp;amp;hl=en" height="300" width="500"&gt;&lt;/iframe&gt;&lt;br/&gt;
+  		&lt;textarea name="recaptcha_challenge_field" rows="3" cols="40"&gt;&lt;/textarea&gt;
+  		&lt;input type="hidden" name="recaptcha_response_field" value="manual_challenge"/&gt;
+	</noscript>												<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="217" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+											</form>
+							</div><!-- #respond -->
+			
+</div><!-- #comments -->
+			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+		</div><!-- #main -->
+		<footer id="colophon" class="site-footer" role="contentinfo">
+				<div id="secondary" class="sidebar-container" role="complementary">
+		<div class="widget-area masonry" style="position: relative; height: 422px;">
+			<aside id="search-2" class="widget widget_search masonry-brick" style="position: absolute; top: 0px; left: 0px;"><form role="search" method="get" class="search-form" action="https://blog.inf.ed.ac.uk/sapm/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries masonry-brick" style="position: absolute; top: 0px; left: 265px;">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="https://blog.inf.ed.ac.uk/sapm/2014/03/18/design-patterns-and-frameworks/">Design Patterns and Frameworks</a>
+						</li>
+					<li>
+				<a href="https://blog.inf.ed.ac.uk/sapm/2014/03/17/plans-are-nothing-planning-is-everything1/">Plans are nothing; planning is everything[1]</a>
+						</li>
+					<li>
+				<a href="https://blog.inf.ed.ac.uk/sapm/2014/03/14/contributing-to-open-source/">Contributing to open source</a>
+						</li>
+					<li>
+				<a href="https://blog.inf.ed.ac.uk/sapm/2014/03/14/when-we-take-measurements-with-a-pinch-of-salt/">When we take measurements with a pinch of salt</a>
+						</li>
+					<li>
+				<a href="https://blog.inf.ed.ac.uk/sapm/2014/03/14/open-source-and-its-advantages-and-disadvantages-over-commercial-software/">Open Source and its advantages and disadvantages over Commercial software</a>
+						</li>
+				</ul>
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments masonry-brick" style="position: absolute; top: 0px; left: 530px;"><h3 class="widget-title">Recent Comments</h3><ul id="recentcomments"><li class="recentcomments"><a href="http://twitter.com/realsarinavalen" rel="external nofollow" class="url">sarina valentina</a> on <a href="https://blog.inf.ed.ac.uk/sapm/2014/03/18/design-patterns-and-frameworks/#comment-209">Design Patterns and Frameworks</a></li><li class="recentcomments"><a href="http://www.justtotaltech.co.uk/" rel="external nofollow" class="url">software development</a> on <a href="https://blog.inf.ed.ac.uk/sapm/2014/02/17/response-article-software-measurements-in-the-eye-of-clients/#comment-174">Response Article: Software Measurements in the eye of clients</a></li><li class="recentcomments"><a href="http://executair.nl/tiki-index.php?page=UserPagerandaldendyejkei" rel="external nofollow" class="url">Lynwood</a> on <a href="https://blog.inf.ed.ac.uk/sapm/2014/03/07/resp-why-pair-programming-is-the-best-development-practice/#comment-156">Resp: “Why Pair Programming Is The Best Development Practice”</a></li><li class="recentcomments">s1010471 on <a href="https://blog.inf.ed.ac.uk/sapm/2014/03/07/ab-testing-use-with-care/#comment-152">A/B Testing – Use with care</a></li><li class="recentcomments">s1010471 on <a href="https://blog.inf.ed.ac.uk/sapm/2014/03/07/ab-testing-use-with-care/#comment-151">A/B Testing – Use with care</a></li></ul></aside><aside id="archives-2" class="widget widget_archive masonry-brick" style="position: absolute; top: 0px; left: 795px;"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href="https://blog.inf.ed.ac.uk/sapm/2014/03/">March 2014</a></li>
+	<li><a href="https://blog.inf.ed.ac.uk/sapm/2014/02/">February 2014</a></li>
+	<li><a href="https://blog.inf.ed.ac.uk/sapm/2014/01/">January 2014</a></li>
+		</ul>
+</aside><aside id="categories-2" class="widget widget_categories masonry-brick" style="position: absolute; top: 96px; left: 0px;"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-1"><a href="https://blog.inf.ed.ac.uk/sapm/category/uncategorized/" title="View all posts filed under Uncategorized">Uncategorized</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta masonry-brick" style="position: absolute; top: 192px; left: 795px;"><h3 class="widget-title">Meta</h3>			<ul>
+						<li><a href="https://blog.inf.ed.ac.uk/sapm/wp-login.php">Log in</a></li>
+			<li><a href="https://blog.inf.ed.ac.uk/sapm/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://blog.inf.ed.ac.uk/sapm/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>						</ul>
+</aside>		</div><!-- .widget-area -->
+	</div><!-- #secondary -->
+
+			<div class="site-info">
+								<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- #colophon -->
+	</div><!-- #page -->
+
+	<!-- MathJax Latex Plugin installed: Disabled as no shortcodes on this page --><script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="./Why don’t we use Continuous Integration    SAPM  Course Blog_files/functions.js"></script>
+
+<iframe src="about:blank" style="height: 0px; width: 0px; visibility: hidden; border: none;">This frame prevents back/forward cache problems in Safari.</iframe></body></html>

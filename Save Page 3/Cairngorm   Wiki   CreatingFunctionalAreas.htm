@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)http://sourceforge.net/adobe/cairngorm/wiki/CreatingFunctionalAreas/?version=5 -->
+<html lang="en" class="js flexbox canvas canvastext no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js canvas canvastext"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./Cairngorm   Wiki   CreatingFunctionalAreas_files/event"></script><script type="text/javascript" async="async" src="./Cairngorm   Wiki   CreatingFunctionalAreas_files/creativeadobecom.js"></script>
+    
+    <title>Cairngorm / Wiki / CreatingFunctionalAreas</title>
+    
+<meta id="webtracker" name="webtracker" content="{&quot;event_id&quot;: &quot;7b08b6ae-c73d-11e3-ba01-0200ac1d2934&quot;, &quot;project&quot;: &quot;cairngorm.adobe&quot;, &quot;action_type&quot;: &quot;wiki&quot;}">
+
+<script type="text/javascript" async="" src="./Cairngorm   Wiki   CreatingFunctionalAreas_files/ga.js"></script><script src="./Cairngorm   Wiki   CreatingFunctionalAreas_files/modernizr.custom.90514.js"></script>
+
+<script src="./Cairngorm   Wiki   CreatingFunctionalAreas_files/jquery-1.8.0.min.js"></script>
+
+<script src="./Cairngorm   Wiki   CreatingFunctionalAreas_files/header.js"></script>
+<!--[if lt IE 7 ]>
+  <script src="http://a.fsdn.com/allura/nf/1397673947/_ew_/theme/sftheme/js/sftheme/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+<![endif]-->
+<link href="./Cairngorm   Wiki   CreatingFunctionalAreas_files/css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    @font-face {
+        font-family: "Pictos";
+        src: url('http://a.fsdn.com/allura/nf/1397673947/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.eot');
+        src: local("☺"), url('http://a.fsdn.com/allura/nf/1397673947/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.woff') format('woff'), url('http://a.fsdn.com/allura/nf/1397673947/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.ttf') format('truetype'), url('http://a.fsdn.com/allura/nf/1397673947/_ew_/theme/sftheme/css/fonts/sftheme/pictos-web.svg') format('svg');
+    }
+</style>
+    <script type="text/javascript">
+            /*jslint onevar: false, nomen: false, evil: true, css: true, plusplus: false, white: false, forin: true, on: true, immed: false */
+            /*global confirm, alert, unescape, window, jQuery, $, net, COMSCORE */
+    </script>
+    
+      <!-- ew:head_css -->
+
+    
+      <link rel="stylesheet" type="text/css" href="./Cairngorm   Wiki   CreatingFunctionalAreas_files/hilite.css">
+    
+      <link rel="stylesheet" type="text/css" href="./Cairngorm   Wiki   CreatingFunctionalAreas_files/wiki.css">
+    
+      <link rel="stylesheet" type="text/css" href="./Cairngorm   Wiki   CreatingFunctionalAreas_files/tool_icon_css">
+    
+      <link rel="stylesheet" type="text/css" href="./Cairngorm   Wiki   CreatingFunctionalAreas_files/forge.css">
+    
+      <link rel="stylesheet" type="text/css" href="./Cairngorm   Wiki   CreatingFunctionalAreas_files/css(1)">
+    
+      
+<!-- /ew:head_css -->
+
+    
+    
+    
+      <!-- ew:head_js -->
+
+    
+      
+<!-- /ew:head_js -->
+
+    
+    
+
+    
+      <style type="text/css">
+        .osa {
+	position: absolute; 
+	top: 800px; 
+	left: 650px;
+	height: 100px; 
+}
+#osa {
+	height: 250px; 
+	padding-top: 10px;
+}
+#osa .listed {
+	width: 200px; 
+	font-size: 1.2em !important;
+}
+
+.pad h1, .pad h2 {margin-bottom: 10px;}
+.pad hr {width: auto; margin: 10px;}
+.card {margin: 0 10px 20px;}
+.card h2 {font-size: 14px; margin: 10px 0 0 !important; line-height: 1.5;}
+.pad .card p, .pad .card h1, .pad .card h2, .pad .card h3, .pad .card h4 {padding: 0;}
+.pad ul, .pad ol {margin-bottom: 20px;}
+.pad h3, .pad h4 {font-weight: bold;}
+.solo {float: right; width: 250px; margin: 0 20px 20px;}
+ .solo ul {list-style: none; margin: 0; padding: 0 5px;} 
+ .solo li {margin: 0 0 .5em;padding: 0 0 .5em;border-bottom: 1px solid rgb(215,215,215);}
+ .solo li:last-child {border: none;}
+ .solo h3 {padding: 0 5px; margin-bottom: 10px;}
+
+/* hide hr at bottom of wiki pages */
+.mountpoint-wiki #content_base > div > hr { display: none }
+
+#page-body.project---init--.mountpoint-wiki .grid-9,
+   #page-body.project---init--.mountpoint-wiki .grid-10 { padding-top: 15px; }
+/* hide "by SourceForge robot" */
+.neighborhood_feed_entry > h3 { padding:0; }
+.neighborhood_feed_entry > p { visibility:hidden; text-align: right;}
+.neighborhood_feed_entry > p > small { visibility: visible; }
+      </style>
+    
+    
+<style>
+  .hidden { display: none }
+  a.notfound { color: #f00; }
+</style>
+
+      <style>.XaCKVigJAeEiabeRdsoFJudxY { display:none }</style>
+
+    
+<link rel="alternate" type="application/rss+xml" title="Page RSS" href="http://sourceforge.net/adobe/cairngorm/wiki/CreatingFunctionalAreas/feed.rss">
+<link rel="alternate" type="application/atom+xml" title="Page Atom" href="http://sourceforge.net/adobe/cairngorm/wiki/CreatingFunctionalAreas/feed.atom">
+<link rel="alternate" type="application/rss+xml" title="Wiki RSS" href="http://sourceforge.net/adobe/cairngorm/wiki/feed.rss">
+<link rel="alternate" type="application/atom+xml" title="Wiki Atom" href="http://sourceforge.net/adobe/cairngorm/wiki/feed.atom">
+
+    
+    
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+
+    function _add_tracking(prefix, tracking_id, send_user) {
+        _gaq.push([prefix+'._setAccount', tracking_id]);
+        _gaq.push([prefix+'._setCustomVar', 1, 'Page Type', 'wiki', 3]);_gaq.push([prefix+'._trackPageview']);
+    }
+      _add_tracking('sfnt1', 'UA-32013-6', true);
+      _add_tracking('sfnt2', 'UA-36130941-1', true);
+    _add_tracking('nbhd', 'UA-32556647-1');
+      
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  </head>
+
+  <body class="wiki-CreatingFunctionalAreas" id="forge">
+    <h2 class="hidden">
+        <span style="color:red">Error:</span> CSS did not load.<br>
+        This may happen on the first request due to CSS mimetype issues.
+        Try clearing your browser cache and refreshing.
+        <hr>
+    </h2>
+    
+    
+      <!-- ew:body_top_js -->
+
+    
+      
+<!-- /ew:body_top_js -->
+
+    
+    
+    
+<header id="site-header">
+    <div class="wrapper">
+        <a href="http://sourceforge.net/" class="logo">
+            <span>SourceForge</span>
+        </a>
+        
+        <form method="get" action="http://sourceforge.net/directory/">
+            <input type="text" id="words" name="q" placeholder="Search" tabindex="1">
+        </form>
+        
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="http://sourceforge.net/directory/" title="Browse our software.">Browse</a>
+            <a href="http://sourceforge.net/directory/enterprise" title="Browse our Enterprise software.">Enterprise</a>
+            <a href="http://sourceforge.net/blog/" title="Read the latest news from the SF HQ.">Blog</a>
+            <a href="http://sourceforge.net/support" title="Contact us for help and feedback.">Help</a>
+            <a href="http://sourceforge.net/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">Jobs</a>
+        </nav>
+        <nav id="nav-account">
+            
+              <div class="logged_out">
+                <a href="http://sourceforge.net/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration/">Join</a>
+              </div>
+            
+        </nav>
+        
+    </div>
+</header>
+<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Centers</h4>
+            <a href="http://ibmsmartercommerce.sourceforge.net/">Smarter Commerce</a>
+            <a href="http://goparallel.sourceforge.net/">Go Parallel</a>
+            <a href="http://html5center.sourceforge.net/">HTML5</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Smarter IT</a>
+        </nav>
+        <nav id="nav-collateral">
+            <a href="http://library.slashdotmedia.com/?source=sfnet_header">Resources</a>
+            
+            <a href="">Newsletters</a>
+            
+        </nav>
+    </div>
+</header>
+    
+    
+    
+    
+    
+    <section id="page-body" class=" neighborhood-Open @ Adobe project-cairngorm mountpoint-wiki">
+	  <div id="nav_menu_holder">
+            
+            
+
+
+
+    
+    
+    
+    
+    <nav id="breadcrumbs">
+        <ul>
+            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="http://sourceforge.net/">Home</a></li>
+            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="http://sourceforge.net/directory">Browse</a></li>
+            
+            
+                
+            
+            
+            
+                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="http://sourceforge.net/adobe/">Open @ Adobe</a></li>
+                
+            
+            
+                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="http://sourceforge.net/adobe/cairngorm/">Cairngorm</a></li>
+                
+            
+            
+                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">Wiki</li>
+                
+            
+        </ul>
+    </nav>
+    
+    
+  
+    
+    
+  
+    <a href="http://sourceforge.net/adobe/"><img src="./Cairngorm   Wiki   CreatingFunctionalAreas_files/icon" class="neighborhood_icon" alt="Return to Open @ Adobe" title="Return to Open @ Adobe"></a>
+       <div class="neighborhood_title">
+         <h1><a href="http://sourceforge.net/adobe/">Open @ Adobe</a></h1>
+         
+           <div class="neighborhood_title_link">
+           <a href="http://sourceforge.net/adobe/wiki/Projects/">
+             View More Projects
+           </a>
+           </div>
+         
+      </div>
+  
+  
+    
+    <h1 class="project_title">
+        <a href="http://sourceforge.net/adobe/cairngorm/" class="project_link">Cairngorm</a>
+    </h1>
+    
+    
+    
+    <h2 class="project_summary">
+        
+    </h2>
+    
+    <div class="brought-by">
+        Brought to you by:
+        
+        
+            
+                <a href="http://sourceforge.net/u/alexuhlmann/">alexuhlmann</a>,
+            
+            
+                <a href="http://sourceforge.net/u/ddascal/">ddascal</a>,
+            
+            
+                <a href="http://sourceforge.net/u/userid-1227245/">francois_ld</a>,
+            
+            
+                <a href="http://sourceforge.net/u/ixab/">ixab</a>,
+            
+            and <a href="http://sourceforge.net/adobe/cairngorm/_members/">6 others</a>
+            </div>
+    
+
+            
+      </div>
+      <div id="top_nav" class="">
+        
+        
+<ul class="dropdown">
+  
+    <li class="selected">
+        <a href="http://sourceforge.net/adobe/cairngorm/_list/wiki" class="ui-icon-tool-wiki-32">
+            Wiki ▾
+        </a>
+        
+        
+            <ul>
+                
+                    <li class=""><a href="http://sourceforge.net/adobe/cairngorm/home/">Home</a></li>
+                
+                    <li class="selected"><a href="http://sourceforge.net/adobe/cairngorm/wiki/">Wiki</a></li>
+                
+                    <li class=""><a href="http://sourceforge.net/adobe/cairngorm/source/">Source</a></li>
+                
+            </ul>
+        
+    </li>
+	
+    <li class="">
+        <a href="http://sourceforge.net/adobe/cairngorm/code/" class="ui-icon-tool-svn-32">
+            Code
+        </a>
+        
+        
+    </li>
+	
+</ul>
+
+        
+      </div>
+      <div id="content_base">
+      
+			  
+          
+        
+			  
+          
+        
+        <div class="grid-24 pad">
+          <h2 class="dark title">CreatingFunctionalAreas
+            <!-- actions -->
+            <small>
+            
+  
+    
+    <a href="http://sourceforge.net/adobe/cairngorm/wiki/CreatingFunctionalAreas/history" title="History"><b data-icon="N" class="ico ico-history" title="History"></b></a>
+  
+  
+	<a href="http://sourceforge.net/adobe/cairngorm/wiki/CreatingFunctionalAreas/feed" title="RSS"><b data-icon="f" class="ico ico-feed" title="Feed"></b></a>
+  <a href="http://sourceforge.net/adobe/cairngorm/wiki/search" title="Search"><b data-icon="s" class="ico ico-search" title="Search"></b></a>
+
+            </small>
+            <!-- /actions -->
+          </h2>
+		
+  
+
+          <div>
+            
+            
+  
+<div class="markdown_content"><h1 id="creating-functional-areas">Creating Functional Areas</h1>
+<h2 id="abstract">Abstract</h2>
+<p>This paper explains the importance of slicing a code base into distinct functional areas that can be developed and tested independently.</p>
+<h2 id="introduction">Introduction</h2>
+<p>It is not often that an enterprise Flex application serves a single purpose, like sending a message or editing a customer address. More often features like these are grouped into larger compositions that serve many different purposes. Such an application might consist of a sales dashboard, a content editor, a messaging system and other distinct functional areas.</p>
+<p>For multi-functional applications, it's important to organise the code base such that the functional areas are separate from one another. This separation means that the implementation details of each functional area are encapsulated and can change independently. Any integration between functional areas should take place through a thin API. With this approach, each functional area can be developed and tested in relative independence, helping teams to deliver efficiently, even on large-scale projects.</p>
+<p>This article discusses how to identify functional areas, then separate them for independent development, and integrate them loosely without introducing direct dependencies.</p>
+<h2 id="identifying-functional-areas">Identifying Functional Areas</h2>
+<p>A functional area is essentially a part of an application that serves a specific purpose for the user. In most cases, a functional area corresponds to a particular region of the user interface, such as the Dashboard or Messaging views shown in Figure 1. However, a functional area may also contain non-visual components, such as an isolated domain model and persistence mechanism.</p>
+<p><img src="./Cairngorm   Wiki   CreatingFunctionalAreas_files/areas.png"><br>
+<strong><em>Figure 1 - An application with 2 functional areas.</em></strong></p>
+<p>The initial functional areas of an application usually become apparent at an early stage of development, as soon as the essential features and basic user interface design is known. Additional functional areas appear later on, as new features are scheduled for delivery, and older functional areas sometimes require splitting into smaller parts. The secret is to always keep functional areas small, so they can be understood, developed and maintained with ease. Even when functional boundaries change, it is easier to refactor a set of smaller, self-contained functional areas than to slice up a monolithic application that may be entangled with dependencies.</p>
+<h2 id="separating-functional-areas">Separating Functional Areas</h2>
+<p>Once a functional area has been identified, it needs to be separated from the rest of the code base in some way, so that it can be developed and tested independently. It is this separation that increases developer productivity, making it easy to understand complex applications at different levels of abstraction: from a high-level composition of functional areas, to the finer details of a specific feature.</p>
+<p>There are various ways to separate code by following conventions, or better, by using organizational features of the Flex SDK. The goal is to isolate one functional area from another, so that a change made to the implementation detail of the Dashboard does not disrupt the operation of the Messages functional area. The implementation details are encapsulated and any integration between is confined to a thin API, carefully designed and seldom changed.</p>
+<p>Some guidelines for separation of functional areas follow:</p>
+<h3 id="1-store-each-functional-area-in-its-own-package">1. Store each functional area in its own package</h3>
+<p>The code for each functional area should be placed into separate packages. For example:</p>
+<ul>
+<li>myapp.dashboard</li>
+<li>myapp.messages</li>
+<li>myapp.newseditor</li>
+</ul>
+<p>This is in contrast to package structures popular with Cairngorm 1 and 2 projects, that instead organized code first into architectural groupings, such as myapp.view, myapp.model, myapp.control. This approach is now considered a bad practice, since it spreads closely related code across disparate packages, making functional units difficult to comprehend.</p>
+<p>Please refer to the <a href="http://sourceforge.net/adobe/cairngorm/wiki/CairngormGuidelines/#arch">Cairngorm 3 Packaging Guidelines</a> and <a href="http://sourceforge.net/adobe/cairngorm/wiki/ModularSampleApplicationExplained/">reference application</a> for more details about recommended package structuring of Flex projects.</p>
+<h3 id="2-define-an-api-for-each-functional-area">2. Define an API for each functional area</h3>
+<p>It is important that functional areas do not interact directly with one another. Otherwise dependencies become difficult to manage and functional areas cannot be changed independently of one another. A revision to one implementation may have serious implications for the rest of the application.</p>
+<p>A thin API should be defined for integrating functional areas. One functional area can use the API of another to communicate and invoke actions. Think of it as one functional areas offering services to one another though its API. These APIs should generally consist only of interfaces, events and data transfer objects (DTOs). For example, the Dashboard might display summary messages and clicking upon one of those could dispatch an OpenMessageEvent, which is a part of the Messaging functional area's API. This would cause the application to navigate to the Messaging area and display the full message details.</p>
+<p>An API should be open for extension but closed for modification, and a good API should satisfy the following criteria:</p>
+<ul>
+<li>Easy to learn.</li>
+<li>Easy to use, even without documentation.</li>
+<li>Hard to misuse.</li>
+<li>Easy to read and maintain the code that uses it.</li>
+<li>Sufficiently powerful to satisfy requirements.</li>
+<li>Easy to extend.</li>
+<li>Appropriate to audience.</li>
+</ul>
+<h3 id="3-prohibit-dependencies-between-functional-areas">3. Prohibit dependencies between functional areas</h3>
+<p>Direct dependencies between the implementation details of distinct functional areas should be prohibited, since such dependencies increases code complexity and leads to brittle applications that are difficult to understand and prone to regression. Instead, the API of one functional area should be used by another to communicate.</p>
+<p>There are various ways to prevent developers from introducing prohibited dependencies. The best approach is to store the API classes in a Flex Library project, and encapsulate the implementation details within a Flex Module, stored in a separate Flex Application project. A separate project is typically used for each module and a single, common library for the APIs. In this way, the compiler will enforce the separation between API and implementation so that two functional areas cannot depend on implementation details of one another. This project structure is shown in Figure 2.</p>
+<p><strong><em>Figure 2 - Use modules and libraries to restrict dependencies</em></strong></p>
+<p>An alternative approach is to use packaging conventions and tooling to separate API from implementation. Underneath each functional area package are placed two sub-packages: api and restricted. The api package holds the interfaces, events and data transfer objects (DTOs), while the resticted package contains the implementation details. Returning to the previous example, the following packages would be added:</p>
+<ul>
+<li>myapp.dashboard.api</li>
+<li>myapp.dashboard.restricted</li>
+<li>myapp.messages.api</li>
+<li>myapp.messages.restricted</li>
+<li>myapp.newseditor.api</li>
+<li>myapp.newseditor.restricted</li>
+</ul>
+<p>With this approach, <a href="http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD" rel="nofollow">FlexPMD</a> should be used to detect violations where one functional area accesses code within the restricted package of another. This is workable but it is better to enforce the separation with modules and libraries.</p>
+<h3 id="4-carefully-control-changes-to-apis">4. Carefully Control Changes to APIs</h3>
+<p>Any functional area that uses an API becomes dependent on the design of that API. In a large application, many different functional areas can come to depend on the API classes. For this reason, it is most important that the API classes are well designed and seldom changed. The API should be thin, containing the minimum quantity of classes to express the intention clearly. If the contract of an API method is changed in some way, any dependent class will also need to be changed. However, this contract and the separation provided by the API allow the implementation details of a module to change freely without consequence on other parts of the application.</p>
+<p>On larger projects, a process should be established for adding, removing or altering API classes, and tooling can be used to enforce the process. For example, a small subset of the team may have write-access to the Core project holding the API classes. This can be enforced by some version control systems, such as Perforce, that can restrict access to a folder to a particular group of users. A deprecation policy is appropriate where distributed teams are developing separate modules of a common application and the @deprecated ASDoc tag can be used as a marker. On smaller projects, a more relaxed approach is suffice, unless external third parties are depending on the API.</p>
+<p>Any code inside a Core project that is widely depended upon becomes most important for the robustness of a system. Once behavior is shared in this way, a thorough test design is called for. Any logic inside code classes should be unit tested and any visual components should be subject to functional tests. A higher-level strategy for testing the integration between modules is also recommended, and can be carried out by a QA team with or without an automation tool.</p>
+<h2 id="integrating-functional-areas">Integrating Functional Areas</h2>
+<p>When functional areas have been identified and separated from one another, there usually remains a need for some kind of integration between them, so, for example, the Dashboard could invoke an operation of the Messaging view, or the Messaging view could locate a contact in the Address Book. This integration needs to be achieved in a loosely-coupled manner if the benefits of separation are to be preserved. Most frameworks provide a mechanism for this purpose.</p>
+<p>What follows are some guidelines for integrating functional areas. These are not unbending rules and there are perfectly valid variations to them. The important point is to always separate regions of complexity (i.e. the implementation details of a functional area) from one another. It is beneficial to adopt a consistent approach across a project.</p>
+<h3 id="1-use-events-or-messages-for-invoking-operations">1. Use events or messages for invoking operations</h3>
+<p>Flex is a very event-driven language and most frameworks provide a form of global event dispatching or routing, sometimes known as a messaging framework. Parsley supports messaging with local, regional and global scoping, Swiz and PureMVC provide a form of global or mediated events, and Cairngorm 1 &amp; 2 provides a singleton CairngormEventDispatcher through which events can be dispatched and heard from elsewhere in the code-base.</p>
+<p>Note: Care must be taken when attaching event listeners to singletons, since a reference is created from a singleton that always exists. This will prevent garbage collection, unless weak references are used or the event listener is explicitly removed. Frameworks that provide specialized messaging features, such as Parsley, generally take this into account and clean-up automatically.</p>
+<p>The event and messaging systems provide by these frameworks can be used for integrating functional areas. Dispatching an event or sending a message is a convenient and loosely-coupled way of invoking an operation. For example, the Address Book functional area might provide a SearchForContactEvent that can be dispatched by another functional area to perform a search and display the matching contacts.</p>
+<p>Events are particularly convenient for invoking asynchronous operations that may not happen immediately. Returning to the earlier example, the Address Book functional area might be modularized and loaded only on demand, only when the first SearchForContactEvent is dispatched.</p>
+<h3 id="2-use-interfaces-for-accessing-core-services">2. Use interfaces for accessing core services</h3>
+<p>Interfaces provide another means of loosely-coupled communication. They are best suited to synchronous operations that return immediately, but like events, they can also accommodate asynchronous operations, using call-back functions, responder interfaces or the asynchronous token design pattern.</p>
+<p>An interface can be used to group a number of related methods together, which is convenient if each clients needs to use multiple of these methods, but problematic if the methods are intended for different clients. In this case, the interface should be split up according to the Interface Segregation Principle.</p>
+<p>The other consequence of using interfaces is that one functional area needs a way to access the interface onto another. This is most simply achieved using an inversion-of-control framework that supports injection-by-type. For example, using Parsley, the client of a Products functional area could access the interface by placing the Inject metadata above a property:</p>
+<div class="codehilite"><pre><span class="p">[</span><span class="nx">Inject</span><span class="p">]</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nx">products</span><span class="o">:</span><span class="nx">IProductService</span><span class="o">;</span>
+</pre></div>
+<p>The IProductService interface might define a group of methods for searching and filtering a global set of products in different ways. Parsley would then automatically locate the implementation of this interface and inject it onto the property after construction of the object. If you are developing a modular application, the integration classes need to be accessible to the module. With Parsley, this would normally involve building a hierarchy of inversion-of-control contexts and placing the integration classes into a root context, inherited by the modules. Using a global context instead would be risky for large-scale applications due to object identity and class conflicts.</p>
+<p>In general, Cairngorm favours events for communication between functional areas because they focus on a single operation, don't require any kind of "look-up", and are naturally asynchronous, supporting lazy-loading of modules and other deferred operations. However, interfaces are recommended where a set of related operations is needed, particularly when communicating with a shell application or code components. For example, an interface might be defined for accessing a User Profile functional area.</p>
+<h3 id="3-use-data-transfer-objects-dtos-and-interfaces-for-exchanging-data">3. Use data transfer objects (DTOs) and interfaces for exchanging data</h3>
+<p>In some cases, functional areas can communicate through events and interfaces that only require simple parameterization, with strings and numbers. At other times, it's necessary to send or receive more structured data between them. In this case, the data can be grouped onto data transfer objects (DTOs), or the functional area can provide interfaces for its clients.</p>
+<p>For example, a System Status functional area might provide a ShowStatusMessageEvent which is parameterized with a StatusMessage DTO:</p>
+<div class="codehilite"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nx">StatusMessage</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">const</span> <span class="nx">INFO</span><span class="o">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">const</span> <span class="nx">ERROR</span><span class="o">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>
+
+    <span class="p">[</span><span class="nx">Bindable</span><span class="p">]</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nx">level</span><span class="o">:</span><span class="nb">int</span><span class="o">;</span>
+
+    <span class="p">[</span><span class="nx">Bindable</span><span class="p">]</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nx">title</span><span class="o">:</span><span class="nb">String</span><span class="o">;</span>
+
+    <span class="p">[</span><span class="nx">Bindable</span><span class="p">]</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nx">message</span><span class="o">:</span><span class="nb">String</span><span class="o">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>Or a News functional area might define a SearchNewsEvent that takes a call-back function and passes as the result a list of objects implementing an INewsSummary interface:</p>
+<div class="codehilite"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nx">INewsSummary</span>
+<span class="p">{</span>
+    <span class="kd">function</span> <span class="kd">get</span> <span class="nx">publicationDate</span><span class="p">()</span><span class="o">:</span><span class="nb">Date</span><span class="o">;</span>
+    <span class="kd">function</span> <span class="kd">get</span> <span class="nx">headline</span><span class="p">()</span><span class="o">:</span><span class="nb">String</span><span class="o">;</span>
+    <span class="kd">function</span> <span class="kd">get</span> <span class="nx">summary</span><span class="p">()</span><span class="o">:</span><span class="nb">String</span><span class="o">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>In this way the concrete class for news summaries remains under control of the News functional area and any consumers use the contract provided by the interface.</p>
+<p>When using DTOs, it is recommended to keep them pure, free from any behavior except for storage and retrieval of data. If an elaborate domain model is shared instead, then the dependencies between functional areas are deepened. Changes to that domain model can have consequences that are difficult to manage.</p>
+<h3 id="4-encapsulate-within-smart-components">4. Encapsulate within "Smart" Components</h3>
+<p>Functional areas can also be encapsulated inside "smart" components. This name is given to distinguish from a standard reusable view component, such as the controls and containers of the Flex SDK. A "smart" component serves a business purpose instead of just providing a general mechanism for interaction and presentation. But like a standard view component, a "smart" component is configured directly in MXML or ActionScript through its properties, and integrated through the events that the top-level class for the component dispatches.</p>
+<p>For example, an AddressBook functional area might provide a top-level AddressBook component that can be declared in MXML and configured with an IAddressService interface:</p>
+<div class="codehilite"><pre><span class="nt">&lt;a:AddressBook</span> <span class="na">width=</span><span class="s">"100%"</span>
+               <span class="na">height=</span><span class="s">"100%"</span>
+               <span class="na">service=</span><span class="s">"{ myService }"</span>
+               <span class="na">searchStart=</span><span class="s">"doSomething()"</span>
+               <span class="na">searchComplete=</span><span class="s">"doSomething()"</span><span class="nt">/&gt;</span>
+</pre></div>
+<p>This approach has a certain appeal in its simplicity. However, it does tend to bring dependencies onto other architectural layers into the presentation layer. Additionally, if the AddressBook component is implemented in MXML, then it will not be properly encapsulated. Clients will be able to reach into the child-components and interact with them directly. The separation has not been achieved and clients can start to depend on implementation details.</p>
+<h3 id="5-a-note-on-sub-applications">5. A Note on Sub-Applications</h3>
+<p>Sub-applications have not been covered in this article, but their use is another valid way to separate functional areas, even more strictly than modularization. There are formal rules enforced by the Flash Player regarding communication between sub-applications. These govern the regions of the stage that a sub-application can interact with and the manner by which data can be exchanged. Sub-applications are most suitable for portal type applications that contain functional areas developed by unknown entities. Since communication between sub-applications takes place with loosely-typed, dynamic data, contracts for communication need to be established outside of the code-base and cannot be enforced by the Flex compiler. For more information about sub-applications, refer to the Marshal Plan.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Cairngorm recommends that the code for a Rich Internet Application is separated into distinct functional areas, with integration between them taking place over a thin API consisting of events, interfaces and data transfer objects (DTOs). Changes to the API classes need to be carefully managed, since they are the most widely depended upon.</p>
+<p>Functional areas can usually be identified early in a project, but will continue to appear and evolve during development. There are various ways to separate functional areas, including packaging conventions and modularization. As well as the encapsulation provided by a module, the efficiency of a team can be improved with modularization, since modules can be developed, profiled and tested in isolation. Integration of distinct functional areas needs to be loosely-coupled and many frameworks provide features to assist with this, such as inversion-of-control containers and messaging systems.</p>
+<h2 id="complementary-cairngorm">Complementary Cairngorm</h2>
+<p>The following other parts of Cairngorm complement the material covered in this paper:</p>
+<h2 id="references">References</h2>
+<p>X Joshua Bloch, "How to Design a Good API and Why it Matters"<br>
+X Robert Martin, "The Open-Closed Principle"<br>
+X Robert Martin, "The Interface Segregation Principle"<br>
+X Douglas C. Schmidt, "Asynchronous Completion Token", 1998.<br>
+X Marshall Plan, <a href="http://opensource.adobe.com/wiki/display/flexsdk/Marshall+Plan" rel="nofollow"> </a><a href="http://opensource.adobe.com/wiki/display/flexsdk/Marshall+Plan" rel="nofollow"></a><a href="http://opensource.adobe.com/wiki/display/flexsdk/Marshall+Plan" rel="nofollow">http://opensource.adobe.com/wiki/display/flexsdk/Marshall+Plan</a> </p>
+<div>
+<div class="markdown_content"><div class="brace"></div>
+<div class="solo">
+<div class="clip">
+
+### Cairngorm 3
+-  [ Home ][1]
+-  [ Guidelines ][3]
+-  [ Tools ][4]
+-  [ Libraries Downloads ][2]
+</div>
+<div class="clip">
+
+### Cairngorm 2
+-  [ Home ][5]
+-  [ Framework Downloads ][6]
+-  [ Eclipse Plugin ][7]
+</div>
+<div class="clip">
+
+### Project
+-  [ Source ][8]
+- [ Bug Database ][9]
+-  [ Submitting a Patch ][10]
+-  [ Developer Documentation ][11]
+- [ Forums ][12]
+-  [ License ][13]
+</div>
+</div>
+</div>
+</div>
+</div>
+
+  <div id="create_wiki_page_holder" title="Create New Page" style="display:none">
+    <form>
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name" tabindex="2"></div>
+    </form>
+  </div>
+
+          </div>
+			
+          
+  <hr style="margin-top: 1em; margin-bottom: 2em; clear:both;">
+  
+  
+  
+
+        </div>
+      
+      </div>
+    </section>
+      
+<footer id="site-footer">
+    <div class="wrapper">
+        <nav>
+            <h5>SourceForge</h5>
+            <a href="http://sourceforge.net/about">About</a>
+            <a href="http://sourceforge.net/blog/category/sitestatus/">Site Status</a>
+            <a href="http://twitter.com/sfnet_ops">@sfnet_ops</a>
+            <a id="allura-notice" href="https://forge-allura.apache.org/p/allura/">Powered by Allura</a>
+        </nav>
+        <nav>
+            <h5>Find and Develop Software</h5>
+            <a href="http://sourceforge.net/create/">Create a Project</a>
+            <a href="http://sourceforge.net/directory/">Software Directory</a>
+            <a href="http://sourceforge.net/top">Top Downloaded Projects</a>
+        </nav>
+        <nav>
+            <h5>Community</h5>
+            <a href="http://sourceforge.net/blog/">Blog</a>
+            <a href="http://twitter.com/sourceforge">@sourceforge</a>
+            <a href="http://sourceforge.net/jobs?source=footer">Job Board</a>
+            <a href="http://library.slashdotmedia.com/?source=sfnet_footer">Resources</a>
+        </nav>
+        <nav>
+            <h5>Help</h5>
+            <a href="http://p.sf.net/sourceforge/docs">Site Documentation</a>
+            <a href="http://sourceforge.net/support">Support Request</a>
+            <a href="http://p.sf.net/sourceforge/irc">Real-Time Support</a>
+        </nav>
+    </div>
+</footer>
+<footer id="site-copyright-footer">
+    <div class="wrapper">
+        <div id="copyright">
+            Copyright © 2014 SourceForge. All Rights Reserved.<br>
+            SourceForge is a <a href="http://www.diceholdingsinc.com/phoenix.zhtml?c=211152&p=irol-landing">Dice Holdings, Inc.</a> company.
+        </div>
+        <nav>
+            <a href="http://slashdotmedia.com/terms-of-use">Terms</a>
+            <a href="http://slashdotmedia.com/privacy-statement/">Privacy</a>
+            <span id="teconsent"></span>
+            <a href="http://slashdotmedia.com/opt-out-choices">Opt Out Choices</a>
+            <a href="http://slashdotmedia.com/">Advertise</a>
+            <a href="http://sourceforge.jp/">SourceForge.JP</a>
+        </nav>
+    </div>
+</footer>
+    <div id="messages" style="position: fixed; top: 20px;">
+        
+    </div>
+    
+    
+      <!-- ew:body_js -->
+
+    
+      <script type="text/javascript" src="http://a.fsdn.com/allura/nf/1397673947/_ew_/_slim/js?href=allura%2Fjs%2Fjquery-base.js%3Ballura%2Fjs%2Fjquery.notify.js%3Ballura%2Fjs%2Fmodernizr.js%3Ballura%2Fjs%2Fsylvester.js%3Ballura%2Fjs%2Fpb.transformie.min.js%3Ballura%2Fjs%2Fallura-base.js%3Bjs%2Fjquery.lightbox_me.js%3Bjs%2Fjquery.autosize-min.js%3Bjs%2Fjquery.textarea.js%3Bjs%2Fsf_markitup.js%3Bjs%2Fjquery.tagsinput.js"></script>
+    
+      
+<!-- /ew:body_js -->
+
+    
+    
+      <!-- ew:body_js_tail -->
+
+    
+      <script type="text/javascript">$(function () {
+            var $lightbox = $('#lightbox_create_wiki_page');
+            var $trigger = $('#sidebar a.add_wiki_page');
+            $trigger.bind('click', function(e) {
+                $lightbox.lightbox_me();
+                return false;
+            });
+            $($lightbox).delegate('.close', 'click', function(e) {
+                $lightbox.trigger('close');
+                return false;
+            });
+        });
+$(function () {
+            $('#lightbox_create_wiki_page form').submit(function(){
+                location.href = $('#sidebar a.add_wiki_page').attr('href') +
+                    encodeURIComponent($('input[name=name]', $(this)).val().replace('/', '-')) + '/edit';
+                return false;
+            });
+        });
+$(function () {
+            $('textarea.auto_resize').focus(function(){$(this).autosize();});
+        });
+$(document).ready(function () {
+            $("a.attachment_form_add_button").click(function(evt){
+                $(this).hide();
+                $(".attachment_form_fields", this.parentNode).show();
+                evt.preventDefault();
+            });
+            $("a.cancel_edit_post").click(function(evt){
+                $("textarea", this.parentNode).val($("input.original_value", this.parentNode).val());
+                $(".attachment_form_fields input", this.parentNode).val('');
+                evt.preventDefault();
+            });
+         });
+
+        (function () {
+            $('div.discussion-post').each(function () {
+                var post = this;
+                $('.submit', post).button();
+                $('.flag_post', post).click(function (ele) {
+                    this.parentNode.submit();
+                    return false;
+                });
+                $('.moderate_post', post).click(function(e){
+                    e.preventDefault();
+                    var mod = $(this).text();
+                    if (mod === 'Delete' && !confirm('Really delete this post?')) {
+                        return;
+                    }
+                    var id_post = $(post).attr('id');
+                    $.ajax({
+                        type: 'POST',
+                        url: this.parentNode.action,
+                        data: jQuery(this.parentNode).serialize(),
+                        success: function() {
+                            if (mod == 'Delete'){
+                                $(post).remove();
+                            }
+                            else if (mod == 'Approve'){
+                                $('a.reply_post, a.shortlink, form.moderate_spam, form.moderate_approve', post).toggle();
+                                $('div.moderate', post).removeClass('moderate');
+                            }
+                            else if (mod == 'Spam'){
+                                $(post).remove();
+                            }
+                        }
+                    });
+                });
+
+                if($('a.edit_post', post)){
+                    $('a.edit_post', post).click(function (ele) {
+                        $('.display_post', post).hide();
+                        $('.edit_post_form', post).show();
+                        // Calling jQuery's ".focus()" forces browser to reload page
+                        // while using IE11 with sourceforge theme
+                        $('.edit_post_form textarea', post)[0].focus();
+                        return false;
+                    });
+                    $("a.cancel_edit_post", post).click(function(evt){
+                        $('.display_post', post).show();
+                        $('.edit_post_form', post).hide();
+                    });
+                }
+                if($('.reply_post', post)){
+                    $('.reply_post', post).click(function (ele) {
+                        $('.reply_post_form', post).show();
+                        // Calling jQuery's ".focus()" forces browser to reload page
+                        // while using IE11 with sourceforge theme
+                        $('.reply_post_form textarea', post)[0].focus();
+                        return false;
+                    });
+                    $('.reply_post', post).button();
+                }
+                if($('.add_attachment', post)){
+                    $('.add_attachment', post).click(function (ele) {
+                        $('.add_attachment_form', post).show();
+                        return false;
+                    });
+                }
+                if($('.shortlink', post)){
+                    var popup = $('.shortlink_popup', post);
+                    $('.shortlink', post).click(function(evt){
+                        evt.preventDefault();
+                        popup.lightbox_me({
+                            onLoad: function() {
+                                $('input', popup).select();
+                            }
+                        });
+                    });
+                    $('.close', popup).bind('click', function() {
+                        popup.hide();
+                    });
+                }
+            });
+        }());
+        
+$(function () {
+            $('select.results_per_page').change(function () {
+                this.form.submit();});});
+$(function () {
+          $('input.label_edit').tagsInput({
+              'height':'100%',
+              'width':'100%',
+              'autocomplete_url':'/adobe/cairngorm/wiki/tags'
+          });
+          $('form').on('blur', '.ui-autocomplete-input', function() {
+              setTimeout(function(){
+                  var clicked = $(document.activeElement); // This is the element that has focus
+                  if (clicked.is('#ui-active-menuitem')) {
+                      return false;
+                  } else {
+                      var value = $('div.tagsinput div input').val();
+                      var exists = $('input.label_edit').tagExist(value);
+                      var default_value = $('div.tagsinput div input').attr('data-default');
+                      if ((value !== default_value) && (!exists) && value !== '') {
+                          $('input.label_edit').addTag(value);
+                      }
+                      $('input[type=submit]', this).attr('disabled', 'disabled');
+                  }
+                }, 1);
+            });
+        });
+
+        $(document).ready(function () {
+            var thread_tag = $('a.thread_tag');
+            var thread_spam = $('a.sidebar_thread_spam');
+            var tag_thread_holder = $('#tag_thread_holder');
+            var allow_moderate = $('#allow_moderate');
+            var mod_thread_link = $('#mod_thread_link');
+            var mod_thread_form = $('#mod_thread_form');
+            if (mod_thread_link.length) {
+                if (mod_thread_form.length) {
+                    mod_thread_link.click(function (e) {
+                        mod_thread_form.show();
+                        return false;
+                    });
+                }
+            }
+            if (thread_tag.length) {
+                if (tag_thread_holder.length) {
+                    var submit_button = $('input[type="submit"]', tag_thread_holder);
+                    var cancel_button = $('<a href="#" class="btn link">Cancel</a>').click(function(evt){
+                        evt.preventDefault();
+                        tag_thread_holder.hide();
+                        thread_tag.removeClass('active');
+                    });
+                    submit_button.after(cancel_button);
+                    thread_tag.click(function (e) {
+                        tag_thread_holder.show();
+                        thread_tag.addClass('active');
+                        // focus the submit to scroll to the form, then focus the subject for them to start typing
+                        submit_button.focus();
+                        $('input[type="text"]', tag_thread_holder).focus();
+                        return false;
+                    });
+                }
+            }
+            if (thread_spam.length) {
+                if (allow_moderate.length) {
+                    var cval = $.cookie('_session_id');
+                    thread_spam[0].style.display='block';
+                }
+            }
+        });
+        </script>
+    
+      
+<!-- /ew:body_js_tail -->
+
+    
+    
+  <div id="lightbox_create_wiki_page" class="modal" style="display:none">
+  <b data-icon="D" class="ico ico-close close"></b>
+  
+    
+    <h1>Add a Wiki Page</h1>
+    <form class="grid-10">
+        <label class="grid-2">Name</label>
+        <div class="grid-7"><input type="text" name="name" tabindex="3"></div>
+        <label class="grid-2">&nbsp;</label>
+        <div class="grid-7"><input type="submit" value="Create page" tabindex="4"></div>
+    </form>
+  
+  
+</div>
+<script type="text/javascript">
+  $('.post-link')
+    .click(function() {
+        var dialog_text = $(".confirm_revert_"+$(this).data("version"));
+        var modal = $('#lightbox_revert');
+        modal.html(dialog_text.html());
+        modal.find('.continue_revert').click(function(evt) {
+          var cval = $.cookie('_session_id');
+          evt.preventDefault();
+          $.post($(this).attr('href'), {_session_id:cval}, function(val)
+              { window.location = val.location; },
+              'json');
+          });
+      });
+</script>
+  
+
+    
+      <!-- SiteCatalyst Copyright 2002 Omniture, Inc. More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript"><!--
+var s_code=' ';
+var s_Host=window.location.hostname.toLowerCase();
+// var s_account="mxopenatadobe"; // Production Site
+var s_account="mxopenatadobeqa"; // QA Site
+
+var scJsHost = (("https:" == document.location.protocol) ? "https://www.adobe.com" : "http://wwwimages.adobe.com");
+document.write(unescape("%3Cscript src='" + scJsHost + "/uber/js/omniture_s_code_rm.js' type='text/javascript'%3E%3C/script%3E"));
+//--></script><script src="./Cairngorm   Wiki   CreatingFunctionalAreas_files/omniture_s_code_rm.js" type="text/javascript"></script><div id="mboxScriptContainer" style="display:none;visibility:hidden;"></div><style>.mboxDefault{visibility:hidden;}</style>
+<script language="JavaScript" type="text/javascript"><!--
+s.channel="Open@Adobe";
+s.server="SourceFourge.net";
+s.linkInternalFilters="javascript:,sourceforge.net,../"
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript>&lt;img
+src="http://stats.adobe.com/b/ss/mxopenatadobe/1/H.22--NS/0?pageName=http%3A//sourcefourge.net%3A%20noscript&amp;g=http%3A//sourcefourge.net"
+height="1" width="1" border="0" alt="" /&gt;</noscript>
+<!-- End Omniture SiteCatalyst code -->
+    
+    
+   
+    <script src="./Cairngorm   Wiki   CreatingFunctionalAreas_files/webtracker.js" type="text/javascript"></script>
+    <!-- Google Code for Remarketing tag -->
+    <!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 1002083962;
+        var google_conversion_label = "G_uGCOaBlAQQ-qzq3QM";
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="./Cairngorm   Wiki   CreatingFunctionalAreas_files/conversion.js"> </script><iframe name="google_conversion_frame" title="Google conversion frame" width="300" height="13" src="./Cairngorm   Wiki   CreatingFunctionalAreas_files/saved_resource.htm" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">&lt;img height="1" width="1" border="0" alt="" src="http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1002083962/?frame=0&amp;random=1397855277146&amp;cv=7&amp;fst=1397855277146&amp;num=1&amp;fmt=1&amp;label=G_uGCOaBlAQQ-qzq3QM&amp;guid=ON&amp;u_h=768&amp;u_w=1366&amp;u_ah=728&amp;u_aw=1366&amp;u_cd=24&amp;u_his=1&amp;u_tz=420&amp;u_java=true&amp;u_nplug=11&amp;u_nmime=52&amp;frm=0&amp;url=http%3A//sourceforge.net/adobe/cairngorm/wiki/CreatingFunctionalAreas/%3Fversion%3D5&amp;ref=https%3A//www.google.com/" /&gt;</iframe>
+    <script type="text/javascript" src="./Cairngorm   Wiki   CreatingFunctionalAreas_files/get" id="truste_0.38518945523537695"></script>
+    <noscript>
+      &lt;div style="display:inline;"&gt;
+        &lt;img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1002083962/?value=0&amp;amp;label=G_uGCOaBlAQQ-qzq3QM&amp;amp;guid=ON&amp;amp;script=0"/&gt;
+      &lt;/div&gt;
+    </noscript>
+    
+  
+<iframe id="destination_publishing_iframe_adobe_0" src="./Cairngorm   Wiki   CreatingFunctionalAreas_files/dest4.htm" style="display: none; width: 0px; height: 0px;"></iframe></body></html>
