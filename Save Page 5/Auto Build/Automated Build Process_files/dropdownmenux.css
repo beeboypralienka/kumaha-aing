@@ -1,0 +1,70 @@
+.ddmx {
+    font: 7px arial;
+}
+.ddmx .item1,
+.ddmx .item1:hover,
+.ddmx .item1-active,
+.ddmx .item1-active:hover {
+    padding: 2px 7px 3px 7px;
+    background: #657383;
+    font: 8px arial;
+    color: #ffff99;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    position: relative;
+    border-top: 4px #98AFC7 solid;    
+    border-left: 4px #98AFC7 solid;    
+    border-bottom: 4px #302226 solid;
+    border-right: 4px #302226 solid;
+}
+.ddmx .item2,
+.ddmx .item2:hover,
+.ddmx .item2-active,
+.ddmx .item2-active:hover {
+    padding: 2px 7px 2px 7px;
+    font: 8px arial;
+    color: #ffff99;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    position: relative;
+    z-index: 500;
+    border-top: 4px #98AFC7 solid;
+    border-left: 4px #98AFC7 solid;
+    border-bottom: 4px #302226 solid;
+    border-right: 4px #302226 solid;
+}
+.ddmx .item2 {
+    background: #657383;
+}
+.ddmx .item2:hover,
+.ddmx .item2-active,
+.ddmx .item2-active:hover {
+    background: #98AFC7;
+    border-top: 4px #302226 solid;
+    border-left: 4px #302226 solid;
+    border-bottom: 4px #6D7B8D solid;
+    border-right: 4px #6D7B8D solid;
+}
+.ddmx .arrow,
+.ddmx .arrow:hover {
+    padding: 2px 7px 2px 7px;
+}
+.ddmx .item2 img,
+.ddmx .item2-active img{
+    position: absolute;
+    top: 4px;
+    right: 1px;
+    border: 0;
+}
+.ddmx .section {
+    border: 1px solid #000033;
+    position: absolute;
+    visibility: hidden;
+    z-index: -1;
+}
+
+* html .ddmx td { position: relative; } /* ie 5.0 fix */

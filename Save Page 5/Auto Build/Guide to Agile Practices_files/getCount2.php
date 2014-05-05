@@ -1,0 +1,1 @@
+(function(){stButtons.processCB({"google":891,"clicks_total":891,"copy":3,"mongo":1,"total":895,"shares":{"copy":3,"all":3,"mongo":1},"url":"http:\/\/guide.agilealliance.org\/guide\/autobuild.html","ourl":"http:\/\/guide.agilealliance.org\/guide\/autobuild.html#sthash.w5NpGwQV"})})();

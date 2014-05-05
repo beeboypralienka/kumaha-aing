@@ -1,0 +1,1876 @@
+ body:last-child:not(:root:root) #search .inptext{border:none; background:none; padding:0 0 0 1px; margin-left:5px !important;}
+body:first-of-type #search .inptext{border:none; background:none; padding:0 0 0 1px; margin-left:3px; margin-left:5px !important;}
+body:last-child:not(:root:root) #search .inptext .input{
+	height:21px;
+	padding-top:4px;
+	vertical-align:middle;
+	width:349px;
+}
+body:first-of-type #search .inptext .input{
+	height:21px;
+	padding-top:4px;
+	vertical-align:middle;
+	width:344px;
+	padding-left:5px;
+}
+body:first-of-type #search .submit-l{ vertical-align:middle;}
+body:last-child:not(:root:root) #search .submit-l{ vertical-align:middle;}
+
+#topBnr_place{}
+#topBnrSplit_place{height:98px; width:728px}
+#term_div{min-height:40px;}
+
+#term_div_center{float:left;width:320px;}
+
+#prevnext-holder{margin-left:8px;float:right}
+.prevnext-sprite{background:url('http://img.businessdictionary.com/prev-next-btn-sprite.png')}
+.previous-tp1{float:left;width:42px;height:38px;margin:0 2px 0 0;}
+a.prev-page-link1{display:block; width:42px; height:38px; background-position:0 0}
+a.prev-page-link1:hover{box-shadow:0 0 4px #1770ed}
+.next-tp1{float:left;width:42px;height:38px;margin:0 0px 0 0;}
+a.next-page-link1{display:block; width:42px; height:38px; background-position:-42px 0}
+a.next-page-link1:hover{box-shadow:0 0 4px #1770ed}
+
+.previous-tp2{float:left;width:43px;height:38px;margin:0 0px 0 0;}
+a.prev-page-link2{display:block; width:43px;height:38px; background-position:0 -38px}
+a.prev-page-link2:hover{background-position:0 -76px}
+.next-tp2{float:left;width:42px;height:38px;margin:0 0px 0 0;}
+a.next-page-link2{display:block; width:42px; height:38px; background-position:-43px -38px}
+a.next-page-link2:hover{background-position: -43px -76px}
+
+.previous-tp3{float:left;width:43px;height:38px;margin:0 2px 0 0;}
+a.prev-page-link3{display:block; width:43px; height:38px; background-position:0 -114px}
+a.prev-page-link3:hover{background-position:0 -152px}
+.next-tp3{float:left;width:43px;height:38px;margin:0 0px 0 0;}
+a.next-page-link3{display:block; width:43px; height:38px; background-position:-43px -114px}
+a.next-page-link3:hover{background-position: -43px -152px}
+
+.previous-tp4{float:left;width:37px;height:34px;margin:0 2px 0 0;}
+a.prev-page-link4{display:block; width:37px; height:34px; background-position:0 -190px}
+a.prev-page-link4:hover{background-position:0 -224px}
+.next-tp4{float:left;width:37px;height:34px;margin:0 0px 0 0;}
+a.next-page-link4{display:block; width:37px; height:34px; background-position:-37px -190px}
+a.next-page-link4:hover{background-position:-37px -224px}
+
+a.prev-page-link1 span,a.next-page-link1 span,a.prev-page-link2 span,a.next-page-link2 span,a.prev-page-link3 span,a.next-page-link3 span,a.prev-page-link4 span,a.next-page-link4 span {display:none}
+
+.prevnext-holder{/*width:88px;padding:4px; overflow:hidden;background:#f0f0f0;border:1px solid #bbbbbb;box-shadow:0 2px 4px #cccccc inset;-moz-border-radius:6px;-webkit-border-radius:6px;border-radius: 6px;*/}
+
+
+/*
+#term_div_center{margin-bottom:16px; float:left;width:325px;}
+.previous-tp{float:left; width:42px; height:38px; margin:4px 6px 0 10px; padding-top:6px}
+a.prev-page-link span{display:none}
+a.prev-page-link{display:block; width:42px; height:38px; background:url('http://img.businessdictionary.com/prev-tp.png') 0 0 no-repeat;}
+a.prev-page-link:hover{box-shadow:0 0 5px #676767}
+.next-tp{float:left; width:42px; height:38px;margin:4px 0px 0px 0px; padding-top:6px}
+a.next-page-link span{display:none}
+a.next-page-link{display:block; width:42px; height:38px; background:url('http://img.businessdictionary.com/next-tp.png') 0 0 no-repeat;}
+a.next-page-link:hover{box-shadow:0 0 5px #676767}
+*/
+
+
+a.grey-small-link{font:100 11px Arial !important;color:#777;text-align:center !important;margin:4px 0 0 0;text-decoration:underline}
+a.grey-small-link:hover{color:#999;text-decoration:none !important}
+
+/* right  */
+#right{width:220px;float:right;margin-right:20px;}
+* html #right{margin-right:10px;}
+#right h2{font:bold 12px/30px verdana,sans-serif;background:#e8e8e8;margin-bottom:0.5em;padding-left:11px;color:#676767;}
+#right .qdot{margin:10px 0 19px 13px;}
+#right .qdot li{margin-bottom:13px;}
+#right select{color:#5a5a5a;font:normal 11px tahoma,sans-serif;border:1px solid #7f9db9;width:100%;margin-top:5px;padding:2px;}
+.clear-div{clear:both;display:block}
+/* Content
+------------- */
+#content{}
+* html #content{height:0;}
+* html #content div{height:0;}
+#content h1{font-size:30px;color:#a44533;font-weight:300; display:inline; margin-bottom:15px;line-height:32px;float:left;max-width:275px;}
+/*#content h2{margin-bottom:1em;font:bold 14px tahoma,sans-serif;color:#a44533;}*/
+#term_div h2{font:normal 18px arial,sans-serif;margin-bottom:0.7em;color:#a44533;}
+
+#content #block-news h3, #content #termsInTerms h3, #content #mostPopular h3, #content #backLinks h3{margin: 0 !important;
+	color: #FFFFFF !important;
+    padding-top: 5px;
+    padding-left: 15px;
+  /*  font-family: Arial Narrow !important;
+    font-weight: bold !important;
+	   font-size: 18px;
+    font-size: 14px\9*/
+    float: left;
+    max-width: 85%;
+	font: bold 14px Verdana;}
+
+#content h2{font:normal 20px arial,sans-serif;margin-bottom:0.4em;color:#a44533;margin:0;padding:0}
+#content h4{margin-bottom:1em;font:normal 13px tahoma,sans-serif;color:#676767;}
+#content h3{margin-bottom:0.6em;font:500 15px vardana,sans-serif;color:#232323;}
+#content p{margin-bottom:0.5em;}
+#content p:last-child{margin-bottom:0}
+
+
+
+#content .h2link:link{margin-bottom:1em;text-decoration:none;font:18px sans-serif;color:#a44533;}
+#content .h2link:visited{margin-bottom:1em;text-decoration:none;font:18px sans-serif;color:#a44533;}
+#content .h2link:hover{margin-bottom:1em;text-decoration:none;font:18px sans-serif;color:#a44533;}
+
+
+#content_new #block-news h3, #content_newt #termsInTerms h3, #content_new #mostPopular h3, #content_new #backLinks h3{margin: 0 !important;
+	color: #FFFFFF !important;
+    padding-top: 5px;
+    padding-left: 15px;
+  /*  font-family: Arial Narrow !important;
+    font-weight: bold !important;
+	   font-size: 18px;
+    font-size: 14px\9*/
+    float: left;
+    max-width: 85%;
+	font: bold 14px Verdana;}
+
+#content_new h2{font:normal 20px arial,sans-serif;margin-bottom:0.4em;color:#a44533;margin:0;padding:0}
+#content_new h4{margin-bottom:1em;font:normal 13px tahoma,sans-serif;color:#676767;}
+#content_new h3{margin-bottom:0.6em;font:500 15px vardana,sans-serif;color:#232323;}
+#content_new p{margin-bottom:0.5em;}
+
+
+
+#content_new  .h2link:link{margin-bottom:1em;text-decoration:none;font:18px sans-serif;color:#a44533;}
+#content_new  .h2link:visited{margin-bottom:1em;text-decoration:none;font:18px sans-serif;color:#a44533;}
+#content_new  .h2link:hover{margin-bottom:1em;text-decoration:none;font:18px sans-serif;color:#a44533;}
+
+#content_new  .h2link:link{margin-bottom:1em;text-decoration:none;font:18px sans-serif;color:#a44533;}
+#content_new .h2link:visited{margin-bottom:1em;text-decoration:none;font:18px sans-serif;color:#a44533;}
+#content_new  .h2link:hover{margin-bottom:1em;text-decoration:none;font:18px sans-serif;color:#a44533;}
+
+
+/*.sidead{width:336px;text-align:center}
+.sidead img{display:block;text-align:center}
+.sidead a{display:block;text-align:center}
+*/
+
+.termlinks{color:#5a5a5a;margin-top:3.5em}
+.termlinks small{color:#919191;font:10px verdana,sans-serif;display:block;margin-bottom:0.5em;}
+.termlinks input.text{border:1px solid #919191;width:70%;padding:2px 2px 1px;margin-right:6px;}
+.termlinks input.submit{background:url('http://img.businessdictionary.com/bt_qsearch.gif') no-repeat;border:0;width:21px;height:21px;cursor:pointer;cursor:hand;}
+.termlinks .pol{font:11px tahoma,sans-serif;background:url('http://img.businessdictionary.com/more.gif') no-repeat 0 0.4em;margin-left:0.5em;position:relative;top:-2px;}
+* html .termlinks .pol{position:static;vertical-align:3px;}
+	.termlinks .pol a{padding-left:13px;}
+#term_content_path{ display:none;}
+.cont-bl{}
+#all #wrapper .cont-bl h2{background:url('http://img.businessdictionary.com/section_bg.png') repeat-x 0 0;height:20px;padding:10px 0 0 17px;margin-bottom:0;font-size:11px;}
+.cont-bl-box{border:1px solid #aebed4;background:#FFF url('http://img.businessdictionary.com/cont-bl-gd.gif') repeat-x 0 100%;border-width:0 1px 1px 1px;padding:5px 16px 12px;}
+
+/* Footer
+----------- */
+/* #footerterm{width:620px;margin:5px auto;background:#fff; padding:10px 0;} */
+
+
+
+
+
+/* pages */
+#all .indexpage{}
+#all .indexpage h1{
+color:#536E93;
+display:block;
+font-size:16px;
+}
+#all .indexpage h1 small{font:normal 10px verdana; color:#454545}
+/*#all .indexpage h2{font-size:12px;margin-bottom:0.65em;}*/
+
+
+
+.indexpage .termlinks{margin:-4px 0 17px;}
+.indexpage .termlinks input.text{width:60%;}
+.indexpage .termlinks input.submit{background:url('http://img.businessdictionary.com/bt_signup.gif') no-repeat;border:0;width:47px;height:21px;cursor:pointer;cursor:hand;position:relative;top:1px;}
+
+
+
+#popular_ifbun{}
+#popular_ifbun .cont-bl-box{padding-top:10px;padding-bottom:10px;}
+#popular_ifbun ul{overflow:hidden;//margin:-0.2em 5px 1.95em; }
+#popular_ifbun li{line-height:25px;width:49%;display:block;float:left;background-position:0 10px;}
+#popular_ifbun .more{margin:0 5px;background:url('http://img.businessdictionary.com/more.gif') no-repeat 1px 0.6em;clear:left;}
+#popular_ifbun .more a{padding-left:13px;}
+
+
+.small_gray{font:normal 11px tahpma,sans-serif;color:#7f7f7f; line-height:18px; padding:8px 0 0 0;overflow:hidden}
+a.gray_anchor:link,a.gray_anchor:visited{color:#7f7f7f;}
+a.gray_anchor:hover,a.gray_anchor:active{color:#c44932;}
+#browse{font:normal 11px tahpma,sans-serif;color:#7f7f7f;}
+#browse .cont-bl-box{padding-top:10px;position:relative;}
+#browse ul{overflow:hidden;margin:-0.9em 5px 0.75em;}
+#browse li{line-height:20px;width:49%;display:block;float:left;background-position:0 7px;}
+#browse li:hover{background-position:0 -19px;}
+#browse li a:link,#browse li a:visited{color:#7f7f7f;}
+#browse li a:hover,#browse li a:active{color:#c44932;}
+#browse .more{margin:0 5px 0.25em;background:url('http://img.businessdictionary.com/more.gif') no-repeat 1px 0.6em;clear:left;}
+#browse .more a{padding-left:13px;}
+
+
+
+
+.listcontent{list-style:none;}
+.listcontent li{background:url('http://img.businessdictionary.com/bull-single.gif') no-repeat 0 11px;line-height:26px; padding-left:14px;}
+.listcontent li.important{background:url('http://img.businessdictionary.com/bull-single.gif') no-repeat 0 11px;line-height:26px; padding-left:14px; color: #9f3926;}
+
+
+.term_addon{float: right; width: 190px;}
+
+.twocol2{width:610px;}
+.twocol2 #content{margin:0 19px;display:block;}
+.twocol2 #content_new{margin:0 19px;display:block;}
+
+.twocol{padding:0 20px;}
+.termpage-twocol{padding:0 20px;min-height:600px;_height:600px; width:778px; float:right}
+.twocol #content{margin:0;display:block;}
+* html .twocol #content{height:0;}
+
+
+.column{
+	float:left;
+
+	width: 420px;/*420px for big resol.*/
+}
+
+.h2_term_title{font:bold 14px tahoma,sans-serif;color:#0253b7;}
+.ok{color:green; font-weight:bold;}
+
+label{cursor:pointer;}
+
+.form{ border: 1px solid #d5d5d5; font-family:Tahoma; font-size:11px; color:black;}
+.form td{ padding-left:10px; padding-right:10px; padding-top:4px; padding-bottom: 4px; text-align:left;}
+.form .right{ padding-left:10px; padding-right:10px; padding-top:4px; padding-bottom: 4px; text-align: right;}
+.form th{ padding-left:10px; padding-right:10px; padding-top:10px; padding-bottom: 4px; text-align:left; font-weight: normal;}
+.form .right_th{ padding-left:10px; padding-right:10px; padding-top:10px; padding-bottom: 4px; text-align: right;}
+.form strong{ color:black; font-size:12px; font-family:Verdana, Arial, Helvetica, sans-serif;}
+.form .require{ color:#a54534; font-size:12px; font-family:Verdana, Arial, Helvetica, sans-serif;}
+.form .text { border: 1px solid #7f7f7f; width: 200px;}
+.form .text_contact { border: 1px solid #7f7f7f; width: 400px;}
+.form .textarea { border: 1px solid #7f7f7f; width: 100%;}
+.form table{padding:0px; width:100%;}
+.form .items{ padding-left:0px; padding-right:0px; padding-top:4px; padding-bottom: 4px; text-align:left;}
+
+
+
+/*back links*/
+
+ #back_links {
+	line-height: 20px;
+}
+
+#more-drop, #more-drop-appeared-in-terms-button {
+	border: 1px solid #bcd4e4;
+	white-space: nowrap;
+	background: #e1f3ff;
+	position: relative;
+	padding: 4px 4px 5px 0;
+	border-width :1px 1px 0;
+	bottom: -2px;
+	cursor: pointer;
+	cursor: hand;
+
+}
+
+* html #more-drop, #more-drop-appeared-in-terms-button {
+	border-width:1px 1px 0;
+}
+
+#content .more-closed, #content_new .more_closed {
+	border-width: 1px;
+	padding: 4px 4px 4px 0;
+}
+
+* html #content .more-closed {
+	border-width:1px;
+}
+
+#more-drop img, #more-drop-appeared-in-terms-button img {
+	position: relative;
+	top: 2px;
+}
+
+#more-drop-c, #more-drop-appered-in-terms {
+	display: none;
+	border: 1px solid #bcd4e4;
+	background: #e1f3ff;
+	margin: -13px 0 1em;
+	padding: 10px;
+	max-height: 7em;
+	overflow: auto;
+}
+
+* html #content #more-drop-c, #more-drop-appered-in-terms {
+	height: 7em;
+}
+
+
+
+#all .term_definition
+{
+	padding:0;
+	/*width: 605px !important; FOR WIDE LAYOUT*/
+	width: 425px !important;
+}
+
+
+
+#wrapper .term_definition a:link{text-decoration:none;}
+#wrapper .term_definition a:visited{text-decoration:none;}
+#wrapper .term_definition a:hover{text-decoration:none;}
+
+.term_of_day a:link{text-decoration:none;}
+.term_of_day a:visited{text-decoration:none;}
+.term_of_day a:hover{text-decoration:none;}
+
+.term_of_day .more_link:link{text-decoration:underline;color:#0253b7;}
+.term_of_day .more_link:visited{text-decoration:underline;color:#0253b7;}
+.term_of_day .more_link:hover,a:active{color:#a44533;}
+
+#inline_gadets{ border-left: 1px solid #d6d6d6; border-right: 1px solid #d6d6d6; border-top: 1px solid #d6d6d6; width:354px}
+#inline_gadets .block{ border-bottom: 1px solid #d6d6d6; padding:10px;}
+#inline_gadets strong{ font-family:Tahoma,Arial, Helvetica, sans-serif; font-size:11px;}
+#inline_gadets textarea{ width:330px; height:160px; border: 1px solid #7f9db9;}
+#inline_gadets select{ width:330px; border: 1px solid #7f9db9;}
+.inline_gadget_p{font-family:Tahoma; font-size:11px;}
+
+.termtable{
+width:610px;
+background:#FFF;
+margin:0 auto;
+background:#FFF url('http://img.businessdictionary.com/main-lr.gif') repeat-y 0 0;
+padding: 10px 20px 10px 20px;
+
+}
+.term_col1 {
+float:left;
+height:130px;
+width:186px;
+border: 1px solid #7f9db9;
+border-right: none;
+padding-left:10px;
+padding-top:10px;
+}
+.term_col2 {
+height:130px;
+padding-top:10px;
+padding-left:10px;
+padding-right:10px;
+float:left;
+width:200px;
+border: 1px solid #7f9db9;
+border-right: none;
+}
+.term_col3 {
+height:130px;
+padding-left:10px;
+padding-top:10px;
+float:right;
+width:180px;
+border: 1px solid #7f9db9;
+}
+
+
+
+
+.x-mask{
+z-index:9000;position:absolute;top:0;left:0;
+filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+-moz-opacity:0.5;
+opacity:.50;
+background-color:#CCC;
+width:100%;
+height:100%;
+}
+
+
+
+.help-page
+{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.right
+{
+	text-align:right;
+	padding: 10px;
+}
+
+.left
+{
+	text-align:right;
+	padding: 10px;
+}
+
+.send-to-friend-control
+{
+	width: 300px;
+}
+
+.error_padding
+{
+	padding-top: 4px;
+	padding-bottom: 6px;
+}
+
+.center
+{
+	text-align: center;
+}
+
+.facebook-logo
+{
+	float:left;
+	padding-right:10px;
+}
+
+.rss_links
+{
+	margin:5px 0px 5px;
+	padding-left: 18px;
+	white-space: nowrap;
+	height: 20px;
+	background: url('http://img.businessdictionary.com/rss.png') no-repeat 0 2px;
+}
+
+.rss-div
+{
+	padding-left: 20px;
+}
+
+#cse-search-results iframe
+{
+/* 	width: 960px !important;
+ 	width: 500px !important;*/
+}
+
+
+
+
+
+.speeker_div
+{
+	/* float: left;*/
+	padding-left: 7px;
+	padding-bottom: 5px;
+}
+
+div.popupwindow .submit
+{
+	background:#009900 url('http://img.businessdictionary.com/popup-send.png') no-repeat;
+	border:0pt none;
+	cursor:pointer;
+	height:25px;
+	margin-left:10px;
+	position:relative;
+	width:57px;
+}
+
+div.popupwindow .dont_submit
+{
+	background:#009900 url('http://img.businessdictionary.com/popup-cancel.png') no-repeat;
+	border:0pt none;
+	cursor:pointer;
+	height:25px;
+	margin-left:10px;
+	position:relative;
+	width:57px;
+}
+
+.link_speaker_error
+{
+	margin-top: -23px;
+}
+
+@-moz-document url-prefix()
+{
+	.link_speaker_error {margin-top: 0px;}
+}
+
+/* ********************************************************************************************************* */
+
+
+#slide {
+    padding: 0;
+}
+
+#slide .slide-image{
+	width: 400px;
+	text-align: center;
+	min-height: 200px;
+	float: left;
+	padding-right: 20px;
+}
+
+#slide .slide-image p {
+	text-align: center;
+	font-size: 10px;
+	color: #1B5C96;
+}
+
+#slide .title{
+    padding: 0 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: #1B5C96;
+    font-family:Georgia;
+}
+#slide h2 {
+	margin-left: 420px;
+	line-height: 12px;
+	font-family: Georgia;
+}
+
+#slide .secondtitle{
+    padding: 20px 20px;
+    padding-bottom: 20px;
+    font-family:Georgia;
+}
+
+#slide .nav {
+    text-align: center;
+    padding-top: 10px;
+}
+#slide .nav span{
+    position: relative;
+    bottom: 4px;
+}
+#slide .nav img{
+    padding: 0 3px;
+    margin: 0;
+}
+
+#slide .content {
+    padding: 0 20px;
+}
+
+#slide .sidead {
+	position: inherit;
+	float: right;
+}
+#slide .ad_term_top_place {
+	min-height: 280px;
+	height: 280px;
+}
+
+#slide p {
+    padding: 5px 0;
+    text-align: justify;
+}
+
+#featured-content img{
+    float: right;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+#featured-content .right {
+    float: left;
+    width: 49%;
+    padding: 0;
+}
+#featured-content .left {
+    float: right;
+    width: 49%;
+    padding: 0;
+}
+
+#featured-content .box {
+    border: 1px solid #AEBED4;
+    border-top: 0;
+    margin-bottom: 20px;
+}
+
+#featured-content .title {
+    background: transparent url('http://img.businessdictionary.com/cont-bl-h.gif') repeat-x scroll 0 0;
+    font-weight: bold;
+    height: 20px;
+    color: #FFFFFF;
+    padding-top: 3px;
+    padding-left: 10px;
+    text-align: left;
+}
+#featured-content .title img{
+}
+
+#featured-content .content {
+    padding: 0 10px;
+    text-align: justify;
+}
+#featured-content .content {
+    margin: 12px;
+}
+
+#term_s
+{
+	width: 340px !important;/*350 for big resolution */
+}
+
+.twocol-terms ul {
+	margin-left: 1.5em;
+}
+
+
+#all .term_definition {
+	padding:0;
+	width: 45%;
+	float: left;
+}
+.menu-container
+{
+    border:1px solid #498fc6;
+    cursor: hand;
+    width:97px;
+    z-index:100;
+}
+.menu-container a
+{
+    display:block;
+    text-decoration:none;
+}
+#all .leftpane{float:left; width:623px; padding:0 0 0 10px;}
+#all .rightpane{float:right; width:336px; padding:0 20px 0 10px;}
+#newsBar-bar1
+{
+	*padding-top: 1px;
+}
+.title-head{background:#efefef;border:solid 1px #ddd;padding:2px 4px;overflow:hidden; margin-bottom:6px;display:block; min-height:18px}
+#newstitle-head {background:#efefef;border:solid 1px #ddd;padding:2px 4px;overflow:hidden; margin-bottom:6px;display:block; height:18px}
+#newstitle-head h2{margin:0;font-family:arial;font-size:15px; font-weight:600;color:#000}
+#content .title-head h2, #content_new .title-head h2{margin:0;font-family:arial;font-size:15px; font-weight:600;color:#000}
+/*SPRITE IMPLEMENTATION FOR ALL IMAGES - BEGINS */
+
+/*Tools Section*/
+.signup-toolbox{ width: 280px;}
+.toolpadding{padding-left:17px;}
+.email-tool{background-position:0px -100px; background-repeat:no-repeat; padding-left:18px;}
+.print-tool{background-position:0px -120px; background-repeat:no-repeat; padding-left:18px;}
+.cite-tool{background-position:0px -140px; background-repeat:no-repeat; padding-left:18px;}
+.link-tool{background-position:0px -160px; background-repeat:no-repeat; padding-left:18px;}
+.trans-tool{background-position:0px -180px; background-repeat:no-repeat;}
+.share-tool{background-position:0px -200px; background-repeat:no-repeat;}
+/*Bookmark Icons on the Top*/
+.share_google {
+	background-position:-208px -140px;
+	background-repeat:no-repeat;
+	width:16px; height:17px;
+}
+
+.share_facebook {
+	background-position:-518px -140px;
+	background-repeat:no-repeat;
+	width:16px; height:17px;
+}
+.share_widget {
+	background-position:-490px -140px;
+	background-repeat:no-repeat;
+	width:27px; height:17px;
+}
+.share_rss {
+	background-position:-255px -140px;
+	background-repeat:no-repeat;
+	width:17px; height:15px;
+}
+
+/*Searbar Images*/
+.search4termimg{background-position:-160px -195px; background-repeat:no-repeat; width:91px; height:21px; float:left}
+
+.search-submit{background-position:-160px -100px; background-repeat:no-repeat; width:90px; height:25px; border:0 none; cursor:pointer;}
+
+
+.ico{background-position:-208px -70px; background-repeat:no-repeat; width:21px; height:21px; border:0 none; cursor:pointer;margin-top:5px;}
+
+
+.closeme{background-position:-100px -160px; background:#23424; background-repeat:no-repeat; width:16px; height:16px; border:0 none; cursor:pointer;}
+/*SPRITE IMPLEMENTATION FOR ALL IMAGES - ENDS */
+
+#definition_div a{color:#000;text-decoration:none;border-bottom:solid 1px #888977;}
+#definition_div a:hover{color:#000;}
+#definition_div p{line-height:24px; font-size:14px;}
+#definition_div {line-height:24px; font-size:14px;margin-top:8px}
+.tips-main {
+background:url("http://img.businessdictionary.com/tips-icon-quote.png") no-repeat scroll left top transparent;
+padding:2px 0 2px 40px;}
+
+.two-col-div-left, .two-col-div-right{float:left;}
+
+.two-col-div-left{padding-right:5px;}
+.two-col-div-right{padding-left:5px;}
+
+
+/*Right Side Blocks*/
+
+
+/*styles copied from base_redesign_new.css */
+#all .term_definition {
+	padding:0;
+	width: 45%;
+	float: left;
+}
+
+
+/*ADDED FOR LEFT BLOCKS*/
+.blockleft{
+    border: 1px solid #003366;
+    margin: 20px 0;
+    width: 400px;
+}
+.blockleft a{
+	text-decoration: none;
+}
+.blockleft .title {
+    color: #FFFFFF;
+    background-color: #166797;
+    min-height: 32px;
+    border: 1px solid #9BB3C7;
+}
+
+
+
+.blockleft .title h2 span {
+	font-size: 14px;
+}
+
+.blockleft .title .word-app {
+	float:left;
+	font-family:Arial Narrow;
+	font-size:18px;
+	font-weight:bold;
+	max-height:45px;
+	width:90%;
+
+}
+
+.blockleft .title .word {
+	float:left;
+	margin: 10px 15px;
+	margin-right: 7px;
+}
+
+.blockleft .title .app {
+	font-size:14px;
+}
+
+.blockleft .title .ico {
+    float: right;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+.blockleft .block-content {
+	padding: 10px 10px;
+	border-top: 1px solid #003366;
+	overflow: auto;
+	background:#F2F8FF;
+}
+
+.blockleft .scroll {
+	border-top: 0;
+	padding-right: 5px;
+}
+
+.blockleft .left {
+	width: 45%;
+	float: left;
+	text-align: left;
+	padding: 0;
+}
+.blockleft .right {
+	width: 45%;
+	float: right;
+	text-align: left;
+	padding: 0;
+}
+
+/*ADDED FOR LEFT BLOCKS*/
+
+
+.block .title h2 span {
+	font-size: 14px;
+}
+
+.block .title .word-app {
+	float:left;
+	font-family:Arial Narrow;
+	font-size:18px;
+	font-weight:bold;
+	max-height:45px;
+	width:90%;
+
+}
+
+.block .title .word {
+	float:left;
+	margin: 10px 15px;
+	margin-right: 7px;
+}
+
+.block .title .app {
+	font-size:14px;
+}
+
+.block .title .ico {
+    float: right;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+
+
+.block .scroll {
+	border-top: 0;
+	padding-right: 5px;
+}
+
+.block .left {
+	width: 45%;
+	float: left;
+	text-align: left;
+	padding: 0;
+}
+.block .right {
+	width: 45%;
+	float: right;
+	text-align: left;
+	padding: 0;
+}
+
+.rating-stars {
+
+}
+
+.block .block-content p{
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+#relatedTerms .block-content{
+	height: 308px;
+}
+
+#backLinks .scroll {
+	height: 95px;
+}
+
+#termsInTerms .scroll{
+	height: 95px;
+}
+#block-toolbarlist{background:#DDE7F7;border: 1px solid #8DB6C4;padding: 10px; width: 317px;}
+#block-toolbarlist  a{text-decoration:none;}
+#block-toolbarlist ul{padding: 0;margin: 0;}
+#block-toolbarlist li {display: inline;padding-right: 12px;}
+
+#speaker,#fake_speaker {
+	position: relative;
+	top: 2px;
+}
+
+.right_term_definition {
+	width: 336px;
+	float: right;
+    margin-top:10px;
+}
+.right_term_definition .sidead {
+ text-align:center;
+}
+
+#mostPopular h2.s16 {
+/*	font-size: 16px;*/
+
+}
+
+
+/*popup stlyes*/
+.subscribe-popup
+{
+	background: #FFF;
+	border: 2px solid #464646;
+	width: 450px;
+	height: 400px;
+	overflow: hidden;
+	position: absolute;
+	top: 80px;
+	left: 45%;
+	margin-left: -150px;
+	z-index: 10001;
+}
+
+
+.subscribe-popup .subscribe-header
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 22px;
+	width: 440px;
+	background: #464646;	/* 2C79DE */
+	border-bottom: 2px solid #464646;
+	padding-top: 2px;
+	padding-right: 10px;
+	color: #FFF;
+	text-align: right;
+	font-family: verdana, sans-serif;
+	font-size: 12px;
+	text-decoration: underline;
+
+	cursor: move;
+}
+
+.subscribe-popup .subscribe-header img
+{
+	position: relative;
+	top: 3px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.subscribe-popup iframe
+{
+	position: absolute;
+	top: 26px;
+	left: 0px;
+	border: none !important;
+	width: 450px;
+	height: 486px;
+}
+
+.subscribe-popup .subscribe-footer
+{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	height: 22px;
+	width: 460px;
+	background: #464646;	/* 2C79DE */
+	border-top: 2px solid #464646;
+	cursor: pointer;
+	cursor: hand;
+	padding-top: 2px;
+	color: #FFF;
+	text-align: center;
+	font-family: verdana, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	text-decoration: underline;
+}
+
+/*popup stlyes*/
+
+
+
+/*lightbox popup*/
+
+.subscribe-popup-light
+{
+	width: 450px;
+	height: 400px;
+	/*overflow: hidden;*/
+	position: absolute;
+	top:35px; /* 80px*/
+	left: 49%; /* 45% */
+	margin-left: -150px;
+	z-index: 10001;
+    background:#ffffff;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: 0px 0px 15px #222222;
+    -webkit-box-shadow: 0px 0px 15px #222222;
+    box-shadow: 0px 0px 15px #222222;
+    /*border:8px solid rgba(0, 0, 0, 0.5);*/
+
+}
+.adjust-popup{
+	top: 160px;
+}
+
+.subscribe-popup-light .subscribe-header-light
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 25px;
+	width: 440px;
+	padding-top: 2px;
+	padding-right: 10px;
+	color: #FFF;
+	text-align: right;
+	font-family: verdana, sans-serif;
+	font-size: 12px;
+	text-decoration: underline;
+	cursor: move;
+}
+
+
+.subscribe-popup-light .subscribe-header-light-right
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 25px;
+	width: 440px;
+	padding-top: 2px;
+	padding-right: 10px;
+	color: #FFF;
+	text-align: right;
+	font-family: verdana, sans-serif;
+	font-size: 12px;
+	text-decoration: underline;
+	cursor: move;
+}
+
+.subscribe-popup-light .subscribe-header-light img
+{
+	position: relative;
+	top: -18px;
+	cursor: pointer;
+	cursor: hand;
+    height:36px;
+    width:36px;
+    left:-420px;
+}
+
+.subscribe-popup-light .subscribe-header-light-right img
+{
+	position: relative;
+	top: -18px;
+	cursor: pointer;
+	cursor: hand;
+    height:36px;
+    width:36px;
+    right:-22px;
+}
+
+
+.subscribe-popup-light iframe
+{
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	border: none !important;
+	width: 450px;
+	height: 486px;
+    background:transparent;
+}
+
+.subscribe-popup-light .subscribe-footer-light
+{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	height: 10px;
+	width: 460px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+.image-logo-lightbox{background:url('http://img.businessdictionary.com/logo-white-bg.png') center center no-repeat ; margin:0 auto;height:51px;}
+
+/*lightbox popup*/
+#term_s {
+	width: 307px !important;
+}
+
+
+
+/*custom adsense below definition  BEFORE 05-09-2011*/
+a.adLink_a_test4:hover { text-decoration: underline;color:#0253b7; }
+a.adLink1_a_test4:hover { text-decoration: underline; text-align:left;color:#000;}
+a.adTitle_a_test4:hover {color:#0253b7; text-decoration: underline;  }
+a.adTitle1_a_test4:hover {color:#0253b7;text-decoration: underline; text-align:left}
+a.adLink_a_test4 {text-decoration: none; }
+.single_center_test4 {text-align: left}
+a.adTitle_a_test4 {text-decoration: underline }
+a.adLink1_a_test4 {text-decoration: none; text-align:left}
+a.adTitle1_a_test4 {text-decoration: none; text-align:left}
+.header_test4   {background:#eee;padding:4px; font-size:15px; font-weight:bold}
+.ad_test4 {width: 415px; float:left}
+.ad_test4 td {padding:0px 0 5px 0; float:left}
+.ad1_test4 {width: 415px; }
+.adText_test4 {color:000000;text-decoration:none; font-family: Verdana,Arial,sans-serif; font-size:120%; font-weight: normal; font-style: normal;}
+.adText1_test4 {color:000000;text-decoration:none; font-family: Verdana,Arial,sans-serif; font-size:120%; font-weight: normal; font-style: normal; text-align:left}
+.adLink_test4 {overflow: hidden; color:#0253b7; font-family: Verdana,Arial,sans-serif; font-size:120%; font-weight: normal; font-style: normal;}
+.adLink1_test4 {color:55802B; font-family: Verdana,Arial,sans-serif; font-size:120%; font-weight: normal; font-style: normal; text-align:left}
+a.abg_test4{text-decoration:none;color:#000;}
+.abg_test4 {color:#000000;text-decoration:none; font-family: Verdana,Arial,sans-serif; font-size:12px; font-weight:normal; font-style: normal;}
+.adTitle_test4 {color:0000EE; font-family: Verdana,Arial,sans-serif; font-size:125%; font-weight: 500; font-style: normal;text-decoration:underline;}
+.adTitle1_test4 {color:0000EE; font-family: Verdana,Arial,sans-serif; font-size:120%; font-weight: normal; font-style: normal; text-align:left}
+.ad_box1_test4 {border-style:solid;border-width:0px; border-color:FFFFFC; background-color: FFFFFF;width:415px;margin:0px 0 20px 0px; opacity: 1; background: nottransparent; }
+#ad_unit_test4{float:left}
+/*custom adsense below definition  BEFORE 05-09-2011*/
+
+
+/*FOR IW Like Custom Adsense*/
+a.adsByGoogle {
+color:#000000;
+font:normal 12px Verdana;
+}
+
+.adsByGoogleSpan {
+margin:0;
+padding:0 0 5px;
+width:100%;
+font-weight:bold;
+font-size:14px;
+}
+
+a.adsTitleBg {
+font-weight:normal;
+text-decoration:underline;
+font-size:15px;
+}
+
+a.adsLinkBg {
+overflow: hidden;
+color: #0253B7;
+font-family: Verdana,Arial,sans-serif;
+font-size: 13px;
+font-weight: normal;
+font-style: normal;
+}
+a.adsByGoogle {
+color:#000000;
+font:normal 14px Verdana;
+}
+
+.adsByGoogleSpan {
+margin:0;
+padding:0 0 5px;
+width:100%;
+font-weight:bold;
+font-size:14px;
+}
+
+#wrapper #ad_unit_test4 a.adsTitle {
+font-weight:bold;
+text-decoration:underline;
+font-size:15px;
+}
+
+#wrapper #ad_unit_test4 a.adsLink {
+color:#616466;
+font-size:12px;
+text-decoration:underline;
+}
+.newlowergoogleAdsA {font-size:14px;margin-bottom:10px;}
+/*FOR IW LIKE Custom Adsense*/
+
+
+
+
+
+
+/*tabbing for Search */
+ul#bd-search-nav{float:left;padding:0; margin:0 10px 0 0}
+ul#bd-search-nav li{list-style:none; margin-bottom:5px;}
+ul#bd-search-nav li a{font:bold 12px arial; color:#536e93; text-decoration:none;text-shadow:-1px 0 1px #FFFFFF; width:87px; height:20px; display:block; padding:4px 0px 0 23px;background:url('http://img.businessdictionary.com/bd-search-nav-down-bg.png') no-repeat;}
+ul#bd-search-nav li a:hover{font:bold 12px arial; color:#000; text-decoration:none;text-shadow:-1px 0 1px #FFFFFF; width:87px; height:20px; display:block; background:url('http://img.businessdictionary.com/bd-search-nav-bg.png') no-repeat; padding:4px 0px 0 23px;}
+.bdsearchactive{font:bold 12px arial; color:#000; text-decoration:none; width:87px; height:20px; display:block; background:url('http://img.businessdictionary.com/bd-search-nav-bg.png') no-repeat; padding:4px 0px 0 23px;text-shadow:-1px 0 1px #FFFFFF;}
+/*tabbing for Search */
+
+
+/*search page */
+.search-title-head {color:#656565;margin-left:8px;}
+#content .search-title-head  h2{color:#656565;font:normal 17px arial;}
+/*search page */
+
+/* not used */
+.top-add{background-color:red;margin:0 auto;text-align: center;width: 728px; }
+.top-container{height: 69px;}
+.top-script-container{position: absolute;right: 10px;}
+.top-links-ie{margin-top: -8px;}
+.search-image{position:relative;top:-1px;}
+.search-add {padding-top: 0;text-align: right;vertical-align: middle;}
+.term-area-container{width: 375px;}
+.width-555 {	width: 555px !important;}
+
+#ask-box{width:425px; margin:0 auto;}
+#ask-box-desc, #ask-box-form {background:#d1dfeb; padding:5px 10px 5px 10px; font:11px arial}
+#ask-box-top h2{font:20px Georgia; color:#166797; padding:0; margin:0}
+#ask-box-desc{font:12px}
+#question-box{position:relative}
+#question-box #close-box{position:absolute; top:2px; left:400px}
+a.ask-us-btn{font:600 14px Arial;color:#0000ff; cursor:pointer; text-decoration:none; border-bottom:2px solid #0000aa;}
+/* not used */
+/*styles copied from redesign.css */
+
+
+
+/*styles copied from JscrollPaneNew.css */
+
+.jScrollPaneContainer {
+	background-position:center bottom;
+	background-repeat:repeat-x;
+	border-top:1px solid #AAAAAA;
+	overflow:hidden;
+	position:relative;
+	z-index:1
+}
+
+.jScrollPaneTrack {
+	position: absolute;
+	cursor: pointer;
+	right: 0;
+	top: 0;
+	height: 100%;
+	background-color: #ececec;
+	border-left: 1px solid #BFCBD6;
+	border-right: 1px solid #D1DFEB;
+}
+.jScrollPaneDrag {
+	position: absolute;
+	cursor: pointer;
+	overflow: hidden;
+	background:url('http://img.businessdictionary.com/grey_drag.png') no-repeat left top;
+	height:19px;
+	left: 7px;
+}
+.jScrollPaneDragTop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+.jScrollPaneDragBottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+}
+a.jScrollArrowUp {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	text-indent: -2000px;
+	overflow: hidden;
+	background:url('http://img.businessdictionary.com/grey_arrow_up.png') no-repeat center top;
+	height:22px;
+	background-color: #ececec;
+	border-left: 1px solid #BFCBD6;
+	border-right: 1px solid #D1DFEB;
+}
+a.jScrollArrowDown {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	right: 0;
+	text-indent: -2000px;
+	overflow: hidden;
+	background:url('http://img.businessdictionary.com/grey_arrow_down.png') no-repeat center top;
+	height:22px;
+	background-color: #ececec;
+	border-left: 1px solid #BFCBD6;
+	border-right: 1px solid #D1DFEB;
+}
+a.jScrollActiveArrowButton, a.jScrollActiveArrowButton:hover {
+	/*background-color: #f00;*/
+}
+/*styles copied from JscrollPaneNew.css */
+
+
+/*styles copied from jquery.tooltip.css */
+#tooltip {
+	position: absolute;
+	z-index: 3000;
+	border: 1px solid #111;
+	background-color: #eee;
+	padding: 5px;
+	opacity: 0.85;
+}
+#tooltip h3, #tooltip div { margin: 0; }
+
+/*styles copied from jquery.tooltip.css */
+
+/*Left-Box Layout*/
+.left-box{width:155px; overflow:hidden;margin-bottom:20px;}
+.left-box .title{}
+ol, ol li{padding:0; margin:0}
+ol{padding-left:32px}
+ol li{color:#0253b7;font:13px arial;}
+ol li a{color:#0253b7;font:12px arial;text-decoration:none; display:block; padding:4px 0; margin:0}
+ol.commentlist li a{color:#0253b7;font:12px arial;text-decoration:none; padding:4px 0; margin:0; display:inline}
+#skyscrapper h3{ border-bottom: 1px solid #D6D6D6;
+    color: #233445;
+    font: bold 16px arial;
+    margin: 0 auto 6px;
+    padding: 0 0 2px;
+    width: 87%;
+    }
+
+/*Left-Box Layout*/
+
+ol#definitionlist li{
+
+}
+
+
+#wrapper #btm-signup{position:relative;margin-top:30px;}
+#wrapper #btm-signup .left-shadow{background: url('http://img.businessdictionary.com/left-shadow.png') no-repeat scroll 0 0 transparent;top:0;left:-8px; width:8px;height:52px;FLOAT:LEFT;position:absolute;}
+#wrapper #btm-signup .mainbox{width:999px;float:left; height:42px; margin-top:10px;background:#387BA9}
+#wrapper #btm-signup .right-shadow{background: url('http://img.businessdictionary.com/right-shadow.png') no-repeat scroll 0 0 transparent;top:0;left:999px; width:8px;height:52px;FLOAT:LEFT; position:absolute;}
+.tod-img, .todinboxtxt, .snform {float:left}
+.todinboxtxt {font:20px Georgia; color:#ffffff; padding:8px;}
+.snform{padding:8px 8px 8px 30px}
+
+
+
+
+.content-box{line-height:18px;margin-bottom:20px;clear:both;overflow:hidden}
+.small-searchbox{padding:10px; width:90%;border:1px solid #aaaaaa; overflow:hidden; border-radius:6px 6px 6px 6px;-moz-border-radius:6px; -webkit-border-radius: 6px;}
+.small-searchbox input.text{width:300px;display: inline-block;height:21px;}
+#content .small-searchbox h4{padding:0;margin:0 0 4px 0;font:bold 12px Arial;font-style:italic;color:#000000}
+.btm-search-submit{position:absolute; background-position:-160px -70px; background-repeat:no-repeat; width:21px; height:21px; border:0 none; cursor:pointer;display:inline-block; margin-left:2px;}
+.skyscrapper-box{width:160px; margin:10px 0 20px 16px;float:left;text-align:center}
+
+
+
+
+/*CURRENT PSEUDO POPUP CSS - STARTS*/
+
+.popup-wrap {
+	position: fixed;
+	background: #fff;
+	z-index:1003;
+	display:block;
+	-moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: 0px 0px 15px #222222;
+    -webkit-box-shadow: 0px 0px 15px #222222;
+    box-shadow: 0px 0px 15px #222222;
+    border:8px solid rgba(0, 0, 0, 0.5);
+    }
+
+.popup-wrap-D {
+	position: fixed;
+	background: #cae291 url('http://img.businessdictionary.com/greenraybg.jpg') top center no-repeat !important;
+	z-index:1003;
+	display:block;
+	-moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: 0px 0px 15px #222222;
+    -webkit-box-shadow: 0px 0px 15px #222222;
+    box-shadow: 0px 0px 15px #222222;
+    border:none;
+    }
+
+
+.popup-wrap .header {
+	position: relative;
+	height: 25px;
+	background:#ffffff;
+
+ }
+.popup-wrap-D .header {
+	position: relative;
+	height: 25px;
+	background:transparent;
+
+ }
+
+
+.popup-wrap .header .close {
+	position: absolute;
+	top: -16px;
+	left: -18px;
+	width: 36px;
+	height: 35px;
+	background: url('http://img.businessdictionary.com/close-btn.png') top right no-repeat;
+	cursor: pointer;
+	text-indent:-2000em
+	}
+
+.popup-wrap .content-wrap{
+	padding: 0 10px;
+	min-width:430px;
+	min-height:250px;
+	background:#ffffff;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-bottom-right-radius: none;
+	-webkit-border-bottom-left-radius: none;
+	-webkit-border-bottom-right-radius: none;
+	-moz-border-radius-bottomleft: none;
+	-moz-border-radius-bottomright: none;
+	position:relative;
+	}
+	
+#popup-element-F{
+	width:706px !important;
+}
+.popup-wrap-close-popup .content-wrap .forseclose{
+	position: absolute;
+	top: -40px;
+	left: -18px;
+	width: 36px;
+	height: 35px;
+	background: url('http://img.businessdictionary.com/close-btn.png') top right no-repeat;
+	cursor: pointer;
+	text-indent:-2000em
+}
+
+#popup-element-close-popup .content-wrap{
+	width: 430px;
+}
+.popup-wrap-C .content-wrap{
+	width:460px !important;
+}
+.popup-wrap-D .content-wrap{
+	background:transparent;
+	width:450px;
+}
+.popup-logo{
+	text-align:center;
+	padding-bottom:10px;
+	height:51px;
+}
+.popup-call-to-action{
+	font:bold 14px Verdana;
+	color:#024181;
+	padding:5px 0 10px 0;
+	text-align:center;
+}
+.popup-call-to-action-mobile{
+	font:bold 16px Arial;
+	color:#000;
+	padding:15px 0 0px 0;
+	text-align:center;
+}
+.popup-adcopy{
+	font:normal 11px/18px Verdana;
+	color:#000000;
+	text-align:center;
+	padding:5px 0 10px 0;
+}
+.popup-form{
+	text-align:center;
+}
+.popup-form .popup-email-input{
+	margin-top:0;
+	padding:3px 0;
+	height:25px;
+	font:normal 15px arial;
+	width:230px;
+}
+
+.popup-form .popup-email-input-joinnow{
+	margin-top:0;
+	padding:5px 0 5px 4px;
+	height:25px;
+	font:normal 15px arial;
+	width:260px;
+	border-radius:3px 0 0 3px;
+	border:1px solid #0a3282;
+	font-weight: bold;
+}
+
+.popup-form .popup-email-input-continue{
+	margin-top:0;
+	padding:5px 0 5px 4px;
+	height:25px;
+	font:normal 15px arial;
+	width:330px;
+	border-radius:3px;
+	border:2px solid #afa6af;
+	font-weight: bold;
+	margin-bottom:6px;
+}
+
+
+.popup-email-input-mobile{
+	margin:0 0 10px 0;
+	padding:3px 0 3px 2px;
+	height:20px;
+	font:normal 16px arial;
+	width:85%;
+}
+.popup-form .submitbutton{
+	cursor:pointer;
+	width:100px;
+	height:35px;
+	border:0;
+	background:url('http://img.businessdictionary.com/submit-hover.png') 0 0 no-repeat;
+	font: inherit;
+	vertical-align: top;
+	}
+.popup-form .submitbutton:hover{
+	background-position:0 -35px;
+	}
+
+.popup-form .submitbutton-joinnow{
+	cursor:pointer;
+	width:106px;
+	height:37px;
+	border:0;
+	background:url('http://img.businessdictionary.com/joinnow.png') 0 0 no-repeat;
+	font: inherit;
+	vertical-align: top;
+	}
+.popup-form .submitbutton-joinnow:hover{
+	background-position:0 -37px;
+	}
+
+.popup-form .submitbutton-continue{
+	cursor:pointer;
+	width:125px;
+	height:48px;
+	border:0;
+	background:url('http://img.businessdictionary.com/continuebtn.png') 0 0 no-repeat;
+	font: inherit;
+	vertical-align: top;
+	float:right;
+	}
+.popup-form .submitbutton-continue:hover{
+	background-position:0 -48px;
+}
+
+
+.submit-btn-split{background:url('http://img.businessdictionary.com/split-btns.png') 0 0 no-repeat}
+.popup-form .startnowbutton{cursor:pointer;width:130px;height:35px;border:0; vertical-align:top; background-position:0 0}
+.popup-form .startnowbutton:hover{background-position:0 -35px;}
+
+.popup-form .joinbutton{cursor:pointer;width:130px;height:35px;border:0; vertical-align:top; background-position:0 -70px}
+.popup-form .joinbutton:hover{background-position:0 -105px;}
+
+.popup-form .getitbutton{cursor:pointer;width:130px;height:35px;border:0; vertical-align:top; background-position:0 -140px}
+.popup-form .getitbutton:hover{background-position:0 -175px;}
+
+.popup-form .greensubmitbutton{cursor:pointer;width:130px;height:35px;border:0; vertical-align:top; background-position:0 -210px}
+.popup-form .greensubmitbutton:hover{background-position:0 -245px;}
+
+.submitbutton-mobile{
+	cursor:pointer;
+	width:50%;
+	font-size:16px;
+	font-weight:bold;
+	background:#c74848;
+	color:white;
+	text-decoration:none;
+	border: 1px solid #C43E3E;
+	padding:5px 6px;
+	margin:0px auto;
+	background-image:-webkit-linear-gradient(top,rgba(226, 226, 226, .14),rgba(34, 34, 34, .2));
+	background-image:-moz-linear-gradient(top,rgba(226, 226, 226, .14),rgba(34, 34, 34, .2));
+	background-image: linear-gradient(top,rgba(226, 226, 226, .14),rgba(34, 34, 34, .2));
+	border-radius: 3px;
+	}
+.popup-wrap .content-wrap .buttons {
+	padding-top: 20px;
+	text-align: center;
+	}
+
+.error
+{
+	color: red;
+	padding-top: 5px;
+	height:15px;
+}
+
+.checkboxes label
+{
+	font-size:11px;
+	padding-left:3px;
+	vertical-align: 3px;
+}
+.subscribe-area {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/*CUSTOM POPUP  C*/
+
+/*CUSTOM POPUP D*/
+
+
+
+.black_overlay {
+	display: block !important;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right:0;
+	bottom:0;
+	background: #333;
+	z-index: 1001;
+	-moz-opacity: 0.8;
+	opacity: .80;
+	filter: alpha(opacity=80);
+}
+
+/*CURRENT PSEUDO POPUP CSS - ENDS*/
+
+/*ON PAGE SIGN UP BOX*/
+#termpage-tod-signup{width:336px; position:relative;text-align:center}
+.termpage-singup-cta{background:#346ada url('http://img.businessdictionary.com/termpage-signup-btn.png') 0 -100px repeat-x;font:bold 16px Arial; color:#ffffff; text-align:center; padding:0; position:absolute; top:15px; left:0; width:336px;max-height:41px;
+ height:41px;}
+.termpage-singup-cta-txt{display:block;margin-top:10px}
+.termpage-signup-box{width:260px; margin:0 auto; border:2px solid #356cdc; background:#e4edff; border-radius:6px; padding:60px 20px 10px 20px;text-align:left}
+.termpage-signup-box p{font:normal 14px/18px Arial;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #C8DAF1}
+.termpage-signup-box label{font:bold 16px/18px Arial;padding:0;margin:0 0 4px 0;display:block}
+.termpage-singup-input{width:252px; margin:0 auto 8px auto; padding: 4px 0 4px 6px; height:26px; font:bold 16px Arial;background:#FAFFBD; border:1px solid #92949a;box-shadow:inset 0 2px 6px #aaa; border-top:1px solid #505050}
+.termpage-singup-submit{background:#c82a05 url('http://img.businessdictionary.com/termpage-signup-btn.png') 0 0 repeat-x;border-radius:4px;width:262px; font:bold 20px Arial; color:#ffffff; text-transform:uppercase; border:1px solid #932006; padding:6px 0; text-shadow:0 -1px 0 #7b1b05;cursor:pointer}
+.termpage-singup-error{min-height:14px; max-height:14px; margin-top:4px; color:#cb2b06; font:100 11px arial;text-align:center}
+.termpage-singup-shadow-lt{background:url('http://img.businessdictionary.com/termpage-signup-bar-shadow.png') 0 0 no-repeat; width:16px; height:16px; position:absolute; display:block; left:0; top:56px;}
+.termpage-singup-shadow-rt{background:url('http://img.businessdictionary.com/termpage-signup-bar-shadow.png') -16px 0 no-repeat; width:16px; height:16px; position:absolute; display:block; right:0; top:56px;}
+.termpage-signup-thankyou{padding:20px; font:bold 14px/18px; }
+.termpage-signup-why{margin:10px 0}
+.termpage-signup-why ul{margin:0 0 0 18px;}
+.termpage-signup-why ul li{font:normal 14px/22px Arial}
+/*ON PAGE SIGN UP BOX*/
+
+
+.sky-block {
+border: 1px solid #AAA;width: 158px;margin: 0px 0px 20px 0;overflow: hidden;text-align:left;
+}
+.sky-block h3{background:#ECECEC url('http://img.businessdictionary.com/section_bg.png') no-repeat center center;padding: 6px 4px;font: bold 14px Arial;border-bottom: 1px solid #AAA; text-shadow: 0 1px 0px white;}
+.sky-block ul {padding: 0 0 0 16px;}
+.sky-block ul li{margin: 6px 0}
+.sky-block li a,.sky-block li{font-size:13px;text-decoration: none}
+.sky-block-content{
+padding: 4px;
+overflow: hidden;
+}
+
+.sky-block-promo{
+ margin-bottom:20px;
+ background:#f6f6f6;
+ padding:10px 8px;
+ border:1px solid #afafaf;
+ text-align:center;
+ font:bold 14px/24px arial;	
+}
+
+.sky-ad{
+	
+	margin:20px 0;
+}
+.opacityclose-popup{
+-moz-opacity: 0.5;
+opacity: .50;
+filter: alpha(opacity=50);
+}
+
+/*****STORE CSS *****/
+div#store { box-sizing:border-box; margin:20px 21px 20px 18px; }
+div#store > div{box-sizing:border-box;margin-bottom:20px;}
+#store h3{margin-bottom:10px;font:100 22px/38px Arial;height:36px}
+.store-header{padding-bottom:20px;background:url('http://img.businessdictionary.com/grid-bg.png') 0 bottom repeat-x}
+.store-steps {position:relative;overflow:hidden;}
+.store-steps >div{box-sizing:border-box;width:230px; height:184px;margin:5px;float:left;display:inline-block;border:1px solid #dfdfdf}
+.store-steps >div img{width:100%; height:100%;}
+.store-products-detail{cursor:pointer;box-sizing:border-box;position:relative;}
+.store-products-detail span{z-index:1; text-align:center; margin:-18px 12px 0 12px;padding:6px; background:#000 url('http://img.businessdictionary.com/red-arrow.png') 179px center no-repeat;color:#fff; font:bold 16px arial;display:block;position:relative;}
+.store-form{width:720px;box-sizing:border-box;margin-top:20px;}
+.store-form >div{box-sizing:border-box;}
+.store-form-label{box-sizing:border-box;width:300px;float:left;display:inline-block;text-align:right;font:bold 18px Arial; color:#343434;margin:8px 0 8px 0;}
+.store-form-element{box-sizing:border-box;width:400px; margin:8px 0 8px 20px;float:left;display:inline-block}
+#store input{box-sizing:border-box;padding:9px 4px; font:100 17px Arial;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius: 3px; border:1px solid #a0a0a0; box-shadow:inset 1px 3px 6px #dfdfdf;width:100%;}
+.store-definition{padding:8px 20px;background:#f3f3f3;border:1px solid #e4e4e4;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius: 3px;}
+.step-one{background:url('http://img.businessdictionary.com/store/step-one.png') left center no-repeat; padding-left:40px;}
+.step-two{background:url('http://img.businessdictionary.com/store/step-two.png') left center no-repeat; padding-left:40px;}
+.step-three{background:url('http://img.businessdictionary.com/store/step-three.png') left center no-repeat; padding-left:40px;}
+/*****STORE CSS *****/
+
+
+#ad_term_bottom_place{/*min-height:230px;width:336px;*/margin-left:-5px;margin-top:18px;}
+#ad_term_bottom_place_line{/*min-height:230px;width:336px;*/ margin-left:-5px;margin-top:8px;padding-top:9px;border-top:1px solid #dfdfdf}
+/*CUSTOM ADSENSE CSS*/
+a.adsByGoogle {color:#000000;font:normal 12px Verdana;}
+.adsByGoogleSpan {margin:0;	padding:0 0 5px;width:100%;font-weight:bold;font-size:12px;}
+#wrapper .term_definition a.adsTitle {font-weight:normal;text-decoration:underline !important;font-size:15px;line-height:23px;}
+#wrapper .term_definition a.adsLink {font-size:12px;text-decoration:none;line-height:20px}
+.newlowergoogleAds {font-size:14px;padding-top:5px;}
+/*CUSTOM ADSENSE CSS*/
+
+.show-hide-definition-div ol li{color:#000000;}
+.show-hide-definition-div ol li a{display:inline-block;}
+
+
+#term-of-day-signup{display:block;
+background: #DDE7F7;
+width: 350px;
+border: 1px solid #9fbbe8;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+padding: 6px 0 2px 8px;
+overflow: hidden;
+margin: 6px 0 5px 0;}
+
+#term-of-day-signup .call-to-action-txt{font: bold 14px arial;
+color: #454545;
+padding-bottom: 4px;}
+
+.subscribe-email-input{padding:2px 2px 4px 3px}
+
+.low_page_view_message{color: #444;
+font-size: 20px;margin-top:10px;
+padding: 7px;background:#eee;border:1px solid #ddd;margin-bottom:20px;font-weight:normal;}
+
+.low_page_view_message_term{font-weight: bold;font-size: 20px;
+color: #366e51;}
+
+.cpc-ads-block a:hover img{width:120%;position:relative;left:-10%;border:6px solid #2678E0}
+
+.cpc-ads-block-green{position:relative;width:430px;background;height:290px; background:#f0f0f0;margin:0 auto}
+		.cpc-ads-block-green a{display:block;position:relative}
+		a.box1, a.box2, a.box3{position:absolute;z-index:1;left:5px;}
+			a.box1{top:5px;} a.box2{top:100px} a.box3{top:195px}
+		a.box1:hover, a.box2:hover, a.box3:hover{left:-45px;z-index:2;position:absolute}
+			a.box1:hover{top:-15px;} a.box2:hover{top:80px;} a.box3:hover{top:175px;}
+ 				a.box1:hover img, a.box2:hover img, a.box3:hover img{width:500px;border:10px solid #00cc00;box-shadow:0 3px 10px #676767}
+
+.usage-example .highlight-term{font-weight:bold;}
+
+#change-profile-picture{
+	background: rgba(0, 0, 0, 0.50);
+	color: white; 
+	text-decoration: none; 
+	margin-top: -19px; 
+	position: absolute; 
+	font-size:90%; 
+	width:90px; 
+	height:19px; 
+	text-align:center;
+}
+#change-profile-picture:hover{
+	text-decoration:underline;
+	cursor: pointer;
+}
+#profile-title{
+	font-size:110%; 
+	font-weight: bold; 
+	color:grey; 
+	padding-bottom: 5px; 
+	border-bottom: 1px solid grey;
+}
+#profile-username-title{
+	padding: 5px 0 10px 0;
+}
+#profile-username{
+	padding-bottom:5px;	
+}
+#change-profile-picture-confirm{
+	text-decoration:underline;
+	color:#0253b7;
+	float:right;
+}
+
+#choose-to-change-username,#change-username{
+	text-decoration:underline;
+	color:#0253b7;
+}
+
+#upload-profile-picture-confirm{
+	text-decoration:underline;
+	color:#0253b7;
+	border:0px; 
+	background:transparent;
+}
+
+#change-username:hover, #change-profile-picture-confirm:hover, #upload-profile-picture-confirm:hover, #choose-to-change-username:hover{
+	text-decoration:underline;
+	color:#a44533;
+	cursor: pointer;
+}
+
+
+.flashcard-signup-success{font-weight: normal;
+background: #eee;
+padding: 10px;
+border: 1px solid #ddd;}
+
+/*
+ * styles for searchcse empty stuff below
+ */
+.searchcse-heading{color: #536E93;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-weight: 100;
+margin: 6px 0;
+font-size: 100%;}
+
+.searchcse-term-list{
+	margin-top: 15px;
+	text-align: left;
+}
+
+.searchcse-term-list-heading{
+font-size: 18px;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+color: #666;
+margin-bottom: 10px;
+font-weight: bold;
+}
+
+a.searchcse-block-link{
+display: block;
+text-decoration: none;
+margin-bottom: 10px;
+border: 1px solid #aaa;
+padding: 10px;
+color: #111;
+border-radius: 7px;
+-webkit-border-radius: 7px;
+-moz-border-radius: 7px;
+-o-border-radius: 7px;
+box-shadow: 1px 1px 15px #ccc;
+-o-box-shadow: 1px 1px 15px #ccc;
+-moz-box-shadow: 1px 1px 15px #ccc;
+-webkit-box-shadow: 1px 1px 15px #ccc;
+}
+
+.searchcse-term-heading{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size: 160%;
+line-height: 100%;
+color: #444;
+margin: 0;
+margin-bottom: 10px;
+font-weight: normal;
+}
+
+.searchcse-term-definition {
+margin: 0 0 10px 0;
+padding: 0;
+font-size: 100%;
+}
+
+.searchcse-link{
+	color: #536E93;
+}
+
+.searchcse-subject-list a{display:inline-block;font-size:16px;font-family:Verdana, Arial, Helvetica, sans-serif;
+color: #536E93;text-decoration:none;margin-bottom:20px;}
+
+
+
+/*adsense split*/
+.ad-label{width:16px;color:#ffffff;padding:2px 4px;border-radius:3px;float:left;margin-top:18px;margin-left:5px;font:bold 12px arial;}
+.ad-label.blue{background:#0C47AF}
+.ad-label.black{background:#000000}
+.ad-label.gray{background:#777777}
+.ad-label.red{background:#A44533}
+
+.adsense-box{width:350px; float:left;}
+.adsense-box.margin8{margin-top:8px;}
+.adsense-box.margin16{margin-top:16px;}
+.control-adsense-box{margin-top:8px}
+/*adsense split classes*/

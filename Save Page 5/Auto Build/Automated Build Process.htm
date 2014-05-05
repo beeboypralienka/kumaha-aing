@@ -1,0 +1,1345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0051)http://www.scmwise.com/automated-build-process.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://www.scmwise.com/favicon.ico">
+
+<title>
+Automated Build Process
+</title>
+
+<meta name="Keywords" content="Automated Build Process, Software Builds, scm, software configuration management">
+<meta name="Description" content="Automated Build Process - Automating your software
+build process is a fundamental step in maturing your software development process.
+The only way to accurately predict build results, ensure build reproducibility and
+guarantee minimal development down time due to build issues is to fully automate the
+build process.  Automating the build process is an integral part of Software
+Configuration Management, SCM.">
+
+<meta name="ROBOTS" content="all">
+
+<meta http-equiv="CONTENT-LANGUAGE" content="EN">
+<meta name="revisit-after" content="7 days">
+<meta name="Copyright" content="SCMWise.com">
+<meta name="y_key" content="e8c2a5e9346cbd77">
+<link rel="stylesheet" type="text/css" href="./Automated Build Process_files/main.css">
+<link rel="stylesheet" type="text/css" href="./Automated Build Process_files/nav.css">
+<link rel="stylesheet" type="text/css" href="./Automated Build Process_files/divs.css">
+<link rel="stylesheet" type="text/css" href="./Automated Build Process_files/dropdownmenux.css">
+<link rel="stylesheet" href="./Automated Build Process_files/addto.css" type="text/css">
+<script language="JavaScript" src="./Automated Build Process_files/addto.js" type="text/javascript"></script>
+<script language="JavaScript" src="./Automated Build Process_files/dropdownmenux.js" type="text/javascript"></script>
+<script language="JavaScript" src="./Automated Build Process_files/ie5.js" type="textjavascript"></script>
+
+<script type="text/javascript" src="./Automated Build Process_files/fix.js"></script> <!-- start: tool_blocks.sbi_html_head -->
+<link rel="canonical" href="./Automated Build Process_files/Automated Build Process.htm">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.scmwise.com/software-configuration-management.xml">
+<meta property="og:title" content="Automated Build Process">
+<meta property="og:description" content="Automated Build Process - Automating your software
+build process is a fundamental step in maturing your software development process.
+The only way to accurately predict build results, ensure build reproducibility and
+guarantee minimal development down time due to build issues is to fully automate the
+build process.  Automating the build process is an integral part of Software
+Configuration Management, SCM.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://www.scmwise.com/automated-build-process.html">
+<!-- end: tool_blocks.sbi_html_head --><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,.fb_connect_bar_container span,.fb_connect_bar_container a,.fb_connect_bar_container img,.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}.fb_connect_bar a:hover{color:#fff}.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}.fb_connect_bar div a,.fb_connect_bar span,.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head>
+
+<body>
+<!--************************************************************************************************-->
+<!-- The table width below, is for the COMPLETE table, not the individual cells. You can change it
+to as low as 80%, if you prefer the narrower look. -->
+
+<div class="main-table" align="center"><!--this is the starting div for the max width, don't delete it-->
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5px">
+<tbody><tr>
+<td class="headerbg" colspan="3">
+<div align="left">
+<div class="header-box-round">
+	<div align="center">
+
+<table cellpadding="10">
+<tbody><tr>
+<td>
+
+<img src="./Automated Build Process_files/scmwise.png" width="400" height="100" title="SCMWise.com">
+
+</td>
+<td>
+
+<img src="./Automated Build Process_files/scm.png" width="100" height="90" title="Software Configuration Management">
+
+</td>
+<td>
+
+</td>
+<td>
+
+<form action="http://www.scmwise.com/scmwise-search-results.html" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-7885125947976158:5btwcl2cdc8">
+    <input type="hidden" name="cof" value="FORID:10">
+    <input type="hidden" name="ie" value="ISO-8859-1">
+    <input type="text" name="q" size="31" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background-image: url(http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif); background-color: rgb(255, 255, 255); background-position: 0% 50%; background-repeat: no-repeat no-repeat;">
+    <input type="submit" name="sa" value="Search">
+  </div>
+<input name="siteurl" type="hidden" value="www.scmwise.com/automated-build-process.html"><input name="ref" type="hidden" value="www.google.com/"><input name="ss" type="hidden" value=""></form>
+<script type="text/javascript" src="./Automated Build Process_files/brand"></script>
+
+<div align="center" <hr="" class="solid">
+
+<p>
+
+<script src="./Automated Build Process_files/all.js"></script><fb:like href="http://www.facebook.com/pages/SCMWise-Software-Configuration-Management/135157533183004" show_faces="false" width="100" font="" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FSCMWise-Software-Configuration-Management%2F135157533183004&amp;locale=en_US&amp;sdk=joey&amp;show_faces=false&amp;width=100"><span style="vertical-align: bottom; width: 225px; height: 28px;"><iframe name="f3af83b73" width="100px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Automated Build Process_files/like.htm" class="" style="border: none; visibility: visible; width: 225px; height: 28px;"></iframe></span></fb:like>
+</p><p>
+
+</p></div></td>
+</tr>
+</tbody></table>
+
+	</div>
+</div>
+
+
+
+</div>
+</td>
+</tr>
+</tbody></table>
+
+<div align="center">
+
+
+
+
+ <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://www.scmwise.com/favicon.ico">
+  
+  <title>SCMWise.com</title>
+  <style type="text/css">
+
+  </style>
+  <link rel="stylesheet" type="text/css" href="./Automated Build Process_files/dropdownmenux.css">
+  <script type="text/javascript" src="./Automated Build Process_files/ie5.js"></script>
+  <script type="text/javascript" src="./Automated Build Process_files/dropdownmenux.js"></script>
+<script type="text/javascript" src="./Automated Build Process_files/fix.js"></script> <!-- start: tool_blocks.sbi_html_head -->
+<link rel="canonical" href="./Automated Build Process_files/Automated Build Process.htm">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.scmwise.com/software-configuration-management.xml">
+<meta property="og:title" content="Automated Build Process">
+<meta property="og:description" content="Automated Build Process - Automating your software
+build process is a fundamental step in maturing your software development process.
+The only way to accurately predict build results, ensure build reproducibility and
+guarantee minimal development down time due to build issues is to fully automate the
+build process.  Automating the build process is an integral part of Software
+Configuration Management, SCM.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://www.scmwise.com/automated-build-process.html">
+<!-- end: tool_blocks.sbi_html_head -->
+
+
+<table cellspacing="0" cellpadding="0" id="menu1" class="ddmx">
+<tbody><tr>
+
+<td>
+<a class="item2" href="http://www.scmwise.com/software-configuration-management.html" onclick="return FIX.track(this);" id="menu1-0"> SCM</a>
+  <div class="section" id="menu1-0-section" style="width: 100px; top: 213px; left: 325px;">
+	<a class="item2" href="http://www.scmwise.com/index.html" onclick="return FIX.track(this);" id="menu1-0-0">                                             SCMWise Home</a>
+    <a class="item2" href="http://www.scmwise.com/software-configuration-mgmt.html" onclick="return FIX.track(this);" id="menu1-0-1">                       SCM</a>
+    <a class="item2" href="http://www.scmwise.com/software-configuration-management-plan.html" onclick="return FIX.track(this);" id="menu1-0-2">            SCM Plan</a>
+    <a class="item2" href="http://www.scmwise.com/software-configuration-management-systems.html" onclick="return FIX.track(this);" id="menu1-0-3">         SCM Systems</a>
+	<a class="item2" href="http://www.scmwise.com/software-configuration-management-strategies.html" onclick="return FIX.track(this);" id="menu1-0-4">      SCM Strategies</a>
+	<a class="item2" href="http://www.scmwise.com/software-configuration-management-best-practices.html" onclick="return FIX.track(this);" id="menu1-0-5">  Best Practices</a>
+	<a class="item2" href="http://www.scmwise.com/scm-plan.html" onclick="return FIX.track(this);" id="menu1-0-6">                                          SCM Plan</a>
+	<a class="item2" href="http://www.scmwise.com/scm-best-practices.html" onclick="return FIX.track(this);" id="menu1-0-7">                                General BP</a>
+	<a class="item2" href="http://www.scmwise.com/scm-books.html" onclick="return FIX.track(this);" id="menu1-0-8">                                         SCM Books</a>
+	<a class="item2" href="http://www.scmwise.com/genius-richard-feynman.html" onclick="return FIX.track(this);" id="menu1-0-9">                            Richard Feynman</a>
+	<a class="item2" href="http://www.scmwise.com/genius-james-gleick.html" onclick="return FIX.track(this);" id="menu1-0-10">                               James Gleick</a>
+	<a class="item2" href="http://www.scmwise.com/scm-performance-goals.html" onclick="return FIX.track(this);" id="menu1-0-11">                             SCM Goals</a>
+	<a class="item2" href="http://www.scmwise.com/scm-goals.html" onclick="return FIX.track(this);" id="menu1-0-12">                                         SCM Goals</a>
+	<a class="item2" href="http://www.scmwise.com/forrester-reports.html" onclick="return FIX.track(this);" id="menu1-0-13">                                 Forrester Reports</a>
+	<a class="item2" href="http://www.scmwise.com/scm-war-stories.html" onclick="return FIX.track(this);" id="menu1-0-14">                                   SCM War Stories</a>
+	<a class="item2" href="http://www.scmwise.com/circumventing-build-process.html" onclick="return FIX.track(this);" id="menu1-0-15">                       Circumventing Build</a>
+	<a class="item2" href="http://www.scmwise.com/untested-software.html" onclick="return FIX.track(this);" id="menu1-0-16">                                 Untested Software</a>
+	<a class="item2" href="http://www.scmwise.com/what-is-scm.html" onclick="return FIX.track(this);" id="menu1-0-17">                                       What is SCM</a>
+    <a class="item2" href="http://www.scmwise.com/why-use-scm.html" onclick="return FIX.track(this);" id="menu1-0-18">                                       Why Use SCM</a>
+    <a class="item2" href="http://www.scmwise.com/software-configuration-management-websites.html" onclick="return FIX.track(this);" id="menu1-0-19">        SCM Websites</a>
+  </div>
+</td>
+
+<td>
+<a class="item2" href="http://www.scmwise.com/software-build.html" onclick="return FIX.track(this);" id="menu1-1">                      Builds</a>
+  <div class="section" id="menu1-1-section" style="width: 110px; top: 213px; left: 365px;">
+    <a class="item2" href="./Automated Build Process_files/Automated Build Process.htm" onclick="return FIX.track(this);" id="menu1-1-0">              Automated Build</a>
+	<a class="item2" href="http://www.scmwise.com/build-automation.html" onclick="return FIX.track(this);" id="menu1-1-1">                     Build Automation</a>
+	<a class="item2" href="http://www.scmwise.com/build-management.html" onclick="return FIX.track(this);" id="menu1-1-2">                     Build Management</a>
+	<a class="item2" href="http://www.scmwise.com/software-build-best-practices.html" onclick="return FIX.track(this);" id="menu1-1-3">        Build Practices</a>
+	<a class="item2" href="http://www.scmwise.com/continuous-integration.html" onclick="return FIX.track(this);" id="menu1-1-4">               Cont Integration</a>
+    <a class="item2" href="http://www.scmwise.com/cruisecontrol.html" onclick="return FIX.track(this);" id="menu1-1-5">                        CruiseControl</a>
+    <a class="item2" href="http://www.scmwise.com/cruisecontrol-net.html" onclick="return FIX.track(this);" id="menu1-1-6">                    CruiseControl.Net</a>
+    <a class="item2" href="http://www.scmwise.com/agile-continuous-integration.html" onclick="return FIX.track(this);" id="menu1-1-7">         Continuous Integration</a>
+    <a class="item2" href="http://www.scmwise.com/maven.html" onclick="return FIX.track(this);" id="menu1-1-8">                                Maven</a>
+  </div>
+</td>
+
+<td>
+  <a class="item2" href="http://www.scmwise.com/scm-jobs.html" onclick="return FIX.track(this);" id="menu1-2">                  SCM Jobs</a>
+  <div class="section" id="menu1-2-section" style="width: 136px; top: 213px; left: 411px;">
+    <a class="item2" href="http://jobs.scmwise.com/" onclick="return FIX.track(this);" id="menu1-2-0">                        Jobs Listing</a>
+    <a class="item2" href="http://www.scmwise.com/software-configuration-management-jobs.html" onclick="return FIX.track(this);" id="menu1-2-1">    Jobs</a>
+    <a class="item2" href="http://www.scmwise.com/scm-salaries.html" onclick="return FIX.track(this);" id="menu1-2-2">                              SCM Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/software-configuration-management-salaries.html" onclick="return FIX.track(this);" id="menu1-2-3">USA Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-australia.html" onclick="return FIX.track(this);" id="menu1-2-4">                    Australia Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-bangladesh.html" onclick="return FIX.track(this);" id="menu1-2-5">                   Bangladesh Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-brazil.html" onclick="return FIX.track(this);" id="menu1-2-6">                       Brazil Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-canada.html" onclick="return FIX.track(this);" id="menu1-2-7">                       Canada Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-denmark.html" onclick="return FIX.track(this);" id="menu1-2-8">                      Denmark Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-egypt.html" onclick="return FIX.track(this);" id="menu1-2-9">                        Egypt Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-england.html" onclick="return FIX.track(this);" id="menu1-2-10">                      England Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-france.html" onclick="return FIX.track(this);" id="menu1-2-11">                       France Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-germany.html" onclick="return FIX.track(this);" id="menu1-2-12">                      Germany Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-gibraltar.html" onclick="return FIX.track(this);" id="menu1-2-13">                    Gibraltar Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-hong-kong.html" onclick="return FIX.track(this);" id="menu1-2-14">                    Hong Kong Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-india.html" onclick="return FIX.track(this);" id="menu1-2-15">                        India Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-italy.html" onclick="return FIX.track(this);" id="menu1-2-16">                        Italy Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-malaysia.html" onclick="return FIX.track(this);" id="menu1-2-17">                     Malaysia Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-netherlands.html" onclick="return FIX.track(this);" id="menu1-2-18">                  Netherlands Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-pakistan.html" onclick="return FIX.track(this);" id="menu1-2-19">                     Pakistan Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-scotland.html" onclick="return FIX.track(this);" id="menu1-2-20">                     Scotland Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-south-africa.html" onclick="return FIX.track(this);" id="menu1-2-21">                 South Africa Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-spain.html" onclick="return FIX.track(this);" id="menu1-2-22">                     	Spain Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-turkey.html" onclick="return FIX.track(this);" id="menu1-2-23">                     	Turkey Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-united-arab-emirates.html" onclick="return FIX.track(this);" id="menu1-2-24">         United Arab Emirates Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-united-kingdom.html" onclick="return FIX.track(this);" id="menu1-2-25">               UK Salaries</a>
+	<a class="item2" href="http://www.scmwise.com/scm-salaries-wales.html" onclick="return FIX.track(this);" id="menu1-2-26">                        Wales Salaries</a>
+    <a class="item2" href="http://www.scmwise.com/scm-engineer.html" onclick="return FIX.track(this);" id="menu1-2-27">                              SCM Engineer Job Description</a>
+    <a class="item2" href="http://www.scmwise.com/senior-scm-engineer.html" onclick="return FIX.track(this);" id="menu1-2-28">                       Sr Engineer Job Description</a>
+    <a class="item2" href="http://www.scmwise.com/principal-software-configuration-management-engineer.html" onclick="return FIX.track(this);" id="menu1-2-29">
+    																	    Principal SCM Engineer</a>
+    <a class="item2" href="http://www.scmwise.com/software-configuration-manager-job-description.html" onclick="return FIX.track(this);" id="menu1-2-30">
+    																	    SCM Manager Job Description</a>
+    <a class="item2" href="http://www.scmwise.com/scm-interview-questions.html" onclick="return FIX.track(this);" id="menu1-2-31">                   SCM Interview Questions</a>
+    <a class="item2" href="http://www.scmwise.com/software-configuration-management-interview-questions.html" onclick="return FIX.track(this);" id="menu1-2-32">
+                                                                            SCM Interview Questions</a>
+  </div>
+</td>
+
+<td>
+<a class="item2" href="http://www.scmwise.com/software-configuration-management-tools.html" onclick="return FIX.track(this);" id="menu1-3">SCM Tools</a>
+  <div class="section" id="menu1-3-section" style="width: 127px; top: 213px; left: 471px; visibility: hidden; z-index: -1;">
+    <a class="item2" href="http://www.scmwise.com/scm-tools.html" onclick="return FIX.track(this);" id="menu1-3-0">                            SCM Tools</a>
+    <a class="item2" href="http://www.scmwise.com/scm-tool-reviews.html" onclick="return FIX.track(this);" id="menu1-3-1">                     SCM Tool Reviews</a>
+    <a class="item2" href="http://www.scmwise.com/software-build-tools.html" onclick="return FIX.track(this);" id="menu1-3-2">                 Software Build Tools</a>
+    <a class="item2" href="http://www.scmwise.com/software-build-tool-reviews.html" onclick="return FIX.track(this);" id="menu1-3-3">          Software Build Tool Reviews</a>
+    <a class="item2" href="http://www.scmwise.com/software-installation-tools.html" onclick="return FIX.track(this);" id="menu1-3-4">          Software Installation Tools</a>
+    <a class="item2" href="http://www.scmwise.com/software-installation-tool-reviews.html" onclick="return FIX.track(this);" id="menu1-3-5">   Install Tool Reviews</a>
+    <a class="item2" href="http://www.scmwise.com/software-tracking-tools.html" onclick="return FIX.track(this);" id="menu1-3-6">              Software Tracking Tools</a>
+    <a class="item2" href="http://www.scmwise.com/installshield-installer.html" onclick="return FIX.track(this);" id="menu1-3-7">              InstallShield Installer</a>
+    <a class="item2" href="http://www.scmwise.com/subversion.html" onclick="return FIX.track(this);" id="menu1-3-8">                           Subversion</a>
+    <a class="item2" href="http://www.scmwise.com/subversion-commands.html" onclick="return FIX.track(this);" id="menu1-3-9">                  Subversion Commands</a>
+    <a class="item2" href="http://www.scmwise.com/team-foundation-server.html" onclick="return FIX.track(this);" id="menu1-3-10">               Team Foundation Server</a>
+    <a class="item2" href="http://www.scmwise.com/tfs-commands.html" onclick="return FIX.track(this);" id="menu1-3-11">                         TFS Commands</a>
+    <a class="item2" href="http://www.scmwise.com/tfs-licensing.html" onclick="return FIX.track(this);" id="menu1-3-12">                        TFS Licensing</a>
+    <a class="item2" href="http://www.scmwise.com/trac-commands.html" onclick="return FIX.track(this);" id="menu1-3-13">                        Trac Commands</a>
+    <a class="item2" href="http://www.scmwise.com/vss-commands.html" onclick="return FIX.track(this);" id="menu1-3-14">                         VSS Commands</a>
+    <a class="item2" href="http://www.scmwise.com/wise-installer.html" onclick="return FIX.track(this);" id="menu1-3-15">                       Wise Installer</a>
+  </div>
+</td>
+
+<td>
+<a class="item2" href="http://www.scmwise.com/software-version-control.html" onclick="return FIX.track(this);" id="menu1-4">               Version Ctrl</a>
+  <div class="section" id="menu1-4-section" style="width: 131px; top: 213px; left: 534px;">
+    <a class="item2" href="http://www.scmwise.com/source-code.html" onclick="return FIX.track(this);" id="menu1-4-0">                          Source Code</a>
+    <a class="item2" href="http://www.scmwise.com/source-code-administration.html" onclick="return FIX.track(this);" id="menu1-4-1">           Source Code Administration</a>
+    <a class="item2" href="http://www.scmwise.com/source-code-branching.html" onclick="return FIX.track(this);" id="menu1-4-2">                Source Code Branching</a>
+    <a class="item2" href="http://www.scmwise.com/software-baseline.html" onclick="return FIX.track(this);" id="menu1-4-3">                    Software Baseline</a>
+    <a class="item2" href="http://www.scmwise.com/source-code-evaluation.html" onclick="return FIX.track(this);" id="menu1-4-4">               Source Code Tool Evaluation</a>
+    <a class="item2" href="http://www.scmwise.com/source-control.html" onclick="return FIX.track(this);" id="menu1-4-5">                       Source Control</a>
+    <a class="item2" href="http://www.scmwise.com/version-control.html" onclick="return FIX.track(this);" id="menu1-4-6">                      Version Control</a>
+    <a class="item2" href="http://www.scmwise.com/version-control-software.html" onclick="return FIX.track(this);" id="menu1-4-7">             Version Control Software</a>
+  </div>
+</td>
+
+<td>
+<a class="item2" href="http://www.scmwise.com/software-change-management.html" onclick="return FIX.track(this);" id="menu1-5">              Change Mgmt</a>
+  <div class="section" id="menu1-5-section" style="width: 114px; top: 213px; left: 600px; visibility: hidden; z-index: -1;">
+    <a class="item2" href="http://www.scmwise.com/bug-tracking-software.html" onclick="return FIX.track(this);" id="menu1-5-0">                      Bug Tracking Software</a>
+  	<a class="item2" href="http://www.scmwise.com/change-management-software.html" onclick="return FIX.track(this);" id="menu1-5-1">                 Change Mgmt Software</a>
+    <a class="item2" href="http://www.scmwise.com/cmmi.html" onclick="return FIX.track(this);" id="menu1-5-2">                                       CMMI</a>
+    <a class="item2" href="http://www.scmwise.com/defect-tracking-software.html" onclick="return FIX.track(this);" id="menu1-5-3">                   Defect Tracking Software</a>
+    <a class="item2" href="http://www.scmwise.com/release-management.html" onclick="return FIX.track(this);" id="menu1-5-4">                         Release Mgmt</a>
+    <a class="item2" href="http://www.scmwise.com/software-configuration-management-process.html" onclick="return FIX.track(this);" id="menu1-5-5">  Processes</a>
+    <a class="item2" href="http://www.scmwise.com/software-tracking-tools.html" onclick="return FIX.track(this);" id="menu1-5-6">                    Software Tracking Tools</a>
+  </div>
+</td>
+
+<td>
+<a class="item2" href="http://www.scmwise.com/software-development-life-cycle.html" onclick="return FIX.track(this);" id="menu1-6">        SDLC</a>
+  <div class="section" id="menu1-6-section" style="width: 131px; top: 213px; left: 675px;">
+    <a class="item2" href="http://www.scmwise.com/agile-scm.html" onclick="return FIX.track(this);" id="menu1-6-0">                                    Agile SCM</a>
+    <a class="item2" href="http://www.scmwise.com/agile-software.html" onclick="return FIX.track(this);" id="menu1-6-1">                               Agile</a>
+    <a class="item2" href="http://www.scmwise.com/agile-source-code.html" onclick="return FIX.track(this);" id="menu1-6-2">                            Agile Source Code</a>
+    <a class="item2" href="http://www.scmwise.com/feature-driven-development.html" onclick="return FIX.track(this);" id="menu1-6-3">                   FDD</a>
+    <a class="item2" href="http://www.scmwise.com/software-development-life-cycle-models.html" onclick="return FIX.track(this);" id="menu1-6-4">       SDLC Models</a>
+    <a class="item2" href="http://www.scmwise.com/software-development-process.html" onclick="return FIX.track(this);" id="menu1-6-5">                 SDP</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering.html" onclick="return FIX.track(this);" id="menu1-6-6">                         Software Engineering</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-best-practices.html" onclick="return FIX.track(this);" id="menu1-6-7">          SE Best Practices</a>
+    <a class="item2" href="http://www.scmwise.com/software-requirements.html" onclick="return FIX.track(this);" id="menu1-6-8">                        Software Requirements</a>
+    <a class="item2" href="http://www.scmwise.com/software-requirements-template.html" onclick="return FIX.track(this);" id="menu1-6-9">               SRS Template</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-best-practices.html" onclick="return FIX.track(this);" id="menu1-6-10">          SE Best Practices</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries.html" onclick="return FIX.track(this);" id="menu1-6-11">                Software Engineering Salaries</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-australia.html" onclick="return FIX.track(this);" id="menu1-6-12">      SE Salaries Australia</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-bulgaria.html" onclick="return FIX.track(this);" id="menu1-6-13">       SE Salaries Bulgaria</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-canada.html" onclick="return FIX.track(this);" id="menu1-6-14">         SE Salaries Canada</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-egypt.html" onclick="return FIX.track(this);" id="menu1-6-15">          SE Salaries Egypt</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-estonia.html" onclick="return FIX.track(this);" id="menu1-6-16">        SE Salaries Estonia</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-france.html" onclick="return FIX.track(this);" id="menu1-6-17">         SE Salaries France</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-germany.html" onclick="return FIX.track(this);" id="menu1-6-18">        SE Salaries Germany</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-ghana.html" onclick="return FIX.track(this);" id="menu1-6-19">          SE Salaries Ghana</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-india.html" onclick="return FIX.track(this);" id="menu1-6-20">          SE Salaries India</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-italy.html" onclick="return FIX.track(this);" id="menu1-6-21">          SE Salaries Italy</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-jamaica.html" onclick="return FIX.track(this);" id="menu1-6-22">        SE Salaries Jamaica</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-kuwait.html" onclick="return FIX.track(this);" id="menu1-6-23">         SE Salaries Kuwait</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-macedonia.html" onclick="return FIX.track(this);" id="menu1-6-24">      SE Salaries Macedonia</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-malaysia.html" onclick="return FIX.track(this);" id="menu1-6-25">       SE Salaries Malaysia</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-mongolia.html" onclick="return FIX.track(this);" id="menu1-6-26">       SE Salaries Mongolia</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-netherlands.html" onclick="return FIX.track(this);" id="menu1-6-27">    SE Salaries Netherlands</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-pakistan.html" onclick="return FIX.track(this);" id="menu1-6-28">       SE Salaries Pakistan</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-qatar.html" onclick="return FIX.track(this);" id="menu1-6-29">     	   SE Salaries Qatar</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-sri-lanka.html" onclick="return FIX.track(this);" id="menu1-6-30">      SE Salaries Sri Lanka</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-sudan.html" onclick="return FIX.track(this);" id="menu1-6-31">      	   SE Salaries Sudan</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-united-kingdom.html" onclick="return FIX.track(this);" id="menu1-6-32"> SE Salaries UK</a>
+    <a class="item2" href="http://www.scmwise.com/software-engineering-salaries-united-states.html" onclick="return FIX.track(this);" id="menu1-6-33">  SE Salaries USA</a>
+  </div>
+</td>
+
+<td>
+<a class="item2" href="http://www.scmwise.com/configuration-management.html" onclick="return FIX.track(this);" id="menu1-7">               CM</a>
+<div class="section" id="menu1-7-section" style="width: 129px; top: 213px; left: 719px;">
+  <a class="item2" href="http://www.scmwise.com/cm-audit.html" onclick="return FIX.track(this);" id="menu1-7-0">                                            CM Audit</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-database.html" onclick="return FIX.track(this);" id="menu1-7-1">                   CMDB</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-plan.html" onclick="return FIX.track(this);" id="menu1-7-2">                       CM Plan</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-jobs.html" onclick="return FIX.track(this);" id="menu1-7-3">                       CM Jobs</a>
+  <a class="item2" href="http://www.scmwise.com/cm-proposal.html" onclick="return FIX.track(this);" id="menu1-7-4">                                         CM Proposal</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-software.html" onclick="return FIX.track(this);" id="menu1-7-5">                   CM Software</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-tools.html" onclick="return FIX.track(this);" id="menu1-7-6">                      CM Tools</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-salaries.html" onclick="return FIX.track(this);" id="menu1-7-7">                   CM Salaries</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-salaries-brazil.html" onclick="return FIX.track(this);" id="menu1-7-8">            CM Salaries Brazil</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-salaries-egypt.html" onclick="return FIX.track(this);" id="menu1-7-9">             CM Salaries Egypt</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-salaries-india.html" onclick="return FIX.track(this);" id="menu1-7-10">             CM Salaries India</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-salaries-israel.html" onclick="return FIX.track(this);" id="menu1-7-11">            CM Salaries Israel</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-salaries-italy.html" onclick="return FIX.track(this);" id="menu1-7-12">             CM Salaries Italy</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-salaries-malaysia.html" onclick="return FIX.track(this);" id="menu1-7-13">          CM Salaries Malaysia</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-salaries-netherlands.html" onclick="return FIX.track(this);" id="menu1-7-14">       CM Salaries Netherlands</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-salaries-pakistan.html" onclick="return FIX.track(this);" id="menu1-7-15">          CM Salaries Pakistan</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-salaries-slovenia.html" onclick="return FIX.track(this);" id="menu1-7-16">          CM Salaries Slovenia</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-salaries-south-africa.html" onclick="return FIX.track(this);" id="menu1-7-17">      CM Salaries South Africa</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-salaries-taiwan.html" onclick="return FIX.track(this);" id="menu1-7-18">            CM Salaries Taiwan</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-salaries-turks-caicos-islands.html" onclick="return FIX.track(this);" id="menu1-7-19">    CM Salaries Turks Caicos</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-salaries-united-kingdom.html" onclick="return FIX.track(this);" id="menu1-7-20">    CM Salaries United Kingdom</a>
+  <a class="item2" href="http://www.scmwise.com/configuration-management-salaries-united-states.html" onclick="return FIX.track(this);" id="menu1-7-21">     CM Salaries USA</a>
+</div>
+</td>
+
+<td>
+<a class="item2" href="http://www.scmwise.com/define-project-management.html" onclick="return FIX.track(this);" id="menu1-8">            Project Mgmt</a>
+<div class="section" id="menu1-8-section" style="width: 144px; top: 213px; left: 754px;">
+  <a class="item2" href="http://www.scmwise.com/what-is-project-management.html" onclick="return FIX.track(this);" id="menu1-8-0">                What is PM</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-steps.html" onclick="return FIX.track(this);" id="menu1-8-1">                  PM Steps</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-jobs.html" onclick="return FIX.track(this);" id="menu1-8-2">                   PM Jobs</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-plan.html" onclick="return FIX.track(this);" id="menu1-8-3">                   PM Plan</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-plan-template.html" onclick="return FIX.track(this);" id="menu1-8-4">          PM Plan Template</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-risks.html" onclick="return FIX.track(this);" id="menu1-8-5">                  PM Risks</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-tools.html" onclick="return FIX.track(this);" id="menu1-8-6">                  PM Tools</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-software.html" onclick="return FIX.track(this);" id="menu1-8-7">               PM Software</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-software-reviews.html" onclick="return FIX.track(this);" id="menu1-8-8">       PM Software Reviews</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-templates.html" onclick="return FIX.track(this);" id="menu1-8-9">              PM Templates</a>
+  <a class="item2" href="http://www.scmwise.com/free-project-management-software.html" onclick="return FIX.track(this);" id="menu1-8-10">          Free Software</a>
+  <a class="item2" href="http://www.scmwise.com/free-project-management-template.html" onclick="return FIX.track(this);" id="menu1-8-11">          Free Template</a>
+  <a class="item2" href="http://www.scmwise.com/software-project-management.html" onclick="return FIX.track(this);" id="menu1-8-12">               Software PM</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries.html" onclick="return FIX.track(this);" id="menu1-8-13">               PM Salaries</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-australia.html" onclick="return FIX.track(this);" id="menu1-8-14">     PM Salaries Australia</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-brazil.html" onclick="return FIX.track(this);" id="menu1-8-15">        PM Salaries Brazil</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-canada.html" onclick="return FIX.track(this);" id="menu1-8-16">        PM Salaries Canada</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-chile.html" onclick="return FIX.track(this);" id="menu1-8-17">         PM Salaries Chile</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-england.html" onclick="return FIX.track(this);" id="menu1-8-18">       PM Salaries England</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-france.html" onclick="return FIX.track(this);" id="menu1-8-19">        PM Salaries France</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-germany.html" onclick="return FIX.track(this);" id="menu1-8-20">       PM Salaries Germany</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-haiti.html" onclick="return FIX.track(this);" id="menu1-8-21">         PM Salaries Haiti</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-india.html" onclick="return FIX.track(this);" id="menu1-8-22">         PM Salaries India</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-ivory-coast.html" onclick="return FIX.track(this);" id="menu1-8-23">   PM Salaries Ivory Coast</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-italy.html" onclick="return FIX.track(this);" id="menu1-8-24">         PM Salaries Italy</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-japan.html" onclick="return FIX.track(this);" id="menu1-8-25">         PM Salaries Japan</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-malaysia.html" onclick="return FIX.track(this);" id="menu1-8-26">      PM Salaries Malaysia</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-namibia.html" onclick="return FIX.track(this);" id="menu1-8-27">       PM Salaries Namibia</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-netherlands.html" onclick="return FIX.track(this);" id="menu1-8-28">   PM Salaries Netherlands</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-pakistan.html" onclick="return FIX.track(this);" id="menu1-8-29">      PM Salaries Pakistan</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-singapore.html" onclick="return FIX.track(this);" id="menu1-8-30">     PM Salaries Singapore</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-south-africa.html" onclick="return FIX.track(this);" id="menu1-8-31">  PM Salaries South Africa</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-sri-lanka.html" onclick="return FIX.track(this);" id="menu1-8-32">     PM Salaries Sri Lanka</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-united-arab-emirates.html" onclick="return FIX.track(this);" id="menu1-8-33">PM Salaries United Arab Emirates</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-united-kingdom.html" onclick="return FIX.track(this);" id="menu1-8-34">PM Salaries United Kingdom</a>
+  <a class="item2" href="http://www.scmwise.com/project-management-salaries-united-states.html" onclick="return FIX.track(this);" id="menu1-8-35"> PM Salaries United States</a>
+</div>
+</td>
+
+<td>
+<a class="item2" href="http://www.scmwise.com/software-testing.html" onclick="return FIX.track(this);" id="menu1-9">        				Testing</a>
+  <div class="section" id="menu1-9-section" style="width: 129px; top: 213px; left: 827px;">
+    <a class="item2" href="http://www.scmwise.com/black-box-testing.html" onclick="return FIX.track(this);" id="menu1-9-0">                    		Black Box Testing</a>
+    <a class="item2" href="http://www.scmwise.com/software-quality-assurance.html" onclick="return FIX.track(this);" id="menu1-9-1">           		Quality Assurance</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-procedures.html" onclick="return FIX.track(this);" id="menu1-9-2">            	Testing Procedures</a>
+    <a class="item2" href="http://www.scmwise.com/white-box-testing.html" onclick="return FIX.track(this);" id="menu1-9-3">                    		White Box Testing</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries.html" onclick="return FIX.track(this);" id="menu1-9-4">            		Testing Salaries</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-australia.html" onclick="return FIX.track(this);" id="menu1-9-5">  		Testing Salaries Australia</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-bangladesh.html" onclick="return FIX.track(this);" id="menu1-9-6">  	Testing Salaries Bangladesh</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-belarus.html" onclick="return FIX.track(this);" id="menu1-9-7">  		Testing Salaries Belarus</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-brazil.html" onclick="return FIX.track(this);" id="menu1-9-8">  		Testing Salaries Brazil</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-canada.html" onclick="return FIX.track(this);" id="menu1-9-9">     		Testing Salaries Canada</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-china.html" onclick="return FIX.track(this);" id="menu1-9-10">     		Testing Salaries China</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-denmark.html" onclick="return FIX.track(this);" id="menu1-9-11">    		Testing Salaries Denmark</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-egypt.html" onclick="return FIX.track(this);" id="menu1-9-12">    		Testing Salaries Egypt</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-england.html" onclick="return FIX.track(this);" id="menu1-9-13">     	Testing Salaries England</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-germany.html" onclick="return FIX.track(this);" id="menu1-9-14">     	Testing Salaries Germany</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-india.html" onclick="return FIX.track(this);" id="menu1-9-15">      		Testing Salaries India</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-ireland.html" onclick="return FIX.track(this);" id="menu1-9-16">      	Testing Salaries Ireland</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-italy.html" onclick="return FIX.track(this);" id="menu1-9-17">      		Testing Salaries Italy</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-kuwait.html" onclick="return FIX.track(this);" id="menu1-9-18">     		Testing Salaries Kuwait</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-malaysia.html" onclick="return FIX.track(this);" id="menu1-9-19">        Testing Salaries Malaysia</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-mauritius.html" onclick="return FIX.track(this);" id="menu1-9-20">       Testing Salaries Mauritius</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-mexico.html" onclick="return FIX.track(this);" id="menu1-9-21">          Testing Salaries Mexico</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-netherlands.html" onclick="return FIX.track(this);" id="menu1-9-22">     Testing Salaries Netherlands</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-new-zealand.html" onclick="return FIX.track(this);" id="menu1-9-23">     Testing Salaries New Zealand</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-pakistan.html" onclick="return FIX.track(this);" id="menu1-9-24">        Testing Salaries Pakistan</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-philippines.html" onclick="return FIX.track(this);" id="menu1-9-25">     Testing Salaries Philippines</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-poland.html" onclick="return FIX.track(this);" id="menu1-9-26">          Testing Salaries Poland</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-romania.html" onclick="return FIX.track(this);" id="menu1-9-27">         Testing Salaries Romania</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-russia.html" onclick="return FIX.track(this);" id="menu1-9-28">          Testing Salaries Russia</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-saudi-arabia.html" onclick="return FIX.track(this);" id="menu1-9-29">    Testing Salaries Saudi Arabia</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-scotland.html" onclick="return FIX.track(this);" id="menu1-9-30">     	Testing Salaries Scotland</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-singapore.html" onclick="return FIX.track(this);" id="menu1-9-31">       Testing Salaries Singapore</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-south-africa.html" onclick="return FIX.track(this);" id="menu1-9-32"> 	Testing Salaries South Africa</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-south-korea.html" onclick="return FIX.track(this);" id="menu1-9-33"> 	Testing Salaries South Korea</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-united-arab-emirates.html" onclick="return FIX.track(this);" id="menu1-9-34"> 	Testing Salaries UAE</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-united-kingdom.html" onclick="return FIX.track(this);" id="menu1-9-35"> 	Testing Salaries UK</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-united-states.html" onclick="return FIX.track(this);" id="menu1-9-36"> 	Testing Salaries USA</a>
+    <a class="item2" href="http://www.scmwise.com/software-testing-salaries-vietnam.html" onclick="return FIX.track(this);" id="menu1-9-37"> 	    Testing Salaries Vietnam</a>
+  </div>
+</td>
+
+<td>
+<a class="item2" href="http://www.scmwise.com/web-content-management-software.html" onclick="return FIX.track(this);" id="menu1-10">        Web Mgmt</a>
+<div class="section" id="menu1-10-section" style="width: 143px; top: 213px; left: 877px;">
+  <a class="item2" href="http://www.scmwise.com/content-management-systems.html" onclick="return FIX.track(this);" id="menu1-10-0">             CMS</a>
+  <a class="item2" href="http://www.scmwise.com/web-development-tools.html" onclick="return FIX.track(this);" id="menu1-10-1">                  Web Development Tools</a>
+  <a class="item2" href="http://www.scmwise.com/website-content-management-software.html" onclick="return FIX.track(this);" id="menu1-10-2">    Website CMS</a>
+  <a class="item2" href="http://www.scmwise.com/webmaster-job-description.html" onclick="return FIX.track(this);" id="menu1-10-3">              Webmaster Job Description</a>
+  <a class="item2" href="http://www.scmwise.com/website-management.html" onclick="return FIX.track(this);" id="menu1-10-4">                     Website Management</a>
+  <a class="item2" href="http://www.scmwise.com/website-management-software.html" onclick="return FIX.track(this);" id="menu1-10-5">            Website Software</a>
+  <a class="item2" href="http://www.scmwise.com/webmaster-salaries.html" onclick="return FIX.track(this);" id="menu1-10-6">                     Webmaster Salaries</a>
+  <a class="item2" href="http://www.scmwise.com/webmaster-salaries-australia.html" onclick="return FIX.track(this);" id="menu1-10-7">           Webmaster Salaries Australia</a>
+  <a class="item2" href="http://www.scmwise.com/webmaster-salaries-canada.html" onclick="return FIX.track(this);" id="menu1-10-8">              Webmaster Salaries Canada</a>
+  <a class="item2" href="http://www.scmwise.com/webmaster-salaries-england.html" onclick="return FIX.track(this);" id="menu1-10-9">             Webmaster Salaries England</a>
+  <a class="item2" href="http://www.scmwise.com/webmaster-salaries-estonia.html" onclick="return FIX.track(this);" id="menu1-10-10">             Webmaster Salaries Estonia</a>
+  <a class="item2" href="http://www.scmwise.com/webmaster-salaries-germany.html" onclick="return FIX.track(this);" id="menu1-10-11">             Webmaster Salaries Germany</a>
+  <a class="item2" href="http://www.scmwise.com/webmaster-salaries-india.html" onclick="return FIX.track(this);" id="menu1-10-12">               Webmaster Salaries India</a>
+  <a class="item2" href="http://www.scmwise.com/webmaster-salaries-new-zealand.html" onclick="return FIX.track(this);" id="menu1-10-13">         Webmaster Salaries New Zealand</a>
+  <a class="item2" href="http://www.scmwise.com/webmaster-salaries-united-kingdom.html" onclick="return FIX.track(this);" id="menu1-10-14">      Webmaster Salaries UK</a>
+  <a class="item2" href="http://www.scmwise.com/webmaster-salaries-united-states.html" onclick="return FIX.track(this);" id="menu1-10-15">       Webmaster Salaries USA</a>
+</div>
+</td>
+
+<td>
+<a class="item2" href="http://www.scmwise.com/definition-of-information-technology.html" onclick="return FIX.track(this);" id="menu1-11">    IT</a>
+  <div class="section" id="menu1-11-section" style="width: 90px; top: 213px; left: 941px;">
+      <a class="item2" href="http://www.scmwise.com/cloud-computing.html" onclick="return FIX.track(this);" id="menu1-11-0">                      Cloud Computing</a>
+	  <a class="item2" href="http://www.scmwise.com/disaster-recovery.html" onclick="return FIX.track(this);" id="menu1-11-1">                    Disaster Recovery</a>
+	  <a class="item2" href="http://www.scmwise.com/itil.html" onclick="return FIX.track(this);" id="menu1-11-2">                                 ITIL</a>
+	  <a class="item2" href="http://www.scmwise.com/itil-v3.html" onclick="return FIX.track(this);" id="menu1-11-3">                              ITIL V3</a>
+	  <a class="item2" href="http://www.scmwise.com/six-sigma.html" onclick="return FIX.track(this);" id="menu1-11-4">                            Six Sigma</a>
+	  <a class="item2" href="http://www.scmwise.com/soa-strategies.html" onclick="return FIX.track(this);" id="menu1-11-5">                       SOA Strategies</a>
+	  <a class="item2" href="http://www.scmwise.com/sox.html" onclick="return FIX.track(this);" id="menu1-11-6">                                  SOX</a>
+      <a class="item2" href="http://www.scmwise.com/sox-source-code.html" onclick="return FIX.track(this);" id="menu1-11-7">                      SOX Source Code</a>
+  </div>
+</td>
+
+<td>
+<a class="item2" href="http://www.scmwise.com/scmwise.html" onclick="return FIX.track(this);" id="menu1-12">                                About Us</a>
+  <div class="section" id="menu1-12-section" style="width: 113px; top: 213px; left: 970px;">
+    <a class="item2" href="http://www.scmwise.com/site-build-it-benefits.html" onclick="return FIX.track(this);" id="menu1-12-0">                          SBI Benefits</a>
+    <a class="item2" href="http://www.scmwise.com/advanced-website-building-benefits.html" onclick="return FIX.track(this);" id="menu1-12-1">              Advanced Web Building</a>
+    <a class="item2" href="http://www.scmwise.com/contact.html" onclick="return FIX.track(this);" id="menu1-12-2">                                         Contact Us</a>
+    <a class="item2" href="http://www.scmwise.com/software-configuration-management-faq.html" onclick="return FIX.track(this);" id="menu1-12-3">           SCM Faq</a>
+    <a class="item2" href="http://www.scmwise.com/Software-Configuration-Management-blog.html" onclick="return FIX.track(this);" id="menu1-12-4">          SCMWise Blog</a>
+    <a class="item2" href="http://www.scmwise.com/what-is-software-configuration-management.html" onclick="return FIX.track(this);" id="menu1-12-5">       What is SCM</a>
+    <a class="item2" href="http://www.scmwise.com/why-use-software-configuration-management.html" onclick="return FIX.track(this);" id="menu1-12-6">       Why use SCM</a>
+    <a class="item2" href="http://www.scmwise.com/what-is-software-configuration-management-blog.html" onclick="return FIX.track(this);" id="menu1-12-7">  What is SCMWise Blog</a>
+    <a class="item2" href="http://www.scmwise.com/scm-experts-aug08.html" onclick="return FIX.track(this);" id="menu1-12-8">                               SCM Expert</a>
+    <a class="item2" href="http://www.scmwise.com/software-configuration-management-sitemap.html" onclick="return FIX.track(this);" id="menu1-12-9">       Site Map</a>
+  </div>
+</td>
+
+</tr>
+</tbody></table>
+
+<div align="left">
+  <script type="text/javascript">
+    var ddmx = new DropDownMenuX('menu1');
+    ddmx.delay.show = 0;
+    ddmx.delay.hide = 400;
+    ddmx.position.levelX.left = 2;
+    ddmx.init();
+  </script>
+</div> <!-- start: tool_blocks.sbi_html_body_end --><!-- end: tool_blocks.sbi_html_body_end -->
+<!-- Generated at 22:06:22 03-May-2014 -->
+<!-- start: tool_blocks.sbi_html_body_end --><!-- end: tool_blocks.sbi_html_body_end -->
+<!-- Generated at 22:06:22 03-May-2014 -->
+
+
+</div>
+
+<table width="95%" border="0" cellspacing="0" cellpadding="5px">
+<!--************************************************************************************************-->
+<!-- Dont put anything in this cell below. its only here as a spacer, to make sure the
+spiders read your content, before they read you navigation column!!!.
+The width is set to 15%, the navigation cell will follow suit, as it is in the same column
+-->
+
+<tbody><tr>
+<td class="spacerbg" valign="top" height="1px" width="15%"></td>
+
+<!--************************************************************************************************-->
+<!-- This area is your main center column. As the 2 side columns are set to 35% between them, this one will
+be at 65%. No need to specify that however, it will just fill whats left over.-->
+<td class="contentbg" rowspan="2" valign="top">
+<div class="content-box">
+
+<h1 class="hbg">Automated Build Process</h1>
+
+<hr class="solid">
+
+<b>Automated Build Process</b>
+<p>
+Automating your software build process is a fundamental step in maturing your
+software development process.
+</p><p>
+The only way to accurately predict build results,
+ensure build reproducibility and guarantee minimal
+development down time due to build issues is to
+fully automate the build process.
+</p><p>
+
+<table cellpadding="10">
+<tbody><tr><td>
+
+<div align="left">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-7885125947976158";
+/* 300x250, created 3/29/11 */
+google_ad_slot = "8451698266";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="./Automated Build Process_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+
+</div>
+
+</td><td>
+
+<hr class="solid">
+
+<b>Using a secure and dedicated build server</b>
+<p>
+</p><ul>
+<li class="custom">Eliminates unauthorized access to make
+changes in the server configuration
+
+</li><li class="custom">Reduces the risk the creation of
+unknown build dependencies
+
+</li><li class="custom">Reduces build time because the build is
+not fighting other processes and application
+for server resources
+</li></ul>
+<p>
+
+</p></td></tr>
+</tbody></table>
+
+</p><hr class="solid">
+
+<b>Building in a clean workspace</b>
+<p>
+</p><ul>
+<li class="custom">Ensures no unexpected build or runtime
+dependencies are created
+</li></ul>
+<p>
+
+</p><hr class="solid">
+
+<b>Fully Automate the Build Process</b>
+<p>
+</p><ul>
+<li class="custom">Ensures repeatability and reproducibility
+of the build process
+
+</li><li class="custom">Eliminates risk of human error in the
+build process
+</li></ul>
+<p>
+
+</p><hr class="solid">
+
+<b>Daily full system builds</b>
+<p>
+</p><ul>
+<li class="custom">Ensures that the full system is always in a
+build-able state
+</li></ul>
+<p>
+
+</p><hr class="solid">
+
+<!-- Google Ad -->
+
+<div align="left">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-7885125947976158";
+/* 336x280, created 9/14/08 */
+google_ad_slot = "7005003268";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="./Automated Build Process_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe width="336" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+
+</div>
+
+<hr class="solid">
+
+<b>Set up Continuous Integration builds</b>
+<p>
+</p><ul>
+<li class="custom">Protects that the Daily full system build will
+complete successfully
+
+</li><li class="custom">Immediate success or failure feedback
+of developer check-ins
+
+</li><li class="custom">On build completion, automate the deployment
+
+</li><li class="custom">Run unit and smoke tests as part of your automation
+
+</li><li class="custom">In addition to ensuring the system is
+in a build-able state, this ensures the system's runtime works
+</li></ul>
+<p>
+
+</p><hr class="solid">
+
+<b>Conclusion</b>
+<p>
+Following these ideas greatly enhances your ability to
+quickly and efficiently create an Automated Build
+Process for your organization.
+</p><p>
+
+</p><hr class="solid">
+
+<b>Build Automation</b>
+<p>
+Build Automation is the key to implementing a successful
+Agile development methodology.
+</p><p>
+In its basic form, the "Build" is the conversion of source
+code into binaries.
+</p><p>
+<a href="http://www.scmwise.com/build-automation.html" onclick="return FIX.track(this);">
+Automated Build Process</a>
+</p><p>
+
+</p><hr class="solid">
+
+<table cellpadding="3px">
+<tbody><tr><td>
+
+<div class="half-width-box-left" align="center">
+	<div class="boxhead">
+	<h2 class="hbg">Software Build Tool Reviews</h2></div>
+		<div class="boxbody">
+		<p>
+		Please Share your Software Build Tool Reviews
+		and Experiences...
+		</p><p>
+		<a href="http://www.scmwise.com/software-build-tool-reviews.html#INV" onclick="return FIX.track(this);">
+		Software Build Tool Reviews</a>
+		</p></div>
+</div>
+
+
+</td><td>
+
+<b>Software Build Tools</b>
+<p>
+Software Build Tools is a collection of tools used to create
+automated software builds.
+</p><p>
+This list of tools is growing and the functionality of the tools
+is expanding.
+</p><p>
+These tools have come along way in standardizing and simplifying
+the SCM Engineer's life in regarding to the automation of the
+software build.
+</p><p>
+
+</p></td></tr>
+</tbody></table>
+
+<hr class="solid">
+
+<b>Software Build Best Practices</b>
+<p>
+Following Software Build Best Practices helps
+ensure that your development environment is always
+in a state to build.
+</p><p>
+For more information about
+<a href="http://www.scmwise.com/software-build-best-practices.html" onclick="return FIX.track(this);">
+Software Build Best Practices</a>
+</p><p>
+
+</p><hr class="solid">
+
+<!-- Google Ad -->
+
+<div align="left">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-7885125947976158";
+/* 336x280, created 9/14/08 */
+google_ad_slot = "7005003268";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="./Automated Build Process_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe width="336" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+
+</div>
+
+<hr class="solid">
+
+<b>Software Build Table of Contents</b>
+<p>
+<a href="http://www.scmwise.com/software-build.html" onclick="return FIX.track(this);">Software Build</a>
+Build automation is the process of combining all
+the steps necessary to compile the source code
+into build artifacts into a one step process.
+This can include many different types of tasks
+depending on the technologies involved.
+</p><p>
+<a href="http://www.scmwise.com/agile-continuous-integration.html" onclick="return FIX.track(this);">Agile Continuous Integration</a>
+Agile Continuous Integration naturally supports the Agile
+Development process of small and frequent releases.  Continuous Integration, CI, is
+the process of building your application on every new source code check-in.  Although,
+considered a relatively new idea, the concept behind CI has been around for as long as
+development teams have been writing code.
+</p><p>
+<a href="./Automated Build Process_files/Automated Build Process.htm" onclick="return FIX.track(this);">Automated Builds</a>
+Automated Build Process - Automating your software
+build process is a fundamental step in maturing your software development process.
+The only way to accurately predict build results, ensure build reproducibility and
+guarantee minimal development down time due to build issues is to fully automate the
+build process.
+</p><p>
+<a href="http://www.scmwise.com/build-automation.html" onclick="return FIX.track(this);">Build Automation</a>
+Build Automation is the key to implementing a successful Agile development methodology.
+In its basic form The Build is the conversion of source code into binaries.  However,
+there is much more to building software than just compiling code.
+</p><p>
+<a href="http://www.scmwise.com/build-management.html" onclick="return FIX.track(this);">Build Management</a>
+Build Management is the process of assembling all the components of a software application into an
+installable software product.  For development teams looking to increase efficiencies and improve
+quality of their software, one of the most important places focus is the software build process.
+</p><p>
+<a href="http://www.scmwise.com/continuous-integration.html" onclick="return FIX.track(this);">Continuous Integration</a>
+Continuous Integration, CI, is the process of building your
+application on every new source code check in.  Although,
+considered a relatively new idea, the concept behind CI has
+been around for as long as development teams have been writing code.  CI is an
+integral part of Software Configuration Management, SCM.
+</p><p>
+<a href="http://www.scmwise.com/cruisecontrol.html" onclick="return FIX.track(this);">CruiseControl</a>
+CruiseControl is an open source tool setup specifically to perform continuous integration
+software builds.  This page is high level overview of CC and its functionality and benefits.  Software build tools like CC
+are an integral part of your Software Configuration Management System.
+</p><p>
+<a href="http://www.scmwise.com/cruisecontrol-net.html" onclick="return FIX.track(this);">CruiseControl.Net</a>
+CruiseControl.Net is an open source tool that facilitates the integration of software builds.  This page is an
+overview of the CC.Net Tool and Process.
+</p><p>
+<a href="http://www.scmwise.com/maven.html" onclick="return FIX.track(this);">Maven</a>
+Maven is a tool that can now be used for
+building and managing any Java-based project.
+</p><p>
+<a href="http://www.scmwise.com/software-build-best-practices.html" onclick="return FIX.track(this);">Software Build Best Practices</a>
+Software Build Best Practices are the procedures and processes
+that ensure software build integrity, repeatability and reproducibility.  Best Practices are practices
+and techniques that are the most effective way of ensuring repeatability of a process.
+Build Best Practices are an integral part of Software Configuration Management, SCM.
+</p><p>
+
+</p></div>
+</td>
+<!--************************************************************************************************-->
+<!-- The code below here, is for the far right side column. Use it for site news, small narrow graphics,
+google adsense, affiliate links etc. The width is set to 20%, alter this as you wish.
+DONT go below 10% or it will be too narrow to fit anything in. Between 15% and 25% should suit
+nearly everyone. -->
+<td class="rightbg" valign="top" rowspan="2" width="20%">
+
+<hr class="solid">
+
+<!-- Begin Job-a-matic Customizable Widget Code v2.0 -->
+<script type="text/javascript">
+var jbb_widget_domain = 'http://jobs.scmwise.com';
+var jbb_widget_list_count = 5;
+var jbb_widget_theme = 'customizable';
+var jbb_widget_border_color = 'FFFFFF';
+var jbb_widget_background_color = 'FFFFFF';
+var jbb_widget_links_color = '0A0FF5';
+var jbb_widget_company_color = '000000';
+var jbb_widget_location_color = '009200';
+var jbb_widget_width = 250;
+var jbb_widget_title = 'SCMWise Job Listing';
+var jbb_widget_search = true;
+var jbb_widget_show_all_jobs = true;
+</script>
+
+<div id="jbb_widget_customizable"><div id="jbb_widget_body"><div id="jbb_widget_board_title"><a rel="nofollow" href="http://jobs.scmwise.com/a/jbb/find-jobs" class="jbb_widget_link_class"><strong>SCMWise Job Listing</strong></a></div><ul><li class=""><a href="http://jobs.scmwise.com/a/job-details/view/cparm-cF9pZD0yMTgxNiZ6b25lPTYmaXA9MTE0Ljc5LjEzLjgmY291bnQ9MTAwJnN0YW1wPTIwMTQtMDUtMDQgMDk6NDA6MjImY291bnRyeT11cyZwdWJsaXNoZXJfY2hhbm5lbF9pZHM9JmFfaWQ9MTM5MzcmY19pZD0zMTYyNCZjcGM9MS4wMSZwb3M9MSZoYXNoPTEwODVhMGZjMWFmMjhiZWUzYmY4YjdkYTkxYWFlYzg3%3B883aee246a54824c15e5482a4f2da2c3/jobkey-71f0e0d813547a89eadb66859f99b05af6b960c1/rid-10709951553666d7448a139.83681731/pub_id-21816/cjp-0/hits-443078" class="jbb_widget_link_class" rel="nofollow" target="jobs"><span class="jbb_widget_title_class">Senior Mobile Software Engineer in Test</span></a><br><span class="jbb_widget_location_class">San Bruno, CA</span> <span class="jbb_widget_company_class">- Walmart</span></li><li class=""><a href="http://jobs.scmwise.com/a/job-details/view/cparm-cF9pZD0yMTgxNiZ6b25lPTYmaXA9MTE0Ljc5LjEzLjgmY291bnQ9MTAwJnN0YW1wPTIwMTQtMDUtMDQgMDk6NDA6MjImY291bnRyeT11cyZwdWJsaXNoZXJfY2hhbm5lbF9pZHM9JmFfaWQ9NzE2MDImY19pZD0zNjQzOSZjcGM9MS4wJnBvcz0yJmhhc2g9ODZjODYzNmY5OTg0ODA3ODI2YjE3NjEzYTFiZWQ2NDQ%3D%3Be89b5bbe5df9b0fdc8182732ffec3f81/jobkey-62105acac9c6768c6ba854eec373da9d5815441e/rid-10709951553666d7448a139.83681731/pub_id-21816/cjp-1/hits-443078" class="jbb_widget_link_class" rel="nofollow" target="jobs"><span class="jbb_widget_title_class">Engineering Leader Software Test &amp; Release</span></a><br><span class="jbb_widget_location_class">South San Francisco, CA</span> <span class="jbb_widget_company_class">- Thermo Fisher Scientific</span></li><li class=""><a href="http://jobs.scmwise.com/a/job-details/view/cparm-cF9pZD0yMTgxNiZ6b25lPTYmaXA9MTE0Ljc5LjEzLjgmY291bnQ9MTAwJnN0YW1wPTIwMTQtMDUtMDQgMDk6NDA6MjImY291bnRyeT11cyZwdWJsaXNoZXJfY2hhbm5lbF9pZHM9JmFfaWQ9NDc1MjkmY19pZD0xOTAyMyZjcGM9MC40JnBvcz0zJmhhc2g9ZDc3NzU4M2Y0M2NhZTJhYTgzZmJhODIzZWU4NmUyMTY%3D%3B2d8d199bdd6b7ab7f53e8858f05cbc17/jobkey-a2b6d89dc726395c828ebe72480837479b667/rid-10709951553666d7448a139.83681731/pub_id-21816/cjp-2/hits-443078" class="jbb_widget_link_class" rel="nofollow" target="jobs"><span class="jbb_widget_title_class">ClearCase Software Configuration Analyst (mid-level)(14004330)</span></a><br><span class="jbb_widget_location_class">Boulder, CO</span> <span class="jbb_widget_company_class">- Northrop Grumman</span></li><li class=""><a href="http://jobs.scmwise.com/a/job-details/view/cparm-cF9pZD0yMTgxNiZ6b25lPTYmaXA9MTE0Ljc5LjEzLjgmY291bnQ9MTAwJnN0YW1wPTIwMTQtMDUtMDQgMDk6NDA6MjImY291bnRyeT11cyZwdWJsaXNoZXJfY2hhbm5lbF9pZHM9JmFfaWQ9MTkyOTYmY19pZD04OTk5JmNwYz0wLjE3JnBvcz00Jmhhc2g9MWY5ODY4MGVmNjhmZmZmN2I3NGIwMThmZjY1NDE5YzQ%3D%3B44d800c014977930fd450729473e723b/jobkey-12973.c7ee57316da5322062baa71719b7b333/rid-10709951553666d7448a139.83681731/pub_id-21816/cjp-3/hits-443078" class="jbb_widget_link_class" rel="nofollow" target="jobs"><span class="jbb_widget_title_class">Software Tester - Entry Level</span></a><br><span class="jbb_widget_location_class">Boston, MA</span> <span class="jbb_widget_company_class">- Taxware</span></li><li class=""><a href="http://jobs.scmwise.com/a/job-details/view/cparm-cF9pZD0yMTgxNiZ6b25lPTYmaXA9MTE0Ljc5LjEzLjgmY291bnQ9MTAwJnN0YW1wPTIwMTQtMDUtMDQgMDk6NDA6MjImY291bnRyeT11cyZwdWJsaXNoZXJfY2hhbm5lbF9pZHM9JmFfaWQ9NTc0NzQmY19pZD0yOTg4NiZjcGM9MC4xNiZwb3M9NSZoYXNoPTVlZTA1MzA3NzE2OWI4NTdlOTAxMDFiODM5NTMzZDdj%3B86c9078009a1d3fa0f4722863f7998d8/jobkey-29219.1435983/rid-10709951553666d7448a139.83681731/pub_id-21816/cjp-4/hits-443078" class="jbb_widget_link_class" rel="nofollow" target="jobs"><span class="jbb_widget_title_class">Software Engineer Tester I</span></a><br><span class="jbb_widget_location_class">Montgomery, AL</span> <span class="jbb_widget_company_class">- AT&amp;T</span></li></ul></div><div id="jbb_widget_all"><a href="http://jobs.scmwise.com/a/jbb/find-jobs" class="jbb_widget_link_class" target="jobs" rel="nofollow">See All Jobs</a></div><div id="jbb_widget_post_a_job"><a href="http://jobs.scmwise.com/a/jbb/post-job" target="jobs">Post a job for $25</a></div><div><form id="f_widget_job_search" target="_blank" action="http://jobs.scmwise.com/a/jobs/search" method="GET" onsubmit="if((this.f_search_keywords.value==&#39;&#39;||this.f_search_keywords.value==&#39;keywords&#39;)&amp;&amp;(this.f_search_location.value==&#39;&#39;||this.f_search_location.value==&#39;location&#39;)){window.location=&#39;http://jobs.scmwise.com&#39;;return false;}if(this.f_search_keywords.value==&#39;keywords&#39;)this.f_search_keywords.value=&#39;&#39;;if(this.f_search_location.value==&#39;location&#39;)this.f_search_location.value=&#39;&#39;;return true"><input type="hidden" name="_action" value="find-jobs"><input id="f_search_keywords" type="text" name="q" value="keywords" onfocus="this.value=&#39;&#39;"><input id="f_search_location" type="text" name="l" value="location" onfocus="this.value=&#39;&#39;"><input id="f_submit" type="submit" value="Go"></form></div><div style="float: left;"><a style="text-decoration:none" href="http://www.simplyhired.com/" rel="nofollow" target="_blank"><img src="./Automated Build Process_files/Jobs-by-Simply-Hired.png" alt="Simply Hired"></a></div><link rel="stylesheet" href="./Automated Build Process_files/width-250" type="text/css"><img src="./Automated Build Process_files/p-32oLU8PZtWAwo.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"><img src="./Automated Build Process_files/b" style="display:none" width="0" height="0" alt=""></div>
+<script type="text/javascript" src="./Automated Build Process_files/jbb_widget_v2-min.js"></script>
+<!-- End Job-a-matic Customizable Widget Code v2.0 -->
+
+<p>
+
+
+</p><hr class="solid">
+
+<div class="full-width-box-round">
+	<div align="center">
+
+<h3 class="hbg">Salary Surveys</h3>
+<p>
+<font size="1">
+This is a collection of
+Salary Surveys from
+Professions closely
+surrounding Software
+Configuration Management
+</font></p><p><font size="1">
+</font></p><hr class="solid"><font size="1">
+<p>
+<a href="http://www.scmwise.com/scm-salaries.html" onclick="return FIX.track(this);">SCM Salaries</a>
+</p><p>
+<a href="http://www.scmwise.com/scm-salaries-form.html" onclick="return FIX.track(this);">Add Your SCM Salary</a>
+</p><p>
+</p><hr class="solid">
+<p>
+<a href="http://www.scmwise.com/configuration-management-salaries.html" onclick="return FIX.track(this);">Configuration Management Salaries</a>
+</p><p>
+<a href="http://www.scmwise.com/configuration-management-salaries-form.html" onclick="return FIX.track(this);">Add Your CM Salary</a>
+</p><p>
+</p><hr class="solid">
+<p>
+<a href="http://www.scmwise.com/project-management-salaries.html" onclick="return FIX.track(this);">Project Manager Salaries</a>
+</p><p>
+<a href="http://www.scmwise.com/project-management-salaries-form.html" onclick="return FIX.track(this);">Add Your PM Salary</a>
+</p><p>
+</p><hr class="solid">
+<p>
+<a href="http://www.scmwise.com/software-engineering-salaries.html" onclick="return FIX.track(this);">Software Engineering Salaries</a>
+</p><p>
+<a href="http://www.scmwise.com/software-engineering-salaries-form.html" onclick="return FIX.track(this);">Add Your Engineering Salary</a>
+</p><p>
+</p><hr class="solid">
+<p>
+<a href="http://www.scmwise.com/software-testing-salaries.html" onclick="return FIX.track(this);">Software Testing Salaries</a>
+</p><p>
+<a href="http://www.scmwise.com/software-testing-salaries-form.html" onclick="return FIX.track(this);">Add Your Testing Salary</a>
+</p><p>
+</p><hr class="solid">
+<p>
+<a href="http://www.scmwise.com/webmaster-salaries.html" onclick="return FIX.track(this);">Webmaster Salaries</a>
+</p><p>
+<a href="http://www.scmwise.com/webmaster-salaries-form.html" onclick="return FIX.track(this);">Add Your Web Salary</a>
+</p></font><p><font size="1">
+</font>
+	</p></div>
+</div>
+
+<!--
+<div class="full-width-box2">
+	<div align="center">
+
+<h3 class="hbg2">Salary Surveys</h3>
+<p>
+<font size="1">
+This is a collection of
+Salary Surveys from
+Professions closely
+surrounding Software
+Configuration Management
+<p>
+<hr class="solid">
+<p>
+<a  href="http://www.scmwise.com/scm-salaries.html">SCM Salaries</a>
+<p>
+<a  href="http://www.scmwise.com/scm-salaries-form.html">Add Your SCM Salary</a>
+<p>
+<hr class="solid">
+<p>
+<a  href="http://www.scmwise.com/configuration-management-salaries.html">Configuration Management Salaries</a>
+<p>
+<a  href="http://www.scmwise.com/configuration-management-salaries-form.html">Add Your CM Salary</a>
+<p>
+<hr class="solid">
+<p>
+<a  href="http://www.scmwise.com/project-management-salaries.html">Project Manager Salaries</a>
+<p>
+<a  href="http://www.scmwise.com/project-management-salaries-form.html">Add Your PM Salary</a>
+<p>
+<hr class="solid">
+<p>
+<a  href="http://www.scmwise.com/software-engineering-salaries.html">Software Engineering Salaries</a>
+<p>
+<a  href="http://www.scmwise.com/software-engineering-salaries-form.html">Add Your Engineering Salary</a>
+<p>
+<hr class="solid">
+<p>
+<a  href="http://www.scmwise.com/software-testing-salaries.html">Software Testing Salaries</a>
+<p>
+<a  href="http://www.scmwise.com/software-testing-salaries-form.html">Add Your Testing Salary</a>
+<p>
+<hr class="solid">
+<p>
+<a  href="http://www.scmwise.com/webmaster-salaries.html">Webmaster Salaries</a>
+<p>
+<a  href="http://www.scmwise.com/webmaster-salaries-form.html">Add Your Web Salary</a>
+<p>
+</font>
+	</div>
+</div>
+ -->
+
+<hr class="solid">
+
+<div align="center">
+
+<iframe src="./Automated Build Process_files/likebox.htm" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:240px; height:587px;" allowtransparency="true"></iframe>
+
+
+</div>
+
+<!--
+<div class="sidebox-full">
+	<div class="boxhead">
+	<h2 class="hbg"><a  href="http://www.scmwise.com/Software-Configuration-Management-blog.html">
+	SCMWise.com Blog</a></h2></div>
+	<div class="boxbody">
+		<p style="font-size:10px">
+		Recent Posts...
+		</p>
+
+		<hr class="solid">
+
+		<p style="font-size:12px;color:red">
+		Apr 20th, 2010</p>
+		<a  href="http://www.scmwise.com/software-configuration-management-faq.html">
+		Software Configuration Management Faq
+		</a>
+		<p style="font-size:10px">
+		I get continually receive questions about Software
+		Configuration Management, training, careers and what
+		services do I provide.
+		<br><br>
+		So, I thought I would try to help visitors to
+		SCMWise.com by providing a Software Configuration
+		Management Faq.
+		</p>
+
+		<hr class="solid">
+
+		<p style="font-size:12px;color:red">
+		Apr 15th, 2010</p>
+
+		<a  href="http://www.scmwise.com/scm-tool-reviews.html">
+		SCM Tool Reviews</a>
+
+		<p style="font-size:10px">
+		SCM Tool Reviews are a place to read reviews
+		of software configuration management tools.
+		<br><br>
+		Share your experiences with SCM tools.
+		These reviews can benefits others who
+		are searching for information.
+		</p>
+
+		<hr class="solid">
+
+		<p style="font-size:12px;color:red">
+		Apr 12th, 2010</p>
+
+		<a  href="http://www.scmwise.com/software-configuration-management.html">
+		Software Configuration Management
+		</a>
+		<p style="font-size:10px">
+		Software Configuration Management an inventory of Software
+		Configuration Management pages and information.
+		</p>
+
+		<hr class="solid">
+
+		<p style="font-size:12px;color:red">
+		Apr 12th, 2010</p>
+
+		<a  href="http://www.scmwise.com/software-configuration-mgmt.html">
+		Software Configuration Mgmt
+		</a>
+		<p style="font-size:10px">
+		Software Configuration Mgmt is a software
+		development support and control function.
+		<br><br>
+		Specializing in software building,
+		installation packaging, change control and
+		configuration management.
+		</p>
+
+		<hr class="solid">
+
+		<p style="font-size:12px;color:red">
+		Apr 7th, 2010</p>
+
+		<a  href="http://www.scmwise.com/scmwise.html">
+		SCMWise</a>
+		<p style="font-size:10px">
+		I was tired of losing information and documentation.
+		<br<br>
+		Either written or electronic, I would file it and
+		never be able to find it when i needed it.
+		<br><br>
+		I came up with a wonderful idea.
+		<br><br>
+		I should put this information on the Internet where I
+		could always find it...my lame attempt to be funny.
+		</p>
+
+	</div>
+</div>
+<div class="clear"></div>
+-->
+
+<br>
+
+<hr class="solid">
+
+<b>SCMWise Preferred Partner</b>
+<p>
+</p><div align="center">
+<a href="http://2.sitesell.com/Todd43.html" target="_blank" rel="nofollow" onclick="return FIX.track(this);"><img src="./Automated Build Process_files/sbi203-120x240.gif" alt="SBI! 2.0" border="0" width="120" height="240"></a>
+</div>
+<p>
+
+<!--
+<hr class="dashed">
+<br>
+
+<div class="full-width-box2" >
+			<h3>Text Box</h3>
+	        This is the same full width textbox as  used on the main body column.
+	        <p> However,
+	        it automatically resizes to fit the narrower column, as it isnt a fixed width.
+	        A pale background like this is ideal for putting testamonials in.
+		</div>
+-->
+
+
+
+</p></td>
+</tr>
+<!--************************************************************************************************-->
+<!-- the code below if for the left side column.(the navigation column) Why is it at the end, rather than at the start,
+where you might expect it to be? Because of the way SE spiders read tables. They start top left,
+and work across each cell in order, to the bottom right.
+If we have this cell where you would expect, then the spiders would read your navigation etc
+BEFORE they read your content. We dont want that. Thats why we have a spacer cell at the top.
+Although this appears to the eye to be the far left column, its actually down the order of cells.-->
+<tr>
+<td class="leftbg" valign="top">
+
+<hr class="solid">
+
+<div align="center">
+
+<h3 class="hbg2">SCMWise Configuration Spec</h3>
+
+</div>
+
+<div align="left">
+
+<p>
+<a href="http://www.scmwise.com/Software-Configuration-Management-blog.html" onclick="return FIX.track(this);"><img src="./Automated Build Process_files/blogit-logo-small.gif" alt="mini-logo for SCMWise Software Configuration Management Blog" title="Go to SMCWise Software Configuration Management Blog, where you can click to receive the latest additions to SCMWise.com via your favorite feed reader including Google Reader, My Yahoo!, etc." width="20" height="20"></a>
+
+<a href="http://www.scmwise.com/Software-Configuration-Management-blog.html" title="Go to SCMWise Blog, where you can click to receive the latest additions to SCMWise.com via your favorite feed reader including Google Reader, My Yahoo!, etc." onclick="return FIX.track(this);"><strong>SCMWise Blog</strong></a>
+</p><p>
+
+<a href="http://twitter.com/#!/SCMWise" target="_blank" onclick="return FIX.track(this);"><img src="./Automated Build Process_files/twitter-logo-small.gif" alt="mini-logo for Facebook" title="Visit SCMWise.com at Twitter and click the Follow button..." width="20" height="20"></a>
+
+<a href="http://twitter.com/#!/SCMWise" title="Visit SCMWise.com at Twitter and click the Follow button..." target="_blank" onclick="return FIX.track(this);"><strong>SCMWise Twitter</strong></a>
+</p><p>
+
+<a href="http://www.facebook.com/pages/SCMWise-Software-Configuration-Management/135157533183004" target="_blank" onclick="return FIX.track(this);"><img src="./Automated Build Process_files/facebook-logo-small.gif" alt="mini-logo for Facebook" title="Go to SCMWise.com&#39;s Facebook page and click the Like button..." width="20" height="20"></a>
+
+<a href="http://www.facebook.com/pages/SCMWise-Software-Configuration-Management/135157533183004" title="Go to SCMWise.com&#39;s Facebook page and click the Like button..." target="_blank" onclick="return FIX.track(this);"><strong>SCMWise FB</strong></a>
+
+
+</p></div>
+
+
+<hr class="solid">
+
+<p>
+
+</p><div id="navigator">
+
+	<div align="center"><b>SCMWise</b></div>
+	<p class="housebutton"><a href="http://www.scmwise.com/index.html" onclick="return FIX.track(this);">SCMWise Home</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-configuration-management-sitemap.html" onclick="return FIX.track(this);">Site Map</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/Software-Configuration-Management-blog.html" onclick="return FIX.track(this);">SCMWise Blog</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/scmwise.html" onclick="return FIX.track(this);">About Me SCMWise</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/contact.html" onclick="return FIX.track(this);">Contact Us</a></p>
+
+	<div align="center"><b>Software Configuration Management</b></div>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-configuration-management.html" onclick="return FIX.track(this);">SCM</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-build.html" onclick="return FIX.track(this);">Build</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-configuration-management-tools.html" onclick="return FIX.track(this);">SCM Tools</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-version-control.html" onclick="return FIX.track(this);">Version Ctrl</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/scm-jobs.html" onclick="return FIX.track(this);">SCM Jobs</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/scm-salaries.html" onclick="return FIX.track(this);">SCM Salaries</a></p>
+	<p class="housebutton"><a href="http://jobs.scmwise.com/" onclick="return FIX.track(this);">Job Listings</a></p>
+
+	<div align="center"><b>Software</b></div>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-change-management.html" onclick="return FIX.track(this);">Change</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-development-life-cycle.html" onclick="return FIX.track(this);">SDLC</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-engineering-salaries.html" onclick="return FIX.track(this);">Software Engineering Salaries</a></p>
+
+	<div align="center"><b>Configuration Management</b></div>
+	<p class="housebutton"><a href="http://www.scmwise.com/configuration-management.html" onclick="return FIX.track(this);">Configuration Management</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/configuration-management-salaries.html" onclick="return FIX.track(this);">CM Salaries</a></p>
+
+	<div align="center"><b>Project Management</b></div>
+	<p class="housebutton"><a href="http://www.scmwise.com/define-project-management.html" onclick="return FIX.track(this);">Project Mgmt</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/project-management-salaries.html" onclick="return FIX.track(this);">PM Salaries</a></p>
+
+	<div align="center"><b>Software Testing</b></div>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-testing.html" onclick="return FIX.track(this);">Software Testing</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-testing-salaries.html" onclick="return FIX.track(this);">Testing Salaries</a></p>
+
+	<div align="center"><b>Web Management</b></div>
+    <p class="housebutton"><a href="http://www.scmwise.com/web-content-management-software.html" onclick="return FIX.track(this);">Website Management</a></p>
+    <p class="housebutton"><a href="http://www.scmwise.com/webmaster-salaries.html" onclick="return FIX.track(this);">Webmaster Salaries</a></p>
+
+    <div align="center"><b>Information Technology</b></div>
+    <p class="housebutton"><a href="http://www.scmwise.com/definition-of-information-technology.html" onclick="return FIX.track(this);">IT</a></p>
+
+    <!--
+
+	<p class="housebutton"><a href="http://www.scmwise.com/software-configuration-management-best-practices.html">Best Practices</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-configuration-management-systems.html">SCM Systems</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/forrester-reports.html">Forrester Reports</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-configuration-management-process.html">Processes</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-configuration-management-strategies.html">Strategies</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/source-code.html">Source Code</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/what-is-scm.html">What is SCM</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/why-use-scm.html">Why use SCM</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-configuration-management-websites.html">SCM Websites</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-configuration-management-faq.html">SCM Faq</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-configuration-management-plan.html">SCM Plan</a></p>
+
+	<div align="center"><b>SCM Careers</b></div>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-configuration-management-jobs.html">Jobs</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/scm-jobs.html">SCM Jobs</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/scm-salaries.html">SCM Salaries</a></p>
+	<p class="housebutton"><a href="http://jobs.scmwise.com">Job Listings</a></p>
+
+	<div align="center"><b>SCM Tools</b></div>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-configuration-management-tools.html">SCM Tools</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/scm-tools.html">SCM Tool List</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/scm-tool-reviews.html">SCM Reviews</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-build-tools.html">Build Tools</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-build-tool-reviews.html">Build Tool Reviews</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-installation-tools.html">Install Tools</a></p>
+	<p class="housebutton"><a  href="http://www.scmwise.com/software-installation-tool-reviews.html">Install Tool Reviews</a></p>
+
+	<div align="center"><b>SCM Builds</b></div>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-build.html">Builds</a></p>
+
+	<div align="center"><b>CM and CMS</b></div>
+	<p class="housebutton"><a href="http://www.scmwise.com/configuration-management.html">Configuration Management</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/configuration-management-salaries.html">CM Salaries</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/configuration-management-software.html">CM Software</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/content-management-systems.html">Content Management Systems</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/website-management-software.html">Website Management Software</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/webmaster-salaries.html">Webmaster Salaries</a></p>
+
+	<div align="center"><b>Processes</b></div>
+	<p class="housebutton"><a href="http://www.scmwise.com/agile-software.html">Agile Software</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/cmmi.html">CMMI</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/disaster-recovery.html">Disaster Recovery</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/feature-driven-development.html">FDD</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/itil.html">ITIL</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/define-project-management.html">Project Mgmt</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/release-management.html">Release Mgmt</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/six-sigma.html">Six Sigma</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/soa-strategies.html">SOA Strategies</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-development-process.html">SDP</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/software-quality-assurance.html">Software QA</a></p>
+	<p class="housebutton"><a href="http://www.scmwise.com/sox.html">Sox</a></p>
+
+-->
+
+</div>
+
+<p>
+
+</p><hr class="solid">
+
+<div align="center">
+<b>SCMWise
+Recommends</b>
+<p>
+<a href="http://buildit.sitesell.com/Todd43.html" target="_blank" rel="nofollow" onclick="return FIX.track(this);"><img src="./Automated Build Process_files/hp4-120x240.jpg" alt="Site Build It!" border="0" width="120" height="240"></a>
+</p><p>
+</p></div>
+
+<hr class="solid">
+
+<p>
+<div style="text-align: center"></div><table>
+</table><table style="margin-left: auto; margin-right: auto" width="90%" cellpadding="3" cellspacing="0" border="1" bordercolor="#CCCCCC"><tbody><tr><td align="center"><a href="http://www.scmwise.com/Software-Configuration-Management.xml" target="_new" onclick="alert(&#39;Sorry, please right-click on this button, and then copy the shortcut (the URL of this link). Paste that URL into your RSS reader. If this message is confusing, close this window and then please click on the &quot;What\&#39;s an RSS feed?&quot; link just below the orange button.&#39;); return false"><img src="./Automated Build Process_files/xml-rss.gif" width="72" height="14" align="absmiddle" alt="XML RSS" border="0" vspace="3"></a>
+<br><a href="http://www.scmwise.com/help/rss.html" target="_new" onclick="return FIX.track(this);"><img src="./Automated Build Process_files/whatsthis.gif" width="96" height="18" alt="What is this?" border="0"></a>
+<br><a href="http://add.my.yahoo.com/rss?url=http://www.scmwise.com/Software-Configuration-Management.xml" target="yahoo_window" onclick="return FIX.track(this);"><img src="./Automated Build Process_files/addtomyyahoo2.gif" width="100" height="14" border="0" align="middle" alt="Add to My Yahoo!" vspace="8"></a>
+<br><a href="http://my.msn.com/addtomymsn.armx?id=rss&ut=http://www.scmwise.com/Software-Configuration-Management.xml&ru=http://www.scmwise.com" target="msn_window" onclick="return FIX.track(this);"><img src="./Automated Build Process_files/mymsn.gif" width="78" height="17" border="0" alt="Add to My MSN"></a>
+<br><a href="http://fusion.google.com/add?feedurl=http://www.scmwise.com/Software-Configuration-Management.xml" target="google_window" onclick="return FIX.track(this);"><img src="./Automated Build Process_files/add.gif" width="104" height="17" border="0" alt="Add to Google" vspace="8"></a></td></tr></tbody></table>
+
+</p></td></tr></tbody></table>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--************************************************************************************************-->
+
+
+</p><div align="center"><h2><a name="link" class="jumplink"></a></h2></div>
+
+ <div class="header-box-round">
+	<div align="center">
+
+<table>
+<tbody><tr>
+<td>
+<img src="./Automated Build Process_files/scmwise.png" width="200" height="40" title="SCMWise.com"><br>
+<div align="center">
+<font size="1">
+<i>© Copyright 2007 - 2013</i>
+</font>
+</div>
+</td>
+<td>
+<img src="./Automated Build Process_files/scm.png" width="100" height="40" title="Software Configuration Management">
+</td>
+<td>
+<i>Powered by</i>
+</td>
+<td>
+<a href="http://buildit.sitesell.com/Todd43.html" target="_blank" rel="nofollow" onclick="return FIX.track(this);"><img src="./Automated Build Process_files/white-88x31.gif" alt="Site Build It!" border="0" width="88" height="31"></a>
+</td>
+</tr>
+</tbody></table>
+
+<table>
+<tbody><tr>
+<td>
+<a href="http://www.copyscape.com/" onclick="return FIX.track(this);"><img src="./Automated Build Process_files/cs-wh-88x31.gif" alt="Page copy protected against web site content infringement by Copyscape" title="Do not copy content from the page. Plagiarism will be detected by Copyscape." width="88" height="31" border="0"></a>
+</td>
+<td>
+
+</td>
+<td>
+
+<a href="http://www.scmwise.com/privacy-policy.html" onclick="return FIX.track(this);">SCMWise.com's Privacy Policy</a>
+</td>
+</tr>
+</tbody></table>
+
+<div class="addToContent"><div align="center">
+<div class="addTo"> <span title="Learn about Social Bookmarking" class="addToAbout" onclick="addto(0)">ADD     TO YOUR SOCIAL BOOKMARKS:</span>
+<span class="addtos" title="Add this page to Blink" onclick="addto(1)"><img src="./Automated Build Process_files/addto_blink.gif" width="16" height="16" alt="add to Blink">Blink</span>
+<span class="addtos" title="Add this page to Delicious" onclick="addto(2)"><img src="./Automated Build Process_files/addto_delicious.gif" width="16" height="16" alt="add to Del.icio.us">Del.icio.us</span>
+<span class="addtos" title="Add this page to Digg" onclick="addto(3)"><img src="./Automated Build Process_files/addto_digg.gif" width="16" height="16" alt="add to Digg">Digg</span><br>
+<span class="addtos" title="Add this page to Furl" onclick="addto(4)"><img src="./Automated Build Process_files/addto_furl.gif" width="16" height="16" alt="add to Furl">Furl</span>
+<span class="addtos" title="Add this page to Google" onclick="addto(5)"><img src="./Automated Build Process_files/addto_google.gif" width="16" height="16" alt="add to Google">Google</span>
+<span class="addtos" title="Add this page to Simpy" onclick="addto(6)"><img src="./Automated Build Process_files/addto_simpy.gif" width="16" height="16" alt="add to Simpy">Simpy</span>
+<span class="addtos" title="Add this page to Spurl" onclick="addto(8)"><img src="./Automated Build Process_files/addto_spurl.gif" width="16" height="16" alt="add to Spurl">Spurl</span>
+<a style="text-decoration:none; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9px; font-weight:normal; color:#000" title="add this page to Technorati" href="javascript:void(document.location='http://technorati.com/faves?add='+escape(document.location))"><img src="./Automated Build Process_files/technorati.gif" alt="Bookmark at Technorati" width="16" height="16" border="0">Technorati</a>
+<span class="addtos" title="Add this page to Yahoo! MyWeb" onclick="addto(7)"><img src="./Automated Build Process_files/addto_yahoo.gif" width="16" height="16" alt="add to Yahoo">Y! MyWeb</span>
+</div></div>
+
+</div> <!-- start: tool_blocks.socializeit -->
+<script src="./Automated Build Process_files/socializeit.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        socializeit({ pack:1, 
+                      domain: "scmwise.com", 
+                      payItText: "", 
+                      szColor: "",
+                      whatIsThisUrl: "" }
+                    );
+        </script><table class="socializeIt socializeIt-8" align="center" style="border: 1px solid #ccc;border-collapse:separate; padding:2px;width:480px;"><tbody><tr><td rowspan="2" style="white-space:nowrap;"><strong>Share this page:&nbsp;</strong></td><td><a href="http://www.scmwise.com/automated-build-process.html#share_on_Google" onclick="window.open(socializeit.getURL(&#39;Google&#39;), &#39;sharer&#39;, &#39;toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes&#39;);return false;"><img src="./Automated Build Process_files/google.gif" alt="Google" style="border:0"></a></td><td><a href="http://www.scmwise.com/automated-build-process.html#share_on_Buzz" onclick="window.open(socializeit.getURL(&#39;Buzz&#39;), &#39;sharer&#39;, &#39;toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes&#39;);return false;"><img src="./Automated Build Process_files/yahoobuzz1.gif" alt="Buzz" style="border:0"></a></td><td><a href="http://www.scmwise.com/automated-build-process.html#share_on_Facebook" onclick="window.open(socializeit.getURL(&#39;Facebook&#39;), &#39;sharer&#39;, &#39;toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes&#39;);return false;"><img src="./Automated Build Process_files/Facebook.jpg" alt="Facebook" style="border:0"></a></td><td><a href="http://www.scmwise.com/automated-build-process.html#share_on_Myspace" onclick="window.open(socializeit.getURL(&#39;Myspace&#39;), &#39;sharer&#39;, &#39;toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes&#39;);return false;"><img src="./Automated Build Process_files/myspace.gif" alt="Myspace" style="border:0"></a></td></tr><tr><td><a href="http://www.scmwise.com/automated-build-process.html#share_on_StumbleUpon" onclick="window.open(socializeit.getURL(&#39;StumbleUpon&#39;), &#39;sharer&#39;, &#39;toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes&#39;);return false;"><img src="./Automated Build Process_files/StumbleUpon.jpg" alt="StumbleUpon" style="border:0"></a></td><td><a href="http://www.scmwise.com/automated-build-process.html#share_on_Technorati" onclick="window.open(socializeit.getURL(&#39;Technorati&#39;), &#39;sharer&#39;, &#39;toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes&#39;);return false;"><img src="./Automated Build Process_files/Technorati.jpg" alt="Technorati" style="border:0"></a></td><td><a href="http://www.scmwise.com/automated-build-process.html#share_on_del.icio.us" onclick="window.open(socializeit.getURL(&#39;del.icio.us&#39;), &#39;sharer&#39;, &#39;toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes&#39;);return false;"><img src="./Automated Build Process_files/del.jpg" alt="del.icio.us" style="border:0"></a></td><td><a href="http://www.scmwise.com/automated-build-process.html#share_on_Twitter" onclick="window.open(socializeit.getURL(&#39;Twitter&#39;), &#39;sharer&#39;, &#39;toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes&#39;);return false;"><img src="./Automated Build Process_files/twitter.gif" alt="Twitter" style="border:0"></a></td></tr><tr></tr></tbody></table>
+<!-- end: tool_blocks.socializeit --></div>
+</div>
+
+
+
+
+</div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./Automated Build Process_files/dgdTycPTSRj.htm" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./Automated Build Process_files/dgdTycPTSRj(1).htm" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><!--this is the closing div for the max width, dont delete it-->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Automated Build Process_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8984314-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+<script type="text/javascript" src="./Automated Build Process_files/5"></script></body></html>

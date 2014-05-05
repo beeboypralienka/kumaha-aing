@@ -1,0 +1,1032 @@
+
+<!-- saved from url=(0050)http://www.adager.com/vesoft/automatedtesting.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Automated testing -- why and how</title>
+</head>
+<body bgcolor="ffffff">
+<pre>                   AUTOMATED TESTING -- WHY AND HOW
+                       by Eugene Volokh, VESOFT
+        Presented at 1990 INTEREX Conference, Boston, MA, USA
+              Published by INTERACT Magazine, Dec 1990.
+
+
+Everyone  knows  how  important  testing is, and,  with luck, everyone
+actually does test the software that they release. But do they really?
+Can  they?  Even  a  simple program often  has many different possible
+behaviors,  some of which only take  place in rather unusual (and hard
+to  duplicate)  circumstances.  Even  if  every possible  behavior was
+tested  when  the program was first released  to the users, what about
+the  second release, or even a "minor" modification? The feature being
+modified  will probably be re-tested,  but what about other, seemingly
+unrelated,  features  that  may have been  inadvertently broken by the
+modification?  Will  every unusual test case  from the first release's
+testing  be  remembered,  much  less  retried,  for  the  new release,
+especially  if  retrying  the test would require  a lot of preliminary
+work (e.g. adding appropriate test records to the database)?
+
+This  problem  arose for us several years  ago, when we found that our
+software  was  getting  so complicated that  testing everything before
+release  was  a  real  chore, and a good many  bugs (some of them very
+obvious)  were getting out into the field. What's more, I found that I
+was  actually  afraid  to add new features,  concerned that they might
+break  the rest of the software. It  was this last problem that really
+drove  home to me the importance of  making it possible to quickly and
+easily test all the features of all our products.
+
+
+AUTOMATED TESTING
+
+The  principle of automated testing is  that there is a program (which
+could  be a job stream) that runs the program being tested, feeding it
+the  proper input, and checking the output against the output that was
+expected.  Once  the  test suite is written,  no human intervention is
+needed,  either to run the program or to look to see if it worked; the
+test  suite  does  all  that,  and somehow indicates  (say, by a :TELL
+message  and  a  results  file)  whether  the program's  output was as
+expected.  We, for instance, have over two hundred test suites, all of
+which  can  be  run  overnight by executing  one job stream submission
+command;  after  they run, another command  can show which test suites
+succeeded and which failed.
+
+These test suites can help in many ways:
+
+   * As discussed above, the test suites should always be run before a
+     new  version is released, no matter how trivial the modifications
+     to the program.
+
+   *   If   the   software   is  internally  different  for  different
+     environments  (e.g.  MPE/V vs. MPE/XL), but  should have the same
+     external  behavior,  the  test  suites  should  be  run  on  both
+     environments.
+
+   *  As you're making serious changes to the software, you might want
+     to  run  the test suites even before  the release, since they can
+     tell you what still needs to be fixed.
+
+   *  If you have the discipline to --  believe it or not -- write the
+     test  suite before you've written your  program, you can even use
+     the test suite to do the initial testing of your code. After all,
+     you'd  have to initially test the  code anyway; you might as well
+     use  your  test suites to do that  initial testing as well as all
+     subsequent tests.
+
+Note  also  that the test suites not only  run the program, but set up
+the  proper environment for the program;  this might mean filling up a
+test database, building necessary files, etc.
+
+
+WRITING TEST SUITES
+
+Let's  switch  for  a moment to a  concrete example -- a date-handling
+package,  something that, unfortunately, many people have had to write
+on  their  own,  from  scratch.  Say that one of  the routines in your
+package  is DATEADD, which adds a given  number of days to a date, and
+returns  the new date. Here's the code that you might write to test it
+(the dates are represented as YYYYMMDD 32-bit integers):
+
+   IF DATEADD (19901031, 7) &lt;&gt; 19901107 THEN
+     BEGIN
+     WRITELN ('Error: DATEADD (19901031, 7) &lt;&gt; 19901107');
+     GOT_ERROR:=TRUE;
+     END;
+   IF DATEADD (19901220, 20) &lt;&gt; 19910109 THEN
+     BEGIN
+     WRITELN ('Error: DATEADD (19901220, 20) &lt;&gt; 19910109');
+     GOT_ERROR:=TRUE;
+     END;
+   ...
+
+As you see, the code calls DATEADD several times, and each time checks
+the result against the expected result; if the result is incorrect, it
+prints  an  error  message  and sets GOT_ERROR to  TRUE. After all the
+tests  are done, the program can check if GOT_ERROR is TRUE, and if it
+is, say, build a special "got error" file, or write an error record to
+some  special  log  record.  This  way,  the test suites  can be truly
+automatic -- you can run many test suites in the background, and after
+they're done, find out if all went well by just checking one file, not
+looking through many large spool files for error messages.
+
+The  first thing that you might notice  is that the DATEADD test suite
+can  easily grow to be much  larger than the DATEADD procedure itself!
+No  doubt  about  it  --  writing  test  suites  is  a  very expensive
+proposition.   Our  test  suites  for  MPEX/3000,  SECURITY/3000,  and
+VEAUDIT/3000  take  up  almost  30,000 lines,  not counting supporting
+files  and  supporting  code in the actual  programs; the total source
+code of our products is less than 100,000 lines. Often, writing a test
+suite  for  a  feature  takes  as  long or almost  as long as actually
+implementing the feature. Sometimes, instead of being reluctant to add
+a  new  feature for fear of breaking  something, I am now reluctant to
+add  a new feature because I don't want to bother writing a test suite
+for it.
+
+Fortunately,  the  often  dramatic  costs  of writing  test suites are
+recouped  not just by the decrease in  the number of bugs, but also by
+the  fact that test suites, once written,  save a lot of testing time.
+It's much easier for someone to run an already-written test suite than
+to execute by hand even a fraction of the tests included in the suite,
+especially if they require complicated set-up. Since a typical program
+will actually have to be tested several times before it finally works,
+the  costs of writing a test suite  (assuming that it's written at the
+same  time  as  the code, or even earlier)  can be recouped before the
+program is ever released.
+
+Also,  test suites tend to have longer  lives than code. A program can
+be dramatically changed -- even re-written in another language -- and,
+assuming  that it was intended to behave  the same as before, the test
+suite will work every bit as well. Once the substantial up-front costs
+of  writing  test  suites  have  been  paid, the pay-offs  can be very
+substantial.
+
+But  even  though we should be willing  to invest time and effort into
+writing test suites, there's no reason to invest more than we have to.
+In  fact,  precisely  because test suites at  first glance seem like a
+luxury, and people are thus not very willing to work on them, creating
+test  suites  should  be  as easy as possible. What  can we do to make
+writing test suites simpler and more efficient?
+
+One  goal that I try to shoot for is to make it as easy as possible to
+add  new test cases, even if this  means doing some additional work up
+front.  I try to make every new test  case, if possible, to fit on one
+line.   The  reason  is  quite  simple:  I  want  to  have  as  little
+disincentive  as  possible  to add new test  cases. A really fine test
+suite  would  have  tests for many  different situations, including as
+many obscure boundary conditions and exceptions as possible; also, any
+time a new bug is found, a test should be added to the test suite that
+would  have  caught  the  bug,  just  in  case the  bug re-surfaces (a
+remarkably  frequent  event).  If  we  grit  our teeth  and write some
+convenient  testing  tools  up  front,  we can make  it much easier to
+create a full test suite.
+
+Here, for instance is one example:
+
+   PROCEDURE TESTDATEADD (DATE, NUMDAYS, EXPECTEDRESULT: INTEGER);
+   BEGIN
+   IF DATEADD (DATE, NUMDAYS) &lt;&gt; EXPECTEDRESULT THEN
+     BEGIN
+     WRITELN ('Error: DATEADD (', DATE, ', ', NUMDAYS, ') &lt;&gt; ',
+              EXPECTEDRESULT);
+     GOT_ERROR:=TRUE;
+     END;
+   END;
+   ...
+   TESTDATEADD (19901031, 10, 19901110);
+   TESTDATEADD (19901220, 20, 19910109);
+   TESTDATEADD (19920301, -2, 19920228);
+   ...
+
+By  this  model,  each  procedure  that  you  test  would have  a test
+procedure  like  this  one written for it; then  the main body of your
+test program would just be calls to these test procedures.
+
+This  is  especially  useful for procedures  that require some special
+processing before or after being called; for instance, they might have
+reference parameters that need to be put into variables before they're
+passed,   record   structure   parameters   to   be  filled,  multiple
+by-reference  output  parameters that all need  to be compared against
+expected values, and so on.
+
+You  can make up other, even  more general-purpose testing tools, such
+as the following procedure:
+
+   PROCEDURE MUSTBE (TAG: stringtype; RESULT, EXPECTEDRESULT: INTEGER);
+   BEGIN
+   IF RESULT&lt;&gt;EXPECTEDRESULT THEN
+     BEGIN
+     WRITELN ('Error: ', TAG, ': ', RESULT, ' &lt;&gt; ', EXPECTEDRESULT);
+     (* error handling code *)
+     END;
+   END;
+
+This  procedure  can be used to check  the result of any function that
+returns an integer value, e.g.
+
+   MUSTBE ('DATEADD #1', DATEADD (19901031, 10), 19901110);
+   MUSTBE ('DATEADD #2', DATEADD (19901220, 20), 19910109);
+   MUSTBE ('DATEADD #3', DATEADD (19920301, -2), 19920228);
+
+Other,  similar,  procedures  might be written  to help test functions
+that return other types (REALs, STRINGs, etc.). On the other hand, for
+functions  that can't easily be called  in one statement (because they
+take  by-reference or specially-formatted  parameters), you might want
+to consider writing a special test procedure.
+
+Finally,  one other alternative (which I personally prefer) is writing
+a  special  "shell"  program  that  asks  for  a  procedure  name, its
+parameters,  and the expected result,  calls the procedure, and checks
+the result:
+
+   PROGRAM TESTSHELL ...
+   ...
+   READLN (PROCNAME, P1, P2, EXPECTEDRESULT);
+   WHILE PROCNAME&lt;&gt;'EXIT' DO
+     BEGIN
+     IF PROCNAME='DATEADD' THEN RESULT:=DATEADD (P1, P2)
+     ELSE IF PROCNAME='DATEDIFF' THEN RESULT:=DATEDIFF (P1, P2)
+     ELSE IF PROCNAME='DATEYEAR' THEN RESULT:=DATEYEAR (P1)
+     ...
+     IF RESULT &lt;&gt; EXPECTEDRESULT THEN
+       ... output error ...
+     READLN (PROCNAME, P1, P2, EXPECTEDRESULT);
+     END;
+   ...
+
+This  way, your actual test suite could  be a job stream, to which you
+can  add  as many test cases as you like  -- one line per test case --
+without having to recompile anything:
+
+   !JOB TESTDATE, ...
+   !RUN TESTSHEL
+   DATEADD 19901031 10 19901110
+   DATEADD 19920228 2  19920301
+   DATEYEAR 19920228 0 1992
+   ...
+   !EOJ
+
+Whenever  you  make  a  change to your procedures,  you just rerun the
+TESTDATE  job,  and  you'll  either  find  some bugs  or be reasonably
+confident  (though, of course, never 100% confident) that the software
+works.
+
+
+TESTING PROGRAMS THAT DO I/O
+
+It's  rather  easy  to  test  a  procedure  whose only  inputs are its
+parameters and whose only output is its result (or even a by-reference
+parameter). The more places a program derives its input from, or sends
+its output to, the harder it becomes to test.
+
+Let's  take a simple I/O program, one which reads a file, reformats it
+in some way, and writes the result to another file. Obviously, to test
+it, we should fill up the input file, run the program, and compare the
+output  file against the expected output  file. As we discussed in the
+previous  section, it would be nice if  we could build a program -- it
+might  be a 3GL or 4GL program, or even an MPE or MPEX command file --
+that  takes as parameters the input data and the expected output data,
+so that we can easily add new test cases.
+
+A first try on this might be a job stream like the following:
+
+   :PURGE TESTIN
+   :FCOPY FROM;TO=TESTIN;NEW
+   LINE ONE
+   LINE TWO
+   LINE THREE
+
+   :FILE MYPROGI=TESTIN
+   :PURGE TESTOUT
+   :FILE MYPROGO=TESTOUT
+   :RUN MYPROG
+
+   :PURGE TESTCOMP
+   :FCOPY FROM;TO=TESTCOMP;NEW
+   PROCESSED LINE A
+   PROCESSED LINE B
+
+   :SETJCW JCW=0
+   :CONTINUE
+   :FCOPY FROM=TESTCOMP;TO=TESTOUT;COMPARE=1
+   :IF JCW&lt;&gt;0 THEN
+   :  handle error
+   :ENDIF
+
+or, if the commands are put into a separate command file or UDC,
+
+   :TESTCMDS
+   LINE ONE
+   LINE TWO
+   LINE THREE
+   :EOD
+   PROCESSED LINE A
+   PROCESSED LINE B
+   :EOD
+
+(the  data  would  go  as input to the  :FCOPY commands in the command
+file).
+
+Note  how the :FILE equations come  in handy to redirect the program's
+input and output files. Not only does this avoid the need to overwrite
+the  production  input and output files, but  it makes it possible for
+several  test  suites  which test programs that  normally use the same
+files  (e.g.  this  program,  the program that  created this program's
+input  file, and the one that reads  this one's output file) to run at
+once.  If  for  some reason your programs  don't allow :FILE equations
+(e.g.  they issue their own :FILE  equations to refer to these files),
+try  to  change  them  so they do, or at  least so they have a special
+"test"  mode that will read :FILE-equatable  files. Note also that the
+job  stream  regenerates the input and  comparison files every time it
+runs.  I recommend this, since then each job stream would be a more or
+less  self-contained  unit (if it uses a  special command file that no
+other  test job uses, I suggest that  you build even this command file
+inside  the  test job). It is easier to  move or maintain, and is less
+likely to suffer from "software rot" (a condition that causes software
+that's  been  left  on  the  shelf  too long to  stop working, largely
+because some outside things that it depends on have changed).
+
+Back  to our example. One problem with  it is that :FCOPY ;COMPARE= is
+rather  finicky  about the files it's  comparing -- for instance, they
+must  both  have  exactly the same record  size. TESTCOMP, built by an
+:FCOPY  FROM;TO=TESTCOMP  would normally have the  same record size as
+the  job  input  device,  so  you might need a  :FILE equation to work
+around this.
+
+A more serious problem is that :FCOPY FROM;TO= can only be easily used
+for  creating  files  that  contain  ASCII  data. What if  some of the
+columns of the file need to contain binary data?
+
+Here is where I think you ought to grit your teeth and write a special
+program  (unless, of course, you have a 4GL that can do this for you).
+Yes, I know that it seems like a pain to write code that will never be
+run  in  production,  but is only needed to  test other code, but this
+rather  simple program could, if designed  right, prove to be a highly
+reusable building block.
+
+The  program would first prompt for some  sort of "layout" of the file
+--  a  list of the starting column  numbers, lengths, and datatypes of
+each  field in the file. Then, it  would prompt for each record in the
+file,  specified  as  a list of fields,  separated by, say, commas; it
+would  format  the fields into the file  record, and write it into the
+file. Thus, you'd say:
+
+   :RUN BLDFILE
+   S,1,8, I,9,2, S,11,10, P,21,8  &lt;&lt; string, integer, string, packed &gt;&gt;
+   SMITH, 100, XYZZY, 1234567
+   JONES, 55, PLUGH, 554927
+   ...
+
+Once  you write this program, incidentally, you might find that it has
+other  uses,  say,  to  do manual testing of  your program once you've
+already  found that it has a bug and are trying to isolate it. And, of
+course,  if you make it general enough,  it should be usable in all of
+your test suites.
+
+Also,  your  input file had to have  been created by some program, and
+your  output file must be intended as  to input to some other program;
+there's  nothing  that  says that you can't  run those programs in the
+test  job  to  create  the input file from  data you've input and then
+format the output file into readable text. The problems come in if the
+other programs are too hard to run in batch (e.g. require block mode),
+or  if you'd like to be able  to test each program separately from the
+others,  perhaps  because  you want to see  how your program reacts to
+illegal data in its input file, data that shouldn't normally appear in
+the input generated by the other program.
+
+What  if your programs reads and writes  an IMAGE database? This is in
+some  ways  simpler to test and in  other ways more difficult. You can
+use  QUERY  to  fill the input sets and  create output (using &gt;LIST or
+&gt;REPORT) will be usable by :FCOPY ;COMPARE=. Be sure, though, that you
+sort any master sets that you dump using &gt;REPORT -- since the order of
+the  entries in the master set depends on the hashing algorithm, which
+depends on the capacity, unsorted output will make the test suite find
+an "error" every time you change the capacity.
+
+However,  the  setup  of  the IMAGE database might  also be a bit more
+cumbersome,  largely since you probably want  to have your own special
+test  database  built  by the job (for  the reasons discussed above --
+independence  from the production data,  from other test suites' data,
+and  self-containedness). You might want to create a simple program or
+command  file that takes a schema  file, lowers the dataset capacities
+on  it,  runs  DBSCHEMA, and then does  a DBUTIL,CREATE -- you'll find
+that a lot of your test suites can use it.
+
+
+ADJUSTING FOR ENVIRONMENT INFORMATION
+
+Our   pass-input-and-compare-output-against-expected-result   strategy
+works just fine if the same input is always supposed to yield the same
+output, but what if the output can vary? The most common variables are
+based   on  current  date  and  time  --  reports  that  contain  this
+information   in   headers,   output   files   that  have  each  value
+date-stamped,   a   date-handling   procedure   that  returns  today's
+day-of-week,  and so on. Another related problem is with programs that
+check  whether they're being run online  or in batch, and do different
+things  in these cases -- how can your batch test suite make sure that
+the online features work properly?
+
+What  we really have here is a different sort of input, input not from
+a  file or a database, but from the system clock or the WHO intrinsic.
+There  are a few ways of handling  this; for example, instead of doing
+an FCOPY ;COMPARE=, which demands exact matches, you can have your own
+comparison program that lets you specify that some particular field --
+e.g.,  the  date  on  a  report header -- will  not get compared. Even
+better,  your comparison program can let you specify that a particular
+field  should  be  equal  to,  say,  the current year,  month, or day,
+calculated at the time the comparison program runs.
+
+However,  more  flexible  still  --  and  necessary  for  things  like
+pretending  you're  online  rather  than  in  batch -- you  can try to
+redirect  this  "input"  from the environment,  just as you redirected
+input from files and databases using :FILE equations.
+
+Now how are you going to do this redirection? Believe it or not, after
+having  the  gall to ask you to write  test suites that are as long as
+your  source  code,  I'm  suggesting that you  change your programs to
+accommodate  testing  requirements.  Instead  of  calling  CALENDAR or
+DATELINE,  for  instance  -- or using  whatever language construct may
+give you this information -- you might write your own procedure:
+
+   FUNCTION MYCALENDAR: SHORTINT;
+   BEGIN
+   get the value of the "PRETENDCALENDAR" jcw;
+   IF the value is 0 THEN
+     MYCALENDAR:=CALENDAR
+   ELSE
+     MYCALENDAR:=value of jcw;
+   END;
+
+This  way,  your program would normally get  the current date from the
+CALENDAR intrinsic, but when the PRETENDCALENDAR JCW is non-zero, will
+use  that value instead. You might, for efficiency's sake, want to get
+the  JCW value only once, and then save it somewhere; for ease of use,
+you   might  want  to  look  at  the  PRETENDYEAR,  PRETENDMONTH,  and
+PRETENDDAY  JCWs,  and  assemble  the CALENDAR-format  value from them
+(possibly using the date-handling package that we so thoroughly tested
+a few pages ago).
+
+A  similar procedure might be written to determine whether the program
+is  running  online or in batch --  it'll check the PRETENDONLINE JCW,
+and  if it doesn't exist, or set  to some default value, will call the
+WHO  intrinsic. If your program does different things depending on the
+user's  capabilities  or  logon  id,  you  might want  to have similar
+procedures  for  them, too (wrapped around  the WHO intrinsic call) --
+although  it's  possible  for  your test suite  to actually be several
+jobs,  each  of  which logs on under  a different user, with different
+capabilities,  it  may be more convenient for  you if one job can make
+itself  look  like each one of these users  in turn. In fact, it might
+even  be convenient for your own  manual debugging (say, when you want
+to  duplicate the program's behavior as a  particular user id, or on a
+particular  date,  but  don't  want  to re-logon or  change the system
+clock).
+
+Of  course, the drawback to this  approach is that you're not actually
+testing  the  program  as it really behaves,  but rather as it behaves
+with  the testing flag set; the  code you're executing in testing mode
+is  somewhat different than is normally executed, and if, say, there's
+a  bug  in  the  CALENDAR call or the WHO  call, your test suite won't
+catch  it, since in testing mode  the intrinsics aren't called at all.
+Unfortunately, this seems to be a necessary evil; the only solution is
+to  minimize the amount of code  whose execution depends on whether or
+not you're in testing mode.
+
+One  thing  that you might do -- if you  want to be really fancy -- is
+create  a  library  of  procedures called CALENDAR,  CLOCK, WHO, etc.,
+which  would,  depending  on  some testing flag,  either call the real
+CALENDAR,  CLOCK, or WHO, or return "pretend" values; you can then put
+these  procedures  into an RL, SL, or XL,  and not have to change your
+source  file. Once you debug your  library procedures, you should have
+more confidence that your testing in test mode actually simulates what
+the  program will really behave like in production. One thing that you
+may have to do, however, is intercept not just the intrinsics that you
+call  directly,  but  also  whatever  procedures  might  be  called by
+language  constructs  (like  COBOL's  facility  for  returning today's
+date).
+
+
+WHAT TEST CASES SHOULD YOU USE?
+
+So  far, we've talked a lot about how to write tools that make it easy
+for you to add test cases to your test suites, but not much about what
+your  test  cases  should  be.  Say  that  you're  testing  a  DATEADD
+procedure, one that returns a date that is X days after date Y. (Let's
+assume  that X could be negative -- X = -5 means a date that is 5 days
+before  date  Y.)  What  test  cases should you  use? Think about this
+before reading the answers!
+
+Well, it seems to me that there are quite a few:
+
+  * Add days so that it stays in the same month (e.g. 1990/05/10+7).
+
+  * Add days so that it changes months (e.g. 1990/05/10+30).
+
+  * Add days so that it changes years (e.g. 1990/05/10+300).
+
+  *  Add days so that it changes months or years over February 28th in
+    a non-leap year (e.g. 1990/02/10+30).
+
+  *  Add days so that it changes months or years over February 29th in
+    a non-leap year (e.g. 1992/02/10+30).
+
+  *  Handle years that are divisible by  100 but not by 400 (like 1900
+    or 2100), which are not leap years (did you know this?).
+
+  * Add 0 days.
+
+  * Add days so that it goes outside of your accepted date range (e.g.
+    beyond 1999, or whatever other date is your limit).
+
+  * Add to an invalid date -- one with an invalid year, month, or day.
+
+  * All the above, but with subtracting days.
+
+Wow!  That's  a lot of work. But, you'll  have to admit, all the above
+are  things  that  you  really  should  test  for (unless  they're not
+relevant  to  your particular interpretation, e.g.  if your date range
+doesn't  extend to 1900 or 2100,  or if you've consciously decided not
+to check for certain error conditions), manually if not automatically;
+it's  especially important to test  for "boundary conditions" (did you
+know  that, in the DATELINE intrinsic, the next day after DEC 31, 1999
+is  JAN 1, 19:0?), for cases  that require special handling (like leap
+year), and for proper handling of errors.
+
+These  are  the obvious tests -- tests  for bugs that you expect might
+happen.  As  other bugs come up, however,  you ought to add test cases
+that  would have caught these bugs:  firstly, you'll have to test your
+fix  anyway,  and if you add the  test case before implementing it, it
+won't  cost  you anything extra; secondly, the  same bug (or a similar
+one) may come up later, but this time will get caught.
+
+Still,  there's  no  need  to get extreme  about things; shortcuts are
+still  possible.  Say, for instance, that  DATEADD works by converting
+the  date  into  a  "century  date"  format  (number  of days  since a
+particular  base date), adding the number of days, and then converting
+back  into a year/month/day format -- if  you're sure that this is all
+it  does, you might just have one test case (preferably one that seems
+to  exercise  as  much of the internal logic  as possible, such as one
+that  changes  months  and  years).  Of  course,  you'd still  have to
+properly test the date conversion routines.
+
+In  general,  what  you  test  should  depend on how  your code works.
+Whenever  you  know  your  code  treats  two different  types of input
+differently,  you  should  test both. If you're  fairly certain that a
+single  test will test many features, you  can just use that one test;
+if,  for  instance,  you know that testing  one module or routine will
+also  adequately  test  the module or routines  that it calls, you can
+make  do  with just testing the top-level  one. However, try to resist
+this  temptation;  firstly,  the  top-level  module  probably  doesn't
+exercise all the functions of the bottom-level one, and secondly, it's
+very  convenient  to have a test suite  for the bottom-level module --
+that  way, if you're making substantial changes to your system and you
+know   the  top-level  module  is  broken,  you  can  still  test  the
+bottom-level one independently.
+
+Finally,  an  obvious  point, but one that  it often neglected -- it's
+better  to test a little than not at all. If you find something that's
+hard  to test in all possible ways, test it in at least a few; if, for
+instance,  its results are hard to automatically verify, at least make
+sure  that they're in the right  format, or even that they're returned
+at  all (i.e. that the program  doesn't just abort). There's really no
+90-10  rule  in  testing -- 10% of the  effort won't get you much more
+than 10% of the benefit -- but you can at least avoid some of the more
+obvious  (and  more  embarrassing) bugs. Then,  once the groundwork is
+laid,  you might try to get back to it periodically, adding a new test
+case here or there. Don't let perfectionism get in the way of doing at
+least something.
+
+
+VERIFYING DATA STRUCTURES
+
+Most  sufficiently  complicated data structures  -- anything from your
+data stored in an IMAGE database to your own linked lists, hash files,
+or  B-trees,  if  you  write  such  things  yourself --  have internal
+consistency  requirements.  Certain fields in  your databases may only
+contain  particular  values;  other  fields  must  have  corresponding
+records  in  other  datasets  or  in other databases.  If any of these
+internal consistency requirements are not met, you know you have a bug
+somewhere.
+
+You can get a lot of benefit out of writing a verification routine for
+each such data structure that checks it for internal consistency. This
+is  somewhat different from the test suites we discussed before, which
+check  for  the validity of the ultimate  results, but it can still be
+very  useful,  since internal inconsistency  must have, by definition,
+been  caused  by a program error, and  is likely to eventually lead to
+incorrect  results (incorrect results that  your test suites might not
+otherwise check for).
+
+You  should  call  this  verification routine at the  end of each test
+suite to verify the consistency of the structures (again, usually data
+in  the database) that the program  being tested built; you might even
+run  it after each step in the test suite, to isolate exactly where an
+error  might be sneaking in. You may also want to run the verification
+routine  against  your production database every  night, to check your
+programs  as they run in the real  world, not just the controlled test
+environment;  and, you can run it  whenever you suspect that something
+may be wrong (either in testing or in production), to figure out if an
+internal inconsistency might be causing it.
+
+The  verification routine shouldn't be hard to write; if you can do it
+using  a 4GL or some other tool (like Robelle's fast SUPRTOOL -- speed
+is  important, since you want to make it as quick and easy as possible
+to verify your data), all the better. Simply put, check all the fields
+for  which at least one possible value would be invalid, whether it is
+because  it's not one of a list of allowable values for this field, or
+because  it's  out  of  range, or because  it's inconsistent with some
+other   values   in   this   record,  or  some  other  values  in  the
+dataset/database. Possible checks include:
+
+   * Flag fields may contain only certain allowable values.
+
+   *  Numbers, like salaries or prices,  must be within certain ranges
+     (e.g. non-negative, below a certain amount, etc.).
+
+   * Dates must be valid (valid year, month, day).
+
+   * Strings must at least not include non-alphanumeric characters.
+
+   *  Some  fields  must  have  corresponding  entries in  a different
+     dataset  or  database  (do a DBGET mode  7, for instance, to make
+     sure they're there).
+
+   *  Some  fields  are  calculated from other  fields, and must match
+     (e.g.  a total price field in an  invoice that must be the sum of
+     the price fields in the line items).
+
+Not  only can this check for bugs in your programs, but can also check
+for invalid production data that your programs might not have detected
+(e.g.  garbage  characters  in string fields,  bad states, state codes
+that  don't  match  phone numbers, etc.). And,  again, if written as a
+QUERY  &gt;XEQ file, or as a 4GL  program, it can be very easily created,
+and used over and over again.
+
+
+TESTING COMMAND-DRIVEN AND CHARACTER-MODE INTERACTIVE PROGRAMS
+
+As  we discussed before, the key to successful automated testing is to
+have  the  proper  tools  that  make  adding  test cases  easy. One in
+particular  -- which takes some work to construct but can make writing
+test suites much simpler -- is very much worth discussing.
+
+This  test-bench lets you run another  program under its control, with
+the son program's $STDIN and $STDLIST redirected to message files. The
+test-bench  can let you specify input to be passed to the son program,
+and  the  expected  output  that  the son program  should display; for
+instance, a typical test suite might look like:
+
+   :RUN TESTBENC
+
+   RUN SONPROG          &lt;&lt; command to start son process &gt;&gt;
+   I CALC 10+20         &lt;&lt; command for son to execute &gt;&gt;
+   O 30                 &lt;&lt; expected result &gt;&gt;
+   DOIT                 &lt;&lt; tells test-bench to compare the results &gt;&gt;
+   I SQUARES 3          &lt;&lt; command for son to execute &gt;&gt;
+   O 1                  &lt;&lt; expected result &gt;&gt;
+   O 4                  &lt;&lt; expected result &gt;&gt;
+   O 9                  &lt;&lt; expected result &gt;&gt;
+   DOIT                 &lt;&lt; tells test-bench to compare the results &gt;&gt;
+   ...
+
+What are the advantages of this approach?
+
+   *  It  lets you specify the expected  output right after the input;
+     this  makes  the  test  suite much easier to  write (and read and
+     maintain)  than if you had to specify  all the input up front and
+     all the expected output (from all the commands) at the end.
+
+   *  It lets you compare the output and the expected output much more
+     flexibly  than  a simple :FCOPY ;COMPARE=  would; you can specify
+     special  commands that indicate, say,  that the output needn't be
+     exactly  as you specified, but might include some variations here
+     and there (e.g. date- or environment-dependent information).
+
+   *  It tells you exactly which commands got errors, rather than just
+     telling you an error was found.
+
+Note,  however,  that all this test-bench does  is feed input into the
+son  process'  $STDIN  and  read output from  its $STDLIST; what about
+other  output,  say  output  to  files,  databases,  JCWs,  or  MPE/XL
+variables, and input from the same places?
+
+Fortunately,  output  to  one of those places  can easily be converted
+into  output  to  $STDLIST  simply  by executing an  MPE command, like
+:PRINT (or :FCOPY on MPE/V), :SHOWJCW, :RUN QUERY, etc. If our program
+can  not only check the output of the  son process and feed input to a
+son  process, but execute MPE commands and check their output and feed
+them input, our problems will be solved.
+
+Let's  say  your program is supposed to build  a file, and you want to
+make  sure  that  the  file is built with  the right structure and the
+right contents. Then, your test suite might look like this:
+
+   :RUN TESTBENC
+
+   RUN SONPROG          &lt;&lt; command to start son process &gt;&gt;
+   I BUILDFILE XXX      &lt;&lt; command to test &gt;&gt;
+   O File was built.    &lt;&lt; expected output to $STDLIST &gt;&gt;
+   DOIT
+   MPE :LISTF XXX,2     &lt;&lt; MPE command to execute &gt;&gt;
+   O ...
+   O XXX  123  32W ...  &lt;&lt; expected :LISTF output &gt;&gt;
+   O ...
+   DOIT
+   MPE :PRINT XXX       &lt;&lt; MPE command to execute &gt;&gt;
+   O ...                &lt;&lt; expected :PRINT xxx output &gt;&gt;
+   DOIT
+
+How  does this program work? Well, as  we said before, it runs the son
+program  with  $STDIN  and  $STDLIST redirected to  message files; "I"
+commands write stuff to the input message file, "O" commands write the
+expected  output  records  to  a  special  temporary file,  and "DOIT"
+commands  read  the  output  message  file and compare  it against the
+O-command temporary file.
+
+One  problem is how "DOIT" will recognize that the son program is done
+with  its  output  and  has  issued  another input prompt.  If the son
+program  always  uses the same prompt (or  one of a few prompts), DOIT
+can check for this; if, however, the son program's prompt isn't easily
+distinguishable  from  normal output, you should  make the son program
+print  a special line (e.g. "***INPUT***") before doing any input when
+it's in "testing mode"; so long as this happens before any input, DOIT
+can recognize these lines and realize that the output is done.
+
+What  about  the MPE commands that can  be used to "convert" output to
+files, databases, etc. into output to $STDLIST? When we test MPEX (the
+test-bench  I'm describing is essentially the  one that we use to test
+all  of our software), this is no problem, since we can just pass MPEX
+an  MPE  command as input, and MPEX will  execute it. You might do the
+same  yourself  -- make sure that  the program you're testing executes
+MPE  commands -- or you can have  TESTBENC have two son processes, one
+the  program being tested, and the other a simple program that prompts
+for an MPE command and executes it. The only other problem that you'll
+face  here  is executing :FCOPY or :RUN  commands on MPE/V (where they
+can't  be done with the COMMAND intrinsic); however, if you're an MPEX
+customer,  you can actually use MPEX as this MPE-command-executing son
+process -- MPEX can execute :FCOPYs, :PRINTs, :RUNs, etc.
+
+This  test-bench $STDIN-and-$STDLIST-redirection solution, it seems to
+me,  would  work  quite  well  for  any command-driven  or interactive
+character-mode  programs.  If  you want to use  it to test procedures,
+you'll  have  to  write a simple shell  program that prompts for input
+parameters, calls the procedure, and prints the output parameters, and
+run  this  program  as  a  son  of the  test-bench. Testing block-mode
+programs,  I  suspect,  would be much more  difficult; I'll have a few
+words about it later, but it's still an unsolved problem as far as I'm
+concerned.
+
+Of course, the more complicated your test-bench is, the more important
+it  is  to  write  a test suite for it!  (A bug in the test-bench that
+keeps  it from properly checking  things could be almost unnoticeable,
+since it will falsely tell you that your test suite ran fine.) We test
+our  test-bench  by feeding a lot of  test commands, some of which are
+calculated  to  produce  errors  and others to  succeed, and check the
+results  of  these  operation  (not  using  the test-bench  itself, of
+course) to see if they're as expected.
+
+
+AUTOMATIC TEST SUITE GENERATION
+
+No  matter  how  sophisticated  your test-bench, you'll  still have to
+write  your  test  cases.  For simple  one-line-input, one-line-output
+operations,  there's little that you need  to do beyond specifying the
+input  and the expected output; however, for things that require a lot
+of set-up, or are actually conversations, with many output prompts and
+many inputs, you'd like a better way.
+
+One idea that some automated testing people like is having you run the
+program  once,  specifying all the right  inputs, and making sure that
+all  the  outputs  are correct; these inputs  and outputs will then be
+saved,  ready to be "re-played" by the test-bench, which will resubmit
+exactly  the same inputs, and expect  to get exactly the same outputs.
+In  effect,  then,  the  test  suite  will  check that  all subsequent
+executions  of the program behave exactly  the same way as the initial
+one  (which  was  presumably  correct).  The  way you'd do  this is by
+modifying the test-bench program we discussed above (what? you mean to
+say  you haven't written it yet?)  to have a special "data-collection"
+mode  that will accept user inputs,  pass them to the program, collect
+the  outputs,  and create a file that can  later be used by the normal
+mode of the test-bench.
+
+Now,  there  are  a few problems with this,  which lead me to conclude
+that,  even if this data-collect feature  is used, the test suite that
+it  generates must be easy to modify. Firstly, the user will doubtless
+make errors while entering the original inputs; since the data-collect
+feature  doesn't  know what's a user error  and what should be part of
+the  test  suite,  there  needs  to  be some way  of editing out these
+errors.  (Technically,  you  need not do this,  since exactly the same
+inputs  should yield exactly the same error outputs in the future, but
+if you don't edit them out, the test suite will be very unreadable and
+unmaintainable.)  Secondly,  the future output  probably won't exactly
+match  the  current output -- dates  and other environment information
+(version  numbers, etc.) will doubtless change. There needs to be some
+way  to  edit the generated test suite  to replace the expected output
+with  some sort of "wildcard" characters that tell the test-bench that
+any output would be acceptable in this case.
+
+However,  taking  into  account  that  some editing will  be needed, a
+data-collect feature can be quite convenient for testing features that
+involve complicated I/O sequences.
+
+
+A SAMPLE TEST ENVIRONMENT
+
+Besides  having  the right test tools and  the right test suites, it's
+important  to  internally  set  up  your  test  suites  and  your test
+environment  so  that it is as easy as  possible to run all your tests
+and  check  whether  or  not they succeeded. Here  are a few tips that
+we've found handy ourselves:
+
+   *  Have one test suite for each  major feature, not one big one for
+     your  entire system. When you're  working on a particular feature
+     and  want to see if it works, you'll probably want to re-run only
+     that test suite after each change, and re-run all the test suites
+     only at the very end.
+
+   * As we mentioned before, have each test suite as self-contained as
+     possible,  but  also try to have each  test case within each test
+     suite  be relatively self-contained. The more a test case depends
+     on  the results of the test cases that preceded it, the harder it
+     will  be  for  you  to  fully  understand what the  state of your
+     internal  files, databases, etc. is at  the time the test case is
+     executed,  and  the  harder  it  will be to  maintain it, or even
+     understand  why  the  "expected results" you have  for it in your
+     test  suite  are really what should  be expected. Of course, some
+     test  cases must not be self-contained precisely because you want
+     to  make sure that they work  properly when done together, rather
+     than separately.
+
+   *  Have  each  test suite run in its  own group, with all the files
+     needed  by  the  program being tested redirected  to the files in
+     that  group.  The  first  thing that the test  suite should do is
+     purge  the group (if it's logged on to it, this will merely purge
+     all  the  files); this way, you'll be  sure that this test run is
+     not influenced by previous runs of the same test suite, and since
+     the  test suite runs in its own  group, it will not be influenced
+     by concurrently-running other test suites.
+
+   *  All the actual test suites and permanent support files should be
+     in  their  own group, separate from the  groups in which the test
+     suites run; this way, the test suites will be able to purge their
+     own  groups, as discussed above. If  the test suite files are all
+     in  a particular fileset (e.g.  "T@.TEST"), they can be submitted
+     in MPEX using a %REPEAT/%STREAM/%FORFILES construct.
+
+   *  Each test suite should signal  that it completed successfully by
+     building  a file called TESTOK, and  that it failed by building a
+     file  called TESTERR (or, even better, TESTE###, where ### stands
+     for   the   number   of   errors   discovered).  Then,  a  :LISTF
+     TESTERR.@.TESTACCT,6 will show you which jobs had errors in them.
+     In  case  you're  afraid that a job  might abort without building
+     either  a TESTOK or TESTERR file,  you can build the TESTERR file
+     at  the  very beginning and only purge it  at the end if all went
+     well.
+
+   *  Finally, if you use a  test-bench program, the test-bench should
+     send  all its output, especially an  indication of all the errors
+     (what  the input was, what the  output was, and what the expected
+     output  was),  to  a  disc  file called, say,  TESTLOG, which can
+     easily  be read, and will remain on  the system even if the spool
+     file is deleted.
+
+Thus, the configuration we use in VESOFT is:
+
+   C@.TEST.VESOFTD -- command files used by the test suites.
+
+   M@.TEST.VESOFTD -- MPEX test suites.
+
+   S@.TEST.VESOFTD -- SECURITY test suites.
+
+   A@.TEST.VESOFTD -- VEAUDIT test suites.
+
+   TESTPROD.TEST.VESOFTD  --  a  command  file that  purges the VETEST
+     account and %STREAMs M@.TEST+S@.TEST+A@.TEST.
+
+   @.MALTFILE.VETEST     --     group     used     by    test    suite
+   MALTFILE.TEST.VESOFTD.
+
+   @.MBATCH.VETEST -- group used by test suite MBATCH.TEST.VESOFTD.
+
+   ...
+
+
+TESTING SEEMINGLY HARD-TO-TEST PROGRAMS
+
+Some  things  are  easier  to  test  than others;  procedure calls are
+simplest,   command-driven   programs   are   rather  straightforward,
+"conversational"  character-mode  programs  are  a  bit  harder.  Much
+depends  on how easy it is to feed the program input and intercept the
+program's  output; for example, if a program does input from tape, you
+might redirect it by a :FILE equation to a disc file, but how will you
+test  the  code in the program that tries  to handle tape errors? If a
+program  is supposed to submit a job, how can you tell whether the job
+was properly submitted?
+
+There  are  several  general  tricks  that you can  use to solve these
+problems,  though  these are more examples  of ingenious solutions for
+you  to  emulate,  not  specific  instructions  that should  always be
+followed:
+
+   *  Inputs:  Have  ways to "fake"  hard-to-trigger input conditions,
+     like  bad tapes, control-Y, I/O errors, etc. For instance, have a
+     "***BAD  TAPE***" record in a file  be interpreted by the program
+     as a tape error; if the program expects a tape to contain several
+     things separated by EOF markers (which can't normally be emulated
+     by disc files), have it treat an "***EOF***" as an EOF marker.
+
+     Again, this has the same problem as the PRETENDDATE/PRETENDONLINE
+     features that we suggested above -- what you'll really be testing
+     is  not the actual execution of the program, but the execution of
+     the  program in testing mode. However, though problems with, say,
+     the  actual condition code check that detects the tape error will
+     not  be found, all the other  aspects of tape error handling will
+     be properly tested.
+
+   *  Outputs:  Find  commands or programs that  can convert an output
+     that  is hard to test for into one  that is easy to test for; for
+     instance,  if your program is supposed to  do a :DOWN, test it by
+     doing  a :SHOWDEV afterwards to see if it is DOWNed or has a DOWN
+     pending. If the program is supposed to do an :ABORTJOB, PAUSE for
+     some  time  (since an :ABORTJOB may  not immediately take effect)
+     and  then do a :SHOWJOB of that  job number to make sure that the
+     job  no  longer exists. If your program  is supposed to shut down
+     the system, you're out of luck...
+
+   *  More  outputs:  But  maybe you're not out  of luck in the system
+     shut-down  case,  after  all;  analogously  to  the  "fake input"
+     suggestion  above,  you  might have your program  check to see if
+     it's  in  testing mode, and if it  is, print a message instead of
+     shutting   down   the   system   (or   doing   something  equally
+     uncheckable-for).  Again, this won't make  sure that the ultimate
+     operation  is done properly (since it  won't be done in this case
+     at   all),  but  at  least  it'll  make  sure  that  all  of  the
+     preliminaries will be handled correctly.
+
+   *  General:  Find  ways  of  taking  care  of  timing  windows; for
+     instance, if your program submits a job, a simple :SHOWJOB in the
+     test  suite won't be a proper check (since a small job might have
+     finished  by  the time the :SHOWJOB is  done), and having the job
+     build a file or leave some such permanent file won't work either,
+     since the job might still not have started up. Instead, your test
+     suite  might build an empty message  file and then make sure that
+     the job writes a record to this message file (possibly by setting
+     up  a logon UDC for that user). Your test suite can then read the
+     message  file, waiting until a record is written to it, no matter
+     when the job actually gets around to executing.
+
+     Message  files  are also quite useful when  the test suite has to
+     check  something  at  a  particular  point  in the  son program's
+     execution,  and if it checks it too early or too late the results
+     will  not be quite right. This  is particularly so when your code
+     is   supposed   to   properly   handle  concurrent  access  in  a
+     non-standard  way  (i.e.  not  by  simply using  FLOCK/FUNLOCK or
+     DBLOCK/DBUNLOCK).  You might want to have your programs, when run
+     in  testing  mode,  try  to  read  records  from message  file at
+     critical  points,  which  will let you  control when each program
+     will hit a particular piece of code.
+
+Again,  these  are  some sample solutions to  some (though by no means
+all) testing problems. The $65,536 question of testing, however, still
+remains:  How  do you test VPLUS  block-mode applications? Some of the
+above  tricks  might  be  usable  --  instead  of  calling  the  VPLUS
+intrinsics,  call  procedures  that, in testing  mode, will do normal,
+unformatted terminal I/O (i.e. the input fields are to be input simply
+as a data string, with all the fields run together), which can then be
+run  under test-bench control. Unfortunately, it seems that this would
+leave  too  much out of the testing  (for instance, the correctness of
+the VPLUS calls themselves, and the correctness of any edits specified
+in  the  VPLUS  forms),  and  the  test  suites  would  also  be quite
+unreadable and unwritable. Someone might do something to intercept the
+terminal  I/O  from  within  VPLUS  itself,  but  that's  getting  too
+complicated for me. Any ideas?
+
+
+CONCLUSION
+
+To sum up, a few testing maxims:
+
+   *  Automate  testing  --  both  the  input and the  checking of the
+     output.
+
+   *  Write test suites before or  while you're writing the program --
+     that way, you can use them to do even the initial testing.
+
+   *  Figure  out  the testing tools that you  need and don't skimp in
+     building them; they can save you a lot of effort.
+
+   * Make it as easy as possible to add new test cases (try to make it
+     one test case per line), even if it means extra work up front.
+
+   *  Have your test cases be in  job streams, not in source files, so
+     that you can add new ones without recompiling.
+
+   *  Change  your  programs  so that they  can "pretend" that today's
+     date,  the  batch/online flag, your  logon information, and such,
+     are  something  other than what they really  are. Do the same for
+     hard-to-reproduce conditions, like I/O errors, control-Y, etc.
+
+   *  Think about your code and come  up with test cases that exercise
+     as much of it as possible; as new bugs arise, add test cases that
+     would have caught them.
+
+   *  Write  verification  routines  for  all  your  complicated  data
+     structures,  especially  including  the  data  in your  files and
+     databases.
+
+   *  If feasible, write some sort  of test-bench program in which you
+     can test the behavior of other programs by feeding them input and
+     checking their output.
+
+   * Think creatively about testing features that at first glance seem
+     difficult  to check the results of.  Use message files to control
+     timing problems.
+
+   *  Be  prepared  to  spend a lot of  time and effort (and therefore
+     money)  on  automated  testing,  but  expect  to save  a lot more
+     effort, and come out with much fewer bugs, if you do it right.
+
+<p>
+<img src="./Automated testing -- why and how_files/hLine.gif" alt=" ">
+</p><p>
+
+Go to <a href="http://www.adager.com/TechnicalPapers.html">Adager's index of technical papers</a>
+</p></pre>
+
+
+</body></html>

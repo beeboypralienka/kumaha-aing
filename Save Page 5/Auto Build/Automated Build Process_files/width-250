@@ -1,0 +1,44 @@
+#jbb_widget_customizable a img {border: 0px;}
+#jbb_widget_customizable ul {padding: 0px; margin: 0px;}
+#jbb_widget_customizable ul li {list-style:none none outside; margin-bottom: 5px; padding: 0px;}
+#jbb_widget_customizable #jbb_widget_board_title {text-align: center; margin-bottom: 5px;}
+#jbb_widget_customizable {
+  font-family: Arial, Verdana, sans-serif; 
+  font-size: 13px;
+  padding: 5px; 
+  border: 1px solid #FFFFFF;
+  background-color: #FFFFFF;  
+  width: 250px;  
+}
+#jbb_widget_customizable #f_widget_job_search {
+  width: 100%;  
+  margin-bottom: 5px;  
+}
+#jbb_widget_customizable #f_widget_job_search #f_search_keywords,
+#jbb_widget_customizable #f_widget_job_search #f_search_location{
+  font-size: 13px;  
+  width: 38%;
+  min-width: 95px;
+  margin: 1px;
+}
+
+#jbb_widget_customizable #f_widget_job_search #f_submit {
+  font-size: 13px;  
+}
+#jbb_widget_customizable #jbb_widget_post_a_job{
+  margin-bottom: 5px;  
+}
+#jbb_widget_customizable #jbb_widget_all{
+  margin-bottom: 5px;
+}
+#jbb_widget_customizable a{
+  color: #0A0FF5;
+}
+
+#jbb_widget_customizable span.jbb_widget_company_class{
+  color: #000000;
+}
+
+#jbb_widget_customizable span.jbb_widget_location_class{
+  color: #009200;
+}

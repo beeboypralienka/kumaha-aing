@@ -1,0 +1,312 @@
+/* this first section sets the background color....thats the color surround OUTSIDE
+your main table. The same with the fonts, this applies only to any text you place outside the
+main content table. Which will probably be nothing. The max-width is for Firefox, to let it know how wide you
+want your page to be. This will be the maximum width of your main content table.
+
+If you set it to perhaps 1050px, and view it on a 1024x768 monitor, it will appear full width. But to someone 
+viewing on a 1200x1024 monitor, it will appear as 1050 wide, with your choice of a colored background either
+ side, taking up the extra 150px. (75px each side)*/
+
+body {
+max-width: 1050px;
+background-color:#909090; 
+font-family: Arial, Verdana, sans-serif;
+font-size: 93%;
+color: #000;
+margin:auto;
+padding:0;
+text-align:center;
+}
+
+
+
+
+
+/* you have 3 more classes of horizontal rule, as well as the default version Change the attributes to 
+get the look you want. The 3 classes are solid, dotted, and dashed. Add class="dashed" to your hr
+tag on an HTML page, to get the dashed version of the hr. Change the colors to suit. */
+
+.solid {	
+   border-top: 1px solid #000066;
+   border-bottom: hidden;
+   border-left: hidden; 
+   border-right: hidden;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	
+	
+}
+
+.dashed {
+  border-bottom:1px dashed #000066;
+   border-top:hidden;
+   border-left:hidden;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	
+	
+}
+
+.dotted {
+	border-bottom:1px dotted #000066;
+   border-top:hidden;
+   border-left:hidden;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* this is a custom class for your bold tag. You can alter anything here, or remove
+it completely to get the default bold  330066*/
+b{
+
+color: #000066;
+font-family: Arial;
+font-size: 120%;
+font-style: italic;
+}
+
+b2{ /* 504A4B */
+
+color: #1589FF;
+font-weight: bold;
+font-family: Arial;
+font-size: 120%;
+font-style: italic;
+}
+
+/* this is a custom class for using graphics as bullets.  Upload a custom graphic to your 
+graphics library in the usual way. Then replace my URL
+with your own. Note there are no speech marks around the URL*/
+ 
+ul {
+list-style-type: none;
+padding-left: 0;
+margin-left: 10px;
+}
+ 
+li.custom {
+background: url(http://www.scmwise.com/image-files/bullet2.gif) left center no-repeat; 
+
+padding-left: 20px;
+margin-bottom: 10px;
+
+ }
+ 
+/* this area below is for your  Link-text and headings. You can change the font type and size, the color of each of them
+as well as the a:hover, which is the text for a link, once the pointer passes over it*/
+
+a { font-family: Arial, Verdana, sans-serif; 
+font-size: 100%; color: #153E7E; text-decoration: underline; 
+font-weight: bold;
+}
+
+a:hover { font-family: Arial, Verdana, sans-serif;
+ font-size: 100%; 
+ background-color: #153E7E; /* #504A4B */
+ color: #fff;
+ }
+
+
+h1 { font-family: Arial, Verdana, sans-serif; font-size: 150%;  color: #000000}
+h2 { font-family: Arial, Verdana, sans-serif; font-size: 116%;  color: #000}
+h3 { font-family: Arial, Verdana, sans-serif; font-size: 100%;  color: #000}
+
+
+
+/* 
+Notice the width:expression part? That's for internet explorer, which doesnt understand max-width commands.
+So this works WITH the max-width at the top of this page. If you change that to say 1050px, change both occurences here
+to 1050px as well. Otherwise Those using IE wont get the width constraint....their page would expand indefinitely!
+Firefox will ignore this part, and IE will ignore the max-width part....you need both of them.
+
+BUT DONT TOUCH THIS PART BELOW UNLESS YOU HAVE READ THE PDF THAT EXPLAINS HOW, AND YOU ARE SURE YOU UNDERSTAND IT!!*/
+
+.main-table {
+width:expression(document.body.clientWidth > 1052? "1050px": "auto" );
+margin-top: 0px;
+margin-right: auto;
+margin-bottom: 0px;
+margin-left: auto;
+}
+
+
+/*as we are using a table based layout, all your text is within a table. So this is the area to change the
+size, color and font family .*/
+table {
+font-family: Arial, Verdana, sans-serif;
+font-size: 85%;
+color: #000;
+padding-top: 2px;
+padding-right: 2px;
+padding-bottom: 2px;
+padding-left: 2px;
+}
+
+/* if you change the fonts and sizes, etc above, make this the same, but leave the weight as bold
+Its just here to give you the option of a bold type font, without the extra size.*/
+
+.note {
+font-family: Arial, Verdana, sans-serif;
+background-color:#fff; 
+font-size: 77%;
+color: #666666;
+font-weight: bold;
+font-style: italic;
+} 
+
+
+/* Below, is the background colors for your table cells. originally, they were on the actual page, so why
+move them to the stylesheet? Well, if you decide to do a site-wide color scheme change, you now change here, 
+rather than on every page. A big improvement. Also, the less styling on the page, the better.
+
+Suppose you prefer to have a tiled image rather than a solid color?
+Replace the background-color:#fff;  with this, and upload your image to the graphics library....
+background-image: 
+url('http://www.your-site.com/images/your-image.gif');
+background-repeat: repeat;
+*/
+
+
+td.headerbg {
+background-color:#cococo;
+font-size: 100%;
+}
+
+td.spacerbg {
+background-color:#fff; 
+}
+
+td.contentbg {
+background-color:#fff; 
+}
+
+td.rightbg {
+font-family: Arial, Verdana, sans-serif;
+font-size: 93%;
+color: #000;
+background-color:#fff; 
+}
+
+td.leftbg {
+font-size: 86%;
+margin-left: 10px;
+background-color:#fff; 
+}
+
+td.footerbg {
+font-size: 86%;
+background-color:#fff; 
+}
+
+/* This is for the heading background color....your H1, H2, and H3 tags*/
+/*
+.hbg{
+background-color:#000099;
+color:#ffcc00;
+width: auto;
+padding-top: 7px;
+padding-right: 7px;
+padding-bottom: 7px;
+padding-left: 14px;
+z-axis: 1;
+border-top: 2px #ffff99 solid;		/* #98AFC7 */
+border-left: 2px #ffff99 solid;		/* #98AFC7 */
+border-bottom: 2px #000033 solid; 	/* #302226 */	
+border-right: 2px #000033 solid;
+}
+*/
+
+.hbg2{
+background-color:#000099;
+color:#ffcc00;
+width: 70%;
+padding-top: 2px;
+padding-right: 2px;
+padding-bottom: 2px;
+padding-left: 2px;
+z-axis: 1;
+border-top: 2px #ffff99 solid;		/* #98AFC7 */
+border-left: 2px #ffff99 solid;		/* #98AFC7 */
+border-bottom: 2px #000033 solid; 	/* #302226 */	
+border-right: 2px #000033 solid;
+}
+
+.hbg{
+background-color:#333333;
+color:#ffffff;
+width: 80%;
+border: 2px solid;
+border-radius: 10px;
+-moz-border-redius:10px; /* Firefox 3.6 and earlier */
+}
+
+
+/* information below is to remove the link styling for anchor links.
+Just leave this as it is....it works fine, and shouldn't be modified */
+a.jumplink{
+text-decoration: none;
+font-size: 100%; 
+background-color: transparent;
+color: #000;
+}
+
+a:hover.jumplink  {
+text-decoration: none;
+font-size: 100%; 
+background-color: transparent;
+color: #000;
+} 
+
+/* -- Horizontal Text NavBar -- */
+
+.ExtraNav {
+font-family: 'Lucida Sans Unicode', 'Lucida Grande', Verdana, Arial, sans-serif;
+}
+
+.ExtraNav ul {
+list-style-type: none;
+padding: 0;
+}
+
+.ExtraNav ul li {
+display: inline;
+text-align: center;
+}
+
+.ExtraNav a:link {
+color: #ffffff;
+background-color: #092A17;
+text-decoration: underline;
+text-align: center;
+padding: 0 4px;
+}
+
+.ExtraNav a:visited {
+color: #8A43DA;
+background-color: #092A17;
+text-decoration: underline;
+}
+
+.ExtraNav a:hover {
+color: red;
+background-color: #d3e4fb;
+text-decoration: underline;
+}
+
+#Header .ExtraNav {
+font-size: 85%;
+position: absolute;
+top: 5px;
+left: 10px;
+}
+
+#Header .ExtraNav ul { 
+margin: 0;
+}
+
+#Footer .ExtraNav {
+margin: 12px auto;
+}

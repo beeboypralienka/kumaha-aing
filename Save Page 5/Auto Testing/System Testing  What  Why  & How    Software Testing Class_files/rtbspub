@@ -1,0 +1,3 @@
+window.rtbsBidA = (typeof window.rtbsBidA  === 'object' ) ? window.rtbsBidA : {};
+window.rtbsBidA["358561571"] = {bidder_id:9,logging_beacons:["http://opt.media.net/rtbs/pixel?key=9%3A%3A20140505%3A%3A05%3A%3AID%3A%3A172.16.202.33_7016&value=15&bid=9&country=ID&cid=8CUFLK5I3&crid=358561571&domain=softwaretestingclass.com&size=200x200&buyerid=null","http://opt.media.net/ybnca/exchangenotify?aid=null&domain=softwaretestingclass.com&price=0.15&cgid=4424&cid=18881&rid=1439303&url=&cc=ID&td=&lid=&t=1399268493321"],bid:0.15,variant:0}
+

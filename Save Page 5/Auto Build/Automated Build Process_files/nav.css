@@ -1,0 +1,102 @@
+/*this stylesheet is for you navigation panel*/
+
+#navigator {
+
+}
+
+.housebutton {
+}
+
+.housebutton a {
+font-size: 80%;
+}
+
+.housebutton a:hover {
+font-size: 82%;
+}
+
+
+/* this part below is for the color on the background, surrounding the buttons. Change the color, and the 
+border, if you like. For the border, you can use solid, dashed, or dotted, for different border styles*/
+
+#navigator {
+
+/* background-color: #cccccc; */
+
+/* border: 1px #000066 solid; */
+
+width: 110px;
+
+margin-top: auto;
+
+margin-left: auto;
+
+margin-right: auto;
+
+padding: 5px;
+
+text-align: center;
+
+
+}
+
+/* want more space between your buttons? just increase the margins
+from 1px. Font weight can be bold if you prefer.*/
+
+.housebutton {
+
+font-weight: bold;
+text-align: center;
+margin-bottom: 1px;
+margin-top: 1px;
+}
+
+
+/* this part is for the colors of your buttons "at rest" so to speak. Notice the
+top/left, and the bottom/right are colored in pairs? If you change the colors, you will need to do the same, to
+maintain the illusion of 3D buttons. Make one set of sides a slightly darker shade than the other pair.
+This will give the button a 3D look*/
+
+.housebutton a {
+
+padding: 3px;
+
+text-decoration: none;
+
+display: block;
+
+color: #ffff99; /*this is where you change the button font color*/
+
+background-color: #657383;
+
+border-top: 4px #98AFC7 solid;
+
+border-left: 4px #98AFC7 solid;
+
+border-bottom: 4px #302226 solid;
+
+border-right: 4px #302226 solid;
+
+}
+
+/*this part is how the buttons look, once the pointer passes over them. Same thing as above, but this time
+the top/left colors should SWAP with the bottom/right, to give the correct effect.
+Also the background color should go a shade darker, to make it seem as if it were now below the 
+level of the page, and is not getting any light on it*/
+
+.housebutton a:hover {
+
+color: #ffff00; /*-----this is where you change the button font color, when the button is hovered over*/
+
+background-color: #98AFC7;
+
+border-top: 4px #302226 solid;
+
+border-left: 4px #302226 solid;
+
+border-bottom: 4px #5F5A59 solid;
+
+border-right: 4px #5F5A59 solid;
+
+}
+

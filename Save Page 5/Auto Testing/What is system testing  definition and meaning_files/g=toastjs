@@ -1,0 +1,3 @@
+jQuery(function(){function try_to_show_toast()
+{console.log(jQuery('#toast_ad_placement'));jQuery('#toast_ad_placement').css("display","block");;jQuery('.toast-bar').slideDown('fast');jQuery('.toast-bar .toast-bar-close').click(function(){jQuery('.toast-bar').slideUp('fast');});}
+jQuery(window).one("scroll",function(){try_to_show_toast();});});

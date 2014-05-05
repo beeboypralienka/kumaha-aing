@@ -1,0 +1,200 @@
+
+
+/*This style sheet controls how the textboxes will look
+The only thing that you might want to change will be the color
+of the borders. They are set at #000066 at the moment.
+The background color is set to ffffff (white), however if you
+decide to change it you can. Just remember, if you do, it will affect EVERY
+textbox on your site. To change only one, copy and paste the class here in the style sheet,
+and alter the color. Change the name also... so the new class may be called
+full-width-box-blue for eg. Then the new color can be called with your new class name.
+*/
+
+div.content-box {
+   background-color: transparent;
+	margin: 0px 0px 0px 0px;
+	padding: 15px;
+	border-top: none;
+	border-bottom: none;
+	Border-right: 1px solid #000066; 
+	border-left: 1px solid #000066;
+}
+
+/*** right column Full width box.
+Change the colors to suit. The standard box has a white background, and the
+box2 has a colored background ***/
+
+div.full-width-box {
+   background-color: #ffffff;
+	margin: 15px 0px 10px 0px;
+	padding: 15px;
+   border: 1px solid #000066;	
+}
+div.full-width-box2 {
+   background-color: #cccccc;
+	margin: 15px 0px 10px 0px;
+	padding: 7px;
+   /* border: 2px solid #000066; */
+   	border-top: 7px #98AFC7 solid;		/* #98AFC7 */
+   	border-left: 7px #98AFC7 solid;		/* #98AFC7 */
+   	border-bottom: 7px #302226 solid; 	/* #302226 */	
+	border-right: 7px #302226 solid; 	/* #302226 */	
+}
+div.header-box-round {
+   background-color: #ffffff;
+	margin: 15px 0px 10px 0px;
+	padding: 7px;
+        border: 4px solid #000066;
+   	border-radius: 15x;
+   	-moz-border-radius:25px; /* Firefox 3.6 and earlier */
+}
+div.full-width-box-round {
+   background-color: #999999;
+	margin: 15px 0px 10px 0px;
+	padding: 7px;
+        border: 4px solid #000066;
+   	border-radius: 15x;
+   	-moz-border-radius:25px; /* Firefox 3.6 and earlier */
+}
+div.display-box-clear {
+   background-color: #ffffff;
+	margin: 15px 0px 10px 0px;
+	padding: 15px;
+	float: left;
+	width: 50%;	
+}
+div.display-box-gray {
+   background-color: #cccccc;
+	margin: 15px 0px 10px 0px;
+	padding: 15px;
+	width: 200px;
+	float: left;
+   border: 1px solid #000066;	
+}
+
+/* Div Boxes with Headerss
+/* Show only to IE PC \*/
+* html .boxhead h2 {height: 1%;} /* For IE 5 PC */
+
+div.sidebox-small {
+	margin: 10px 10px 10px 10px;
+	width: 30%; /* ems so it will grow */
+	font-size: 100%;
+	/* border: 3px solid #000066; */
+	border-top: 7px #98AFC7 solid;	
+	border-left: 7px #98AFC7 solid;	
+	border-bottom: 7px #302226 solid;	
+	border-right: 7px #302226 solid;
+	float: left;
+}
+div.sidebox-full {
+	margin: 10px 10px 10px 10px;
+	font-size: 100%;
+	border-top: 4px #98AFC7 solid;	
+	border-left: 4px #98AFC7 solid;	
+	border-bottom: 4px #302226 solid;	
+	border-right: 4px #302226 solid;
+	float: left;
+}
+div.sidebox-set {
+	margin: 5px 5px 5px 5px;
+	width: 175px;
+	height: 250px;
+	font-size: 100%;
+	border-top: 4px #98AFC7 solid;	
+	border-left: 4px #98AFC7 solid;	
+	border-bottom: 4px #302226 solid;	
+	border-right: 4px #302226 solid;
+	float: left;
+}
+div.boxhead {
+	background-color: #cccccc;
+	width: 100%;
+	margin: 0;
+	padding: 3px 0px 3px 0px;
+	text-align: center;
+}
+div.boxheadclear {
+	background-color: #ffffff;
+	width: 100%;
+	margin: 0;
+	padding: 3px 0px 3px 0px;
+	text-align: center;
+}
+div.boxhead h2 {
+	background-color: #cccccc;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: #000066; 
+	font-weight: bold; 
+	font-size: 1em; 
+	text-shadow: rgba(0,0,0,.4) 0px 2px 5px; /* Safari-only, but cool */
+}
+div.boxbody {
+	background-color #ffffff;
+	width: 90%;
+	margin: 0;
+	padding: 5px 5px 5px 7px;
+}
+/*** right column Half of width box center ***/
+div.half-width-box-center {
+   background-color: #cccccc;
+	margin: 7px 7px 7px 7px;
+	padding: 10px;
+	width: 50%;
+	float: center;
+	border-top: 7px #98AFC7 solid;	
+	border-left: 7px #98AFC7 solid;	
+	border-bottom: 7px #302226 solid;	
+	border-right: 7px #302226 solid;	
+}	
+/*** right column Half of width box left ***/
+div.half-width-box-left {
+   background-color: #ffffff;
+	margin: 7px 7px 7px 7px;
+	border-top: 7px #98AFC7 solid;	
+	border-left: 7px #98AFC7 solid;	
+	border-bottom: 7px #302226 solid;	
+	border-right: 7px #302226 solid;
+	padding: 5px;
+	width: 50%;
+	float: left;	
+}
+/*** right column Half of width box right ***/
+div.half-width-box-right {
+   background-color: #ffffff;
+	margin: 7px 7px 7px 7px;
+	border-top: 7px #98AFC7 solid;	
+	border-left: 7px #98AFC7 solid;	
+	border-bottom: 7px #302226 solid;	
+	border-right: 7px #302226 solid;
+	padding: 10px;
+	width: 35%;
+	float: right;	
+}
+/* the border of the image inside your half width textbox can be changed.
+Its set to #5F8B8C at the moment. You can also change the solid
+to either dashed or dotted if you want to*/
+
+/*** Picture inside the text ***/
+.img-float-left {
+	float: left;
+	padding: 2px;
+	margin-right: 5px;
+	border: 2px solid #000066;
+}
+.img-float-right {
+	float: right;
+	padding: 2px;
+	margin-left: 5px;
+	border: 2px solid #000066;
+}
+/*** Clearing of a float ***/
+div.clear {
+	clear: both;
+	width: 100%;
+	height: 1px;
+}
+
+

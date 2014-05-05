@@ -1,0 +1,189 @@
+*{margin:0;padding:0}html,body{background:#e6e6e6;height:100%}body{color:#000;font:62.5%/1.4 Verdana,Arial,sans-serif;margin:0;padding:0}#all{width:999px;margin:0
+auto;font-size:120%;background:#FFF url('http://img.businessdictionary.com/main-l.gif') repeat-y 0 0;padding:0
+5px;position:relative}.all-rt{background:url('http://img.businessdictionary.com/main-r.gif') repeat-y 0 0;position:absolute;right:0px;_right: -1px;top:0px;height:100%;_height:100%;_margin-top:0px;_height:expression(document.getElementById('all').offsetHeight - 4);overflow:hidden;width:5px}img{border:0}.clear{clear:both}a:link{color:#0253b7}a:visited{color:#0253b7}a:hover,a:active{color:#a44533}.inptext{border:1px
+solid #498fc6;background:#FFF url('http://img.businessdictionary.com/input-gd.gif') repeat-x 0 0;padding:6px
+1px 4px 5px}* html
+.inptext{background-position:0 -1px}.inptext
+input{border:0;font:normal 14px tahoma,sans-serif;//position:relative;//top:-1px}hr{height:1px;border:0;color:#c4cccc;background:#c4cccc;margin:5px
+0 10px}table{border-collapse:collapse}.qdot{list-style:none}.qdot
+li{background:url('http://img.businessdictionary.com/bull.gif') no-repeat 0 0.4em;padding-left:15px}#top-tt{padding:5px;text-align:center;height:90px}#print_head{display:none}#top{height:65px;position:relative;background:url('http://img.businessdictionary.com/menu-gd.gif') repeat-x 0 0}#top-split{position:relative;background:#fff}#top
+img{vertical-align:bottom}#logo{}.logo-img{display:block;width:316px;height:65px;text-indent:-2000em;background:url('http://img.businessdictionary.com/logo.png') no-repeat 0 0}.logo-img-split{display:block;width:230px;height:80px;text-indent:-2000em;background:url('http://img.businessdictionary.com/logo-split.gif') no-repeat 0 0}#top-links-ie{position:absolute;right:4px;top:16px;font:11px tahoma,sans-serif;margin-top:-8px}#top-links{position:absolute;right:1px;top:11px;font:11px tahoma,sans-serif}* html #top-links{margin-right:-6px}#top-links a,#top-links-ie
+a{display:block;float:left;margin-right:12px}.spbg{background-image:url('http://img.businessdictionary.com/sprite_img.png')}#menu{position:absolute;right:0;bottom:0}* html
+#menu{position:absolute;right:-1px;bottom:-1px}#menu
+a{display:block;float:left;outline:none}.adj-menu{background-repeat:no-repeat;float:left;height:38px;line-height:28px;text-indent:-10000px}.menu_1{width:68px;background-position:0 -28px}.menu_1a{width:68px;background-position:0 10px}.menu_2{width:104px;background-position: -173px 0}.menu_3{width:105px;background-position: -68px -28px}.menu_3a{width:105px;background-position: -68px 10px}.menu_4{width:77px;background-position: -277px -28px}.menu_4a{width:77px;background-position: -277px 10px}.menu_5{width:89px;background-position: -354px -28px}.menu_5a{width:89px;background-position: -354px 10px}.menu_6{width:65px;background-position: -530px -118px}.menu_6a{width:65px;background-position: -530px -69px}.menu_7{width:35px;background-position: -729px -28px}.menu_7a{width:35px;background-position: -729px 10px}.menu_8{width:97px;background-position: -625px 0}.menu_8:hover{width:97px;background-position: -625px -38px}.menu_9{width:78px;background-position: -442px -118px}.menu_9a{width:78px;background-position: -442px -69px}.menu_10{width:55px;background-position: -676px -118px}.menu_10a{width:55px;background-position: -676px -69px}.menu_11{width:55px;background-position: -676px -206px}.menu_11a{width:55px;background-position: -676px -157px}#newsearch{background:#536e93;width:999px;height:54px;overflow:hidden;position:relative}#navbox{width:520px;margin:6px
+auto;background:#dde7f7;padding:4px;overflow:hidden;height:35px;float:left;margin-left:235px}#searchbar-sponsor{margin:10px
+0 0 20px;float:left}.search-form-new{width:520px}.newinputbox{font:bold 15px arial;width:414px;border:1px
+solid #7E9DB9;border-right:none;padding:8px
+0 7px 4px}.newinputboxcse{font:bold 15px arial;height:29px;width:414px;border:1px
+solid #7E9DB9;border-right:none;padding-left:4px}.newsearchbtn{background-position:-260px -100px;border:medium none;cursor:pointer;height:35px;overflow:hidden;width:100px}.getitnow-tool{background-position:-260px -150px;background-repeat:no-repeat;border:medium none;cursor:pointer;height:25px;overflow:hidden;width:90px}#wrapper{overflow:hidden;padding:10px
+0 20px 0;display:block;background:#fff}#alpha{background:#A6C3D7;line-height:35px;clear:both;font:bold 14px/35px arial;color:#454545;text-align:center}#alpha a:link,#alpha a:visited{color:#454545;padding:0
+2px}#alpha a:hover,#alpha a:active{color:#FFF}#footer{clear:both;font:11px tahoma,sans-serif;width:999px;margin:0
+auto;color:#919191;padding:12px
+0;background:#D1E2EF;overflow:hidden}#footer a:link,#footer a:visited{color:#444}#footer a:hover,#footer a:active{color:#000}#f-r{padding:20px;padding-top:10px;float:left;font:normal 13px Arial;line-height:24px}.footer-title{color:#343434;font:bold 12px arial}.footer-copyright{color:#444;font:normal 12px arial;line-height:24px}* html #f-r{margin-right:25px}#f-l{margin-left:11px;margin-top:9px;color:#707070;text-align:center}#f-l
+strong{color:#536e93}#f-l
+em{font-style:normal;color:#a54534}#print_footer_addin{display:none}.block{border:1px
+solid #aaa;margin:20px
+0;width:336px}.block-small{border:1px
+solid #aaa;margin:0px
+0 20px 0;width:160px}.block-small
+.title{background:url("http://img.businessdictionary.com/section_bg.png") repeat-x scroll center center transparent;//color:#FFF;min-height:30px;text-shadow:-1px 1px 0 #FFF;padding-left:10px;padding-top:7px}.block
+.title{background:url("http://img.businessdictionary.com/section_bg.png") repeat-x scroll center center transparent;color:#FFF;min-height:32px}.title
+h3{color:#000 !important;float:left;font:bold 14px Verdana;margin:0
+!important;max-width:85%;padding-left:10px;padding-top:7px;text-shadow:-1px 1px 0 #FFF}.block
+a{text-decoration:none}.block .block-content{border-top:1px solid #AAA;overflow:auto;padding:10px}.block-small .block-content{border-top:1px solid #AAA;overflow:auto;padding:10px
+5px 4px 6px}.block-small
+a{text-decoration:none;padding:0px;margin:0px}.block-small a:hover{text-decoration:underline}.signupForm{padding-bottom:1em}.signupForm
+*{vertical-align:middle}.signupFormEmail{height:23px;margin-left:0;width:200px;border:solid 1px #343434;border-right:0;font:normal 13px arial;padding-left:4px}.signupFormPrivacy{font-size:11px;padding-top:2px}#suggestions{border:1px
+solid #498fc6;width:418px;font-size:9pt;background-color:#fff !important;z-index:9999;position:absolute}#suggestions
+a{display:block;color:#076499;padding:2px
+6px 2px 6px;text-decoration:none}a.out{display:block;color:#076499;padding:2px
+6px 2px 6px;background-color:white !important}a.over{background-color:#e1f3ff !important;color:#a44533}div.popupwindow{width:340px;z-index:1003;position:absolute;left:0;top:200px;margin-left:auto;margin-right:auto;background:#fff;font-size:12px;border:2px
+#555 solid;padding:15px}div.popupbtns{width:100%;text-align:center;margin-top:10px}div.popupwindow-cite
+.url{width:750px;padding:4px
+3px;border:1px
+solid #a0a0a0;margin-bottom:4px;text-align:center}div.popupwindow
+.ok{background:#B54229 url('http://img.businessdictionary.com/ok.gif') no-repeat;border:0pt none;cursor:pointer;height:25px;margin-left:10px;position:relative;width:57px;border-radius:3px}div.popupwindow
+.send{background:#B54229 url('http://img.businessdictionary.com/popup-send.png') no-repeat;border:none;cursor:pointer;height:25px;margin-left:10px;position:relative;width:57px}div.popupwindow
+.close{background:#B54229 url('http://img.businessdictionary.com/popup-close.png') no-repeat;border:none;cursor:pointer;height:25px;margin-left:10px;position:relative;width:57px}div.popupwindow
+.cancel{background:#B54229 url('http://img.businessdictionary.com/popup-cancel.png') no-repeat;border:none;cursor:pointer;height:25px;margin-left:10px;position:relative;width:57px}.close_div{text-align:right;padding-bottom:5px}.close_div
+img{cursor:pointer}.close-div-padded{margin-bottom:10px}#bdanswers-section{margin:20px
+0 20px;padding-bottom:10px}.qalist{display:block;background:url('http://img.businessdictionary.com/qaicon.png') no-repeat top left;padding:1px
+0 10px 75px}.qalist h2
+a{color:#A44533;font:20px arial,sans-serif;padding:0;margin:0
+0 0.4em 0;text-decoration:none}.tipod
+h2{margin-top:-0.4em}.tipod h2
+a{color:#A44533;font:20px arial,sans-serif;padding:0;margin:0
+0 0.4em 0;text-decoration:none;margin-top:-0.4em}#bdanswers-section .qalist
+ul{padding:0;margin:0
+0 0 14px}#bdanswers-section .qalist ul
+li{padding:5px
+0 2px 0}#bdanswers-section
+a{text-decoration:none}.qaform{padding-left:75px}a.askyourquestion{background:url('http://img.businessdictionary.com/askyourquestion.png') no-repeat top left;width:162px;height:27px;background-position:0 0;display:block}a.askyourquestion:hover{background-position:0 -27px}.askyourquestion
+span{display:none}.grey{font-size:12px;color:#8f8f8f}.leaderboard-placement{background-color:#E0EAEF;width:999px;overflow:hidden;margin:0px
+0px 8px 0px;padding:13px
+0 13px 0;text-align:center}.leaderboard-placement-split{width:999px;overflow:hidden;margin:0px
+0px 8px 0px;padding:0px
+0 10px 0}.menu-split{background:#DDE7F7;overflow:hidden}a.smenufirst{text-decoration:none;padding:5px
+12px;font:14px arial;color:#1f3b5d;border-right:1px solid #84a1c4;display:block;float:left;overflow:hidden;background:#DDE7F7}a.smenufirst:hover{text-decoration:none;padding:5px
+12px;font:14px arial;color:#fff;border-right:1px solid #84a1c4;display:block;float:left;background:#33557e}a.smenu{text-decoration:none;padding:5px
+12px;font:14px arial;color:#1f3b5d;border-right:1px solid #84a1c4;border-left:1px solid #fff;display:block;float:left;overflow:hidden;background:#DDE7F7}a.smenu:hover{text-decoration:none;padding:5px
+12px;font:14px arial;color:#fff;border-right:1px solid #84a1c4;border-left:1px solid #fff;display:block;float:left;background:#33557e}a.smenua{text-decoration:none;padding:5px
+12px;font:14px arial;color:#fff;border-right:1px solid #84a1c4;border-left:1px solid #fff;display:block;float:left;background:#33557e}a.smenufirsta{text-decoration:none;padding:5px
+12px;font:14px arial;color:#fff;border-right:1px solid #84a1c4;display:block;float:left;background:#33557e}#splilayoutlinks{position:relative}#splilayoutlinks
+ul{padding:0;margin:0}#splilayoutlinks ul
+li{padding:0px;padding:0
+6px;border-right:1px solid #88a6cf;list-style:none;float:left}#splilayoutlinks ul li
+a{color:#d7e8ff;font-weight:bold;text-decoration:none}#splilayoutlinks ul li a:hover{text-decoration:underline}#splilayoutlinks ul
+li.morenav{color:#fff;border-right:none;height:30px;background:transparent;display:block;cursor:pointer}#splilayoutlinks .more-links{background:#113260;padding:4px
+6px;width:124px;position:absolute;top:30px;left:154px}#splilayoutlinks .more-links
+a{display:block;color:#d7e8ff;font-weight:bold;text-decoration:none;padding:4px
+0}#splilayoutlinks .more-links a:hover{text-decoration:underline}a.signup-check-button,a.signup-check-button:visited,a.signup-check-button:active,a.signup-check-button:link{color:white;padding:4px
+6px;font-size:150%;font-weight:bold;border:1px
+solid #444;display:inline-block;margin-left:10px;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;box-shadow:1px 1px #888;text-decoration:none;margin-bottom:5px}a.signup-check-button:hover{box-shadow:1px 1px #bbb}a#wrong-one{background:#E00000}a#wrong-one:hover{background:red}a#right-one{background:#0253B7}a#right-one:hover{background:#328dfd}.signup-check-desc{font-size:135%;margin-bottom:7px;color:#222;font-weight:bold}.toast-bar{display:none;bottom:0px;right:0px;position:fixed;min-height:130px;width:400px;background:#fff;border:1px
+solid #aaa;font-family:Verdana,Arial,sans-serif;color:#111;box-shadow:2px 2px 22px 0px #111;z-index:1000}.toast-bar-close{position:absolute;width:24px;height:24px;margin:5px;right:0;top:0;background:url('http://img.businessdictionary.com/close-toast-bd.png') no-repeat;cursor:pointer}.sidead{z-index:1000;position:relative}.link-mimic{text-decoration:underline;color:#0253B7}a.toast-bar-link{color:#444;text-decoration:none}a.toast-bar-link:hover{background:#ddd}a.toast-bar-link-ads{color:#0253B7;text-decoration:none}a.toast-bar-link-ads:hover{color:#A44533}.subject-letter-links-div
+a{text-transform:capitalize}a.subscribe-fb-button,a.subscribe-fb-button:active,a.subscribe-fb-button:link,a.subscribe-fb-button:visited{padding:7px
+9px;padding-left:50px;height:20px;background-image:url('http://img.businessdictionary.com/fb-subscribe.png');background-position:top left;background-repeat:no-repeat;background-color:#2A49A5;color:white;font-size:18px;text-decoration:none;border:1px
+solid #082783;box-shadow:0 1px #4C6BC7 inset}a.subscribe-fb-button:hover{background-color:#07528c}.fb-subscribe{margin-top:25px;margin-bottom:35px}a.mobile-notification{background:gold;padding:4px
+6px;text-align:center;display:block;color:black;font-size:150%;width:100%;display:none}.social-media-buttons{margin-top:15px;padding:10px;width:314px;background:#eee;border:1px
+solid #aaa}.social-media-buttons
+a{display:inline-block}.invest-in-us-box{padding:10px
+0;margin-top:10px;text-align:center}a.invest-button{background:#536E93;padding:5px
+7px;color:white;border:1px
+solid #0253B7;display:inline-block;font-size:145%;text-decoration:none}a.invest-button:hover{color:white;background:#0253B7}.show-ticker{font-size:105%;color:#555;padding:5px;background:#DDE7F7;border:1px
+solid #8DB6C4;margin-bottom:20px}.show-ticker
+p{text-align:center}#ticker-search{padding:2px
+4px;color:#444;width:200px}#stock-search-autocomplete{display:none;position:absolute;background:#CAE6DC;color:#111;font-size:120%;border-bottom:1px solid gray;width:210px}a.stock-result{display:block;width:98%;padding:3px;background:white;color:#111;font-size:11px;text-align:left;border-bottom:1px dotted gray;border-left:1px solid gray;border-right:1px solid gray;text-decoration:none}a.stock-result:hover{background:#CAE6DC}input.show-ticker-submit{color:#111;border:1px
+solid #bd9208;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;font-weight:bold;padding:3px
+5px;margin-left:3px;display:inline-block;text-align:center;background-color:#F8D44C;width:85px;background: -moz-linear-gradient(top,#FFF39C,#FEE474 50%,#FDD14C 50%,#FCC42E);background: -webkit-gradient(linear,left bottom,left top,color-stop(0.00,#FCC42E),color-stop(0.50,#FDD14C),color-stop(0.50,#FEE474),color-stop(1.00,#FFF39C))}.show-ticker-heading{font-weight:bold;text-align:left;margin-bottom:5px}a.login-button,a.login-button:link,a.login-button:active,a.login-button:visited,input.login-button{display:inline-block;border:1px
+solid #0069b2;text-decoration:none;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;-o-border-radius:4px;background-color:#0087E5;padding:4px
+7px;color:white !important;text-align:center;font-weight:normal;font-size:105%;font-family:'Segoe UI','Calibri',verdana,arial,sans-serif;cursor:pointer}a.login-button:hover,input.login-button:hover{background:#0069b2}input.login-green{background:#007e00;border:1px
+solid #004b00}input.login-red{background:#9e1116;border:1px
+solid #590a0c}input.login-green:hover{background:#006500}input.login-red:hover{background:#b51319}.center-block{padding:50px;padding-left:300px;font-family:'Segoe UI','Calibri',verdana,arial,sans-serif;font-size:14px}.main-block{padding:10px;padding-left:150px;font-family:'Segoe UI','Calibri',verdana,arial,sans-serif;font-size:14px;padding-bottom:50px;overflow:hidden}.login-table
+td{color:#555;font-size:135%;padding-right:5px;padding-top:5px}.login-table input[type='text'],.login-table input[type='password']{color:#333;border:1px
+solid #aaa;border-radius:3px;padding:4px
+7px;font-size:16px;width:200px}.profile-errors,.error-validation{margin-top:5px;margin-bottom:5px;background:maroon;color:white;font-size:90%;font-weight:bold;padding:4px
+6px;text-transform:uppercase}.user-block{font-family:'Segoe UI','Calibri',verdana,arial,sans-serif;font-size:14px;padding:10px}.profile-block{background:#eee;border:1px
+solid #ddd;padding:5px;margin-top:25px}.main-block
+h3{margin-bottom:5px;font-size:24px}.fav-block{margin-top:5px}a.favorite-button{display:inline-block;text-decoration:none}a.favorite-button:hover{}ul.the-pitch{padding-left:20px;padding-top:5px}ul.the-pitch
+li{line-height:2em;color:#444;font-size:16px}a.user-button{font-size:14px !important;font-weight:normal !important}.top-bar{padding:3px
+7px;background:#ddd;border:1px
+solid #ccc;opacity:0.8;filter:alpha(opacity=80);min-height:32px;margin-bottom:15px;margin-top:11px;display:none}.top-bar-content{margin:0
+auto;width:425px}.top-bar-content-new{position:absolute;top:3px;right:110px}.top-bar-buttons{text-align:right}.top-bar-buttons
+a{margin-right:10px}.save-fav-button-div{DISPLAY:INLINE-BLOCK;float:left}.star-on{display:inline-block;width:20px;height:20px;text-decoration:none;background-image:url('http://img.businessdictionary.com/star_on_4.gif')}.star-off{display:inline-block;width:20px;height:20px;text-decoration:none;background-image:url('http://img.businessdictionary.com/star_off_4.gif')}.star-on-2{display:inline-block;width:15px;height:15px;text-decoration:none;background-image:url('http://img.businessdictionary.com/star_on_2.gif')}.star-off-2{display:inline-block;width:15px;height:15px;text-decoration:none;background-image:url('http://img.businessdictionary.com/star_off_2.gif')}.star-on-3{display:inline-block;width:20px;height:20px;text-decoration:none;background-image:url('http://img.businessdictionary.com/star_on_3.gif')}.star-off-3{display:inline-block;width:20px;height:20px;text-decoration:none;background-image:url('http://img.businessdictionary.com/star_off_3.gif')}.star-on-4{display:inline-block;width:20px;height:20px;text-decoration:none;background-image:url('http://img.businessdictionary.com/star_on_4.gif')}.star-off-4{display:inline-block;width:20px;height:20px;text-decoration:none;background-image:url('http://img.businessdictionary.com/star_off_4.gif')}.tipsy{padding:5px;font-size:10px;position:absolute;z-index:100000}.tipsy-inner{padding:5px
+8px 4px 8px;background-color:black;font-size:10px !important;color:white;max-width:200px;text-align:center}.tipsy-inner{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}.tipsy-arrow{position:absolute;background:url('http://img.businessdictionary.com/tipsy.gif') no-repeat top left;width:9px;height:5px}.tipsy-n .tipsy-arrow{top:0;left:50%;margin-left: -4px}.tipsy-nw .tipsy-arrow{top:0;left:10px}.tipsy-ne .tipsy-arrow{top:0;right:10px}.tipsy-s .tipsy-arrow{bottom:0;left:50%;margin-left: -4px;background-position:bottom left}.tipsy-sw .tipsy-arrow{bottom:0;left:10px;background-position:bottom left}.tipsy-se .tipsy-arrow{bottom:0;right:10px;background-position:bottom left}.tipsy-e .tipsy-arrow{top:50%;margin-top: -4px;right:0;width:5px;height:9px;background-position:top right}.tipsy-w .tipsy-arrow{top:50%;margin-top: -4px;left:0;width:5px;height:9px}a.save-fav-button,a.usage-example-link,a.add-flashcards-button{margin-right:10px;font-size:9px;float:right;font-weight:normal;text-decoration:none !important;padding:3px
+5px;border:1px
+solid #ddd;background:#ccc;border-radius:4px;color:white !important;border:1px
+solid #0069b2;text-decoration:none;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;-o-border-radius:4px;background-color:#0087E5}a.save-fav-button:hover,a.usage-example-link:hover{background:#0069b2}a.save-fav-button-test{font:bold 10px/16px Verdana;color:black;border:none;letter-spacing:0;background:url(http://img.businessdictionary.com/fav-love-icon.png) center left no-repeat;padding-left:16px;float:right;border:none}a.save-a-note{margin-top:2px;float:right;text-decoration:none !important;padding:3px
+5px;background-image:url('http://img.businessdictionary.com/pencil.png');background-repeat:no-repeat;cursor:pointer;display:inline-block;width:18px;height:12px;border:0
+!important}#examples{}li.usage-example{margin-bottom:15px}li.usage-example h2, li.usage-example
+h3{display:none !important;font:13px Verdana,Arial,sans-serif !important;color:black !important;text-decoration:underline}.vote-sprite{background:url('http://img.businessdictionary.com/bd-vote-sprite.png') 0 0 no-repeat}.vote-down{width:14px;height:14px;background-position: -30px -17px;display:inline-block;margin-right:6px}.vote-up{width:14px;height:14px;background-position: -15px -17px;display:inline-block;margin-right:6px}.vote-div{text-align:right;padding:3px;border:1px
+solid #ccc;margin-top:5px;color:#444;margin-bottom:10px;font-size:10px;font-weight:bold;padding-right:15px;background:#eee}.vote-div
+a{display:inline-block;margin-left:15px;text-decoration:none}.vote-up-span, .vote-up-span
+a{color:green;font-size:10px;text-decoration:none}.vote-down-span, .vote-down-span
+a{color:red;font-size:10px;text-decoration:none}.vote-up-count,.vote-down-count,a.vote-up-count,a.vote-down-count{font-size:10px;text-decoration:none}.profile-favorites,.history-favorites{width:960px;padding:3px}.profile-favorites tr, .history-favorites
+tr{padding:3px}.profile-favorites td, .history-favorites
+td{padding-top:0.5em;padding-bottom:0.5em}a.show-hide-definition-link{font-weight:normal;font-size:14px}a.show-share-link{font-weight:normal;font-size:14px;margin-right:12px}.show-hide-definition-div
+a{text-decoration:none}.profile-block
+span{padding-top:5px}.profile-block
+h3{font-size:18px}#term_favorite_star{width:25px;display:block;float:left;padding-top:8px}#audio-speaker-box{width:20px;height:17px;display:block;float:left;text-align:right}.term_lookup_save_div{padding:5px;padding-top:0;text-align:center}.term_lookup_save_div
+a{text-decoration:underline;font-weight:bold}.profile-tabs{border-bottom:1px solid #777}.profile-tabs
+a{display:inline-block;padding:3px
+5px;text-decoration:none;background:#ccc;color:#222;border:1px
+solid #ddd;border-bottom:none;margin-right:5px}.profile-tabs a:hover,a.selected-profile-tab-link,a.selected-profile-tab-link:hover{background:#777;color:#fff}.no-margin-blocks{margin-top:0 !important}#definition_div ol li, #definition_div ul
+li{color:black;font:14px Verdana,Arial,sans-serif;padding:4px;line-height:1.5em}#definition_div ul
+li{margin-left:15px}#definition_div ol li a,#definition_div ul li
+a{display:inline-block;color:black;font:14px Verdana,Arial,sans-serif;padding:0px}.fixed-notification-message{font-size:12px;position:fixed;padding:3px
+5px;text-align:center;border:1px
+solid #ddd;width:25%;left:50%;margin:0
+0 0 -12.5%;top:0;border-radius:0 0 4px 4px;background:#ffb700;z-index:111111}.spell-checker-div{background:#b4caed;padding:4px
+6px;font-size:14px;color:#333}.spell-checker-links{margin:10px;text-align:center}.spell-checker-links
+a{color:#fff;text-decoration:none;display:inline-block;border:1px
+solid #777;text-align:center;padding:4px
+6px;background:#999;border-radius:7px;font-size:16px}.spell-checker-links a:hover{background:#666}.special-message-div{color:maroon;font-weight:bold}.signup-message-box{border:1px
+dotted #ddd;border-radius:5px;padding:5px
+7px;margin-bottom:5px;margin-top:5px;margin-left:11px;width:96%;background:#FFFFCE;color:#555;font-size:13px;box-shadow:1px 1px 7px #444}.signup-message-box-header{float:right;width:2%;text-align:right}.signup-message-box-content{float:left;width:95%;font-size:13px;color:#111;padding-left:15px}.signup-message-box-close{display:inline-block;width:9px;height:9px;background-image:url('http://img.businessdictionary.com/delete.png')}#edit-definition-area{margin-top:10px}#edit-definition-area
+textarea{width:412px;height:300px;font-family:Verdana,Arial,sans-serif;padding:3px
+5px;border:1px
+solid #ddd}#edit-definition-area
+div{text-align:right;margin-top:15px}#edit-definition-area div
+a{margin-left:15px}.browse-videos{margin-top:30px;padding-left:75px}.browse-videos
+h2{color:#A44533;font:20px arial,sans-serif;padding:0;margin:0
+0 0.4em 0;text-decoration:none;margin-top: -0.4em}.search_tip{position:relative}.search_tip_content{text-align:center;font-size:16px}.search_tip_content
+img{position:absolute;left:100px;top:-70px}.seach_content_seperate{margin:24px
+0;font-weight:bold}.search_tip_content
+ul{list-style:none;line-height:30px}@media screen and (min-device-width: 500px) and (max-device-width:768px){.toast-bar{display:none !important}}.membership
+ul{margin-bottom:10px;margin-left:15px;margin-top:5px}.membership ul
+li{color:#000 !important;text-shadow:0 0 1px #f0f0f0;margin-bottom:0}.blocks.membership{clear:both;position:relative}.fb-signup-btn{display:block;padding:10px
+!important;border:1px
+solid #2D83E0;background:#2D83E0 url('http://img.businessdictionary.com/membership-btn-bg.png') 0 -100px repeat-x;font:normal 16px Helvetica,Arial,sans-serif;color:#fff !important;border-radius:2px;cursor:pointer;box-shadow:0 0px 1px #FFF;text-decoration:none}#membership-popup{position:fixed;z-index:1001;background:white;border:3px
+solid #ddd;border-radius:5px;padding:5px
+7px;font-family:Arial,Helvetica,sans-serif}#membership-popup .small-gray-link{color:#888;font-size:12px;display:inline-block}.membership
+.box1{width:300px;padding-right:10px;float:left;position:relative}.membership-sprite{background:url('http://img.businessdictionary.com/membership-sprite.png')}.fbicon{display:inline-block;width:11px;height:18px;background-position: -40px -10px;padding-right:10px;margin-right:10px;border-right:1px solid #1A51A5}#membership-popup
+form{padding-left:25px}#membership-popup
+.cta{font-size:17px !important;color:#777 !important;text-align:center;font-weight:bold}#membership-popup ul
+li{font-size:13px;color:#555 !important}#membership-popup .membership-popup-message{color:#a72005;text-align:center;font-size:12px;font-weight:bold;margin:10px;text-align:center}#membership-popup
+input{display:block;padding:6px
+3px 6px 6px;font:normal 16px Helvetica,Arial,sans-serif;margin-bottom:2px;width:250px;border-radius:2px;border:1px
+solid #81caff}#membership-popup input[type="submit"]{display:block;padding:6px
+3px 6px 6px;font:normal 16px Helvetica,Arial,sans-serif;margin-bottom:2px;margin-top:7px;width:250px;border:1px
+solid #81caff;background:#0087E5;color:white;border-radius:2px;cursor:pointer;text-align:center;width:258px;box-shadow:0 0 1px #fff}#membership-popup
+.label{font-size:12px;font-weight:bold;padding:0;margin-top:5px}.membership-popup-close{float:right;margin-right:10px;margin-top:5px}.membership-popup-close
+a{color:#aaa;font-size:16px;cursor:pointer;font-weight:bold;text-decoration:none}.membership-popup-close a:hover{color:#888;text-decoration:none}.email-validation,.password-validation{display:none;color:#a72005;font-weight:bold;font-size:10px;text-align:center}.email-validation-sub{font-size:12px !important;color:#333;font-weight:normal;display:block;background:#eee;padding:3px
+4px}a.email-validation-anchor{color:#0253B7 !important;font-weight:bold;font-size:12px !important}a.signup-check-button,a.signup-check-button:visited,a.signup-check-button:active,a.signup-check-button:link{color:white;padding:4px
+6px;font-size:120%;font-weight:bold;border:1px
+solid #444;display:inline-block;margin-left:10px;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;box-shadow:1px 1px #888;text-decoration:none;margin-bottom:5px}a.signup-check-button:hover{box-shadow:1px 1px #bbb}a#wrong-one{background:#E00000}a#wrong-one:hover{background:red}a#right-one{background:#0253B7}a#right-one:hover{background:#328dfd}.black_overlay{display:block !important;position:fixed;top:0;left:0;right:0;bottom:0;background:#333;z-index:1001;-moz-opacity:0.8;opacity: .80;filter:alpha(opacity=80)}.poll-lean-test-title{padding:10px
+10px 10px 10px;font-family:'Segoe UI','Calibri',verdana,arial,sans-serif;font-size:124%;color:black;font-weight:bold;border-bottom:#000 1px solid}.poll-lean-test-question{font-weight:bold;padding:10px;font-size:110%}.poll-lean-test-choices{padding:0
+10px 10px 10px;font-size:105%}.poll-meter{height:15px;background-color:#D3D3D3}.poll-meter>span{height:100%;display:block;overflow:hidden;background-color:#4682B4}.webinar{position:relative}.webinar
+.tag{position:absolute;top:-10px;left:-8px;padding:3px
+8px 3px 6px;background:#FF4725;border-radius:2px 10px 10px 2px;display:inline-block;color:#fff;font-weight:bold;font-size:12px;font-style:italic}.webinar .event-title{padding:20px
+20px 0px 20px;font:bold 20px/24px Arial}.webinar .event-brief{padding:10px
+20px}.webinar .event-signup{height:auto;position:relative;min-height:38px;margin:0
+auto;padding:10px
+13px}.event-error{display:none;position:absolute;background:#FF5038;padding:4px
+12px;margin-top:6px;border-radius:3px;font-size:11px,Arial;color:#3A0000;width:160px;top:40px}.event-error-arrow{width:16px;height:11px;background:url(http://img.businessdictionary.com/arrow.png) 0 0 no-repeat;position:absolute;top:-8px;left:10px;display:block}.event-email,.event-submit,.blue-btn{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;height:34px}.event-email{width:190px;display:block;float:left;border:1px
+solid #7f7f7f;padding:6px
+2px;box-shadow:inset 1px 1px 6px #BBB;padding-left:4px;font:bold 14px arial}.event-submit{width:120px;display:block;float:left;border:transparent;color:#fff;font-weight:bold;font:bold 14px arial}.logged-signup{border-radius:3px;padding:6px
+12px;width:140px}.event-singup-success{padding:10px}.blue-btn,.green-btn,.red-btn,.gery-btn{padding:6px
+12px !important;cursor:pointer;box-shadow:0 0px 1px #FFF;display:inline-block;text-decoration:none}.blue-btn span, .green-btn span, .red-btn span, .gery-btn
+span{}.blue-btn:hover,.green-btn:hover,.red-btn:hover{text-decoration:none;color:#fff}.blue-btn{background:#004ede url(http://img.businessdictionary.com/new/btn-bg.png) 0 -20px repeat-x}#download-android-app{width:408px;height:176px;display:block;position:fixed;bottom:0;background:url(http://img.businessdictionary.com/download-app-footer.png) 0 0 no-repeat;-webkit-opacity:0;-moz-opacity:0;filter:alpha(opacity=0);-webkit-transition:opacity 1s ease-in-out;-moz-transition:opacity 1s ease-in-out;-ms-transition:opacity 1s ease-in-out;-o-transition:opacity 1s ease-in-out;transition:opacity 1s ease-in-out;right:-400px;-webkit-transition:right 1s ease-in-out;-moz-transition:right 1s ease-in-out;-ms-transition:right 1s ease-in-out;-o-transition:right 1s ease-in-out;transition:right 1s ease-in-out}.download-android-app-btn{position:absolute;top:94px;right:218px}.download-android-app-close{width:19px;height:19px;background:url(http://img.businessdictionary.com/app-download-close.png) 0 0 no-repeat;position:absolute;right:10px;top:90px;cursor:pointer}#hidentity-click-1,#hidentity-click-2{width:423px;height:214px;display:block;position:fixed;bottom:0;-webkit-opacity:0;-moz-opacity:0;filter:alpha(opacity=0);-webkit-transition:opacity 1s ease-in-out;-moz-transition:opacity 1s ease-in-out;-ms-transition:opacity 1s ease-in-out;-o-transition:opacity 1s ease-in-out;transition:opacity 1s ease-in-out;right:-420px;-webkit-transition:right 1s ease-in-out;-moz-transition:right 1s ease-in-out;-ms-transition:right 1s ease-in-out;-o-transition:right 1s ease-in-out;transition:right 1s ease-in-out}#hidentity-click-1{background:url(http://img.businessdictionary.com/hidentity-box.png) 0 0 no-repeat}#hidentity-click-2{background:url(http://img.businessdictionary.com/hidentity-box-2.png) 0 0 no-repeat}.hidentity-link{width:235px;height:143px;display:block;position:absolute;background:transparent;top:70px;left:15px}.hidentity-link
+a{width:235px;height:143px;display:block}.hidentity-close{width:19px;height:19px;background:url(http://img.businessdictionary.com/app-download-close.png) 0 0 no-repeat;position:absolute;right:10px;top:80px;cursor:pointer}

@@ -1,0 +1,2307 @@
+<!DOCTYPE html>
+<!-- saved from url=(0309)http://disqus.com/embed/comments/?base=default&disqus_version=eee8269f&f=idg-javaworld&t_u=http%3A%2F%2Fwww.javaworld.com%2Fjavaworld%2Fjw-10-2000%2Fjw-1020-ant.html&t_d=Automate%20your%20build%20process%20using%20Java%20and%20Ant&t_t=Automate%20your%20build%20process%20using%20Java%20and%20Ant&s_o=default#2 -->
+<html lang="en" dir="ltr" class="js no-touch localstorage sessionstorage contenteditable use-opacity-transitions"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Disqus Comments</title>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+    <style>
+        html {
+            overflow: hidden;
+        }
+        
+    </style>
+
+<link rel="stylesheet" href="http://a.disquscdn.com/next/styles/lounge.0add02c3a1485960043585ca3d42150a.css"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common/config" src="config.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common.bundle" src="common.eba814dfeab74de815c9346de1a70d57.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lounge.bundle" src="lounge.3212a443d2279760d3c443e29578fee8.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="http://www.google-analytics.com/ga.js" src="ga.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="http://b.scorecardresearch.com/beacon.js" src="beacon.js"></script><style id="css_1399266980229"></style><!--<base target="_parent" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html">--><base href="." target="_parent"><script src="event.js" async="" charset="UTF-8"></script></head>
+<body style="">
+    
+    <!--[if lte IE 8]>
+<script src="//a.disquscdn.com/1398199000/build/vendor/ie8.js"></script>
+<![endif]-->
+<!--[if IE 9]>
+<script src="//a.disquscdn.com/1398199000/build/vendor/ie9.js"></script>
+<![endif]-->
+
+    
+<script type="text/json" id="disqus-urls">{
+    "root":"//disqus.com",
+    "next":"//a.disquscdn.com/next/eee8269f"
+}</script>
+
+    
+
+    
+    <script type="text/json" id="disqus-forumData">{"session":{"canModerate":false,"isReadOnly":null,"audienceSyncVerified":false,"canReply":true,"notificationCount":null,"mustVerifyEmail":false},"features":{"training":true,"logs":true,"realtime":true,"support_implementation":true,"partner_key":true,"multiauthor_moderation":true,"support_vip":true,"vip_servers":true,"analytics":true,"sso":true,"multisite_admin":true,"uptime":true,"dtpl_editor":true},"forum":{"name":"JavaWorld","founder":"7785668","settings":{"canEnableSponsoredComments":false,"hasCustomAvatar":false,"allowAnonPost":false,"allowMedia":false,"moderatorText":"","typeface":"sans-serif","promotedDiscoveryEnabled":false,"discoveryMax":false,"ssoRequired":false,"discoveryLocked":false,"audienceSyncEnabled":false,"organicDiscoveryEnabled":false,"backplaneEnabled":false,"discoveryThumbnailsEnabled":false,"colorScheme":"light","sponsoredCommentsEnabled":false,"linkAffiliationEnabled":false},"url":"http://www.javaworld.com","favicon":{"permalink":"http://disqus.com/api/forums/favicons/idg-javaworld.jpg","cache":"//a.disquscdn.com/uploads/forums/75/8805/favicon.png"},"language":"en","avatar":{"small":{"permalink":"http://disqus.com/api/forums/avatars/idg-javaworld.jpg?size=32","cache":"//a.disquscdn.com/1398199000/images/noavatar32.png"},"large":{"permalink":"http://disqus.com/api/forums/avatars/idg-javaworld.jpg?size=92","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"}},"pk":758805,"id":"idg-javaworld"}}</script>
+
+    
+    <script type="text/json" id="disqus-threadData">{"cursor":{"hasPrev":false,"prev":null,"total":14,"hasNext":false,"next":"1:0:0"},"code":0,"response":{"lastModified":1395431234,"posts":[{"isFlagged":false,"forum":"idg-javaworld","parent":null,"author":{"username":"google-879cd7290c4b743858bbdd6c34158e5c","about":"","name":"punit pannu","url":"","isAnonymous":false,"rep":1.232222,"profileUrl":"http://disqus.com/google-879cd7290c4b743858bbdd6c34158e5c/","reputation":1.232222,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2012-08-27T09:44:46","id":"31199081","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/google-879cd7290c4b743858bbdd6c34158e5c.jpg","cache":"//a.disquscdn.com/1398199000/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/google-879cd7290c4b743858bbdd6c34158e5c.jpg","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/google-879cd7290c4b743858bbdd6c34158e5c.jpg","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"nice work michal...its an excellent example for beginners..thanks","createdAt":"2012-08-27T09:44:48","id":"630710923","thread":"396856452","depth":0,"numReports":0,"likes":1,"isEdited":false,"message":"\u003cp>nice work michal...its an excellent example for beginners..thanks\u003c/p>","isSpam":false,"isHighlighted":false,"points":1},{"isFlagged":false,"forum":"idg-javaworld","parent":null,"author":{"name":"Anonymous","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar32.png","cache":"//a.disquscdn.com/1398199000/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"excellent example for beginner\r\nThanks, it is a excellent example for beginner. ","createdAt":"2010-07-27T00:41:00","id":"303797881","thread":"396856452","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>excellent example for beginner\u003cbr>Thanks, it is a excellent example for beginner. \u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"idg-javaworld","parent":null,"author":{"name":"Anonymous","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar32.png","cache":"//a.disquscdn.com/1398199000/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"screen background\r\nIt is horrible and make the article unreadable.  Please change it.","createdAt":"2010-05-31T09:57:00","id":"303795877","thread":"396856452","depth":0,"numReports":0,"likes":2,"isEdited":false,"message":"\u003cp>screen background\u003cbr>It is horrible and make the article unreadable.  Please change it.\u003c/p>","isSpam":false,"isHighlighted":false,"points":2},{"isFlagged":false,"forum":"idg-javaworld","parent":null,"author":{"name":"Anonymous","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar32.png","cache":"//a.disquscdn.com/1398199000/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"A good one to start\r\nThis was perfect for a beginner...Thanks a bunch !!!","createdAt":"2010-04-19T10:55:00","id":"303793726","thread":"396856452","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>A good one to start\u003cbr>This was perfect for a beginner...Thanks a bunch !!!\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"idg-javaworld","parent":null,"author":{"name":"Anonymous","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar32.png","cache":"//a.disquscdn.com/1398199000/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"where should we give the username and password for connecting to the remote machine ","createdAt":"2010-03-18T19:43:00","id":"303792095","thread":"396856452","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>where should we give the username and password for connecting to the remote machine \u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"idg-javaworld","parent":null,"author":{"name":"Anonymous","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar32.png","cache":"//a.disquscdn.com/1398199000/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Thanks \r\nHello Michael,\nThanks for writing a real good informative article\nRahul\n ","createdAt":"2010-02-26T09:58:00","id":"303791387","thread":"396856452","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Thanks \u003cbr>Hello Michael,\u003cbr>Thanks for writing a real good informative article\u003cbr>Rahul\u003cbr> \u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"idg-javaworld","parent":null,"author":{"name":"Anonymous","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar32.png","cache":"//a.disquscdn.com/1398199000/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Seriously very informative article.....\nThe concept is explained very nicely... \nthank you.","createdAt":"2010-02-03T08:27:00","id":"303790700","thread":"396856452","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Seriously very informative article.....\u003cbr>The concept is explained very nicely... \u003cbr>thank you.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"idg-javaworld","parent":null,"author":{"name":"Anonymous","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar32.png","cache":"//a.disquscdn.com/1398199000/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"its good for beginners","createdAt":"2010-01-23T10:26:00","id":"303790154","thread":"396856452","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>its good for beginners\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"idg-javaworld","parent":null,"author":{"name":"Anonymous","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar32.png","cache":"//a.disquscdn.com/1398199000/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"excellent article. very helpful","createdAt":"2010-01-20T12:54:00","id":"303789996","thread":"396856452","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>excellent article. very helpful\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"idg-javaworld","parent":null,"author":{"name":"Anonymous","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar32.png","cache":"//a.disquscdn.com/1398199000/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Excellent!\r\nThis is way better than that on the Apache site. Thank you for breaking it down so nicely.","createdAt":"2009-10-27T03:24:00","id":"303787285","thread":"396856452","depth":0,"numReports":0,"likes":1,"isEdited":false,"message":"\u003cp>Excellent!\u003cbr>This is way better than that on the Apache site. Thank you for breaking it down so nicely.\u003c/p>","isSpam":false,"isHighlighted":false,"points":1},{"isFlagged":false,"forum":"idg-javaworld","parent":null,"author":{"name":"Anonymous","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar32.png","cache":"//a.disquscdn.com/1398199000/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"good article. thanks a lot","createdAt":"2009-09-30T08:38:00","id":"303786274","thread":"396856452","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>good article. thanks a lot\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"idg-javaworld","parent":null,"author":{"name":"jeffndoug29","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar32.png","cache":"//a.disquscdn.com/1398199000/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1398199000/images/noavatar92.png","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Hmm..\r\nIs the post blank for everyone else, too? I don't get it..","createdAt":"2009-08-11T21:29:00","id":"303784417","thread":"396856452","depth":0,"numReports":0,"likes":2,"isEdited":false,"message":"\u003cp>Hmm..\u003cbr>Is the post blank for everyone else, too? I don't get it..\u003c/p>","isSpam":false,"isHighlighted":false,"points":2},{"isFlagged":false,"forum":"idg-javaworld","parent":303784417,"author":{"username":"google-c5f78e4566a91290c5f0ef02ac5fa9a2","about":"","name":"Sudhanshu Barthwal","url":"","isAnonymous":false,"rep":1.2324929999999998,"profileUrl":"http://disqus.com/google-c5f78e4566a91290c5f0ef02ac5fa9a2/","reputation":1.2324929999999998,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2012-01-24T18:52:04","id":"21537963","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/google-c5f78e4566a91290c5f0ef02ac5fa9a2.jpg","cache":"//a.disquscdn.com/1398199000/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/google-c5f78e4566a91290c5f0ef02ac5fa9a2.jpg","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/google-c5f78e4566a91290c5f0ef02ac5fa9a2.jpg","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"nice informative article keep doing it\n","createdAt":"2012-01-24T18:52:09","id":"419763971","thread":"396856452","depth":1,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>nice informative article keep doing it\u003cbr>\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"idg-javaworld","parent":303784417,"author":{"username":"google-c5f78e4566a91290c5f0ef02ac5fa9a2","about":"","name":"Sudhanshu Barthwal","url":"","isAnonymous":false,"rep":1.2324929999999998,"profileUrl":"http://disqus.com/google-c5f78e4566a91290c5f0ef02ac5fa9a2/","reputation":1.2324929999999998,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2012-01-24T18:52:04","id":"21537963","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/google-c5f78e4566a91290c5f0ef02ac5fa9a2.jpg","cache":"//a.disquscdn.com/1398199000/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/google-c5f78e4566a91290c5f0ef02ac5fa9a2.jpg","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/google-c5f78e4566a91290c5f0ef02ac5fa9a2.jpg","cache":"//a.disquscdn.com/1398199000/images/noavatar92.png"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"nice informative article keep doing it\n","createdAt":"2012-01-24T18:52:05","id":"419763927","thread":"396856452","depth":1,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>nice informative article keep doing it\u003cbr>\u003c/p>","isSpam":false,"isHighlighted":false,"points":0}],"thread":{"feed":"http://idg-javaworld.disqus.com/superb/latest.rss","uploadAdd":"//idg-javaworld.disqus.com/thread/superb/async_media_upload/","identifiers":["http://www.javaworld.com/82234/","http://www"],"dislikes":0,"likes":9,"message":"","id":"396856452","createdAt":"2011-08-26T20:11:02","category":"771485","clean_title":"Automate your build process using Java and Ant","userScore":0,"moderators":[6880640,7785668,14891943,353384,3695530,16784915,1002652],"isDeleted":false,"hasStreaming":false,"uploadRemove":"//idg-javaworld.disqus.com/thread/superb/async_media_remove/","isClosed":false,"link":"http://www.javaworld.com/javaworld/jw-10-2000/jw-1020-ant.html","slug":"superb","forum":"idg-javaworld","author":"7785668","posts":14,"userSubscription":false,"title":"Automate your build process using Java and Ant","highlightedPost":null}},"order":"desc"}</script>
+
+    
+
+    <div id="fixed-content"></div>
+
+    <script src="lounge.load.js"></script>
+    
+
+
+<div id="layout">
+
+<div id="discovery-top" data-zone="discovery-top"></div>
+
+<div id="onboard"></div>
+
+<div id="highlighted-post" data-zone="highlighted" class="highlighted-post" style="display: none;"></div>
+
+<header id="main-nav" data-zone="main-nav">
+
+<nav class="nav nav-primary">
+<ul>
+<li class="tab-conversation active">
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-role="post-count" class="publisher-nav-color" data-nav="conversation"><span class="comment-count">
+
+14 comments
+
+</span>
+
+
+<span class="comment-count-placeholder">
+Comments
+</span></a>
+</li>
+<li class="tab-community">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="publisher-nav-color" data-nav="community" id="community-tab">
+
+
+<span class="community-name">
+
+<strong>JavaWorld</strong>
+
+</span>
+
+
+<strong class="community-name-placeholder">Community</strong>
+</a>
+</li>
+<li class="dropdown user-menu" data-role="logout"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="dropdown-toggle" data-toggle="dropdown">
+<span class="dropdown-toggle-wrapper">
+
+
+<span>
+Login
+</span>
+
+
+</span> <span class="caret"></span>
+</a>
+
+<ul class="dropdown-menu">
+
+
+
+
+<li>
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="auth:disqus">Disqus</a>
+</li>
+<li>
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="auth:facebook">Facebook</a>
+</li>
+<li>
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="auth:twitter">Twitter</a>
+</li>
+<li>
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="auth:google">Google</a>
+</li>
+
+
+
+
+
+
+
+</ul></li>
+<li class="notification-menu" data-role="notification-menu"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="notification-container" data-action="auth:disqus">
+<span class="notification-icon icon-disqus"></span></a></li>
+</ul>
+</nav>
+
+</header>
+
+
+
+
+<section id="conversation" data-role="main" data-zone="thread">
+
+<div class="nav nav-secondary">
+<ul>
+
+<li data-role="post-sort" class="dropdown sorting">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="dropdown-toggle" data-nav="conversation" data-toggle="dropdown">
+
+Sort by Newest
+
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+<li>
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="sort" data-sort="popular">Best</a>
+</li>
+
+<li class="selected">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="sort" data-sort="desc">Newest</a>
+</li>
+
+<li>
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="sort" data-sort="asc">Oldest</a>
+</li>
+</ul>
+</li>
+
+
+<li id="thread-votes" class="favorite pull-right">
+<!-- rendered dynamically -->
+<div class="thread-likes" data-role="vote-button"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="upvote" title="Favorite this discussion">
+<span class="label">Favorite</span>
+<span class="icon-star"></span>
+<span class="icon-check"></span>
+</a></div></li>
+
+<li id="thread-share-menu" class="dropdown share-menu">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="dropdown-toggle" data-toggle="dropdown" title="Share">
+<span class="label">Share</span> <span class="icon-export"></span>
+</a>
+<ul class="share-menu dropdown-menu pull-right">
+<li class="share">Share this discussion on
+<ul>
+<li class="twitter">
+<a data-action="share:twitter" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#">Twitter</a>
+</li>
+<li class="facebook">
+<a data-action="share:facebook" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#">Facebook</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+<div id="posts">
+
+<div id="form"><form class="reply"><div class="alert error" style="display:none" role="alert">
+<a class="close" data-action="dismiss-alert" title="Dismiss">×</a>
+<span></span>
+</div>
+
+<div class="postbox">
+<div class="avatar">
+
+<span class="user">
+<img data-role="user-avatar" src="noavatar92.d1dee965677e7cc8d58afe004a6d8282.png">
+</span>
+
+</div>
+
+<div class="textarea-wrapper" data-role="textarea" dir="auto"><div><span class="placeholder">Join the discussion…</span><div class="textarea" tabindex="-1" role="textbox" aria-multiline="true" contenteditable="true" data-role="editable" aria-label="Join the discussion…" style="overflow: auto; max-height: 350px;"><p><br></p></div><div style="display: none;"><ul class="suggestions">
+<li class="header">
+<h5>in this conversation</h5>
+</li>
+</ul></div></div>
+<div data-role="drag-drop-placeholder" class="media-drag-hover" style="display: none">
+<div class="drag-text">
+⬇ Drag and drop your images here to upload them.
+</div>
+</div>
+
+<div class="edit-alert" role="postbox-alert"></div>
+<div class="post-actions">
+<ul class="wysiwyg">
+
+
+</ul>
+
+
+</div>
+</div>
+
+
+<div data-role="login-form"><div><section class="auth-section logged-out">
+<div class="connect">
+<h6>Sign in with</h6>
+
+<ul data-role="login-menu" class="services login-buttons">
+
+
+
+<li class="auth-disqus">
+<button type="button" data-action="auth:disqus" title="Disqus"><i class="icon-disqus"></i></button>
+</li>
+<li class="auth-facebook">
+<button type="button" data-action="auth:facebook" title="Facebook"><i class="icon-facebook-circle"></i></button>
+</li>
+<li class="auth-twitter">
+<button type="button" data-action="auth:twitter" title="Twitter"><i class="icon-twitter-circle"></i></button>
+</li>
+<li class="auth-google">
+<button type="button" data-action="auth:google" title="Google"><i class="icon-google-plus-circle"></i></button>
+</li>
+<li class="auth-signup">
+<button type="button" data-action="auth:disqus" title="Disqus">Sign up for Disqus</button>
+</li>
+</ul>
+
+</div>
+
+<div class="guest">
+<h6 class="guest-form-title">
+
+or register with Disqus
+
+</h6>
+
+<div class="what-is-disqus help-icon">
+<div id="rules" class="tooltip show">
+<h3>Disqus is a conversation network</h3>
+<ul>
+<li><span>Disqus never moderates or censors. The rules on this community are its own.</span></li>
+<li><span>Your email is safe with us. It's only used for moderation and optional notifications.</span></li>
+<li><span>Don't be a jerk or do anything illegal. Everything is easier that way.</span></li>
+</ul>
+<p class="clearfix"><a href="http://docs.disqus.com/kb/terms-and-policies/" class="btn btn-small" target="_blank">Read full terms and conditions</a></p>
+</div>
+</div>
+
+<p class="input-wrapper">
+<input dir="auto" type="text" placeholder="Name" name="display_name" maxlength="30">
+</p>
+
+<div class="guest-details " data-role="guest-details">
+<p class="input-wrapper">
+<input dir="auto" type="email" placeholder="Email" name="email">
+</p>
+
+<p class="input-wrapper">
+<input dir="auto" type="password" placeholder="Password" name="password">
+</p>
+
+<input type="checkbox" name="author-guest" style="display:none">
+
+
+</div>
+</div>
+<div class="proceed">
+
+<button type="submit" class="btn submit" aria-label="Next"><span class="icon-proceed"></span></button>
+
+</div>
+
+</section></div></div>
+
+</div></form></div>
+
+<button class="alert realtime" style="display: none;" data-role="realtime-notification">
+
+</button>
+
+
+<div id="no-posts" style="display: none;">Be the first to comment.</div>
+
+<ul id="post-list" class="post-list"><li class="post" id="post-630710923"><div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/google-879cd7290c4b743858bbdd6c34158e5c/" class="user" data-action="profile" data-user="31199081">
+<img data-role="user-avatar" data-user="31199081" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="profile" data-user="31199081" data-role="username">punit pannu</a></span>
+
+
+
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-630710923" data-role="relative-time" class="time-ago" title="Monday, August 27 2012 4:44 PM">2 years ago</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>nice work michal...its an excellent example for beginners..thanks</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="vote-up  count-1" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-630710923">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:630710923">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul></li><li class="post" id="post-303797881"><div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Anonymous</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303797881" data-role="relative-time" class="time-ago" title="Tuesday, July 27 2010 7:41 AM">4 years ago</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>excellent example for beginner<br>Thanks, it is a excellent example for beginner. </p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303797881">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:303797881">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul></li><li class="post" id="post-303795877"><div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Anonymous</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303795877" data-role="relative-time" class="time-ago" title="Monday, May 31 2010 4:57 PM">4 years ago</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>screen background<br>It is horrible and make the article unreadable.  Please change it.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="vote-up  count-2" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">2</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303795877">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:303795877">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul></li><li class="post" id="post-303793726"><div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Anonymous</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303793726" data-role="relative-time" class="time-ago" title="Monday, April 19 2010 5:55 PM">4 years ago</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>A good one to start<br>This was perfect for a beginner...Thanks a bunch !!!</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303793726">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:303793726">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul></li><li class="post" id="post-303792095"><div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Anonymous</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303792095" data-role="relative-time" class="time-ago" title="Friday, March 19 2010 2:43 AM">4 years ago</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>where should we give the username and password for connecting to the remote machine </p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303792095">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:303792095">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul></li><li class="post" id="post-303791387"><div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Anonymous</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303791387" data-role="relative-time" class="time-ago" title="Friday, February 26 2010 4:58 PM">4 years ago</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Thanks <br>Hello Michael,<br>Thanks for writing a real good informative article<br>Rahul<br> </p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303791387">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:303791387">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul></li><li class="post" id="post-303790700"><div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Anonymous</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303790700" data-role="relative-time" class="time-ago" title="Wednesday, February 3 2010 3:27 PM">4 years ago</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Seriously very informative article.....<br>The concept is explained very nicely... <br>thank you.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303790700">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:303790700">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul></li><li class="post" id="post-303790154"><div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Anonymous</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303790154" data-role="relative-time" class="time-ago" title="Saturday, January 23 2010 5:26 PM">4 years ago</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>its good for beginners</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303790154">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:303790154">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul></li><li class="post" id="post-303789996"><div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Anonymous</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303789996" data-role="relative-time" class="time-ago" title="Wednesday, January 20 2010 7:54 PM">4 years ago</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>excellent article. very helpful</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303789996">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:303789996">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul></li><li class="post" id="post-303787285"><div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Anonymous</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303787285" data-role="relative-time" class="time-ago" title="Tuesday, October 27 2009 10:24 AM">5 years ago</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Excellent!<br>This is way better than that on the Apache site. Thank you for breaking it down so nicely.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="vote-up  count-1" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303787285">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:303787285">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul></li><li class="post" id="post-303786274"><div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">Anonymous</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303786274" data-role="relative-time" class="time-ago" title="Wednesday, September 30 2009 3:38 PM">5 years ago</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>good article. thanks a lot</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303786274">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:303786274">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul></li><li class="post" id="post-303784417"><div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar">
+
+<div class="user"><img src="noavatar92.png" class="user" alt="Avatar"></div>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author">jeffndoug29</span>
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303784417" data-role="relative-time" class="time-ago" title="Wednesday, August 12 2009 4:29 AM">5 years ago</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Hmm..<br>Is the post blank for everyone else, too? I don't get it..</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="vote-up  count-2" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">2</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303784417">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:303784417">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-419763971"><div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/google-c5f78e4566a91290c5f0ef02ac5fa9a2/" class="user" data-action="profile" data-user="21537963">
+<img data-role="user-avatar" data-user="21537963" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="profile" data-user="21537963" data-role="username">Sudhanshu Barthwal</a></span>
+
+
+
+
+
+
+<span><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303784417" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> jeffndoug29</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-419763971" data-role="relative-time" class="time-ago" title="Wednesday, January 25 2012 1:52 AM">2 years ago</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>nice informative article keep doing it<br></p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-419763971">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:419763971">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul></li><li class="post" id="post-419763927"><div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/google-c5f78e4566a91290c5f0ef02ac5fa9a2/" class="user" data-action="profile" data-user="21537963">
+<img data-role="user-avatar" data-user="21537963" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="profile" data-user="21537963" data-role="username">Sudhanshu Barthwal</a></span>
+
+
+
+
+
+
+<span><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-303784417" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> jeffndoug29</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-419763927" data-role="relative-time" class="time-ago" title="Wednesday, January 25 2012 1:52 AM">2 years ago</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>nice informative article keep doing it<br></p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#comment-419763927">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:419763927">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul></li></ul></li></ul>
+
+<div class="load-more" data-role="more" style="display: none;">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="more-posts" class="btn">Load more comments</a>
+</div>
+</div>
+
+</section>
+
+<section id="community" style="display:none" data-role="main" data-outbound-link="embed:community" data-zone="community" class="loading">
+
+</section>
+
+<section id="dashboard" style="display:none" data-role="main">
+
+
+<p style="line-height: 1.4">Nothing for you here ... yet. But as you comment with Disqus and follow
+other Disqus users, you will start to receive notifications here, as well as a personalized
+feed of activity by you and the people you follow. So get out there and participate in
+some discussions!</p>
+</section>
+
+<section id="profile" style="display:none" data-role="main">
+</section>
+
+<div id="discovery" data-zone="discovery"></div>
+
+<div id="footer">
+<ul>
+<li class="logo"><a href="http://disqus.com/" title="Powered by Disqus">Powered by Disqus</a></li>
+<li id="thread-subscribe-button" class="email"> 
+<div class="default">
+<a href="http://www.javaworld.com/article/2076208/java-app-dev/automate-your-build-process-using-java-and-ant.html#" data-action="subscribe" title="Subscribe and get email updates from this discussion"><i aria-hidden="true" class="icon-mail"></i><span class="clip">Subscribe</span> <i aria-hidden="true" class="icon-checkmark"></i></a>
+</div>
+<div class="form">
+<div class="input-wrapper"><input id="thread-subscribe-email" type="email" placeholder="yourname@email.com"></div>
+</div>
+</li>
+<li class="install">
+<a href="https://disqus.com/websites/?utm_source=idg-javaworld&utm_medium=Disqus-Footer" target="_blank">
+<i aria-hidden="true" class="icon-disqus"></i>
+<span class="clip">Add Disqus to your site</span>
+</a>
+</li>
+</ul>
+</div>
+</div></body></html>

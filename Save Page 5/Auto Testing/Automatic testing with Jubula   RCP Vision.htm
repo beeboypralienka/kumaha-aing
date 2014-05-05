@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://www.rcp-vision.com/?p=1506&lang=en -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="cache-control" content="no-cache">
+<title>Automatic testing with Jubula | RCP Vision</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="./Automatic testing with Jubula   RCP Vision_files/style.css">
+<link rel="pingback" href="http://www.rcp-vision.com/xmlrpc.php?lang=en">
+<link rel="icon" href="http://www.rcp-vision.com/wp-content/themes/rcpvision/images/favicon.ico">
+<link rel="alternate" type="application/rss+xml" title="RCP Vision » Feed" href="http://www.rcp-vision.com/?feed=rss2&lang=en">
+<link rel="alternate" type="application/rss+xml" title="RCP Vision » Comments Feed" href="http://www.rcp-vision.com/?feed=comments-rss2&lang=en">
+<link rel="alternate" type="application/rss+xml" title="RCP Vision » Automatic testing with Jubula Comments Feed" href="http://www.rcp-vision.com/?feed=rss2&p=1506&lang=en">
+<link rel="stylesheet" id="wp-syntax-css-css" href="./Automatic testing with Jubula   RCP Vision_files/wp-syntax.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack-widgets-css" href="./Automatic testing with Jubula   RCP Vision_files/widgets.css" type="text/css" media="all">
+<link rel="stylesheet" id="sharedaddy-css" href="./Automatic testing with Jubula   RCP Vision_files/sharing.css" type="text/css" media="all">
+<link rel="stylesheet" id="counterize_stylesheet-css" href="./Automatic testing with Jubula   RCP Vision_files/counterize.css.php" type="text/css" media="all">
+<script type="text/javascript" src="./Automatic testing with Jubula   RCP Vision_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./Automatic testing with Jubula   RCP Vision_files/jquery.js"></script>
+<script type="text/javascript" src="./Automatic testing with Jubula   RCP Vision_files/jquery.colorbox.js"></script>
+<script type="text/javascript" src="./Automatic testing with Jubula   RCP Vision_files/jquery.tooltip.js"></script>
+<script type="text/javascript" src="./Automatic testing with Jubula   RCP Vision_files/lightbox-gallery.js"></script>
+<script type="text/javascript" src="./Automatic testing with Jubula   RCP Vision_files/counterize.js.php"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.rcp-vision.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.rcp-vision.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Xtext 2.1: using Xbase variables" href="http://www.rcp-vision.com/?p=1796&lang=en">
+<link rel="next" title="Jubula Training Day Florence- May 3rd 2012" href="http://www.rcp-vision.com/?p=3080&lang=en">
+<meta name="generator" content="WordPress 3.5.1">
+<link rel="canonical" href="./Automatic testing with Jubula   RCP Vision_files/Automatic testing with Jubula   RCP Vision.htm">
+<link rel="shortlink" href="http://wp.me/p1KZbX-oi">
+<link rel="stylesheet" type="text/css" href="./Automatic testing with Jubula   RCP Vision_files/lightbox-gallery.css">
+
+<meta http-equiv="Content-Language" content="en-US">
+<style type="text/css" media="screen">
+.qtrans_flag span { display:none }
+.qtrans_flag { height:12px; width:18px; display:block }
+.qtrans_flag_and_text { padding-left:20px }
+.qtrans_flag_it { background:url(http://www.rcp-vision.com/wp-content/plugins/qtranslate/flags/it.png) no-repeat }
+.qtrans_flag_en { background:url(http://www.rcp-vision.com/wp-content/plugins/qtranslate/flags/gb.png) no-repeat }
+</style>
+<link hreflang="it" href="http://www.rcp-vision.com/?p=1506&lang=it" rel="alternate">
+	
+<!-- START: Syntax Highlighter ComPress -->
+<script type="text/javascript" src="./Automatic testing with Jubula   RCP Vision_files/shCore.js"></script>
+<script type="text/javascript" src="./Automatic testing with Jubula   RCP Vision_files/shAutoloader.js"></script>
+<link type="text/css" rel="stylesheet" href="./Automatic testing with Jubula   RCP Vision_files/shCoreDefault.css">
+<!-- END: Syntax Highlighter ComPress -->
+
+  
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Automatic testing with Jubula">
+<meta property="og:url" content="http://www.rcp-vision.com/?p=1506&amp;lang=en">
+<meta property="og:description" content="Eclipse Jubula is a new addition to the Eclipse universe. It’s a functional UI testing tool that allows you to specify and run tests.Jubula consists of plug-ins for an IDE and a standalone RCP appl...">
+<meta property="og:site_name" content="RCP Vision">
+<meta property="og:image" content="http://www.rcp-vision.com/wp-content/uploads/2012/01/RCPProduct1.png">
+<meta property="og:image" content="http://www.rcp-vision.com/wp-content/uploads/2012/01/Export_HowTo_3.png">
+<meta property="og:image" content="http://www.rcp-vision.com/wp-content/uploads/2012/01/Export_HowTo_2.png">
+<meta property="og:image" content="http://www.rcp-vision.com/wp-content/uploads/2012/01/Export_HowTo_1.png">
+<meta property="og:image" content="http://www.rcp-vision.com/wp-content/uploads/2012/01/ProductFileRCPMAilTemplate.png">
+<meta name="twitter:site" content="@jetpack">
+<meta name="twitter:image0" content="http://www.rcp-vision.com/wp-content/uploads/2012/01/RCPProduct1.png">
+<meta name="twitter:image1" content="http://www.rcp-vision.com/wp-content/uploads/2012/01/Export_HowTo_3.png">
+<meta name="twitter:image2" content="http://www.rcp-vision.com/wp-content/uploads/2012/01/Export_HowTo_2.png">
+<meta name="twitter:image3" content="http://www.rcp-vision.com/wp-content/uploads/2012/01/Export_HowTo_1.png">
+<meta name="twitter:card" content="gallery">
+</head>
+
+<body class="single single-post postid-1506 single-format-standard">
+	<div id="wrapper" class="hfeed">
+		<div id="header">
+			<div id="branding">
+				<div id="header-top-sidebar">
+					<div id="adrotate_widgets-3" class="header-widget-container-top-right widget_adrotate_widgets"><a href="http://www.rcp-vision.com/wp-content/plugins/adrotate/adrotate-out.php?track=NSwxLDA=" title="Eclipse Day Florence 2014"><img width="480px" border="0" src="./Automatic testing with Jubula   RCP Vision_files/EDF2014_banner_728x90_sfumata.gif" style="margin:4px 8px 0px 0px; padding: 0px;" alt="Eclipse Day Florence 2014"></a></div>				</div>
+				<div id="site-logo">
+					<a href="http://www.rcp-vision.com/" title="RCP Vision" rel="home"> <img src="./Automatic testing with Jubula   RCP Vision_files/logo.png" alt="RCP Vision"> </a>
+				</div>
+			</div>
+			<div id="access" role="navigation">
+							<div class="skip-link screen-reader-text">
+					<a href="http://www.rcp-vision.com/?p=1506&lang=en#content" title="Skip to content">Skip to content					</a>
+				</div>
+								<div class="menu-header"><ul id="menu-menu-principale" class="menu"><li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="http://www.rcp-vision.com/?lang=en">Home</a></li>
+<li id="menu-item-829" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-829"><a href="http://www.rcp-vision.com/?page_id=21&lang=en">Company</a>
+<ul class="sub-menu">
+	<li id="menu-item-385" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-385"><a href="http://www.rcp-vision.com/?page_id=383&lang=en">Company Mission</a></li>
+	<li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="http://www.rcp-vision.com/?page_id=27&lang=en">Portfolio</a></li>
+	<li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="http://www.rcp-vision.com/?page_id=108&lang=en">Eclipse Membership</a></li>
+	<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="http://www.rcp-vision.com/?page_id=24&lang=en">Where we are</a></li>
+	<li id="menu-item-74" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><a href="http://www.rcp-vision.com/?page_id=43&lang=en">Contacts</a></li>
+	<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="http://www.rcp-vision.com/?page_id=36&lang=en">Work with us</a></li>
+</ul>
+</li>
+<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="http://www.rcp-vision.com/?page_id=37&lang=en">Services</a>
+<ul class="sub-menu">
+	<li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="http://www.rcp-vision.com/?page_id=39&lang=en">Consulting</a></li>
+	<li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="http://www.rcp-vision.com/?page_id=38&lang=en">Training</a></li>
+	<li id="menu-item-491" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-491"><a href="http://www.rcp-vision.com/?page_id=489&lang=en">Development</a></li>
+</ul>
+</li>
+<li id="menu-item-7625" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7625"><a href="http://www.rcp-vision.com/?page_id=7620&lang=en">Solutions</a>
+<ul class="sub-menu">
+	<li id="menu-item-7626" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7626"><a href="http://www.rcp-vision.com/?page_id=6927&lang=en">EMF Parsley</a></li>
+	<li id="menu-item-7629" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7629"><a href="http://www.rcp-vision.com/?page_id=6922&lang=en">ST2C Environment</a></li>
+	<li id="menu-item-7632" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7632"><a href="http://www.rcp-vision.com/?page_id=4632&lang=en">Eclipse RCP &amp; Office</a></li>
+	<li id="menu-item-7637" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7637"><a href="http://www.rcp-vision.com/?page_id=7605&lang=en">TDD &amp; CI with Jenkins</a></li>
+</ul>
+</li>
+<li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="http://www.rcp-vision.com/?page_id=41&lang=en">Tutorials</a>
+<ul class="sub-menu">
+	<li id="menu-item-4735" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4735"><a href="http://www.rcp-vision.com/?cat=69&lang=en">Eclipse 4</a></li>
+	<li id="menu-item-29" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29"><a href="http://www.rcp-vision.com/?cat=7&lang=en">Eclipse RCP</a></li>
+	<li id="menu-item-4512" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4512"><a href="http://www.rcp-vision.com/?cat=66&lang=en">EMF, GMF, CDO</a></li>
+	<li id="menu-item-4513" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4513"><a href="http://www.rcp-vision.com/?cat=67&lang=en">Xtext, Xbase</a></li>
+	<li id="menu-item-4514" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-4514"><a href="http://www.rcp-vision.com/?cat=68&lang=en">Others …</a></li>
+</ul>
+</li>
+<li id="menu-item-30" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-30"><a href="http://www.rcp-vision.com/?cat=3&lang=en">News &amp; Events</a></li>
+<li id="menu-item-6103" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6103"><a href="http://www.rcp-vision.com/?cat=89&lang=en">Blog</a></li>
+</ul></div>				<div id="qtranslate-3" class="header-widget-container widget_qtranslate"><ul class="qtrans_language_chooser" id="qtranslate-3-chooser"><li class="lang-it"><a href="http://www.rcp-vision.com/?p=1506&lang=it" hreflang="it" title="Italiano" class="qtrans_flag qtrans_flag_it"><span style="display:none">Italiano</span></a></li><li class="lang-en active"><a href="./Automatic testing with Jubula   RCP Vision_files/Automatic testing with Jubula   RCP Vision.htm" hreflang="en" title="English" class="qtrans_flag qtrans_flag_en"><span style="display:none">English</span></a></li></ul><div class="qtrans_widget_end"></div></div><div id="search-3" class="header-widget-container widget_search"><form role="search" method="get" id="searchform" action="http://www.rcp-vision.com/?lang=en/">
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input type="text" value="" name="s" id="s">
+	<input type="submit" id="searchsubmit" value="Search">
+	</div>
+	</form></div>				<div style="clear:both"></div>
+			</div>
+			<!-- #access -->
+
+			<div style="clear:both"></div>
+		</div>
+		<!-- #header -->
+
+		<div id="main">
+<div id="container">
+	<div id="content" role="main">
+
+	
+
+<div id="post-1506" class="post-1506 post type-post status-publish format-standard hentry category-tutorial-altri category-articles tag-jubula">
+	
+	<div class="post-title-container">
+		<h1 class="entry-title">
+			Automatic testing with Jubula		</h1>
+		<p class="entry-meta">
+		<span class="meta-prep meta-prep-author">Posted on</span> <a href="./Automatic testing with Jubula   RCP Vision_files/Automatic testing with Jubula   RCP Vision.htm" title="10:15" rel="bookmark"><span class="entry-date">1 January 2012</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://www.rcp-vision.com/?author=2&lang=en" title="View all posts by Francesca Mastinu">Francesca Mastinu</a></span>		</p>
+	</div>
+
+	<div class="entry-content">
+	<p>Eclipse Jubula is a new addition to the Eclipse universe.  It’s a functional UI testing tool that allows you to specify and run tests.Jubula consists of plug-ins for an IDE and a standalone RCP application.</p>
+<p>In this tutorial we will create a simple RCP java product and  then we’ll use Jubula testing tool to execute some automated tests. First we will create a minimal RCP application, using the Plug-in  Project creation Eclipse Wizard. The next step will consist into setup  the Jubula environment and the AUT Agent to link the application with  jubula<br>
+The final step will be create some recorded tests and play them with Jubula. The result is a simple suite of tests that allow us to automatically run our tests saving our time. The main goal of this tutorial is show how to use Jubula testing tool with a RCP application.</p>
+<h2>Step 1: Setup Environment</h2>
+<p>First we have to setup the environment, downloading the Eclipse for Tester version:<br>
+Eclipse for Testers (Indigo Packages) <a rel="nofollow" href="http://www.eclipse.org/downloads/">The Eclipse Jubula Download</a><br>
+<a href="./Automatic testing with Jubula   RCP Vision_files/Dowload_Eclipse_Jubula.png" rel="lightbox"><img class="alignnone size-full wp-image-1508" src="./Automatic testing with Jubula   RCP Vision_files/Dowload_Eclipse_Jubula.png" alt="Download_Eclipse_Jubula" width="994" height="766"></a></p>
+<p>And Jubula Standalone application from: <a title="Download Jubula Standalone" rel="nofollow" href="http://www.eclipse.org/jubula/download.php">The Jubula StandAlone Download</a><br>
+<a href="./Automatic testing with Jubula   RCP Vision_files/Jubula_standAloneDownload.png" rel="lightbox"><img src="./Automatic testing with Jubula   RCP Vision_files/Jubula_standAloneDownload.png" alt="Download Jubula Standalone" width="654" height="589"></a></p>
+<h2>Step 2: Create the Plugin Project</h2>
+<p>The next step is create a new Plug-in Project. To do this, follow the steps showed in the figures below. From menu File select New then Plug-in Project<em> </em></p>
+<p><em>(File/New/Project…/Plug-in Development/Plug-in Project)</em>:<br>
+<img class="alignnone size-full wp-image-2446" src="./Automatic testing with Jubula   RCP Vision_files/New_Plugin_Project_.png" alt="" width="529" height="615"></p>
+<p>As Plug-in name enter “com.rcpvision.rcpmailsample”.<br>
+<img class="alignnone size-full wp-image-2447" src="./Automatic testing with Jubula   RCP Vision_files/NamePluginProject.png" alt="" width="526" height="619"></p>
+<p>Next, tell Eclipse that it’s a rich client application:<br>
+<img class="alignnone size-full wp-image-2448" src="./Automatic testing with Jubula   RCP Vision_files/NewPluginProjectRCPApp.png" alt="" width="528" height="618"></p>
+<p>And finally, choose the “RCP Mail” template:<br>
+<img class="alignnone size-full wp-image-2449" src="./Automatic testing with Jubula   RCP Vision_files/Wizard_templateRCPMAilTemplate.png" alt="" width="652" height="647"></p>
+<p>Select “Yes” if you want to switch to the Plug-in development perspective.<br>
+You should now see the project  MANIFEST.MF  editor. It contains mainly the information about the dependencies from other projects and the exporting options. From here you can manage the project and launch it. Just click “Launch” as showed below.<br>
+<a href="http://www.rcp-vision.com/wp-content/uploads/2012/01/LaunchRCPMailApp.png" rel="lightbox"><img class="alignnone size-large wp-image-2450" src="./Automatic testing with Jubula   RCP Vision_files/LaunchRCPMailApp-1024x666.png" alt="" width="640" height="416"></a><br>
+<img class="alignnone size-full wp-image-2451" src="./Automatic testing with Jubula   RCP Vision_files/RCPProduct.png" alt="" width="604" height="401"></p>
+<h2>Step 3: Create the Product</h2>
+<p>In order to use Jubula application you need to create a product configuration for the application just created. Starting from:<br>
+<em> (File/New/Product Configuration) </em><br>
+<img class="alignnone size-full wp-image-2490" src="./Automatic testing with Jubula   RCP Vision_files/Product_Configuration.png" alt="" width="518" height="682"><br>
+<em> </em></p>
+<p>Name it “SimpleMail.product”<br>
+To finish click on <strong>Finish</strong> button and in the <em> com.rcpvision.rcpmailsample</em> plugin will appear the SimpleMail.product file<br>
+<img class="alignnone size-full wp-image-2491" src="./Automatic testing with Jubula   RCP Vision_files/ProductFileRCPMAilTemplate.png" alt="" width="255" height="327"></p>
+<p>Then export the Plugin Project:<br>
+<img class="alignnone size-full wp-image-2492" src="./Automatic testing with Jubula   RCP Vision_files/Export_HowTo_1.png" alt="" width="475" height="688"><br>
+<img class="alignnone size-full wp-image-2493" src="./Automatic testing with Jubula   RCP Vision_files/Export_HowTo_2.png" alt="" width="527" height="548"><br>
+<img class="alignnone size-full wp-image-2494" src="./Automatic testing with Jubula   RCP Vision_files/Export_HowTo_3.png" alt="" width="528" height="604"></p>
+<p>The result should be a product like this one:<br>
+<img class="alignnone size-full wp-image-2496" src="./Automatic testing with Jubula   RCP Vision_files/RCPProduct1.png" alt="" width="604" height="401"></p>
+<h2>Step 4: Set and launch AUT Agent</h2>
+<p>The AUT Agent is the Jubula daemon providing the bridge between the test executor and the Application Under Test.<br>
+Once the AUT Agent has started the AUT, object mapping can take place, and tests can be observed and executed.</p>
+<h3>Step 4.1: Set AUT Agent</h3>
+<p>Launch “setup.exe” to install the AUT AGENT (Application Under Test Agent)<br>
+<img class="alignnone size-full wp-image-2452" src="./Automatic testing with Jubula   RCP Vision_files/JubulaInstallation_part1.png" alt="" width="369" height="162"></p>
+<p>Accept the agreement then click on “Next”<br>
+<img class="alignnone size-full wp-image-2454" src="./Automatic testing with Jubula   RCP Vision_files/JubulaInstallation_part5.png" alt="" width="504" height="391"></p>
+<p>click again “Next” and finally…..<br>
+<img class="alignnone size-full wp-image-2453" src="./Automatic testing with Jubula   RCP Vision_files/JubulaInstallation_part6_End.png" alt="" width="504" height="391"></p>
+<h3>Step 4.2: Launch AUT Agent</h3>
+<p>To execute AUT Agent under Windows you need administrator rights:<br>
+<img class="alignnone size-full wp-image-2455" src="./Automatic testing with Jubula   RCP Vision_files/StartAUT.png" alt="" width="410" height="458"></p>
+<p>And you’ll see a little green icon&nbsp;<img src="./Automatic testing with Jubula   RCP Vision_files/AUTAgent_icon.png" alt="" width="33" height="29"> on your toolbar.</p>
+<h3>Step 4.3: Configuring the Product to work with Jubula</h3>
+<p>In order to work with Jubula under RCP mail product you need to extract the <tt>rcp-support.zip</tt> in your Jubula (AUT Agent) installation directory and copy it into your product directory (plugins folder) .<br>
+This will add a Jubula instrumentation plugin to your product. You’ve still got to activate that plugin, and you can do that by editing the <tt> configuration/config.ini </tt> file in your product directory.<br>
+There’s a long line in that file listing the osgi.bundles, and you have to add the Jubula plugin at the end:<br>
+<a href="http://www.rcp-vision.com/wp-content/uploads/2012/01/Config.ini_modificated.png" rel="lightbox"><img class="alignnone size-large wp-image-2456" src="./Automatic testing with Jubula   RCP Vision_files/Config.ini_modificated-1024x572.png" alt="" width="640" height="357"></a></p>
+<p>And finally, after all these steps, you’re ready to work with Jubula!!!</p>
+<h3>Step 5: Working with Jubula</h3>
+<p>You are finally ready to open Jubula and create your first tests</p>
+<hr>
+<h3>Step 5.1: Start Jubula</h3>
+<p>Start Jubula:<br>
+<a href="http://www.rcp-vision.com/wp-content/uploads/2012/01/EclipseJubulaFirstStart.png" rel="lightbox"><img class="alignnone size-large wp-image-2457" src="./Automatic testing with Jubula   RCP Vision_files/EclipseJubulaFirstStart-1024x555.png" alt="" width="640" height="346"></a></p>
+<h3>Step 5.2: Create new Test Project</h3>
+<p>Looking at the problem view, you’ll find a hint about what to do next:<br>
+<a href="http://www.rcp-vision.com/wp-content/uploads/2012/01/HintAtFirstRunOfEclipseJubula.png" rel="lightbox"><img class="alignnone size-large wp-image-2458" src="./Automatic testing with Jubula   RCP Vision_files/HintAtFirstRunOfEclipseJubula-1024x157.png" alt="" width="640" height="98"></a></p>
+<p>However, it doesn’t tell you how to create a new project. You will find it in the Test menu:<em> </em><br>
+<em>(Test/New…)</em><br>
+Give your project a good name, choose “rcp” as toolkit and click the “Next” button.<br>
+<img class="alignnone size-full wp-image-2459" src="./Automatic testing with Jubula   RCP Vision_files/NewTestProject.png" alt="" width="579" height="895"></p>
+<p><em>Pitfall: Make sure your test specifies either English (United States) or German (Germany)as the keyboard layout.            These are the only two keyboard layouts provided out-of-the-box by Jubula at the moment.</em></p>
+<p>Now you’ve got to tell Jubula about your test object (Jubula calls it “AUT”):<br>
+Give your AUT Agent a name and choose “rcp” as toolkit.<br>
+<img class="alignnone size-full wp-image-2460" src="./Automatic testing with Jubula   RCP Vision_files/NewProject_AUTConfig.png" alt="" width="583" height="895"></p>
+<p>Click on “Proceed” to close the dialog and to continue working on New Project Wizard dialog.<br>
+Now you can choose to specify an AUT Configuration, by  clicking on “Next” or click “Finish” and finish creating the project and  configure the AUT later via “Project -&gt; Properties”</p>
+<p>Choosing to close the wizard menu, click on “Finish”.<br>
+You can notice that in the Test Browser view  there is a new project “SimpleMailTest”<br>
+<img class="alignnone size-large wp-image-2461" src="./Automatic testing with Jubula   RCP Vision_files/NewProjectTest_TestSuiteBrowser-1024x684.png" alt="" width="640" height="427"></p>
+<h3>Step 5.3: Configuring AUT for Test Project</h3>
+<p>Focus on “Simple Test Mail” and click on<em> </em><br>
+<em>Test-&gt; Properties</em><br>
+<img class="alignnone size-full wp-image-2484" src="./Automatic testing with Jubula   RCP Vision_files/ConfiguringAUTAgent_Mod1.png" alt="" width="836" height="666"></p>
+<p>Click on “Edit”<br>
+<a href="http://www.rcp-vision.com/wp-content/uploads/2012/01/ConfiguringAUTAgent_Mod2.png" rel="lightbox"><img class="alignnone size-large wp-image-2462" src="./Automatic testing with Jubula   RCP Vision_files/ConfiguringAUTAgent_Mod2-1024x703.png" alt="" width="640" height="439"></a></p>
+<p>Click on “Add”<br>
+<img class="alignnone size-full wp-image-2464" src="./Automatic testing with Jubula   RCP Vision_files/ConfiguringAUTAgent_Mod5.png" alt="" width="501" height="381"></p>
+<p>Enter a suitable name for the AUT Agent Host and select the executable file of your product in the “Executable File Name”<br>
+<img class="alignnone size-full wp-image-2465" src="./Automatic testing with Jubula   RCP Vision_files/ConfiguringAUTAgent_Mod6.png" alt="" width="533" height="381"></p>
+<p>Clicking on “Ok” we create the test project.  Then click on the little arrow next to <img src="./Automatic testing with Jubula   RCP Vision_files/AUT_BlackArrow.png" alt="" width="56" height="34">, choose the option “localhost: 600000″ to connect the AUT agent.</p>
+<p>Now, look for the “Connect to AUT Agent” toolbar button and press  it in order to establish the connection to the agent we started before:<br>
+<a href="http://www.rcp-vision.com/wp-content/uploads/2012/01/StartingConfiguredAUTAgent.png" rel="lightbox"><img class="alignnone size-large wp-image-2466" src="./Automatic testing with Jubula   RCP Vision_files/StartingConfiguredAUTAgent-1024x681.png" alt="" width="640" height="425"></a></p>
+<p>Confirm<br>
+<img class="alignnone size-full wp-image-2467" src="./Automatic testing with Jubula   RCP Vision_files/ConfirmedStartingProductViaAUtAgent.png" alt="" width="532" height="192"></p>
+<p>Click on Proceed and you’ll see your RCP Mail Template product<br>
+<a href="http://www.rcp-vision.com/wp-content/uploads/2012/01/ProductLaunchedByAUTAgent.png" rel="lightbox"><img class="alignnone size-large wp-image-2468" src="./Automatic testing with Jubula   RCP Vision_files/ProductLaunchedByAUTAgent-1024x449.png" alt="" width="640" height="280"></a></p>
+<h2>Step 6: Testing With Jubula</h2>
+<p>At the end of this section you’ll be able to create and run a set of test cases.   Let’s test the opening of a new messages view.<br>
+There are three methods to open a new Message view and for all of these we’ll show you how to do.</p>
+<p><strong>Case 1</strong>: Using Menu Bar: File-&gt; Open Another Message View Command<br>
+<img class="alignnone size-full wp-image-2469" src="./Automatic testing with Jubula   RCP Vision_files/FileMenuOption.png" alt="" width="355" height="177"></p>
+<p><strong>Case 2</strong>: Using toolbar button <img class="size-full wp-image-1549 alignnone" src="./Automatic testing with Jubula   RCP Vision_files/PlusButton.png" alt="" width="39" height="35"></p>
+<p><strong>Case 3</strong>: Using shortcut: <em>CTRL+2</em></p>
+<h3>Test Case 1</h3>
+<p>Goal of this test case is to replay the<em> </em></p>
+<p><em>File → Open Another Message View</em></p>
+<p>operation recording jubula commands.<br>
+Preconditions: Application under test (RCP Product) running.</p>
+<h4>Steps:</h4>
+<p>From Jubula IDE click on the ‘camera’ icon  <a href="http://www.rcp-vision.com/JubulaCameraICon.png"><img src="./Automatic testing with Jubula   RCP Vision_files/100px-JubulaCameraICon.png" alt="JubulaCameraICon.png" width="100" height="47"></a></p>
+<p>Name the test Case with a suitable name, i.e. “OpenNewMessageView”<br>
+<img class="alignnone size-full wp-image-2470" src="./Automatic testing with Jubula   RCP Vision_files/ObserveTestCase_NameInserted.png" alt="" width="443" height="249"></p>
+<p>and confirm your choice by clicking on “Ok” button.<br>
+Jubula will move into the “TestCase” perspective with the  “OpenNewMessageView” tab open in the editor and a new item  “OpenNewMessageView” listed under the “Test Case Browser”  view.<br>
+<a href="http://www.rcp-vision.com/wp-content/uploads/2012/01/TestCasePerspectiveAfterNamingObservedTest.png" rel="lightbox"><img class="alignnone size-large wp-image-2471" src="./Automatic testing with Jubula   RCP Vision_files/TestCasePerspectiveAfterNamingObservedTest-1024x687.png" alt="" width="640" height="429"></a></p>
+<p>After few seconds the “Observation Console” window will be opened in the bottom corner of your screen. In this windows will be listed all the steps done during  registration. Now give the focus on the application under test (RCPMAIL) and Select “File-&gt; Another Message View” option. You’ll create a new Message View in the RCPMail<br>
+<img class="alignnone size-full wp-image-2472" src="./Automatic testing with Jubula   RCP Vision_files/RCPMailTwoMessageViews.png" alt="" width="604" height="402"></p>
+<p>and in the “Observation Console” will be added two new steps:<br>
+<img class="alignnone size-full wp-image-2473" src="./Automatic testing with Jubula   RCP Vision_files/ObservationConsole_StepsDone.png" alt="" width="481" height="242"></p>
+<p>Stop the recording by clicking on “CameraStop Recording Icon” <img class="alignnone size-full wp-image-1550" src="./Automatic testing with Jubula   RCP Vision_files/CameraStopRecordingIcon.png" alt="" width="170" height="62"></p>
+<p>Save the test case and in the Test Case perspective you’ll notice two steps under the your first test.<br>
+Now you have to create a new Test Suite:  Within the “Test Suite Browser” view,  right click on “Test Suites” folder  and click on</p>
+<p><em>New-&gt; New Test Suite</em></p>
+<p><img class="alignnone size-full wp-image-2474" src="./Automatic testing with Jubula   RCP Vision_files/TestSuiteBrowserView.png" alt="" width="539" height="613"></p>
+<p>Name it as “First Test Suite” and confirm (Click on “OK”)<br>
+<img class="alignnone size-full wp-image-2475" src="./Automatic testing with Jubula   RCP Vision_files/NewTestSuite.png" alt="" width="439" height="250"></p>
+<p>Double click on First Test Suite just created and it will be opened in an editor.  Now drag your use case “OpenNewMessageView” into the test suite and save the test project:<br>
+<img class="alignnone size-full wp-image-2476" src="./Automatic testing with Jubula   RCP Vision_files/TestSuiteCompleted.png" alt="" width="663" height="553"></p>
+<p>To play the test click on the little green icon in the “Test Suite Browser” then choose the “First Test Suite’<br>
+<img class="alignnone size-full wp-image-2477" src="./Automatic testing with Jubula   RCP Vision_files/TestCaseLaunch.png" alt="" width="764" height="621"></p>
+<h3>Test Case 2</h3>
+<p>Repeat previous steps to create a new Observed test case, record the  steps to simulate the click on the green plus icon  and the result will  be:<br>
+<a href="./Automatic testing with Jubula   RCP Vision_files/TestCase_ToolbarButton-1024x439.png" rel="lightbox"><img class="alignnone size-large wp-image-2478" src="./Automatic testing with Jubula   RCP Vision_files/TestCase_ToolbarButton-1024x439.png" alt="" width="640" height="274"></a></p>
+<h3>Test Case 3</h3>
+<p>You have to create this test case by choosing a couple of template  from the Test Case folder in the Test Case Browser. To do it follow these simple steps: From the folder “Test Cases” in “Test Case Browser” open  “unbound_modules_concrete-&gt; Actions (basic) → Input via Keyboard →  Application → Key Combination” and select the test case named<br>
+<tt>&lt;ub_app_pressAnyKeyCombination_CTRL[BASE_KEY]&gt;</tt><br>
+and the<br>
+<tt>&lt;ub_app_pressAnyKey&gt;[MODIFER_KEYS;BASE_KEY]&gt;</tt></p>
+<p>the result should be:<br>
+<img class="alignnone size-full wp-image-2479" src="./Automatic testing with Jubula   RCP Vision_files/TestCase_ShortCut_Complete.png" alt="" width="902" height="336"></p>
+<p>Now you have to complete the settings for the test case just choosen.<br>
+For<br>
+<tt>&lt;ub_app_pressAnyKeyCombination_CTRL[BASE_KEY]&gt;</tt></p>
+<div>modify the<br>
+Parameter Name = BASE_KEY<br>
+and<br>
+Parameter Value = 2</div>
+<div><img class="alignnone size-full wp-image-2480" src="./Automatic testing with Jubula   RCP Vision_files/KeyCombination_CTRL_settings.png" alt="" width="891" height="251"></div>
+<p>For<br>
+<tt>&lt;ub_app_pressAnyKey&gt;[MODIFER_KEYS;BASE_KEY]&gt;</tt></p>
+<p>enter:<br>
+Parameter Name = MODIFIER_KEYS<br>
+Parameter Value = control</p>
+<p>Parameter Name = BASE_KEY<br>
+Parameter Value = BASE_KEY</p>
+<p><img class="alignnone size-full wp-image-2481" src="./Automatic testing with Jubula   RCP Vision_files/KeyCombination_AnyKey.png" alt="" width="1015" height="334"></p>
+<h4>Test Suite</h4>
+<p>You can rename the first test case as “OpenNewMessageView_FileMenu”.<br>
+Drag and drop Test Case 2 and Test Case 3 to the Test Suite and you’ll have<br>
+<a href="http://www.rcp-vision.com/wp-content/uploads/2012/01/TestSuiteComplete.png" rel="lightbox"><img class="alignnone size-large wp-image-2483" src="./Automatic testing with Jubula   RCP Vision_files/TestSuiteComplete-1024x399.png" alt="" width="640" height="249"></a></p>
+<p>Run the test suite and … Enjoy your automated test with Jubula!!!</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this page</h3><div class="sd-content"><ul><li><a href="http://www.rcp-vision.com/?p=1506&lang=en#" class="sharing-anchor sd-button share-more"><span>Share</span></a></li><li class="share-end"></li></ul><div class="sharing-hidden"><div class="inner" style="display: none;"><ul><li class="share-twitter"><a rel="nofollow" class="share-twitter sd-button share-icon no-text" href="http://www.rcp-vision.com/?p=1506&lang=en&share=twitter" title="Click to share on Twitter" id="sharing-twitter-1506"><span></span></a></li><li class="share-facebook"><a rel="nofollow" class="share-facebook sd-button share-icon no-text" href="http://www.rcp-vision.com/?p=1506&lang=en&share=facebook" title="Share on Facebook" id="sharing-facebook-1506"><span></span></a></li><li class="share-end"></li><li class="share-linkedin"><a rel="nofollow" class="share-linkedin sd-button share-icon no-text" href="http://www.rcp-vision.com/?p=1506&lang=en&share=linkedin" title="Click to share on LinkedIn" id="sharing-linkedin-1506"><span></span></a></li><li class="share-google-plus-1"><a rel="nofollow" class="share-google-plus-1 sd-button share-icon no-text" href="http://www.rcp-vision.com/?p=1506&lang=en&share=google-plus-1" title="Click to share on Google+" id="sharing-google-1506"><span></span></a></li><li class="share-end"></li><li class="share-email"><a rel="nofollow" class="share-email sd-button share-icon no-text" href="http://www.rcp-vision.com/?p=1506&lang=en&share=email" title="Click to email this to a friend"><span></span></a></li><li class="share-print"><a rel="nofollow" class="share-print sd-button share-icon no-text" href="http://www.rcp-vision.com/?p=1506&lang=en#print" title="Click to print"><span></span></a></li><li class="share-end"></li><li class="share-end"></li></ul></div></div></div></div></div>		</div>
+	<!-- .entry-content -->
+
+	
+	<div class="entry-utility">
+	This entry was tagged <a href="http://www.rcp-vision.com/?tag=jubula&lang=en" rel="tag">jubula</a>. Bookmark the <a href="./Automatic testing with Jubula   RCP Vision_files/Automatic testing with Jubula   RCP Vision.htm" title="Permalink to Automatic testing with Jubula" rel="bookmark">permalink</a>.		</div>
+	<!-- .entry-utility -->
+</div>
+<!-- #post-## -->
+
+	
+<div id="comments">
+
+	
+	<h3 id="comments-title">
+9 Responses to <em>Automatic testing with Jubula</em></h3>
+
+
+<ol class="commentlist">
+<li class="comment even thread-even depth-1" id="li-comment-1598">
+	<div id="comment-1598">
+		<div class="comment-author vcard">
+		<img alt="" src="./Automatic testing with Jubula   RCP Vision_files/fba9b46865554c2438eff42b0fb1dde6" class="avatar avatar-40 photo" height="40" width="40">		<cite class="fn">Ken</cite> <span class="says">says:</span>		</div>
+		<!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata">
+			<a href="http://www.rcp-vision.com/?p=1506&lang=en#comment-1598">
+				27 March 2012 at 00:04			</a>
+					</div>
+		<!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body">
+		<p>Hi,</p>
+<p>I am trying this with an eclipse RCP workspace based application.  The recording pieces all work for me, but my application doesn’t seem to be listening when I try to execute the tests.  Do you have any ideas I might try?</p>
+		</div>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.rcp-vision.com/?p=1506&replytocom=1598#respond" onclick="return addComment.moveForm(&quot;comment-1598&quot;, &quot;1598&quot;, &quot;respond&quot;, &quot;1506&quot;)">Reply</a>		</div>
+		<!-- .reply -->
+	</div> <!-- #comment-##  --> <ul class="children">
+<li class="comment byuser comment-author-francesca bypostauthor odd alt depth-2" id="li-comment-1637">
+	<div id="comment-1637">
+		<div class="comment-author vcard">
+		<img alt="" src="./Automatic testing with Jubula   RCP Vision_files/6840c794b08a6fb6457a485f756273f0" class="avatar avatar-40 photo" height="40" width="40">		<cite class="fn">Francesca Mastinu</cite> <span class="says">says:</span>		</div>
+		<!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata">
+			<a href="http://www.rcp-vision.com/?p=1506&lang=en#comment-1637">
+				29 March 2012 at 16:53			</a>
+					</div>
+		<!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body">
+		<p>Hi Ken,<br>
+have you checked off that your application appears in the “Running AUT’s” view?<br>
+If no, probably you have to verify that the AUT Agent configurations are correct, in addition you should be sure that the “org.eclipse.rc.rcp” plugin has been added in the config.ini file.<br>
+I hope this will help.</p>
+		</div>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.rcp-vision.com/?p=1506&replytocom=1637#respond" onclick="return addComment.moveForm(&quot;comment-1637&quot;, &quot;1637&quot;, &quot;respond&quot;, &quot;1506&quot;)">Reply</a>		</div>
+		<!-- .reply -->
+	</div> <!-- #comment-##  --> </li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1943">
+	<div id="comment-1943">
+		<div class="comment-author vcard">
+		<img alt="" src="./Automatic testing with Jubula   RCP Vision_files/f7a44fcb3779d20fc342be8f6d0327d5" class="avatar avatar-40 photo" height="40" width="40">		<cite class="fn">Federico Alcantara</cite> <span class="says">says:</span>		</div>
+		<!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata">
+			<a href="http://www.rcp-vision.com/?p=1506&lang=en#comment-1943">
+				2 May 2012 at 19:18			</a>
+					</div>
+		<!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body">
+		<p>Why is this SOOOOO complicated and prompt to not working.<br>
+ I tried Jubula last year and couldn’t make any useful test.</p>
+<p>Won’t touch it until it has more sense.</p>
+		</div>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.rcp-vision.com/?p=1506&replytocom=1943#respond" onclick="return addComment.moveForm(&quot;comment-1943&quot;, &quot;1943&quot;, &quot;respond&quot;, &quot;1506&quot;)">Reply</a>		</div>
+		<!-- .reply -->
+	</div> <!-- #comment-##  --> </li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-2072">
+	<div id="comment-2072">
+		<div class="comment-author vcard">
+		<img alt="" src="./Automatic testing with Jubula   RCP Vision_files/007f306200e3611ddf601be5ff26eacf" class="avatar avatar-40 photo" height="40" width="40">		<cite class="fn">Oliver</cite> <span class="says">says:</span>		</div>
+		<!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata">
+			<a href="http://www.rcp-vision.com/?p=1506&lang=en#comment-2072">
+				15 May 2012 at 14:48			</a>
+					</div>
+		<!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body">
+		<p>Hi,</p>
+<p>recorded a test  successfully, but if I enter a url like “http://localhost:8080″, the test inserts “http;77localhost;8080″. There is something wrong with shift key.</p>
+<p>Regards<br>
+Oliver</p>
+		</div>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.rcp-vision.com/?p=1506&replytocom=2072#respond" onclick="return addComment.moveForm(&quot;comment-2072&quot;, &quot;2072&quot;, &quot;respond&quot;, &quot;1506&quot;)">Reply</a>		</div>
+		<!-- .reply -->
+	</div> <!-- #comment-##  --> </li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-3453">
+	<div id="comment-3453">
+		<div class="comment-author vcard">
+		<img alt="" src="./Automatic testing with Jubula   RCP Vision_files/e59e2b973f62077a5e9de15e1a9733b5" class="avatar avatar-40 photo" height="40" width="40">		<cite class="fn">Eugene</cite> <span class="says">says:</span>		</div>
+		<!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata">
+			<a href="http://www.rcp-vision.com/?p=1506&lang=en#comment-3453">
+				26 August 2012 at 12:14			</a>
+					</div>
+		<!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body">
+		<p>It will be good if you talked through how to use the Eclipse Juno Add-On for Jubula (i.e what you will use from within Eclipse). Another point is, this focuses on Windows only and I use Mountain Lion and Ubuntu. (No exes)</p>
+		</div>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.rcp-vision.com/?p=1506&replytocom=3453#respond" onclick="return addComment.moveForm(&quot;comment-3453&quot;, &quot;3453&quot;, &quot;respond&quot;, &quot;1506&quot;)">Reply</a>		</div>
+		<!-- .reply -->
+	</div> <!-- #comment-##  --> </li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-5481">
+	<div id="comment-5481">
+		<div class="comment-author vcard">
+		<img alt="" src="./Automatic testing with Jubula   RCP Vision_files/904f89462152a1b43c34bb41dcd66ba7" class="avatar avatar-40 photo" height="40" width="40">		<cite class="fn"><a href="http://www.codecentric.de/" rel="external nofollow" class="url">Robert</a></cite> <span class="says">says:</span>		</div>
+		<!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata">
+			<a href="http://www.rcp-vision.com/?p=1506&lang=en#comment-5481">
+				19 December 2012 at 13:12			</a>
+					</div>
+		<!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body">
+		<p>Hi,</p>
+<p>I don’t know how the situation was back in January, but following your download instructions now (Dec 12) I couldn’t work through the tutorial:</p>
+<p>- Jubula standalone now seems to be the same as Eclipse for Testers<br>
+- Using Eclipse for Testers, you can not create the plugin project you mention. For that, you need Eclipse for RCP/RAP developers.</p>
+<p>Maybe you would like to correct the intro of your article. The rest of the tutorial is very good to get a first set of tests running. Thank you!</p>
+		</div>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.rcp-vision.com/?p=1506&replytocom=5481#respond" onclick="return addComment.moveForm(&quot;comment-5481&quot;, &quot;5481&quot;, &quot;respond&quot;, &quot;1506&quot;)">Reply</a>		</div>
+		<!-- .reply -->
+	</div> <!-- #comment-##  --> </li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-5493">
+	<div id="comment-5493">
+		<div class="comment-author vcard">
+		<img alt="" src="./Automatic testing with Jubula   RCP Vision_files/5ff7d297ec071943fb511746147ddbca" class="avatar avatar-40 photo" height="40" width="40">		<cite class="fn">Katu</cite> <span class="says">says:</span>		</div>
+		<!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata">
+			<a href="http://www.rcp-vision.com/?p=1506&lang=en#comment-5493">
+				20 December 2012 at 11:43			</a>
+					</div>
+		<!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body">
+		<p>Hi,<br>
+great tutorial very easy to follow and detailed. I did everything using windows 7 64 bits and the RCP_MAIL_Product works fine.<br>
+I can record some steps like expanding the mails tree. However, when I’m recording and opening the File menu or clicking a toolbar icon, I get the following error:</p>
+<p>An error has occurred. See error log for more details.<br>
+org.eclipse.ui.internal.PartPane.getToolBar()Lorg/eclipse/swt/widgets/Control;</p>
+<p>Any idea to solve this? thank you.</p>
+<p>It would be great a similar tutorial for swing applications.</p>
+		</div>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.rcp-vision.com/?p=1506&replytocom=5493#respond" onclick="return addComment.moveForm(&quot;comment-5493&quot;, &quot;5493&quot;, &quot;respond&quot;, &quot;1506&quot;)">Reply</a>		</div>
+		<!-- .reply -->
+	</div> <!-- #comment-##  --> </li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-5684">
+	<div id="comment-5684">
+		<div class="comment-author vcard">
+		<img alt="" src="./Automatic testing with Jubula   RCP Vision_files/a9c2ff956d5ecddff025d829be3db969" class="avatar avatar-40 photo" height="40" width="40">		<cite class="fn">chandra sekhar</cite> <span class="says">says:</span>		</div>
+		<!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata">
+			<a href="http://www.rcp-vision.com/?p=1506&lang=en#comment-5684">
+				2 January 2013 at 11:17			</a>
+					</div>
+		<!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body">
+		<p>I am about to execute my RCP application( sample mail app), i have loaded my project but it is not finishing…. any reason why it is not loading comletely ……… i have waited around 10 mins but i could not make,</p>
+<p>I have executed the same steps with a swing app it is executing fine… so can any one tell me what would be the reason or sugest me what i have to do to execute the test case.</p>
+		</div>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.rcp-vision.com/?p=1506&replytocom=5684#respond" onclick="return addComment.moveForm(&quot;comment-5684&quot;, &quot;5684&quot;, &quot;respond&quot;, &quot;1506&quot;)">Reply</a>		</div>
+		<!-- .reply -->
+	</div> <!-- #comment-##  --> </li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-6219">
+	<div id="comment-6219">
+		<div class="comment-author vcard">
+		<img alt="" src="./Automatic testing with Jubula   RCP Vision_files/3a42a5a006f43cad2730abe3ece25e42" class="avatar avatar-40 photo" height="40" width="40">		<cite class="fn">Santosh Bhutkar</cite> <span class="says">says:</span>		</div>
+		<!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata">
+			<a href="http://www.rcp-vision.com/?p=1506&lang=en#comment-6219">
+				31 January 2013 at 10:34			</a>
+					</div>
+		<!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body">
+		<p>I want to check the check-box in table in RCP from Jubula. Can anybody help?</p>
+		</div>
+
+		<div class="reply">
+		<a class="comment-reply-link" href="http://www.rcp-vision.com/?p=1506&replytocom=6219#respond" onclick="return addComment.moveForm(&quot;comment-6219&quot;, &quot;6219&quot;, &quot;respond&quot;, &quot;1506&quot;)">Reply</a>		</div>
+		<!-- .reply -->
+	</div> <!-- #comment-##  --> </li>
+</ol>
+
+
+	
+								<div id="respond">
+				<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.rcp-vision.com/?p=1506#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://www.rcp-vision.com/wp-comments-post.php" method="post" id="commentform">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-url"><label for="url">Website</label><input id="url" name="url" type="text" value="" size="30"></p>
+
+<div class="captchaSizeDivLarge"><img id="si_image_com" class="si-captcha" src="./Automatic testing with Jubula   RCP Vision_files/securimage_show.php" width="175" height="60" alt="CAPTCHA Image" title="CAPTCHA Image">
+    <input id="si_code_com" name="si_code_com" type="hidden" value="XN3OxGWD0oEbhoNs">
+    <div id="si_refresh_com">
+<a href="http://www.rcp-vision.com/?p=1506&lang=en#" rel="nofollow" title="Refresh Image" onclick="si_captcha_refresh(&#39;si_image_com&#39;,&#39;com&#39;,&#39;/wp-content/plugins/si-captcha-for-wordpress/captcha&#39;,&#39;http://www.rcp-vision.com/wp-content/plugins/si-captcha-for-wordpress/captcha/securimage_show.php?si_form_id=com&amp;prefix=&#39;); return false;">
+      <img class="captchaImgRefresh" src="./Automatic testing with Jubula   RCP Vision_files/refresh.png" width="22" height="20" alt="Refresh Image" onclick="this.blur();"></a>
+  </div>
+  </div>
+<br>
+<p><input id="captcha_code" name="captcha_code" type="text" size="6">
+<label id="captcha_code_label" for="captcha_code">CAPTCHA Code</label><span class="required">*</span>
+</p>												<p class="comment-form-comment"><label for="comment">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="1506" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments" style="display: inline;">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog" style="display: inline;">Notify me of new posts by email.</label></p><!-- AVH First Defense Against Spam version 3.6.5  --><input type="hidden" id="_avh_first_defense_against_spam" name="_avh_first_defense_against_spam" value="b3dd57afeb">					</form>
+							</div><!-- #respond -->
+						
+</div>
+<!-- #comments -->
+
+	
+	</div>
+	<!-- #content -->
+</div>
+<!-- #container -->
+
+	
+
+	</div>
+<!-- #main -->
+
+<div id="footer" role="contentinfo">
+	<div id="eclipse-foundation-member-logo">
+		<a href="http://www.eclipse.org/" target="_blank">
+			<img src="./Automatic testing with Jubula   RCP Vision_files/member_eclipse_pos_logo_fc_sm.png" alt="Eclipse Foundation Member">
+		</a>
+	</div>
+
+	<div id="footer-menu">
+		<div id="menu_footer">
+		<div class="menu-footer"><ul id="menu-menu-principale-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="http://www.rcp-vision.com/?lang=en">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-829"><a href="http://www.rcp-vision.com/?page_id=21&lang=en">Company</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-385"><a href="http://www.rcp-vision.com/?page_id=383&lang=en">Company Mission</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="http://www.rcp-vision.com/?page_id=27&lang=en">Portfolio</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="http://www.rcp-vision.com/?page_id=108&lang=en">Eclipse Membership</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="http://www.rcp-vision.com/?page_id=24&lang=en">Where we are</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><a href="http://www.rcp-vision.com/?page_id=43&lang=en">Contacts</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="http://www.rcp-vision.com/?page_id=36&lang=en">Work with us</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="http://www.rcp-vision.com/?page_id=37&lang=en">Services</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="http://www.rcp-vision.com/?page_id=39&lang=en">Consulting</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="http://www.rcp-vision.com/?page_id=38&lang=en">Training</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-491"><a href="http://www.rcp-vision.com/?page_id=489&lang=en">Development</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7625"><a href="http://www.rcp-vision.com/?page_id=7620&lang=en">Solutions</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7626"><a href="http://www.rcp-vision.com/?page_id=6927&lang=en">EMF Parsley</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7629"><a href="http://www.rcp-vision.com/?page_id=6922&lang=en">ST2C Environment</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7632"><a href="http://www.rcp-vision.com/?page_id=4632&lang=en">Eclipse RCP &amp; Office</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7637"><a href="http://www.rcp-vision.com/?page_id=7605&lang=en">TDD &amp; CI with Jenkins</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="http://www.rcp-vision.com/?page_id=41&lang=en">Tutorials</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4735"><a href="http://www.rcp-vision.com/?cat=69&lang=en">Eclipse 4</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29"><a href="http://www.rcp-vision.com/?cat=7&lang=en">Eclipse RCP</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4512"><a href="http://www.rcp-vision.com/?cat=66&lang=en">EMF, GMF, CDO</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4513"><a href="http://www.rcp-vision.com/?cat=67&lang=en">Xtext, Xbase</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-4514"><a href="http://www.rcp-vision.com/?cat=68&lang=en">Others …</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-30"><a href="http://www.rcp-vision.com/?cat=3&lang=en">News &amp; Events</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6103"><a href="http://www.rcp-vision.com/?cat=89&lang=en">Blog</a></li>
+</ul></div>		</div>
+	</div>
+
+	<div id="colophon">
+		<p>Partita IVA: 02122270974 - Copyright © 2014 RCP Vision. All Rights
+			Reserved.</p>
+		<!-- #site-info -->
+	</div>
+
+	<!-- #colophon -->
+</div>
+<!-- #footer -->
+
+</div>
+<!-- #wrapper -->
+
+
+		<script type="text/javascript" src="./Automatic testing with Jubula   RCP Vision_files/si_captcha.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+var si_captcha_styles = "\
+<!-- begin SI CAPTCHA Anti-Spam - comment form style -->\
+<style type='text/css'>\
+div#captchaImgDiv { display:block; }\
+.captchaSizeDivSmall { width:175px; height:45px; padding-top:10px; }\
+.captchaSizeDivLarge { width:250px; height:60px; padding-top:10px; }\
+img#si_image_com,#si_image_reg,#si_image_log,#si_image_side_login { border-style:none; margin:0; padding-right:5px; float:left; }\
+.captchaImgRefresh { border-style:none; margin:0; vertical-align:bottom; }\
+div#captchaInputDiv { display:block; padding-top:15px; padding-bottom:5px; }\
+label#captcha_code_label { margin:0; }\
+input#captcha_code { width:65px; }\
+</style>\
+<!-- end SI CAPTCHA Anti-Spam - comment form style -->\
+";
+jQuery(document).ready(function($) {
+$('head').append(si_captcha_styles);
+});
+//]]>
+</script>
+	
+<!-- START: Syntax Highlighter ComPress -->
+<script type="text/javascript">
+    SyntaxHighlighter.autoloader(
+        'applescript			http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushAppleScript.js',
+        'actionscript3 as3		http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushAS3.js',
+        'bash shell				http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushBash.js',
+        'coldfusion cf			http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushColdFusion.js',
+        'cpp c					http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushCpp.js',
+        'c# c-sharp csharp		http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushCSharp.js',
+        'css					http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushCss.js',
+        'delphi pascal pas		http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushDelphi.js',
+        'diff patch			    http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushDiff.js',
+        'erl erlang				http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushErlang.js',
+        'groovy					http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushGroovy.js',
+        'java					http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushJava.js',
+        'jfx javafx				http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushJavaFX.js',
+        'js jscript javascript	http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushJScript.js',
+        'perl pl				http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushPerl.js',
+        'php					http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushPhp.js',
+        'text plain				http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushPlain.js',
+        'powershell ps          http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushPowerShell.js',
+        'py python				http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushPython.js',
+        'ruby rails ror rb		http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushRuby.js',
+        'sass scss              http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushSass.js',
+        'scala					http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushScala.js',
+        'sql					http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushSql.js',
+        'vb vbnet				http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushVb.js',
+        'xml xhtml xslt html	http://www.rcp-vision.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushXml.js'
+    );
+                        SyntaxHighlighter.defaults['tab-size'] = 4;
+    SyntaxHighlighter.all();
+</script>
+<!-- END: Syntax Highlighter ComPress -->
+
+	<script type="text/javascript">
+// thanks to PPK ( http://www.quirksmode.org/js/detect.html ) for this fantastic code
+var BrowserDetect = {
+	init: function () {
+		this.browser = this.searchString( this.dataBrowser ) || "An unknown browser";
+		this.version = this.searchVersion( navigator.userAgent )
+			|| this.searchVersion( navigator.appVersion )
+			|| "an unknown version";
+		this.OS = this.searchString( this.dataOS ) || "an unknown OS";
+	},
+	searchString: function ( data ) {
+		for ( var i=0;i<data.length;i++ )	{
+			var dataString = data[i].string;
+			var dataProp = data[i].prop;
+			this.versionSearchString = data[i].versionSearch || data[i].identity;
+			if ( dataString ) {
+				if ( dataString.indexOf( data[i].subString ) != -1 )
+					return data[i].identity;
+			}
+			else if ( dataProp )
+				return data[i].identity;
+		}
+	},
+	searchVersion: function ( dataString ) {
+		var index = dataString.indexOf( this.versionSearchString );
+		if ( index == -1 ) return;
+		return parseFloat( dataString.substring( index+this.versionSearchString.length+1 ) );
+	},
+	dataBrowser: [
+		{
+			string: navigator.userAgent,
+			subString: "Chrome",
+			identity: "Chrome"
+		},
+		{ 	string: navigator.userAgent,
+			subString: "OmniWeb",
+			versionSearch: "OmniWeb/",
+			identity: "OmniWeb"
+		},
+		{
+			string: navigator.vendor,
+			subString: "Apple",
+			identity: "Safari",
+			versionSearch: "Version"
+		},
+		{
+			prop: window.opera,
+			identity: "Opera"
+		},
+		{
+			string: navigator.vendor,
+			subString: "iCab",
+			identity: "iCab"
+		},
+		{
+			string: navigator.vendor,
+			subString: "KDE",
+			identity: "Konqueror"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "Firefox",
+			identity: "Firefox"
+		},
+		{
+			string: navigator.vendor,
+			subString: "Camino",
+			identity: "Camino"
+		},
+		{		// for newer Netscapes ( 6+ )
+			string: navigator.userAgent,
+			subString: "Netscape",
+			identity: "Netscape"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "MSIE",
+			identity: "Explorer",
+			versionSearch: "MSIE"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "Gecko",
+			identity: "Mozilla",
+			versionSearch: "rv"
+		},
+		{ 		// for older Netscapes ( 4- )
+			string: navigator.userAgent,
+			subString: "Mozilla",
+			identity: "Netscape",
+			versionSearch: "Mozilla"
+		}
+	],
+	dataOS : [
+		{
+			string: navigator.platform,
+			subString: "Win",
+			identity: "Windows"
+		},
+		{
+			string: navigator.platform,
+			subString: "Mac",
+			identity: "Mac"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "iPhone",
+			identity: "iPhone/iPod"
+	    },
+		{
+			string: navigator.platform,
+			subString: "Linux",
+			identity: "Linux"
+		}
+	]
+};
+BrowserDetect.init();
+var page = escape( window.location.href );
+var ref = escape( top.document.referrer );
+var title = escape( document.title );
+var color = window.screen.colorDepth; 
+var res = window.screen.width + "x" + window.screen.height;
+var browser = escape( BrowserDetect.browser );
+var version = escape( BrowserDetect.version );
+var platform = escape( BrowserDetect.OS );
+if ( typeof( google ) != "undefined" && google && google.loader && google.loader.ClientLocation && typeof( google.loader.ClientLocation.address ) != "undefined" ) {
+	var city = google.loader.ClientLocation.address.city;
+	var country = google.loader.ClientLocation.address.country;
+	var countrycode = google.loader.ClientLocation.address.country_code;
+}
+document.write( '<' + 'img src="http://www.rcp-vision.com/wp-content/plugins/wibstats-statistics-for-wordpress-mu/wibstats.php?color=' + color + '&res=' + res + '&browser=' + browser + '&version=' + version + '&platform=' + platform + '&referrer=' + ref + '&page=' + page + '&title=' + title + '&city=' + city + '&country=' + country + '&countrycode=' + countrycode + '" height="1" width="1" />' );
+		</script><img src="./Automatic testing with Jubula   RCP Vision_files/wibstats.php" height="1" width="1">	<div style="display:none">
+	<div class="grofile-hash-map-fba9b46865554c2438eff42b0fb1dde6">
+	</div>
+	<div class="grofile-hash-map-6840c794b08a6fb6457a485f756273f0">
+	</div>
+	<div class="grofile-hash-map-f7a44fcb3779d20fc342be8f6d0327d5">
+	</div>
+	<div class="grofile-hash-map-007f306200e3611ddf601be5ff26eacf">
+	</div>
+	<div class="grofile-hash-map-e59e2b973f62077a5e9de15e1a9733b5">
+	</div>
+	<div class="grofile-hash-map-904f89462152a1b43c34bb41dcd66ba7">
+	</div>
+	<div class="grofile-hash-map-5ff7d297ec071943fb511746147ddbca">
+	</div>
+	<div class="grofile-hash-map-a9c2ff956d5ecddff025d829be3db969">
+	</div>
+	<div class="grofile-hash-map-3a42a5a006f43cad2730abe3ece25e42">
+	</div>
+	</div>
+		<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-linkedin' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+		});
+		</script>
+			<div id="sharing_email" style="display: none;">
+		<form action="http://www.rcp-vision.com/?p=1506" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="text" name="target_email" id="target_email" value="">
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="">
+
+				<label for="source_email">Your Email Address</label>
+				<input type="text" name="source_email" id="source_email" value="">
+
+			
+			
+			<img style="float: right; display: none" class="loading" src="./Automatic testing with Jubula   RCP Vision_files/loading.gif" alt="loading" width="16" height="16">
+			<input type="submit" value="Send Email" class="sharing_send">
+			<a href="http://www.rcp-vision.com/?p=1506&lang=en#cancel" class="sharing_cancel">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<script type="text/javascript" src="./Automatic testing with Jubula   RCP Vision_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="./Automatic testing with Jubula   RCP Vision_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Automatic testing with Jubula   RCP Vision_files/wpgroho.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var recaptcha_options = {"lang":"en"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Automatic testing with Jubula   RCP Vision_files/sharing.js"></script>
+
+	<script src="./Automatic testing with Jubula   RCP Vision_files/e-201418.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.5',blog:'25974649',post:'1506',tz:'1'});
+	var load_cmc = function(){linktracker_init(25974649,1506,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="./Automatic testing with Jubula   RCP Vision_files/g.gif" alt="">
+
+</body></html>

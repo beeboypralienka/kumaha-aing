@@ -1,0 +1,74 @@
+/* AddToBookmarks Style Sheet */
+.addToContent {
+ 	text-align: center;
+ 	padding:3px; 
+}
+.addTo {
+	background-color: #f8f8f8;
+	border:1px  #bbbbbb solid; 
+	padding:1px; 
+	width: 460px;
+	font-family:Verdana, Arial, Helvetica, sans-serif; 
+	font-size:9px;
+	margin: auto; 
+	text-align:center;
+}
+.addTo img {
+	vertical-align: middle;
+	padding: 1px 2px 1px 6px;
+	cursor:pointer;
+}
+.addTo {
+  	background-color: #fbfbfb;
+  	color: #000000;
+	margin: 0px;
+	padding: 0px;
+	font-family:Verdana, Arial, Helvetica, sans-serif; 
+	font-size:9px; 
+}
+.addtos {
+	padding: 1px;
+	margin: 0px;
+	cursor: pointer;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: normal;
+}
+.addToAbout{
+	display: inline;
+	list-style: none; 
+	padding:1px; 
+	margin:0px;
+	font-weight: bold;
+	cursor:help;
+	font-family:Verdana, Arial, Helvetica, sans-serif; 
+	font-size:9px; 
+}
+/*  the next 2 styles are only for verticallayouts */
+.addToV {
+	background-color: #f8f8f8;
+	border: 1px  #bbbbbb solid;
+	padding: 1px;
+	width: 90px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	margin: auto;
+	text-align: left;
+}
+
+.addToV img {
+	vertical-align: middle;
+	padding: 1px 2px 1px 3px;
+	cursor:pointer;
+}
+
+.addToAboutV{
+	list-style: none; 
+	padding:1px;
+	font-weight: bold;
+	cursor:help;
+	font-family:Verdana, Arial, Helvetica, sans-serif; 
+	font-size:9px; 
+}
+
+A IMG {border:0.1px none #000000;} 
