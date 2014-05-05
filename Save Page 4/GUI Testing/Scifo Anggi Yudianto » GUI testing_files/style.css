@@ -1,0 +1,727 @@
+/*
+ Theme Name: flashy
+ Theme URI: http: //pigsky.net/flashy
+ Author URI: http: //pigsky.net
+ Version: 1.2.1
+ Author: addo
+ Description: Just a simple WordPress theme created by <a href="http: //pigsky.net">addo</a>.With two columns, ajax-comment, right-sidebar, fixed-width, valid XHTML and CSS.
+ Tags: two-columns, fixed-width, right-sidebar, theme-options
+ */
+/*static START*/ 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #790E11;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #111111;
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 200%;
+}
+
+h2 {
+    font-size: 170%;
+}
+
+h3 {
+    font-size: 150%;
+}
+
+h4 {
+    font-size: 130%;
+}
+
+h5 {
+    font-size: 110%;
+}
+
+h6 {
+    font-size: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Lucida Grande", "Microsoft Yahei", Georgia, "Times New Roman", Times, serif;
+}
+
+.alignleft {
+    float: left;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.alignright {
+    float: right;
+    text-align: right;
+    margin-left: 10px;
+}
+
+.aligncenter {
+    display: block;
+    margin: 10px auto;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+blockquote {
+    margin: 0 40px;
+    font-style: italic;
+}
+
+.clear {
+    clear: both;
+}
+
+html, body {
+    background: #EEEEEE url(images/body_bg.png) repeat scroll 0 0;
+    color: #666666;
+    font-family: "Lucida Grande", "Microsoft Yahei", Georgia, "Times New Roman", Times, serif;
+    font-size: 12px;
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+/*layout START*/ /*header START*/
+#header {
+    background: transparent url(images/header_bg.png) repeat-x scroll 0 0;
+    height: 140px;
+    width: 100%;
+}
+
+#header-inner {
+    width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    color: #FFFFFF;
+    padding: 35px 0 0;
+}
+
+#title {
+    padding: 0 0 0 20px;
+}
+
+#title a {
+    float: left;
+    display: block;
+    padding: 5px 0 5px 0;
+    font-size: 32px;
+    font-weight: normal;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#description {
+    float: left;
+    padding: 20px 0 0;
+    margin-left: 40px;
+}
+
+/*menu START*/
+#menu {
+    background: transparent url(images/menu_bg.png) repeat-x scroll 0 0;
+    height: 34px;
+    width: 100%;
+    line-height: 15px;
+}
+
+#menu-inner {
+    width: 900px;
+    margin: 0 auto;
+    border-left: 1px solid #A5A4A4;
+}
+
+ul.menu li {
+    display: inline;
+}
+
+ul.menu a {
+    display: block;
+    float: left;
+    color: #FFFFFF;
+    font-size: 12px;
+    padding: 9px 20px 8px;
+    text-decoration: none;
+    border-left: 1px solid #626262;
+    border-right: 1px solid #A5A4A4;
+}
+
+ul.menu li.current_page_item a, ul.menu a:hover {
+    border-left: 0 none;
+    border-right: 0 none;
+    color: #790E11;
+    padding: 9px 21px 10px;
+    background: transparent url(images/menu_hover_bg.png) repeat-x scroll 0 0;
+}
+
+/*mid START*/
+#mid {
+    background: transparent url(images/mid_bg.png) repeat-x scroll 0 0;
+    height: 40px;
+    width: 100%;
+    clear: both;
+}
+
+#mid-inner {
+    width: 900px;
+    margin: 0 auto;
+}
+
+#box {
+    float: left;
+    padding: 11px 0;
+    width: 660px;
+    text-align: left;
+}
+
+search {
+    float: right;
+    padding: 6px 0;
+}
+
+#search input {
+    background: transparent url(images/search_bg.png) no-repeat scroll 0 0;
+    border: 1px solid #AAAAAA;
+    padding: 4px 0 4px 30px;
+    color: #000000;
+}
+
+/*content START*/
+#content {
+    background: transparent url(images/body_dark_bg.png) repeat-x scroll 0 0;
+    width: 100%;
+    padding-top: 20px;
+}
+
+/*main START*/
+#main {
+    width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: left;
+}
+
+/*left START*/
+#left {
+    background: transparent url(images/content_bg.png) repeat-y scroll 0 34px;
+    float: left;
+    width: 660px;
+}
+
+/*post START*/
+#posts {
+    background: transparent url(images/content_top_bg.png) no-repeat scroll 0 0;
+    padding: 35px 30px 0 47px;
+    font-size: 13px;
+}
+
+h1#headline {
+    border-bottom: 1px dotted #AAAAAA;
+    color: #38302B;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0 0 15px;
+    padding: 0 0 7px;
+}
+
+h1#headline .notice {
+    font-size: 13px;
+    color: #79AE11;
+    padding-left: 20px;
+    background: url(images/notice.gif) no-repeat 0 3px;
+}
+
+h2.post-title {
+    color: #790E11;
+    line-height: 20px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+h2.post-title a {
+    text-decoration: none;
+}
+
+.post-info {
+    color: #888888;
+    font-size: 11px;
+    margin: 3px 0 5px;
+}
+
+.post-date {
+    margin-right: 10px;
+}
+
+.post-comments a {
+    color: #888888;
+    text-decoration: none;
+}
+
+.post-comments a:hover {
+    text-decoration: underline;
+}
+
+.post-content {
+    line-height: 20px;
+}
+
+.post-content li {
+    margin-bottom: 10px;
+}
+
+.post-content p {
+    margin: 0 0 15px;
+}
+
+.post-content img {
+    padding: 3px;
+    background: #EEEEEE;
+    border: 1px solid #DDDDDD;
+    max-width: 550px;
+}
+
+#page-links {
+    color: #000000;
+}
+
+p.wp-caption-text {
+    font-size: 10px;
+    text-align: center;
+}
+
+.post-content ol, .post-content ul {
+    margin: 5px 0 10px 20px;
+}
+
+.post-separator {
+    background: transparent url(images/separator_bg.png) no-repeat scroll 0 0;
+    clear: both;
+    display: block;
+    height: 5px;
+    margin: 25px 0 15px;
+    width: 580px;
+}
+
+.post-meta {
+    background: transparent url(images/separator_bg.png) no-repeat scroll left bottom;
+    padding: 10px 0 10px;
+}
+
+.post-meta a {
+    text-decoration: none;
+}
+
+.post-meta a:hover {
+    text-decoration: underline;
+}
+
+.categories, .tags {
+    display: block;
+    float: left;
+    margin-right: 20px;
+}
+
+a.more-link {
+    color: #000000;
+}
+
+/*pagenavi START*/
+#pagenavi {
+    text-align: center;
+    font-size: 11px;
+}
+
+#pagenavi .newer, #pagenavi .older {
+    display: block;
+}
+
+#pagenavi .newer {
+    float: left;
+}
+
+#pagenavi .older {
+    float: right;
+}
+
+/*footer START*/
+#footer {
+    background: #DDDDDD url(images/footer_bg.png) no-repeat scroll 0 0;
+    font-size: 11px;
+    height: 88px;
+    line-height: 15px;
+    overflow: hidden;
+    width: 660px;
+}
+
+#footer-left {
+    float: left;
+    margin: 52px 0 0 35px;
+}
+
+#footer-right {
+    float: right;
+    margin: 43px 22px 0 0;
+    text-align: right;
+}
+
+/*sidebar START*/
+#sidebar {
+    float: right;
+    width: 220px;
+}
+
+.widget {
+    background: transparent url(images/widget_cont_bg.png) no-repeat scroll left bottom;
+    margin: 0 0 15px;
+    padding: 0 0 30px;
+}
+
+.widget a {
+    text-decoration: none;
+}
+
+.widget a:hover {
+    text-decoration: underline;
+}
+
+.widget h3 {
+    background: transparent url(images/widget_h3_bg2.png) no-repeat scroll 0 0;
+    color: #790E11;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 27px 0 19px;
+    text-align: center;
+}
+
+.top h3 {
+    background: transparent url(images/widget_h3_bg.png) no-repeat scroll 0 0;
+}
+
+.widget ul {
+    background: url(images/widget_ul_bg.png) repeat-y scroll 0 0;
+    list-style: none;
+}
+
+.widget ul.children {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget div {
+    padding: 3px 20px 3px 18px;
+}
+
+.widget li { /*border-bottom: 1px dotted #CCCCCC;*/
+    background: transparent url(images/arrow_right.png) no-repeat scroll 0 9px;
+    padding: 5px 0 2px 25px;
+    line-height: 20px;
+    margin: 0 10px 0 20px;
+}
+
+.widget ul.children li {
+    border-bottom: 0;
+    margin: 0;
+}
+
+.widget li a {
+    font-style: normal;
+}
+
+.widget li a:hover {
+    color: #790E11;
+    text-decoration: underline;
+}
+
+#feed, #email-feed {
+    float: left;
+    display: block;
+    background: url(images/rss.png) no-repeat scroll 0 0;
+    letter-spacing: 1px;
+    padding: 3px 0 5px 25px;
+}
+
+#feed {
+    margin-right: 15px;
+}
+
+#feed, #email-feed {
+    text-decoration: underline;
+}
+
+#wp-calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#wp-calendar caption {
+    padding: 0 5px 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+#wp-calendar th, #wp-calendar td {
+    text-align: center;
+}
+
+#wp-calendar td {
+    padding: 4px 0 0;
+}
+
+#wp-calendar td#prev {
+    text-align: left;
+}
+
+#wp-calendar td#next {
+    text-align: right;
+}
+
+/* comments START*/
+#comments {
+    margin-top: 20px;
+}
+
+h3#response {
+    color: #38302B;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 15px;
+    padding: 0 0 7px;
+}
+
+#comments ol {
+    list-style: none;
+}
+
+#comments li {
+    border: 1px solid #CCCCCC;
+    padding: 1px;
+    margin-bottom: 15px;
+}
+
+#comments li a {
+    text-decoration: none;
+}
+
+.comment-head {
+    height: 30px;
+    background: #CCCCCC;
+    clear: both;
+    font-size: 11px;
+}
+
+#comments li.admin {
+    border: 1px solid #555555;
+}
+
+li.admin .comment-head {
+    color: #EEEEEE;
+}
+
+li.admin .comment-head {
+    background: #555555;
+}
+
+li.admin .comment-head a {
+    color: #EEEEEE;
+}
+
+.comment-number, .comment-author, .comment-date, .comment-photo {
+    display: block;
+}
+
+.comment-number, .comment-author, .comment-date {
+    float: left;
+    padding: 7px 10px 7px 5px;
+}
+
+.comment-date {
+    font-style: italic;
+}
+
+.comment-photo {
+    float: right;
+}
+
+.comment-content {
+    padding: 5px;
+    margin: 10px 15px;
+}
+
+.comment-content p {
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.comment-bottom {
+    font-size: 11px;
+    text-align: left;
+    padding: 0 0 5px 20px;
+}
+
+#respond {
+    margin-top: 20px;
+}
+
+#respond h3 {
+    color: #38302B;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 15px;
+}
+
+#replyto a {
+    color: #790E11;
+}
+
+#cancel input {
+    border: 1px solid #AAAAAA;
+    color: #111111;
+    font-size: 11px;
+    background: #DDDDDD;
+    margin-left: 20px;
+    padding: 2px;
+}
+
+#commentform input, #commentform textarea {
+    border: 1px solid #AAAAAA;
+    color: #000000;
+    font-size: 12px;
+    padding: 3px;
+}
+
+#commentform input {
+    width: 180px;
+}
+
+#commentform input#submit {
+    width: 80px;
+    background: #790E11;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#commentform textarea {
+    width: 100%;
+}
+
+#commentform label {
+    font-size: 11px;
+}
+
+#commentform p {
+    margin-bottom: 15px;
+}
+
+#commentload, #commenterror {
+    font-size: 12px;
+    color: #790E11;
+}
+
+#commentload {
+    font-size: 12px;
+    padding-left: 18px;
+    background: url("images/spinner.gif") no-repeat scroll 0 50%;
+}
+
+/*wp-pagenavi plugin css*/
+#pagenavi .wp-pagenavi {
+    margin: 0;
+    padding: 0;
+}
+
+#pagenavi .wp-pagenavi span.pages {
+    border: 0;
+    clear: both;
+    display: block;
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+#pagenavi .wp-pagenavi a {
+    border: 0;
+    color: #790E11;
+    text-decoration: none;
+}
+
+#pagenavi .wp-pagenavi a:hover {
+    color: #111111;
+    text-decoration: underline;
+}
+
+#pagenavi .wp-pagenavi span.current {
+    border: 0;
+    text-decoration: underline;
+}
+
+#pagenavi .wp-pagenavi span.extend {
+    border: 0;
+}
+
+/*wp-recentcomments plugin css*/
+#recentcomments li {
+    background: none;
+    padding: 5px 15px;
+    line-height: 18px;
+    margin: 0;
+    border: 0;
+}
+
+#recentcomments ul {
+    background: url(images/widget_ul_bg.png) repeat-y scroll 0 0;
+    list-style: none;
+}
+
+#recentcomments div {
+    padding: 0;
+}
+
+#recentcomments li#rc_nav {
+    padding: 0 15px;
+}
+
+/*wp23-related-posts plugin css*/
+#related {
+    margin: 15px 0 20px;
+}
+
+#related h3 {
+    font-size: 16px;
+    font-weight: 300;
+    color: #790E11;
+    background: #DDDDDD;
+    padding: 5px 0 5px 10px;
+}
+
+ul.related_post {
+    list-style: none;
+    padding: 5px 0;
+    background: #F4F5F7;
+}
+
+ul.related_post li {
+    padding: 4px 0 4px 20px;
+}
+
+/*breadcrumb-navxt plugin css*/
+#box .breadcrumb {
+    line-height: 16px;
+    background: url(images/arrow_right.png) no-repeat 0 2px;
+    padding-left: 24px;
+}
+
+#box .breadcrumb a {
+    text-decoration: none;
+}
+
+#box .breadcrumb a:hover {
+    text-decoration: underline;
+}

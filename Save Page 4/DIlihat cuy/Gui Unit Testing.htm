@@ -1,0 +1,67 @@
+
+<!-- saved from url=(0037)http://c2.com/cgi/wiki?GuiUnitTesting -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Gui Unit Testing</title>
+
+</head>
+<body text="black" bgcolor="white"><h1><img src="./Gui Unit Testing_files/wiki.gif">
+<a href="http://c2.com/cgi/fullSearch" rel="nofollow">Gui Unit Testing</a></h1>
+<div id="wiki">
+<em><a href="http://c2.com/cgi/wiki?BillWake">BillWake</a> provides excellent guidance:</em>
+<p></p>
+It doesn't address every issue with testing GUIs (by any means!) but I created a small example that gives the feel of testing and coding a Java GUI, at <a href="http://www.xp123.com/xplor/xp0001/index.shtml" rel="nofollow">http://www.xp123.com/xplor/xp0001/index.shtml</a> -- <a href="http://c2.com/cgi/wiki?BillWake">BillWake</a>
+<p></p>
+Bill, this is fabulous! Please publish it somewhere soon. -- <a href="http://c2.com/cgi/wiki?KentBeck">KentBeck</a>
+<p></p>
+This is fabulous!! This will really help out our Java people with the problem of Java GUI testing. -- sg
+<p></p>
+The above is now Chapter 31 of <em><a href="http://c2.com/cgi/wiki?ExtremeProgrammingInstalled">ExtremeProgrammingInstalled</a></em>.
+<p></p>
+One Java-specific thing that I would add to that great article (if I could) or to this page in general, is the information formerly found at <a href="http://jfcunit.sourceforge.net/" rel="nofollow">http://jfcunit.sourceforge.net/</a> under the paragraph, "Need for JFCUnit". (Page has now changed, paragraph is missing). I've moved that information to <a href="http://c2.com/cgi/wiki?JavaGuiUnitTesting">JavaGuiUnitTesting</a>, where I intend to start a discussion of such issues that are too specific to Java to exist here. -- <a href="http://c2.com/cgi/wiki?JeffTulley">JeffTulley</a>
+<p></p>
+<hr>
+<p></p>
+Just for a change, I'm going to disagree with Bill on this one. I think that the code for his GUI stinks - it's totally unrealistic. Why would the search button be a public attribute on its panel? This applies to most of the other elements too. If I were writing this GUI I'd use a local reference when I instantiate the button, add it to the form, and set its actionListener to be an instance of my controller (which I'd have passed in to the panel's constructor), then I'd let the local reference just drop out of scope. There is no further need to reference the button. At some point in the panel's constructor I'd also have passed a reference to the text field to the controller, and again I'd have then dropped my local reference to it, because it's no longer needed.
+<p></p>
+The JTable is an observer of its model. I'd have implemented a wrapper around my domain model to support the necessary interface for the JTable. Again, this would require me to expose no reference to the JTable.
+<p></p>
+Without exposed references GUIs are terribly difficult to test. Bill's tests drove the development of the interface, but the implementation has been generated to facilitate the tests, not to maintain common idioms or even good OO practices. It's good practice to encapsulate as much as possible, even in the GUI - Bill's implementation exposes too much, and it does so purely for the sake of testing.
+<p></p>
+-- <a href="http://c2.com/cgi/wiki?BryanDollery">BryanDollery</a>
+<p></p>
+<hr>
+<p></p>
+<em><a href="http://c2.com/cgi/wiki?SebastianPetzelberger">SebastianPetzelberger</a> asks (about the C3 project):</em> The tests run in 10 minutes. ... How can you end up in such a short time? And how about testing the GUI? Are you testing a window without opening it?
+<p></p>
+<em><a href="http://c2.com/cgi/wiki?RonJeffries">RonJeffries</a> replies:</em> We do some testing of GUIs without opening them. Our system does not have many GUIs, so we do not have very much intelligent to say about testing them. Of course, if you have kept the model very separate from the GUI, most of the testing can be done on the model side.
+<p></p>
+<hr>
+<p></p>
+I had one case where I had some logic in a GUI COM control which really should have been in a domain class. Unit testing a GUI COM control is pointless, so I ended up doing <a href="http://c2.com/cgi/wiki?ArchitecturalSubstitution">ArchitecturalSubstitution</a>. I duplicated the logic in a new class by writing <a href="http://c2.com/cgi/wiki?UnitTest">UnitTest</a><strong></strong>s first, and I kept compiling the new class into the application also, calling the methods on the new object and the control in parallel and verifying that they did the same thing. When I saw, through interaction with the live app, that the new class was doing what I wanted, I dropped the calls to the control and deleted the methods, leaving the calls to the new class. I now had a new class with tests. At each point in the process, I asked myself: "What is the smallest step that I can take towards the goal that keeps everything working?" One could say that the legacy code was the spec for the new code. Of course, now that the tests exist, I can refactor the hell out of it fearlessly.
+<p></p>
+-- <a href="http://c2.com/cgi/wiki?MichaelFeathers">MichaelFeathers</a>
+<p></p>
+<hr>
+<p></p>
+I think much of my answer is in what Mike said above but I don't understand it fully. My developers are writing unit tests for their classes and their COM components and that is fairly easy. They write an MFC test application that uses the COM control or component and just calls its methods and such. Now in my case, I am doing the GUI. The GUI COM app is a Java or MFC/C++ Windows Application. How do I write <a href="http://c2.com/cgi/wiki?UnitTest">UnitTest</a><strong></strong>s for it? How do I drive the application? Essentially users would just point and click. They would select things off menus and so forth. I guess this a general question of how you write <a href="http://c2.com/cgi/wiki?UnitTest">UnitTest</a><strong></strong>s for Windows GUI applications in <a href="http://c2.com/cgi/wiki?ExtremeProgramming">ExtremeProgramming</a>. -- sg
+<p></p>
+<em>In general, <a href="http://c2.com/cgi/wiki?GuiTesting">GuiTesting</a> is difficult.</em>
+<p></p>
+For several reasons, it is a good idea to design GUI applications
+to communicate with a back-end via some command language.
+<ul>
+<li> Doing so allows power users to easily automate tasks.
+</li><li> The command language can be used to automate integration testing.  
+</li><li> The design of the command language creates a clear divide between the GUI code and the object model.
+</li><li> If a bug is discovered, then the command stream can be recorded, greatly simplifying fault analysis.
+</li></ul>
+-- <a href="http://c2.com/cgi/wiki?KevinCline">KevinCline</a>
+<p></p>
+<hr>
+<p></p>
+There are tools that record keystrokes and mouse clicks and recognize common controls. These tools can be used for scripting GUI tests. SQA Robot is an example. -- <a href="http://c2.com/cgi/wiki?CayteLindner">CayteLindner</a>
+<p></p>
+...And the story ends like this:
+<em>9) A year+ later it is noticed that the GUIs have no automated tests and are of increasingly low quality and have long manual test cycles. A new manager decides to do something about it and we proceed to step 1.</em>
+Extracted from <a href="http://c2.com/cgi/wiki?GuiTesting">GuiTesting</a> -- <a href="http://c2.com/cgi/wiki?RicardoStuven">RicardoStuven</a>
+<p></p>
+<hr></div></body></html>

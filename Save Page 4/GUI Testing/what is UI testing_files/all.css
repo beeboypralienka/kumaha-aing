@@ -1,0 +1,106 @@
+/* CSS Document */
+<STYLE TYPE="text/CSS"> 
+
+body {
+  
+  margin: 0;  
+  color: black;
+  background: white;
+ /* background-image: url(/images/forum9_sb1.gif);  background-attachment: fixed; background-position: bottom left; background-repeat: no-repeat; 
+  */
+  font-family:"Georgia", Verdana, Arial, Helvetica, sans-serif;
+  font-size:8px;
+}
+
+ a.tdn { text-decoration:none; color:#0353a5}
+ a:hover {color: black; text-decoration: underline }
+ a:hover.hlink {color:yellow; text-decoration:underline; cursor:pointer}
+ a:hover.sm {color: red; text-decoration: underline; font-weight:bold }
+ 
+ a.heading { text-decoration:none; font-weight:bold; font-size:16; color:white; font-family:"Georgia"}
+ a:hover.heading {color:yellow; }
+ 
+ a.heading1 { text-decoration:none; font-size:16; color:white; font-family:"Georgia"}
+ a:hover.heading1 {color:yellow; }
+ 
+ a.catlink { text-decoration:none; color:#0353a5; font-size:14px}
+ selector {-moz-user-select:none;}
+ 
+ img.button { border:0px; width:80; height:40; vertical-align:bottom;  }
+ img {border:0px; }
+ img.sb { border:0px; width:20; height:20 }
+ 
+ 
+/*font { font-family:Georgia, Verdana, "Arial", Helvetica, sans-serif;}*/
+ 
+ table { border: 0px }  
+ table.twGborder { border: 1px solid #C4EF9B;  } 
+ table.twBborder { border: 2px solid #D2E4FC;  } 
+ table.twRborder { border: 1px solid #FF0000;  } 
+ table.twQborder { border: 1px solid #EEEEEE;  } 
+ table.twACborder { border: 2px solid #5192D9;  } 
+ table.twNAborder { border: 1px solid #99CCFF;  } 
+ table.twUAQborder { border: 1px solid #B4C4DE;  } 
+ table.twURborder { border: 1px solid #800000;  }
+ table.twCPborder { border: 1px solid #B6C3DF;  }
+ table.twGoldborder { border: 2px solid #FFDF60; }
+ table.twTBborder { border: 1px solid #4A67AD; }
+ table.homebar { width:100%; text-align:center; border:0px; }
+ table.newqa {border:1px solid; border-top-color:#FFFFFF; border-bottom-color:#FFFFFF; border-left-color:#FFDF60; border-right-color:#FFDF60}
+
+ 
+ td.tdGline { border-bottom-color: #C4EF9B }
+ td.tdBline { border-bottom-color: #D2E4FC }
+ td.tdQline { border: 1px solid #EEEEEE }
+ td.tdGborder { border: 1px solid #679866 }
+ td.tdQIline{ border-bottom-width:1px; border-bottom-color:#D2E4FC } 
+ td.noborder { border: 0px }
+ td.tdbggold { background-color: #FFD700 }
+ td.tdcellbg { background-color: #336699; text-transform:capitalize; }
+ td.tdlinkbg { background-color: #b6c3df }
+ td.tdinfo { border: 1px solid #FDC953; background-color: #FBFFC7 }
+ td.smgreen { border:1px solid; border-top-color:#679866; border-bottom-color:#679866; border-left-color:#FFFFFF; border-right-color:#FFFFFF }
+ td.smblue { border:1px solid; border-top-color:#0000cc; border-bottom-color:#0000cc; border-left-color:#FFFFFF; border-right-color:#FFFFFF; background-color: #E5ECF9 }
+ td.smtdborder { border:1px solid; border-top-color:#ffffff; border-bottom-color:#E5ECF9; border-left-color:#FFFFFF; border-right-color:#E5ECF9 }
+ 
+
+ td.smleft { height:30; color: #FFFF00 }
+ td.catlink { color:#0353a5; font-size:14px }
+ td.lh { line-height:1.5}
+
+ td.headblue { border:1px solid; border-top-color:#0000cc; border-bottom-color:#0000cc; border-left-color:#FFFFFF; border-right-color:#FFFFFF; background-color: #E5ECF9; font:"Georgia"; font-size:18px; font-weight:bold;}
+
+ td.artborder { border:2px solid; border-top-color:#ffffff; border-bottom-color:#ffffff; border-left-color:#FFDF60; border-right-color:#FFDF60 }
+ td.asmblue { border:1px solid; border-top-color:#F2D00F; border-bottom-color:#F2D00F; border-left-color:#FFFFFF; border-right-color:#FFFFFF; background-color: #FDF1B7 }
+
+ 
+ td.artcatborder { border:1px solid; border-top-color:#ffffff; border-bottom-color:#ffffff; border-left-color:#5192D9; border-right-color:#5192D9 }
+ td.homecattitle { width:100%; font-size:12px; color:#1E1E52; text-align:left; height:30;}
+ td.qatitle_l {width:60%; font-size:12px; color:#1E1E52; text-align:left; height:30; border:2px solid; border-left-color:#FFDF60;  border-right-color:#FFFFFF; border-top-color:#FFFFFF; border-bottom-color:#FFFFFF }
+ td.qatitle_r {width:40%; font-size:12px; color:#1E1E52; text-align:right; height:30;  border:2px solid; border-left-color:#FFFFFF;  border-right-color:#FFDF60; border-top-color:#FFFFFF; border-bottom-color:#FFFFFF; text-transform:capitalize  }
+ td.maincat { border:1px solid #ECBF41; line-height:1.5; color:#1E1E52;  }
+ td.topqa { border:1px solid #5192D9; line-height:1.5; color:#5192D9; text-transform:capitalize;  }
+ td.aleft { text-align: left; }
+
+ tr.hpmiddle { border:1px solid #CCCCCC; border-left-color:#CCCCCC; border-right-color:#CCCCCC; line-height:2; text-align:left}  
+ tr.catborder { border:1px solid; border-top-color:#ffffff; border-bottom-color:#ffffff; border-left-color:#5192D9; border-right-color:#5192D9 }
+
+ hr{ border:1px solid #D2E4FC }
+ hr.qa { border:1px solid #FFDF60 ; }
+ 
+ ul.qcup { list-style-image:url(../images/Qcup.gif); padding-top:10px; }
+ ul.acup { list-style-image:url(../images/Acup.gif); padding-top:10px; }
+ ul.ulcat{ list-style-image:url(../images/blue_arrow.gif); padding-top:10px; }
+ 
+/* div { position:absolute; top:10px } */
+ div.mypanel { position:relative; left: 375px; top: 20px }
+ 
+ #msgLayer { z-index:1; color:red; font-size:14pt; padding:40px;
+border-style:ridge; border-width:16px; border-color:yellow; text-align:center }
+
+
+ 
+</STYLE>
+
+
+

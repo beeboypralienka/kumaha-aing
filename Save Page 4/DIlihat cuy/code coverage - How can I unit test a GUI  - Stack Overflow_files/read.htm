@@ -1,0 +1,24 @@
+
+<!-- saved from url=(0176)https://stackauth.com/auth/global/read?request=4lL9hUcwO6opDHykPRmrqY7vv4Xsf7fbsX2%2B1btdKCysNBtGaqP060XewODKfCdALLxN1AmUTey9zJOFUedx9w%3D%3D&nonce=f75YUwAAAABJBeDPQFhXPA%3D%3D -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                  <script>
+                  var data = {"ReadSession":"https://stackauth.com/auth/global/read-session","Request":"4lL9hUcwO6opDHykPRmrqY7vv4Xsf7fbsX2+1btdKCysNBtGaqP060XewODKfCdALLxN1AmUTey9zJOFUedx9w==","Nonce":"f75YUwAAAABJBeDPQFhXPA==","Referrer":"http://stackoverflow.com/questions/215458/how-can-i-unit-test-a-gui","StorageName":"GlobalLogin"};
+
+                  var toMsg = window.parent;
+
+                  var obj = localStorage.getItem(data.StorageName);
+                  if(obj != null) {
+                  var req = new XMLHttpRequest();
+                  req.open('POST', data.ReadSession+'?request='+encodeURIComponent(data.Request)+'&nonce='+encodeURIComponent(data.Nonce)+'&seriesAndToken='+encodeURIComponent(obj), false);
+                  req.send(null);
+                  
+                    if(req.status == 200){
+                      toMsg.postMessage(req.responseText, data.Referrer);
+                    }else{
+                      toMsg.postMessage('No Session', data.Referrer);
+                    }
+                  }else{
+                    toMsg.postMessage('No Local Storage', data.Referrer);
+                  }
+                  </script>
+                  </head><body></body></html>

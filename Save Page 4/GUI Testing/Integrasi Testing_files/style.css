@@ -1,0 +1,22 @@
+#box_featuredartikel { 
+background: none repeat scroll 0 0 #F1F7F9;
+    border-top: 4px solid #05AEE1;
+    height: 86px;
+    overflow: hidden;
+    padding: 5px 10px;
+    width: 280px;
+}
+
+#box_featuredartikel .titleft01 {color: #05AEE1; font:bold 16px Arial, Helvetica, sans-serif; text-transform:uppercase;}
+
+#box_featuredartikel .js_style { width:300px; margin-top:8px; }
+#box_featuredartikel .js_style ul li{ list-style:none; display:block; padding-bottom:1px; margin-bottom:10px; height:52px; }
+#box_featuredartikel .js_style .thumbuseree 	{ width:50px; margin-right:10px; }
+#box_featuredartikel .js_style .thumbuseree img { float:left; width:50px; height:auto; }
+
+
+#box_featuredartikel .artftd , .artftd a {    color: #000000; font:normal 14px/17px Arial, Helvetica, sans-serif; text-decoration: none; max-height:34px; overflow:hidden; width:210px; }
+
+#box_featuredartikel .namausr , .namausr a {    color: #898989;    font: bold 11px/14px Arial,Helvetica,sans-serif;    text-decoration: none; max-height:14px; overflow:hidden; }
+
+#box_featuredartikel .artftd a:hover , .namausr a:hover	{ text-decoration:underline; }

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<!-- saved from url=(0106)http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/functional-gui-test/ -->
+<html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths wf-proximanova-n4-active wf-proximanova-n7-active wf-proximanova-i4-active wf-proximanova-i7-active wf-proximanova-n1-active wf-proximanova-n3-active wf-active wf-fsalbertwebextrabold-n8-active wf-fsalbertwebbold-n7-active" lang="en"><!--<![endif]--><head id="ctl00_ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./Functional and GUI Testing - TestComplete   SmartBear_files/cb=gapi.loaded_1" async=""></script><script src="./Functional and GUI Testing - TestComplete   SmartBear_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./Functional and GUI Testing - TestComplete   SmartBear_files/inpage_linkid.js" id="undefined"></script><script type="text/javascript" async="" src="./Functional and GUI Testing - TestComplete   SmartBear_files/a6-.js"></script><script type="text/javascript" async="" src="./Functional and GUI Testing - TestComplete   SmartBear_files/51ed77878f8bfb7ab8000008.js"></script><script src="./Functional and GUI Testing - TestComplete   SmartBear_files/webfont.js" type="text/javascript" async=""></script><script type="text/javascript" async="" src="./Functional and GUI Testing - TestComplete   SmartBear_files/analytics.js"></script><script type="text/javascript" async="" src="./Functional and GUI Testing - TestComplete   SmartBear_files/roundtrip.js"></script><script type="text/javascript" async="" src="./Functional and GUI Testing - TestComplete   SmartBear_files/dc.js"></script><script id="hs-analytics" src="./Functional and GUI Testing - TestComplete   SmartBear_files/175832.js"></script><script async="" src="./Functional and GUI Testing - TestComplete   SmartBear_files/gtm.js"></script><script src="./Functional and GUI Testing - TestComplete   SmartBear_files/132025843.js"></script><meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>
+	Functional and GUI Testing - TestComplete | SmartBear
+</title>
+
+    <!-- CSS: implied media="all" -->
+    <meta name="description" content="TestComplete is a full featured Automated Functional Testing Tool that can make your testing faster, more reliable and save you money. Download and try today."> 
+<meta charset="UTF-8"> 
+<meta http-equiv="cache-control" content="no-cache"> 
+<meta name="viewport" content="maximum-scale=1.0">
+  
+<link rel="stylesheet" href="http://smartbear.com/App/css/style.css?v=11">
+
+<script type="text/javascript">
+  var Root = '/';
+</script>
+
+<script src="./Functional and GUI Testing - TestComplete   SmartBear_files/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='/App/js/libs/jquery-1.7.1.min.js'>\x3C/script>")</script>
+<script>window.JSON || document.write("<script src='/App/js/libs/json2-min.js'>\x3C/script>")</script>
+<script src="./Functional and GUI Testing - TestComplete   SmartBear_files/modernizr-1.7.min.js"></script>
+
+<!--header fonts-->
+<script type="text/javascript" src="./Functional and GUI Testing - TestComplete   SmartBear_files/vqq4cse.js"></script>
+<style type="text/css">.tk-proxima-nova{font-family:"proxima-nova",sans-serif;}</style><link rel="stylesheet" href="http://use.typekit.net/c/4b86ad/proxima-nova:i4:i7:n1:n3:n4:n7.W0W:N:2,W0Z:N:2,Vmv:N:2,Vmx:N:2,W0V:N:2,W0Y:N:2/d?3bb2a6e53c9684ffdc9a9afe1b5b2a62161fbabe860bcaa1511187ffcbf61a376ca8dedace26177556c7dfb272282a09324e0810b86bd2f80031d53fc4f9d1117ab3197bf90bba18bb159e48bdc3fc5ff7"><script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<!--webfonts-->
+<link href="./Functional and GUI Testing - TestComplete   SmartBear_files/css" rel="stylesheet" type="text/css">
+<!--end header fonts-->
+
+<!--new styles for header-->
+<link href="http://smartbear.com/CMSPages/GetCSS.aspx?stylesheetname=templateSB" rel="stylesheet">
+<!--end new styles for header-->
+
+<!--js plugins files-->
+<script src="./Functional and GUI Testing - TestComplete   SmartBear_files/jquery-sticky.js"></script>
+<script src="./Functional and GUI Testing - TestComplete   SmartBear_files/header-bundle.js"></script>
+<!--end js plugs-->
+
+<script>
+$(document).ready(function(){
+
+jQuery.ajax({
+	type: "GET",
+	url: "//smartbear.com/services/ajax.aspx?action=getusername",
+	success: function(ajaxData){
+                  var userData = $.parseJSON(ajaxData); 
+                  var userName = userData.username;
+                  $('.login-link').show();
+                  if (userName.length != 0){
+                      $('.login-link').text('Hello ' + userName).attr('href','/account/');
+                  } else {
+                      $('.login-link').text('Login').attr('href','/login/')
+                  }
+        },
+	failure: function(errMsg){
+		console.log(errMsg);
+	}
+});
+
+});
+</script> 
+<link href="http://smartbear.com/favicon.ico" type="image/x-icon" rel="shortcut icon"> 
+<link href="http://smartbear.com/favicon.ico" type="image/x-icon" rel="icon"> 
+
+<script src="./Functional and GUI Testing - TestComplete   SmartBear_files/132025843.js"></script>
+<script type="text/javascript" src="http://wd-edge.sharethis.com/button/getAllAppDefault.esi?cb=stLight.allDefault&app=all&publisher=ur-210ae099-1fbd-452c-b59b-71def74fb64c&domain=smartbear.com"></script><script type="text/javascript" src="http://wd-edge.sharethis.com/button/checkOAuth.esi"></script><script async="true" type="text/javascript" src="http://d.adroll.com/pixel/XTUIT4L53VGNFLFQJBZ6HZ/J6YJ7DCZGNA2JKGV6QWMUS?pv=86162129463.62793&cookie=&keyw=&adroll_external_data="></script><img src="http://ib.adnxs.com/seg?t=2&add=862003" width="1" height="1" border="0"><img src="http://pixel.prfct.co/seg/?add=862003" width="1" height="1" border="0"><div style="width: 1px; height: 1px; display: inline;"><img height="1" width="1" style="border-style:none;" alt="" src="http://d.adroll.com/cm/f/out">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://d.adroll.com/cm/w/out">
+<img height="1" width="1" alt="" style="display:none" src="./Functional and GUI Testing - TestComplete   SmartBear_files/tr"><img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1011350631/?label=g7EfCJndoQkQ5_if4gM&guid=ON&script=0&ord=1325312443077564.2">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://d.adroll.com/cm/g/out?google_nid=adroll2">
+<img src="http://ib.adnxs.com/seg?add=666531&t=2" width="1" height="1">
+</div><link rel="stylesheet" type="text/css" href="./Functional and GUI Testing - TestComplete   SmartBear_files/buttons.5be48d105d7701b1bc41eccdea7af7f3.css"><script type="text/javascript" src="https://apis.google.com/js/plusone.js" gapi_processed="true"></script><style type="text/css">@font-face {font-family:'FS Albert Web ExtraBold';src:url('http://f.fontdeck.com/f/1/aXl0anRNMTkAB8zfMljmntHzFNRMJpt2Rcsi2jOClGVms77L6vXSo6nyZbpUDVr1/lg.eot');src:url('http://f.fontdeck.com/f/1/aXl0anRNMTkAB8zfMljmntHzFNRMJpt2Rcsi2jOClGVms77L6vXSo6nyZbpUDVr1/lg.eot?')format('embedded-opentype'),url('http://f.fontdeck.com/f/1/aXl0anRNMTkAB8zfMljmntHzFNRMJpt2Rcsi2jOClGVms77L6vXSo6nyZbpUDVr1/lg.woff')format('woff'),url('http://f.fontdeck.com/f/1/aXl0anRNMTkAB8zfMljmntHzFNRMJpt2Rcsi2jOClGVms77L6vXSo6nyZbpUDVr1/lg.ttf')format('opentype'),url('undefined')format('svg');font-weight:800;font-style:normal;}@font-face {font-family:'FS Albert Web Bold';src:url('http://f.fontdeck.com/f/1/cEJ0X2Z6XzkAB7qw0J+SQ/m+V8ZQgGreQj8N84fWM9pM7gT531Et3w8njzNCNVeD8WA.eot');src:url('http://f.fontdeck.com/f/1/cEJ0X2Z6XzkAB7qw0J+SQ/m+V8ZQgGreQj8N84fWM9pM7gT531Et3w8njzNCNVeD8WA.eot?')format('embedded-opentype'),url('http://f.fontdeck.com/f/1/cEJ0X2Z6XzkAB7qw0J+SQ/m+V8ZQgGreQj8N84fWM9pM7gT531Et3w8njzNCNVeD8WA.woff')format('woff'),url('http://f.fontdeck.com/f/1/cEJ0X2Z6XzkAB7qw0J+SQ/m+V8ZQgGreQj8N84fWM9pM7gT531Et3w8njzNCNVeD8WA.ttf')format('opentype'),url('undefined')format('svg');font-weight:bold;font-style:normal;}</style></head>
+<body id="ctl00_ctl00_masterBody" class=" products">
+	
+	
+
+    <!-- Google Tag Manager New -->
+    <noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-MRTLLZ"
+    height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+    <script>    (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({ 'gtm.start':
+    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+    '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MRTLLZ');</script>
+    <!-- End Google Tag Manager -->
+
+
+    
+   
+
+
+    <form method="post" action="http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/functional-gui-test" id="aspnetForm">
+<div class="aspNetHidden">
+<input type="hidden" name="ctl00_ctl00_manScript_HiddenField" id="ctl00_ctl00_manScript_HiddenField" value="">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJODMxMTYxMjg0D2QWAmYPZBYCZg9kFgQCAQ9kFgICBw8WAh4EVGV4dAXaEjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSJUZXN0Q29tcGxldGUgaXMgYSBmdWxsIGZlYXR1cmVkIEF1dG9tYXRlZCBGdW5jdGlvbmFsIFRlc3RpbmcgVG9vbCB0aGF0IGNhbiBtYWtlIHlvdXIgdGVzdGluZyBmYXN0ZXIsIG1vcmUgcmVsaWFibGUgYW5kIHNhdmUgeW91IG1vbmV5LiBEb3dubG9hZCBhbmQgdHJ5IHRvZGF5LiIgLz4gCjxtZXRhIGNoYXJzZXQ9IlVURi04IiAvPiAKPG1ldGEgaHR0cC1lcXVpdj0iY2FjaGUtY29udHJvbCIgY29udGVudD0ibm8tY2FjaGUiIC8+IAo8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0ibWF4aW11bS1zY2FsZT0xLjAiPg0KICANCjxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0ifi9BcHAvY3NzL3N0eWxlLmNzcz92PTExIiAvPg0KDQo8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+DQogIHZhciBSb290ID0gJy8nOw0KPC9zY3JpcHQ+DQoNCjxzY3JpcHQgc3JjPSIvL2FqYXguZ29vZ2xlYXBpcy5jb20vYWpheC9saWJzL2pxdWVyeS8xLjcuMS9qcXVlcnkubWluLmpzIj48L3NjcmlwdD4NCjxzY3JpcHQ+d2luZG93LmpRdWVyeSB8fCBkb2N1bWVudC53cml0ZSgiPHNjcmlwdCBzcmM9Jy9BcHAvanMvbGlicy9qcXVlcnktMS43LjEubWluLmpzJz5ceDNDL3NjcmlwdD4iKTwvc2NyaXB0Pg0KPHNjcmlwdD53aW5kb3cuSlNPTiB8fCBkb2N1bWVudC53cml0ZSgiPHNjcmlwdCBzcmM9Jy9BcHAvanMvbGlicy9qc29uMi1taW4uanMnPlx4M0Mvc2NyaXB0PiIpPC9zY3JpcHQ+DQo8c2NyaXB0IHNyYz0iL0FwcC9qcy9saWJzL21vZGVybml6ci0xLjcubWluLmpzIj48L3NjcmlwdD4NCg0KPCEtLWhlYWRlciBmb250cy0tPg0KPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiIHNyYz0iLy91c2UudHlwZWtpdC5uZXQvdnFxNGNzZS5qcyI+PC9zY3JpcHQ+DQo8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+dHJ5e1R5cGVraXQubG9hZCgpO31jYXRjaChlKXt9PC9zY3JpcHQ+DQo8bGluayBocmVmPSIvL25ldGRuYS5ib290c3RyYXBjZG4uY29tL2ZvbnQtYXdlc29tZS80LjAuMy9jc3MvZm9udC1hd2Vzb21lLmNzcyIgcmVsPSJzdHlsZXNoZWV0Ij4NCjwhLS13ZWJmb250cy0tPg0KPGxpbmsgaHJlZj0nLy9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PVRpdGlsbGl1bStXZWI6NDAwLDIwMCwzMDAsNDAwaXRhbGljLDYwMCcgcmVsPSdzdHlsZXNoZWV0JyB0eXBlPSd0ZXh0L2Nzcyc+DQo8IS0tZW5kIGhlYWRlciBmb250cy0tPg0KDQo8IS0tbmV3IHN0eWxlcyBmb3IgaGVhZGVyLS0+DQo8bGluayBocmVmPSIvQ01TUGFnZXMvR2V0Q1NTLmFzcHg/c3R5bGVzaGVldG5hbWU9dGVtcGxhdGVTQiIgcmVsPSJzdHlsZXNoZWV0Ij4NCjwhLS1lbmQgbmV3IHN0eWxlcyBmb3IgaGVhZGVyLS0+DQoNCjwhLS1qcyBwbHVnaW5zIGZpbGVzLS0+DQo8c2NyaXB0IHNyYz0iL1NtYXJ0QmVhci9tZWRpYS9TY3JpcHRzL2pxdWVyeS1zdGlja3kuanMiPjwvc2NyaXB0Pg0KPHNjcmlwdCBzcmM9Ii9TbWFydEJlYXIvbWVkaWEvU2NyaXB0cy9oZWFkZXItYnVuZGxlLmpzIj48L3NjcmlwdD4NCjwhLS1lbmQganMgcGx1Z3MtLT4NCg0KPHNjcmlwdD4NCiQoZG9jdW1lbnQpLnJlYWR5KGZ1bmN0aW9uKCl7DQoNCmpRdWVyeS5hamF4KHsNCgl0eXBlOiAiR0VUIiwNCgl1cmw6ICIvL3NtYXJ0YmVhci5jb20vc2VydmljZXMvYWpheC5hc3B4P2FjdGlvbj1nZXR1c2VybmFtZSIsDQoJc3VjY2VzczogZnVuY3Rpb24oYWpheERhdGEpew0KICAgICAgICAgICAgICAgICAgdmFyIHVzZXJEYXRhID0gJC5wYXJzZUpTT04oYWpheERhdGEpOyANCiAgICAgICAgICAgICAgICAgIHZhciB1c2VyTmFtZSA9IHVzZXJEYXRhLnVzZXJuYW1lOw0KICAgICAgICAgICAgICAgICAgJCgnLmxvZ2luLWxpbmsnKS5zaG93KCk7DQogICAgICAgICAgICAgICAgICBpZiAodXNlck5hbWUubGVuZ3RoICE9IDApew0KICAgICAgICAgICAgICAgICAgICAgICQoJy5sb2dpbi1saW5rJykudGV4dCgnSGVsbG8gJyArIHVzZXJOYW1lKS5hdHRyKCdocmVmJywnL2FjY291bnQvJyk7DQogICAgICAgICAgICAgICAgICB9IGVsc2Ugew0KICAgICAgICAgICAgICAgICAgICAgICQoJy5sb2dpbi1saW5rJykudGV4dCgnTG9naW4nKS5hdHRyKCdocmVmJywnL2xvZ2luLycpDQogICAgICAgICAgICAgICAgICB9DQogICAgICAgIH0sDQoJZmFpbHVyZTogZnVuY3Rpb24oZXJyTXNnKXsNCgkJY29uc29sZS5sb2coZXJyTXNnKTsNCgl9DQp9KTsNCg0KfSk7DQo8L3NjcmlwdD4gCjxsaW5rIGhyZWY9Ii9mYXZpY29uLmljbyIgdHlwZT0iaW1hZ2UveC1pY29uIiByZWw9InNob3J0Y3V0IGljb24iLz4gCjxsaW5rIGhyZWY9Ii9mYXZpY29uLmljbyIgdHlwZT0iaW1hZ2UveC1pY29uIiByZWw9Imljb24iLz4gCmQCAw8WAh4FY2xhc3MFCSBwcm9kdWN0cxYCAgcQZGQWCAICD2QWAmYPZBYCZg8VAaY7PGRpdiBjbGFzcz0ibWFpbi1oZWFkZXItd3JhcCIgc3R5bGU9IiI+DQo8ZGl2IGNsYXNzPSJtYWluLWhlYWRlci1jb250ZW50Ij4NCiAgICA8aGVhZGVyIGNsYXNzPSJoZWFkZXItaGVscGVyIj4NCiAgICAgICAgPGRpdiBjbGFzcz0ibG9nbyI+PGEgaHJlZj0iLyI+PGltZyBhbHQ9IlNtYXJ0QmVhciBTb2Z0d2FyZSIgc3JjPSIvU21hcnRCZWFyL21lZGlhL2ltYWdlcy9Ib21lUGFnZUQvc2Jsb2dvLnBuZyI+PC9hPg0KICAgICAgICA8YSBkYXRhLXN0YXRlPSJvcGVuZWQiIGNsYXNzPSJoaWRkZW4tY29sLWJ1dHRvbiIgaHJlZj0iIyI+PGkgY2xhc3M9ImZhIGZhLWJhcnMiPjwvaT48L2E+DQogICAgICAgIDwvZGl2Pg0KICAgICAgICA8ZGl2IGNsYXNzPSJ0b3AtcmlnaHQiPg0KICAgICAgICAgICAgPGRpdiBjbGFzcz0idG9wLWFkZCI+DQogICAgICAgICAgICAgICAgPCEtLWEgaHJlZj0iL3Jlc291cmNlcyIgY2xhc3M9Im5hdi1jYXQgdXRpbGl0eSI+UmVzb3VyY2VzPC9hPg0KICAgICAgICAgICAgICAgIDxhIGhyZWY9Imh0dHA6Ly9ibG9nLnNtYXJ0YmVhci5jb20vIiBjbGFzcz0ibmF2LWNhdCB1dGlsaXR5Ij48c3BhbiBjbGFzcz0ibGluZXMtc3BhbiI+fHwmbmJzcDsmbmJzcDs8L3NwYW4+QmxvZzxzcGFuIGNsYXNzPSJsaW5lcy1zcGFuIj4mbmJzcDsmbmJzcDt8fDwvc3Bhbj48L2EtLT4NCiAgDQogICAgICAgICAgICA8L2Rpdj4NCiAgICAgICAgICA8ZGl2IGNsYXNzPSJjbGVhcmZpeCI+PC9kaXY+DQogICAgICAgICAgICA8bmF2IGNsYXNzPSJ0b3AtbmF2Ij4NCiAgICAgICAgICAgICAgICA8dWw+DQogICAgICAgICAgICAgICAgICAgIDxsaSBjbGFzcz0ibWVnYWxpbmsiPjxhIGNsYXNzPSJuYXYtY2F0LW1haW4iIGhyZWY9Ii9wcm9kdWN0cyI+UHJvZHVjdHMgPC9hPg0KICAgICAgICAgICAgICAgICAgICA8aSBjbGFzcz0iZmEgZmEtY2hldnJvbi1kb3duIj48L2k+DQogICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0ibWVnYW1lbnUiIHN0eWxlPSJkaXNwbGF5OiBub25lOyI+DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGgyPjxhIGhyZWY9Ii9wcm9kdWN0cyI+UHJvZHVjdHM8L2E+PC9oMj4NCg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9InByb2R1Y3QtY29sIGNhbGxvdXQtYm94IGRldiI+DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxoMz48YSBocmVmPSIvcHJvZHVjdHMvc29mdHdhcmUtZGV2ZWxvcG1lbnQiPkZvciBEZXY8L2E+PC9oMz4NCg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dWw+DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bGk+PGEgaHJlZj0iL3Byb2R1Y3RzL3NvZnR3YXJlLWRldmVsb3BtZW50L2NvZGUtcmV2aWV3Ij5Db2xsYWJvcmF0b3I8L2E+IDxzcGFuIGNsYXNzPSJ0YWciPkNvZGUgUmV2aWV3ICZhbXA7IERvY3VtZW50IFJldmlldzwvc3Bhbj48L2xpPg0KDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bGk+PGEgaHJlZj0iL3Byb2R1Y3RzL3NvZnR3YXJlLWRldmVsb3BtZW50L2FwcGxpY2F0aW9uLWxpZmVjeWNsZS1tYW5hZ2VtZW50Ij5BTE1Db21wbGV0ZTwvYT4gPHNwYW4gY2xhc3M9InRhZyI+TGlmZWN5Y2xlIE1hbmFnZW1lbnQ8L3NwYW4+PC9saT4NCg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGxpPjxhIGhyZWY9Ii9wcm9kdWN0cy9zb2Z0d2FyZS1kZXZlbG9wbWVudC9hcHBsaWNhdGlvbi1wZXJmb3JtYW5jZS1wcm9maWxpbmciPkFRdGltZSBQcm88L2E+IDxzcGFuIGNsYXNzPSJ0YWciPlBlcmZvcm1hbmNlIFByb2ZpbGluZzwvc3Bhbj48L2xpPg0KDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bGk+PGEgaHJlZj0iL3Byb2R1Y3RzL3NvZnR3YXJlLWRldmVsb3BtZW50L3NvYXB1aS1wcm8iPlNvYXBVSSBQcm88L2E+IDxzcGFuIGNsYXNzPSJ0YWciPkFQSSBUZXN0aW5nIC0gU29hcFVJIFBybzwvc3Bhbj48L2xpPg0KPGxpPjxhIGhyZWY9Ii9wcm9kdWN0cy9zb2Z0d2FyZS1kZXZlbG9wbWVudC9zb2Z0d2FyZS1kZXZlbG9wbWVudC1tYW5hZ2VtZW50Ij5EZXZDb21wbGV0ZTwvYT4gPHNwYW4gY2xhc3M9InRhZyI+U29mdHdhcmUgRGV2ZWxvcG1lbnQgTWFuYWdlbWVudDwvc3Bhbj48L2xpPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3VsPg0KPCEtLSA8YSBjbGFzcz0iYmx1ZS1hcnJvdyIgaHJlZj0iL3Byb2R1Y3RzL3NvZnR3YXJlLWRldmVsb3BtZW50IiBpZD0iY3RsMDBfbG1NYWluTmF2X3JwdFRvcExldmVsX2N0bDAxX2N0bDAxX2hsTW9yZURldmVsb3BtZW50Ij5BbGwgRGV2ZWxvcG1lbnQ8L2E+IC0tPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2Pg0KDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0icHJvZHVjdC1jb2wgY2FsbG91dC1ib3ggcWEiPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8aDM+PGEgaHJlZj0iL3Byb2R1Y3RzL3FhLXRvb2xzIj5Gb3IgVGVzdCAmYW1wOyBRQTwvYT48L2gzPg0KDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx1bD4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxsaT48YSBocmVmPSIvcHJvZHVjdHMvcWEtdG9vbHMvYXV0b21hdGVkLXRlc3RpbmctdG9vbHMiPlRlc3RDb21wbGV0ZTwvYT4gPHNwYW4gY2xhc3M9InRhZyI+QXV0b21hdGVkIFRlc3Rpbmc8L3NwYW4+PC9saT4NCg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGxpPjxhIGhyZWY9Ii9wcm9kdWN0cy9xYS10b29scy90ZXN0LW1hbmFnZW1lbnQiPlFBQ29tcGxldGU8L2E+IDxzcGFuIGNsYXNzPSJ0YWciPlRlc3QgTWFuYWdlbWVudDwvc3Bhbj48L2xpPg0KDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bGk+PGEgaHJlZj0iL3Byb2R1Y3RzL3FhLXRvb2xzL2xvYWQtdGVzdGluZyI+TG9hZFVJV2ViIFBybzwvYT4gPHNwYW4gY2xhc3M9InRhZyI+TG9hZCBUZXN0aW5nPC9zcGFuPjwvbGk+DQoNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxsaT48YSBocmVmPSIvcHJvZHVjdHMvcWEtdG9vbHMvYXBwbGljYXRpb24tcGVyZm9ybWFuY2UtcHJvZmlsaW5nIj5BUXRpbWUgUHJvPC9hPiA8c3BhbiBjbGFzcz0idGFnIj5QZXJmb3JtYW5jZSBQcm9maWxpbmc8L3NwYW4+PC9saT4NCg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGxpPjxhIGhyZWY9Ii9wcm9kdWN0cy9xYS10b29scy93ZWItc2VydmljZS1sb2FkLXRlc3RpbmciPkxvYWRVSSBQcm88L2E+IDxzcGFuIGNsYXNzPSJ0YWciPkFQSSBMb2FkIFRlc3Rpbmc8L3NwYW4+PC9saT4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC91bD48IS0tIDxhIGNsYXNzPSJibHVlLWFycm93IiBocmVmPSIvcHJvZHVjdHMvcWEtdG9vbHMiIGlkPSJjdGwwMF9sbU1haW5OYXZfcnB0VG9wTGV2ZWxfY3RsMDFfY3RsMDFfaGxNb3JlVGVzdGluZyI+QWxsIFRlc3QgJmFtcDsgUUE8L2E+IC0tPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2Pg0KDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0icHJvZHVjdC1jb2wgY2FsbG91dC1ib3ggd2ViIj4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGgzPjxhIGhyZWY9Ii9wcm9kdWN0cy93ZWItbW9uaXRvcmluZyI+Rm9yIE9wczwvYT48L2gzPg0KDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx1bD4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxsaT48YSBocmVmPSIvcHJvZHVjdHMvd2ViLW1vbml0b3Jpbmcvd2Vic2l0ZS1tb25pdG9yaW5nIj5BbGVydFNpdGU8L2E+IDxzcGFuIGNsYXNzPSJ0YWciPldlYnNpdGUgTW9uaXRvcmluZzwvc3Bhbj48L2xpPg0KDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bGk+PGEgaHJlZj0iL3Byb2R1Y3RzL3dlYi1tb25pdG9yaW5nL3dlYnNpdGUtYXBpLXBlcmZvcm1hbmNlLW1vbml0b3JpbmciPkFsZXJ0U2l0ZSBBUEkgTW9uaXRvcmluZzwvYT4gPHNwYW4gY2xhc3M9InRhZyI+RnJlZSBBUEkgTW9uaXRvcmluZzwvc3Bhbj48L2xpPg0KDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bGk+PGEgaHJlZj0iL3Byb2R1Y3RzL3dlYi1tb25pdG9yaW5nL2ludGVybmFsLXdlYi1wZXJmb3JtYW5jZS1tb25pdG9yaW5nIj5BbGVydFNpdGUgSW5zaXRlPC9hPiA8c3BhbiBjbGFzcz0idGFnIj5JbnRlcm5hbCBXZWJzaXRlIE1vbml0b3Jpbmc8L3NwYW4+PC9saT4NCg0KPGxpPjxhIGhyZWY9Ii9wcm9kdWN0cy93ZWItYXBwLW1vbml0b3JpbmcvbHVjaWVybmEiPkx1Y2llcm5hPC9hPiA8c3BhbiBjbGFzcz0idGFnIj5BcHBsaWNhdGlvbiBQZXJmb3JtYW5jZSBNYW5hZ2VtZW50PC9zcGFuPjwvbGk+DQoNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC91bD4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2Pg0KICAgICAgICAgICAgICAgICAgICA8L2xpPg0KICAgICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgICAgIDxsaSBjbGFzcz0ibWVnYWxpbmsiPjxhIGNsYXNzPSJuYXYtY2F0LW1haW4iIGhyZWY9Imh0dHA6Ly9zdXBwb3J0LnNtYXJ0YmVhci5jb20vIj5TdXBwb3J0PC9hPjxpIGNsYXNzPSJmYSBmYS1jaGV2cm9uLWRvd24iPjwvaT4NCgkJCQkJCTxkaXYgY2xhc3M9Im1lZ2FtZW51IG1lZ2Etc3VwcG9ydCIgc3R5bGU9ImRpc3BsYXk6IG5vbmU7Ij4NCgkJCQkJCQkJPGRpdiBjbGFzcz0iYmx1ZSI+DQoJCQkJCQkJCQk8aDM+DQoJCQkJCQkJCQlTdXBwb3J0IHdoZW4geW91IG5lZWQgaXQ8L2gzPg0KCQkJCQkJCQlTbWFydEJlYXIgdGVjaG5pY2FsIHJlcHJlc2VudGF0aXZlcyBhcmUgYWx3YXlzIHJlYWR5IHRvIGhlbHAgd2l0aCB5b3VyIHByb2R1Y3QgbmVlZHMuPGJyPg0KCQkJCQkJCQk8YnI+DQoJCQkJCQkJCTxhIGNsYXNzPSIiIGhyZWY9Imh0dHA6Ly9zdXBwb3J0LnNtYXJ0YmVhci5jb20vIj5Ccm93c2Ugb3VyIHN1cHBvcnQgcG9ydGFsPC9hPg0KCQkJCQkJCQk8L2Rpdj4NCg0KCQkJCQkJCQk8ZGl2IGNsYXNzPSJjb2wiPg0KCQkJCQkJCQkJPGgzPg0KCQkJCQkJCQkJS25vdyB3aGF0IHlvdSdyZSBsb29raW5nIGZvcj88L2gzPg0KCQkJCQkJCQk8YSBocmVmPSJodHRwOi8vc3VwcG9ydC5zbWFydGJlYXIuY29tL2Rvd25sb2FkcyIgdGFyZ2V0PSJibGFuayI+RG93bmxvYWRzPC9hPjxicj4NCgkJCQkJCQkJPGEgaHJlZj0iaHR0cDovL3N1cHBvcnQuc21hcnRiZWFyLmNvbS9vbmxpbmVoZWxwIiB0YXJnZXQ9ImJsYW5rIj5Vc2VyIEd1aWRlczwvYT48YnI+DQoJCQkJCQkJCTxhIGhyZWY9Imh0dHA6Ly9zdXBwb3J0LnNtYXJ0YmVhci5jb20vaG93dG8iIHRhcmdldD0iYmxhbmsiPkhvdyBUbyBUdXRvcmlhbHM8L2E+PGJyPg0KCQkJCQkJCQk8YSBocmVmPSJodHRwOi8vc3VwcG9ydC5zbWFydGJlYXIuY29tL2FydGljbGVzIiB0YXJnZXQ9ImJsYW5rIj5UZWNobmljYWwgQXJ0aWNsZXM8L2E+PGJyPg0KCQkJCQkJCQk8YSBocmVmPSJodHRwOi8vc3VwcG9ydC5zbWFydGJlYXIuY29tL3NjcmVlbmNhc3RzIiB0YXJnZXQ9ImJsYW5rIj5TY3JlZW5jYXN0cy9WaWRlb3M8L2E+DQoJCQkJCQkJCQkNCgkJCQkJCQkJPC9kaXY+DQoNCgkJCQkJCQkJPGRpdiBjbGFzcz0iY29sIj4NCgkJCQkJCQkJCTxoMz4NCgkJCQkJCQkJCUdlbmVyYWwgc3VwcG9ydDwvaDM+DQoJCQkJCQkJCTxhIGhyZWY9Imh0dHA6Ly9jb21tdW5pdHkuc21hcnRiZWFyLmNvbS9mb3J1bXMiIHRhcmdldD0iYmxhbmsiPkZvcnVtczwvYT48YnI+DQoJCQkJCQkJCTxhIGhyZWY9Imh0dHA6Ly9zdXBwb3J0LnNtYXJ0YmVhci5jb20vYWJvdXQtdHJvdWJsZXNob290ZXIiIHRhcmdldD0iYmxhbmsiPlRyb3VibGVzaG9vdGVyPC9hPjxicj4NCgkJCQkJCQkJPGEgaHJlZj0iaHR0cDovL3N1cHBvcnQuc21hcnRiZWFyLmNvbS9mYXEiIHRhcmdldD0iYmxhbmsiPkZBUXM8L2E+PGJyPg0KCQkJCQkJCQk8YSBocmVmPSJodHRwOi8vc3VwcG9ydC5zbWFydGJlYXIuY29tL3ZlcnNpb25zIiB0YXJnZXQ9ImJsYW5rIj5Qcm9kdWN0IFZlcnNpb25zPC9hPg0KCQkJCQkJCQkJDQoJCQkJCQkJCTwvZGl2Pg0KCQkJCQkJPC9kaXY+DQoJCQkJCQkNCgkJCQkgICA8L2xpPg0KPGxpPjxhIGNsYXNzPSJuYXYtY2F0LW1haW4iIGhyZWY9Imh0dHA6Ly9zbWFydGJlYXIuY29tL3Jlc291cmNlcyI+UmVzb3VyY2VzPC9hPg0KPC9saT4NCiAgICAgICAgICAgICAgICAgICA8bGk+PGEgY2xhc3M9Im5hdi1jYXQtbWFpbiIgaHJlZj0iaHR0cDovL3NtYXJ0YmVhci5jb20vY29tbXVuaXR5Ij5Db21tdW5pdHk8L2E+DQoJCQkJICAgDQoJCQkJICAgDQoJCQkJICAgDQoJCQkJICAgDQoJCQkJICAgPC9saT4NCiAgICAgICAgICAgICAgICAgICA8bGk+PGEgY2xhc3M9Im5hdi1jYXQtbWFpbiIgdGFyZ2V0PSJfYmxhbmsiIGhyZWY9Imh0dHA6Ly9ibG9nLnNtYXJ0YmVhci5jb20iPkJsb2c8L2E+PC9saT4NCiAgICAgICAgICAgICAgICAgICA8L3VsPg0KICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9Im5hdi1hZGRpdGlvbiI+DQogICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9InNlYXJjaGJveCIgaWQ9InNlYXJjaC1zbWFsbCI+DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgPGlucHV0IHR5cGU9InRleHQiIGNsYXNzPSJmb3JtLWNvbnRyb2wtc2VhcmNoIj4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0iYnV0dG9uLXNlYXJjaGJ1dHRvbiI+PGkgY2xhc3M9ImZhIGZhLXNlYXJjaCBmYS1sZyI+PC9pPjwvc3Bhbj4NCiAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+DQogICAgICAgICAgICAgICAgICAgICAgIDxhIGNsYXNzPSJuYXYtY2F0IGxvZ2luLWxpbmsiIGhyZWY9Ii9sb2dpbiIgc3R5bGU9ImRpc3BsYXk6bm9uZSI+PCEtLWxvZ2luLS0+PC9hPg0KICAgICAgICAgICAgICAgICAgIDwvZGl2Pg0KICAgICAgICAgICAgICANCiAgICAgICAgICAgIDwvbmF2Pg0KICAgICAgICA8L2Rpdj4NCiAgICA8L2hlYWRlcj4NCgk8ZGl2IGNsYXNzPSJjbGVhcmZpeCI+PC9kaXY+DQo8L2Rpdj4NCg0KPC9kaXY+ZAIED2QWCAIBD2QWAgIBDw8WDB4UU2VsZWN0Tm9kZXNTdGFydFBhdGgFAS8eDENhY2hlTWludXRlcwIKHghTaXRlTmFtZQUJU21hcnRCZWFyHgRQYXRoBV4vcHJvZHVjdHMvcWEtdG9vbHMvYXV0b21hdGVkLXRlc3RpbmctdG9vbHMvRmVhdHVyZXMvc29mdHdhcmUtdGVzdGluZy10eXBlcy9mdW5jdGlvbmFsLWd1aS10ZXN0HgtEZWZhdWx0UGF0aAVeL3Byb2R1Y3RzL3FhLXRvb2xzL2F1dG9tYXRlZC10ZXN0aW5nLXRvb2xzL0ZlYXR1cmVzL3NvZnR3YXJlLXRlc3RpbmctdHlwZXMvZnVuY3Rpb25hbC1ndWktdGVzdB4OV2hlcmVDb25kaXRpb24FQ0NsYXNzTmFtZSAhPSAnQ01TLkZvbGRlcicgQU5EIE5vZGVJRCBub3QgaW4gKDMyLDMzLDg0Niw4NDcsODQ4LDg1MClkZAIDDxYCHgtfIUl0ZW1Db3VudAIBFgJmD2QWBgIBDw8WBB4LTmF2aWdhdGVVcmwFQi9wcm9kdWN0cy9xYS10b29scy9hdXRvbWF0ZWQtdGVzdGluZy10b29scy9mcmVlLXRlc3Rjb21wbGV0ZS10cmlhbB4HVmlzaWJsZWhkZAIDDw8WAh8KZ2RkAgUPFgIfAAUhRnVuY3Rpb25hbCBUZXN0aW5nIC0gVGVzdENvbXBsZXRlZAIFDxYCHwgCBBYKZg9kFgICAQ8WAh8IAgEWAmYPZBYEZg8VAQBkAgEPDxYCHwkFKi9wcm9kdWN0cy9xYS10b29scy9hdXRvbWF0ZWQtdGVzdGluZy10b29sc2RkAgEPZBYEZg8VAQZhY3RpdmVkAgEPDxYCHwkFMy9wcm9kdWN0cy9xYS10b29scy9hdXRvbWF0ZWQtdGVzdGluZy10b29scy9mZWF0dXJlc2QWAmYPFQEIRmVhdHVyZXNkAgIPZBYEZg8VAQBkAgEPDxYCHwkFNC9wcm9kdWN0cy9xYS10b29scy9hdXRvbWF0ZWQtdGVzdGluZy10b29scy9yZXNvdXJjZXNkFgJmDxUBCVJlc291cmNlc2QCAw9kFgRmDxUBAGQCAQ8PFgIfCQVGL3Byb2R1Y3RzL3FhLXRvb2xzL2F1dG9tYXRlZC10ZXN0aW5nLXRvb2xzL3Rlc3Rjb21wbGV0ZS1zcGVjaWZpY2F0aW9uc2QWAmYPFQEOU3BlY2lmaWNhdGlvbnNkAgQPZBYEZg8VAQBkAgEPDxYCHwkFPy9wcm9kdWN0cy9xYS10b29scy9hdXRvbWF0ZWQtdGVzdGluZy10b29scy90ZXN0Y29tcGxldGUtcHJpY2luZ2QWAmYPFQELUHJpY2UgJiBCdXlkAgcPZBYGZg8PFgQfCQVKL3Byb2R1Y3RzL3FhLXRvb2xzL2F1dG9tYXRlZC10ZXN0aW5nLXRvb2xzL2ZlYXR1cmVzL3NvZnR3YXJlLXRlc3RpbmctdHlwZXMfAAUaQ29tYmluZSBhIFZhcmlldHkgb2YgVGVzdHNkZAIBD2QWAmYPFgIfCAIJFhICAQ9kFgICAQ8WAh8BBQZhY3RpdmUWAgIBDw8WBh8JBVUvcHJvZHVjdHMvcWEtdG9vbHMvYXV0b21hdGVkLXRlc3RpbmctdG9vbHMvc29mdHdhcmUtdGVzdGluZy10eXBlcy9mdW5jdGlvbmFsLWd1aS10ZXN0HwAFFkZ1bmN0aW9uYWwgR1VJIFRlc3RpbmceB1Rvb2xUaXAFFkZ1bmN0aW9uYWwgR1VJIFRlc3RpbmdkZAICD2QWAgIBD2QWAgIBDw8WBh8JBVMvcHJvZHVjdHMvcWEtdG9vbHMvYXV0b21hdGVkLXRlc3RpbmctdG9vbHMvc29mdHdhcmUtdGVzdGluZy10eXBlcy9yZWdyZXNzaW9ucy10ZXN0cx8ABRJSZWdyZXNzaW9uIFRlc3RpbmcfCwUSUmVncmVzc2lvbiBUZXN0aW5nZGQCAw9kFgICAQ9kFgICAQ8PFgYfCQVRL3Byb2R1Y3RzL3FhLXRvb2xzL2F1dG9tYXRlZC10ZXN0aW5nLXRvb2xzL3NvZnR3YXJlLXRlc3RpbmctdHlwZXMvd2hpdGUtYm94LXRlc3RzHwAFEVdoaXRlLUJveCBUZXN0aW5nHwsFEVdoaXRlLUJveCBUZXN0aW5nZGQCBA9kFgICAQ9kFgICAQ8PFgYfCQVML3Byb2R1Y3RzL3FhLXRvb2xzL2F1dG9tYXRlZC10ZXN0aW5nLXRvb2xzL3NvZnR3YXJlLXRlc3RpbmctdHlwZXMvdW5pdC10ZXN0cx8ABQxVbml0IFRlc3RpbmcfCwUMVW5pdCBUZXN0aW5nZGQCBQ9kFgICAQ9kFgICAQ8PFgYfCQVWL3Byb2R1Y3RzL3FhLXRvb2xzL2F1dG9tYXRlZC10ZXN0aW5nLXRvb2xzL3NvZnR3YXJlLXRlc3RpbmctdHlwZXMva2V5d29yZC1kcml2ZW4tdGVzdHMfAAUWS2V5d29yZC1Ecml2ZW4gVGVzdGluZx8LBRZLZXl3b3JkLURyaXZlbiBUZXN0aW5nZGQCBg9kFgICAQ9kFgICAQ8PFgYfCQVWL3Byb2R1Y3RzL3FhLXRvb2xzL2F1dG9tYXRlZC10ZXN0aW5nLXRvb2xzL3NvZnR3YXJlLXRlc3RpbmctdHlwZXMvb2JqZWN0LWRyaXZpbmctdGVzdHMfAAUVT2JqZWN0LURyaXZlbiBUZXN0aW5nHwsFFU9iamVjdC1Ecml2ZW4gVGVzdGluZ2RkAgcPZBYCAgEPZBYCAgEPDxYGHwkFVC9wcm9kdWN0cy9xYS10b29scy9hdXRvbWF0ZWQtdGVzdGluZy10b29scy9zb2Z0d2FyZS10ZXN0aW5nLXR5cGVzL2RhdGEtZHJpdmluZy10ZXN0cx8ABRNEYXRhLURyaXZlbiBUZXN0aW5nHwsFE0RhdGEtRHJpdmVuIFRlc3RpbmdkZAIID2QWAgIBD2QWAgIBDw8WBh8JBVAvcHJvZHVjdHMvcWEtdG9vbHMvYXV0b21hdGVkLXRlc3RpbmctdG9vbHMvc29mdHdhcmUtdGVzdGluZy10eXBlcy9jb3ZlcmFnZS10ZXN0cx8ABRBDb3ZlcmFnZSBUZXN0aW5nHwsFEENvdmVyYWdlIFRlc3RpbmdkZAIJD2QWAgIBD2QWAgIBDw8WBh8JBVMvcHJvZHVjdHMvcWEtdG9vbHMvYXV0b21hdGVkLXRlc3RpbmctdG9vbHMvc29mdHdhcmUtdGVzdGluZy10eXBlcy9kaXN0cmlidXRlZC10ZXN0cx8ABRNEaXN0cmlidXRlZCBUZXN0aW5nHwsFE0Rpc3RyaWJ1dGVkIFRlc3RpbmdkZAIDDw8WAh8KaGQWBAIBDw8WAh8KaGRkAgMPDxYEHwkFXC9wcm9kdWN0cy9xYS10b29scy9hdXRvbWF0ZWQtdGVzdGluZy10b29scy9mZWF0dXJlcy9zb2Z0d2FyZS10ZXN0aW5nLXR5cGVzL3JlZ3Jlc3Npb25zLXRlc3RzHwAFElJlZ3Jlc3Npb24gVGVzdGluZ2RkAgUPZBYCAgEPZBYEAgEPZBYCZg9kFgJmDxUBDFRlc3RpbmcgJiBRQWQCAw8WAh8IAgUWCmYPZBYCZg8VBCIvcHJvZHVjdHMvcWEtdG9vbHMvdGVzdC1tYW5hZ2VtZW50ClFBQ29tcGxldGUPVGVzdCBNYW5hZ2VtZW50GFNtYXJ0ZXIgdGVzdCBtYW5hZ2VtZW50LmQCAQ9kFgJmDxUEHy9wcm9kdWN0cy9xYS10b29scy9sb2FkLXRlc3RpbmcNTG9hZFVJV2ViIFBybwxMb2FkIFRlc3RpbmciUGlucG9pbnQgV2ViIHNjYWxhYmlsaXR5IHByb2JsZW1zLmQCAg9kFgJmDxUENC9wcm9kdWN0cy9xYS10b29scy9hcHBsaWNhdGlvbi1wZXJmb3JtYW5jZS1wcm9maWxpbmcKQVF0aW1lIFBybxVQZXJmb3JtYW5jZSBQcm9maWxpbmcqRmluZCBtZW1vcnkgYW5kIHBlcmZvcm1hbmNlIGlzc3VlcyBmYXN0ZXIuZAIDD2QWAmYPFQQrL3Byb2R1Y3RzL3FhLXRvb2xzL3dlYi1zZXJ2aWNlLWxvYWQtdGVzdGluZwpMb2FkVUkgUHJvEEFQSSBMb2FkIFRlc3RpbmcoVW5saW1pdGVkIGxvYWQgdGVzdGluZyBmb3IgV2ViIHNlcnZpY2VzLmQCBA9kFgJmDxUEKy9wcm9kdWN0cy9xYS10b29scy93ZWItc2VydmljZS10ZXN0aW5nLXRvb2wKU29hcFVJIFBybxhBUEkgVGVzdGluZyAtIFNvYXBVSSBQcm8oRmFzdCBmdW5jdGlvbmFsIHRlc3RpbmcgZm9yIFdlYiBzZXJ2aWNlLmQCBg9kFgJmD2QWAmYPFQGZHjxkaXYgaWQ9ImZvb3RlciI+DQoNCjxkaXYgY2xhc3M9ImZvb3RlcmJnIj4NCiAgICA8Zm9vdGVyIGNsYXNzPSJmb290ZXItaW5uZXIiPg0KICAgIDxkaXYgY2xhc3M9ImZvb3Rlci1jb2wiPg0KICAgICAgICAgICAgICAgICAgICA8aDY+cHJvZHVjdHM8L2g2Pg0KICAgICAgICAgICAgICAgICAgICA8YSBjbGFzcz0iZm9vdGVybGluayIgaHJlZj0iL3Byb2R1Y3RzL3NvZnR3YXJlLWRldmVsb3BtZW50LyI+Rm9yIERldjwvYT4NCiAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3M9ImZvb3RlcmxpbmsiIGhyZWY9Ii9wcm9kdWN0cy9xYS10b29scy8iPkZvciBUZXN0ICZhbXA7IFFBPC9hPg0KICAgICAgICAgICAgICAgICAgICA8YSBjbGFzcz0iZm9vdGVybGluayIgaHJlZj0iL3Byb2R1Y3RzL3dlYi1tb25pdG9yaW5nLyI+Rm9yIE9wczwvYT4NCiAgICA8L2Rpdj4NCiAgICA8ZGl2IGNsYXNzPSJmb290ZXItY29sIj4NCiAgICAgICAgICAgICAgICAgICAgPGg2PnN1cHBvcnQ8L2g2Pg0KICAgICAgICAgICAgICAgICAgICA8YSBjbGFzcz0iZm9vdGVybGluayIgaHJlZj0iaHR0cDovL3N1cHBvcnQuc21hcnRiZWFyLmNvbS9kb3dubG9hZHMiPmRvd25sb2FkczwvYT4NCiAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3M9ImZvb3RlcmxpbmsiIGhyZWY9Imh0dHA6Ly9zdXBwb3J0LnNtYXJ0YmVhci5jb20vZmFxIj5GQVFzPC9hPg0KICAgICAgICAgICAgICAgICAgICA8YSBjbGFzcz0iZm9vdGVybGluayIgaHJlZj0iaHR0cDovL3N1cHBvcnQuc21hcnRiZWFyLmNvbS9hYm91dC10cm91Ymxlc2hvb3RlciI+dHJvdWJsZSBzaG9vdGVyPC9hPg0KICAgICAgICAgICAgICAgICAgICA8YSBjbGFzcz0iZm9vdGVybGluayIgaHJlZj0iaHR0cDovL3N1cHBvcnQuc21hcnRiZWFyLmNvbS92ZXJzaW9ucyI+cHJvZHVjdCB2ZXJzaW9uczwvYT4NCiAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3M9ImZvb3RlcmxpbmsiIGhyZWY9Imh0dHA6Ly9zdXBwb3J0LnNtYXJ0YmVhci5jb20vYXJ0aWNsZXMiPnRlY2huaWNhbCBhcnRpY2xlczwvYT4NCiAgICA8L2Rpdj4NCiAgICA8ZGl2IGNsYXNzPSJmb290ZXItY29sIj4NCiAgICAgICAgICAgICAgICAgICAgPGg2PmNvbW11bml0eTwvaDY+DQogICAgICAgICAgICAgICAgICAgIDxhIGNsYXNzPSJmb290ZXJsaW5rIiBocmVmPSJodHRwOi8vY29tbXVuaXR5LnNtYXJ0YmVhci5jb20vZm9ydW1zP19nYT0xLjI0MzI4NzIzNy4xNzQ5OTk5OTIwLjEzODI0NTgyMDkiPkZvcnVtczwvYT4NCiAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3M9ImZvb3RlcmxpbmsiIGhyZWY9Imh0dHA6Ly9zbWFydGJlYXIuY29tL2Jsb2ciPmJsb2dzPC9hPg0KICAgICAgICAgICAgICAgICAgICA8YSBjbGFzcz0iZm9vdGVybGluayIgaHJlZj0iL25ld3MvZXZlbnRzLyI+ZXZlbnRzPC9hPg0KICAgIDwvZGl2Pg0KICAgIDxkaXYgY2xhc3M9ImZvb3Rlci1jb2wiPg0KICAgICAgICAgICAgICAgICAgICA8aDY+QWJvdXQgdXM8L2g2Pg0KICAgICAgICAgICAgICAgICAgICA8YSBjbGFzcz0iZm9vdGVybGluayIgaHJlZj0iL2Fib3V0LXVzL291ci10ZWFtIj5NZWV0IG91ciB0ZWFtPC9hPg0KICAgICAgICAgICAgICAgICAgPGEgY2xhc3M9ImZvb3RlcmxpbmsiIGhyZWY9Ii9hYm91dC11cy9OZXdzcm9vbSI+TmV3c3Jvb208L2E+DQogICAgICAgICAgICAgICAgICAgIDxhIGNsYXNzPSJmb290ZXJsaW5rIiBocmVmPSIvYWJvdXQtdXMvY2FyZWVycyI+Q2FyZWVyczwvYT4NCiAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3M9ImZvb3RlcmxpbmsiIGhyZWY9Ii9hYm91dC11cy9pbnRlcm5zaGlwcyI+aW50ZXJuc2hpcHM8L2E+DQogICAgICAgICAgICAgICAgICAgIDxhIGNsYXNzPSJmb290ZXJsaW5rIiBocmVmPSIvYWJvdXQtdXMvb3VyLXBhcnRuZXJzIj5vdXIgcGFydG5lcnM8L2E+DQogICAgICAgICAgICAgICAgICAgIDxhIGNsYXNzPSJmb290ZXJsaW5rIiBocmVmPSIvYWJvdXQtdXMvb3VyLWN1c3RvbWVycyI+b3VyIGN1c3RvbWVyczwvYT4NCiAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3M9ImZvb3RlcmxpbmsiIGhyZWY9Ii9hYm91dC11cy9hd2FyZHMvIj5hd2FyZHM8L2E+DQogICAgICAgICAgICAgICAgICAgIDxhIGNsYXNzPSJmb290ZXJsaW5rIiBocmVmPSIvYWJvdXQtdXMvZ2l2aW5nLWJhY2siPmdpdmluZyBiYWNrPC9hPg0KICAgICAgICAgICAgICAgIDwvZGl2Pg0KICAgICA8ZGl2IGNsYXNzPSJmb290ZXItY29sIj4NCiAgICAgICAgICAgICAgICAgICAgPGg2PmNvbnRhY3QgdXM8L2g2Pg0KICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0iZm9vdGVybGluayI+PHNwYW4gY2xhc3M9ImZhIGZhLXBob25lIj48L3NwYW4+ICsxIDk3OC0yMzYtNzkwMDwvc3Bhbj4NCiAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3M9ImZvb3RlcmxpbmsiIGhyZWY9Imh0dHA6Ly9zbWFydGJlYXIuY29tL2NvbnRhY3QtdXMvIj48aSBjbGFzcz0iZmEgZmEtZW52ZWxvcGUtbyI+PC9pPiBDb250YWN0IEZvcm08L2E+DQogICAgICAgICAgICAgICAgICAgIA0KICAgICA8L2Rpdj4NCiAgICA8L2Zvb3Rlcj4NCjwvZGl2Pg0KDQo8Zm9vdGVyIGNsYXNzPSJjb3B5cmlnaHQiPg0KICAgICAgICA8ZGl2IGNsYXNzPSJjb3B5cmlnaHQtaW5uZXIiPg0KICAgICAgICAgIDxkaXYgY2xhc3M9ImZvb3Rlci1pbm5lci1sZWZ0Ij4NCiAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImZvb3RlcnRleHQiPg0KICAgICAgICAgICAgICAgICAgICAgICAgMjAxNCBTbWFydEJlYXIgU29mdHdhcmUuIEFsbCBSaWdodHMgUmVzZXJ2ZWQuDQogICAgICAgICAgICAgICAgICAgIDwvZGl2Pg0KICAgICAgICAgICAgICAgICAgICA8YSBjbGFzcz0iZm9vdGVybWVudSIgaHJlZj0iaHR0cDovL3NtYXJ0YmVhci5jb20vcHJpdmFjeSI+UHJpdmFjeTwvYT4NCiAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3M9ImZvb3Rlcm1lbnUiIGhyZWY9Imh0dHA6Ly9zbWFydGJlYXIuY29tL3Rlcm1zLW9mLXVzZSI+VGVybXMgb2YgdXNlPC9hPg0KICAgICAgICAgICAgICAgICAgICA8YSBjbGFzcz0iZm9vdGVybWVudSIgaHJlZj0iaHR0cDovL3NtYXJ0YmVhci5jb20vc2l0ZS1tYXAiPnNpdGUgbWFwPC9hPg0KICAgICAgICAgICA8L2Rpdj4NCiAgICAgICAgICAgDQogICAgICAgICAgIDxkaXYgY2xhc3M9ImZvb3Rlci1pbm5lci1yaWdodCI+DQogICAgICAgICAgIDx1bCBjbGFzcz0ic29jaWFsLWxpc3QiPg0KICAgICAgICAgICA8bGk+PGEgdGFyZ2V0PSJfYmxhbmsiIGhyZWY9Imh0dHBzOi8vcGx1cy5nb29nbGUuY29tLzExMjU0OTY1MzIzNzEwNjg4NjEyNy8iIGNsYXNzPSJncC1pY29uIj48L2E+PC9saT4NCiAgICAgICAgICAgPGxpPiA8YSBjbGFzcz0iZmItaWNvbiIgdGFyZ2V0PSJfYmxhbmsiIGhyZWY9Imh0dHA6Ly93d3cuZmFjZWJvb2suY29tL3NtYXJ0YmVhciI+PC9hPjwvbGk+DQogICAgICAgICAgIDxsaT4gPGEgY2xhc3M9InR3LWljb24iIHRhcmdldD0iX2JsYW5rIiBocmVmPSJodHRwOi8vdHdpdHRlci5jb20vc21hcnRiZWFyIj48L2E+PC9saT4NCiAgICAgICAgICAgPGxpPiA8YSBjbGFzcz0ieXQtaWNvbiIgdGFyZ2V0PSJfYmxhbmsiIGhyZWY9Imh0dHA6Ly93d3cueW91dHViZS5jb20vdXNlci9TbWFydEJlYXJTb2Z0d2FyZSI+PC9hPjwvbGk+DQogICAgICAgICAgIDxsaT4gPGEgY2xhc3M9ImxpLWljb24iIHRhcmdldD0iX2JsYW5rIiBocmVmPSJodHRwOi8vd3d3LmxpbmtlZGluLmNvbS9jb21wYW55L3NtYXJ0YmVhci1zb2Z0d2FyZSI+PC9hPjwvbGk+DQogICAgICAgICAgIDwvdWw+DQogICAgICAgICAgIDwvZGl2Pg0KICAgICAgICAgDQogICAgICAgICA8L2Rpdj4NCjwvZm9vdGVyPg0KDQo8L2Rpdj5kZHEVunXBWvwRHjqWMMXmqw7DWbv6">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./Functional and GUI Testing - TestComplete   SmartBear_files/WebResource.axd" type="text/javascript"></script>
+
+<input type="hidden" name="lng" id="lng" value="en-US">
+<script src="./Functional and GUI Testing - TestComplete   SmartBear_files/ScriptResource.axd" type="text/javascript"></script>
+<script src="./Functional and GUI Testing - TestComplete   SmartBear_files/ScriptResource(1).axd" type="text/javascript"></script>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$manScript', 'aspnetForm', [], [], [], 90, 'ctl00$ctl00');
+//]]>
+</script>
+
+        <div id="CMSHeaderDiv">
+	<!-- -->
+</div>
+		<!--googleoff: all-->  
+        <div id="container" style="margin-bottom: -243px;">
+            
+            <!--main header wrap tempalte -->
+            <div id="undefined-sticky-wrapper" class="sticky-wrapper header-sticky-white" style="height: 74px;"><div class="main-header-wrap" style="position: fixed; top: 0px;">
+<div class="main-header-content">
+    <header class="header-helper">
+        <div class="logo"><a href="http://smartbear.com/"><img alt="SmartBear Software" src="./Functional and GUI Testing - TestComplete   SmartBear_files/sblogo.png"></a>
+        <a data-state="opened" class="hidden-col-button" href="http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/functional-gui-test/#"><i class="fa fa-bars"></i></a>
+        </div>
+        <div class="top-right">
+            <div class="top-add">
+                <!--a href="/resources" class="nav-cat utility">Resources</a>
+                <a href="http://blog.smartbear.com/" class="nav-cat utility"><span class="lines-span">||&nbsp;&nbsp;</span>Blog<span class="lines-span">&nbsp;&nbsp;||</span></a-->
+  
+            </div>
+          <div class="clearfix"></div>
+            <nav class="top-nav">
+                <ul>
+                    <li class="megalink"><a class="nav-cat-main" href="http://smartbear.com/products">Products </a>
+                    <i class="fa fa-chevron-down"></i>
+                         <div class="megamenu" style="display: none;">
+                                        <h2><a href="http://smartbear.com/products">Products</a></h2>
+
+                                        <div class="product-col callout-box dev">
+                                            <h3><a href="http://smartbear.com/products/software-development">For Dev</a></h3>
+
+                                            <ul>
+                                                <li><a href="http://smartbear.com/products/software-development/code-review">Collaborator</a> <span class="tag">Code Review &amp; Document Review</span></li>
+
+                                                <li><a href="http://smartbear.com/products/software-development/application-lifecycle-management">ALMComplete</a> <span class="tag">Lifecycle Management</span></li>
+
+                                                <li><a href="http://smartbear.com/products/software-development/application-performance-profiling">AQtime Pro</a> <span class="tag">Performance Profiling</span></li>
+
+                                                <li><a href="http://smartbear.com/products/software-development/soapui-pro">SoapUI Pro</a> <span class="tag">API Testing - SoapUI Pro</span></li>
+<li><a href="http://smartbear.com/products/software-development/software-development-management">DevComplete</a> <span class="tag">Software Development Management</span></li>
+                                            </ul>
+<!-- <a class="blue-arrow" href="/products/software-development" id="ctl00_lmMainNav_rptTopLevel_ctl01_ctl01_hlMoreDevelopment">All Development</a> -->
+                                        </div>
+
+                                        <div class="product-col callout-box qa">
+                                            <h3><a href="http://smartbear.com/products/qa-tools">For Test &amp; QA</a></h3>
+
+                                            <ul>
+                                                <li><a href="http://smartbear.com/products/qa-tools/automated-testing-tools">TestComplete</a> <span class="tag">Automated Testing</span></li>
+
+                                                <li><a href="http://smartbear.com/products/qa-tools/test-management">QAComplete</a> <span class="tag">Test Management</span></li>
+
+                                                <li><a href="http://smartbear.com/products/qa-tools/load-testing">LoadUIWeb Pro</a> <span class="tag">Load Testing</span></li>
+
+                                                <li><a href="http://smartbear.com/products/qa-tools/application-performance-profiling">AQtime Pro</a> <span class="tag">Performance Profiling</span></li>
+
+                                                <li><a href="http://smartbear.com/products/qa-tools/web-service-load-testing">LoadUI Pro</a> <span class="tag">API Load Testing</span></li>
+                                            </ul><!-- <a class="blue-arrow" href="/products/qa-tools" id="ctl00_lmMainNav_rptTopLevel_ctl01_ctl01_hlMoreTesting">All Test &amp; QA</a> -->
+                                        </div>
+
+                                        <div class="product-col callout-box web">
+                                            <h3><a href="http://smartbear.com/products/web-monitoring">For Ops</a></h3>
+
+                                            <ul>
+                                                <li><a href="http://smartbear.com/products/web-monitoring/website-monitoring">AlertSite</a> <span class="tag">Website Monitoring</span></li>
+
+                                                <li><a href="http://smartbear.com/products/web-monitoring/website-api-performance-monitoring">AlertSite API Monitoring</a> <span class="tag">Free API Monitoring</span></li>
+
+                                                <li><a href="http://smartbear.com/products/web-monitoring/internal-web-performance-monitoring">AlertSite Insite</a> <span class="tag">Internal Website Monitoring</span></li>
+
+<li><a href="http://smartbear.com/products/web-app-monitoring/lucierna">Lucierna</a> <span class="tag">Application Performance Management</span></li>
+
+                                                
+                                          </ul>
+                                        </div>
+                                    </div>
+                    </li>
+                   
+                   <li class="megalink"><a class="nav-cat-main" href="http://support.smartbear.com/">Support</a><i class="fa fa-chevron-down"></i>
+						<div class="megamenu mega-support" style="display: none;">
+								<div class="blue">
+									<h3>
+									Support when you need it</h3>
+								SmartBear technical representatives are always ready to help with your product needs.<br>
+								<br>
+								<a class="" href="http://support.smartbear.com/">Browse our support portal</a>
+								</div>
+
+								<div class="col">
+									<h3>
+									Know what you're looking for?</h3>
+								<a href="http://support.smartbear.com/downloads" target="blank">Downloads</a><br>
+								<a href="http://support.smartbear.com/onlinehelp" target="blank">User Guides</a><br>
+								<a href="http://support.smartbear.com/howto" target="blank">How To Tutorials</a><br>
+								<a href="http://support.smartbear.com/articles" target="blank">Technical Articles</a><br>
+								<a href="http://support.smartbear.com/screencasts" target="blank">Screencasts/Videos</a>
+									
+								</div>
+
+								<div class="col">
+									<h3>
+									General support</h3>
+								<a href="http://community.smartbear.com/forums" target="blank">Forums</a><br>
+								<a href="http://support.smartbear.com/about-troubleshooter" target="blank">Troubleshooter</a><br>
+								<a href="http://support.smartbear.com/faq" target="blank">FAQs</a><br>
+								<a href="http://support.smartbear.com/versions" target="blank">Product Versions</a>
+									
+								</div>
+						</div>
+						
+				   </li>
+<li><a class="nav-cat-main" href="http://smartbear.com/resources">Resources</a>
+</li>
+                   <li><a class="nav-cat-main" href="http://smartbear.com/community">Community</a>
+				   
+				   
+				   
+				   
+				   </li>
+                   <li><a class="nav-cat-main" target="_blank" href="http://blog.smartbear.com/">Blog</a></li>
+                   </ul>
+                   <div class="nav-addition">
+                       <div class="searchbox" id="search-small">
+                            <input type="text" class="form-control-search">
+                            <span class="button-searchbutton"><i class="fa fa-search fa-lg"></i></span>
+                       </div>
+                       <a class="nav-cat login-link" href="http://smartbear.com/login/" style="">Login</a>
+                   </div>
+              
+            </nav>
+        </div>
+    </header>
+	<div class="clearfix"></div>
+</div>
+
+</div></div>
+            <!--end main header tempalte-->
+
+
+            <!-- MAIN -->
+	        <div id="main" role="main">
+                <!-- Social Nav -->
+                
+
+<script type="text/javascript">    var switchTo5x = true;</script>
+<script type="text/javascript" src="./Functional and GUI Testing - TestComplete   SmartBear_files/buttons.js"></script>
+<script type="text/javascript">    stLight.options({ publisher: "ur-210ae099-1fbd-452c-b59b-71def74fb64c", doNotHash: true }); </script>
+
+
+<div id="sthoverbuttons">
+    <span class="share">Share</span>
+    <span class="st_twitter_large" displaytext="Tweet" st_via="SmartBear" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span class="stLarge" style="background-image: url(http://w.sharethis.com/images/twitter_32.png);"></span><img src="./Functional and GUI Testing - TestComplete   SmartBear_files/check-big.png" style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;"></span></span>
+    <span class="st_plusone_large" displaytext="Google +1" st_processed="yes"><div style="display:inline-block;overflow:hidden;line-height:0px;position:relative;vertical-align:middle;bottom:12px;width:38px; height:27px;">&nbsp;<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 38px; height: 24px; background-position: initial initial; background-repeat: initial initial;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" width="100%" id="I0_1398327516939" name="I0_1398327516939" src="./Functional and GUI Testing - TestComplete   SmartBear_files/fastbutton.htm" data-gapiattached="true" title="+1"></iframe></div></div></span>
+    <span class="st_linkedin_large" displaytext="LinkedIn" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span class="stLarge" style="background-image: url(http://w.sharethis.com/images/linkedin_32.png);"></span><img src="./Functional and GUI Testing - TestComplete   SmartBear_files/check-big.png" style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;"></span></span>
+    <span class="st_stumbleupon_large" displaytext="StumbleUpon" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span class="stLarge" style="background-image: url(http://w.sharethis.com/images/stumbleupon_32.png);"></span><img src="./Functional and GUI Testing - TestComplete   SmartBear_files/check-big.png" style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;"></span></span>
+    <span class="st_email_large" displaytext="Email" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span class="stLarge" style="background-image: url(http://w.sharethis.com/images/email_32.png);"></span><img src="./Functional and GUI Testing - TestComplete   SmartBear_files/check-big.png" style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;"></span></span>
+    <span class="st_facebook_large" displaytext="Facebook" st_processed="yes"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;" class="stButton"><span class="stLarge" style="background-image: url(http://w.sharethis.com/images/facebook_32.png);"></span><img src="./Functional and GUI Testing - TestComplete   SmartBear_files/check-big.png" style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;"></span></span>
+</div>
+
+
+				<!--googleon: all-->
+	            
+
+    <!-- Header -->
+    <div id="subpage-header" class="products-header"> 
+        <div id="products-header-inner" class="clearfix">
+
+            
+
+<div id="breadcrumb">
+    <a href="http://smartbear.com/">Home</a> › <a href="http://smartbear.com/products" class="products">Products</a> › <a href="http://smartbear.com/products/qa-tools" class="CMSBreadCrumbsLink">Testing &amp; QA</a> › <a href="http://smartbear.com/products/qa-tools/automated-testing-tools" class="CMSBreadCrumbsLink">TestComplete</a> › <a href="http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types" class="CMSBreadCrumbsLink">Combine a Variety of Tests</a> › <span class="CMSBreadCrumbsCurrentItem">Functional GUI Testing</span>
+</div>
+
+            
+                    
+                    
+                    <div id="ctl00_ctl00_ContentPlaceHolder1_rptProductHeader_ctl00_pnlTrialBox" class="pnl-trial-box">
+	<a href="http://smartbear.com/products/qa-tools/automated-testing-tools/testcomplete-pricing" class="btn-green-lg new-buy-button"><span class="strong-tw">Buy</span> TestComplete</a>
+	
+	<a href="http://smartbear.com/products/qa-tools/automated-testing-tools/free-testcomplete-trial" class="btn-green-lg new-trial-button"><span class="strong-tw">Try</span> TestComplete Free</a>
+</div>
+                    <h1>
+                        Functional Testing - TestComplete
+                    </h1>
+                
+            
+
+            
+            <div class="tabs nav">
+	            
+	                    <ul class="clearfix">
+                            <!-- Overview item -->
+	                        
+							        <li class="">
+								        <a id="ctl00_ctl00_ContentPlaceHolder1_rptProductSubMenu_ctl00_rptProductSubMenu_ctl00_hlProdMenu" href="http://smartbear.com/products/qa-tools/automated-testing-tools">Overview</a>
+							        </li>
+	                            
+
+	                
+							<li class="active">
+								<a id="ctl00_ctl00_ContentPlaceHolder1_rptProductSubMenu_ctl01_hlProdMenu" href="http://smartbear.com/products/qa-tools/automated-testing-tools/features">Features</a>
+							</li>
+	                
+							<li class="">
+								<a id="ctl00_ctl00_ContentPlaceHolder1_rptProductSubMenu_ctl02_hlProdMenu" href="http://smartbear.com/products/qa-tools/automated-testing-tools/resources">Resources</a>
+							</li>
+	                
+							<li class="">
+								<a id="ctl00_ctl00_ContentPlaceHolder1_rptProductSubMenu_ctl03_hlProdMenu" href="http://smartbear.com/products/qa-tools/automated-testing-tools/testcomplete-specifications">Specifications</a>
+							</li>
+	                
+							<li class="">
+								<a id="ctl00_ctl00_ContentPlaceHolder1_rptProductSubMenu_ctl04_hlProdMenu" href="http://smartbear.com/products/qa-tools/automated-testing-tools/testcomplete-pricing">Price &amp; Buy</a>
+							</li>
+	                
+						</ul>
+					
+            </div>
+        </div>
+    </div><!-- end of #subpage-header -->
+
+    <!-- Content -->
+    <div id="content">
+        
+
+    <div class="feature-deep-wrap">
+
+        <div id="left-col-narrow">
+            <a id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_hlParentPage" class="prev" href="http://smartbear.com/products/qa-tools/automated-testing-tools/features/software-testing-types">Combine a Variety of Tests</a>
+
+            <!-- Side Nav -->
+            <ul class="side-nav">
+        <li id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl01_liFeature" class="active">
+            <a id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl01_hlFeatureUrl" title="Functional GUI Testing" class="sidenav-link" href="http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/functional-gui-test">Functional GUI Testing</a>
+            <span class="arrow"></span>
+        </li>
+    
+        <li id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl02_liFeature">
+            <a id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl02_hlFeatureUrl" title="Regression Testing" class="sidenav-link" href="http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/regressions-tests">Regression Testing</a>
+            <span class="arrow"></span>
+        </li>
+    
+        <li id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl03_liFeature">
+            <a id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl03_hlFeatureUrl" title="White-Box Testing" class="sidenav-link" href="http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/white-box-tests">White-Box Testing</a>
+            <span class="arrow"></span>
+        </li>
+    
+        <li id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl04_liFeature">
+            <a id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl04_hlFeatureUrl" title="Unit Testing" class="sidenav-link" href="http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/unit-tests">Unit Testing</a>
+            <span class="arrow"></span>
+        </li>
+    
+        <li id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl05_liFeature">
+            <a id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl05_hlFeatureUrl" title="Keyword-Driven Testing" class="sidenav-link" href="http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/keyword-driven-tests">Keyword-Driven Testing</a>
+            <span class="arrow"></span>
+        </li>
+    
+        <li id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl06_liFeature">
+            <a id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl06_hlFeatureUrl" title="Object-Driven Testing" class="sidenav-link" href="http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/object-driving-tests">Object-Driven Testing</a>
+            <span class="arrow"></span>
+        </li>
+    
+        <li id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl07_liFeature">
+            <a id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl07_hlFeatureUrl" title="Data-Driven Testing" class="sidenav-link" href="http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/data-driving-tests">Data-Driven Testing</a>
+            <span class="arrow"></span>
+        </li>
+    
+        <li id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl08_liFeature">
+            <a id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl08_hlFeatureUrl" title="Coverage Testing" class="sidenav-link" href="http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/coverage-tests">Coverage Testing</a>
+            <span class="arrow"></span>
+        </li>
+    
+        <li id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl09_liFeature">
+            <a id="ctl00_ctl00_ContentPlaceHolder1_contentplaceholder2_SideNav_rptSideNav_ctl09_hlFeatureUrl" title="Distributed Testing" class="sidenav-link" href="http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/distributed-tests">Distributed Testing</a>
+            <span class="arrow"></span>
+        </li>
+    </ul>
+
+            <!-- Download PDF List -->
+               
+        </div>
+
+        <div id="right-col-wide" class="features feature-deep">
+            <div id="features">
+                <div class="active-feature" id="functional-gui-testing">
+                    <div class="inner-feature">
+                        <!-- Content -->
+                        <h2>Functional GUI Testing</h2>
+                        <p></p><h4>
+	GUI Testing With TestComplete</h4>
+Functional testing (or GUI testing) is testing of the application’s user interface that determines how the application and the user interact and whether the application performs properly. This typically includes how the application handles keyboard and mouse input and how it displays screen text, images, buttons, menus, dialog boxes, icons and toolbars. Functional testing is commonly done by human testers, but is made a lot easier and more reliable by automated testing tools like TestComplete. TestComplete offers many features that extend the productivity of automated functional testing.<br>
+<br>
+<h4>
+	Record functional tests or create them visually</h4>
+TestComplete can record your testing actions that you perform over the application in the form of keyword tests, automated test scripts or low-level procedures. You can then run the recorded tests or modify them for more advanced automated testing.<br>
+&nbsp;<br>
+Keyword tests are very easy to create and maintain. You add the operations to the test by dragging and specifying test parameters with special wizards and dialogs. Creating keyword tests does not require programming at all.<br>
+<br>
+<img alt="Functional GUI Test" src="http://smartbear.com/getattachment/products/qa-tools/automated-testing-tools/Features/software-testing-types/functional-gui-test/Functional_GUI_Testing.png" style="width: 550px; height: 326px;" title="Functional GUI Test"><br>
+&nbsp;&nbsp;<br>
+<p>
+	Get started with Functional GUI Testing and&nbsp;<a href="http://smartbear.com/products/qa-tools/automated-testing-tools/free-testcomplete-trial"><b>try TestComplete for free</b></a>.</p>
+<h4>
+	Create object-based or low-level functional tests</h4>
+Keyword tests and automated test scripts are object-based, they contain commands that simulate user actions on objects rather than using screen coordinates. This approach makes functional testing more stable and resistant to changes in the application under test or testing conditions. When needed, you can also simulate low-level events like pressing and releasing of mouse buttons, mouse wheel rotation or pressing and releasing of keys.<br>
+<br>
+<h4>
+	Use specific methods and properties to simulate user actions with ease</h4>
+TestComplete recognizes standard Windows controls and the most popular controls developed by Microsoft, Developer Express, ComponentOne, Infragistics, Syncfusion, Telerik and other software vendors. It provides specific methods and properties that let you easily simulate user actions on these controls.<br>
+<br>
+<h4>
+	Create checkpoints on-the-fly</h4>
+Even the simplest functional test should be applicable throughout the life of a project, and it should be capable of automatically measuring results against an already-validated standard output. TestComplete projects maintain the lists of images, text, binary and XML files, collections of object properties, table data and other values that are used in functional tests for comparison purposes.<br>
+<br>
+<img alt="Recording.jpg" src="./Functional and GUI Testing - TestComplete   SmartBear_files/Web_Testing.png" style="width: 500px; height: 312px;" title="Recording.jpg"><br>
+<br>
+Using special wizards you can easily create checkpoints during functional test recording or when editing test commands. Creation of checkpoints typically does not require scripting, but you can script these, if you need complex comparison procedures.<br>
+<br>
+<h4>
+	Call methods and properties of the application’s internal objects</h4>
+TestComplete has access to internal methods and properties (public, protected and private) of objects in the application under test. You can use these methods and properties to check the state of the application and its internal objects and to simulate specific user actions that cannot be simulated otherwise during functional testing.<br>
+<br>
+<h4>
+	Use a rich library of scripting objects to perform advanced tasks</h4>
+Your TestComplete functional tests can call Windows API functions, functions that reside in arbitrary dynamic link libraries, .NET assemblies or Java packages. They can also call database stored procedures or execute queries to databases. TestComplete actually reveals “what” the application does in areas far more central to the application than its screen output when functional testing.<br>
+<br>
+<h4>
+	Run functional tests from separate applications</h4>
+You always have the option to run functional tests partly or entirely from a separate application that uses the TestComplete OLE engine and runs the functional tests on the application from its own code, or uses the engine to read scripts. This way, every TestComplete service can be controlled using your favorite development language.<br>
+<br>
+<p>
+	Get started with Functional GUI Testing and <a href="http://smartbear.com/products/qa-tools/automated-testing-tools/free-testcomplete-trial"><b>try TestComplete for free</b></a>.</p>
+<p></p>
+
+                        <!-- Pager -->
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end of #right-col-wide .features -->
+
+    </div><!-- end of .feature-deep-wrap -->
+
+
+    </div>
+
+				
+				<!--googleoff: all-->  
+	        </div><!-- end of #main -->
+
+
+            <!-- Sticky Footer push div -->
+            <div class="push" style="height: 243px;"></div>
+
+        </div> <!--! end of #container -->
+
+
+        <!--footer template-->
+        <div id="footer" style="height: auto;">
+            
+
+    <!-- More Products Footer -->
+    
+<div id="products-footer">
+    <!-- More Products -->
+	<div id="more-products">
+		<div class="inner-wrapper">
+			<div class="category clearfix">
+                
+                        <h3>More Testing &amp; QA Products</h3>
+                    
+				<div class="carousel-navigation">
+                    <a href="http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/functional-gui-test/#" class="backward hidden disabled" style="display: none;"> &gt;&gt;</a>
+					<div class="pagination hidden" style="display: none;"><a href="http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/functional-gui-test/#" class="selected"><span>1</span></a></div>
+					<a href="http://smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/functional-gui-test/#" class="forward hidden" style="display: none;"> &gt;&gt;</a>
+				</div>
+			</div>   
+            <!-- Carousel -->
+		    <div class="caroufredsel_wrapper" style="text-align: start; float: none; position: relative; top: auto; right: auto; bottom: auto; left: auto; width: 975px; height: 169px; margin: 0px; overflow: hidden;"><ul id="product-carousel" class="product-carousel clearfix" style="text-align: left; float: none; position: absolute; top: 0px; left: 0px; margin: 0px; width: 2605px; height: 169px;">
+		    	
+                        <li>
+		    		        <a href="http://smartbear.com/products/qa-tools/test-management">QAComplete</a>
+		    		        <strong>Test Management</strong>
+		    		        <p>Smarter test management.</p>
+		    	        </li>  
+                    
+                        <li>
+		    		        <a href="http://smartbear.com/products/qa-tools/load-testing">LoadUIWeb Pro</a>
+		    		        <strong>Load Testing</strong>
+		    		        <p>Pinpoint Web scalability problems.</p>
+		    	        </li>  
+                    
+                        <li>
+		    		        <a href="http://smartbear.com/products/qa-tools/application-performance-profiling">AQtime Pro</a>
+		    		        <strong>Performance Profiling</strong>
+		    		        <p>Find memory and performance issues faster.</p>
+		    	        </li>  
+                    
+                        <li>
+		    		        <a href="http://smartbear.com/products/qa-tools/web-service-load-testing">LoadUI Pro</a>
+		    		        <strong>API Load Testing</strong>
+		    		        <p>Unlimited load testing for Web services.</p>
+		    	        </li>  
+                    
+                        <li style="margin-right: 175px;">
+		    		        <a href="http://smartbear.com/products/qa-tools/web-service-testing-tool">SoapUI Pro</a>
+		    		        <strong>API Testing - SoapUI Pro</strong>
+		    		        <p>Fast functional testing for Web service.</p>
+		    	        </li>  
+                    
+		    </ul></div> 
+		</div>
+    </div>   
+</div><!-- end of #products-footer -->
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+	    $(".product-carousel").carouFredSel({
+		    width: 975,
+		    height: "variable",
+		    items: 6,
+		    align: "left",
+		    scroll: {
+			    mousewheel: true,
+			    easing: "linear"
+		    },
+		    auto: false,
+		    pagination: "#more-products .carousel-navigation > .pagination",
+            prev: "#more-products .backward",
+		    next: "#more-products .forward",
+            circular: false,
+            infinite: false
+	    });
+    });
+</script>
+
+
+        </div>
+
+        <div id="footer">
+
+<div class="footerbg">
+    <footer class="footer-inner">
+    <div class="footer-col">
+                    <h6>products</h6>
+                    <a class="footerlink" href="http://smartbear.com/products/software-development/">For Dev</a>
+                    <a class="footerlink" href="http://smartbear.com/products/qa-tools/">For Test &amp; QA</a>
+                    <a class="footerlink" href="http://smartbear.com/products/web-monitoring/">For Ops</a>
+    </div>
+    <div class="footer-col">
+                    <h6>support</h6>
+                    <a class="footerlink" href="http://support.smartbear.com/downloads">downloads</a>
+                    <a class="footerlink" href="http://support.smartbear.com/faq">FAQs</a>
+                    <a class="footerlink" href="http://support.smartbear.com/about-troubleshooter">trouble shooter</a>
+                    <a class="footerlink" href="http://support.smartbear.com/versions">product versions</a>
+                    <a class="footerlink" href="http://support.smartbear.com/articles">technical articles</a>
+    </div>
+    <div class="footer-col">
+                    <h6>community</h6>
+                    <a class="footerlink" href="http://community.smartbear.com/forums?_ga=1.243287237.1749999920.1382458209">Forums</a>
+                    <a class="footerlink" href="http://smartbear.com/blog">blogs</a>
+                    <a class="footerlink" href="http://smartbear.com/news/events/">events</a>
+    </div>
+    <div class="footer-col">
+                    <h6>About us</h6>
+                    <a class="footerlink" href="http://smartbear.com/about-us/our-team">Meet our team</a>
+                  <a class="footerlink" href="http://smartbear.com/about-us/Newsroom">Newsroom</a>
+                    <a class="footerlink" href="http://smartbear.com/about-us/careers">Careers</a>
+                    <a class="footerlink" href="http://smartbear.com/about-us/internships">internships</a>
+                    <a class="footerlink" href="http://smartbear.com/about-us/our-partners">our partners</a>
+                    <a class="footerlink" href="http://smartbear.com/about-us/our-customers">our customers</a>
+                    <a class="footerlink" href="http://smartbear.com/about-us/awards/">awards</a>
+                    <a class="footerlink" href="http://smartbear.com/about-us/giving-back">giving back</a>
+                </div>
+     <div class="footer-col">
+                    <h6>contact us</h6>
+                    <span class="footerlink"><span class="fa fa-phone"></span> +1 978-236-7900</span>
+                    <a class="footerlink" href="http://smartbear.com/contact-us/"><i class="fa fa-envelope-o"></i> Contact Form</a>
+                    
+     </div>
+    </footer>
+</div>
+
+<footer class="copyright">
+        <div class="copyright-inner">
+          <div class="footer-inner-left">
+                     <div class="footertext">
+                        2014 SmartBear Software. All Rights Reserved.
+                    </div>
+                    <a class="footermenu" href="http://smartbear.com/privacy">Privacy</a>
+                    <a class="footermenu" href="http://smartbear.com/terms-of-use">Terms of use</a>
+                    <a class="footermenu" href="http://smartbear.com/site-map">site map</a>
+           </div>
+           
+           <div class="footer-inner-right">
+           <ul class="social-list">
+           <li><a target="_blank" href="https://plus.google.com/112549653237106886127/" class="gp-icon"></a></li>
+           <li> <a class="fb-icon" target="_blank" href="http://www.facebook.com/smartbear"></a></li>
+           <li> <a class="tw-icon" target="_blank" href="http://twitter.com/smartbear"></a></li>
+           <li> <a class="yt-icon" target="_blank" href="http://www.youtube.com/user/SmartBearSoftware"></a></li>
+           <li> <a class="li-icon" target="_blank" href="http://www.linkedin.com/company/smartbear-software"></a></li>
+           </ul>
+           </div>
+         
+         </div>
+</footer>
+
+</div>
+        <!--end footer template-->
+		<!--googleon: all-->
+		
+        <!-- scripts -->
+        
+            <script src="./Functional and GUI Testing - TestComplete   SmartBear_files/js-bundle.min.js"></script>
+        
+    
+    
+    
+
+
+
+        <script>
+            $(document).ready(function () {
+                $("#login-item").mouseover(function () {
+                    $("#login-link").attr("class", "login-link-over");
+                    $("#select-login").show();
+                }).mouseleave(function () {
+                    $("#login-link").attr("class", "");
+                    $("#select-login").hide();
+                });
+            });
+        </script>
+        <!-- end scripts-->
+
+
+        <!-- Full gradient support in ie9 -->
+        <!--[if gte IE 9]>
+          <style type="text/css">
+            .btn-try, .light-blue, .btn-white-sm, .btn-green-lg, .btn-green-sm {
+               filter: none !important;
+            }
+          </style>
+        <![endif]-->
+    
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("ctl00_ctl00_manScript_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();//]]>
+</script>
+</form>
+
+    <!--Begin Marketo Munchkin-->
+    <script type="text/javascript">
+        (function () {
+            function initMunchkin() {
+                Munchkin.init('800-TIV-782');
+            }
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
+            s.onreadystatechange = function () {
+                if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                    initMunchkin();
+                }
+            };
+            s.onload = initMunchkin;
+            document.getElementsByTagName('body')[0].appendChild(s);
+        })();
+    </script><script type="text/javascript" async="" src="./Functional and GUI Testing - TestComplete   SmartBear_files/munchkin.js"></script>
+    <!--End Marketo Munchkin-->
+
+    <!-- Start of Async HubSpot Analytics Code -->
+        <script type="text/javascript">
+            (function (d, s, i, r) {
+                if (d.getElementById(i)) { return; }
+                var n = d.createElement(s), e = d.getElementsByTagName(s)[0];
+                n.id = i; n.src = '//js.hubspot.com/analytics/' + (Math.ceil(new Date() / r) * r) + '/175832.js';
+                e.parentNode.insertBefore(n, e);
+            })(document, "script", "hs-analytics", 300000);
+       </script>
+    <!-- End of Async HubSpot Analytics Code -->
+
+    
+    
+
+	
+	
+	<!-- Google Code for Main Re-marketing List - All Pages -->
+	<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		var google_conversion_id = 1071976285;
+		var google_conversion_label = "k5mKCIXj_wMQ3Z6U_wM";
+		var google_custom_params = window.google_tag_params;
+		var google_remarketing_only = true;
+		/* ]]> */
+	</script>
+	<script type="text/javascript" src="./Functional and GUI Testing - TestComplete   SmartBear_files/conversion.js">
+	</script><iframe name="google_conversion_frame" title="Google conversion frame" width="300" height="13" src="./Functional and GUI Testing - TestComplete   SmartBear_files/saved_resource.htm" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">&lt;img height="1" width="1" border="0" alt="" src="http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1071976285/?frame=0&amp;random=1398327512960&amp;cv=7&amp;fst=1398327512960&amp;num=1&amp;fmt=1&amp;label=k5mKCIXj_wMQ3Z6U_wM&amp;guid=ON&amp;u_h=768&amp;u_w=1366&amp;u_ah=728&amp;u_aw=1366&amp;u_cd=24&amp;u_his=1&amp;u_tz=420&amp;u_java=true&amp;u_nplug=11&amp;u_nmime=52&amp;frm=0&amp;url=http%3A//smartbear.com/products/qa-tools/automated-testing-tools/software-testing-types/functional-gui-test/&amp;ref=https%3A//www.google.com/" /&gt;</iframe>
+	<noscript>
+		&lt;div style="display:inline;"&gt;
+		&lt;img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1071976285/?value=0&amp;amp;label=k5mKCIXj_wMQ3Z6U_wM&amp;amp;guid=ON&amp;amp;script=0"/&gt;
+		&lt;/div&gt;
+	</noscript>	
+	
+		
+
+
+
+<iframe id="stSegmentFrame" name="stSegmentFrame" src="./Functional and GUI Testing - TestComplete   SmartBear_files/getSegment.htm" frameborder="0" scrolling="no" width="0px" height="0px" style="display:none;"></iframe><script type="text/javascript" id="">var _gaq=_gaq||[],pluginUrl="//www.google-analytics.com/plugins/ga/inpage_linkid.js";_gaq.push(["_require","inpage_linkid",pluginUrl]);_gaq.push(["_setAccount","UA-404707-4"]);_gaq.push(["_setDomainName","smartbear.com"]);_gaq.push(["_setCampNameKey","ga_campaign"]);_gaq.push(["_setCampMediumKey","ga_medium"]);_gaq.push(["_setCampSourceKey","ga_source"]);_gaq.push(["_setSiteSpeedSampleRate",100]);
+document.location.pathname.match(/search-results/)?_gaq.push(["_trackPageview",document.location.pathname+"/"+document.location.hash.substring(1)]):_gaq.push(["_trackPageview"]);(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"==document.location.protocol?"https://":"http://")+"stats.g.doubleclick.net/dc.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})();</script><script type="text/javascript" id="">var _kiq=_kiq||[];(function(){setTimeout(function(){var a=document,b=a.getElementsByTagName("script")[0],a=a.createElement("script");a.type="text/javascript";a.async=!0;a.src="//s3.amazonaws.com/ki.js/49100/a6-.js";b.parentNode.insertBefore(a,b)},1)})();</script><script type="text/javascript" id="">WebFontConfig={fontdeck:{id:"39220"}};(function(){var a=document.createElement("script");a.src=("https:"==document.location.protocol?"https":"http")+"://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js";a.type="text/javascript";a.async="true";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})();</script><script type="text/javascript" id="">(function(){window._pa=window._pa||{};var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"==document.location.protocol?"https:":"http:")+"//tag.perfectaudience.com/serve/51ed77878f8bfb7ab8000008.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})();</script><div id="stwrapper" class="stwrapper" style="visibility: hidden; top: -999px; left: -999px; width: 500px; z-index: 89999999;"><div class="stCloseNew2"></div><iframe allowtransparency="true" id="stLframe" class="stLframe" name="stLframe" frameborder="0" scrolling="no" width="500px" height="430px" src="./Functional and GUI Testing - TestComplete   SmartBear_files/index.b73d7dbdbcdc5250974aaa5cc643cc74.htm" style="top: 0px; left: 0px;"></iframe></div><div id="stOverlay" style="height: 100%; width: 100%; background-color: rgb(0, 0, 0); opacity: 0.6; position: fixed; display: none; left: 0px; top: 0px; z-index: 89999990;"></div><script src="./Functional and GUI Testing - TestComplete   SmartBear_files/a6-.d.js" charset="utf-8" type="text/javascript"></script><iframe name="oauth2relay590215992" id="oauth2relay590215992" src="./Functional and GUI Testing - TestComplete   SmartBear_files/postmessageRelay.htm" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

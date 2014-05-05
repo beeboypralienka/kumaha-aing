@@ -1,0 +1,107 @@
+/* menu kanal */
+.cangkangkanal { width:980px;font:normal 12px Arial, Helvetica, sans-serif;}
+	
+
+.panel_menu {
+	cursor: pointer;
+	text-align:center;
+	width:960px;
+	height:24px;
+	font-weight:bold;
+}
+#panelmenu {
+	height: 0px;
+	z-index: 60;
+	text-align: left;
+	width:876px;
+	position:relative;
+	overflow:hidden;
+	background:url(../images/menu_kanal_baru_2.gif) left top no-repeat;
+	margin-left: 89px;
+	top:-4px;
+}
+#panelmenuc {
+	height: 0px;
+	z-index: 60;
+	text-align: left;
+	position:relative;
+	overflow:hidden;
+	margin-left: 953px;
+	top:-34px;
+}
+
+.menu_kanal_baru {
+	background: url(../images/menu_kanal_baru.jpg) 0px -80px repeat-x;
+	height:23px;
+	overflow:hidden;
+}
+
+
+.menu_kanal_baru span.kompas a {
+	background:url(../images/menu_kanal_baru.jpg) right top no-repeat;
+	padding:4px 14px 7px 0px;
+	margin-right:8px;
+	color:#ffffff;
+}
+
+.menu_kanal_baru span.more a {
+	color:#3cc5e4;
+}
+
+.menu_kanal_baru a {
+	display:block;
+	float:left;
+	padding:4px 7px 2px 7px;
+	font:bold 11px Arial, Helvetica, sans-serif;
+	color: #ffffff;
+	text-decoration:none;
+}
+.menu_kanal_baru a:hover {
+	text-decoration:underline;
+}
+
+.menu_kanal_baru_a {
+	font-weight:bold;
+	padding-left:15px;
+}
+.menu_kanal_baru_a a {
+	float:left;
+	font:bold 11px Arial, Helvetica, sans-serif;
+	color:#ffffff;
+	text-decoration:none;
+	display:block;
+	padding:2px 7px 9px 7px;
+
+}
+.menu_kanal_baru_a a:hover {
+	font-weight:bold;
+	text-decoration:underline;
+}
+.menu_kanal_baru_a a.kompas {
+	background:url(../images/menu_kanal_baru.jpg) -120px -147px no-repeat;
+	color:#fff;
+	
+}
+.menu_kanal_baru_b {	
+	z-index:60;
+	text-align:right;
+	position:relative;
+	z-index:100;
+	width:50px;
+	float:right;
+}
+.menu_kanal_baru_b a {
+	display:inline-block;
+	color:#FFF;
+	font:bold 10px Arial, Helvetica, sans-serif;
+	padding:3px 5px;
+	background:#fff;
+	text-decoration:none;
+	margin:5px;
+}
+.menu_kanal_baru_b a:hover {
+	color:#FFF;
+	background:#5097c2;
+}
+
+.pt_25	{padding-top:25px;}

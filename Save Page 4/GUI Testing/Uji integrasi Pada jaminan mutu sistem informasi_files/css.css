@@ -1,0 +1,11 @@
+#wrapper{width: 980px;margin: 0 auto;padding: 0px;}
+	
+#content{float: left;width: 100%;background-color: #FFFFFF;font-size: 12px;line-height: 20px;
+
+}
+#page-wrap {  position: relative;float: left; margin: 0px 0;}
+
+#box{position: absolute;left: -90px;padding: 10px 4px;background-color: #ecf5fa;
+}
+
+#box div{margin: 10px 0;}
